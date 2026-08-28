@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Posh Street — Shoes, Home and Pets</title>
+<title>Lumen — Makeup, Skincare and Fragrance</title>
 
 <!-- Browsers largely ignore these; the real protection is the Cache-Control
      headers in _headers / netlify.toml / vercel.json. Kept as a second line. -->
@@ -30,7 +30,7 @@
         payload into the on-page console, so it loads before anything is sent. -->
 <script src="assets/config.js"></script>
 <script src="assets/insider-debug.js"></script>
-<script src="assets/catalog.js"></script>
+<script src="assets/vertical.js"></script>
 <script src="assets/store.js"></script>
 
 <!-- 3. Insider Tag — account: onesandbox (10014057) -->
@@ -50,7 +50,7 @@
   // parameters belong here.
   window.InsiderQueue.push({
     type: 'home',
-    value: { custom: { home_version: 'posh-demo-v1', cart_size: Store.cartCount() } }
+    value: { custom: { home_version: 'lumen-demo-v1', cart_size: Store.cartCount() } }
   });
 
   // --- init: the trigger that actually sends everything above -----------
@@ -60,14 +60,14 @@
 
 <body>
 
-<p class="announce">Free shipping on orders over $150 &nbsp;·&nbsp; 30-day returns</p>
+<p class="announce" data-announce>Free shipping over $50</p>
 
 <header class="masthead">
   <div class="masthead__in">
-    <a class="brand" href="index.html">Posh Street</a>
+    <a class="brand" href="index.html" data-brand>Lumen</a>
     <form class="searchbox" data-search role="search" autocomplete="off">
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
-      <input type="search" id="search-input" name="q" placeholder="Search products" aria-label="Search products">
+      <input type="search" id="search-input" name="q" placeholder="Search products" data-search-placeholder aria-label="Search products">
     </form>
     <nav class="utils">
       <a href="account.html" data-account-label>Log in</a>
@@ -88,16 +88,16 @@
       <div class="hero__inner">
         <div class="hero__copy">
           <p class="eyebrow">New season <span class="pagetype">page type: home</span></p>
-          <h1 class="h1">Everything for the way you live.</h1>
-          <p class="lede">Footwear, home and pets — over 250 pieces, restocked weekly.</p>
-          <p style="margin-top:2rem"><a class="btn" href="category.html?c=Shoes%20Collection">Shop footwear</a></p>
+          <h1 class="h1" data-hero-title>Skin first.<br>Makeup second.</h1>
+          <p class="lede" data-hero-lede>Makeup, skincare and fragrance made to be worn every day.</p>
+          <p style="margin-top:2rem"><a class="btn" href="category.html?c=Makeup" data-hero-cta>Shop makeup</a></p>
         </div>
       </div>
     </div>
   </section>
 
   <section class="section wrap">
-    <div class="section__head"><h2 class="h2">Shop by collection</h2></div>
+    <div class="section__head"><h2 class="h2">Shop by category</h2></div>
     <div class="tiles" id="tiles"></div>
   </section>
 
@@ -111,8 +111,8 @@
 
   <section class="section wrap">
     <div class="section__head">
-      <h2 class="h2">New arrivals</h2>
-      <a href="category.html?c=Shoes%20Collection">View all</a>
+      <h2 class="h2">New in</h2>
+      <a href="category.html?c=Makeup">View all</a>
     </div>
     <div class="grid" id="featured"></div>
   </section>
@@ -127,8 +127,8 @@
   <section class="section wrap">
     <div class="panel" style="max-width:540px">
       <p class="eyebrow">Newsletter</p>
-      <h2 class="h2" style="margin-bottom:.5rem">Be in the know</h2>
-      <p class="lede" style="margin-bottom:1.5rem">Promotions, new products and sales, straight to your inbox.</p>
+      <h2 class="h2" style="margin-bottom:.5rem" data-newsletter-title>Join the list</h2>
+      <p class="lede" style="margin-bottom:1.5rem" data-newsletter-lede>Early access to launches, restocks and offers.</p>
       <form id="news-form">
         <div class="field">
           <label for="news-email">Email address</label>
@@ -143,7 +143,7 @@
 
 <footer class="foot">
   <div class="wrap foot__in">
-    <span>Posh Street — Insider One demo storefront</span>
+    <span><span data-brand>Lumen</span> — Insider One demo storefront</span>
     <span>onesandbox · 10014057</span>
   </div>
 </footer>
@@ -157,7 +157,7 @@
     new MutationObserver(function () {
       if (!box.hidden && box.children.length) {
         note.className = 'source is-live';
-        note.textContent = 'Smart Recommender · live from onesandbox';
+        note.textContent = 'Smart Recommender · live from salesdemo';
       }
     }).observe(box, { childList: true, attributes: true });
   }

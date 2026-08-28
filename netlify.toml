@@ -4,8 +4,3 @@
     Cache-Control = "no-store, no-cache, must-revalidate, max-age=0"
     Pragma = "no-cache"
     Expires = "0"
-[[redirects]]
-  from = "http://insiderdemo.com/*"
-  to = "https://insiderdemo.com/:splat"
-  status = 301
-  force = true

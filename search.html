@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Search — Posh Street</title>
+<title>Search — Lumen</title>
 
 <!-- Browsers largely ignore these; the real protection is the Cache-Control
      headers in _headers / netlify.toml / vercel.json. Kept as a second line. -->
@@ -30,7 +30,7 @@
         payload into the on-page console, so it loads before anything is sent. -->
 <script src="assets/config.js"></script>
 <script src="assets/insider-debug.js"></script>
-<script src="assets/catalog.js"></script>
+<script src="assets/vertical.js"></script>
 <script src="assets/store.js"></script>
 
 <!-- 3. Insider Tag — account: onesandbox (10014057) -->
@@ -70,14 +70,14 @@
 
 <body>
 
-<p class="announce">Free shipping on orders over $150 &nbsp;·&nbsp; 30-day returns</p>
+<p class="announce" data-announce>Free shipping over $50</p>
 
 <header class="masthead">
   <div class="masthead__in">
-    <a class="brand" href="index.html">Posh Street</a>
+    <a class="brand" href="index.html" data-brand>Lumen</a>
     <form class="searchbox" data-search role="search" autocomplete="off">
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
-      <input type="search" id="search-input" name="q" placeholder="Search products" aria-label="Search products">
+      <input type="search" id="search-input" name="q" placeholder="Search products" data-search-placeholder aria-label="Search products">
     </form>
     <nav class="utils">
       <a href="account.html" data-account-label>Log in</a>
@@ -113,7 +113,7 @@
 
       <div class="empty" id="empty" hidden>
         <h2 class="h2">No results</h2>
-        <p>Try a broader term, or browse the <a href="category.html?c=Shoes%20Collection">footwear collection</a>.</p>
+        <p>Try a broader term, or browse the <a href="category.html?c=Makeup">makeup collection</a>.</p>
       </div>
 
       <div id="pager" style="margin-top:3rem;display:flex;gap:.75rem;justify-content:center"></div>
@@ -123,7 +123,7 @@
 
 <footer class="foot">
   <div class="wrap foot__in">
-    <span>Posh Street — Insider One demo storefront</span>
+    <span><span data-brand>Lumen</span> — Insider One demo storefront</span>
     <span>onesandbox · 10014057</span>
   </div>
 </footer>
@@ -131,7 +131,7 @@
 <script>
 
   document.getElementById('q-title').textContent = QUERY ? '\u201c' + QUERY + '\u201d' : 'Search';
-  document.title = (QUERY || 'Search') + ' — Posh Street';
+  document.title = (QUERY || 'Search') + ' — Lumen';
   var input = document.getElementById('search-input');
   if (input) input.value = QUERY;
 
@@ -169,7 +169,7 @@
       onRender: function (result, state) {
         sourceEl.className = 'source is-live';
         sourceEl.textContent = 'Eureka campaign ' + state.campId +
-                               ' · onesandbox catalogue · sort: ' + state.sorting;
+                               ' · salesdemo catalogue · sort: ' + state.sorting;
         paint(result.items, { live: true, total: state.total });
         drawPager(result.navigation, state);
 

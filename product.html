@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Product — Posh Street</title>
+<title>Product — Lumen</title>
 
 <!-- Browsers largely ignore these; the real protection is the Cache-Control
      headers in _headers / netlify.toml / vercel.json. Kept as a second line. -->
@@ -30,7 +30,7 @@
         payload into the on-page console, so it loads before anything is sent. -->
 <script src="assets/config.js"></script>
 <script src="assets/insider-debug.js"></script>
-<script src="assets/catalog.js"></script>
+<script src="assets/vertical.js"></script>
 <script src="assets/store.js"></script>
 
 <!-- 3. Insider Tag — account: onesandbox (10014057) -->
@@ -50,7 +50,7 @@
   // --- page type: product -----------------------------------------------
   // One product per page. `id` is the Shopify VARIANT id and `groupcode` is
   // the product id — the same shape the live Posh site sends, so both sites
-  // write consistent records into the shared onesandbox catalogue.
+  // write consistent records into the shared salesdemo catalogue.
   window.InsiderQueue.push({ type: 'product', value: Store.productPayload(PRODUCT) });
 
   window.InsiderQueue.push({ type: 'init' });
@@ -59,14 +59,14 @@
 
 <body>
 
-<p class="announce">Free shipping on orders over $150 &nbsp;·&nbsp; 30-day returns</p>
+<p class="announce" data-announce>Free shipping over $50</p>
 
 <header class="masthead">
   <div class="masthead__in">
-    <a class="brand" href="index.html">Posh Street</a>
+    <a class="brand" href="index.html" data-brand>Lumen</a>
     <form class="searchbox" data-search role="search" autocomplete="off">
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
-      <input type="search" id="search-input" name="q" placeholder="Search products" aria-label="Search products">
+      <input type="search" id="search-input" name="q" placeholder="Search products" data-search-placeholder aria-label="Search products">
     </form>
     <nav class="utils">
       <a href="account.html" data-account-label>Log in</a>
@@ -95,6 +95,11 @@
         <p class="pdp__price" id="p-price"></p>
         <p class="lede" id="p-desc" style="margin-bottom:2rem;font-size:.9375rem"></p>
 
+        <div id="variant-block" hidden>
+          <p class="eyebrow" style="margin-bottom:.6rem"><span id="variant-label"></span></p>
+          <div class="sizes" id="p-variants"></div>
+        </div>
+
         <div class="qtyrow">
           <div class="qty">
             <button type="button" id="q-dec">&minus;</button>
@@ -117,9 +122,9 @@
           <dl>
             <dt>Variant ID</dt><dd id="p-id"></dd>
             <dt>Product ID</dt><dd id="p-group"></dd>
-            <dt>SKU</dt><dd id="p-sku"></dd>
-            <dt>Vendor</dt><dd id="p-vend2"></dd>
-            <dt>Type</dt><dd id="p-type"></dd>
+            <dt>Variant</dt><dd id="p-sku"></dd>
+            <dt>Category</dt><dd id="p-vend2"></dd>
+            <dt>Collection</dt><dd id="p-type"></dd>
           </dl>
         </div>
       </div>
@@ -134,7 +139,7 @@
     </section>
 
     <section class="section">
-      <div class="section__head"><h2 class="h2">More from this collection</h2></div>
+      <div class="section__head"><h2 class="h2">More from this category</h2></div>
       <div class="grid" id="related"></div>
     </section>
   </div>
@@ -142,7 +147,7 @@
 
 <footer class="foot">
   <div class="wrap foot__in">
-    <span>Posh Street — Insider One demo storefront</span>
+    <span><span data-brand>Lumen</span> — Insider One demo storefront</span>
     <span>onesandbox · 10014057</span>
   </div>
 </footer>
@@ -156,21 +161,21 @@
     new MutationObserver(function () {
       if (!box.hidden && box.children.length) {
         note.className = 'source is-live';
-        note.textContent = 'Smart Recommender · live from onesandbox';
+        note.textContent = 'Smart Recommender · live from salesdemo';
       }
     }).observe(box, { childList: true, attributes: true });
   }
 
-  document.title = PRODUCT.name + ' — Posh Street';
+  document.title = PRODUCT.name + ' — Lumen';
   document.getElementById('p-img').src = PRODUCT.image;
   document.getElementById('p-name').textContent = PRODUCT.name;
-  document.getElementById('p-vendor').textContent = PRODUCT.vendor;
+  document.getElementById('p-vendor').textContent = PRODUCT.subcategory || '';
   document.getElementById('p-desc').textContent = PRODUCT.description || '';
   document.getElementById('p-id').textContent = PRODUCT.id;
   document.getElementById('p-group').textContent = PRODUCT.groupcode;
-  document.getElementById('p-sku').textContent = PRODUCT.sku;
-  document.getElementById('p-vend2').textContent = PRODUCT.vendor;
-  document.getElementById('p-type').textContent = PRODUCT.product_type || '—';
+  document.getElementById('p-sku').textContent = PRODUCT.variant_label || '—';
+  document.getElementById('p-vend2').textContent = PRODUCT.subcategory || '—';
+  document.getElementById('p-type').textContent = PRODUCT.collection || '—';
   document.getElementById('p-stockline').textContent =
     PRODUCT.in_stock ? 'In stock' : 'Out of stock';
 
@@ -201,6 +206,29 @@
     thumbs.appendChild(b);
   });
   if (thumbs.children.length < 2) thumbs.hidden = true;
+
+  // Sibling variants share a groupcode. Switching shade is a NAVIGATION, not
+  // an attribute change, because each variant is its own catalog record and
+  // needs its own product view pushed.
+  var siblings = Store.catalog.filter(function (x) {
+    return x.groupcode === PRODUCT.groupcode && x.variant_label;
+  });
+  if (siblings.length > 1) {
+    document.getElementById('variant-block').hidden = false;
+    document.getElementById('variant-label').textContent = PRODUCT.option_name || 'Shade';
+    var host = document.getElementById('p-variants');
+    siblings.forEach(function (sib) {
+      var b = document.createElement('button');
+      b.className = 'shade';
+      b.type = 'button';
+      b.textContent = sib.variant_label;
+      b.setAttribute('aria-pressed', String(sib.id === PRODUCT.id));
+      b.addEventListener('click', function () {
+        if (sib.id !== PRODUCT.id) location.href = Store.localHref(sib);
+      });
+      host.appendChild(b);
+    });
+  }
 
   var qty = 1;
   var qval = document.getElementById('q-val');
@@ -249,8 +277,12 @@
     say('custom_event size_guide_opened sent');
   });
 
-  Store.grid('#related', Store.byCollection(PRODUCT.collection)
-    .filter(function (p) { return p.id !== PRODUCT.id; }).slice(0, 6));
+  var seen = {};
+  Store.grid('#related', Store.byCollection(PRODUCT.collection).filter(function (p) {
+    if (p.groupcode === PRODUCT.groupcode || seen[p.groupcode]) return false;
+    seen[p.groupcode] = true;
+    return true;
+  }).slice(0, 6));
 
   watchReco('product');
 </script>

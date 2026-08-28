@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Collection — Posh Street</title>
+<title>Collection — Lumen</title>
 
 <!-- Browsers largely ignore these; the real protection is the Cache-Control
      headers in _headers / netlify.toml / vercel.json. Kept as a second line. -->
@@ -30,7 +30,7 @@
         payload into the on-page console, so it loads before anything is sent. -->
 <script src="assets/config.js"></script>
 <script src="assets/insider-debug.js"></script>
-<script src="assets/catalog.js"></script>
+<script src="assets/vertical.js"></script>
 <script src="assets/store.js"></script>
 
 <!-- 3. Insider Tag — account: onesandbox (10014057) -->
@@ -40,7 +40,7 @@
 <script src="assets/eureka.js"></script>
 <script>
   var params = new URLSearchParams(location.search);
-  var COLLECTION = params.get('c') || 'Shoes Collection';
+  var COLLECTION = params.get('c') || 'Makeup';
   var SUBCAT = params.get('sub') || null;
 
   Store.noteCategoryView(COLLECTION);
@@ -50,7 +50,7 @@
 
   // --- page type: category ----------------------------------------------
   // breadcrumb drives a lot of downstream targeting and must be an array.
-  // It mirrors the single-element taxonomy the onesandbox catalog carries.
+  // It mirrors the single-element taxonomy the salesdemo catalog carries.
   window.InsiderQueue.push({
     type: 'category',
     value: {
@@ -65,14 +65,14 @@
 
 <body>
 
-<p class="announce">Free shipping on orders over $150 &nbsp;·&nbsp; 30-day returns</p>
+<p class="announce" data-announce>Free shipping over $50</p>
 
 <header class="masthead">
   <div class="masthead__in">
-    <a class="brand" href="index.html">Posh Street</a>
+    <a class="brand" href="index.html" data-brand>Lumen</a>
     <form class="searchbox" data-search role="search" autocomplete="off">
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
-      <input type="search" id="search-input" name="q" placeholder="Search products" aria-label="Search products">
+      <input type="search" id="search-input" name="q" placeholder="Search products" data-search-placeholder aria-label="Search products">
     </form>
     <nav class="utils">
       <a href="account.html" data-account-label>Log in</a>
@@ -115,7 +115,7 @@
 
 <footer class="foot">
   <div class="wrap foot__in">
-    <span>Posh Street — Insider One demo storefront</span>
+    <span><span data-brand>Lumen</span> — Insider One demo storefront</span>
     <span>onesandbox · 10014057</span>
   </div>
 </footer>
@@ -123,7 +123,7 @@
 <script>
 
   document.getElementById('cat-title').textContent = SUBCAT || Store.shortName(COLLECTION);
-  document.title = Store.shortName(COLLECTION) + ' — Posh Street';
+  document.title = Store.shortName(COLLECTION) + ' — Lumen';
 
   var chips = document.getElementById('subcats');
   var all = document.createElement('a');
@@ -175,7 +175,7 @@
       onRender: function (result, state) {
         sourceEl.className = 'source is-live';
         sourceEl.textContent = 'Eureka campaign ' + state.campId +
-                               ' · onesandbox catalogue · sort: ' + state.sorting;
+                               ' · salesdemo catalogue · sort: ' + state.sorting;
         paint(result.items, { live: true, total: result.navigation.total });
         drawPager(result.navigation, state);
       },

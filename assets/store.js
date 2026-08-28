@@ -9,7 +9,7 @@
 (function () {
   'use strict';
 
-  var KEY = { visitor: 'psh.visitor', cart: 'psh.cart', user: 'psh.user', wish: 'psh.wishlist' };
+  var KEY = { visitor: 'lmn.visitor', cart: 'lmn.cart', user: 'lmn.user', wish: 'lmn.wishlist' };
 
   function read(key, fallback) {
     try { var v = localStorage.getItem(key); return v ? JSON.parse(v) : fallback; }
@@ -33,7 +33,7 @@
   }
 
   function resetVisitor() {
-    [KEY.visitor, KEY.user, KEY.cart, KEY.wish, 'psh.views', 'psh.order'].forEach(function (k) {
+    [KEY.visitor, KEY.user, KEY.cart, KEY.wish, 'lmn.views', 'lmn.order'].forEach(function (k) {
       localStorage.removeItem(k);
     });
     location.reload();
@@ -47,11 +47,11 @@
   function byId(id) { return index[String(id)] || null; }
 
   function byCollection(name, subcategory) {
-    return catalog.filter(function (p) {
+    return oneVariantEach(catalog.filter(function (p) {
       if (p.collection !== name) return false;
       if (subcategory && p.subcategory !== subcategory) return false;
       return true;
-    });
+    }));
   }
 
   function collections() { return Object.keys(window.COLLECTIONS || {}); }
@@ -61,22 +61,34 @@
     var t = String(q || '').trim().toLowerCase();
     if (!t) return [];
     var words = t.split(/\s+/);
-    return catalog.filter(function (p) {
-      var hay = (p.name + ' ' + p.vendor + ' ' + p.product_type + ' ' +
-                 p.collection + ' ' + (p.tags || []).join(' ')).toLowerCase();
+    var hits = catalog.filter(function (p) {
+      var hay = (p.name + ' ' + (p.variant_label || '') + ' ' + p.subcategory + ' ' +
+                 p.product_type + ' ' + p.collection + ' ' +
+                 (p.tags || []).join(' ')).toLowerCase();
       return words.every(function (w) { return hay.indexOf(w) > -1; });
-    }).slice(0, 48);
+    });
+    return oneVariantEach(hits).slice(0, 48);
   }
 
   // Spread across collections so the homepage reads as curated rather than
   // showing forty sneakers in a row.
+  function oneVariantEach(list) {
+    var seen = {}, out = [];
+    list.forEach(function (p) {
+      if (seen[p.groupcode]) return;
+      seen[p.groupcode] = true;
+      out.push(p);
+    });
+    return out;
+  }
+
   function featured(n) {
-    var out = [], names = collections(), round = 0;
+    var out = [], names = collections(), round = 0, seen = {};
     while (out.length < n && round < 200) {
       for (var i = 0; i < names.length && out.length < n; i++) {
-        var pool = byCollection(names[i]);
+        var pool = oneVariantEach(byCollection(names[i]));
         var pick = pool[(round * 5 + i * 3) % pool.length];
-        if (pick && out.indexOf(pick) === -1) out.push(pick);
+        if (pick && !seen[pick.groupcode]) { seen[pick.groupcode] = true; out.push(pick); }
       }
       round++;
     }
@@ -84,11 +96,17 @@
   }
 
   function onSale() {
-    return catalog.filter(function (p) { return p.unit_sale_price < p.unit_price; });
+    return oneVariantEach(catalog.filter(function (p) {
+      return p.unit_sale_price < p.unit_price;
+    }));
   }
 
   /* --- urls / money ------------------------------------------------------- */
-  function localHref(p) { return 'product.html?id=' + encodeURIComponent(p.id); }
+  function localHref(p) {
+    // vertical.js appends ?v= on non-subdomain hosts; on a subdomain the
+    // hostname already identifies the store, so the link stays clean.
+    return 'product.html?id=' + encodeURIComponent(p.id);
+  }
 
   function money(n) {
     return new Intl.NumberFormat('en-US', {
@@ -179,7 +197,7 @@
 
   function signIn(profile) {
     var merged = Object.assign({}, currentUser() || {}, profile);
-    if (!merged.uuid) merged.uuid = 'PSH-' + hash(merged.email);
+    if (!merged.uuid) merged.uuid = 'LMN-' + hash(merged.email);
     if (!merged.signup_date) merged.signup_date = new Date().toISOString().replace(/\.\d+Z$/, 'Z');
     write(KEY.user, merged);
     paintChrome();
@@ -228,16 +246,16 @@
   }
 
   function preferredCategory() {
-    var views = read('psh.views', {});
+    var views = read('lmn.views', {});
     var best = null, top = 0;
     Object.keys(views).forEach(function (k) { if (views[k] > top) { top = views[k]; best = k; } });
-    return best || 'Shoes Collection';
+    return best || 'Makeup';
   }
   function noteCategoryView(c) {
     if (!c) return;
-    var views = read('psh.views', {});
+    var views = read('lmn.views', {});
     views[c] = (views[c] || 0) + 1;
-    write('psh.views', views);
+    write('lmn.views', views);
   }
 
   /* --- wishlist ----------------------------------------------------------- */
@@ -274,9 +292,7 @@
     });
   }
 
-  function shortName(c) {
-    return c.replace(' Collection', '').replace('Home Decor', 'Home');
-  }
+  function shortName(c) { return c; }
 
   function buildNav() {
     document.querySelectorAll('[data-collection-nav]').forEach(function (host) {
@@ -312,8 +328,14 @@
         '</div>' +
       '</a>';
 
-    el.querySelector('.card__vendor').textContent = p.vendor || '';
+    el.querySelector('.card__vendor').textContent = p.subcategory || p.collection || '';
     el.querySelector('.card__name').textContent = p.name;
+    if (p.variant_label) {
+      var v = document.createElement('p');
+      v.className = 'card__variant';
+      v.textContent = p.variant_label;
+      el.querySelector('.card__meta').insertBefore(v, el.querySelector('.card__price'));
+    }
 
     var priceEl = el.querySelector('.card__price');
     if (sale) {
@@ -336,7 +358,7 @@
   }
 
   window.Store = {
-    catalog: catalog, byId: byId, byCollection: byCollection,
+    catalog: catalog, oneVariantEach: oneVariantEach, byId: byId, byCollection: byCollection,
     collections: collections, subcategories: subcategories, shortName: shortName,
     localSearch: localSearch, featured: featured, onSale: onSale,
     visitorId: visitorId, resetVisitor: resetVisitor,

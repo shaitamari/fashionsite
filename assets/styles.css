@@ -4,20 +4,21 @@
    store so campaigns designed against one read correctly on the other.
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Jost:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 :root {
-  --bg:      #FFFFFF;
-  --alt:     #F7F7F7;
-  --ink:     #1A1A1A;
-  --muted:   #6B6B6B;
-  --rule:    #E3E3E3;
-  --accent:  #1A1A1A;
-  --sale:    #B12704;
-  --ok:      #1F7A4D;
+  --bg:      #FFFDFC;
+  --alt:     #F7F0EC;
+  --ink:     #2A2124;
+  --muted:   #7A6B70;
+  --rule:    #E9DFDA;
+  --accent:  #B4655F;
+  --sale:    #B4655F;
+  --ok:      #4A7C59;
 
-  --body: 'Jost', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --body:    'Jost', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --mono:    'IBM Plex Mono', ui-monospace, monospace;
 
   --max: 1360px;
   --gap: 1.75rem;
@@ -49,10 +50,10 @@ s { text-decoration: line-through; }
 .wrap { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
 
 /* --- type ----------------------------------------------------------------- */
-.h1 { font-size: clamp(1.9rem, 4vw, 3rem); font-weight: 300; letter-spacing: -.01em;
-      line-height: 1.1; margin: 0 0 .75rem; }
-.h2 { font-size: clamp(1.15rem, 2vw, 1.5rem); font-weight: 400; letter-spacing: .02em;
-      margin: 0; }
+.h1 { font-family: var(--display); font-size: clamp(2rem, 4.4vw, 3.4rem); font-weight: 300;
+      letter-spacing: -.02em; line-height: 1.05; margin: 0 0 .75rem; }
+.h2 { font-family: var(--display); font-size: clamp(1.25rem, 2.2vw, 1.7rem); font-weight: 400;
+      letter-spacing: -.01em; margin: 0; }
 .eyebrow { font-family: var(--mono); font-size: .6875rem; letter-spacing: .16em;
            text-transform: uppercase; color: var(--muted); margin: 0 0 .625rem; }
 .lede { color: var(--muted); max-width: 52ch; margin: 0; font-size: 1.0625rem; }
@@ -71,8 +72,8 @@ s { text-decoration: line-through; }
   display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 2rem;
 }
 .brand {
-  font-size: 1.375rem; font-weight: 500; letter-spacing: .1em;
-  text-decoration: none; white-space: nowrap; text-transform: uppercase;
+  font-family: var(--display); font-size: 1.5rem; font-weight: 400; letter-spacing: .04em;
+  text-decoration: none; white-space: nowrap;
 }
 
 .searchbox { position: relative; max-width: 520px; width: 100%; justify-self: center; }
@@ -141,7 +142,7 @@ main { padding-bottom: 5rem; }
 .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); }
 .tile { position: relative; display: block; text-decoration: none; overflow: hidden;
         background: var(--alt); }
-.tile__media { aspect-ratio: 4/5; }
+.tile__media { aspect-ratio: 4/5; border-radius: 4px; overflow: hidden; }
 .tile__media img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
 .tile:hover img { transform: scale(1.04); }
 .tile__label {
@@ -154,7 +155,8 @@ main { padding-bottom: 5rem; }
 .grid { display: grid; gap: var(--gap);
         grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
 .card__link { text-decoration: none; display: block; }
-.card__media { position: relative; background: var(--alt); aspect-ratio: 1/1; overflow: hidden; }
+.card__media { position: relative; background: var(--alt); aspect-ratio: 1/1;
+               overflow: hidden; border-radius: 4px; }
 .card__media img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
 .card__link:hover .card__media img { transform: scale(1.05); }
 .badge {
@@ -166,6 +168,7 @@ main { padding-bottom: 5rem; }
 .card__vendor { font-family: var(--mono); font-size: .625rem; letter-spacing: .12em;
                 text-transform: uppercase; color: var(--muted); margin: 0 0 .3rem; }
 .card__name { font-size: .9375rem; font-weight: 400; margin: 0 0 .35rem; line-height: 1.35; }
+.card__variant { font-size: .8125rem; color: var(--muted); margin: 0 0 .35rem; }
 .card__price { font-size: .9375rem; margin: 0; }
 .card__price .was { color: var(--muted); margin-right: .4rem; }
 .card__price .now { color: var(--sale); }
@@ -177,7 +180,7 @@ main { padding-bottom: 5rem; }
   cursor: pointer; text-decoration: none; display: inline-block; text-align: center;
   transition: background .2s, color .2s;
 }
-.btn:hover { background: #fff; color: var(--ink); }
+.btn:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
 .btn--ghost { background: #fff; color: var(--ink); }
 .btn--ghost:hover { background: var(--ink); color: #fff; }
 .btn--wide { width: 100%; }
@@ -201,7 +204,7 @@ main { padding-bottom: 5rem; }
 /* --- product detail ------------------------------------------------------- */
 .pdp { display: grid; grid-template-columns: 1.15fr .85fr; gap: 4rem; padding-top: 2.5rem; }
 .pdp__gallery { display: grid; gap: .75rem; }
-.pdp__main { background: var(--alt); aspect-ratio: 1/1; }
+.pdp__main { background: var(--alt); aspect-ratio: 1/1; border-radius: 6px; overflow: hidden; }
 .pdp__main img { width: 100%; height: 100%; object-fit: cover; }
 .pdp__thumbs { display: flex; gap: .75rem; }
 .pdp__thumbs button { width: 76px; aspect-ratio: 1/1; padding: 0; border: 1px solid var(--rule);
@@ -245,7 +248,7 @@ main { padding-bottom: 5rem; }
 .reco__strip { display: grid; gap: var(--gap);
                grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); }
 .reco__box a { text-decoration: none; }
-.reco__media { background: var(--alt); aspect-ratio: 1/1; overflow: hidden; }
+.reco__media { background: var(--alt); aspect-ratio: 1/1; overflow: hidden; border-radius: 4px; }
 .reco__media img { width: 100%; height: 100%; object-fit: cover; }
 .reco__name { font-size: .875rem; margin: .75rem 0 .25rem; line-height: 1.35; }
 .reco__price { font-size: .875rem; margin: 0; }

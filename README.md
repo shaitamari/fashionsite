@@ -1,134 +1,171 @@
-# Posh Street — Insider One demo storefront
+# Insider One demo storefront — multi-vertical
 
-A plain multi-page storefront wired to the **salesdemo** account (`10002548`), built on the **real Posh Street catalog**. No framework, no bundler, no service worker, no client-side router. Every navigation is a real page load, so the Insider Tag re-initialises from scratch each time.
+One deploy, one codebase, many subverticals — each on its own subdomain:
 
-## The important part: product identity
+    https://beauty.insiderdemo.com      Lumen        makeup, skincare, fragrance
+    https://lifestyle.insiderdemo.com   Posh Street  footwear, home, pets
 
-The catalog is keyed on **Shopify variant id**, because that is what salesdemo is keyed on:
+The subdomain is what picks the vertical. That matters for campaign targeting:
+a rule scoped to `beauty.insiderdemo.com` cannot collide with another vertical,
+whereas a shared domain would need every rule to also match a query parameter —
+across eight verticals and several campaign types, that goes wrong eventually.
+
+`?v=beauty` still works on localhost and Netlify deploy previews, where there is
+no subdomain to read.
+
+Each vertical brings its own catalog, XML feed, brand, copy and palette. The
+runtime — `store.js`, `eureka.js`, `reco.js`, `insider-debug.js` — is shared and
+should stay that way.
+
+Account: **onesandbox (10014057)** · Domain: **insiderdemo.com**
+
+---
+
+## Adding a vertical
+
+Three steps, about ten minutes.
+
+**1. Get the catalog.** Most retailers run Shopify, which exposes its catalog
+publicly. Shopify caps the endpoint at **250 products per page**, so a real
+catalog comes in several files:
 
 ```
-id        = "46156615385362"   Shopify VARIANT id  ← the catalog key
-groupcode = "8526117110034"    Shopify PRODUCT id
+https://<store>/products.json?limit=250&page=1   ->  sources/<key>-1.json
+https://<store>/products.json?limit=250&page=2   ->  sources/<key>-2.json
+https://<store>/products.json?limit=250&page=3   ->  sources/<key>-3.json
 ```
 
-This is why the previous build's recommendations never rendered: it used invented ids that did not exist in salesdemo, so every returned id resolved to nothing. Now Smart Recommender and Eureka return ids that match local products, and clicks stay on this site.
+Keep going until a page returns `{"products":[]}`. `build.py` merges every file
+matching the `source` glob and deduplicates on product id, so overlapping dumps
+are harmless and you can add pages later without redoing anything.
 
-250 variants across three collections — Shoes Collection (128), Home Decor (74), Pets Collection (48) — generated from the live Shopify export by `build_catalog.py`. Images are served from Shopify's CDN, so the store looks like Posh without hosting any assets.
+Aim for **500+ products per vertical**. Search relevance, faceting and
+recommendation quality all look thin below that. Prefer multi-brand retailers
+over single labels — a boutique brand's entire catalogue is often under 150
+products, and retailers also give you real brand variety for merchandising
+rules. Some stores disable the endpoint; try another.
 
-### Refreshing the catalog
+**2. Add a config block.** Copy `_template` in `verticals.json`, rename the key,
+and fill in brand, copy, theme and collections. The one part that needs thought
+is `collections`, which maps Shopify `product_type` values to the collections
+shown on site. Anything unmapped is dropped, which is how merch, gift cards and
+samples get filtered out.
+
+To see what you're mapping:
 
 ```bash
-# save https://poshstreet.shop/products.json?limit=250 over the old export
-python3 build_catalog.py
+python3 -c "import json,collections; \
+print(collections.Counter(p['product_type'] for p in json.load(open('sources/<key>.json'))['products']).most_common())"
 ```
 
-Shopify pages at 250. This export covers footwear, home and pets; **apparel lives on later pages** (`&page=2`, `&page=3`). Add those exports and re-run to bring in Women's and Men's Collection, which is also where multi-variant sizing appears — the code already handles it, there just aren't any size variants in this slice.
-
-### One caution about the shared catalog
-
-With Clickstream enabled, a `type: 'product'` push updates the catalog record. Since this site and the live Posh store write to the same salesdemo catalog, the `url` field here is deliberately set to the **canonical poshstreet.shop URL**, not this site's, so browsing the demo cannot overwrite Posh's own product URLs in emails and campaigns. Navigation inside this site is handled client-side and is unaffected.
-
----
-
-## Run it
+**3. Build.**
 
 ```bash
-python3 serve.py          # http://localhost:8000
+python3 build.py <key>     # one vertical
+python3 build.py --all     # everything
+python3 build.py --list    # what's configured, what has a source, what's built
 ```
 
-Use this rather than `python3 -m http.server` — it sends the same `no-store` headers as production.
+**4. Point the subdomain at the site.** In Netlify: Domain management > Add
+domain alias > `<key>.insiderdemo.com`. DNS is already managed by Netlify, so it
+resolves in a minute or two and the certificate follows.
 
-## Deploy it
+**5. Register it on the account.** Add `https://<key>.insiderdemo.com/` to the
+multiDomains list in InOne. The tag loads on any domain but ingests on none
+unless the origin is registered — that failure mode is silent, so this step is
+easy to skip and expensive to debug.
 
-Static host, no build step. Cache headers are pre-written: `_headers` (Netlify / Cloudflare Pages), `netlify.toml`, `vercel.json`. All send `Cache-Control: no-store, no-cache, must-revalidate, max-age=0`.
-
-The `<meta http-equiv>` cache tags in each page are a second line only — browsers largely ignore them. The response headers do the work.
-
----
-
-## Panel prerequisites
-
-### Custom attributes and events
-
-Create in **InOne → Attributes and Events**. Values for undefined names are dropped silently.
-
-| Attribute | Type |  | Event | Parameters |
-|---|---|---|---|---|
-| `membership_tier` | string |  | `site_search` | `search_term`, `results_count` |
-| `loyalty_points` | number |  | `product_wishlisted` | `product_id`, `product_name` |
-| `preferred_category` | string |  | `size_guide_opened` | `product_id` |
-| `signup_date` | datetime |  | `newsletter_signup` | `source` |
-| `is_vip` | boolean |  | `filter_applied` | `filter_name`, `filter_value` |
-
-### Eureka
-
-- **Search pop-up** — a Pop-up campaign attached to `<input id="search-input">` (same markup on all eight pages). No code here touches it; the panel owns its rendering and logging. Point its "view all results" redirect at `/search.html?q={query}`.
-- **Full-page search** — a **JavaScript SDK** campaign matching `/search`.
-- **Category pages** — a **JavaScript SDK** campaign matching `/category`.
-
-Campaign ids come from `eureka:sdk:campaign:ready`, so nothing is hard-coded. Control-group visitors get local data and **still** fire the same track call, which is what keeps the A/B read valid.
-
-### Smart Recommender
-
-**Integrate via JavaScript SDK** campaigns; put ids in `config.js` under `reco.campaigns`. Slots: `#reco-home`, `#reco-product`, `#reco-cart`, `#reco-confirmation`. Leave an id `null` and the slot takes the first campaign that fires on that page.
-
-Markup follows **Track 2** (`ins-preview-wrapper-{variationId}`, `ins-web-smart-recommender-body`, `data-recommended-items`, `ins-product-id`, `event-collection="true"`), so impressions and clicks reach the analytics dashboard.
-
-### Targeting, given Posh runs on the same account
-
-Scope every rule to this hostname, not just a path, or Posh's live campaigns and this site's will collide. Note Netlify serves both `/search` and `/search.html`, so match on `/search` rather than the extension.
+Then commit. Feeds are served from the apex —
+`https://insiderdemo.com/feeds/<key>.xml` — and stay there regardless of which
+subdomain the store runs on.
 
 ---
 
-## What each page sends
+## Panel setup, per vertical
 
-Order on every page: `InsiderQueue` → tag → `user` → `currency` → page type → `init`.
+The site side is one command. The panel side is the part that takes time.
 
-| Page | Page type | Also sends |
-|---|---|---|
-| `index.html` | `home` | `newsletter_signup` |
-| `category.html` | `category` (breadcrumb) | `filter_applied` on sort |
-| `product.html` | `product` (full variant record) | `add_to_cart`, `product_wishlisted`, `size_guide_opened` |
-| `search.html` | `other` — "search results" | `site_search`, restated with real `results_count` |
-| `cart.html` | `cart` (total + items) | `add_to_cart`, `remove_from_cart`, re-`init` on change |
-| `checkout.html` | `other` — "checkout" | `user` with the collected fields |
-| `confirmation.html` | `purchase` (order + items) | — |
-| `account.html` | `other` — "account" | `user` + `init` on save |
+**XML integration** — Components > Product Catalog Management > XML Integration.
 
-Two deliberate choices: `type: 'cart'` is pushed only on the cart page, because it sets the page type *and* refreshes contents — pushing it everywhere means two page types per load. And every mid-page `type: 'user'` is followed by `init`, because a user push alone is never transmitted.
+| Field | Value |
+|---|---|
+| Format | Google Merchant |
+| Source URL | `https://insiderdemo.com/feeds/<key>.xml` |
+| Product tag | `item` |
+| Currency | USD |
+| Locale | see the note below |
+
+**Attribute mapping** — Google Merchant auto-maps most of it, but check these
+four, which the wizard gets wrong or leaves blank:
+
+| Insider attribute | XML field |
+|---|---|
+| url | `link` — *not* `image_link`, which is what it defaults to |
+| original_price.USD | `g:price` |
+| price.USD | `g:sale_price` |
+| in_stock | Custom Match on `g:availability` → `in stock` |
+
+**Locale.** An XML integration binds one catalog to one locale. If a locale can
+only hold one catalog, eight verticals need eight locales, and each vertical's
+`user.language` push has to match its catalog locale or Eureka returns nothing.
+Confirm this before loading the third catalog — it is expensive to redo.
+
+**Then** Eureka campaigns (JavaScript SDK type, targeting `/search` and
+`/category`) and Smart Recommender campaigns (Integrate via JavaScript SDK,
+IDs into `assets/config.js`).
+
+Scope every rule to that vertical's hostname — `beauty.insiderdemo.com`, not
+`insiderdemo.com`, or it will fire on all eight. Match on `/search` rather than
+`/search.html`, since Netlify serves both forms. Set campaigns Live rather than
+Test, and regenerate the panel after editing.
 
 ---
 
-## The telemetry console
+## Feed format
 
-Bottom-right pill on every page. Wraps `InsiderQueue.push` and mirrors each payload with timestamps.
+Three things that fail validation, all encoded in `build.py`:
 
-- Status: tag loaded, Eureka availability, page type, visitor uuid, signed-in state
-- **Copy log** — whole session as JSON
-- **New visitor** — clears identity and cart, reloads
-- `?debug=0` hides it for clean screen shares
-
-Green-bordered rows are `init` pushes. Raw log at `window.insDebugLog`.
-
-The `source` line under each grid says where the products on screen came from: green for Eureka, rust for the local fallback.
+- prices must be **bare numbers** — `105.00`, not `105.00 USD`
+- the title tag must be **`g:title`**, not `title`
+- **`g:sale_price` on every item**, not just discounted ones, because Insider
+  marks `price.USD` required
 
 ---
 
-## Files
+## Product identity
+
+Every catalog record is a Shopify **variant**, because that is what the Insider
+catalog is keyed on:
+
+    id        = "48440263049461"   variant id  ← the catalog key
+    groupcode = "9763083223285"    product id
+
+Getting this wrong means recommendations return IDs that resolve to nothing.
+Product pages show a picker for sibling variants; switching shade is a real
+navigation, because each variant is its own catalog record needing its own
+product view. Grids show one card per product, not one per shade.
+
+---
+
+## Layout
 
 ```
-index category product search cart checkout confirmation account  (.html)
+verticals.json        every vertical's config
+build.py              sources -> catalogs + feeds
+sources/<key>.json    Shopify exports (input)
+catalogs/<key>.js     generated: CATALOG, COLLECTIONS, VERTICAL
+feeds/<key>.xml       generated: Google Merchant feed
+
+index category product search cart checkout confirmation account   (.html)
 
 assets/
-  config.js         account + campaign settings
-  catalog.js        250 variants, generated
-  store.js          cart, identity, sign-in, rendering
-  insider-debug.js  telemetry console
-  eureka.js         search + category listing
-  reco.js           Smart Recommender
-  styles.css
-
-build_catalog.py    regenerate catalog.js from products.json
-serve.py            local server with production headers
-_headers  netlify.toml  vercel.json
+  vertical.js         picks the catalog from ?v=, applies theme and copy
+  config.js           account and campaign settings
+  store.js            cart, identity, sign-in, rendering
+  insider-debug.js    on-page SDK telemetry console
+  eureka.js           search + category listing
+  reco.js             Smart Recommender
+  styles.css          themed by CSS variables that vertical.js overrides
 ```
+
+`serve.py` runs it locally with the same no-store headers as production.

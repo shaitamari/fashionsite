@@ -1,0 +1,444 @@
+{
+  "_README": [
+    "One entry per subvertical. To add one:",
+    "  1. drop its Shopify export at sources/<key>.json",
+    "  2. copy a block below, edit brand/theme/collections",
+    "  3. python3 build.py <key>",
+    "Then commit. The site serves it at ?v=<key> and Insider fetches",
+    "its feed at /feeds/<key>.xml.",
+    "",
+    "collections maps Shopify product_type -> the collection shown on site.",
+    "Anything not listed is dropped (merch, gift cards, samples).",
+    "subcats are keyword rules scoped per collection, first match wins."
+  ],
+  "beauty": {
+    "brand": "Lumen",
+    "tagline": "Makeup, Skincare and Fragrance",
+    "hero_title": "Skin first.<br>Makeup second.",
+    "hero_lede": "Makeup, skincare and fragrance made to be worn every day.",
+    "hero_cta": "Shop makeup",
+    "announce": "Free shipping over $50 \u00b7 Free samples with every order",
+    "search_placeholder": "Search makeup, skincare, fragrance",
+    "newsletter_title": "Join the list",
+    "newsletter_lede": "Early access to launches, restocks and offers.",
+    "source": "sources/beauty*.json",
+    "theme": {
+      "bg": "#FFFDFC",
+      "alt": "#F7F0EC",
+      "ink": "#2A2124",
+      "muted": "#7A6B70",
+      "rule": "#E9DFDA",
+      "accent": "#B4655F",
+      "display": "'Fraunces', Georgia, serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Jost:wght@300;400;500"
+    },
+    "order": [
+      "Makeup",
+      "Skincare",
+      "Body",
+      "Fragrance"
+    ],
+    "collections": {
+      "Makeup": "Makeup",
+      "Skincare": "Skincare",
+      "Balms": "Skincare",
+      "Fragrance": "Fragrance",
+      "Body": "Body"
+    },
+    "subcats": {
+      "Makeup": [
+        [
+          "Sets",
+          [
+            "set",
+            "duo",
+            "trio",
+            "quintet",
+            "icons",
+            "kit",
+            "bundle"
+          ]
+        ],
+        [
+          "Lip",
+          [
+            "balm dotcom",
+            "lip",
+            "gloss",
+            "ultralip",
+            "generation g"
+          ]
+        ],
+        [
+          "Cheek",
+          [
+            "cloud paint",
+            "blush",
+            "bronzer",
+            "solar paint",
+            "haloscope"
+          ]
+        ],
+        [
+          "Eyes",
+          [
+            "boy brow",
+            "brow",
+            "lash",
+            "lidstar",
+            "pencil",
+            "eye"
+          ]
+        ],
+        [
+          "Complexion",
+          [
+            "skin tint",
+            "concealer",
+            "perfecting",
+            "foundation",
+            "futuredew",
+            "stretch"
+          ]
+        ]
+      ],
+      "Skincare": [
+        [
+          "Sets",
+          [
+            "set",
+            "duo",
+            "trio",
+            "quintet",
+            "icons",
+            "kit"
+          ]
+        ],
+        [
+          "Cleanser",
+          [
+            "milky jelly",
+            "cleanser",
+            "wash"
+          ]
+        ],
+        [
+          "Serum",
+          [
+            "serum",
+            "super",
+            "bha",
+            "retinol"
+          ]
+        ],
+        [
+          "Sunscreen",
+          [
+            "invisible shield",
+            "spf",
+            "sunscreen"
+          ]
+        ],
+        [
+          "Mask",
+          [
+            "mask",
+            "mega greens"
+          ]
+        ],
+        [
+          "Moisturiser",
+          [
+            "priming",
+            "moisturizer",
+            "cream",
+            "balm"
+          ]
+        ]
+      ],
+      "Body": [
+        [
+          "Sets",
+          [
+            "set",
+            "duo",
+            "trio",
+            "kit"
+          ]
+        ],
+        [
+          "Cleanser",
+          [
+            "wash",
+            "cleanser",
+            "exfoliat"
+          ]
+        ],
+        [
+          "Deodorant",
+          [
+            "deodorant"
+          ]
+        ],
+        [
+          "Hand",
+          [
+            "hand"
+          ]
+        ]
+      ],
+      "Fragrance": [
+        [
+          "Sets",
+          [
+            "set",
+            "duo",
+            "discovery"
+          ]
+        ],
+        [
+          "Body Mist",
+          [
+            "mist",
+            "hair",
+            "body"
+          ]
+        ],
+        [
+          "Candles",
+          [
+            "candle"
+          ]
+        ]
+      ]
+    },
+    "defaults": {
+      "Makeup": "Makeup",
+      "Skincare": "Treatments",
+      "Body": "Body Care",
+      "Fragrance": "Perfume"
+    }
+  },
+  "_template": {
+    "_comment": "Copy this, rename the key, fill it in. Delete nothing else.",
+    "brand": "Brand Name",
+    "tagline": "What the store sells",
+    "hero_title": "Headline here.",
+    "hero_lede": "One supporting sentence.",
+    "hero_cta": "Shop now",
+    "announce": "Free shipping over $50 \u00b7 30-day returns",
+    "search_placeholder": "Search products",
+    "newsletter_title": "Join the list",
+    "newsletter_lede": "Offers and new arrivals, straight to your inbox.",
+    "source": [
+      "sources/<key>-1.json",
+      "sources/<key>-2.json"
+    ],
+    "theme": {
+      "bg": "#FFFFFF",
+      "alt": "#F5F5F3",
+      "ink": "#1A1A1A",
+      "muted": "#6B6B6B",
+      "rule": "#E3E3E3",
+      "accent": "#1A1A1A",
+      "display": "'Jost', Helvetica, sans-serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Jost:wght@300;400;500"
+    },
+    "order": [
+      "Collection A",
+      "Collection B"
+    ],
+    "collections": {
+      "Shopify Product Type": "Collection A"
+    },
+    "subcats": {
+      "Collection A": [
+        [
+          "Subcat",
+          [
+            "keyword"
+          ]
+        ]
+      ]
+    },
+    "defaults": {
+      "Collection A": "All",
+      "Collection B": "All"
+    }
+  },
+  "lifestyle": {
+    "brand": "Posh Street",
+    "tagline": "Footwear, Home and Pets",
+    "hero_title": "Everything for<br>the way you live.",
+    "hero_lede": "Footwear, home and pets \u2014 over 250 pieces, restocked weekly.",
+    "hero_cta": "Shop footwear",
+    "announce": "Free shipping on orders over $150 \u00b7 30-day returns",
+    "search_placeholder": "Search footwear, home, pets",
+    "newsletter_title": "Be in the know",
+    "newsletter_lede": "Promotions, new products and sales, straight to your inbox.",
+    "source": "sources/lifestyle*.json",
+    "theme": {
+      "bg": "#FFFFFF",
+      "alt": "#F7F7F7",
+      "ink": "#1A1A1A",
+      "muted": "#6B6B6B",
+      "rule": "#E3E3E3",
+      "accent": "#B12704",
+      "display": "'Jost', Helvetica, sans-serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Jost:wght@300;400;500;600"
+    },
+    "order": [
+      "Footwear",
+      "Home",
+      "Pets"
+    ],
+    "collections": {
+      "chair": "Home",
+      "Pet_Toy": "Pets",
+      "Pet_Walk": "Pets",
+      "Pet_Sleep": "Pets",
+      "Pet_Bowl": "Pets",
+      "Pet_Bed": "Pets",
+      "Pet_Cat Litter Box": "Pets",
+      "Canned wet dog food": "Pets",
+      "Chews, treats & rewards": "Pets",
+      "Air-dried dog food": "Pets",
+      "Air-dried cat food": "Pets",
+      "Canned wet cat food": "Pets",
+      "Adidas Shoes": "Footwear",
+      "Nike Womens Shoes": "Footwear",
+      "New Balance Shoes": "Footwear",
+      "Air Jordan Womens Shoes": "Footwear",
+      "Air Jordan Shoes": "Footwear",
+      "Nike Shoes": "Footwear",
+      "Air Jordan Children Shoes": "Footwear",
+      "Air Jordan Grade School Shoes": "Footwear",
+      "Salomon Shoes": "Footwear",
+      "Puma Shoes": "Footwear",
+      "Nike Children Shoes": "Footwear",
+      "UGG Shoes": "Footwear",
+      "Converse Shoes": "Footwear",
+      "Adidas Womens Shoes": "Footwear",
+      "Air Jordan Infant Shoes": "Footwear",
+      "Chairs": "Home",
+      "Bars": "Home",
+      "Desks": "Home",
+      "Family Room": "Home",
+      "Bedroom": "Home",
+      "Brickell": "Home",
+      "Benches": "Home",
+      "Buffets": "Home",
+      "Cabinets": "Home",
+      "Coffee Tables": "Home",
+      "Bedrooms": "Home",
+      "Chair": "Home",
+      "Dining Room": "Home"
+    },
+    "subcats": {
+      "Footwear": [
+        [
+          "Sneakers",
+          [
+            "nike",
+            "adidas",
+            "jordan",
+            "new balance",
+            "dunk",
+            "samba"
+          ]
+        ],
+        [
+          "Boots",
+          [
+            "boot"
+          ]
+        ],
+        [
+          "Sandals",
+          [
+            "sandal",
+            "slide"
+          ]
+        ]
+      ],
+      "Home": [
+        [
+          "Seating",
+          [
+            "chair",
+            "sofa",
+            "bench",
+            "stool"
+          ]
+        ],
+        [
+          "Tables",
+          [
+            "table",
+            "desk",
+            "buffet"
+          ]
+        ],
+        [
+          "Bedroom",
+          [
+            "bed",
+            "dresser",
+            "nightstand",
+            "wardrobe"
+          ]
+        ],
+        [
+          "Storage",
+          [
+            "cabinet",
+            "shelf",
+            "storage"
+          ]
+        ]
+      ],
+      "Pets": [
+        [
+          "Food",
+          [
+            "food",
+            "treat",
+            "chew"
+          ]
+        ],
+        [
+          "Beds",
+          [
+            "bed",
+            "crate",
+            "mat"
+          ]
+        ],
+        [
+          "Walk",
+          [
+            "leash",
+            "collar",
+            "harness",
+            "link"
+          ]
+        ],
+        [
+          "Bowls & Toys",
+          [
+            "bowl",
+            "toy"
+          ]
+        ]
+      ]
+    },
+    "defaults": {
+      "Footwear": "All Footwear",
+      "Home": "All Home",
+      "Pets": "All Pets"
+    }
+  }
+}
