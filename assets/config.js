@@ -7,9 +7,9 @@
 window.SITE_CONFIG = {
 
   /* --- Insider Tag (InOne > Account Settings > Account Details) ------------ */
-  partnerName: 'onesandbox',
-  partnerId:   '10014057',
-  // Resulting tag: //onesandbox.api.useinsider.com/ins.js?id=10014057
+  partnerName: 'salesdemo',
+  partnerId:   '10002548',
+  // Resulting tag: //salesdemo.api.useinsider.com/ins.js?id=10002548
 
   /* --- Locale / currency -------------------------------------------------- */
   language: 'en_US',
