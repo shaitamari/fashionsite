@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Account — Lumen</title>
+
+<!-- Browsers largely ignore these; the real protection is the Cache-Control
+     headers in _headers / netlify.toml / vercel.json. Kept as a second line. -->
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<link rel="preconnect" href="https://cdn.shopify.com">
+<link rel="stylesheet" href="assets/styles.css">
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     INSIDER WEB SDK
+     Order is load-bearing:
+       1. InsiderQueue array
+       2. site scripts (telemetry wrapper must precede the first push)
+       3. Insider Tag (ins.js)
+       4. user data -> page data -> init
+     ═══════════════════════════════════════════════════════════════════════ -->
+
+<!-- 1. The queue. Must exist before the tag loads. -->
+<script>window.InsiderQueue = window.InsiderQueue || [];</script>
+
+<!-- 2. Site scripts. insider-debug.js wraps InsiderQueue.push to mirror every
+        payload into the on-page console, so it loads before anything is sent. -->
+<script src="assets/config.js"></script>
+<script src="assets/insider-debug.js"></script>
+<script src="assets/vertical.js"></script>
+<script src="assets/store.js"></script>
+
+<!-- 3. Insider Tag — account: onesandbox (10014057) -->
+<script async src="//onesandbox.api.useinsider.com/ins.js?id=10014057"></script>
+
+<!-- 4. Data pushes for this page. -->
+<script>
+  window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });
+  window.InsiderQueue.push({ type: 'currency', value: 'USD' });
+
+  window.InsiderQueue.push({
+    type: 'other',
+    value: { name: 'account', custom: { signed_in: !!Store.currentUser() } }
+  });
+
+  window.InsiderQueue.push({ type: 'init' });
+</script>
+</head>
+
+<body>
+
+<p class="announce" data-announce>Free shipping over $50</p>
+
+<header class="masthead">
+  <div class="masthead__in">
+    <a class="brand" href="index.html" data-brand>Lumen</a>
+    <form class="searchbox" data-search role="search" autocomplete="off">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" id="search-input" name="q" placeholder="Search products" data-search-placeholder aria-label="Search products">
+    </form>
+    <nav class="utils">
+      <a href="account.html" data-account-label>Log in</a>
+      <a class="cartlink" href="cart.html"><span data-label="cart">Cart</span><span data-cart-count hidden>0</span></a>
+    </nav>
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="mainnav__in" data-collection-nav></div>
+</nav>
+
+<main>
+
+  <div class="wrap">
+    <section class="section" style="padding-top:2.5rem;padding-bottom:0">
+      <p class="eyebrow">Account <span class="pagetype">page type: other · "account"</span></p>
+      <h1 class="h1" style="font-size:clamp(1.5rem,3vw,2.25rem)" id="acct-title">Log in</h1>
+      <p class="lede" id="acct-lede">Logging in swaps the anonymous visitor id for the account id and writes every field below to the profile.</p>
+    </section>
+
+    <div class="cartgrid" style="padding-top:2rem">
+      <div class="panel">
+        <form id="profile-form">
+          <p class="eyebrow">Identity</p>
+          <div class="grid2">
+            <div class="field"><label for="f-name">First name</label><input id="f-name" required></div>
+            <div class="field"><label for="f-surname">Last name</label><input id="f-surname"></div>
+          </div>
+          <div class="field"><label for="f-email">Email</label><input type="email" id="f-email" required></div>
+          <div class="grid2">
+            <div class="field"><label for="f-phone">Phone (E.164)</label><input id="f-phone" placeholder="+14155550132"></div>
+            <div class="field"><label for="f-birthday">Birthday</label><input type="date" id="f-birthday"></div>
+          </div>
+          <div class="grid2">
+            <div class="field">
+              <label for="f-gender">Gender</label>
+              <select id="f-gender"><option value="">Not specified</option><option value="F">F</option><option value="M">M</option><option value="X">X</option></select>
+            </div>
+            <div class="field"><label for="f-city">City</label><input id="f-city"></div>
+          </div>
+          <div class="field"><label for="f-country">Country (ISO alpha-2)</label><input id="f-country" value="US" maxlength="2"></div>
+
+          <p class="eyebrow" style="margin:1.75rem 0 .75rem">Consent</p>
+          <label class="check"><input type="checkbox" id="f-email-optin" checked> email_optin</label>
+          <label class="check"><input type="checkbox" id="f-sms-optin"> sms_optin</label>
+          <label class="check"><input type="checkbox" id="f-wa-optin"> whatsapp_optin</label>
+          <label class="check"><input type="checkbox" id="f-gdpr" checked> gdpr_optin</label>
+
+          <p class="eyebrow" style="margin:1.75rem 0 .75rem">Custom attributes</p>
+          <div class="grid2">
+            <div class="field">
+              <label for="f-tier">membership_tier</label>
+              <select id="f-tier"><option>Bronze</option><option>Silver</option><option>Gold</option></select>
+            </div>
+            <div class="field"><label for="f-points">loyalty_points</label><input type="number" id="f-points" value="0" min="0"></div>
+          </div>
+          <div class="field"><label for="f-pref">preferred_category</label><select id="f-pref"></select></div>
+          <p class="source" style="margin:0 0 1.25rem">is_vip is derived — it sends true when the tier is Gold. signup_date is stamped on first sign-in.</p>
+
+          <button class="btn btn--wide" type="submit" id="save-btn">Log in</button>
+          <p class="source" id="acct-msg" style="margin-top:1.25rem" hidden></p>
+        </form>
+      </div>
+
+      <aside>
+        <div class="panel">
+          <p class="eyebrow">Current profile</p>
+          <pre id="profile-preview" style="font-family:var(--mono);font-size:.6875rem;white-space:pre-wrap;word-break:break-word;margin:0;color:var(--muted);max-height:440px;overflow:auto"></pre>
+          <button class="btn btn--ghost btn--wide" id="signout-btn" style="margin-top:1.5rem" hidden>Log out</button>
+          <button class="btn btn--ghost btn--wide" id="reset-btn" style="margin-top:.75rem">Start a fresh visitor</button>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <span><span data-brand>Lumen</span> — Insider One demo storefront</span>
+    <span>onesandbox · 10014057</span>
+  </div>
+</footer>
+
+<script>
+
+  var prefSelect = document.getElementById('f-pref');
+  Store.collections().forEach(function (c) {
+    var o = document.createElement('option');
+    o.value = c; o.textContent = c;
+    prefSelect.appendChild(o);
+  });
+
+  var msg = document.getElementById('acct-msg');
+  function say(t, cls) {
+    msg.hidden = false; msg.className = 'source ' + (cls || 'is-live'); msg.textContent = t;
+  }
+  function preview() {
+    document.getElementById('profile-preview').textContent =
+      JSON.stringify(Store.userPayload(), null, 2);
+  }
+
+  function hydrate() {
+    var u = Store.currentUser();
+    document.getElementById('signout-btn').hidden = !u;
+    document.getElementById('save-btn').textContent = u ? 'Save profile' : 'Log in';
+    document.getElementById('acct-title').textContent = u ? 'Your account' : 'Log in';
+    if (u) {
+      document.getElementById('acct-lede').textContent =
+        'Signed in as ' + u.email + '. Saving re-sends the full attribute set.';
+    }
+    if (!u) { preview(); return; }
+
+    var set = function (id, v) { if (v != null) document.getElementById(id).value = v; };
+    set('f-name', u.name); set('f-surname', u.surname); set('f-email', u.email);
+    set('f-phone', u.phone_number); set('f-city', u.city); set('f-country', u.country);
+    set('f-gender', u.gender);
+    if (u.birthday) set('f-birthday', String(u.birthday).slice(0, 10));
+    document.getElementById('f-email-optin').checked = !!u.email_optin;
+    document.getElementById('f-sms-optin').checked = !!u.sms_optin;
+    document.getElementById('f-wa-optin').checked = !!u.whatsapp_optin;
+    document.getElementById('f-gdpr').checked = u.gdpr_optin !== false;
+    set('f-tier', u.membership_tier || 'Bronze');
+    set('f-points', typeof u.loyalty_points === 'number' ? u.loyalty_points : 0);
+    set('f-pref', u.preferred_category || Store.preferredCategory());
+    preview();
+  }
+  hydrate();
+
+  document.getElementById('profile-form').addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var birthday = document.getElementById('f-birthday').value;
+
+    Store.signIn({
+      name: document.getElementById('f-name').value.trim(),
+      surname: document.getElementById('f-surname').value.trim() || undefined,
+      email: document.getElementById('f-email').value.trim(),
+      phone_number: document.getElementById('f-phone').value.trim() || undefined,
+      // Insider expects datetime attributes in ISO 8601 with a Z suffix.
+      birthday: birthday ? birthday + 'T00:00:00Z' : undefined,
+      gender: document.getElementById('f-gender').value || undefined,
+      city: document.getElementById('f-city').value.trim() || undefined,
+      country: document.getElementById('f-country').value.trim().toUpperCase() || 'US',
+      email_optin: document.getElementById('f-email-optin').checked,
+      sms_optin: document.getElementById('f-sms-optin').checked,
+      whatsapp_optin: document.getElementById('f-wa-optin').checked,
+      gdpr_optin: document.getElementById('f-gdpr').checked,
+      membership_tier: document.getElementById('f-tier').value,
+      loyalty_points: Number(document.getElementById('f-points').value) || 0,
+      preferred_category: document.getElementById('f-pref').value
+    });
+
+    // A type: 'user' push only reaches Insider when an init follows it.
+    window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });
+    window.InsiderQueue.push({ type: 'init' });
+
+    hydrate();
+    say('user + init sent · uuid is now ' + Store.visitorId());
+  });
+
+  document.getElementById('signout-btn').addEventListener('click', function () {
+    Store.signOut();
+    window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });
+    window.InsiderQueue.push({ type: 'init' });
+    location.reload();
+  });
+
+  document.getElementById('reset-btn').addEventListener('click', function () { Store.resetVisitor(); });
+</script>
+</body>
+</html>

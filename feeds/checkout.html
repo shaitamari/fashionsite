@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout — Lumen</title>
+
+<!-- Browsers largely ignore these; the real protection is the Cache-Control
+     headers in _headers / netlify.toml / vercel.json. Kept as a second line. -->
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<link rel="preconnect" href="https://cdn.shopify.com">
+<link rel="stylesheet" href="assets/styles.css">
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     INSIDER WEB SDK
+     Order is load-bearing:
+       1. InsiderQueue array
+       2. site scripts (telemetry wrapper must precede the first push)
+       3. Insider Tag (ins.js)
+       4. user data -> page data -> init
+     ═══════════════════════════════════════════════════════════════════════ -->
+
+<!-- 1. The queue. Must exist before the tag loads. -->
+<script>window.InsiderQueue = window.InsiderQueue || [];</script>
+
+<!-- 2. Site scripts. insider-debug.js wraps InsiderQueue.push to mirror every
+        payload into the on-page console, so it loads before anything is sent. -->
+<script src="assets/config.js"></script>
+<script src="assets/insider-debug.js"></script>
+<script src="assets/vertical.js"></script>
+<script src="assets/store.js"></script>
+
+<!-- 3. Insider Tag — account: onesandbox (10014057) -->
+<script async src="//onesandbox.api.useinsider.com/ins.js?id=10014057"></script>
+
+<!-- 4. Data pushes for this page. -->
+<script>
+  window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });
+  window.InsiderQueue.push({ type: 'currency', value: 'USD' });
+
+  // --- page type: other -------------------------------------------------
+  // Checkout is a labelled "other" page. The name shows on the profile as an
+  // Other Page View, which is what abandonment journeys key off.
+  window.InsiderQueue.push({
+    type: 'other',
+    value: { name: 'checkout',
+             custom: { basket_value: Store.cartTotal(), basket_lines: Store.cartCount() } }
+  });
+
+  window.InsiderQueue.push({ type: 'init' });
+</script>
+</head>
+
+<body>
+
+<p class="announce" data-announce>Free shipping over $50</p>
+
+<header class="masthead">
+  <div class="masthead__in">
+    <a class="brand" href="index.html" data-brand>Lumen</a>
+    <form class="searchbox" data-search role="search" autocomplete="off">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" id="search-input" name="q" placeholder="Search products" data-search-placeholder aria-label="Search products">
+    </form>
+    <nav class="utils">
+      <a href="account.html" data-account-label>Log in</a>
+      <a class="cartlink" href="cart.html"><span data-label="cart">Cart</span><span data-cart-count hidden>0</span></a>
+    </nav>
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="mainnav__in" data-collection-nav></div>
+</nav>
+
+<main>
+
+  <div class="wrap">
+    <section class="section" style="padding-top:2.5rem;padding-bottom:0">
+      <p class="eyebrow">Checkout <span class="pagetype">page type: other · "checkout"</span></p>
+      <h1 class="h1" style="font-size:clamp(1.5rem,3vw,2.25rem)" data-label="checkout">Checkout</h1>
+    </section>
+
+    <div class="cartgrid">
+      <div class="panel">
+        <form id="checkout-form">
+          <div class="grid2">
+            <div class="field"><label for="c-name">First name</label><input id="c-name" required></div>
+            <div class="field"><label for="c-surname">Last name</label><input id="c-surname" required></div>
+          </div>
+          <div class="field"><label for="c-email">Email</label><input type="email" id="c-email" required></div>
+          <div class="grid2">
+            <div class="field"><label for="c-phone">Phone (E.164)</label><input id="c-phone" placeholder="+14155550132"></div>
+            <div class="field"><label for="c-city">City</label><input id="c-city"></div>
+          </div>
+          <div class="field"><label for="c-country">Country (ISO alpha-2)</label><input id="c-country" value="US" maxlength="2"></div>
+
+          <p class="eyebrow" style="margin:1.75rem 0 .75rem">Contact preferences</p>
+          <label class="check"><input type="checkbox" id="c-email-optin" checked> Email me about orders and restocks</label>
+          <label class="check"><input type="checkbox" id="c-sms-optin"> Text me delivery updates</label>
+          <label class="check"><input type="checkbox" id="c-wa-optin"> WhatsApp is fine too</label>
+
+          <button class="btn btn--wide" type="submit" style="margin-top:1.75rem" data-label="place_order">Place order</button>
+          <p class="source" style="margin-top:1.25rem">Placing the order writes these fields to the profile, then sends the purchase event on the next page.</p>
+        </form>
+      </div>
+
+      <aside>
+        <div class="panel">
+          <p class="eyebrow">Order summary</p>
+          <div id="summary" style="font-size:.875rem"></div>
+          <div class="totals" id="totals" style="margin-top:1.25rem"></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <span><span data-brand>Lumen</span> — Insider One demo storefront</span>
+    <span>onesandbox · 10014057</span>
+  </div>
+</footer>
+
+<script>
+
+  var lines = Store.cartLines();
+  if (!lines.length) location.replace('cart.html');
+
+  var u = Store.currentUser();
+  if (u) {
+    [['name','c-name'],['surname','c-surname'],['email','c-email'],
+     ['phone_number','c-phone'],['city','c-city'],['country','c-country']].forEach(function (m) {
+      if (u[m[0]]) document.getElementById(m[1]).value = u[m[0]];
+    });
+  }
+
+  document.getElementById('summary').innerHTML = lines.map(function (l) {
+    return '<div style="display:flex;justify-content:space-between;gap:1rem;padding:.3rem 0">' +
+           '<span>' + l.quantity + '\u00d7 ' + l.name + '</span>' +
+           '<span>' + Store.money(l.unit_sale_price * l.quantity) + '</span></div>';
+  }).join('');
+
+  var total = Store.cartTotal();
+  var ship = total >= 150 ? 0 : 9.95;
+  document.getElementById('totals').innerHTML =
+    '<div><span>Subtotal</span><span>' + Store.money(total) + '</span></div>' +
+    '<div><span>Shipping</span><span>' + (ship ? Store.money(ship) : 'Free') + '</span></div>' +
+    '<div class="grand"><span>Total</span><span>' + Store.money(total + ship) + '</span></div>';
+
+  document.getElementById('checkout-form').addEventListener('submit', function (ev) {
+    ev.preventDefault();
+
+    // 1. Attach everything the form collected to the profile.
+    Store.signIn({
+      name: document.getElementById('c-name').value.trim(),
+      surname: document.getElementById('c-surname').value.trim(),
+      email: document.getElementById('c-email').value.trim(),
+      phone_number: document.getElementById('c-phone').value.trim() || undefined,
+      city: document.getElementById('c-city').value.trim() || undefined,
+      country: document.getElementById('c-country').value.trim().toUpperCase() || 'US',
+      email_optin: document.getElementById('c-email-optin').checked,
+      sms_optin: document.getElementById('c-sms-optin').checked,
+      whatsapp_optin: document.getElementById('c-wa-optin').checked,
+      gdpr_optin: true
+    });
+
+    window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });
+    window.InsiderQueue.push({ type: 'init' });
+
+    // 2. Freeze the order so the confirmation page can send the purchase
+    //    event even after the cart is emptied.
+    localStorage.setItem('lmn.order', JSON.stringify({
+      order_id: 'LMN' + Date.now().toString().slice(-8),
+      total: Math.round((total + ship) * 100) / 100,
+      shipping_cost: ship,
+      items: lines
+    }));
+
+    location.href = 'confirmation.html';
+  });
+</script>
+</body>
+</html>
