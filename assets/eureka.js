@@ -133,26 +133,56 @@
      catalog, so map defensively and fill any gaps from the local catalog when
      the product id matches. Display never depends on one exact key.
      ---------------------------------------------------------------------- */
+  function pickCurrency(v) {
+    if (v == null) return null;
+    if (typeof v === 'number') return v;
+    if (typeof v === 'object') {
+      var cur = (window.SITE_CONFIG && window.SITE_CONFIG.currency) || 'USD';
+      if (v[cur] != null) return v[cur];
+      if (v.USD != null) return v.USD;
+      var vals = Object.keys(v).map(function (k) { return v[k]; });
+      return vals.length ? vals[0] : null;
+    }
+    return Number(v);
+  }
+
+  /* --- normalising items --------------------------------------------------
+     Eureka nests the product under itemProperties.item_card, with prices as
+     per-currency objects and category as an array. The flat fallbacks below
+     cover older response shapes.
+     ---------------------------------------------------------------------- */
   function normalize(item) {
-    var id = item.id || item.item_id || item.productId || item.sku;
+    var card = (item.itemProperties && item.itemProperties.item_card) ||
+               (item.itemVariants && item.itemVariants[0]) || item;
+
+    var id = String(card.item_id || item.itemId || card.id || '').split(':')[0];
     var local = window.Store.byId(id);
-    var price = item.price;
-    if (price && typeof price === 'object') {
-      price = price[(window.SITE_CONFIG.currency)] || price.USD || Object.values(price)[0];
-    }
-    var sale = item.salePrice || item.sale_price || item.discountedPrice || price;
-    if (sale && typeof sale === 'object') {
-      sale = sale[(window.SITE_CONFIG.currency)] || sale.USD || Object.values(sale)[0];
-    }
+
+    var price = pickCurrency(card.price);
+    var original = pickCurrency(card.original_price);
+    // `price` is what the customer pays; `original_price` is the was-price.
+    var unitPrice = original != null && original > 0 ? original : price;
+    var salePrice = price != null ? price : unitPrice;
+
+    var cat = card.category;
+    if (typeof cat === 'string') cat = [cat];
 
     return {
       id: id,
-      name: item.name || item.title || (local && local.name) || id,
-      taxonomy: item.category || item.taxonomy || (local && local.taxonomy) || [],
-      unit_price: Number(price != null ? price : (local && local.unit_price)) || 0,
-      unit_sale_price: Number(sale != null ? sale : (local && local.unit_sale_price)) || 0,
-      image: item.image_url || item.imageUrl || item.image || (local && local.image) || '',
-      url: item.url || (local ? 'product.html?id=' + encodeURIComponent(id) : '#'),
+      groupcode: card.groupcode || (item.contentGroupId || '').replace('groupcode:', ''),
+      name: card.name || card.title || (local && local.name) || id,
+      taxonomy: cat || (local && local.taxonomy) || [],
+      subcategory: (cat && cat[cat.length - 1]) || (local && local.subcategory) || '',
+      collection: (cat && cat[0]) || (local && local.collection) || '',
+      vendor: card.brand || (local && local.vendor) || '',
+      unit_price: Number(unitPrice != null ? unitPrice : (local && local.unit_price)) || 0,
+      unit_sale_price: Number(salePrice != null ? salePrice : (local && local.unit_sale_price)) || 0,
+      image: card.image_url || card.image || (local && local.image) || '',
+      variant_label: (local && local.variant_label) || null,
+      in_stock: card.in_stock != null ? card.in_stock : 1,
+      // Products in our own catalog get a local link; anything else keeps the
+      // URL Eureka returned, which may point off-site.
+      url: local ? window.Store.localHref(local) : (card.url || '#'),
       _eureka: true,
       _raw: item
     };

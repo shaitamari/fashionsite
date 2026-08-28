@@ -316,7 +316,7 @@
     var sale = p.unit_sale_price < p.unit_price;
 
     el.innerHTML =
-      '<a class="card__link" href="' + (opts.href || localHref(p)) + '">' +
+      '<a class="card__link" href="' + (opts.href || p.url || localHref(p)) + '">' +
         '<div class="card__media">' +
           (sale ? '<span class="badge">Sale</span>' : '') +
           '<img loading="lazy" alt="" src="' + (p.image || '') + '">' +
