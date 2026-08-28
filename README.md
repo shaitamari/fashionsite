@@ -58,6 +58,28 @@ Account: **onesandbox (10014057)** · Domain: **insiderdemo.com**
 
 ---
 
+## Two kinds of vertical
+
+**Sourced** — a real retailer's Shopify catalog, pulled from
+`https://<store>/products.json?limit=250`. Real products, real photography.
+Works for anything sold online: beauty, fashion, luxury, telco handsets.
+
+**Generated** — for verticals with no shop behind them. `generate.py` builds a
+catalog in the same Shopify shape, so `build.py` treats both identically:
+
+```bash
+python3 generate.py hotels     # -> sources/hotels-1.json
+python3 generate.py --all
+```
+
+Artwork is generated SVG in `assets/img/<key>/`, deterministic per product so
+regenerating never reshuffles it. Photography would look better but cannot be
+sourced or licensed cleanly, and a broken image looks far worse than a designed
+one.
+
+Adding a generator means one function in `generate.py` returning Shopify-shaped
+records. `hotels` and `airlines` are worked examples.
+
 ## Adding a vertical
 
 Three steps, about ten minutes.
@@ -154,9 +176,26 @@ four, which the wizard gets wrong or leaves blank:
 | in_stock | Custom Match on `g:availability` → `in stock` |
 
 **Separating verticals.** All verticals share one catalog, so each vertical's
-campaigns must filter to their own products using **brand** — `Lumen`,
-`Posh Street`, and so on. `g:brand` is unique per vertical and written on every
-record for exactly this purpose.
+campaigns filter to their own products on **category**.
+
+The vertical is the top level of the category path:
+
+```
+Beauty > Makeup > Lip
+Beauty > Skincare > Serum
+Lifestyle > Footwear > Sneakers
+```
+
+So a beauty campaign filters on *category starts with "Beauty"*. `category` is
+a default Insider attribute, already mapped and facetable — no custom attribute
+to create, and it reads correctly to anyone who opens the Catalog Manager.
+
+Brand is deliberately **not** the separator. Once a vertical carries a real
+multi-brand catalog — thirty labels in a beauty retailer — brand has to stay
+brand. `build.py --all` prints the exact filter value for each vertical.
+
+Category page breadcrumbs use the same hierarchy, so breadcrumb targeting lines
+up with what Eureka has indexed.
 
 Global Filters are the alternative, but only **one can be active per locale**,
 so they can only serve a single vertical. Campaign-level filters are what

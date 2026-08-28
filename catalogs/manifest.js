@@ -7,5 +7,13 @@ window.VERTICALS = {
   "lifestyle": {
     "brand": "Posh Street",
     "tagline": "Footwear, Home and Pets"
+  },
+  "hotels": {
+    "brand": "Wayfarer",
+    "tagline": "Places worth staying"
+  },
+  "airlines": {
+    "brand": "Meridian Air",
+    "tagline": "Direct routes, fifteen cities"
   }
 };

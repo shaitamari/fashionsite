@@ -228,7 +228,11 @@
     "vertical": "Retail",
     "subvertical": "Beauty",
     "template": "ecommerce",
-    "labels": {}
+    "labels": {},
+    "hero_eyebrow": "New season",
+    "tiles_title": "Shop by category",
+    "grid_title": "New in",
+    "reco_title": "Recommended for you"
   },
   "_template": {
     "_comment": "Copy this, rename the key, fill it in. Delete nothing else.",
@@ -284,7 +288,11 @@
       "_comment": "Override only what differs. Anything omitted falls back to _labels_default.",
       "cart": "Cart",
       "add_to_cart": "Add to cart"
-    }
+    },
+    "hero_eyebrow": "New season",
+    "tiles_title": "Shop by category",
+    "grid_title": "New in",
+    "reco_title": "Recommended for you"
   },
   "lifestyle": {
     "brand": "Posh Street",
@@ -461,7 +469,11 @@
     "vertical": "Retail",
     "subvertical": "Lifestyle",
     "template": "ecommerce",
-    "labels": {}
+    "labels": {},
+    "hero_eyebrow": "New season",
+    "tiles_title": "Shop by category",
+    "grid_title": "New arrivals",
+    "reco_title": "Recommended for you"
   },
   "_planned_luxury": {
     "_status": "not built \u2014 needs a catalog source and a config block",
@@ -541,42 +553,6 @@
     "template": "booking",
     "source": "sources/fintech-1.json"
   },
-  "_planned_hotels": {
-    "_status": "not built \u2014 needs a catalog source and a config block",
-    "vertical": "Travel",
-    "subvertical": "Hotels",
-    "template": "booking",
-    "source": "sources/hotels-1.json",
-    "labels": {
-      "add_to_cart": "Reserve",
-      "cart": "Your stay",
-      "checkout": "Complete booking",
-      "cart_title": "Your stay",
-      "cart_empty": "No rooms selected yet",
-      "place_order": "Confirm booking",
-      "order": "booking",
-      "confirm_title": "Your booking is confirmed.",
-      "browse_cta": "Find a room"
-    }
-  },
-  "_planned_airlines": {
-    "_status": "not built \u2014 needs a catalog source and a config block",
-    "vertical": "Travel",
-    "subvertical": "Airlines",
-    "template": "booking",
-    "source": "sources/airlines-1.json",
-    "labels": {
-      "add_to_cart": "Select flight",
-      "cart": "Your trip",
-      "checkout": "Continue to payment",
-      "cart_title": "Your trip",
-      "cart_empty": "No flights selected yet",
-      "place_order": "Confirm booking",
-      "order": "booking",
-      "confirm_title": "Your trip is booked.",
-      "browse_cta": "Search flights"
-    }
-  },
   "_labels_default": {
     "cart": "Cart",
     "add_to_cart": "Add to cart",
@@ -587,5 +563,119 @@
     "order": "order",
     "confirm_title": "Thank you for your order.",
     "browse_cta": "Start shopping"
+  },
+  "hotels": {
+    "vertical": "Travel",
+    "subvertical": "Hotels",
+    "template": "ecommerce",
+    "brand": "Wayfarer",
+    "tagline": "Places worth staying",
+    "hero_title": "Somewhere<br>worth waking up.",
+    "hero_lede": "Boutique stays, city hotels and quiet lodges in twelve countries.",
+    "hero_cta": "Find a room",
+    "announce": "Free cancellation up to 48 hours before arrival",
+    "search_placeholder": "Search a city or a hotel",
+    "newsletter_title": "Where next?",
+    "newsletter_lede": "New properties and seasonal rates, once a month.",
+    "source": "sources/hotels*.json",
+    "theme": {
+      "bg": "#FCFBF9",
+      "alt": "#F0EDE7",
+      "ink": "#23282B",
+      "muted": "#6E7478",
+      "rule": "#E2DDD4",
+      "accent": "#1F5C63",
+      "display": "'Fraunces', Georgia, serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Jost:wght@300;400;500"
+    },
+    "order": [
+      "Hotels",
+      "Boutique",
+      "Lodges",
+      "Apartments"
+    ],
+    "collections": {
+      "Hotels": "Hotels",
+      "Boutique": "Boutique",
+      "Lodges": "Lodges",
+      "Apartments": "Apartments"
+    },
+    "subcats": {},
+    "defaults": {
+      "Hotels": "City",
+      "Boutique": "Boutique",
+      "Lodges": "Countryside",
+      "Apartments": "Self-catering"
+    },
+    "labels": {
+      "add_to_cart": "Reserve",
+      "cart": "Your stay",
+      "cart_title": "Your stay",
+      "cart_empty": "No rooms selected yet",
+      "checkout": "Complete booking",
+      "place_order": "Confirm booking",
+      "order": "booking",
+      "confirm_title": "Your booking is confirmed.",
+      "browse_cta": "Find a room"
+    },
+    "hero_eyebrow": "Stay",
+    "tiles_title": "Browse by type",
+    "grid_title": "Recently added",
+    "reco_title": "Picked for you"
+  },
+  "airlines": {
+    "vertical": "Travel",
+    "subvertical": "Airlines",
+    "template": "ecommerce",
+    "brand": "Meridian Air",
+    "tagline": "Direct routes, fifteen cities",
+    "hero_title": "Fewer stops.<br>More places.",
+    "hero_lede": "Direct routes across Europe, Africa, Asia and the Americas.",
+    "hero_cta": "Search flights",
+    "announce": "Two cabin bags included on every fare",
+    "search_placeholder": "Where are you going?",
+    "newsletter_title": "Fare alerts",
+    "newsletter_lede": "New routes and seat sales, straight to your inbox.",
+    "source": "sources/airlines*.json",
+    "theme": {
+      "bg": "#FBFCFD",
+      "alt": "#EDF1F5",
+      "ink": "#16202B",
+      "muted": "#63707E",
+      "rule": "#DCE3EA",
+      "accent": "#1B4F8A",
+      "display": "'Jost', Helvetica, sans-serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Jost:wght@300;400;500;600"
+    },
+    "order": [
+      "Long Haul",
+      "Short Haul"
+    ],
+    "collections": {
+      "Long Haul": "Long Haul",
+      "Short Haul": "Short Haul"
+    },
+    "subcats": {},
+    "defaults": {
+      "Long Haul": "Intercontinental",
+      "Short Haul": "Regional"
+    },
+    "labels": {
+      "add_to_cart": "Select flight",
+      "cart": "Your trip",
+      "cart_title": "Your trip",
+      "cart_empty": "No flights selected yet",
+      "checkout": "Continue to payment",
+      "place_order": "Confirm booking",
+      "order": "booking",
+      "confirm_title": "Your trip is booked.",
+      "browse_cta": "Search flights"
+    },
+    "hero_eyebrow": "Fly",
+    "tiles_title": "Browse by route",
+    "grid_title": "New routes",
+    "reco_title": "Picked for you"
   }
 }

@@ -42,6 +42,42 @@
      configured id in config.js only acts as a filter when several SDK
      campaigns fire on the same page.
      ---------------------------------------------------------------------- */
+  function discoverCampaignId() {
+    // The panel exposes the campaigns it decided to serve on this page. Read
+    // them directly rather than waiting to be told.
+    var out = [];
+    try {
+      var io = window.Insider && (window.Insider.insiderObject || window.Insider.campaign);
+      var pools = [];
+      if (window.Insider) {
+        ['eurekaCampaigns', 'campaigns', 'activeCampaigns'].forEach(function (k) {
+          if (window.Insider[k]) pools.push(window.Insider[k]);
+        });
+        if (window.Insider.systemRules) pools.push(window.Insider.systemRules);
+      }
+      if (io && io.campaigns) pools.push(io.campaigns);
+
+      pools.forEach(function (pool) {
+        var list = Array.isArray(pool) ? pool : Object.keys(pool || {}).map(function (k) {
+          return pool[k];
+        });
+        list.forEach(function (c) {
+          if (!c) return;
+          var id = c.campId || c.campaignId || c.id;
+          if (id && out.indexOf(id) === -1) out.push(id);
+        });
+      });
+    } catch (e) {}
+    return out;
+  }
+
+  /* --- campaign discovery -------------------------------------------------
+     Originally this waited on 'eureka:sdk:campaign:ready'. That event does not
+     reliably reach a listener bound after the tag has already initialised —
+     which is always, because the tag loads async and we can only bind once it
+     exists. So: bind the event as a fast path, but also poll for a campaign id
+     and probe it. Whichever answers first wins.
+     ---------------------------------------------------------------------- */
   function onCampaignReady(expectedId, cb) {
     var settled = false;
 
@@ -51,15 +87,35 @@
       cb(campId, err);
     }
 
+    if (expectedId) {
+      // Explicitly configured — no discovery needed.
+      whenInsiderReady(function (err) { settle(err ? null : expectedId, err); });
+      return;
+    }
+
     whenInsiderReady(function (err) {
       if (err) return settle(null, err);
 
-      Insider.eventManager.on('eureka:sdk:campaign:ready', function (event, data) {
-        var id = data && (data.id !== undefined ? data.id : data.campaignId);
-        if (id === undefined || id === null) return;
-        if (expectedId && String(expectedId) !== String(id)) return;
-        settle(id, null);
-      });
+      // Fast path: the event, if it happens to fire after we bind.
+      try {
+        Insider.eventManager.on('eureka:sdk:campaign:ready', function (event, data) {
+          var id = data && (data.id !== undefined ? data.id : data.campaignId);
+          if (id != null) settle(id, null);
+        });
+      } catch (e) {}
+
+      // Reliable path: find the campaign the panel is already serving here.
+      var tries = 0;
+      var poll = setInterval(function () {
+        if (settled) return clearInterval(poll);
+        var ids = discoverCampaignId();
+        if (ids.length) {
+          clearInterval(poll);
+          settle(ids[0], null);
+        } else if (++tries > 60) {
+          clearInterval(poll);
+        }
+      }, 100);
     });
 
     setTimeout(function () {

@@ -19,6 +19,7 @@ from xml.sax.saxutils import escape
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 APEX = "insiderdemo.com"
+SITE_ABS = f"https://{APEX}"
 
 
 def site_for(key):
@@ -138,9 +139,14 @@ def build_catalog(key, cfg):
                 "name": p["title"],
                 "variant_label": label,
                 "option_name": option_name,
-                "taxonomy": [collection],
+                # Vertical first, so the demo vertical is the top level of the
+                # category path. Insider maps g:product_type -> category, a
+                # default attribute, so campaigns filter on "category contains
+                # Beauty" rather than an obscure custom label.
+                "taxonomy": [cfg.get("subvertical", collection), collection, subcat],
                 "collection": collection,
                 "subcategory": subcat,
+                "vertical_label": cfg.get("subvertical", collection),
                 "unit_price": unit_price,
                 "unit_sale_price": price,
                 "currency": "USD",
@@ -171,7 +177,8 @@ def build_catalog(key, cfg):
     meta = {k: cfg[k] for k in (
         "brand", "tagline", "hero_title", "hero_lede", "hero_cta", "announce",
         "search_placeholder", "newsletter_title", "newsletter_lede", "theme",
-        "vertical", "subvertical"
+        "vertical", "subvertical", "hero_eyebrow", "tiles_title", "grid_title",
+        "reco_title"
     ) if k in cfg}
     meta["key"] = key
     # Journey wording, so one template covers retail, travel, telco and banking.
@@ -210,14 +217,17 @@ def feed_item(p):
         f"    <g:title>{escape(clean(p['name'], 512))}</g:title>",
         f"    <description>{escape(clean(p['description'] or p['name'], 1024))}</description>",
         f"    <link>{escape(p['url'])}</link>",
-        f"    <g:image_link>{escape(p['image'])}</g:image_link>",
+        # Generated artwork is stored relative; Shopify CDN images already
+        # absolute. The feed needs a full URL either way.
+        f"    <g:image_link>{escape(p['image'] if p['image'].startswith('http') else SITE_ABS + '/' + p['image'])}</g:image_link>",
         f"    <g:price>{p['unit_price']:.2f}</g:price>",
         f"    <g:sale_price>{p['unit_sale_price']:.2f}</g:sale_price>",
         f"    <g:availability>{'in stock' if p['in_stock'] else 'out of stock'}</g:availability>",
         f"    <g:quantity>{p['stock']}</g:quantity>",
         # The separator between verticals. Campaigns filter on this.
         f"    <g:brand>{escape(p['vendor'])}</g:brand>",
-        f"    <g:product_type>{escape(clean(p['collection'], 1024))}</g:product_type>",
+        # "Beauty > Makeup > Lip" — Google Merchant's hierarchy convention.
+        f"    <g:product_type>{escape(clean(' > '.join(p['taxonomy']), 1024))}</g:product_type>",
         "    <g:condition>new</g:condition>",
         f"    <g:custom_label_0>{escape(clean(p['subcategory'], 512))}</g:custom_label_0>",
     ]
@@ -312,6 +322,10 @@ def build_master():
     print(f"  {len(items)} records across {len(per_brand)} brand(s)")
     for brand, n in per_brand.most_common():
         print(f"    {n:6d}  {brand}")
+    print("\n  Campaign filters — category starts with:")
+    for key, cfg in VERTICALS.items():
+        if os.path.exists(f"catalogs/{key}.js"):
+            print(f"    {cfg.get('subvertical', key):14s} -> \"{cfg.get('subvertical', key)}\"")
     print("\n  One XML integration points at this file. Each vertical's campaigns")
     print("  filter on brand. Adding a vertical = rebuild, push, wait for sync.")
 

@@ -54,7 +54,13 @@
   window.InsiderQueue.push({
     type: 'category',
     value: {
-      breadcrumb: SUBCAT ? [COLLECTION, SUBCAT] : [COLLECTION],
+      // Same hierarchy as the catalog's category path: vertical first, so
+      // breadcrumb targeting lines up with what Eureka has indexed.
+      breadcrumb: (function () {
+        var v = (window.VERTICAL && window.VERTICAL.subvertical) || null;
+        var path = SUBCAT ? [COLLECTION, SUBCAT] : [COLLECTION];
+        return v ? [v].concat(path) : path;
+      })(),
       custom: { listing_source: 'eureka-sdk' }
     }
   });

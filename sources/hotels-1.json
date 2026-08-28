@@ -1,0 +1,7972 @@
+{
+ "products": [
+  {
+   "id": 8100000000001,
+   "title": "The Grand Lisbon",
+   "handle": "the-grand-lisbon",
+   "body_html": "<p>5-star stay in Lisbon, Portugal. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Hotels",
+   "tags": [
+    "Lisbon",
+    "Portugal",
+    "5 star",
+    "Hotels"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/lisbon.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000001,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-grand-li-cla",
+     "price": "420.00",
+     "compare_at_price": "495.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000002,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-grand-li-sup",
+     "price": "525.00",
+     "compare_at_price": "620.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000003,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-grand-li-del",
+     "price": "650.00",
+     "compare_at_price": "765.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000004,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-grand-li-jun",
+     "price": "880.00",
+     "compare_at_price": "1040.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000005,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-grand-li-ter",
+     "price": "1175.00",
+     "compare_at_price": "1385.00",
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000002,
+   "title": "The Harbour Lisbon",
+   "handle": "the-harbour-lisbon",
+   "body_html": "<p>4-star stay in Lisbon, Portugal. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Hotels",
+   "tags": [
+    "Lisbon",
+    "Portugal",
+    "4 star",
+    "Hotels"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/lisbon.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000006,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-harbour--cla",
+     "price": "260.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000007,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-harbour--sup",
+     "price": "325.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000008,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-harbour--del",
+     "price": "405.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000009,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-harbour--jun",
+     "price": "545.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000010,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-harbour--ter",
+     "price": "730.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000003,
+   "title": "Casa Luz Lisbon",
+   "handle": "casa-luz-lisbon",
+   "body_html": "<p>4-star stay in Lisbon, Portugal. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Boutique",
+   "tags": [
+    "Lisbon",
+    "Portugal",
+    "4 star",
+    "Boutique"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/lisbon.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000011,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "casa-luz-lis-cla",
+     "price": "310.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000012,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "casa-luz-lis-sup",
+     "price": "390.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000013,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "casa-luz-lis-del",
+     "price": "480.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000014,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "casa-luz-lis-jun",
+     "price": "650.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000015,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "casa-luz-lis-ter",
+     "price": "870.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000004,
+   "title": "Rooftop House Lisbon",
+   "handle": "rooftop-house-lisbon",
+   "body_html": "<p>4-star stay in Lisbon, Portugal. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Boutique",
+   "tags": [
+    "Lisbon",
+    "Portugal",
+    "4 star",
+    "Boutique"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/lisbon.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000016,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "rooftop-hous-cla",
+     "price": "285.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000017,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "rooftop-hous-sup",
+     "price": "355.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000018,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "rooftop-hous-del",
+     "price": "440.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000019,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "rooftop-hous-jun",
+     "price": "600.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000020,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "rooftop-hous-ter",
+     "price": "800.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000005,
+   "title": "The Old Quarter Lisbon",
+   "handle": "the-old-quarter-lisbon",
+   "body_html": "<p>3-star stay in Lisbon, Portugal. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Boutique",
+   "tags": [
+    "Lisbon",
+    "Portugal",
+    "3 star",
+    "Boutique"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/lisbon.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000021,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-old-quar-cla",
+     "price": "175.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000022,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-old-quar-sup",
+     "price": "220.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000023,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-old-quar-del",
+     "price": "270.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000024,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-old-quar-jun",
+     "price": "370.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000025,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-old-quar-ter",
+     "price": "490.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000006,
+   "title": "Riverside Lodge Lisbon",
+   "handle": "riverside-lodge-lisbon",
+   "body_html": "<p>4-star stay in Lisbon, Portugal. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Lodges",
+   "tags": [
+    "Lisbon",
+    "Portugal",
+    "4 star",
+    "Lodges"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/lisbon.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000026,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "riverside-lo-cla",
+     "price": "230.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000027,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "riverside-lo-sup",
+     "price": "290.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000028,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "riverside-lo-del",
+     "price": "355.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000029,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "riverside-lo-jun",
+     "price": "485.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000030,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "riverside-lo-ter",
+     "price": "645.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000007,
+   "title": "Garden Retreat Lisbon",
+   "handle": "garden-retreat-lisbon",
+   "body_html": "<p>5-star stay in Lisbon, Portugal. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Lodges",
+   "tags": [
+    "Lisbon",
+    "Portugal",
+    "5 star",
+    "Lodges"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/lisbon.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000031,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "garden-retre-cla",
+     "price": "495.00",
+     "compare_at_price": "585.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000032,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "garden-retre-sup",
+     "price": "620.00",
+     "compare_at_price": "730.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000033,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "garden-retre-del",
+     "price": "765.00",
+     "compare_at_price": "905.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000034,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "garden-retre-jun",
+     "price": "1040.00",
+     "compare_at_price": "1225.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000035,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "garden-retre-ter",
+     "price": "1385.00",
+     "compare_at_price": "1635.00",
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000008,
+   "title": "The Quiet Rooms Lisbon",
+   "handle": "the-quiet-rooms-lisbon",
+   "body_html": "<p>3-star stay in Lisbon, Portugal. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Apartments",
+   "tags": [
+    "Lisbon",
+    "Portugal",
+    "3 star",
+    "Apartments"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/lisbon.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000036,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-quiet-ro-cla",
+     "price": "145.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000037,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-quiet-ro-sup",
+     "price": "180.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000038,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-quiet-ro-del",
+     "price": "225.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000039,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-quiet-ro-jun",
+     "price": "305.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000040,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-quiet-ro-ter",
+     "price": "405.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000009,
+   "title": "The Grand Kyoto",
+   "handle": "the-grand-kyoto",
+   "body_html": "<p>5-star stay in Kyoto, Japan. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Hotels",
+   "tags": [
+    "Kyoto",
+    "Japan",
+    "5 star",
+    "Hotels"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/kyoto.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000041,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-grand-ky-cla",
+     "price": "420.00",
+     "compare_at_price": "495.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000042,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-grand-ky-sup",
+     "price": "525.00",
+     "compare_at_price": "620.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000043,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-grand-ky-del",
+     "price": "650.00",
+     "compare_at_price": "765.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000044,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-grand-ky-jun",
+     "price": "880.00",
+     "compare_at_price": "1040.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000045,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-grand-ky-ter",
+     "price": "1175.00",
+     "compare_at_price": "1385.00",
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000010,
+   "title": "The Harbour Kyoto",
+   "handle": "the-harbour-kyoto",
+   "body_html": "<p>4-star stay in Kyoto, Japan. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Hotels",
+   "tags": [
+    "Kyoto",
+    "Japan",
+    "4 star",
+    "Hotels"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/kyoto.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000046,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-harbour--cla",
+     "price": "260.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000047,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-harbour--sup",
+     "price": "325.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000048,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-harbour--del",
+     "price": "405.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000049,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-harbour--jun",
+     "price": "545.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000050,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-harbour--ter",
+     "price": "730.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000011,
+   "title": "Casa Luz Kyoto",
+   "handle": "casa-luz-kyoto",
+   "body_html": "<p>4-star stay in Kyoto, Japan. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Boutique",
+   "tags": [
+    "Kyoto",
+    "Japan",
+    "4 star",
+    "Boutique"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/kyoto.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000051,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "casa-luz-kyo-cla",
+     "price": "310.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000052,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "casa-luz-kyo-sup",
+     "price": "390.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000053,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "casa-luz-kyo-del",
+     "price": "480.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000054,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "casa-luz-kyo-jun",
+     "price": "650.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000055,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "casa-luz-kyo-ter",
+     "price": "870.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000012,
+   "title": "Rooftop House Kyoto",
+   "handle": "rooftop-house-kyoto",
+   "body_html": "<p>4-star stay in Kyoto, Japan. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Boutique",
+   "tags": [
+    "Kyoto",
+    "Japan",
+    "4 star",
+    "Boutique"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/kyoto.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000056,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "rooftop-hous-cla",
+     "price": "285.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000057,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "rooftop-hous-sup",
+     "price": "355.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000058,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "rooftop-hous-del",
+     "price": "440.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000059,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "rooftop-hous-jun",
+     "price": "600.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000060,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "rooftop-hous-ter",
+     "price": "800.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000013,
+   "title": "The Old Quarter Kyoto",
+   "handle": "the-old-quarter-kyoto",
+   "body_html": "<p>3-star stay in Kyoto, Japan. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Boutique",
+   "tags": [
+    "Kyoto",
+    "Japan",
+    "3 star",
+    "Boutique"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/kyoto.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000061,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-old-quar-cla",
+     "price": "175.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000062,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-old-quar-sup",
+     "price": "220.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000063,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-old-quar-del",
+     "price": "270.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000064,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-old-quar-jun",
+     "price": "370.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000065,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-old-quar-ter",
+     "price": "490.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000014,
+   "title": "Riverside Lodge Kyoto",
+   "handle": "riverside-lodge-kyoto",
+   "body_html": "<p>4-star stay in Kyoto, Japan. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Lodges",
+   "tags": [
+    "Kyoto",
+    "Japan",
+    "4 star",
+    "Lodges"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/kyoto.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000066,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "riverside-lo-cla",
+     "price": "230.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000067,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "riverside-lo-sup",
+     "price": "290.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000068,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "riverside-lo-del",
+     "price": "355.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000069,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "riverside-lo-jun",
+     "price": "485.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000070,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "riverside-lo-ter",
+     "price": "645.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000015,
+   "title": "Garden Retreat Kyoto",
+   "handle": "garden-retreat-kyoto",
+   "body_html": "<p>5-star stay in Kyoto, Japan. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Lodges",
+   "tags": [
+    "Kyoto",
+    "Japan",
+    "5 star",
+    "Lodges"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/kyoto.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000071,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "garden-retre-cla",
+     "price": "495.00",
+     "compare_at_price": "585.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000072,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "garden-retre-sup",
+     "price": "620.00",
+     "compare_at_price": "730.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000073,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "garden-retre-del",
+     "price": "765.00",
+     "compare_at_price": "905.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000074,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "garden-retre-jun",
+     "price": "1040.00",
+     "compare_at_price": "1225.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000075,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "garden-retre-ter",
+     "price": "1385.00",
+     "compare_at_price": "1635.00",
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000016,
+   "title": "The Quiet Rooms Kyoto",
+   "handle": "the-quiet-rooms-kyoto",
+   "body_html": "<p>3-star stay in Kyoto, Japan. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Apartments",
+   "tags": [
+    "Kyoto",
+    "Japan",
+    "3 star",
+    "Apartments"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/kyoto.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000076,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-quiet-ro-cla",
+     "price": "145.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000077,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-quiet-ro-sup",
+     "price": "180.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000078,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-quiet-ro-del",
+     "price": "225.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000079,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-quiet-ro-jun",
+     "price": "305.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000080,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-quiet-ro-ter",
+     "price": "405.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000017,
+   "title": "The Grand Reykjavik",
+   "handle": "the-grand-reykjavik",
+   "body_html": "<p>5-star stay in Reykjavik, Iceland. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Hotels",
+   "tags": [
+    "Reykjavik",
+    "Iceland",
+    "5 star",
+    "Hotels"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/reykjavik.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000081,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-grand-re-cla",
+     "price": "420.00",
+     "compare_at_price": "495.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000082,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-grand-re-sup",
+     "price": "525.00",
+     "compare_at_price": "620.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000083,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-grand-re-del",
+     "price": "650.00",
+     "compare_at_price": "765.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000084,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-grand-re-jun",
+     "price": "880.00",
+     "compare_at_price": "1040.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000085,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-grand-re-ter",
+     "price": "1175.00",
+     "compare_at_price": "1385.00",
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000018,
+   "title": "The Harbour Reykjavik",
+   "handle": "the-harbour-reykjavik",
+   "body_html": "<p>4-star stay in Reykjavik, Iceland. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Hotels",
+   "tags": [
+    "Reykjavik",
+    "Iceland",
+    "4 star",
+    "Hotels"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/reykjavik.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000086,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-harbour--cla",
+     "price": "260.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000087,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-harbour--sup",
+     "price": "325.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000088,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-harbour--del",
+     "price": "405.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000089,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-harbour--jun",
+     "price": "545.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000090,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-harbour--ter",
+     "price": "730.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000019,
+   "title": "Casa Luz Reykjavik",
+   "handle": "casa-luz-reykjavik",
+   "body_html": "<p>4-star stay in Reykjavik, Iceland. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Boutique",
+   "tags": [
+    "Reykjavik",
+    "Iceland",
+    "4 star",
+    "Boutique"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/reykjavik.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000091,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "casa-luz-rey-cla",
+     "price": "310.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000092,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "casa-luz-rey-sup",
+     "price": "390.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000093,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "casa-luz-rey-del",
+     "price": "480.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000094,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "casa-luz-rey-jun",
+     "price": "650.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000095,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "casa-luz-rey-ter",
+     "price": "870.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000020,
+   "title": "Rooftop House Reykjavik",
+   "handle": "rooftop-house-reykjavik",
+   "body_html": "<p>4-star stay in Reykjavik, Iceland. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Boutique",
+   "tags": [
+    "Reykjavik",
+    "Iceland",
+    "4 star",
+    "Boutique"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/reykjavik.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000096,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "rooftop-hous-cla",
+     "price": "285.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000097,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "rooftop-hous-sup",
+     "price": "355.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000098,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "rooftop-hous-del",
+     "price": "440.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000099,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "rooftop-hous-jun",
+     "price": "600.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000100,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "rooftop-hous-ter",
+     "price": "800.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000021,
+   "title": "The Old Quarter Reykjavik",
+   "handle": "the-old-quarter-reykjavik",
+   "body_html": "<p>3-star stay in Reykjavik, Iceland. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Boutique",
+   "tags": [
+    "Reykjavik",
+    "Iceland",
+    "3 star",
+    "Boutique"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/reykjavik.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000101,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-old-quar-cla",
+     "price": "175.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000102,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-old-quar-sup",
+     "price": "220.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000103,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-old-quar-del",
+     "price": "270.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000104,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-old-quar-jun",
+     "price": "370.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000105,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-old-quar-ter",
+     "price": "490.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000022,
+   "title": "Riverside Lodge Reykjavik",
+   "handle": "riverside-lodge-reykjavik",
+   "body_html": "<p>4-star stay in Reykjavik, Iceland. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Lodges",
+   "tags": [
+    "Reykjavik",
+    "Iceland",
+    "4 star",
+    "Lodges"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/reykjavik.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000106,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "riverside-lo-cla",
+     "price": "230.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000107,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "riverside-lo-sup",
+     "price": "290.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000108,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "riverside-lo-del",
+     "price": "355.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000109,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "riverside-lo-jun",
+     "price": "485.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000110,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "riverside-lo-ter",
+     "price": "645.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000023,
+   "title": "Garden Retreat Reykjavik",
+   "handle": "garden-retreat-reykjavik",
+   "body_html": "<p>5-star stay in Reykjavik, Iceland. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Lodges",
+   "tags": [
+    "Reykjavik",
+    "Iceland",
+    "5 star",
+    "Lodges"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/reykjavik.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000111,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "garden-retre-cla",
+     "price": "495.00",
+     "compare_at_price": "585.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000112,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "garden-retre-sup",
+     "price": "620.00",
+     "compare_at_price": "730.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000113,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "garden-retre-del",
+     "price": "765.00",
+     "compare_at_price": "905.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000114,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "garden-retre-jun",
+     "price": "1040.00",
+     "compare_at_price": "1225.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000115,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "garden-retre-ter",
+     "price": "1385.00",
+     "compare_at_price": "1635.00",
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000024,
+   "title": "The Quiet Rooms Reykjavik",
+   "handle": "the-quiet-rooms-reykjavik",
+   "body_html": "<p>3-star stay in Reykjavik, Iceland. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Apartments",
+   "tags": [
+    "Reykjavik",
+    "Iceland",
+    "3 star",
+    "Apartments"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/reykjavik.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000116,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-quiet-ro-cla",
+     "price": "145.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000117,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-quiet-ro-sup",
+     "price": "180.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000118,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-quiet-ro-del",
+     "price": "225.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000119,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-quiet-ro-jun",
+     "price": "305.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000120,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-quiet-ro-ter",
+     "price": "405.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000025,
+   "title": "The Grand Marrakesh",
+   "handle": "the-grand-marrakesh",
+   "body_html": "<p>5-star stay in Marrakesh, Morocco. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Hotels",
+   "tags": [
+    "Marrakesh",
+    "Morocco",
+    "5 star",
+    "Hotels"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/marrakesh.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000121,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-grand-ma-cla",
+     "price": "420.00",
+     "compare_at_price": "495.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000122,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-grand-ma-sup",
+     "price": "525.00",
+     "compare_at_price": "620.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000123,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-grand-ma-del",
+     "price": "650.00",
+     "compare_at_price": "765.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000124,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-grand-ma-jun",
+     "price": "880.00",
+     "compare_at_price": "1040.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000125,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-grand-ma-ter",
+     "price": "1175.00",
+     "compare_at_price": "1385.00",
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000026,
+   "title": "The Harbour Marrakesh",
+   "handle": "the-harbour-marrakesh",
+   "body_html": "<p>4-star stay in Marrakesh, Morocco. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Hotels",
+   "tags": [
+    "Marrakesh",
+    "Morocco",
+    "4 star",
+    "Hotels"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/marrakesh.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000126,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-harbour--cla",
+     "price": "260.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000127,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-harbour--sup",
+     "price": "325.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000128,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-harbour--del",
+     "price": "405.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000129,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-harbour--jun",
+     "price": "545.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000130,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-harbour--ter",
+     "price": "730.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000027,
+   "title": "Casa Luz Marrakesh",
+   "handle": "casa-luz-marrakesh",
+   "body_html": "<p>4-star stay in Marrakesh, Morocco. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Boutique",
+   "tags": [
+    "Marrakesh",
+    "Morocco",
+    "4 star",
+    "Boutique"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/marrakesh.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000131,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "casa-luz-mar-cla",
+     "price": "310.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000132,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "casa-luz-mar-sup",
+     "price": "390.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000133,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "casa-luz-mar-del",
+     "price": "480.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000134,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "casa-luz-mar-jun",
+     "price": "650.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000135,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "casa-luz-mar-ter",
+     "price": "870.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000028,
+   "title": "Rooftop House Marrakesh",
+   "handle": "rooftop-house-marrakesh",
+   "body_html": "<p>4-star stay in Marrakesh, Morocco. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Boutique",
+   "tags": [
+    "Marrakesh",
+    "Morocco",
+    "4 star",
+    "Boutique"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/marrakesh.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000136,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "rooftop-hous-cla",
+     "price": "285.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000137,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "rooftop-hous-sup",
+     "price": "355.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000138,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "rooftop-hous-del",
+     "price": "440.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000139,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "rooftop-hous-jun",
+     "price": "600.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000140,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "rooftop-hous-ter",
+     "price": "800.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000029,
+   "title": "The Old Quarter Marrakesh",
+   "handle": "the-old-quarter-marrakesh",
+   "body_html": "<p>3-star stay in Marrakesh, Morocco. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Boutique",
+   "tags": [
+    "Marrakesh",
+    "Morocco",
+    "3 star",
+    "Boutique"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/marrakesh.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000141,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-old-quar-cla",
+     "price": "175.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000142,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-old-quar-sup",
+     "price": "220.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000143,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-old-quar-del",
+     "price": "270.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000144,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-old-quar-jun",
+     "price": "370.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000145,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-old-quar-ter",
+     "price": "490.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000030,
+   "title": "Riverside Lodge Marrakesh",
+   "handle": "riverside-lodge-marrakesh",
+   "body_html": "<p>4-star stay in Marrakesh, Morocco. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Lodges",
+   "tags": [
+    "Marrakesh",
+    "Morocco",
+    "4 star",
+    "Lodges"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/marrakesh.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000146,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "riverside-lo-cla",
+     "price": "230.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000147,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "riverside-lo-sup",
+     "price": "290.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000148,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "riverside-lo-del",
+     "price": "355.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000149,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "riverside-lo-jun",
+     "price": "485.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000150,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "riverside-lo-ter",
+     "price": "645.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000031,
+   "title": "Garden Retreat Marrakesh",
+   "handle": "garden-retreat-marrakesh",
+   "body_html": "<p>5-star stay in Marrakesh, Morocco. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Lodges",
+   "tags": [
+    "Marrakesh",
+    "Morocco",
+    "5 star",
+    "Lodges"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/marrakesh.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000151,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "garden-retre-cla",
+     "price": "495.00",
+     "compare_at_price": "585.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000152,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "garden-retre-sup",
+     "price": "620.00",
+     "compare_at_price": "730.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000153,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "garden-retre-del",
+     "price": "765.00",
+     "compare_at_price": "905.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000154,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "garden-retre-jun",
+     "price": "1040.00",
+     "compare_at_price": "1225.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000155,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "garden-retre-ter",
+     "price": "1385.00",
+     "compare_at_price": "1635.00",
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000032,
+   "title": "The Quiet Rooms Marrakesh",
+   "handle": "the-quiet-rooms-marrakesh",
+   "body_html": "<p>3-star stay in Marrakesh, Morocco. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Apartments",
+   "tags": [
+    "Marrakesh",
+    "Morocco",
+    "3 star",
+    "Apartments"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/marrakesh.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000156,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-quiet-ro-cla",
+     "price": "145.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000157,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-quiet-ro-sup",
+     "price": "180.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000158,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-quiet-ro-del",
+     "price": "225.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000159,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-quiet-ro-jun",
+     "price": "305.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000160,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-quiet-ro-ter",
+     "price": "405.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000033,
+   "title": "The Grand Copenhagen",
+   "handle": "the-grand-copenhagen",
+   "body_html": "<p>5-star stay in Copenhagen, Denmark. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Hotels",
+   "tags": [
+    "Copenhagen",
+    "Denmark",
+    "5 star",
+    "Hotels"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/copenhagen.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000161,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-grand-co-cla",
+     "price": "420.00",
+     "compare_at_price": "495.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000162,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-grand-co-sup",
+     "price": "525.00",
+     "compare_at_price": "620.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000163,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-grand-co-del",
+     "price": "650.00",
+     "compare_at_price": "765.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000164,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-grand-co-jun",
+     "price": "880.00",
+     "compare_at_price": "1040.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000165,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-grand-co-ter",
+     "price": "1175.00",
+     "compare_at_price": "1385.00",
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000034,
+   "title": "The Harbour Copenhagen",
+   "handle": "the-harbour-copenhagen",
+   "body_html": "<p>4-star stay in Copenhagen, Denmark. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Hotels",
+   "tags": [
+    "Copenhagen",
+    "Denmark",
+    "4 star",
+    "Hotels"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/copenhagen.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000166,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-harbour--cla",
+     "price": "260.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000167,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-harbour--sup",
+     "price": "325.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000168,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-harbour--del",
+     "price": "405.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000169,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-harbour--jun",
+     "price": "545.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000170,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-harbour--ter",
+     "price": "730.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000035,
+   "title": "Casa Luz Copenhagen",
+   "handle": "casa-luz-copenhagen",
+   "body_html": "<p>4-star stay in Copenhagen, Denmark. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Boutique",
+   "tags": [
+    "Copenhagen",
+    "Denmark",
+    "4 star",
+    "Boutique"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/copenhagen.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000171,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "casa-luz-cop-cla",
+     "price": "310.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000172,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "casa-luz-cop-sup",
+     "price": "390.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000173,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "casa-luz-cop-del",
+     "price": "480.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000174,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "casa-luz-cop-jun",
+     "price": "650.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000175,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "casa-luz-cop-ter",
+     "price": "870.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000036,
+   "title": "Rooftop House Copenhagen",
+   "handle": "rooftop-house-copenhagen",
+   "body_html": "<p>4-star stay in Copenhagen, Denmark. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Boutique",
+   "tags": [
+    "Copenhagen",
+    "Denmark",
+    "4 star",
+    "Boutique"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/copenhagen.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000176,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "rooftop-hous-cla",
+     "price": "285.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000177,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "rooftop-hous-sup",
+     "price": "355.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000178,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "rooftop-hous-del",
+     "price": "440.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000179,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "rooftop-hous-jun",
+     "price": "600.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000180,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "rooftop-hous-ter",
+     "price": "800.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000037,
+   "title": "The Old Quarter Copenhagen",
+   "handle": "the-old-quarter-copenhagen",
+   "body_html": "<p>3-star stay in Copenhagen, Denmark. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Boutique",
+   "tags": [
+    "Copenhagen",
+    "Denmark",
+    "3 star",
+    "Boutique"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/copenhagen.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000181,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-old-quar-cla",
+     "price": "175.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000182,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-old-quar-sup",
+     "price": "220.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000183,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-old-quar-del",
+     "price": "270.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000184,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-old-quar-jun",
+     "price": "370.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000185,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-old-quar-ter",
+     "price": "490.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000038,
+   "title": "Riverside Lodge Copenhagen",
+   "handle": "riverside-lodge-copenhagen",
+   "body_html": "<p>4-star stay in Copenhagen, Denmark. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Lodges",
+   "tags": [
+    "Copenhagen",
+    "Denmark",
+    "4 star",
+    "Lodges"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/copenhagen.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000186,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "riverside-lo-cla",
+     "price": "230.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000187,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "riverside-lo-sup",
+     "price": "290.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000188,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "riverside-lo-del",
+     "price": "355.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000189,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "riverside-lo-jun",
+     "price": "485.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000190,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "riverside-lo-ter",
+     "price": "645.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000039,
+   "title": "Garden Retreat Copenhagen",
+   "handle": "garden-retreat-copenhagen",
+   "body_html": "<p>5-star stay in Copenhagen, Denmark. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Lodges",
+   "tags": [
+    "Copenhagen",
+    "Denmark",
+    "5 star",
+    "Lodges"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/copenhagen.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000191,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "garden-retre-cla",
+     "price": "495.00",
+     "compare_at_price": "585.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000192,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "garden-retre-sup",
+     "price": "620.00",
+     "compare_at_price": "730.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000193,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "garden-retre-del",
+     "price": "765.00",
+     "compare_at_price": "905.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000194,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "garden-retre-jun",
+     "price": "1040.00",
+     "compare_at_price": "1225.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000195,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "garden-retre-ter",
+     "price": "1385.00",
+     "compare_at_price": "1635.00",
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000040,
+   "title": "The Quiet Rooms Copenhagen",
+   "handle": "the-quiet-rooms-copenhagen",
+   "body_html": "<p>3-star stay in Copenhagen, Denmark. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Apartments",
+   "tags": [
+    "Copenhagen",
+    "Denmark",
+    "3 star",
+    "Apartments"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/copenhagen.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000196,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-quiet-ro-cla",
+     "price": "145.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000197,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-quiet-ro-sup",
+     "price": "180.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000198,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-quiet-ro-del",
+     "price": "225.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000199,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-quiet-ro-jun",
+     "price": "305.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000200,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-quiet-ro-ter",
+     "price": "405.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000041,
+   "title": "The Grand Cape Town",
+   "handle": "the-grand-cape-town",
+   "body_html": "<p>5-star stay in Cape Town, South Africa. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Hotels",
+   "tags": [
+    "Cape Town",
+    "South Africa",
+    "5 star",
+    "Hotels"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/cape-town.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000201,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-grand-ca-cla",
+     "price": "420.00",
+     "compare_at_price": "495.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000202,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-grand-ca-sup",
+     "price": "525.00",
+     "compare_at_price": "620.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000203,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-grand-ca-del",
+     "price": "650.00",
+     "compare_at_price": "765.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000204,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-grand-ca-jun",
+     "price": "880.00",
+     "compare_at_price": "1040.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000205,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-grand-ca-ter",
+     "price": "1175.00",
+     "compare_at_price": "1385.00",
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000042,
+   "title": "The Harbour Cape Town",
+   "handle": "the-harbour-cape-town",
+   "body_html": "<p>4-star stay in Cape Town, South Africa. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Hotels",
+   "tags": [
+    "Cape Town",
+    "South Africa",
+    "4 star",
+    "Hotels"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/cape-town.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000206,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-harbour--cla",
+     "price": "260.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000207,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-harbour--sup",
+     "price": "325.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000208,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-harbour--del",
+     "price": "405.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000209,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-harbour--jun",
+     "price": "545.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000210,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-harbour--ter",
+     "price": "730.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000043,
+   "title": "Casa Luz Cape Town",
+   "handle": "casa-luz-cape-town",
+   "body_html": "<p>4-star stay in Cape Town, South Africa. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Boutique",
+   "tags": [
+    "Cape Town",
+    "South Africa",
+    "4 star",
+    "Boutique"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/cape-town.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000211,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "casa-luz-cap-cla",
+     "price": "310.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000212,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "casa-luz-cap-sup",
+     "price": "390.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000213,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "casa-luz-cap-del",
+     "price": "480.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000214,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "casa-luz-cap-jun",
+     "price": "650.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000215,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "casa-luz-cap-ter",
+     "price": "870.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000044,
+   "title": "Rooftop House Cape Town",
+   "handle": "rooftop-house-cape-town",
+   "body_html": "<p>4-star stay in Cape Town, South Africa. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Boutique",
+   "tags": [
+    "Cape Town",
+    "South Africa",
+    "4 star",
+    "Boutique"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/cape-town.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000216,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "rooftop-hous-cla",
+     "price": "285.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000217,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "rooftop-hous-sup",
+     "price": "355.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000218,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "rooftop-hous-del",
+     "price": "440.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000219,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "rooftop-hous-jun",
+     "price": "600.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000220,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "rooftop-hous-ter",
+     "price": "800.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000045,
+   "title": "The Old Quarter Cape Town",
+   "handle": "the-old-quarter-cape-town",
+   "body_html": "<p>3-star stay in Cape Town, South Africa. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Boutique",
+   "tags": [
+    "Cape Town",
+    "South Africa",
+    "3 star",
+    "Boutique"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/cape-town.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000221,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-old-quar-cla",
+     "price": "175.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000222,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-old-quar-sup",
+     "price": "220.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000223,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-old-quar-del",
+     "price": "270.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000224,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-old-quar-jun",
+     "price": "370.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000225,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-old-quar-ter",
+     "price": "490.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000046,
+   "title": "Riverside Lodge Cape Town",
+   "handle": "riverside-lodge-cape-town",
+   "body_html": "<p>4-star stay in Cape Town, South Africa. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Lodges",
+   "tags": [
+    "Cape Town",
+    "South Africa",
+    "4 star",
+    "Lodges"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/cape-town.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000226,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "riverside-lo-cla",
+     "price": "230.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000227,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "riverside-lo-sup",
+     "price": "290.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000228,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "riverside-lo-del",
+     "price": "355.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000229,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "riverside-lo-jun",
+     "price": "485.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000230,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "riverside-lo-ter",
+     "price": "645.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000047,
+   "title": "Garden Retreat Cape Town",
+   "handle": "garden-retreat-cape-town",
+   "body_html": "<p>5-star stay in Cape Town, South Africa. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Lodges",
+   "tags": [
+    "Cape Town",
+    "South Africa",
+    "5 star",
+    "Lodges"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/cape-town.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000231,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "garden-retre-cla",
+     "price": "495.00",
+     "compare_at_price": "585.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000232,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "garden-retre-sup",
+     "price": "620.00",
+     "compare_at_price": "730.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000233,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "garden-retre-del",
+     "price": "765.00",
+     "compare_at_price": "905.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000234,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "garden-retre-jun",
+     "price": "1040.00",
+     "compare_at_price": "1225.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000235,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "garden-retre-ter",
+     "price": "1385.00",
+     "compare_at_price": "1635.00",
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000048,
+   "title": "The Quiet Rooms Cape Town",
+   "handle": "the-quiet-rooms-cape-town",
+   "body_html": "<p>3-star stay in Cape Town, South Africa. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Apartments",
+   "tags": [
+    "Cape Town",
+    "South Africa",
+    "3 star",
+    "Apartments"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/cape-town.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000236,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-quiet-ro-cla",
+     "price": "145.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000237,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-quiet-ro-sup",
+     "price": "180.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000238,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-quiet-ro-del",
+     "price": "225.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000239,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-quiet-ro-jun",
+     "price": "305.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000240,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-quiet-ro-ter",
+     "price": "405.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000049,
+   "title": "The Grand Mexico City",
+   "handle": "the-grand-mexico-city",
+   "body_html": "<p>5-star stay in Mexico City, Mexico. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Hotels",
+   "tags": [
+    "Mexico City",
+    "Mexico",
+    "5 star",
+    "Hotels"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/mexico-city.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000241,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-grand-me-cla",
+     "price": "420.00",
+     "compare_at_price": "495.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000242,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-grand-me-sup",
+     "price": "525.00",
+     "compare_at_price": "620.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000243,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-grand-me-del",
+     "price": "650.00",
+     "compare_at_price": "765.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000244,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-grand-me-jun",
+     "price": "880.00",
+     "compare_at_price": "1040.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000245,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-grand-me-ter",
+     "price": "1175.00",
+     "compare_at_price": "1385.00",
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000050,
+   "title": "The Harbour Mexico City",
+   "handle": "the-harbour-mexico-city",
+   "body_html": "<p>4-star stay in Mexico City, Mexico. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Hotels",
+   "tags": [
+    "Mexico City",
+    "Mexico",
+    "4 star",
+    "Hotels"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/mexico-city.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000246,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-harbour--cla",
+     "price": "260.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000247,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-harbour--sup",
+     "price": "325.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000248,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-harbour--del",
+     "price": "405.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000249,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-harbour--jun",
+     "price": "545.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000250,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-harbour--ter",
+     "price": "730.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000051,
+   "title": "Casa Luz Mexico City",
+   "handle": "casa-luz-mexico-city",
+   "body_html": "<p>4-star stay in Mexico City, Mexico. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Boutique",
+   "tags": [
+    "Mexico City",
+    "Mexico",
+    "4 star",
+    "Boutique"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/mexico-city.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000251,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "casa-luz-mex-cla",
+     "price": "310.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000252,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "casa-luz-mex-sup",
+     "price": "390.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000253,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "casa-luz-mex-del",
+     "price": "480.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000254,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "casa-luz-mex-jun",
+     "price": "650.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000255,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "casa-luz-mex-ter",
+     "price": "870.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000052,
+   "title": "Rooftop House Mexico City",
+   "handle": "rooftop-house-mexico-city",
+   "body_html": "<p>4-star stay in Mexico City, Mexico. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Boutique",
+   "tags": [
+    "Mexico City",
+    "Mexico",
+    "4 star",
+    "Boutique"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/mexico-city.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000256,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "rooftop-hous-cla",
+     "price": "285.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000257,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "rooftop-hous-sup",
+     "price": "355.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000258,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "rooftop-hous-del",
+     "price": "440.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000259,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "rooftop-hous-jun",
+     "price": "600.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000260,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "rooftop-hous-ter",
+     "price": "800.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000053,
+   "title": "The Old Quarter Mexico City",
+   "handle": "the-old-quarter-mexico-city",
+   "body_html": "<p>3-star stay in Mexico City, Mexico. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Boutique",
+   "tags": [
+    "Mexico City",
+    "Mexico",
+    "3 star",
+    "Boutique"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/mexico-city.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000261,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-old-quar-cla",
+     "price": "175.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000262,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-old-quar-sup",
+     "price": "220.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000263,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-old-quar-del",
+     "price": "270.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000264,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-old-quar-jun",
+     "price": "370.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000265,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-old-quar-ter",
+     "price": "490.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000054,
+   "title": "Riverside Lodge Mexico City",
+   "handle": "riverside-lodge-mexico-city",
+   "body_html": "<p>4-star stay in Mexico City, Mexico. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Lodges",
+   "tags": [
+    "Mexico City",
+    "Mexico",
+    "4 star",
+    "Lodges"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/mexico-city.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000266,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "riverside-lo-cla",
+     "price": "230.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000267,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "riverside-lo-sup",
+     "price": "290.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000268,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "riverside-lo-del",
+     "price": "355.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000269,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "riverside-lo-jun",
+     "price": "485.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000270,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "riverside-lo-ter",
+     "price": "645.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000055,
+   "title": "Garden Retreat Mexico City",
+   "handle": "garden-retreat-mexico-city",
+   "body_html": "<p>5-star stay in Mexico City, Mexico. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Lodges",
+   "tags": [
+    "Mexico City",
+    "Mexico",
+    "5 star",
+    "Lodges"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/mexico-city.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000271,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "garden-retre-cla",
+     "price": "495.00",
+     "compare_at_price": "585.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000272,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "garden-retre-sup",
+     "price": "620.00",
+     "compare_at_price": "730.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000273,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "garden-retre-del",
+     "price": "765.00",
+     "compare_at_price": "905.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000274,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "garden-retre-jun",
+     "price": "1040.00",
+     "compare_at_price": "1225.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000275,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "garden-retre-ter",
+     "price": "1385.00",
+     "compare_at_price": "1635.00",
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000056,
+   "title": "The Quiet Rooms Mexico City",
+   "handle": "the-quiet-rooms-mexico-city",
+   "body_html": "<p>3-star stay in Mexico City, Mexico. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Apartments",
+   "tags": [
+    "Mexico City",
+    "Mexico",
+    "3 star",
+    "Apartments"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/mexico-city.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000276,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-quiet-ro-cla",
+     "price": "145.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000277,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-quiet-ro-sup",
+     "price": "180.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000278,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-quiet-ro-del",
+     "price": "225.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000279,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-quiet-ro-jun",
+     "price": "305.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000280,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-quiet-ro-ter",
+     "price": "405.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000057,
+   "title": "The Grand Queenstown",
+   "handle": "the-grand-queenstown",
+   "body_html": "<p>5-star stay in Queenstown, New Zealand. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Hotels",
+   "tags": [
+    "Queenstown",
+    "New Zealand",
+    "5 star",
+    "Hotels"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/queenstown.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000281,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-grand-qu-cla",
+     "price": "420.00",
+     "compare_at_price": "495.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000282,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-grand-qu-sup",
+     "price": "525.00",
+     "compare_at_price": "620.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000283,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-grand-qu-del",
+     "price": "650.00",
+     "compare_at_price": "765.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000284,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-grand-qu-jun",
+     "price": "880.00",
+     "compare_at_price": "1040.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000285,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-grand-qu-ter",
+     "price": "1175.00",
+     "compare_at_price": "1385.00",
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000058,
+   "title": "The Harbour Queenstown",
+   "handle": "the-harbour-queenstown",
+   "body_html": "<p>4-star stay in Queenstown, New Zealand. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Hotels",
+   "tags": [
+    "Queenstown",
+    "New Zealand",
+    "4 star",
+    "Hotels"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/queenstown.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000286,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-harbour--cla",
+     "price": "260.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000287,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-harbour--sup",
+     "price": "325.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000288,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-harbour--del",
+     "price": "405.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000289,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-harbour--jun",
+     "price": "545.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000290,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-harbour--ter",
+     "price": "730.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000059,
+   "title": "Casa Luz Queenstown",
+   "handle": "casa-luz-queenstown",
+   "body_html": "<p>4-star stay in Queenstown, New Zealand. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Boutique",
+   "tags": [
+    "Queenstown",
+    "New Zealand",
+    "4 star",
+    "Boutique"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/queenstown.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000291,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "casa-luz-que-cla",
+     "price": "310.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000292,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "casa-luz-que-sup",
+     "price": "390.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000293,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "casa-luz-que-del",
+     "price": "480.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000294,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "casa-luz-que-jun",
+     "price": "650.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000295,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "casa-luz-que-ter",
+     "price": "870.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000060,
+   "title": "Rooftop House Queenstown",
+   "handle": "rooftop-house-queenstown",
+   "body_html": "<p>4-star stay in Queenstown, New Zealand. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Boutique",
+   "tags": [
+    "Queenstown",
+    "New Zealand",
+    "4 star",
+    "Boutique"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/queenstown.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000296,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "rooftop-hous-cla",
+     "price": "285.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000297,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "rooftop-hous-sup",
+     "price": "355.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000298,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "rooftop-hous-del",
+     "price": "440.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000299,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "rooftop-hous-jun",
+     "price": "600.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000300,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "rooftop-hous-ter",
+     "price": "800.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000061,
+   "title": "The Old Quarter Queenstown",
+   "handle": "the-old-quarter-queenstown",
+   "body_html": "<p>3-star stay in Queenstown, New Zealand. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Boutique",
+   "tags": [
+    "Queenstown",
+    "New Zealand",
+    "3 star",
+    "Boutique"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/queenstown.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000301,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-old-quar-cla",
+     "price": "175.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000302,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-old-quar-sup",
+     "price": "220.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000303,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-old-quar-del",
+     "price": "270.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000304,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-old-quar-jun",
+     "price": "370.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000305,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-old-quar-ter",
+     "price": "490.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000062,
+   "title": "Riverside Lodge Queenstown",
+   "handle": "riverside-lodge-queenstown",
+   "body_html": "<p>4-star stay in Queenstown, New Zealand. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Lodges",
+   "tags": [
+    "Queenstown",
+    "New Zealand",
+    "4 star",
+    "Lodges"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/queenstown.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000306,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "riverside-lo-cla",
+     "price": "230.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000307,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "riverside-lo-sup",
+     "price": "290.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000308,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "riverside-lo-del",
+     "price": "355.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000309,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "riverside-lo-jun",
+     "price": "485.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000310,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "riverside-lo-ter",
+     "price": "645.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000063,
+   "title": "Garden Retreat Queenstown",
+   "handle": "garden-retreat-queenstown",
+   "body_html": "<p>5-star stay in Queenstown, New Zealand. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Lodges",
+   "tags": [
+    "Queenstown",
+    "New Zealand",
+    "5 star",
+    "Lodges"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/queenstown.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000311,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "garden-retre-cla",
+     "price": "495.00",
+     "compare_at_price": "585.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000312,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "garden-retre-sup",
+     "price": "620.00",
+     "compare_at_price": "730.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000313,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "garden-retre-del",
+     "price": "765.00",
+     "compare_at_price": "905.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000314,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "garden-retre-jun",
+     "price": "1040.00",
+     "compare_at_price": "1225.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000315,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "garden-retre-ter",
+     "price": "1385.00",
+     "compare_at_price": "1635.00",
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000064,
+   "title": "The Quiet Rooms Queenstown",
+   "handle": "the-quiet-rooms-queenstown",
+   "body_html": "<p>3-star stay in Queenstown, New Zealand. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Apartments",
+   "tags": [
+    "Queenstown",
+    "New Zealand",
+    "3 star",
+    "Apartments"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/queenstown.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000316,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-quiet-ro-cla",
+     "price": "145.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000317,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-quiet-ro-sup",
+     "price": "180.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000318,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-quiet-ro-del",
+     "price": "225.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000319,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-quiet-ro-jun",
+     "price": "305.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000320,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-quiet-ro-ter",
+     "price": "405.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000065,
+   "title": "The Grand Amalfi",
+   "handle": "the-grand-amalfi",
+   "body_html": "<p>5-star stay in Amalfi, Italy. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Hotels",
+   "tags": [
+    "Amalfi",
+    "Italy",
+    "5 star",
+    "Hotels"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/amalfi.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000321,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-grand-am-cla",
+     "price": "420.00",
+     "compare_at_price": "495.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000322,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-grand-am-sup",
+     "price": "525.00",
+     "compare_at_price": "620.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000323,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-grand-am-del",
+     "price": "650.00",
+     "compare_at_price": "765.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000324,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-grand-am-jun",
+     "price": "880.00",
+     "compare_at_price": "1040.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000325,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-grand-am-ter",
+     "price": "1175.00",
+     "compare_at_price": "1385.00",
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000066,
+   "title": "The Harbour Amalfi",
+   "handle": "the-harbour-amalfi",
+   "body_html": "<p>4-star stay in Amalfi, Italy. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Hotels",
+   "tags": [
+    "Amalfi",
+    "Italy",
+    "4 star",
+    "Hotels"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/amalfi.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000326,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-harbour--cla",
+     "price": "260.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000327,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-harbour--sup",
+     "price": "325.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000328,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-harbour--del",
+     "price": "405.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000329,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-harbour--jun",
+     "price": "545.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000330,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-harbour--ter",
+     "price": "730.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000067,
+   "title": "Casa Luz Amalfi",
+   "handle": "casa-luz-amalfi",
+   "body_html": "<p>4-star stay in Amalfi, Italy. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Boutique",
+   "tags": [
+    "Amalfi",
+    "Italy",
+    "4 star",
+    "Boutique"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/amalfi.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000331,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "casa-luz-ama-cla",
+     "price": "310.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000332,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "casa-luz-ama-sup",
+     "price": "390.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000333,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "casa-luz-ama-del",
+     "price": "480.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000334,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "casa-luz-ama-jun",
+     "price": "650.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000335,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "casa-luz-ama-ter",
+     "price": "870.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000068,
+   "title": "Rooftop House Amalfi",
+   "handle": "rooftop-house-amalfi",
+   "body_html": "<p>4-star stay in Amalfi, Italy. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Boutique",
+   "tags": [
+    "Amalfi",
+    "Italy",
+    "4 star",
+    "Boutique"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/amalfi.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000336,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "rooftop-hous-cla",
+     "price": "285.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000337,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "rooftop-hous-sup",
+     "price": "355.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000338,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "rooftop-hous-del",
+     "price": "440.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000339,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "rooftop-hous-jun",
+     "price": "600.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000340,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "rooftop-hous-ter",
+     "price": "800.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000069,
+   "title": "The Old Quarter Amalfi",
+   "handle": "the-old-quarter-amalfi",
+   "body_html": "<p>3-star stay in Amalfi, Italy. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Boutique",
+   "tags": [
+    "Amalfi",
+    "Italy",
+    "3 star",
+    "Boutique"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/amalfi.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000341,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-old-quar-cla",
+     "price": "175.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000342,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-old-quar-sup",
+     "price": "220.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000343,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-old-quar-del",
+     "price": "270.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000344,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-old-quar-jun",
+     "price": "370.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000345,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-old-quar-ter",
+     "price": "490.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000070,
+   "title": "Riverside Lodge Amalfi",
+   "handle": "riverside-lodge-amalfi",
+   "body_html": "<p>4-star stay in Amalfi, Italy. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Lodges",
+   "tags": [
+    "Amalfi",
+    "Italy",
+    "4 star",
+    "Lodges"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/amalfi.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000346,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "riverside-lo-cla",
+     "price": "230.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000347,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "riverside-lo-sup",
+     "price": "290.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000348,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "riverside-lo-del",
+     "price": "355.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000349,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "riverside-lo-jun",
+     "price": "485.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000350,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "riverside-lo-ter",
+     "price": "645.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000071,
+   "title": "Garden Retreat Amalfi",
+   "handle": "garden-retreat-amalfi",
+   "body_html": "<p>5-star stay in Amalfi, Italy. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Lodges",
+   "tags": [
+    "Amalfi",
+    "Italy",
+    "5 star",
+    "Lodges"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/amalfi.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000351,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "garden-retre-cla",
+     "price": "495.00",
+     "compare_at_price": "585.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000352,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "garden-retre-sup",
+     "price": "620.00",
+     "compare_at_price": "730.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000353,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "garden-retre-del",
+     "price": "765.00",
+     "compare_at_price": "905.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000354,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "garden-retre-jun",
+     "price": "1040.00",
+     "compare_at_price": "1225.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000355,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "garden-retre-ter",
+     "price": "1385.00",
+     "compare_at_price": "1635.00",
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000072,
+   "title": "The Quiet Rooms Amalfi",
+   "handle": "the-quiet-rooms-amalfi",
+   "body_html": "<p>3-star stay in Amalfi, Italy. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Apartments",
+   "tags": [
+    "Amalfi",
+    "Italy",
+    "3 star",
+    "Apartments"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/amalfi.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000356,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-quiet-ro-cla",
+     "price": "145.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000357,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-quiet-ro-sup",
+     "price": "180.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000358,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-quiet-ro-del",
+     "price": "225.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000359,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-quiet-ro-jun",
+     "price": "305.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000360,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-quiet-ro-ter",
+     "price": "405.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000073,
+   "title": "The Grand Singapore",
+   "handle": "the-grand-singapore",
+   "body_html": "<p>5-star stay in Singapore, Singapore. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Hotels",
+   "tags": [
+    "Singapore",
+    "Singapore",
+    "5 star",
+    "Hotels"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/singapore.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000361,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-grand-si-cla",
+     "price": "420.00",
+     "compare_at_price": "495.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000362,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-grand-si-sup",
+     "price": "525.00",
+     "compare_at_price": "620.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000363,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-grand-si-del",
+     "price": "650.00",
+     "compare_at_price": "765.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000364,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-grand-si-jun",
+     "price": "880.00",
+     "compare_at_price": "1040.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000365,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-grand-si-ter",
+     "price": "1175.00",
+     "compare_at_price": "1385.00",
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000074,
+   "title": "The Harbour Singapore",
+   "handle": "the-harbour-singapore",
+   "body_html": "<p>4-star stay in Singapore, Singapore. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Hotels",
+   "tags": [
+    "Singapore",
+    "Singapore",
+    "4 star",
+    "Hotels"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/singapore.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000366,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-harbour--cla",
+     "price": "260.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000367,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-harbour--sup",
+     "price": "325.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000368,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-harbour--del",
+     "price": "405.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000369,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-harbour--jun",
+     "price": "545.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000370,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-harbour--ter",
+     "price": "730.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000075,
+   "title": "Casa Luz Singapore",
+   "handle": "casa-luz-singapore",
+   "body_html": "<p>4-star stay in Singapore, Singapore. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Boutique",
+   "tags": [
+    "Singapore",
+    "Singapore",
+    "4 star",
+    "Boutique"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/singapore.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000371,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "casa-luz-sin-cla",
+     "price": "310.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000372,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "casa-luz-sin-sup",
+     "price": "390.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000373,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "casa-luz-sin-del",
+     "price": "480.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000374,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "casa-luz-sin-jun",
+     "price": "650.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000375,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "casa-luz-sin-ter",
+     "price": "870.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000076,
+   "title": "Rooftop House Singapore",
+   "handle": "rooftop-house-singapore",
+   "body_html": "<p>4-star stay in Singapore, Singapore. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Boutique",
+   "tags": [
+    "Singapore",
+    "Singapore",
+    "4 star",
+    "Boutique"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/singapore.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000376,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "rooftop-hous-cla",
+     "price": "285.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000377,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "rooftop-hous-sup",
+     "price": "355.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000378,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "rooftop-hous-del",
+     "price": "440.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000379,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "rooftop-hous-jun",
+     "price": "600.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000380,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "rooftop-hous-ter",
+     "price": "800.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000077,
+   "title": "The Old Quarter Singapore",
+   "handle": "the-old-quarter-singapore",
+   "body_html": "<p>3-star stay in Singapore, Singapore. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Boutique",
+   "tags": [
+    "Singapore",
+    "Singapore",
+    "3 star",
+    "Boutique"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/singapore.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000381,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-old-quar-cla",
+     "price": "175.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000382,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-old-quar-sup",
+     "price": "220.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000383,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-old-quar-del",
+     "price": "270.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000384,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-old-quar-jun",
+     "price": "370.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000385,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-old-quar-ter",
+     "price": "490.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000078,
+   "title": "Riverside Lodge Singapore",
+   "handle": "riverside-lodge-singapore",
+   "body_html": "<p>4-star stay in Singapore, Singapore. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Lodges",
+   "tags": [
+    "Singapore",
+    "Singapore",
+    "4 star",
+    "Lodges"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/singapore.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000386,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "riverside-lo-cla",
+     "price": "230.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000387,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "riverside-lo-sup",
+     "price": "290.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000388,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "riverside-lo-del",
+     "price": "355.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000389,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "riverside-lo-jun",
+     "price": "485.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000390,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "riverside-lo-ter",
+     "price": "645.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000079,
+   "title": "Garden Retreat Singapore",
+   "handle": "garden-retreat-singapore",
+   "body_html": "<p>5-star stay in Singapore, Singapore. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Lodges",
+   "tags": [
+    "Singapore",
+    "Singapore",
+    "5 star",
+    "Lodges"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/singapore.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000391,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "garden-retre-cla",
+     "price": "495.00",
+     "compare_at_price": "585.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000392,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "garden-retre-sup",
+     "price": "620.00",
+     "compare_at_price": "730.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000393,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "garden-retre-del",
+     "price": "765.00",
+     "compare_at_price": "905.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000394,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "garden-retre-jun",
+     "price": "1040.00",
+     "compare_at_price": "1225.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000395,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "garden-retre-ter",
+     "price": "1385.00",
+     "compare_at_price": "1635.00",
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000080,
+   "title": "The Quiet Rooms Singapore",
+   "handle": "the-quiet-rooms-singapore",
+   "body_html": "<p>3-star stay in Singapore, Singapore. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Apartments",
+   "tags": [
+    "Singapore",
+    "Singapore",
+    "3 star",
+    "Apartments"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/singapore.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000396,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-quiet-ro-cla",
+     "price": "145.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000397,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-quiet-ro-sup",
+     "price": "180.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000398,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-quiet-ro-del",
+     "price": "225.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000399,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-quiet-ro-jun",
+     "price": "305.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000400,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-quiet-ro-ter",
+     "price": "405.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000081,
+   "title": "The Grand Edinburgh",
+   "handle": "the-grand-edinburgh",
+   "body_html": "<p>5-star stay in Edinburgh, Scotland. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Hotels",
+   "tags": [
+    "Edinburgh",
+    "Scotland",
+    "5 star",
+    "Hotels"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/edinburgh.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000401,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-grand-ed-cla",
+     "price": "420.00",
+     "compare_at_price": "495.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000402,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-grand-ed-sup",
+     "price": "525.00",
+     "compare_at_price": "620.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000403,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-grand-ed-del",
+     "price": "650.00",
+     "compare_at_price": "765.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000404,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-grand-ed-jun",
+     "price": "880.00",
+     "compare_at_price": "1040.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000405,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-grand-ed-ter",
+     "price": "1175.00",
+     "compare_at_price": "1385.00",
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000082,
+   "title": "The Harbour Edinburgh",
+   "handle": "the-harbour-edinburgh",
+   "body_html": "<p>4-star stay in Edinburgh, Scotland. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Hotels",
+   "tags": [
+    "Edinburgh",
+    "Scotland",
+    "4 star",
+    "Hotels"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/edinburgh.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000406,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-harbour--cla",
+     "price": "260.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000407,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-harbour--sup",
+     "price": "325.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000408,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-harbour--del",
+     "price": "405.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000409,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-harbour--jun",
+     "price": "545.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000410,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-harbour--ter",
+     "price": "730.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000083,
+   "title": "Casa Luz Edinburgh",
+   "handle": "casa-luz-edinburgh",
+   "body_html": "<p>4-star stay in Edinburgh, Scotland. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Boutique",
+   "tags": [
+    "Edinburgh",
+    "Scotland",
+    "4 star",
+    "Boutique"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/edinburgh.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000411,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "casa-luz-edi-cla",
+     "price": "310.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000412,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "casa-luz-edi-sup",
+     "price": "390.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000413,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "casa-luz-edi-del",
+     "price": "480.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000414,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "casa-luz-edi-jun",
+     "price": "650.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000415,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "casa-luz-edi-ter",
+     "price": "870.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000084,
+   "title": "Rooftop House Edinburgh",
+   "handle": "rooftop-house-edinburgh",
+   "body_html": "<p>4-star stay in Edinburgh, Scotland. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Boutique",
+   "tags": [
+    "Edinburgh",
+    "Scotland",
+    "4 star",
+    "Boutique"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/edinburgh.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000416,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "rooftop-hous-cla",
+     "price": "285.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000417,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "rooftop-hous-sup",
+     "price": "355.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000418,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "rooftop-hous-del",
+     "price": "440.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000419,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "rooftop-hous-jun",
+     "price": "600.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000420,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "rooftop-hous-ter",
+     "price": "800.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000085,
+   "title": "The Old Quarter Edinburgh",
+   "handle": "the-old-quarter-edinburgh",
+   "body_html": "<p>3-star stay in Edinburgh, Scotland. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Boutique",
+   "tags": [
+    "Edinburgh",
+    "Scotland",
+    "3 star",
+    "Boutique"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/edinburgh.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000421,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-old-quar-cla",
+     "price": "175.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000422,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-old-quar-sup",
+     "price": "220.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000423,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-old-quar-del",
+     "price": "270.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000424,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-old-quar-jun",
+     "price": "370.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000425,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-old-quar-ter",
+     "price": "490.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000086,
+   "title": "Riverside Lodge Edinburgh",
+   "handle": "riverside-lodge-edinburgh",
+   "body_html": "<p>4-star stay in Edinburgh, Scotland. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Lodges",
+   "tags": [
+    "Edinburgh",
+    "Scotland",
+    "4 star",
+    "Lodges"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/edinburgh.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000426,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "riverside-lo-cla",
+     "price": "230.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000427,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "riverside-lo-sup",
+     "price": "290.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000428,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "riverside-lo-del",
+     "price": "355.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000429,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "riverside-lo-jun",
+     "price": "485.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000430,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "riverside-lo-ter",
+     "price": "645.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000087,
+   "title": "Garden Retreat Edinburgh",
+   "handle": "garden-retreat-edinburgh",
+   "body_html": "<p>5-star stay in Edinburgh, Scotland. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Lodges",
+   "tags": [
+    "Edinburgh",
+    "Scotland",
+    "5 star",
+    "Lodges"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/edinburgh.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000431,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "garden-retre-cla",
+     "price": "495.00",
+     "compare_at_price": "585.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000432,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "garden-retre-sup",
+     "price": "620.00",
+     "compare_at_price": "730.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000433,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "garden-retre-del",
+     "price": "765.00",
+     "compare_at_price": "905.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000434,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "garden-retre-jun",
+     "price": "1040.00",
+     "compare_at_price": "1225.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000435,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "garden-retre-ter",
+     "price": "1385.00",
+     "compare_at_price": "1635.00",
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000088,
+   "title": "The Quiet Rooms Edinburgh",
+   "handle": "the-quiet-rooms-edinburgh",
+   "body_html": "<p>3-star stay in Edinburgh, Scotland. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Apartments",
+   "tags": [
+    "Edinburgh",
+    "Scotland",
+    "3 star",
+    "Apartments"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/edinburgh.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000436,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-quiet-ro-cla",
+     "price": "145.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000437,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-quiet-ro-sup",
+     "price": "180.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000438,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-quiet-ro-del",
+     "price": "225.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000439,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-quiet-ro-jun",
+     "price": "305.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000440,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-quiet-ro-ter",
+     "price": "405.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000089,
+   "title": "The Grand Chiang Mai",
+   "handle": "the-grand-chiang-mai",
+   "body_html": "<p>5-star stay in Chiang Mai, Thailand. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Hotels",
+   "tags": [
+    "Chiang Mai",
+    "Thailand",
+    "5 star",
+    "Hotels"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/chiang-mai.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000441,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-grand-ch-cla",
+     "price": "420.00",
+     "compare_at_price": "495.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000442,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-grand-ch-sup",
+     "price": "525.00",
+     "compare_at_price": "620.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000443,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-grand-ch-del",
+     "price": "650.00",
+     "compare_at_price": "765.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000444,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-grand-ch-jun",
+     "price": "880.00",
+     "compare_at_price": "1040.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000445,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-grand-ch-ter",
+     "price": "1175.00",
+     "compare_at_price": "1385.00",
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000090,
+   "title": "The Harbour Chiang Mai",
+   "handle": "the-harbour-chiang-mai",
+   "body_html": "<p>4-star stay in Chiang Mai, Thailand. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Hotels",
+   "tags": [
+    "Chiang Mai",
+    "Thailand",
+    "4 star",
+    "Hotels"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/chiang-mai.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000446,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-harbour--cla",
+     "price": "260.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000447,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-harbour--sup",
+     "price": "325.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000448,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-harbour--del",
+     "price": "405.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000449,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-harbour--jun",
+     "price": "545.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000450,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-harbour--ter",
+     "price": "730.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000091,
+   "title": "Casa Luz Chiang Mai",
+   "handle": "casa-luz-chiang-mai",
+   "body_html": "<p>4-star stay in Chiang Mai, Thailand. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Boutique",
+   "tags": [
+    "Chiang Mai",
+    "Thailand",
+    "4 star",
+    "Boutique"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/chiang-mai.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000451,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "casa-luz-chi-cla",
+     "price": "310.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000452,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "casa-luz-chi-sup",
+     "price": "390.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000453,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "casa-luz-chi-del",
+     "price": "480.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000454,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "casa-luz-chi-jun",
+     "price": "650.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000455,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "casa-luz-chi-ter",
+     "price": "870.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000092,
+   "title": "Rooftop House Chiang Mai",
+   "handle": "rooftop-house-chiang-mai",
+   "body_html": "<p>4-star stay in Chiang Mai, Thailand. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Boutique",
+   "tags": [
+    "Chiang Mai",
+    "Thailand",
+    "4 star",
+    "Boutique"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/chiang-mai.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000456,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "rooftop-hous-cla",
+     "price": "285.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000457,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "rooftop-hous-sup",
+     "price": "355.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000458,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "rooftop-hous-del",
+     "price": "440.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000459,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "rooftop-hous-jun",
+     "price": "600.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000460,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "rooftop-hous-ter",
+     "price": "800.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000093,
+   "title": "The Old Quarter Chiang Mai",
+   "handle": "the-old-quarter-chiang-mai",
+   "body_html": "<p>3-star stay in Chiang Mai, Thailand. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Boutique",
+   "tags": [
+    "Chiang Mai",
+    "Thailand",
+    "3 star",
+    "Boutique"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/chiang-mai.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000461,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-old-quar-cla",
+     "price": "175.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000462,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-old-quar-sup",
+     "price": "220.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000463,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-old-quar-del",
+     "price": "270.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000464,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-old-quar-jun",
+     "price": "370.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000465,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-old-quar-ter",
+     "price": "490.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000094,
+   "title": "Riverside Lodge Chiang Mai",
+   "handle": "riverside-lodge-chiang-mai",
+   "body_html": "<p>4-star stay in Chiang Mai, Thailand. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Lodges",
+   "tags": [
+    "Chiang Mai",
+    "Thailand",
+    "4 star",
+    "Lodges"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/chiang-mai.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000466,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "riverside-lo-cla",
+     "price": "230.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000467,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "riverside-lo-sup",
+     "price": "290.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000468,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "riverside-lo-del",
+     "price": "355.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000469,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "riverside-lo-jun",
+     "price": "485.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000470,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "riverside-lo-ter",
+     "price": "645.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000095,
+   "title": "Garden Retreat Chiang Mai",
+   "handle": "garden-retreat-chiang-mai",
+   "body_html": "<p>5-star stay in Chiang Mai, Thailand. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Lodges",
+   "tags": [
+    "Chiang Mai",
+    "Thailand",
+    "5 star",
+    "Lodges"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/chiang-mai.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000471,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "garden-retre-cla",
+     "price": "495.00",
+     "compare_at_price": "585.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000472,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "garden-retre-sup",
+     "price": "620.00",
+     "compare_at_price": "730.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000473,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "garden-retre-del",
+     "price": "765.00",
+     "compare_at_price": "905.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000474,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "garden-retre-jun",
+     "price": "1040.00",
+     "compare_at_price": "1225.00",
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000475,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "garden-retre-ter",
+     "price": "1385.00",
+     "compare_at_price": "1635.00",
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000096,
+   "title": "The Quiet Rooms Chiang Mai",
+   "handle": "the-quiet-rooms-chiang-mai",
+   "body_html": "<p>3-star stay in Chiang Mai, Thailand. Breakfast included, flexible cancellation up to 48 hours before arrival.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Apartments",
+   "tags": [
+    "Chiang Mai",
+    "Thailand",
+    "3 star",
+    "Apartments"
+   ],
+   "options": [
+    {
+     "name": "Room",
+     "values": [
+      "Classic Double",
+      "Superior Double",
+      "Deluxe King",
+      "Junior Suite",
+      "Terrace Suite"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/chiang-mai.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000476,
+     "title": "Classic Double",
+     "option1": "Classic Double",
+     "sku": "the-quiet-ro-cla",
+     "price": "145.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000477,
+     "title": "Superior Double",
+     "option1": "Superior Double",
+     "sku": "the-quiet-ro-sup",
+     "price": "180.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000478,
+     "title": "Deluxe King",
+     "option1": "Deluxe King",
+     "sku": "the-quiet-ro-del",
+     "price": "225.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000479,
+     "title": "Junior Suite",
+     "option1": "Junior Suite",
+     "sku": "the-quiet-ro-jun",
+     "price": "305.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48100000000480,
+     "title": "Terrace Suite",
+     "option1": "Terrace Suite",
+     "sku": "the-quiet-ro-ter",
+     "price": "405.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  }
+ ]
+}

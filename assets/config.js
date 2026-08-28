@@ -17,15 +17,18 @@ window.SITE_CONFIG = {
   country:  'US',
 
   /* --- Eureka (Search & Merchandising) ------------------------------------
-     Campaign IDs are discovered automatically from the
-     'eureka:sdk:campaign:ready' event, so you normally leave these null.
+     SET THESE. Auto-discovery is attempted but is not reliable: the
+     'eureka:sdk:campaign:ready' event does not reach a listener bound after
+     the tag has initialised, which is always, because the tag loads async.
 
-     Set them only if you run MORE THAN ONE SDK campaign on the same page and
-     need to disambiguate which campaign drives which surface.
+     To find a campaign id: open a search page, DevTools > Network, filter on
+     `useinsider`, and look for a request containing `?pa=eureka&`. The
+     response body starts with `campId`. It is also on the campaign's row in
+     the panel, under the information icon.
      --------------------------------------------------------------------- */
   eureka: {
     enabled: true,
-    searchCampaignId:   null,   // full-page search results  (search.html)
+    searchCampaignId:   112,    // full-page search results  (search.html)
     listingCampaignId:  null,   // category listing pages    (category.html)
     pageSize: 24,
     defaultSorting: 'Relevancy',

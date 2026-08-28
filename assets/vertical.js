@@ -128,6 +128,10 @@
     set('[data-announce]', d.announce);
     set('[data-hero-lede]', d.hero_lede);
     set('[data-hero-cta]', d.hero_cta);
+    set('[data-hero-eyebrow]', d.hero_eyebrow);
+    set('[data-tiles-title]', d.tiles_title);
+    set('[data-grid-title]', d.grid_title);
+    set('[data-reco-title]', d.reco_title);
     set('[data-newsletter-title]', d.newsletter_title);
     set('[data-newsletter-lede]', d.newsletter_lede);
     setHTML('[data-hero-title]', d.hero_title);
