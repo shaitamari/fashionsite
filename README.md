@@ -13,9 +13,46 @@ across eight verticals and several campaign types, that goes wrong eventually.
 `?v=beauty` still works on localhost and Netlify deploy previews, where there is
 no subdomain to read.
 
-Each vertical brings its own catalog, XML feed, brand, copy and palette. The
-runtime — `store.js`, `eureka.js`, `reco.js`, `insider-debug.js` — is shared and
-should stay that way.
+Each vertical brings its own catalog, XML feed, brand, copy, palette and
+journey wording. The runtime — `store.js`, `eureka.js`, `reco.js`,
+`insider-debug.js` — is shared and should stay that way.
+
+## Structure
+
+Two levels. `vertical` is the parent, `subvertical` the child; a vertical with
+no children repeats the name in both.
+
+```
+Retail     Beauty · Fashion · Luxury · Supermarkets · Lifestyle
+Travel     Hotels · Airlines
+Banking    Banking · Insurance · Fintech
+Telco      Telco
+```
+
+`python3 build.py --list` prints this with build status for each.
+
+## One template, many journeys
+
+Every vertical is a catalog of things with a price, an image and a category —
+handsets, hotel rooms, insurance policies, lipsticks. What changes is the
+wording of the journey, not the page model, so each entry can override labels:
+
+```json
+"labels": {
+  "add_to_cart": "Reserve",
+  "cart": "Your stay",
+  "checkout": "Complete booking",
+  "place_order": "Confirm booking",
+  "confirm_title": "Your booking is confirmed."
+}
+```
+
+Anything omitted falls back to `_labels_default`. Worked examples for telco,
+hotels, airlines, banking and insurance are in the `_planned_*` stubs.
+
+A catalog is worth having even where it feels tangential — a recommender
+strip showing "customers also viewed this handset" demos far better than an
+empty slot, and it costs nothing to include.
 
 Account: **onesandbox (10014057)** · Domain: **insiderdemo.com**
 

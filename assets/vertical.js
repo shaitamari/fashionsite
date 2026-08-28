@@ -131,6 +131,13 @@
     set('[data-newsletter-title]', d.newsletter_title);
     set('[data-newsletter-lede]', d.newsletter_lede);
     setHTML('[data-hero-title]', d.hero_title);
+
+    // Journey wording — "Add to cart" becomes "Reserve", "Get a quote" and so on.
+    var labels = d.labels || {};
+    document.querySelectorAll('[data-label]').forEach(function (n) {
+      var v = labels[n.getAttribute('data-label')];
+      if (v) n.textContent = v;
+    });
     document.querySelectorAll('[data-search-placeholder]').forEach(function (n) {
       if (d.search_placeholder) n.setAttribute('placeholder', d.search_placeholder);
     });

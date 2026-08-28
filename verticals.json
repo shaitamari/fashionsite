@@ -1,15 +1,21 @@
 {
   "_README": [
-    "One entry per subvertical. To add one:",
-    "  1. drop its Shopify export at sources/<key>.json",
-    "  2. copy a block below, edit brand/theme/collections",
-    "  3. python3 build.py <key>",
-    "Then commit. The site serves it at ?v=<key> and Insider fetches",
-    "its feed at /feeds/<key>.xml.",
+    "Two levels: `vertical` is the parent (Retail, Travel, Banking, Telco),",
+    "`subvertical` is the child (Beauty, Fashion, Hotels, Insurance). A vertical",
+    "with no sub-verticals \u2014 Telco \u2014 simply repeats the name in both.",
     "",
-    "collections maps Shopify product_type -> the collection shown on site.",
-    "Anything not listed is dropped (merch, gift cards, samples).",
-    "subcats are keyword rules scoped per collection, first match wins."
+    "`template` selects the page model:",
+    "  ecommerce  browse -> cart -> checkout -> purchase   (Retail)",
+    "  booking    search -> select -> book -> confirmation (Travel, Banking, Telco)",
+    "",
+    "Each entry gets its own subdomain: <key>.insiderdemo.com, so campaign rules",
+    "scope to a hostname and cannot collide.",
+    "",
+    "To add one:",
+    "  1. drop the catalog source at sources/<key>-1.json (see README for volume)",
+    "  2. copy a block below, edit brand / theme / collections",
+    "  3. python3 build.py <key>",
+    "  4. add the subdomain in Netlify and to multiDomains in InOne"
   ],
   "beauty": {
     "brand": "Lumen",
@@ -218,7 +224,11 @@
       "Skincare": "Treatments",
       "Body": "Body Care",
       "Fragrance": "Perfume"
-    }
+    },
+    "vertical": "Retail",
+    "subvertical": "Beauty",
+    "template": "ecommerce",
+    "labels": {}
   },
   "_template": {
     "_comment": "Copy this, rename the key, fill it in. Delete nothing else.",
@@ -266,6 +276,14 @@
     "defaults": {
       "Collection A": "All",
       "Collection B": "All"
+    },
+    "vertical": "Retail",
+    "subvertical": "Sub-vertical name",
+    "template": "ecommerce",
+    "labels": {
+      "_comment": "Override only what differs. Anything omitted falls back to _labels_default.",
+      "cart": "Cart",
+      "add_to_cart": "Add to cart"
     }
   },
   "lifestyle": {
@@ -439,6 +457,135 @@
       "Footwear": "All Footwear",
       "Home": "All Home",
       "Pets": "All Pets"
+    },
+    "vertical": "Retail",
+    "subvertical": "Lifestyle",
+    "template": "ecommerce",
+    "labels": {}
+  },
+  "_planned_luxury": {
+    "_status": "not built \u2014 needs a catalog source and a config block",
+    "vertical": "Retail",
+    "subvertical": "Luxury",
+    "template": "ecommerce",
+    "source": "sources/luxury-1.json"
+  },
+  "_planned_supermarket": {
+    "_status": "not built \u2014 needs a catalog source and a config block",
+    "vertical": "Retail",
+    "subvertical": "Supermarkets",
+    "template": "ecommerce",
+    "source": "sources/supermarket-1.json"
+  },
+  "_planned_fashion": {
+    "_status": "not built \u2014 needs a catalog source and a config block",
+    "vertical": "Retail",
+    "subvertical": "Fashion",
+    "template": "ecommerce",
+    "source": "sources/fashion-1.json"
+  },
+  "_planned_telco": {
+    "_status": "not built \u2014 needs a catalog source and a config block",
+    "vertical": "Telco",
+    "subvertical": "Telco",
+    "template": "booking",
+    "source": "sources/telco-1.json",
+    "labels": {
+      "add_to_cart": "Add to basket",
+      "cart": "Basket",
+      "checkout": "Checkout",
+      "cart_title": "Your basket",
+      "confirm_title": "Your order is confirmed."
     }
+  },
+  "_planned_banking": {
+    "_status": "not built \u2014 needs a catalog source and a config block",
+    "vertical": "Banking",
+    "subvertical": "Banking",
+    "template": "booking",
+    "source": "sources/banking-1.json",
+    "labels": {
+      "add_to_cart": "Start application",
+      "cart": "Your application",
+      "checkout": "Review application",
+      "cart_title": "Your application",
+      "cart_empty": "No products selected yet",
+      "place_order": "Submit application",
+      "order": "application",
+      "confirm_title": "Your application is submitted.",
+      "browse_cta": "Explore products"
+    }
+  },
+  "_planned_insurance": {
+    "_status": "not built \u2014 needs a catalog source and a config block",
+    "vertical": "Banking",
+    "subvertical": "Insurance",
+    "template": "booking",
+    "source": "sources/insurance-1.json",
+    "labels": {
+      "add_to_cart": "Get a quote",
+      "cart": "Your quote",
+      "checkout": "Review quote",
+      "cart_title": "Your quote",
+      "cart_empty": "No cover selected yet",
+      "place_order": "Buy cover",
+      "order": "policy",
+      "confirm_title": "You're covered.",
+      "browse_cta": "Compare cover"
+    }
+  },
+  "_planned_fintech": {
+    "_status": "not built \u2014 needs a catalog source and a config block",
+    "vertical": "Banking",
+    "subvertical": "Fintech",
+    "template": "booking",
+    "source": "sources/fintech-1.json"
+  },
+  "_planned_hotels": {
+    "_status": "not built \u2014 needs a catalog source and a config block",
+    "vertical": "Travel",
+    "subvertical": "Hotels",
+    "template": "booking",
+    "source": "sources/hotels-1.json",
+    "labels": {
+      "add_to_cart": "Reserve",
+      "cart": "Your stay",
+      "checkout": "Complete booking",
+      "cart_title": "Your stay",
+      "cart_empty": "No rooms selected yet",
+      "place_order": "Confirm booking",
+      "order": "booking",
+      "confirm_title": "Your booking is confirmed.",
+      "browse_cta": "Find a room"
+    }
+  },
+  "_planned_airlines": {
+    "_status": "not built \u2014 needs a catalog source and a config block",
+    "vertical": "Travel",
+    "subvertical": "Airlines",
+    "template": "booking",
+    "source": "sources/airlines-1.json",
+    "labels": {
+      "add_to_cart": "Select flight",
+      "cart": "Your trip",
+      "checkout": "Continue to payment",
+      "cart_title": "Your trip",
+      "cart_empty": "No flights selected yet",
+      "place_order": "Confirm booking",
+      "order": "booking",
+      "confirm_title": "Your trip is booked.",
+      "browse_cta": "Search flights"
+    }
+  },
+  "_labels_default": {
+    "cart": "Cart",
+    "add_to_cart": "Add to cart",
+    "checkout": "Checkout",
+    "cart_title": "Your cart",
+    "cart_empty": "Your cart is empty",
+    "place_order": "Place order",
+    "order": "order",
+    "confirm_title": "Thank you for your order.",
+    "browse_cta": "Start shopping"
   }
 }

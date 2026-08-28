@@ -67,7 +67,7 @@
     </form>
     <nav class="utils">
       <a href="account.html" data-account-label>Log in</a>
-      <a class="cartlink" href="cart.html">Cart<span data-cart-count hidden>0</span></a>
+      <a class="cartlink" href="cart.html"><span data-label="cart">Cart</span><span data-cart-count hidden>0</span></a>
     </nav>
   </div>
 </header>
@@ -81,7 +81,7 @@
   <div class="wrap">
     <section class="section" style="padding-top:2.5rem;padding-bottom:0">
       <p class="eyebrow">Checkout <span class="pagetype">page type: other · "checkout"</span></p>
-      <h1 class="h1" style="font-size:clamp(1.5rem,3vw,2.25rem)">Checkout</h1>
+      <h1 class="h1" style="font-size:clamp(1.5rem,3vw,2.25rem)" data-label="checkout">Checkout</h1>
     </section>
 
     <div class="cartgrid">
@@ -103,7 +103,7 @@
           <label class="check"><input type="checkbox" id="c-sms-optin"> Text me delivery updates</label>
           <label class="check"><input type="checkbox" id="c-wa-optin"> WhatsApp is fine too</label>
 
-          <button class="btn btn--wide" type="submit" style="margin-top:1.75rem">Place order</button>
+          <button class="btn btn--wide" type="submit" style="margin-top:1.75rem" data-label="place_order">Place order</button>
           <p class="source" style="margin-top:1.25rem">Placing the order writes these fields to the profile, then sends the purchase event on the next page.</p>
         </form>
       </div>

@@ -28,6 +28,7 @@ def site_for(key):
 os.chdir(ROOT)
 CONFIG = json.load(open("verticals.json"))
 VERTICALS = {k: v for k, v in CONFIG.items() if not k.startswith("_")}
+PLANNED = {k[9:]: v for k, v in CONFIG.items() if k.startswith("_planned_")}
 
 
 # --------------------------------------------------------------------------
@@ -169,9 +170,15 @@ def build_catalog(key, cfg):
 
     meta = {k: cfg[k] for k in (
         "brand", "tagline", "hero_title", "hero_lede", "hero_cta", "announce",
-        "search_placeholder", "newsletter_title", "newsletter_lede", "theme"
+        "search_placeholder", "newsletter_title", "newsletter_lede", "theme",
+        "vertical", "subvertical"
     ) if k in cfg}
     meta["key"] = key
+    # Journey wording, so one template covers retail, travel, telco and banking.
+    labels = dict(CONFIG.get("_labels_default", {}))
+    labels.update({k: v for k, v in (cfg.get("labels") or {}).items()
+                   if not k.startswith("_")})
+    meta["labels"] = labels
 
     os.makedirs("catalogs", exist_ok=True)
     out = f"catalogs/{key}.js"
@@ -274,14 +281,28 @@ if __name__ == "__main__":
         sys.exit(0)
 
     if args[0] == "--list":
+        groups = collections.defaultdict(list)
         for k, v in VERTICALS.items():
-            try:
-                found, paths, _ = load_sources(v)
-                ok = f"{len(paths)} file(s)"
-            except Exception:
-                ok = "MISSING"
-            built = "built" if os.path.exists(f"catalogs/{k}.js") else "-"
-            print(f"  {k:14s} {v['brand']:18s} source: {ok:8s} {built}")
+            groups[v.get("vertical", "Unassigned")].append((k, v, True))
+        for k, v in PLANNED.items():
+            groups[v.get("vertical", "Unassigned")].append((k, v, False))
+
+        for vert in sorted(groups):
+            print(f"\n{vert}")
+            for k, v, live in sorted(groups[vert]):
+                sub = v.get("subvertical", "-")
+                if not live:
+                    print(f"    {sub:14s} {k:14s} —  not built")
+                    continue
+                try:
+                    _, paths, _ = load_sources(v)
+                    src = f"{len(paths)} file(s)"
+                except Exception:
+                    src = "SOURCE MISSING"
+                built = "built" if os.path.exists(f"catalogs/{k}.js") else "not built"
+                print(f"    {sub:14s} {k:14s} {v.get('template','ecommerce'):10s} "
+                      f"{src:14s} {built}")
+        print()
         sys.exit(0)
 
     keys = list(VERTICALS) if args[0] == "--all" else args

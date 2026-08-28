@@ -72,7 +72,7 @@
     </form>
     <nav class="utils">
       <a href="account.html" data-account-label>Log in</a>
-      <a class="cartlink" href="cart.html">Cart<span data-cart-count hidden>0</span></a>
+      <a class="cartlink" href="cart.html"><span data-label="cart">Cart</span><span data-cart-count hidden>0</span></a>
     </nav>
   </div>
 </header>
@@ -86,7 +86,7 @@
   <div class="wrap">
     <section class="section" style="padding-top:2.5rem;padding-bottom:0">
       <p class="eyebrow">Cart <span class="pagetype">page type: cart</span></p>
-      <h1 class="h1" style="font-size:clamp(1.5rem,3vw,2.25rem)">Your cart</h1>
+      <h1 class="h1" style="font-size:clamp(1.5rem,3vw,2.25rem)" data-label="cart_title">Your cart</h1>
     </section>
 
     <div class="cartgrid" id="cart-live" hidden>
@@ -94,16 +94,16 @@
       <aside>
         <div class="panel">
           <div class="totals" id="totals"></div>
-          <a class="btn btn--wide" href="checkout.html" style="margin-top:1.5rem">Checkout</a>
+          <a class="btn btn--wide" href="checkout.html" style="margin-top:1.5rem"><span data-label="checkout">Checkout</span></a>
           <p class="source" id="cart-msg" style="margin:1.25rem 0 0" hidden></p>
         </div>
       </aside>
     </div>
 
     <div class="empty" id="cart-empty" hidden>
-      <h2 class="h2">Your cart is empty</h2>
+      <h2 class="h2" data-label="cart_empty">Your cart is empty</h2>
       <p>Nothing here yet.</p>
-      <p style="margin-top:1.75rem"><a class="btn" href="category.html?c=Makeup">Start shopping</a></p>
+      <p style="margin-top:1.75rem"><a class="btn" href="category.html?c=Makeup" data-label="browse_cta">Start shopping</a></p>
     </div>
 
     <section class="section">
