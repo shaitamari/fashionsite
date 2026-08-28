@@ -33,8 +33,8 @@
 <script src="assets/catalog.js"></script>
 <script src="assets/store.js"></script>
 
-<!-- 3. Insider Tag — account: onesandbox (10014057) -->
-<script async src="//onesandbox.api.useinsider.com/ins.js?id=10014057"></script>
+<!-- 3. Insider Tag — account: salesdemo (10002548) -->
+<script async src="//salesdemo.api.useinsider.com/ins.js?id=10002548"></script>
 
 <!-- 4. Data pushes for this page. -->
 <script src="assets/eureka.js"></script>
@@ -50,7 +50,7 @@
 
   // --- page type: category ----------------------------------------------
   // breadcrumb drives a lot of downstream targeting and must be an array.
-  // It mirrors the single-element taxonomy the onesandbox catalog carries.
+  // It mirrors the single-element taxonomy the salesdemo catalog carries.
   window.InsiderQueue.push({
     type: 'category',
     value: {
@@ -116,7 +116,7 @@
 <footer class="foot">
   <div class="wrap foot__in">
     <span>Posh Street — Insider One demo storefront</span>
-    <span>onesandbox · 10014057</span>
+    <span>salesdemo · 10002548</span>
   </div>
 </footer>
 
@@ -175,7 +175,7 @@
       onRender: function (result, state) {
         sourceEl.className = 'source is-live';
         sourceEl.textContent = 'Eureka campaign ' + state.campId +
-                               ' · onesandbox catalogue · sort: ' + state.sorting;
+                               ' · salesdemo catalogue · sort: ' + state.sorting;
         paint(result.items, { live: true, total: result.navigation.total });
         drawPager(result.navigation, state);
       },
