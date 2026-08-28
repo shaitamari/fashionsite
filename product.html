@@ -33,8 +33,8 @@
 <script src="assets/catalog.js"></script>
 <script src="assets/store.js"></script>
 
-<!-- 3. Insider Tag — account: salesdemo (10002548) -->
-<script async src="//salesdemo.api.useinsider.com/ins.js?id=10002548"></script>
+<!-- 3. Insider Tag — account: onesandbox (10014057) -->
+<script async src="//onesandbox.api.useinsider.com/ins.js?id=10014057"></script>
 
 <!-- 4. Data pushes for this page. -->
 <script src="assets/reco.js"></script>
@@ -50,7 +50,7 @@
   // --- page type: product -----------------------------------------------
   // One product per page. `id` is the Shopify VARIANT id and `groupcode` is
   // the product id — the same shape the live Posh site sends, so both sites
-  // write consistent records into the shared salesdemo catalogue.
+  // write consistent records into the shared onesandbox catalogue.
   window.InsiderQueue.push({ type: 'product', value: Store.productPayload(PRODUCT) });
 
   window.InsiderQueue.push({ type: 'init' });
@@ -143,7 +143,7 @@
 <footer class="foot">
   <div class="wrap foot__in">
     <span>Posh Street — Insider One demo storefront</span>
-    <span>salesdemo · 10002548</span>
+    <span>onesandbox · 10014057</span>
   </div>
 </footer>
 
@@ -156,7 +156,7 @@
     new MutationObserver(function () {
       if (!box.hidden && box.children.length) {
         note.className = 'source is-live';
-        note.textContent = 'Smart Recommender · live from salesdemo';
+        note.textContent = 'Smart Recommender · live from onesandbox';
       }
     }).observe(box, { childList: true, attributes: true });
   }
