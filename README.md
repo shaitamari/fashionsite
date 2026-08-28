@@ -103,11 +103,17 @@ python3 build.py --all     # everything
 python3 build.py --list    # what's configured, what has a source, what's built
 ```
 
-**4. Point the subdomain at the site.** In Netlify: Domain management > Add
+**4. Rebuild the master feed.** `build.py --all` regenerates it automatically.
+Push, and InOne picks up the new vertical on its next hourly sync. There is
+**one** XML integration for the whole demo, pointed at
+`https://insiderdemo.com/feeds/master.xml` — you never repeat the onboarding
+wizard.
+
+**5. Point the subdomain at the site.** In Netlify: Domain management > Add
 domain alias > `<key>.insiderdemo.com`. DNS is already managed by Netlify, so it
 resolves in a minute or two and the certificate follows.
 
-**5. Register it on the account.** Add `https://<key>.insiderdemo.com/` to the
+**6. Register it on the account.** Add `https://<key>.insiderdemo.com/` to the
 multiDomains list in InOne. The tag loads on any domain but ingests on none
 unless the origin is registered — that failure mode is silent, so this step is
 easy to skip and expensive to debug.
@@ -122,15 +128,20 @@ subdomain the store runs on.
 
 The site side is one command. The panel side is the part that takes time.
 
-**XML integration** — Components > Product Catalog Management > XML Integration.
+**XML integration — done once, not per vertical.** Components > Product Catalog
+Management > XML Integration.
 
 | Field | Value |
 |---|---|
 | Format | Google Merchant |
-| Source URL | `https://insiderdemo.com/feeds/<key>.xml` |
+| Source URL | `https://insiderdemo.com/feeds/master.xml` |
 | Product tag | `item` |
 | Currency | USD |
-| Locale | see the note below |
+| Locale | `en_US` |
+
+Every vertical lives in this one feed and one locale. Per-vertical feeds are
+still generated at `feeds/<key>.xml` if you ever want a separate integration,
+but nothing points at them by default.
 
 **Attribute mapping** — Google Merchant auto-maps most of it, but check these
 four, which the wizard gets wrong or leaves blank:
@@ -142,10 +153,15 @@ four, which the wizard gets wrong or leaves blank:
 | price.USD | `g:sale_price` |
 | in_stock | Custom Match on `g:availability` → `in stock` |
 
-**Locale.** An XML integration binds one catalog to one locale. If a locale can
-only hold one catalog, eight verticals need eight locales, and each vertical's
-`user.language` push has to match its catalog locale or Eureka returns nothing.
-Confirm this before loading the third catalog — it is expensive to redo.
+**Separating verticals.** All verticals share one catalog, so each vertical's
+campaigns must filter to their own products using **brand** — `Lumen`,
+`Posh Street`, and so on. `g:brand` is unique per vertical and written on every
+record for exactly this purpose.
+
+Global Filters are the alternative, but only **one can be active per locale**,
+so they can only serve a single vertical. Campaign-level filters are what
+scales here. The cost is discipline: a campaign without a brand filter will
+return other verticals' products.
 
 **Then** Eureka campaigns (JavaScript SDK type, targeting `/search` and
 `/category`) and Smart Recommender campaigns (Integrate via JavaScript SDK,

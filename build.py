@@ -198,34 +198,40 @@ def build_catalog(key, cfg):
 
 
 # --------------------------------------------------------------------------
-def build_feed(key, cfg, records):
-    items = []
-    for p in records:
-        parts = [
-            "  <item>",
-            f"    <g:id>{escape(str(p['id'])[:32])}</g:id>",
-            f"    <g:item_group_id>{escape(p['groupcode'])}</g:item_group_id>",
-            f"    <g:title>{escape(clean(p['name'], 512))}</g:title>",
-            f"    <description>{escape(clean(p['description'] or p['name'], 1024))}</description>",
-            f"    <link>{escape(p['url'])}</link>",
-            f"    <g:image_link>{escape(p['image'])}</g:image_link>",
-            # Bare numbers. A currency suffix here fails validation.
-            f"    <g:price>{p['unit_price']:.2f}</g:price>",
-            f"    <g:sale_price>{p['unit_sale_price']:.2f}</g:sale_price>",
-            f"    <g:availability>{'in stock' if p['in_stock'] else 'out of stock'}</g:availability>",
-            f"    <g:quantity>{p['stock']}</g:quantity>",
-            f"    <g:brand>{escape(p['vendor'])}</g:brand>",
-            f"    <g:product_type>{escape(clean(p['collection'], 1024))}</g:product_type>",
-            "    <g:condition>new</g:condition>",
-            f"    <g:custom_label_0>{escape(clean(p['subcategory'], 512))}</g:custom_label_0>",
-        ]
-        if p["color"]:
-            parts.append(f"    <g:color>{escape(clean(p['color'], 512))}</g:color>")
-        if p["size"]:
-            parts.append(f"    <g:size>{escape(clean(p['size'], 512))}</g:size>")
-        parts.append("  </item>")
-        items.append("\n".join(parts))
+def feed_item(p):
+    """One <item>. Three things here are load-bearing, all learned from a
+    failed validation: prices are bare numbers, the title tag is g:title, and
+    g:sale_price is present on every product because Insider marks price.USD
+    required."""
+    parts = [
+        "  <item>",
+        f"    <g:id>{escape(str(p['id'])[:32])}</g:id>",
+        f"    <g:item_group_id>{escape(p['groupcode'])}</g:item_group_id>",
+        f"    <g:title>{escape(clean(p['name'], 512))}</g:title>",
+        f"    <description>{escape(clean(p['description'] or p['name'], 1024))}</description>",
+        f"    <link>{escape(p['url'])}</link>",
+        f"    <g:image_link>{escape(p['image'])}</g:image_link>",
+        f"    <g:price>{p['unit_price']:.2f}</g:price>",
+        f"    <g:sale_price>{p['unit_sale_price']:.2f}</g:sale_price>",
+        f"    <g:availability>{'in stock' if p['in_stock'] else 'out of stock'}</g:availability>",
+        f"    <g:quantity>{p['stock']}</g:quantity>",
+        # The separator between verticals. Campaigns filter on this.
+        f"    <g:brand>{escape(p['vendor'])}</g:brand>",
+        f"    <g:product_type>{escape(clean(p['collection'], 1024))}</g:product_type>",
+        "    <g:condition>new</g:condition>",
+        f"    <g:custom_label_0>{escape(clean(p['subcategory'], 512))}</g:custom_label_0>",
+    ]
+    if p.get("color"):
+        parts.append(f"    <g:color>{escape(clean(p['color'], 512))}</g:color>")
+    if p.get("size"):
+        parts.append(f"    <g:size>{escape(clean(p['size'], 512))}</g:size>")
+    parts.append("  </item>")
+    return "\n".join(parts)
 
+
+def build_feed(key, cfg, records):
+    """Per-vertical feed. Kept for reference and for anyone who wants a
+    separate integration; the master feed is what InOne actually points at."""
     os.makedirs("feeds", exist_ok=True)
     out = f"feeds/{key}.xml"
     with open(out, "w") as f:
@@ -234,11 +240,10 @@ def build_feed(key, cfg, records):
                 f'  <title>{escape(cfg["brand"])}</title>\n'
                 f'  <link>{site_for(key)}</link>\n'
                 f'  <description>{escape(cfg["tagline"])}</description>\n'
-                + "\n".join(items) + "\n</channel>\n</rss>\n")
+                + "\n".join(feed_item(p) for p in records) + "\n</channel>\n</rss>\n")
     return out
 
 
-# --------------------------------------------------------------------------
 def build(key):
     cfg = VERTICALS[key]
     records, ordered, cat_path = build_catalog(key, cfg)
@@ -247,7 +252,7 @@ def build(key):
     groups = len({r["groupcode"] for r in records})
     onsale = sum(1 for r in records if r["unit_sale_price"] < r["unit_price"])
 
-    print(f"\n{cfg['brand']}  ({key})")
+    print(f"\n{cfg['brand']}  ({key})   {cfg.get('vertical','?')} / {cfg.get('subvertical','?')}")
     print(f"  {groups} products / {len(records)} variants · {onsale} discounted")
     if groups < 200:
         print(f"  note: {groups} products is thin for a search demo — "
@@ -256,8 +261,59 @@ def build(key):
         n = sum(1 for r in records if r["collection"] == c)
         print(f"    {n:4d}  {c}  —  {', '.join(subs)}")
     print(f"  -> {cat_path}")
-    print(f"  -> {feed_path}   (https://{APEX}/feeds/{key}.xml)")
+    print(f"  -> {feed_path}")
     print(f"     store: {site_for(key)}")
+
+
+def build_master():
+    """One feed containing every vertical.
+
+    This is the point of the design: a single XML integration in InOne that
+    syncs hourly. Adding a vertical means regenerating this file and pushing
+    it — no onboarding wizard, no revalidation, no attribute remapping.
+
+    Verticals are separated at campaign level by g:brand, which is unique per
+    vertical, so each vertical's Eureka and Smart Recommender campaigns filter
+    to their own products.
+    """
+    items, per_brand, seen = [], collections.Counter(), {}
+
+    for key, cfg in VERTICALS.items():
+        cat = f"catalogs/{key}.js"
+        if not os.path.exists(cat):
+            continue
+        raw = open(cat).read()
+        start = raw.index("[", raw.index("window.CATALOG"))
+        end = raw.index("];", start) + 1
+        records = json.loads(raw[start:end])
+
+        for p in records:
+            pid = str(p["id"])
+            if pid in seen:
+                # Shopify ids are globally unique, so this should never fire.
+                # If it does, the later vertical silently loses products, so
+                # it is worth knowing about rather than swallowing.
+                print(f"  ! id collision: {pid} in both {seen[pid]} and {key}")
+                continue
+            seen[pid] = key
+            per_brand[p["vendor"]] += 1
+            items.append(feed_item(p))
+
+    os.makedirs("feeds", exist_ok=True)
+    with open("feeds/master.xml", "w") as f:
+        f.write('<?xml version="1.0" encoding="UTF-8"?>\n'
+                '<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">\n<channel>\n'
+                f'  <title>Insider demo catalog</title>\n'
+                f'  <link>https://{APEX}</link>\n'
+                '  <description>All verticals. Separated by brand at campaign level.</description>\n'
+                + "\n".join(items) + "\n</channel>\n</rss>\n")
+
+    print(f"\nMaster feed  ->  feeds/master.xml   (https://{APEX}/feeds/master.xml)")
+    print(f"  {len(items)} records across {len(per_brand)} brand(s)")
+    for brand, n in per_brand.most_common():
+        print(f"    {n:6d}  {brand}")
+    print("\n  One XML integration points at this file. Each vertical's campaigns")
+    print("  filter on brand. Adding a vertical = rebuild, push, wait for sync.")
 
 
 def write_manifest():
@@ -318,6 +374,7 @@ if __name__ == "__main__":
             print(f"  ! {k}: {e}")
             failed.append(k)
 
+    build_master()
     m = write_manifest()
     print(f"\n{len(m)} vertical(s) available: {', '.join(m)}")
     if failed:
