@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Posh Street — Shoes, Home and Pets</title>
+
+<!-- Browsers largely ignore these; the real protection is the Cache-Control
+     headers in _headers / netlify.toml / vercel.json. Kept as a second line. -->
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<link rel="preconnect" href="https://cdn.shopify.com">
+<link rel="stylesheet" href="assets/styles.css">
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     INSIDER WEB SDK
+     Order is load-bearing:
+       1. InsiderQueue array
+       2. site scripts (telemetry wrapper must precede the first push)
+       3. Insider Tag (ins.js)
+       4. user data -> page data -> init
+     ═══════════════════════════════════════════════════════════════════════ -->
+
+<!-- 1. The queue. Must exist before the tag loads. -->
+<script>window.InsiderQueue = window.InsiderQueue || [];</script>
+
+<!-- 2. Site scripts. insider-debug.js wraps InsiderQueue.push to mirror every
+        payload into the on-page console, so it loads before anything is sent. -->
+<script src="assets/config.js"></script>
+<script src="assets/insider-debug.js"></script>
+<script src="assets/catalog.js"></script>
+<script src="assets/store.js"></script>
+
+<!-- 3. Insider Tag — account: salesdemo (10002548) -->
+<script async src="//salesdemo.api.useinsider.com/ins.js?id=10002548"></script>
+
+<!-- 4. Data pushes for this page. -->
+<script src="assets/reco.js"></script>
+<script>
+  // --- user attributes: defaults plus the custom set --------------------
+  window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });
+
+  // --- currency ---------------------------------------------------------
+  window.InsiderQueue.push({ type: 'currency', value: 'USD' });
+
+  // --- page type: home --------------------------------------------------
+  // Default Home Page View parameters are sent automatically, so only custom
+  // parameters belong here.
+  window.InsiderQueue.push({
+    type: 'home',
+    value: { custom: { home_version: 'posh-demo-v1', cart_size: Store.cartCount() } }
+  });
+
+  // --- init: the trigger that actually sends everything above -----------
+  window.InsiderQueue.push({ type: 'init' });
+</script>
+</head>
+
+<body>
+
+<p class="announce">Free shipping on orders over $150 &nbsp;·&nbsp; 30-day returns</p>
+
+<header class="masthead">
+  <div class="masthead__in">
+    <a class="brand" href="index.html">Posh Street</a>
+    <form class="searchbox" data-search role="search" autocomplete="off">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" id="search-input" name="q" placeholder="Search products" aria-label="Search products">
+    </form>
+    <nav class="utils">
+      <a href="account.html" data-account-label>Log in</a>
+      <a class="cartlink" href="cart.html">Cart<span data-cart-count hidden>0</span></a>
+    </nav>
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="mainnav__in" data-collection-nav></div>
+</nav>
+
+<main>
+
+  <section class="hero">
+    <div class="hero__media"><img id="hero-img" alt=""></div>
+    <div class="hero__panel">
+      <div class="hero__inner">
+        <div class="hero__copy">
+          <p class="eyebrow">New season <span class="pagetype">page type: home</span></p>
+          <h1 class="h1">Everything for the way you live.</h1>
+          <p class="lede">Footwear, home and pets — over 250 pieces, restocked weekly.</p>
+          <p style="margin-top:2rem"><a class="btn" href="category.html?c=Shoes%20Collection">Shop footwear</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="section__head"><h2 class="h2">Shop by collection</h2></div>
+    <div class="tiles" id="tiles"></div>
+  </section>
+
+  <section class="section wrap">
+    <div class="section__head">
+      <h2 class="h2">Recommended for you</h2>
+      <span class="source" id="reco-home-note">Smart Recommender · waiting for campaign</span>
+    </div>
+    <div id="reco-home" hidden></div>
+  </section>
+
+  <section class="section wrap">
+    <div class="section__head">
+      <h2 class="h2">New arrivals</h2>
+      <a href="category.html?c=Shoes%20Collection">View all</a>
+    </div>
+    <div class="grid" id="featured"></div>
+  </section>
+
+  <section class="section--alt">
+    <div class="wrap">
+      <div class="section__head"><h2 class="h2">On sale</h2></div>
+      <div class="grid" id="sale"></div>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="panel" style="max-width:540px">
+      <p class="eyebrow">Newsletter</p>
+      <h2 class="h2" style="margin-bottom:.5rem">Be in the know</h2>
+      <p class="lede" style="margin-bottom:1.5rem">Promotions, new products and sales, straight to your inbox.</p>
+      <form id="news-form">
+        <div class="field">
+          <label for="news-email">Email address</label>
+          <input type="email" id="news-email" required placeholder="you@example.com">
+        </div>
+        <button class="btn btn--wide" type="submit">Subscribe</button>
+        <p class="source" id="news-msg" style="margin:1.25rem 0 0" hidden></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <span>Posh Street — Insider One demo storefront</span>
+    <span>salesdemo · 10002548</span>
+  </div>
+</footer>
+
+<script>
+
+  function watchReco(key) {
+    var box = document.getElementById('reco-' + key);
+    var note = document.getElementById('reco-' + key + '-note');
+    if (!box || !note) return;
+    new MutationObserver(function () {
+      if (!box.hidden && box.children.length) {
+        note.className = 'source is-live';
+        note.textContent = 'Smart Recommender · live from salesdemo';
+      }
+    }).observe(box, { childList: true, attributes: true });
+  }
+
+  // Hero and collection tiles borrow real product imagery from the catalog.
+  var picks = Store.featured(24);
+  document.getElementById('hero-img').src = picks[0] ? picks[0].image : '';
+
+  var tiles = document.getElementById('tiles');
+  Store.collections().forEach(function (c) {
+    var pool = Store.byCollection(c);
+    var a = document.createElement('a');
+    a.className = 'tile';
+    a.href = 'category.html?c=' + encodeURIComponent(c);
+    a.innerHTML = '<div class="tile__media"><img loading="lazy" alt="" src="' +
+                  (pool[2] || pool[0]).image + '"></div><span class="tile__label"></span>';
+    a.querySelector('.tile__label').textContent = Store.shortName(c);
+    tiles.appendChild(a);
+  });
+
+  Store.grid('#featured', picks.slice(0, 12));
+  Store.grid('#sale', Store.onSale().slice(0, 6));
+
+  document.getElementById('news-form').addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var email = document.getElementById('news-email').value.trim();
+    if (!email) return;
+
+    // Attach the email to the profile, then record the signup as a custom event.
+    Store.signIn({ email: email, email_optin: true });
+    window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });
+    window.InsiderQueue.push({ type: 'init' });
+
+    window.InsiderQueue.push({
+      type: 'custom_event',
+      value: [{ event_name: 'newsletter_signup',
+                event_parameters: { custom: { source: 'homepage_form' } } }]
+    });
+
+    var msg = document.getElementById('news-msg');
+    msg.hidden = false;
+    msg.className = 'source is-live';
+    msg.textContent = 'Subscribed. email + email_optin written to the profile.';
+    ev.target.reset();
+  });
+
+  watchReco('home');
+</script>
+</body>
+</html>

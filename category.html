@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Collection — Posh Street</title>
+
+<!-- Browsers largely ignore these; the real protection is the Cache-Control
+     headers in _headers / netlify.toml / vercel.json. Kept as a second line. -->
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<link rel="preconnect" href="https://cdn.shopify.com">
+<link rel="stylesheet" href="assets/styles.css">
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     INSIDER WEB SDK
+     Order is load-bearing:
+       1. InsiderQueue array
+       2. site scripts (telemetry wrapper must precede the first push)
+       3. Insider Tag (ins.js)
+       4. user data -> page data -> init
+     ═══════════════════════════════════════════════════════════════════════ -->
+
+<!-- 1. The queue. Must exist before the tag loads. -->
+<script>window.InsiderQueue = window.InsiderQueue || [];</script>
+
+<!-- 2. Site scripts. insider-debug.js wraps InsiderQueue.push to mirror every
+        payload into the on-page console, so it loads before anything is sent. -->
+<script src="assets/config.js"></script>
+<script src="assets/insider-debug.js"></script>
+<script src="assets/catalog.js"></script>
+<script src="assets/store.js"></script>
+
+<!-- 3. Insider Tag — account: salesdemo (10002548) -->
+<script async src="//salesdemo.api.useinsider.com/ins.js?id=10002548"></script>
+
+<!-- 4. Data pushes for this page. -->
+<script src="assets/eureka.js"></script>
+<script>
+  var params = new URLSearchParams(location.search);
+  var COLLECTION = params.get('c') || 'Shoes Collection';
+  var SUBCAT = params.get('sub') || null;
+
+  Store.noteCategoryView(COLLECTION);
+
+  window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });
+  window.InsiderQueue.push({ type: 'currency', value: 'USD' });
+
+  // --- page type: category ----------------------------------------------
+  // breadcrumb drives a lot of downstream targeting and must be an array.
+  // It mirrors the single-element taxonomy the salesdemo catalog carries.
+  window.InsiderQueue.push({
+    type: 'category',
+    value: {
+      breadcrumb: SUBCAT ? [COLLECTION, SUBCAT] : [COLLECTION],
+      custom: { listing_source: 'eureka-sdk' }
+    }
+  });
+
+  window.InsiderQueue.push({ type: 'init' });
+</script>
+</head>
+
+<body>
+
+<p class="announce">Free shipping on orders over $150 &nbsp;·&nbsp; 30-day returns</p>
+
+<header class="masthead">
+  <div class="masthead__in">
+    <a class="brand" href="index.html">Posh Street</a>
+    <form class="searchbox" data-search role="search" autocomplete="off">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" id="search-input" name="q" placeholder="Search products" aria-label="Search products">
+    </form>
+    <nav class="utils">
+      <a href="account.html" data-account-label>Log in</a>
+      <a class="cartlink" href="cart.html">Cart<span data-cart-count hidden>0</span></a>
+    </nav>
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="mainnav__in" data-collection-nav></div>
+</nav>
+
+<main>
+
+  <div class="wrap">
+    <section class="section" style="padding-top:2.5rem">
+      <p class="eyebrow">Collection <span class="pagetype">page type: category</span></p>
+      <h1 class="h1" id="cat-title"></h1>
+
+      <p class="source" id="listing-source">Eureka · resolving campaign…</p>
+
+      <div class="chips" id="subcats"></div>
+
+      <div class="toolbar">
+        <label for="sortby" style="font-size:.8125rem;color:var(--muted)">Sort</label>
+        <select id="sortby">
+          <option value="Relevancy">Featured</option>
+          <option value="PriceAsc">Price, low to high</option>
+          <option value="PriceDesc">Price, high to low</option>
+          <option value="Newest">Newest</option>
+        </select>
+        <span id="result-count" style="font-size:.8125rem;color:var(--muted)"></span>
+      </div>
+
+      <div class="grid" id="results"></div>
+      <div id="pager" style="margin-top:3rem;display:flex;gap:.75rem;justify-content:center"></div>
+    </section>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <span>Posh Street — Insider One demo storefront</span>
+    <span>salesdemo · 10002548</span>
+  </div>
+</footer>
+
+<script>
+
+  document.getElementById('cat-title').textContent = SUBCAT || Store.shortName(COLLECTION);
+  document.title = Store.shortName(COLLECTION) + ' — Posh Street';
+
+  var chips = document.getElementById('subcats');
+  var all = document.createElement('a');
+  all.className = 'chip';
+  all.href = 'category.html?c=' + encodeURIComponent(COLLECTION);
+  all.textContent = 'All';
+  if (!SUBCAT) all.setAttribute('aria-pressed', 'true');
+  chips.appendChild(all);
+  Store.subcategories(COLLECTION).forEach(function (s) {
+    var a = document.createElement('a');
+    a.className = 'chip';
+    a.href = 'category.html?c=' + encodeURIComponent(COLLECTION) + '&sub=' + encodeURIComponent(s);
+    a.textContent = s;
+    if (s === SUBCAT) a.setAttribute('aria-pressed', 'true');
+    chips.appendChild(a);
+  });
+
+  var sourceEl = document.getElementById('listing-source');
+  var countEl = document.getElementById('result-count');
+  var listing = null;
+
+  function paint(products, opts) {
+    opts = opts || {};
+    Store.grid('#results', products, {
+      onClick: function (ev) {
+        var cards = Array.prototype.slice.call(document.querySelectorAll('#results .card'));
+        var pos = cards.indexOf(ev.currentTarget.closest('.card')) + 1;
+        if (listing && opts.live) listing.clickProduct(products[pos - 1], pos);
+      }
+    });
+    countEl.textContent = (opts.total != null ? opts.total : products.length) + ' products';
+  }
+
+  function renderFallback() {
+    var local = Store.byCollection(COLLECTION, SUBCAT);
+    sourceEl.className = 'source is-fallback';
+    sourceEl.textContent = 'Local catalogue · Eureka not serving this page';
+    paint(local, { live: false });
+    return local;
+  }
+
+  if (window.Eureka && window.Eureka.enabled) {
+    // Paint local results immediately so the grid is never blank while the tag
+    // loads and the campaign resolves. Eureka replaces this when it answers.
+    paint(Store.byCollection(COLLECTION, SUBCAT), { live: false });
+
+    listing = window.Eureka.listing({
+      category: SUBCAT || COLLECTION,
+      onRender: function (result, state) {
+        sourceEl.className = 'source is-live';
+        sourceEl.textContent = 'Eureka campaign ' + state.campId +
+                               ' · salesdemo catalogue · sort: ' + state.sorting;
+        paint(result.items, { live: true, total: result.navigation.total });
+        drawPager(result.navigation, state);
+      },
+      onFallback: renderFallback
+    });
+
+    document.getElementById('sortby').addEventListener('change', function (ev) {
+      // Every sort change must re-fetch AND re-track.
+      listing.update({ sorting: ev.target.value, page: 1 });
+      window.InsiderQueue.push({
+        type: 'custom_event',
+        value: [{ event_name: 'filter_applied',
+                  event_parameters: { custom: { filter_name: 'sort', filter_value: ev.target.value } } }]
+      });
+    });
+  } else {
+    renderFallback();
+  }
+
+  function drawPager(navigation, state) {
+    var pager = document.getElementById('pager');
+    pager.innerHTML = '';
+    var total = navigation.totalPageCount || 1;
+    if (total < 2) return;
+    for (var i = 1; i <= Math.min(total, 8); i++) {
+      (function (n) {
+        var b = document.createElement('button');
+        b.className = 'btn btn--ghost';
+        b.style.padding = '.55rem 1rem';
+        b.textContent = n;
+        if (n === state.page) b.disabled = true;
+        b.addEventListener('click', function () { listing.update({ page: n }); });
+        pager.appendChild(b);
+      })(i);
+    }
+  }
+</script>
+</body>
+</html>

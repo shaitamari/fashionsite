@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cart — Posh Street</title>
+
+<!-- Browsers largely ignore these; the real protection is the Cache-Control
+     headers in _headers / netlify.toml / vercel.json. Kept as a second line. -->
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<link rel="preconnect" href="https://cdn.shopify.com">
+<link rel="stylesheet" href="assets/styles.css">
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     INSIDER WEB SDK
+     Order is load-bearing:
+       1. InsiderQueue array
+       2. site scripts (telemetry wrapper must precede the first push)
+       3. Insider Tag (ins.js)
+       4. user data -> page data -> init
+     ═══════════════════════════════════════════════════════════════════════ -->
+
+<!-- 1. The queue. Must exist before the tag loads. -->
+<script>window.InsiderQueue = window.InsiderQueue || [];</script>
+
+<!-- 2. Site scripts. insider-debug.js wraps InsiderQueue.push to mirror every
+        payload into the on-page console, so it loads before anything is sent. -->
+<script src="assets/config.js"></script>
+<script src="assets/insider-debug.js"></script>
+<script src="assets/catalog.js"></script>
+<script src="assets/store.js"></script>
+
+<!-- 3. Insider Tag — account: salesdemo (10002548) -->
+<script async src="//salesdemo.api.useinsider.com/ins.js?id=10002548"></script>
+
+<!-- 4. Data pushes for this page. -->
+<script src="assets/reco.js"></script>
+<script>
+  window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });
+  window.InsiderQueue.push({ type: 'currency', value: 'USD' });
+
+  // --- page type: cart --------------------------------------------------
+  // type: 'cart' sets the page type AND refreshes cart contents. That is why
+  // it is not pushed on other pages here: two page types in one load is a
+  // documented way to confuse campaign rules.
+  window.InsiderQueue.push({
+    type: 'cart',
+    value: {
+      total: Store.cartTotal(),
+      items: Store.cartLines(),
+      shipping_cost: (Store.cartTotal() >= 150 || Store.cartTotal() === 0) ? 0 : 9.95
+    }
+  });
+
+  window.InsiderQueue.push({ type: 'init' });
+</script>
+</head>
+
+<body>
+
+<p class="announce">Free shipping on orders over $150 &nbsp;·&nbsp; 30-day returns</p>
+
+<header class="masthead">
+  <div class="masthead__in">
+    <a class="brand" href="index.html">Posh Street</a>
+    <form class="searchbox" data-search role="search" autocomplete="off">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" id="search-input" name="q" placeholder="Search products" aria-label="Search products">
+    </form>
+    <nav class="utils">
+      <a href="account.html" data-account-label>Log in</a>
+      <a class="cartlink" href="cart.html">Cart<span data-cart-count hidden>0</span></a>
+    </nav>
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="mainnav__in" data-collection-nav></div>
+</nav>
+
+<main>
+
+  <div class="wrap">
+    <section class="section" style="padding-top:2.5rem;padding-bottom:0">
+      <p class="eyebrow">Cart <span class="pagetype">page type: cart</span></p>
+      <h1 class="h1" style="font-size:clamp(1.5rem,3vw,2.25rem)">Your cart</h1>
+    </section>
+
+    <div class="cartgrid" id="cart-live" hidden>
+      <div id="lines"></div>
+      <aside>
+        <div class="panel">
+          <div class="totals" id="totals"></div>
+          <a class="btn btn--wide" href="checkout.html" style="margin-top:1.5rem">Checkout</a>
+          <p class="source" id="cart-msg" style="margin:1.25rem 0 0" hidden></p>
+        </div>
+      </aside>
+    </div>
+
+    <div class="empty" id="cart-empty" hidden>
+      <h2 class="h2">Your cart is empty</h2>
+      <p>Nothing here yet.</p>
+      <p style="margin-top:1.75rem"><a class="btn" href="category.html?c=Shoes%20Collection">Start shopping</a></p>
+    </div>
+
+    <section class="section">
+      <div class="section__head">
+        <h2 class="h2">Before you check out</h2>
+        <span class="source" id="reco-cart-note">Smart Recommender · waiting for campaign</span>
+      </div>
+      <div id="reco-cart" hidden></div>
+    </section>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <span>Posh Street — Insider One demo storefront</span>
+    <span>salesdemo · 10002548</span>
+  </div>
+</footer>
+
+<script>
+
+  function watchReco(key) {
+    var box = document.getElementById('reco-' + key);
+    var note = document.getElementById('reco-' + key + '-note');
+    if (!box || !note) return;
+    new MutationObserver(function () {
+      if (!box.hidden && box.children.length) {
+        note.className = 'source is-live';
+        note.textContent = 'Smart Recommender · live from salesdemo';
+      }
+    }).observe(box, { childList: true, attributes: true });
+  }
+
+  var msg = document.getElementById('cart-msg');
+  function say(t) { msg.hidden = false; msg.className = 'source is-live'; msg.textContent = t; }
+
+  function ship(total) { return (total >= 150 || total === 0) ? 0 : 9.95; }
+
+  function paint() {
+    var lines = Store.cartLines();
+    document.getElementById('cart-live').hidden = lines.length === 0;
+    document.getElementById('cart-empty').hidden = lines.length > 0;
+
+    var host = document.getElementById('lines');
+    host.innerHTML = '';
+
+    lines.forEach(function (l) {
+      var local = Store.byId(l.id);
+      var row = document.createElement('div');
+      row.className = 'line';
+      row.innerHTML =
+        '<div class="line__media"><img alt="" src=""></div>' +
+        '<div>' +
+          '<p class="line__name"></p>' +
+          '<p class="line__attrs"></p>' +
+          '<div class="qty">' +
+            '<button type="button" data-act="dec">&minus;</button><span></span>' +
+            '<button type="button" data-act="inc">+</button>' +
+          '</div>' +
+        '</div>' +
+        '<div style="text-align:right">' +
+          '<p class="line__total" style="font-size:.9375rem;margin:0 0 .75rem"></p>' +
+          '<button class="linkish" data-act="remove">Remove</button>' +
+        '</div>';
+
+      row.querySelector('img').src = local ? local.image : '';
+      row.querySelector('.line__name').textContent = l.name;
+      row.querySelector('.line__attrs').textContent =
+        'Variant ' + l.id + (l.size ? ' · ' + l.size : '');
+      row.querySelector('.qty span').textContent = l.quantity;
+      row.querySelector('.line__total').textContent =
+        Store.money(l.unit_sale_price * l.quantity);
+
+      row.querySelector('[data-act="inc"]').addEventListener('click', function () {
+        Store.setQty(l.id, l.quantity + 1);
+        window.InsiderQueue.push({ type: 'add_to_cart', value: Store.productPayload(local, 1) });
+        refresh('add_to_cart sent · quantity up');
+      });
+      row.querySelector('[data-act="dec"]').addEventListener('click', function () {
+        if (l.quantity <= 1) return remove(l);
+        Store.setQty(l.id, l.quantity - 1);
+        window.InsiderQueue.push({ type: 'remove_from_cart', value: Store.productPayload(local, 1) });
+        refresh('remove_from_cart sent · quantity down');
+      });
+      row.querySelector('[data-act="remove"]').addEventListener('click', function () { remove(l); });
+
+      host.appendChild(row);
+    });
+
+    var total = Store.cartTotal();
+    var s = ship(total);
+    document.getElementById('totals').innerHTML =
+      '<div><span>Subtotal</span><span>' + Store.money(total) + '</span></div>' +
+      '<div><span>Shipping</span><span>' + (s ? Store.money(s) : 'Free') + '</span></div>' +
+      '<div class="grand"><span>Total</span><span>' + Store.money(total + s) + '</span></div>';
+  }
+
+  function remove(l) {
+    var payload = Store.removeFromCart(l.id);
+    if (payload) window.InsiderQueue.push({ type: 'remove_from_cart', value: payload });
+    refresh('remove_from_cart sent · ' + l.id);
+  }
+
+  // Any cart change re-declares the cart page and re-inits, so the profile's
+  // cart contents stay accurate without a full reload.
+  function refresh(note) {
+    paint();
+    window.InsiderQueue.push({
+      type: 'cart',
+      value: { total: Store.cartTotal(), items: Store.cartLines(),
+               shipping_cost: ship(Store.cartTotal()) }
+    });
+    window.InsiderQueue.push({ type: 'init' });
+    if (note) say(note);
+  }
+
+  paint();
+  watchReco('cart');
+</script>
+</body>
+</html>
