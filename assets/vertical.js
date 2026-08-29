@@ -164,18 +164,21 @@
        attributes — and pushes it to InsiderQueue, where nothing consumes it.
        Merge the same object in here so the Hit API can actually send it.
 
-       store.js loads after this file, so poll briefly rather than assuming
-       it is ready. Merge rather than replace, so the locale and country set
-       above survive if the payload omits them.
+       store.js loads after this file and after the catalog, which for the
+       larger verticals is several thousand products, so it can be seconds
+       away. Poll generously and also hook DOMContentLoaded, then stop.
+
+       Merge rather than replace, so the locale and country set above survive
+       if the payload omits them.
 
        The uuid matters more than it looks: the panel's User Profiles detail
        page is keyed on it. Without this, no profile exists to open.
        ------------------------------------------------------------------ */
-    var tries = 0;
-    var t = setInterval(function () {
-      var ready = window.Store && window.Store.userPayload;
-      if (!ready) { if (++tries > 200) clearInterval(t); return; }
-      clearInterval(t);
+    var merged = false;
+
+    function mergeUserPayload() {
+      if (merged) return true;
+      if (!(window.Store && window.Store.userPayload)) return false;
       try {
         var payload = window.Store.userPayload() || {};
         Object.keys(payload).forEach(function (k) {
@@ -184,12 +187,31 @@
           if (k === 'language' || k === 'country') return;
           io.user[k] = payload[k];
         });
+        merged = true;
         if (window.insDebugNote) {
           window.insDebugNote('insider_object user seeded: ' +
             (payload.uuid || 'no uuid'), 'ok');
         }
-      } catch (e) {}
-    }, 10);
+        // The Hit API may already have built and sent its payload without
+        // these fields. Resend the custom attributes so the profile is
+        // populated either way; harmless if it was already correct.
+        try {
+          if (window.Insider && Insider.sendUserAttributes && payload.custom) {
+            Insider.sendUserAttributes(payload.custom);
+          }
+        } catch (e) {}
+        return true;
+      } catch (e) { return false; }
+    }
+
+    if (!mergeUserPayload()) {
+      var tries = 0;
+      var t = setInterval(function () {
+        if (mergeUserPayload() || ++tries > 600) clearInterval(t);
+      }, 25);
+      document.addEventListener('DOMContentLoaded', mergeUserPayload);
+      window.addEventListener('load', mergeUserPayload);
+    }
   })(resolved.env);
 
   // The tag is written here rather than inline in each page, because which
