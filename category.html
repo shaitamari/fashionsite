@@ -35,7 +35,7 @@
 
 <!-- 3. Insider Tag — written by assets/vertical.js, because which
         account it points at depends on the hostname:
-          beauty.insiderdemo.com          -> salesdemo
+          beauty.insiderdemo.com          -> partnersandbox
           beauty-sandbox.insiderdemo.com  -> partnersandbox
         Account and partner id are listed in vertical.js and shown
         live in the SDK console. -->
@@ -54,7 +54,7 @@
 
   // --- page type: category ----------------------------------------------
   // breadcrumb drives a lot of downstream targeting and must be an array.
-  // It mirrors the single-element taxonomy the salesdemo catalog carries.
+  // It mirrors the category path the feed carries into Eureka.
   window.InsiderQueue.push({
     type: 'category',
     value: {
@@ -126,7 +126,7 @@
 <footer class="foot">
   <div class="wrap foot__in">
     <span><span data-brand>Lumen</span> — Insider One demo storefront</span>
-    <span>onesandbox · 10014057</span>
+    <span data-env-label>partnersandbox · 10006846</span>
   </div>
 </footer>
 
@@ -175,17 +175,40 @@
     return local;
   }
 
+  // Placeholder cards while the tag loads and the campaign resolves. Painting
+  // the local catalogue here instead would show one ordering and then replace
+  // it with Eureka's a moment later — a visible flash on every category page.
+  // Eureka is the source of truth for this grid; the local catalogue is only
+  // the failure path, in renderFallback().
+  function paintSkeleton(n) {
+    var grid = document.querySelector('#results');
+    if (!grid) return;
+    grid.innerHTML = '';
+    for (var i = 0; i < (n || 8); i++) {
+      var card = document.createElement('article');
+      card.className = 'card card--skeleton';
+      card.setAttribute('aria-hidden', 'true');
+      card.innerHTML =
+        '<div class="card__media" style="background:var(--alt)"></div>' +
+        '<div class="card__meta">' +
+          '<p style="height:.7rem;width:40%;background:var(--alt);border-radius:2px"></p>' +
+          '<p style="height:.9rem;width:75%;background:var(--alt);border-radius:2px;margin-top:.4rem"></p>' +
+          '<p style="height:.8rem;width:30%;background:var(--alt);border-radius:2px;margin-top:.6rem"></p>' +
+        '</div>';
+      grid.appendChild(card);
+    }
+  }
+
   if (window.Eureka && window.Eureka.enabled) {
-    // Paint local results immediately so the grid is never blank while the tag
-    // loads and the campaign resolves. Eureka replaces this when it answers.
-    paint(Store.byCollection(COLLECTION, SUBCAT), { live: false });
+    paintSkeleton(8);
 
     listing = window.Eureka.listing({
       category: SUBCAT || COLLECTION,
       onRender: function (result, state) {
         sourceEl.className = 'source is-live';
-        sourceEl.textContent = 'Eureka campaign ' + state.campId +
-                               ' · salesdemo catalogue · sort: ' + state.sorting;
+        sourceEl.textContent = 'Eureka campaign ' + state.campId + ' · ' +
+                               ((window.ENVIRONMENT && window.ENVIRONMENT.account) || '?') +
+                               ' catalogue · sort: ' + state.sorting;
         paint(result.items, { live: true, total: result.navigation.total });
         drawPager(result.navigation, state);
       },
