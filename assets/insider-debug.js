@@ -111,17 +111,28 @@
   }
 
   /* --- the Insider profile ------------------------------------------------
-     Two different ids are in play and they are easy to confuse:
+     Three ids are in play and they are easy to confuse:
 
-       Store.visitorId()      our own uuid, sent as `uuid` on the user push
-       Insider.getUserId()    Insider's own profile id (spUID)
+       Store.visitorId()      our uuid, sent as `uuid` on the user push
+       Insider.getUserId()    Insider's own spUID (178794192268422e0c19d52...)
+       the panel's Profile ID a UUID, shown in User Profiles and in its URL
 
-     User Profiles in the panel is keyed on the SECOND one. Searching the
-     panel for our uuid finds nothing, which is a confusing five minutes for
-     anyone who tries it.
+     The panel's detail page — /user-profiles/<id> — resolves the UUID, and
+     that UUID is the `uuid` identifier we send. The spUID is a different
+     value in a different format and the panel redirects to the listing when
+     given one, so link on the uuid.
+
+     Both are shown in the console: the spUID is still worth seeing, because
+     it is what appears in Eureka request URLs and in the tag's own storage.
      ---------------------------------------------------------------------- */
   function insiderProfileId() {
     try { return (window.Insider && Insider.getUserId && Insider.getUserId()) || null; }
+    catch (e) { return null; }
+  }
+
+  // The id the panel actually resolves.
+  function panelProfileKey() {
+    try { return (window.Store && window.Store.visitorId && window.Store.visitorId()) || null; }
     catch (e) { return null; }
   }
 
@@ -131,12 +142,10 @@
     return 'https://' + account + '.inone.useinsider.com/user-profiles';
   }
 
-  // Deep link straight to the profile. The panel resolves /user-profiles/<id>
-  // for the same id that its search box accepts, which is Insider's own
-  // profile id (spUID) — not our uuid, which it does not know about.
+  // Deep link straight to the profile, keyed on the uuid the panel resolves.
   function panelProfileUrl() {
     var base = panelProfilesUrl();
-    var id = insiderProfileId();
+    var id = panelProfileKey();
     return base && id ? base + '/' + encodeURIComponent(id) : base;
   }
 
@@ -292,24 +301,36 @@
       // Profile id gets its own row, as a real link straight to the profile in
       // the panel. Styled inline so it reads as a link without depending on
       // the site stylesheet, which does not know about this component.
-      if (profileId && panelProfileUrl()) {
+      var profileKey = panelProfileKey();
+      if (profileKey && panelProfileUrl()) {
         var stat = document.createElement('div');
         stat.className = 'ins-stat ins-stat--link';
         var a = document.createElement('a');
         a.href = panelProfileUrl();
         a.target = '_blank';
         a.rel = 'noopener';
-        a.textContent = profileId;
+        a.textContent = profileKey;
         a.title = 'Open this profile in the Insider panel';
         a.style.cssText = 'color:#7CC8A6;text-decoration:underline;' +
                           'text-underline-offset:2px;cursor:pointer;word-break:break-all';
         var dd = document.createElement('dd');
         dd.appendChild(a);
         var dt = document.createElement('dt');
-        dt.textContent = 'Profile id';
+        dt.textContent = 'Profile';
         stat.appendChild(dt);
         stat.appendChild(dd);
         el.status.appendChild(stat);
+      }
+
+      // The spUID is not what the panel resolves, but it is what appears in
+      // Eureka request URLs and the tag's storage, so it stays visible.
+      if (profileId) {
+        var sp = document.createElement('div');
+        sp.className = 'ins-stat';
+        sp.innerHTML = '<dt>spUID</dt><dd></dd>';
+        sp.querySelector('dd').textContent = profileId;
+        sp.querySelector('dd').style.cssText = 'word-break:break-all;opacity:.7';
+        el.status.appendChild(sp);
       }
 
       if (!open) return;
