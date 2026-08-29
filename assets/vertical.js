@@ -212,6 +212,85 @@
       document.addEventListener('DOMContentLoaded', mergeUserPayload);
       window.addEventListener('load', mergeUserPayload);
     }
+
+    /* --- page type, product, basket, transaction -------------------------
+       The tag's page rules all read insider_object.page.type:
+
+           isOnMainPage      -> 'Home'
+           isOnCategoryPage  -> 'Category'
+           isOnProductPage   -> 'Product'
+           isOnCartPage      -> 'Basket'
+           isOnAfterPaymentPage -> 'Confirmation'
+
+       Without them every page resolves as "other", so User Profiles records
+       "Other Page View" for the whole funnel and no product or purchase
+       events are attributed. getCurrentProduct and getPaidProducts read
+       insider_object.product and .basket for the same reason.
+
+       The site already pushes exactly this data — the push TYPE is the page
+       type ('home', 'product', ...) and its value is the payload. Mirror
+       those pushes into the IO as they happen.
+
+       Note the capitalisation: the rules compare against 'Home', 'Basket'
+       and so on, while the pushes are lowercase. And the cart is called
+       'basket' in the IO but pushed as 'basket' or 'cart' depending on the
+       page, so both are mapped.
+       ------------------------------------------------------------------ */
+    var PAGE_TYPES = {
+      home: 'Home',
+      category: 'Category',
+      product: 'Product',
+      basket: 'Basket',
+      cart: 'Basket',
+      purchase: 'Confirmation',
+      confirmation: 'Confirmation',
+      other: 'Other'
+    };
+
+    function applyPush(entry) {
+      if (!entry || !entry.type) return;
+      var type = String(entry.type).toLowerCase();
+
+      // Page-type pushes set page.type and, where relevant, the object the
+      // system rules read for that page.
+      if (PAGE_TYPES[type]) {
+        io.page = io.page || {};
+        io.page.type = PAGE_TYPES[type];
+        if (entry.value && typeof entry.value === 'object') {
+          if (type === 'product') io.product = entry.value;
+          else if (type === 'basket' || type === 'cart') {
+            io.basket = io.basket || {};
+            Object.keys(entry.value).forEach(function (k) {
+              io.basket[k] = entry.value[k];
+            });
+          } else if (type === 'purchase' || type === 'confirmation') {
+            io.transaction = entry.value;
+          } else if (type === 'category') {
+            io.listing = entry.value;
+          }
+        }
+        return;
+      }
+
+      if (type === 'currency' && entry.value) {
+        io.basket = io.basket || {};
+        io.basket.currency = entry.value;
+      }
+    }
+
+    // Anything already queued before this ran.
+    try { (window.InsiderQueue || []).forEach(applyPush); } catch (e) {}
+
+    // And everything pushed afterwards. Wrapping push here is the same
+    // technique the telemetry console uses; both can coexist.
+    try {
+      window.InsiderQueue = window.InsiderQueue || [];
+      var nativePush = window.InsiderQueue.push;
+      window.InsiderQueue.push = function () {
+        for (var i = 0; i < arguments.length; i++) applyPush(arguments[i]);
+        return nativePush.apply(window.InsiderQueue, arguments);
+      };
+    } catch (e) {}
   })(resolved.env);
 
   // The tag is written here rather than inline in each page, because which
