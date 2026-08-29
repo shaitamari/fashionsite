@@ -1,0 +1,967 @@
+{
+ "products": [
+  {
+   "id": 8300000000001,
+   "title": "Calder Everyday Credit Card",
+   "handle": "calder-everyday-credit-card",
+   "body_html": "<p>No annual fee, 0% on purchases for 12 months</p>",
+   "vendor": "Calder",
+   "product_type": "Credit Cards",
+   "tags": [
+    "Calder",
+    "Credit Cards"
+   ],
+   "options": [
+    {
+     "name": "Card",
+     "values": [
+      "Standard",
+      "Plus"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/banking/calder-everyday-credit-card.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48300000000001,
+     "title": "Standard",
+     "option1": "Standard",
+     "sku": "calder-everyday-",
+     "price": "1.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48300000000002,
+     "title": "Plus",
+     "option1": "Plus",
+     "sku": "calder-everyday-",
+     "price": "1.40",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8300000000002,
+   "title": "Calder Rewards Credit Card",
+   "handle": "calder-rewards-credit-card",
+   "body_html": "<p>1.5% back on everything, no category limits</p>",
+   "vendor": "Calder",
+   "product_type": "Credit Cards",
+   "tags": [
+    "Calder",
+    "Credit Cards"
+   ],
+   "options": [
+    {
+     "name": "Card",
+     "values": [
+      "Standard",
+      "Plus"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/banking/calder-rewards-credit-card.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48300000000003,
+     "title": "Standard",
+     "option1": "Standard",
+     "sku": "calder-rewards-c",
+     "price": "45.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48300000000004,
+     "title": "Plus",
+     "option1": "Plus",
+     "sku": "calder-rewards-c",
+     "price": "63.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8300000000003,
+   "title": "Calder Travel Credit Card",
+   "handle": "calder-travel-credit-card",
+   "body_html": "<p>No FX fees, lounge access, travel insurance included</p>",
+   "vendor": "Calder",
+   "product_type": "Credit Cards",
+   "tags": [
+    "Calder",
+    "Credit Cards"
+   ],
+   "options": [
+    {
+     "name": "Card",
+     "values": [
+      "Standard",
+      "Plus"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/banking/calder-travel-credit-card.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48300000000005,
+     "title": "Standard",
+     "option1": "Standard",
+     "sku": "calder-travel-cr",
+     "price": "120.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48300000000006,
+     "title": "Plus",
+     "option1": "Plus",
+     "sku": "calder-travel-cr",
+     "price": "168.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8300000000004,
+   "title": "Ardent Premier Credit Card",
+   "handle": "ardent-premier-credit-card",
+   "body_html": "<p>Concierge, higher limits, dedicated relationship manager</p>",
+   "vendor": "Ardent",
+   "product_type": "Credit Cards",
+   "tags": [
+    "Ardent",
+    "Credit Cards"
+   ],
+   "options": [
+    {
+     "name": "Card",
+     "values": [
+      "Standard",
+      "Plus"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/banking/ardent-premier-credit-card.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48300000000007,
+     "title": "Standard",
+     "option1": "Standard",
+     "sku": "ardent-premier-c",
+     "price": "320.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48300000000008,
+     "title": "Plus",
+     "option1": "Plus",
+     "sku": "ardent-premier-c",
+     "price": "448.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8300000000005,
+   "title": "Ardent Current Account",
+   "handle": "ardent-current-account",
+   "body_html": "<p>Everyday banking with fee-free spending abroad</p>",
+   "vendor": "Ardent",
+   "product_type": "Accounts",
+   "tags": [
+    "Ardent",
+    "Accounts"
+   ],
+   "options": [
+    {
+     "name": "Account",
+     "values": [
+      "Personal",
+      "Premium"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/banking/ardent-current-account.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48300000000009,
+     "title": "Personal",
+     "option1": "Personal",
+     "sku": "ardent-current-a",
+     "price": "1.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48300000000010,
+     "title": "Premium",
+     "option1": "Premium",
+     "sku": "ardent-current-a",
+     "price": "2.50",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8300000000006,
+   "title": "Calder Savings Account",
+   "handle": "calder-savings-account",
+   "body_html": "<p>Instant access, interest paid monthly</p>",
+   "vendor": "Calder",
+   "product_type": "Accounts",
+   "tags": [
+    "Calder",
+    "Accounts"
+   ],
+   "options": [
+    {
+     "name": "Account",
+     "values": [
+      "Personal",
+      "Premium"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/banking/calder-savings-account.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48300000000011,
+     "title": "Personal",
+     "option1": "Personal",
+     "sku": "calder-savings-a",
+     "price": "1.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48300000000012,
+     "title": "Premium",
+     "option1": "Premium",
+     "sku": "calder-savings-a",
+     "price": "2.50",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8300000000007,
+   "title": "Ardent Fixed Saver",
+   "handle": "ardent-fixed-saver",
+   "body_html": "<p>Higher rate, locked for 12 or 24 months</p>",
+   "vendor": "Ardent",
+   "product_type": "Accounts",
+   "tags": [
+    "Ardent",
+    "Accounts"
+   ],
+   "options": [
+    {
+     "name": "Account",
+     "values": [
+      "Personal",
+      "Premium"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/banking/ardent-fixed-saver.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48300000000013,
+     "title": "Personal",
+     "option1": "Personal",
+     "sku": "ardent-fixed-sav",
+     "price": "1.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48300000000014,
+     "title": "Premium",
+     "option1": "Premium",
+     "sku": "ardent-fixed-sav",
+     "price": "2.50",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8300000000008,
+   "title": "Northbank Joint Account",
+   "handle": "northbank-joint-account",
+   "body_html": "<p>Shared everyday banking for two</p>",
+   "vendor": "Northbank",
+   "product_type": "Accounts",
+   "tags": [
+    "Northbank",
+    "Accounts"
+   ],
+   "options": [
+    {
+     "name": "Account",
+     "values": [
+      "Personal",
+      "Premium"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/banking/northbank-joint-account.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48300000000015,
+     "title": "Personal",
+     "option1": "Personal",
+     "sku": "northbank-joint-",
+     "price": "1.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48300000000016,
+     "title": "Premium",
+     "option1": "Premium",
+     "sku": "northbank-joint-",
+     "price": "2.50",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8300000000009,
+   "title": "Calder Business Current",
+   "handle": "calder-business-current",
+   "body_html": "<p>For sole traders and small companies</p>",
+   "vendor": "Calder",
+   "product_type": "Accounts",
+   "tags": [
+    "Calder",
+    "Accounts"
+   ],
+   "options": [
+    {
+     "name": "Account",
+     "values": [
+      "Personal",
+      "Premium"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/banking/calder-business-current.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48300000000017,
+     "title": "Personal",
+     "option1": "Personal",
+     "sku": "calder-business-",
+     "price": "8.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48300000000018,
+     "title": "Premium",
+     "option1": "Premium",
+     "sku": "calder-business-",
+     "price": "20.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8300000000010,
+   "title": "Wexford Financial Personal Loan",
+   "handle": "wexford-financial-personal-loan",
+   "body_html": "<p>1,000 to 25,000 over 1 to 7 years</p>",
+   "vendor": "Wexford Financial",
+   "product_type": "Loans",
+   "tags": [
+    "Wexford Financial",
+    "Loans"
+   ],
+   "options": [
+    {
+     "name": "Term",
+     "values": [
+      "3 years",
+      "5 years",
+      "7 years"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/banking/wexford-financial-personal-loan.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48300000000019,
+     "title": "3 years",
+     "option1": "3 years",
+     "sku": "wexford-financia",
+     "price": "1.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48300000000020,
+     "title": "5 years",
+     "option1": "5 years",
+     "sku": "wexford-financia",
+     "price": "1.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48300000000021,
+     "title": "7 years",
+     "option1": "7 years",
+     "sku": "wexford-financia",
+     "price": "1.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8300000000011,
+   "title": "Ardent Car Finance",
+   "handle": "ardent-car-finance",
+   "body_html": "<p>Fixed rate, terms to 5 years</p>",
+   "vendor": "Ardent",
+   "product_type": "Loans",
+   "tags": [
+    "Ardent",
+    "Loans"
+   ],
+   "options": [
+    {
+     "name": "Term",
+     "values": [
+      "3 years",
+      "5 years",
+      "7 years"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/banking/ardent-car-finance.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48300000000022,
+     "title": "3 years",
+     "option1": "3 years",
+     "sku": "ardent-car-finan",
+     "price": "1.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48300000000023,
+     "title": "5 years",
+     "option1": "5 years",
+     "sku": "ardent-car-finan",
+     "price": "1.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48300000000024,
+     "title": "7 years",
+     "option1": "7 years",
+     "sku": "ardent-car-finan",
+     "price": "1.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8300000000012,
+   "title": "Northbank Home Improvement Loan",
+   "handle": "northbank-home-improvement-loan",
+   "body_html": "<p>Unsecured, no early repayment fee</p>",
+   "vendor": "Northbank",
+   "product_type": "Loans",
+   "tags": [
+    "Northbank",
+    "Loans"
+   ],
+   "options": [
+    {
+     "name": "Term",
+     "values": [
+      "3 years",
+      "5 years",
+      "7 years"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/banking/northbank-home-improvement-loan.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48300000000025,
+     "title": "3 years",
+     "option1": "3 years",
+     "sku": "northbank-home-i",
+     "price": "1.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48300000000026,
+     "title": "5 years",
+     "option1": "5 years",
+     "sku": "northbank-home-i",
+     "price": "1.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48300000000027,
+     "title": "7 years",
+     "option1": "7 years",
+     "sku": "northbank-home-i",
+     "price": "1.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8300000000013,
+   "title": "Northbank Debt Consolidation",
+   "handle": "northbank-debt-consolidation",
+   "body_html": "<p>One payment, one rate</p>",
+   "vendor": "Northbank",
+   "product_type": "Loans",
+   "tags": [
+    "Northbank",
+    "Loans"
+   ],
+   "options": [
+    {
+     "name": "Term",
+     "values": [
+      "3 years",
+      "5 years",
+      "7 years"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/banking/northbank-debt-consolidation.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48300000000028,
+     "title": "3 years",
+     "option1": "3 years",
+     "sku": "northbank-debt-c",
+     "price": "1.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48300000000029,
+     "title": "5 years",
+     "option1": "5 years",
+     "sku": "northbank-debt-c",
+     "price": "1.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48300000000030,
+     "title": "7 years",
+     "option1": "7 years",
+     "sku": "northbank-debt-c",
+     "price": "1.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8300000000014,
+   "title": "Calder 2 Year Fixed Mortgage",
+   "handle": "calder-2-year-fixed-mortgage",
+   "body_html": "<p>Fixed for two years, then reverts</p>",
+   "vendor": "Calder",
+   "product_type": "Mortgages",
+   "tags": [
+    "Calder",
+    "Mortgages"
+   ],
+   "options": [
+    {
+     "name": "Term",
+     "values": [
+      "60% LTV",
+      "75% LTV",
+      "90% LTV"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/banking/calder-2-year-fixed-mortgage.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48300000000031,
+     "title": "60% LTV",
+     "option1": "60% LTV",
+     "sku": "calder-2-year-fi",
+     "price": "1.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48300000000032,
+     "title": "75% LTV",
+     "option1": "75% LTV",
+     "sku": "calder-2-year-fi",
+     "price": "1.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48300000000033,
+     "title": "90% LTV",
+     "option1": "90% LTV",
+     "sku": "calder-2-year-fi",
+     "price": "1.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8300000000015,
+   "title": "Calder 5 Year Fixed Mortgage",
+   "handle": "calder-5-year-fixed-mortgage",
+   "body_html": "<p>Longer certainty, higher rate</p>",
+   "vendor": "Calder",
+   "product_type": "Mortgages",
+   "tags": [
+    "Calder",
+    "Mortgages"
+   ],
+   "options": [
+    {
+     "name": "Term",
+     "values": [
+      "60% LTV",
+      "75% LTV",
+      "90% LTV"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/banking/calder-5-year-fixed-mortgage.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48300000000034,
+     "title": "60% LTV",
+     "option1": "60% LTV",
+     "sku": "calder-5-year-fi",
+     "price": "1.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48300000000035,
+     "title": "75% LTV",
+     "option1": "75% LTV",
+     "sku": "calder-5-year-fi",
+     "price": "1.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48300000000036,
+     "title": "90% LTV",
+     "option1": "90% LTV",
+     "sku": "calder-5-year-fi",
+     "price": "1.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8300000000016,
+   "title": "Ardent Tracker Mortgage",
+   "handle": "ardent-tracker-mortgage",
+   "body_html": "<p>Follows base rate, no early repayment charge</p>",
+   "vendor": "Ardent",
+   "product_type": "Mortgages",
+   "tags": [
+    "Ardent",
+    "Mortgages"
+   ],
+   "options": [
+    {
+     "name": "Term",
+     "values": [
+      "60% LTV",
+      "75% LTV",
+      "90% LTV"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/banking/ardent-tracker-mortgage.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48300000000037,
+     "title": "60% LTV",
+     "option1": "60% LTV",
+     "sku": "ardent-tracker-m",
+     "price": "1.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48300000000038,
+     "title": "75% LTV",
+     "option1": "75% LTV",
+     "sku": "ardent-tracker-m",
+     "price": "1.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48300000000039,
+     "title": "90% LTV",
+     "option1": "90% LTV",
+     "sku": "ardent-tracker-m",
+     "price": "1.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8300000000017,
+   "title": "Northbank First Time Buyer Mortgage",
+   "handle": "northbank-first-time-buyer-mortgage",
+   "body_html": "<p>5% deposit accepted</p>",
+   "vendor": "Northbank",
+   "product_type": "Mortgages",
+   "tags": [
+    "Northbank",
+    "Mortgages"
+   ],
+   "options": [
+    {
+     "name": "Term",
+     "values": [
+      "60% LTV",
+      "75% LTV",
+      "90% LTV"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/banking/northbank-first-time-buyer-mortgage.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48300000000040,
+     "title": "60% LTV",
+     "option1": "60% LTV",
+     "sku": "northbank-first-",
+     "price": "1.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48300000000041,
+     "title": "75% LTV",
+     "option1": "75% LTV",
+     "sku": "northbank-first-",
+     "price": "1.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48300000000042,
+     "title": "90% LTV",
+     "option1": "90% LTV",
+     "sku": "northbank-first-",
+     "price": "1.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8300000000018,
+   "title": "Northbank Buy to Let Mortgage",
+   "handle": "northbank-buy-to-let-mortgage",
+   "body_html": "<p>For landlords, rental cover assessed</p>",
+   "vendor": "Northbank",
+   "product_type": "Mortgages",
+   "tags": [
+    "Northbank",
+    "Mortgages"
+   ],
+   "options": [
+    {
+     "name": "Term",
+     "values": [
+      "60% LTV",
+      "75% LTV",
+      "90% LTV"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/banking/northbank-buy-to-let-mortgage.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48300000000043,
+     "title": "60% LTV",
+     "option1": "60% LTV",
+     "sku": "northbank-buy-to",
+     "price": "1.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48300000000044,
+     "title": "75% LTV",
+     "option1": "75% LTV",
+     "sku": "northbank-buy-to",
+     "price": "1.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    },
+    {
+     "id": 48300000000045,
+     "title": "90% LTV",
+     "option1": "90% LTV",
+     "sku": "northbank-buy-to",
+     "price": "1.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  }
+ ]
+}

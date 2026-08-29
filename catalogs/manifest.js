@@ -15,5 +15,37 @@ window.VERTICALS = {
   "airlines": {
     "brand": "Meridian Air",
     "tagline": "Direct routes, fifteen cities"
+  },
+  "banking": {
+    "brand": "Northbank",
+    "tagline": "Everyday banking, cards and lending"
+  },
+  "insurance": {
+    "brand": "Fairhaven",
+    "tagline": "Cover for the things that matter"
+  },
+  "fintech": {
+    "brand": "Loop",
+    "tagline": "Money, moved properly"
+  },
+  "fashion": {
+    "brand": "Ashford Lane",
+    "tagline": "Womenswear, menswear and footwear"
+  },
+  "electronics": {
+    "brand": "Kestrel",
+    "tagline": "Home appliances and technology"
+  },
+  "telco": {
+    "brand": "Vantis",
+    "tagline": "Phones, plans and accessories"
+  },
+  "home": {
+    "brand": "Aldgate",
+    "tagline": "Furniture and homeware"
+  },
+  "luxury": {
+    "brand": "Beaumont Vale",
+    "tagline": "Designer, curated"
   }
 };

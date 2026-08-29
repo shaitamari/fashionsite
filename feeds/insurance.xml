@@ -1,0 +1,960 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
+<channel>
+  <title>Fairhaven</title>
+  <link>https://insurance.insiderdemo.com</link>
+  <description>Cover for the things that matter</description>
+  <item>
+    <g:id>48400000000001</g:id>
+    <g:item_group_id>8400000000001</g:item_group_id>
+    <g:title>Northbank Insure Car Insurance</g:title>
+    <description>Car Insurance from Northbank Insure. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000001</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/northbank-insure-car-insurance.svg</g:image_link>
+    <g:price>391.00</g:price>
+    <g:sale_price>340.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Motor &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Third Party</g:size>
+  </item>
+  <item>
+    <g:id>48400000000002</g:id>
+    <g:item_group_id>8400000000001</g:item_group_id>
+    <g:title>Northbank Insure Car Insurance</g:title>
+    <description>Car Insurance from Northbank Insure. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000002</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/northbank-insure-car-insurance.svg</g:image_link>
+    <g:price>493.00</g:price>
+    <g:sale_price>493.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Motor &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Third Party Fire &amp; Theft</g:size>
+  </item>
+  <item>
+    <g:id>48400000000003</g:id>
+    <g:item_group_id>8400000000001</g:item_group_id>
+    <g:title>Northbank Insure Car Insurance</g:title>
+    <description>Car Insurance from Northbank Insure. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000003</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/northbank-insure-car-insurance.svg</g:image_link>
+    <g:price>646.00</g:price>
+    <g:sale_price>646.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Motor &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Comprehensive</g:size>
+  </item>
+  <item>
+    <g:id>48400000000004</g:id>
+    <g:item_group_id>8400000000002</g:item_group_id>
+    <g:title>Fairhaven Car Insurance</g:title>
+    <description>Car Insurance from Fairhaven. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000004</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/fairhaven-car-insurance.svg</g:image_link>
+    <g:price>391.00</g:price>
+    <g:sale_price>340.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Motor &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Third Party</g:size>
+  </item>
+  <item>
+    <g:id>48400000000005</g:id>
+    <g:item_group_id>8400000000002</g:item_group_id>
+    <g:title>Fairhaven Car Insurance</g:title>
+    <description>Car Insurance from Fairhaven. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000005</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/fairhaven-car-insurance.svg</g:image_link>
+    <g:price>493.00</g:price>
+    <g:sale_price>493.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Motor &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Third Party Fire &amp; Theft</g:size>
+  </item>
+  <item>
+    <g:id>48400000000006</g:id>
+    <g:item_group_id>8400000000002</g:item_group_id>
+    <g:title>Fairhaven Car Insurance</g:title>
+    <description>Car Insurance from Fairhaven. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000006</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/fairhaven-car-insurance.svg</g:image_link>
+    <g:price>646.00</g:price>
+    <g:sale_price>646.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Motor &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Comprehensive</g:size>
+  </item>
+  <item>
+    <g:id>48400000000007</g:id>
+    <g:item_group_id>8400000000003</g:item_group_id>
+    <g:title>Fairhaven Home Insurance</g:title>
+    <description>Home Insurance from Fairhaven. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000007</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/fairhaven-home-insurance.svg</g:image_link>
+    <g:price>253.00</g:price>
+    <g:sale_price>220.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Home &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Buildings</g:size>
+  </item>
+  <item>
+    <g:id>48400000000008</g:id>
+    <g:item_group_id>8400000000003</g:item_group_id>
+    <g:title>Fairhaven Home Insurance</g:title>
+    <description>Home Insurance from Fairhaven. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000008</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/fairhaven-home-insurance.svg</g:image_link>
+    <g:price>319.00</g:price>
+    <g:sale_price>319.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Home &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Contents</g:size>
+  </item>
+  <item>
+    <g:id>48400000000009</g:id>
+    <g:item_group_id>8400000000003</g:item_group_id>
+    <g:title>Fairhaven Home Insurance</g:title>
+    <description>Home Insurance from Fairhaven. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000009</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/fairhaven-home-insurance.svg</g:image_link>
+    <g:price>418.00</g:price>
+    <g:sale_price>418.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Home &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Buildings &amp; Contents</g:size>
+  </item>
+  <item>
+    <g:id>48400000000010</g:id>
+    <g:item_group_id>8400000000004</g:item_group_id>
+    <g:title>Northbank Insure Home Insurance</g:title>
+    <description>Home Insurance from Northbank Insure. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000010</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/northbank-insure-home-insurance.svg</g:image_link>
+    <g:price>253.00</g:price>
+    <g:sale_price>220.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Home &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Buildings</g:size>
+  </item>
+  <item>
+    <g:id>48400000000011</g:id>
+    <g:item_group_id>8400000000004</g:item_group_id>
+    <g:title>Northbank Insure Home Insurance</g:title>
+    <description>Home Insurance from Northbank Insure. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000011</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/northbank-insure-home-insurance.svg</g:image_link>
+    <g:price>319.00</g:price>
+    <g:sale_price>319.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Home &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Contents</g:size>
+  </item>
+  <item>
+    <g:id>48400000000012</g:id>
+    <g:item_group_id>8400000000004</g:item_group_id>
+    <g:title>Northbank Insure Home Insurance</g:title>
+    <description>Home Insurance from Northbank Insure. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000012</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/northbank-insure-home-insurance.svg</g:image_link>
+    <g:price>418.00</g:price>
+    <g:sale_price>418.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Home &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Buildings &amp; Contents</g:size>
+  </item>
+  <item>
+    <g:id>48400000000013</g:id>
+    <g:item_group_id>8400000000005</g:item_group_id>
+    <g:title>Northbank Insure Travel Insurance</g:title>
+    <description>Travel Insurance from Northbank Insure. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000013</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/northbank-insure-travel-insurance.svg</g:image_link>
+    <g:price>63.00</g:price>
+    <g:sale_price>55.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Travel &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Single Trip</g:size>
+  </item>
+  <item>
+    <g:id>48400000000014</g:id>
+    <g:item_group_id>8400000000005</g:item_group_id>
+    <g:title>Northbank Insure Travel Insurance</g:title>
+    <description>Travel Insurance from Northbank Insure. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000014</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/northbank-insure-travel-insurance.svg</g:image_link>
+    <g:price>80.00</g:price>
+    <g:sale_price>80.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Travel &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Annual Multi-Trip</g:size>
+  </item>
+  <item>
+    <g:id>48400000000015</g:id>
+    <g:item_group_id>8400000000005</g:item_group_id>
+    <g:title>Northbank Insure Travel Insurance</g:title>
+    <description>Travel Insurance from Northbank Insure. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000015</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/northbank-insure-travel-insurance.svg</g:image_link>
+    <g:price>104.00</g:price>
+    <g:sale_price>104.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Travel &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Backpacker</g:size>
+  </item>
+  <item>
+    <g:id>48400000000016</g:id>
+    <g:item_group_id>8400000000006</g:item_group_id>
+    <g:title>Ardent Cover Travel Insurance</g:title>
+    <description>Travel Insurance from Ardent Cover. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000016</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/ardent-cover-travel-insurance.svg</g:image_link>
+    <g:price>63.00</g:price>
+    <g:sale_price>55.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Travel &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Single Trip</g:size>
+  </item>
+  <item>
+    <g:id>48400000000017</g:id>
+    <g:item_group_id>8400000000006</g:item_group_id>
+    <g:title>Ardent Cover Travel Insurance</g:title>
+    <description>Travel Insurance from Ardent Cover. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000017</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/ardent-cover-travel-insurance.svg</g:image_link>
+    <g:price>80.00</g:price>
+    <g:sale_price>80.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Travel &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Annual Multi-Trip</g:size>
+  </item>
+  <item>
+    <g:id>48400000000018</g:id>
+    <g:item_group_id>8400000000006</g:item_group_id>
+    <g:title>Ardent Cover Travel Insurance</g:title>
+    <description>Travel Insurance from Ardent Cover. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000018</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/ardent-cover-travel-insurance.svg</g:image_link>
+    <g:price>104.00</g:price>
+    <g:sale_price>104.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Travel &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Backpacker</g:size>
+  </item>
+  <item>
+    <g:id>48400000000019</g:id>
+    <g:item_group_id>8400000000007</g:item_group_id>
+    <g:title>Calder Protect Pet Insurance</g:title>
+    <description>Pet Insurance from Calder Protect. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000019</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/calder-protect-pet-insurance.svg</g:image_link>
+    <g:price>218.00</g:price>
+    <g:sale_price>190.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Pet &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Accident Only</g:size>
+  </item>
+  <item>
+    <g:id>48400000000020</g:id>
+    <g:item_group_id>8400000000007</g:item_group_id>
+    <g:title>Calder Protect Pet Insurance</g:title>
+    <description>Pet Insurance from Calder Protect. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000020</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/calder-protect-pet-insurance.svg</g:image_link>
+    <g:price>276.00</g:price>
+    <g:sale_price>276.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Pet &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Time Limited</g:size>
+  </item>
+  <item>
+    <g:id>48400000000021</g:id>
+    <g:item_group_id>8400000000007</g:item_group_id>
+    <g:title>Calder Protect Pet Insurance</g:title>
+    <description>Pet Insurance from Calder Protect. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000021</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/calder-protect-pet-insurance.svg</g:image_link>
+    <g:price>361.00</g:price>
+    <g:sale_price>361.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Pet &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Lifetime</g:size>
+  </item>
+  <item>
+    <g:id>48400000000022</g:id>
+    <g:item_group_id>8400000000008</g:item_group_id>
+    <g:title>Northbank Insure Pet Insurance</g:title>
+    <description>Pet Insurance from Northbank Insure. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000022</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/northbank-insure-pet-insurance.svg</g:image_link>
+    <g:price>218.00</g:price>
+    <g:sale_price>190.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Pet &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Accident Only</g:size>
+  </item>
+  <item>
+    <g:id>48400000000023</g:id>
+    <g:item_group_id>8400000000008</g:item_group_id>
+    <g:title>Northbank Insure Pet Insurance</g:title>
+    <description>Pet Insurance from Northbank Insure. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000023</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/northbank-insure-pet-insurance.svg</g:image_link>
+    <g:price>276.00</g:price>
+    <g:sale_price>276.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Pet &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Time Limited</g:size>
+  </item>
+  <item>
+    <g:id>48400000000024</g:id>
+    <g:item_group_id>8400000000008</g:item_group_id>
+    <g:title>Northbank Insure Pet Insurance</g:title>
+    <description>Pet Insurance from Northbank Insure. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000024</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/northbank-insure-pet-insurance.svg</g:image_link>
+    <g:price>361.00</g:price>
+    <g:sale_price>361.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Pet &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Lifetime</g:size>
+  </item>
+  <item>
+    <g:id>48400000000025</g:id>
+    <g:item_group_id>8400000000009</g:item_group_id>
+    <g:title>Northbank Insure Life Insurance</g:title>
+    <description>Life Insurance from Northbank Insure. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000025</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/northbank-insure-life-insurance.svg</g:image_link>
+    <g:price>299.00</g:price>
+    <g:sale_price>260.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Life &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Level Term</g:size>
+  </item>
+  <item>
+    <g:id>48400000000026</g:id>
+    <g:item_group_id>8400000000009</g:item_group_id>
+    <g:title>Northbank Insure Life Insurance</g:title>
+    <description>Life Insurance from Northbank Insure. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000026</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/northbank-insure-life-insurance.svg</g:image_link>
+    <g:price>377.00</g:price>
+    <g:sale_price>377.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Life &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Decreasing Term</g:size>
+  </item>
+  <item>
+    <g:id>48400000000027</g:id>
+    <g:item_group_id>8400000000009</g:item_group_id>
+    <g:title>Northbank Insure Life Insurance</g:title>
+    <description>Life Insurance from Northbank Insure. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000027</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/northbank-insure-life-insurance.svg</g:image_link>
+    <g:price>494.00</g:price>
+    <g:sale_price>494.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Life &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Whole of Life</g:size>
+  </item>
+  <item>
+    <g:id>48400000000028</g:id>
+    <g:item_group_id>8400000000010</g:item_group_id>
+    <g:title>Fairhaven Life Insurance</g:title>
+    <description>Life Insurance from Fairhaven. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000028</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/fairhaven-life-insurance.svg</g:image_link>
+    <g:price>299.00</g:price>
+    <g:sale_price>260.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Life &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Level Term</g:size>
+  </item>
+  <item>
+    <g:id>48400000000029</g:id>
+    <g:item_group_id>8400000000010</g:item_group_id>
+    <g:title>Fairhaven Life Insurance</g:title>
+    <description>Life Insurance from Fairhaven. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000029</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/fairhaven-life-insurance.svg</g:image_link>
+    <g:price>377.00</g:price>
+    <g:sale_price>377.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Life &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Decreasing Term</g:size>
+  </item>
+  <item>
+    <g:id>48400000000030</g:id>
+    <g:item_group_id>8400000000010</g:item_group_id>
+    <g:title>Fairhaven Life Insurance</g:title>
+    <description>Life Insurance from Fairhaven. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000030</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/fairhaven-life-insurance.svg</g:image_link>
+    <g:price>494.00</g:price>
+    <g:sale_price>494.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Life &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Whole of Life</g:size>
+  </item>
+  <item>
+    <g:id>48400000000031</g:id>
+    <g:item_group_id>8400000000011</g:item_group_id>
+    <g:title>Ardent Cover Health Insurance</g:title>
+    <description>Health Insurance from Ardent Cover. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000031</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/ardent-cover-health-insurance.svg</g:image_link>
+    <g:price>552.00</g:price>
+    <g:sale_price>480.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Health &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Essential</g:size>
+  </item>
+  <item>
+    <g:id>48400000000032</g:id>
+    <g:item_group_id>8400000000011</g:item_group_id>
+    <g:title>Ardent Cover Health Insurance</g:title>
+    <description>Health Insurance from Ardent Cover. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000032</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/ardent-cover-health-insurance.svg</g:image_link>
+    <g:price>696.00</g:price>
+    <g:sale_price>696.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Health &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Standard</g:size>
+  </item>
+  <item>
+    <g:id>48400000000033</g:id>
+    <g:item_group_id>8400000000011</g:item_group_id>
+    <g:title>Ardent Cover Health Insurance</g:title>
+    <description>Health Insurance from Ardent Cover. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000033</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/ardent-cover-health-insurance.svg</g:image_link>
+    <g:price>912.00</g:price>
+    <g:sale_price>912.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Health &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Comprehensive</g:size>
+  </item>
+  <item>
+    <g:id>48400000000034</g:id>
+    <g:item_group_id>8400000000012</g:item_group_id>
+    <g:title>Calder Protect Health Insurance</g:title>
+    <description>Health Insurance from Calder Protect. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000034</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/calder-protect-health-insurance.svg</g:image_link>
+    <g:price>552.00</g:price>
+    <g:sale_price>480.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Health &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Essential</g:size>
+  </item>
+  <item>
+    <g:id>48400000000035</g:id>
+    <g:item_group_id>8400000000012</g:item_group_id>
+    <g:title>Calder Protect Health Insurance</g:title>
+    <description>Health Insurance from Calder Protect. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000035</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/calder-protect-health-insurance.svg</g:image_link>
+    <g:price>696.00</g:price>
+    <g:sale_price>696.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Health &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Standard</g:size>
+  </item>
+  <item>
+    <g:id>48400000000036</g:id>
+    <g:item_group_id>8400000000012</g:item_group_id>
+    <g:title>Calder Protect Health Insurance</g:title>
+    <description>Health Insurance from Calder Protect. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000036</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/calder-protect-health-insurance.svg</g:image_link>
+    <g:price>912.00</g:price>
+    <g:sale_price>912.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Health &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Comprehensive</g:size>
+  </item>
+  <item>
+    <g:id>48400000000037</g:id>
+    <g:item_group_id>8400000000013</g:item_group_id>
+    <g:title>Calder Protect Landlord Insurance</g:title>
+    <description>Landlord Insurance from Calder Protect. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000037</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/calder-protect-landlord-insurance.svg</g:image_link>
+    <g:price>356.00</g:price>
+    <g:sale_price>310.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Home &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Buildings</g:size>
+  </item>
+  <item>
+    <g:id>48400000000038</g:id>
+    <g:item_group_id>8400000000013</g:item_group_id>
+    <g:title>Calder Protect Landlord Insurance</g:title>
+    <description>Landlord Insurance from Calder Protect. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000038</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/calder-protect-landlord-insurance.svg</g:image_link>
+    <g:price>450.00</g:price>
+    <g:sale_price>450.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Home &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Contents</g:size>
+  </item>
+  <item>
+    <g:id>48400000000039</g:id>
+    <g:item_group_id>8400000000013</g:item_group_id>
+    <g:title>Calder Protect Landlord Insurance</g:title>
+    <description>Landlord Insurance from Calder Protect. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000039</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/calder-protect-landlord-insurance.svg</g:image_link>
+    <g:price>589.00</g:price>
+    <g:sale_price>589.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Home &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Full Cover</g:size>
+  </item>
+  <item>
+    <g:id>48400000000040</g:id>
+    <g:item_group_id>8400000000014</g:item_group_id>
+    <g:title>Fairhaven Landlord Insurance</g:title>
+    <description>Landlord Insurance from Fairhaven. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000040</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/fairhaven-landlord-insurance.svg</g:image_link>
+    <g:price>356.00</g:price>
+    <g:sale_price>310.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Home &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Buildings</g:size>
+  </item>
+  <item>
+    <g:id>48400000000041</g:id>
+    <g:item_group_id>8400000000014</g:item_group_id>
+    <g:title>Fairhaven Landlord Insurance</g:title>
+    <description>Landlord Insurance from Fairhaven. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000041</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/fairhaven-landlord-insurance.svg</g:image_link>
+    <g:price>450.00</g:price>
+    <g:sale_price>450.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Home &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Contents</g:size>
+  </item>
+  <item>
+    <g:id>48400000000042</g:id>
+    <g:item_group_id>8400000000014</g:item_group_id>
+    <g:title>Fairhaven Landlord Insurance</g:title>
+    <description>Landlord Insurance from Fairhaven. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000042</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/fairhaven-landlord-insurance.svg</g:image_link>
+    <g:price>589.00</g:price>
+    <g:sale_price>589.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Home &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Full Cover</g:size>
+  </item>
+  <item>
+    <g:id>48400000000043</g:id>
+    <g:item_group_id>8400000000015</g:item_group_id>
+    <g:title>Ardent Cover Business Insurance</g:title>
+    <description>Business Insurance from Ardent Cover. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000043</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/ardent-cover-business-insurance.svg</g:image_link>
+    <g:price>483.00</g:price>
+    <g:sale_price>420.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Motor &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Public Liability</g:size>
+  </item>
+  <item>
+    <g:id>48400000000044</g:id>
+    <g:item_group_id>8400000000015</g:item_group_id>
+    <g:title>Ardent Cover Business Insurance</g:title>
+    <description>Business Insurance from Ardent Cover. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000044</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/ardent-cover-business-insurance.svg</g:image_link>
+    <g:price>609.00</g:price>
+    <g:sale_price>609.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Motor &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Professional Indemnity</g:size>
+  </item>
+  <item>
+    <g:id>48400000000045</g:id>
+    <g:item_group_id>8400000000015</g:item_group_id>
+    <g:title>Ardent Cover Business Insurance</g:title>
+    <description>Business Insurance from Ardent Cover. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000045</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/ardent-cover-business-insurance.svg</g:image_link>
+    <g:price>798.00</g:price>
+    <g:sale_price>798.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Motor &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Combined</g:size>
+  </item>
+  <item>
+    <g:id>48400000000046</g:id>
+    <g:item_group_id>8400000000016</g:item_group_id>
+    <g:title>Northbank Insure Business Insurance</g:title>
+    <description>Business Insurance from Northbank Insure. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000046</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/northbank-insure-business-insurance.svg</g:image_link>
+    <g:price>483.00</g:price>
+    <g:sale_price>420.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Motor &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Public Liability</g:size>
+  </item>
+  <item>
+    <g:id>48400000000047</g:id>
+    <g:item_group_id>8400000000016</g:item_group_id>
+    <g:title>Northbank Insure Business Insurance</g:title>
+    <description>Business Insurance from Northbank Insure. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000047</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/northbank-insure-business-insurance.svg</g:image_link>
+    <g:price>609.00</g:price>
+    <g:sale_price>609.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Motor &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Professional Indemnity</g:size>
+  </item>
+  <item>
+    <g:id>48400000000048</g:id>
+    <g:item_group_id>8400000000016</g:item_group_id>
+    <g:title>Northbank Insure Business Insurance</g:title>
+    <description>Business Insurance from Northbank Insure. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000048</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/northbank-insure-business-insurance.svg</g:image_link>
+    <g:price>798.00</g:price>
+    <g:sale_price>798.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Motor &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Combined</g:size>
+  </item>
+  <item>
+    <g:id>48400000000049</g:id>
+    <g:item_group_id>8400000000017</g:item_group_id>
+    <g:title>Calder Protect Van Insurance</g:title>
+    <description>Van Insurance from Calder Protect. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000049</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/calder-protect-van-insurance.svg</g:image_link>
+    <g:price>448.00</g:price>
+    <g:sale_price>390.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Motor &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Third Party</g:size>
+  </item>
+  <item>
+    <g:id>48400000000050</g:id>
+    <g:item_group_id>8400000000017</g:item_group_id>
+    <g:title>Calder Protect Van Insurance</g:title>
+    <description>Van Insurance from Calder Protect. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000050</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/calder-protect-van-insurance.svg</g:image_link>
+    <g:price>566.00</g:price>
+    <g:sale_price>566.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Motor &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Comprehensive</g:size>
+  </item>
+  <item>
+    <g:id>48400000000051</g:id>
+    <g:item_group_id>8400000000018</g:item_group_id>
+    <g:title>Fairhaven Van Insurance</g:title>
+    <description>Van Insurance from Fairhaven. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000051</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/fairhaven-van-insurance.svg</g:image_link>
+    <g:price>448.00</g:price>
+    <g:sale_price>390.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Motor &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Third Party</g:size>
+  </item>
+  <item>
+    <g:id>48400000000052</g:id>
+    <g:item_group_id>8400000000018</g:item_group_id>
+    <g:title>Fairhaven Van Insurance</g:title>
+    <description>Van Insurance from Fairhaven. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000052</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/fairhaven-van-insurance.svg</g:image_link>
+    <g:price>566.00</g:price>
+    <g:sale_price>566.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Motor &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Comprehensive</g:size>
+  </item>
+  <item>
+    <g:id>48400000000053</g:id>
+    <g:item_group_id>8400000000019</g:item_group_id>
+    <g:title>Fairhaven Gadget Insurance</g:title>
+    <description>Gadget Insurance from Fairhaven. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000053</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/fairhaven-gadget-insurance.svg</g:image_link>
+    <g:price>80.00</g:price>
+    <g:sale_price>70.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Motor &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Single Item</g:size>
+  </item>
+  <item>
+    <g:id>48400000000054</g:id>
+    <g:item_group_id>8400000000019</g:item_group_id>
+    <g:title>Fairhaven Gadget Insurance</g:title>
+    <description>Gadget Insurance from Fairhaven. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000054</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/fairhaven-gadget-insurance.svg</g:image_link>
+    <g:price>102.00</g:price>
+    <g:sale_price>102.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Motor &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Family Cover</g:size>
+  </item>
+  <item>
+    <g:id>48400000000055</g:id>
+    <g:item_group_id>8400000000020</g:item_group_id>
+    <g:title>Calder Protect Gadget Insurance</g:title>
+    <description>Gadget Insurance from Calder Protect. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000055</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/calder-protect-gadget-insurance.svg</g:image_link>
+    <g:price>80.00</g:price>
+    <g:sale_price>70.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Motor &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Single Item</g:size>
+  </item>
+  <item>
+    <g:id>48400000000056</g:id>
+    <g:item_group_id>8400000000020</g:item_group_id>
+    <g:title>Calder Protect Gadget Insurance</g:title>
+    <description>Gadget Insurance from Calder Protect. Cover starts the day you buy, cancel any time in the first 14 days.</description>
+    <link>https://insurance.insiderdemo.com/product.html?id=48400000000056</link>
+    <g:image_link>https://insiderdemo.com/assets/img/insurance/calder-protect-gadget-insurance.svg</g:image_link>
+    <g:price>102.00</g:price>
+    <g:sale_price>102.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Fairhaven</g:brand>
+    <g:product_type>Insurance &gt; Motor &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Family Cover</g:size>
+  </item>
+</channel>
+</rss>

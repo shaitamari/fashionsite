@@ -1,0 +1,773 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
+<channel>
+  <title>Northbank</title>
+  <link>https://banking.insiderdemo.com</link>
+  <description>Everyday banking, cards and lending</description>
+  <item>
+    <g:id>48300000000001</g:id>
+    <g:item_group_id>8300000000001</g:item_group_id>
+    <g:title>Calder Everyday Credit Card</g:title>
+    <description>No annual fee, 0% on purchases for 12 months</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000001</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/calder-everyday-credit-card.svg</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Credit Cards &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Standard</g:size>
+  </item>
+  <item>
+    <g:id>48300000000002</g:id>
+    <g:item_group_id>8300000000001</g:item_group_id>
+    <g:title>Calder Everyday Credit Card</g:title>
+    <description>No annual fee, 0% on purchases for 12 months</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000002</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/calder-everyday-credit-card.svg</g:image_link>
+    <g:price>1.40</g:price>
+    <g:sale_price>1.40</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Credit Cards &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Plus</g:size>
+  </item>
+  <item>
+    <g:id>48300000000003</g:id>
+    <g:item_group_id>8300000000002</g:item_group_id>
+    <g:title>Calder Rewards Credit Card</g:title>
+    <description>1.5% back on everything, no category limits</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000003</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/calder-rewards-credit-card.svg</g:image_link>
+    <g:price>45.00</g:price>
+    <g:sale_price>45.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Credit Cards &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Standard</g:size>
+  </item>
+  <item>
+    <g:id>48300000000004</g:id>
+    <g:item_group_id>8300000000002</g:item_group_id>
+    <g:title>Calder Rewards Credit Card</g:title>
+    <description>1.5% back on everything, no category limits</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000004</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/calder-rewards-credit-card.svg</g:image_link>
+    <g:price>63.00</g:price>
+    <g:sale_price>63.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Credit Cards &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Plus</g:size>
+  </item>
+  <item>
+    <g:id>48300000000005</g:id>
+    <g:item_group_id>8300000000003</g:item_group_id>
+    <g:title>Calder Travel Credit Card</g:title>
+    <description>No FX fees, lounge access, travel insurance included</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000005</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/calder-travel-credit-card.svg</g:image_link>
+    <g:price>120.00</g:price>
+    <g:sale_price>120.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Credit Cards &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Standard</g:size>
+  </item>
+  <item>
+    <g:id>48300000000006</g:id>
+    <g:item_group_id>8300000000003</g:item_group_id>
+    <g:title>Calder Travel Credit Card</g:title>
+    <description>No FX fees, lounge access, travel insurance included</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000006</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/calder-travel-credit-card.svg</g:image_link>
+    <g:price>168.00</g:price>
+    <g:sale_price>168.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Credit Cards &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Plus</g:size>
+  </item>
+  <item>
+    <g:id>48300000000007</g:id>
+    <g:item_group_id>8300000000004</g:item_group_id>
+    <g:title>Ardent Premier Credit Card</g:title>
+    <description>Concierge, higher limits, dedicated relationship manager</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000007</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/ardent-premier-credit-card.svg</g:image_link>
+    <g:price>320.00</g:price>
+    <g:sale_price>320.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Credit Cards &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Standard</g:size>
+  </item>
+  <item>
+    <g:id>48300000000008</g:id>
+    <g:item_group_id>8300000000004</g:item_group_id>
+    <g:title>Ardent Premier Credit Card</g:title>
+    <description>Concierge, higher limits, dedicated relationship manager</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000008</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/ardent-premier-credit-card.svg</g:image_link>
+    <g:price>448.00</g:price>
+    <g:sale_price>448.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Credit Cards &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Plus</g:size>
+  </item>
+  <item>
+    <g:id>48300000000009</g:id>
+    <g:item_group_id>8300000000005</g:item_group_id>
+    <g:title>Ardent Current Account</g:title>
+    <description>Everyday banking with fee-free spending abroad</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000009</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/ardent-current-account.svg</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Accounts &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Personal</g:size>
+  </item>
+  <item>
+    <g:id>48300000000010</g:id>
+    <g:item_group_id>8300000000005</g:item_group_id>
+    <g:title>Ardent Current Account</g:title>
+    <description>Everyday banking with fee-free spending abroad</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000010</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/ardent-current-account.svg</g:image_link>
+    <g:price>2.50</g:price>
+    <g:sale_price>2.50</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Accounts &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Premium</g:size>
+  </item>
+  <item>
+    <g:id>48300000000011</g:id>
+    <g:item_group_id>8300000000006</g:item_group_id>
+    <g:title>Calder Savings Account</g:title>
+    <description>Instant access, interest paid monthly</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000011</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/calder-savings-account.svg</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Accounts &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Personal</g:size>
+  </item>
+  <item>
+    <g:id>48300000000012</g:id>
+    <g:item_group_id>8300000000006</g:item_group_id>
+    <g:title>Calder Savings Account</g:title>
+    <description>Instant access, interest paid monthly</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000012</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/calder-savings-account.svg</g:image_link>
+    <g:price>2.50</g:price>
+    <g:sale_price>2.50</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Accounts &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Premium</g:size>
+  </item>
+  <item>
+    <g:id>48300000000013</g:id>
+    <g:item_group_id>8300000000007</g:item_group_id>
+    <g:title>Ardent Fixed Saver</g:title>
+    <description>Higher rate, locked for 12 or 24 months</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000013</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/ardent-fixed-saver.svg</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Accounts &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Personal</g:size>
+  </item>
+  <item>
+    <g:id>48300000000014</g:id>
+    <g:item_group_id>8300000000007</g:item_group_id>
+    <g:title>Ardent Fixed Saver</g:title>
+    <description>Higher rate, locked for 12 or 24 months</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000014</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/ardent-fixed-saver.svg</g:image_link>
+    <g:price>2.50</g:price>
+    <g:sale_price>2.50</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Accounts &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Premium</g:size>
+  </item>
+  <item>
+    <g:id>48300000000015</g:id>
+    <g:item_group_id>8300000000008</g:item_group_id>
+    <g:title>Northbank Joint Account</g:title>
+    <description>Shared everyday banking for two</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000015</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/northbank-joint-account.svg</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Accounts &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Personal</g:size>
+  </item>
+  <item>
+    <g:id>48300000000016</g:id>
+    <g:item_group_id>8300000000008</g:item_group_id>
+    <g:title>Northbank Joint Account</g:title>
+    <description>Shared everyday banking for two</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000016</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/northbank-joint-account.svg</g:image_link>
+    <g:price>2.50</g:price>
+    <g:sale_price>2.50</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Accounts &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Premium</g:size>
+  </item>
+  <item>
+    <g:id>48300000000017</g:id>
+    <g:item_group_id>8300000000009</g:item_group_id>
+    <g:title>Calder Business Current</g:title>
+    <description>For sole traders and small companies</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000017</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/calder-business-current.svg</g:image_link>
+    <g:price>8.00</g:price>
+    <g:sale_price>8.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Accounts &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Personal</g:size>
+  </item>
+  <item>
+    <g:id>48300000000018</g:id>
+    <g:item_group_id>8300000000009</g:item_group_id>
+    <g:title>Calder Business Current</g:title>
+    <description>For sole traders and small companies</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000018</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/calder-business-current.svg</g:image_link>
+    <g:price>20.00</g:price>
+    <g:sale_price>20.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Accounts &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>Premium</g:size>
+  </item>
+  <item>
+    <g:id>48300000000019</g:id>
+    <g:item_group_id>8300000000010</g:item_group_id>
+    <g:title>Wexford Financial Personal Loan</g:title>
+    <description>1,000 to 25,000 over 1 to 7 years</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000019</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/wexford-financial-personal-loan.svg</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Loans &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>3 years</g:size>
+  </item>
+  <item>
+    <g:id>48300000000020</g:id>
+    <g:item_group_id>8300000000010</g:item_group_id>
+    <g:title>Wexford Financial Personal Loan</g:title>
+    <description>1,000 to 25,000 over 1 to 7 years</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000020</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/wexford-financial-personal-loan.svg</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Loans &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>5 years</g:size>
+  </item>
+  <item>
+    <g:id>48300000000021</g:id>
+    <g:item_group_id>8300000000010</g:item_group_id>
+    <g:title>Wexford Financial Personal Loan</g:title>
+    <description>1,000 to 25,000 over 1 to 7 years</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000021</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/wexford-financial-personal-loan.svg</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Loans &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>7 years</g:size>
+  </item>
+  <item>
+    <g:id>48300000000022</g:id>
+    <g:item_group_id>8300000000011</g:item_group_id>
+    <g:title>Ardent Car Finance</g:title>
+    <description>Fixed rate, terms to 5 years</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000022</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/ardent-car-finance.svg</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Loans &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>3 years</g:size>
+  </item>
+  <item>
+    <g:id>48300000000023</g:id>
+    <g:item_group_id>8300000000011</g:item_group_id>
+    <g:title>Ardent Car Finance</g:title>
+    <description>Fixed rate, terms to 5 years</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000023</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/ardent-car-finance.svg</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Loans &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>5 years</g:size>
+  </item>
+  <item>
+    <g:id>48300000000024</g:id>
+    <g:item_group_id>8300000000011</g:item_group_id>
+    <g:title>Ardent Car Finance</g:title>
+    <description>Fixed rate, terms to 5 years</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000024</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/ardent-car-finance.svg</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Loans &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>7 years</g:size>
+  </item>
+  <item>
+    <g:id>48300000000025</g:id>
+    <g:item_group_id>8300000000012</g:item_group_id>
+    <g:title>Northbank Home Improvement Loan</g:title>
+    <description>Unsecured, no early repayment fee</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000025</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/northbank-home-improvement-loan.svg</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Loans &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>3 years</g:size>
+  </item>
+  <item>
+    <g:id>48300000000026</g:id>
+    <g:item_group_id>8300000000012</g:item_group_id>
+    <g:title>Northbank Home Improvement Loan</g:title>
+    <description>Unsecured, no early repayment fee</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000026</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/northbank-home-improvement-loan.svg</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Loans &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>5 years</g:size>
+  </item>
+  <item>
+    <g:id>48300000000027</g:id>
+    <g:item_group_id>8300000000012</g:item_group_id>
+    <g:title>Northbank Home Improvement Loan</g:title>
+    <description>Unsecured, no early repayment fee</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000027</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/northbank-home-improvement-loan.svg</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Loans &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>7 years</g:size>
+  </item>
+  <item>
+    <g:id>48300000000028</g:id>
+    <g:item_group_id>8300000000013</g:item_group_id>
+    <g:title>Northbank Debt Consolidation</g:title>
+    <description>One payment, one rate</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000028</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/northbank-debt-consolidation.svg</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Loans &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>3 years</g:size>
+  </item>
+  <item>
+    <g:id>48300000000029</g:id>
+    <g:item_group_id>8300000000013</g:item_group_id>
+    <g:title>Northbank Debt Consolidation</g:title>
+    <description>One payment, one rate</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000029</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/northbank-debt-consolidation.svg</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Loans &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>5 years</g:size>
+  </item>
+  <item>
+    <g:id>48300000000030</g:id>
+    <g:item_group_id>8300000000013</g:item_group_id>
+    <g:title>Northbank Debt Consolidation</g:title>
+    <description>One payment, one rate</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000030</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/northbank-debt-consolidation.svg</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Loans &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>7 years</g:size>
+  </item>
+  <item>
+    <g:id>48300000000031</g:id>
+    <g:item_group_id>8300000000014</g:item_group_id>
+    <g:title>Calder 2 Year Fixed Mortgage</g:title>
+    <description>Fixed for two years, then reverts</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000031</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/calder-2-year-fixed-mortgage.svg</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Mortgages &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>60% LTV</g:size>
+  </item>
+  <item>
+    <g:id>48300000000032</g:id>
+    <g:item_group_id>8300000000014</g:item_group_id>
+    <g:title>Calder 2 Year Fixed Mortgage</g:title>
+    <description>Fixed for two years, then reverts</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000032</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/calder-2-year-fixed-mortgage.svg</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Mortgages &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>75% LTV</g:size>
+  </item>
+  <item>
+    <g:id>48300000000033</g:id>
+    <g:item_group_id>8300000000014</g:item_group_id>
+    <g:title>Calder 2 Year Fixed Mortgage</g:title>
+    <description>Fixed for two years, then reverts</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000033</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/calder-2-year-fixed-mortgage.svg</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Mortgages &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>90% LTV</g:size>
+  </item>
+  <item>
+    <g:id>48300000000034</g:id>
+    <g:item_group_id>8300000000015</g:item_group_id>
+    <g:title>Calder 5 Year Fixed Mortgage</g:title>
+    <description>Longer certainty, higher rate</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000034</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/calder-5-year-fixed-mortgage.svg</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Mortgages &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>60% LTV</g:size>
+  </item>
+  <item>
+    <g:id>48300000000035</g:id>
+    <g:item_group_id>8300000000015</g:item_group_id>
+    <g:title>Calder 5 Year Fixed Mortgage</g:title>
+    <description>Longer certainty, higher rate</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000035</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/calder-5-year-fixed-mortgage.svg</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Mortgages &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>75% LTV</g:size>
+  </item>
+  <item>
+    <g:id>48300000000036</g:id>
+    <g:item_group_id>8300000000015</g:item_group_id>
+    <g:title>Calder 5 Year Fixed Mortgage</g:title>
+    <description>Longer certainty, higher rate</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000036</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/calder-5-year-fixed-mortgage.svg</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Mortgages &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>90% LTV</g:size>
+  </item>
+  <item>
+    <g:id>48300000000037</g:id>
+    <g:item_group_id>8300000000016</g:item_group_id>
+    <g:title>Ardent Tracker Mortgage</g:title>
+    <description>Follows base rate, no early repayment charge</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000037</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/ardent-tracker-mortgage.svg</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Mortgages &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>60% LTV</g:size>
+  </item>
+  <item>
+    <g:id>48300000000038</g:id>
+    <g:item_group_id>8300000000016</g:item_group_id>
+    <g:title>Ardent Tracker Mortgage</g:title>
+    <description>Follows base rate, no early repayment charge</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000038</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/ardent-tracker-mortgage.svg</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Mortgages &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>75% LTV</g:size>
+  </item>
+  <item>
+    <g:id>48300000000039</g:id>
+    <g:item_group_id>8300000000016</g:item_group_id>
+    <g:title>Ardent Tracker Mortgage</g:title>
+    <description>Follows base rate, no early repayment charge</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000039</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/ardent-tracker-mortgage.svg</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Mortgages &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>90% LTV</g:size>
+  </item>
+  <item>
+    <g:id>48300000000040</g:id>
+    <g:item_group_id>8300000000017</g:item_group_id>
+    <g:title>Northbank First Time Buyer Mortgage</g:title>
+    <description>5% deposit accepted</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000040</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/northbank-first-time-buyer-mortgage.svg</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Mortgages &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>60% LTV</g:size>
+  </item>
+  <item>
+    <g:id>48300000000041</g:id>
+    <g:item_group_id>8300000000017</g:item_group_id>
+    <g:title>Northbank First Time Buyer Mortgage</g:title>
+    <description>5% deposit accepted</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000041</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/northbank-first-time-buyer-mortgage.svg</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Mortgages &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>75% LTV</g:size>
+  </item>
+  <item>
+    <g:id>48300000000042</g:id>
+    <g:item_group_id>8300000000017</g:item_group_id>
+    <g:title>Northbank First Time Buyer Mortgage</g:title>
+    <description>5% deposit accepted</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000042</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/northbank-first-time-buyer-mortgage.svg</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Mortgages &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>90% LTV</g:size>
+  </item>
+  <item>
+    <g:id>48300000000043</g:id>
+    <g:item_group_id>8300000000018</g:item_group_id>
+    <g:title>Northbank Buy to Let Mortgage</g:title>
+    <description>For landlords, rental cover assessed</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000043</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/northbank-buy-to-let-mortgage.svg</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Mortgages &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>60% LTV</g:size>
+  </item>
+  <item>
+    <g:id>48300000000044</g:id>
+    <g:item_group_id>8300000000018</g:item_group_id>
+    <g:title>Northbank Buy to Let Mortgage</g:title>
+    <description>For landlords, rental cover assessed</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000044</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/northbank-buy-to-let-mortgage.svg</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Mortgages &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>75% LTV</g:size>
+  </item>
+  <item>
+    <g:id>48300000000045</g:id>
+    <g:item_group_id>8300000000018</g:item_group_id>
+    <g:title>Northbank Buy to Let Mortgage</g:title>
+    <description>For landlords, rental cover assessed</description>
+    <link>https://banking.insiderdemo.com/product.html?id=48300000000045</link>
+    <g:image_link>https://insiderdemo.com/assets/img/banking/northbank-buy-to-let-mortgage.svg</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Mortgages &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:size>90% LTV</g:size>
+  </item>
+</channel>
+</rss>
