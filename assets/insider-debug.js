@@ -142,16 +142,29 @@
     return 'https://' + account + '.inone.useinsider.com/user-profiles';
   }
 
-  // Deep link straight to the profile, keyed on the uuid the panel resolves.
-  function panelProfileUrl() {
-    var base = panelProfilesUrl();
-    var id = panelProfileKey();
-    return base && id ? base + '/' + encodeURIComponent(id) : base;
-  }
+  /* --- opening the profile in the panel -----------------------------------
+     The panel's User Profiles detail page is keyed on an internal Profile ID
+     that UCD generates and never returns to the page. Neither id available
+     here resolves in the URL:
 
+       Store.visitorId()     the uuid we send as an identifier
+       Insider.getUserId()   the tag's own spUID
+
+     Both render the page briefly and then redirect to the listing. That is
+     probably deliberate: PII visibility is a per-user permission in the
+     panel, so a URL that resolved or pre-filled a profile search would have
+     to enforce it, and it is simpler not to accept one.
+
+     So: copy the uuid and open the listing. The listing's search accepts it,
+     which makes this one paste rather than a hunt.
+     ---------------------------------------------------------------------- */
   function openProfileInPanel() {
-    var url = panelProfileUrl();
+    var url = panelProfilesUrl();
+    var id = panelProfileKey();
     if (!url) return;
+    if (id && navigator.clipboard) {
+      navigator.clipboard.writeText(id).catch(function () {});
+    }
     window.open(url, '_blank', 'noopener');
   }
 
@@ -186,6 +199,7 @@
         '<div class="ins-console__bar">',
           '<button class="ins-console__btn" data-act="copy" type="button">Copy log</button>',
           '<button class="ins-console__btn" data-act="profile" type="button">Open profile</button>',
+          '<button class="ins-console__btn" data-act="logout" type="button">Log out</button>',
           '<button class="ins-console__btn" data-act="clear" type="button">Clear</button>',
           '<button class="ins-console__btn" data-act="uuid" type="button">New visitor</button>',
         '</div>',
@@ -217,6 +231,14 @@
       }
       if (act === 'clear') { log.length = 0; render(); }
       if (act === 'profile') { openProfileInPanel(); }
+      // Signs out without resetting the visitor, so the profile keeps its
+      // history and the uuid stays stable — the same person, logged out.
+      // "New visitor" is the harder reset that starts a fresh profile.
+      if (act === 'logout') {
+        if (window.Store && window.Store.signOut) window.Store.signOut();
+        if (window.insDebugNote) window.insDebugNote('signed out', 'info');
+        location.reload();
+      }
       if (act === 'uuid') { resetEverything(); }
     });
 
@@ -298,23 +320,28 @@
                String(r[1]) + '</dd></div>';
       }).join('');
 
-      // Profile id gets its own row, as a real link straight to the profile in
-      // the panel. Styled inline so it reads as a link without depending on
-      // the site stylesheet, which does not know about this component.
+      // Profile row: clicking copies the uuid and opens User Profiles, ready
+      // to paste into its search box. Styled inline so it reads as an action
+      // without depending on the site stylesheet.
       var profileKey = panelProfileKey();
-      if (profileKey && panelProfileUrl()) {
+      if (profileKey && panelProfilesUrl()) {
         var stat = document.createElement('div');
         stat.className = 'ins-stat ins-stat--link';
-        var a = document.createElement('a');
-        a.href = panelProfileUrl();
-        a.target = '_blank';
-        a.rel = 'noopener';
-        a.textContent = profileKey;
-        a.title = 'Open this profile in the Insider panel';
-        a.style.cssText = 'color:#7CC8A6;text-decoration:underline;' +
-                          'text-underline-offset:2px;cursor:pointer;word-break:break-all';
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.textContent = profileKey;
+        btn.title = 'Copy this uuid and open User Profiles in the panel';
+        btn.style.cssText = 'color:#7CC8A6;text-decoration:underline;' +
+                            'text-underline-offset:2px;cursor:pointer;' +
+                            'word-break:break-all;background:none;border:0;' +
+                            'padding:0;font:inherit;text-align:right';
+        btn.addEventListener('click', function () {
+          openProfileInPanel();
+          btn.textContent = 'copied — paste in search';
+          setTimeout(function () { btn.textContent = profileKey; }, 2000);
+        });
         var dd = document.createElement('dd');
-        dd.appendChild(a);
+        dd.appendChild(btn);
         var dt = document.createElement('dt');
         dt.textContent = 'Profile';
         stat.appendChild(dt);
