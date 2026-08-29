@@ -90,11 +90,18 @@ window.SITE_CONFIG = {
         // PDP - Similar Products. en_GB, page rule "Page Type is Product
         // Page", source "currently viewed item on page".
         //
-        // The VARIATION id is what Insider.campaign.get() is keyed on — 8850,
-        // not 4236. The campaign id is for logging and attribution. Getting
-        // these the wrong way round returns undefined with no error.
+        // Three ids, and they are all different:
+        //   campaignId       4236   the campaign, for logging + attribution
+        //   variationId      8850   what Insider.campaign.get() is keyed on
+        //   recommendationId 43622  the strategy inside the variation
+        //
+        // recs.js listens for `ins-sr:only-api-campaign:load` rather than
+        // fetching, so only the first two are used. 43622 is recorded here
+        // because nothing else writes it down and it is the next thing to try
+        // if the variation lookup ever stops resolving.
         campaignId: 4236,
-        variationId: 8850
+        variationId: 8850,
+        recommendationId: 43622
       }
       // salesdemo: { campaignId: null, variationId: null },
     }
