@@ -143,27 +143,44 @@
   }
 
   /* --- opening the profile in the panel -----------------------------------
-     The panel's User Profiles detail page is keyed on an internal Profile ID
-     that UCD generates and never returns to the page. Neither id available
-     here resolves in the URL:
+     The panel's User Profiles detail page is /user-profiles/<insider_id>,
+     where insider_id is UCD's own profile id — a UUID, distinct from both
+     our uuid and the tag's spUID. The web SDK exposes no accessor for it
+     (the mobile SDKs have getInsiderID()), but unification writes it to
+     localStorage under `ins-mb-uid`, unwrapped: a bare JSON string rather
+     than the usual { data, _expires } envelope.
 
-       Store.visitorId()     the uuid we send as an identifier
-       Insider.getUserId()   the tag's own spUID
-
-     Both render the page briefly and then redirect to the listing. That is
-     probably deliberate: PII visibility is a per-user permission in the
-     panel, so a URL that resolved or pre-filled a profile search would have
-     to enforce it, and it is simpler not to accept one.
-
-     So: copy the uuid and open the listing. The listing's search accepts it,
-     which makes this one paste rather than a hunt.
+     So read it there. If it is missing — before the first unification call
+     completes — fall back to copying the uuid and opening the listing, whose
+     search accepts it.
      ---------------------------------------------------------------------- */
+  function insiderId() {
+    try {
+      var raw = localStorage.getItem('ins-mb-uid');
+      if (!raw) return null;
+      var value = JSON.parse(raw);
+      // Only the UUID form is a profile id; earlier it holds the spUID.
+      if (typeof value === 'string' && /^[0-9a-f-]{36}$/i.test(value)) return value;
+      return null;
+    } catch (e) { return null; }
+  }
+
+  function panelProfileUrl() {
+    var base = panelProfilesUrl();
+    var id = insiderId();
+    return base && id ? base + '/' + encodeURIComponent(id) : null;
+  }
+
   function openProfileInPanel() {
+    var direct = panelProfileUrl();
+    if (direct) { window.open(direct, '_blank', 'noopener'); return; }
+
+    // No insider_id yet — copy the uuid and open the listing instead.
     var url = panelProfilesUrl();
-    var id = panelProfileKey();
+    var key = panelProfileKey();
     if (!url) return;
-    if (id && navigator.clipboard) {
-      navigator.clipboard.writeText(id).catch(function () {});
+    if (key && navigator.clipboard) {
+      navigator.clipboard.writeText(key).catch(function () {});
     }
     window.open(url, '_blank', 'noopener');
   }
@@ -320,28 +337,41 @@
                String(r[1]) + '</dd></div>';
       }).join('');
 
-      // Profile row: clicking copies the uuid and opens User Profiles, ready
-      // to paste into its search box. Styled inline so it reads as an action
-      // without depending on the site stylesheet.
+      // Profile row. Once unification has run we have the insider_id and can
+      // link straight to the profile; before that, fall back to copying the
+      // uuid for the listing's search box.
       var profileKey = panelProfileKey();
+      var directUrl = panelProfileUrl();
       if (profileKey && panelProfilesUrl()) {
         var stat = document.createElement('div');
         stat.className = 'ins-stat ins-stat--link';
-        var btn = document.createElement('button');
-        btn.type = 'button';
-        btn.textContent = profileKey;
-        btn.title = 'Copy this uuid and open User Profiles in the panel';
-        btn.style.cssText = 'color:#7CC8A6;text-decoration:underline;' +
-                            'text-underline-offset:2px;cursor:pointer;' +
-                            'word-break:break-all;background:none;border:0;' +
-                            'padding:0;font:inherit;text-align:right';
-        btn.addEventListener('click', function () {
-          openProfileInPanel();
-          btn.textContent = 'copied — paste in search';
-          setTimeout(function () { btn.textContent = profileKey; }, 2000);
-        });
+        var linkStyle = 'color:#7CC8A6;text-decoration:underline;' +
+                        'text-underline-offset:2px;cursor:pointer;' +
+                        'word-break:break-all;background:none;border:0;' +
+                        'padding:0;font:inherit;text-align:right';
+        var node;
+        if (directUrl) {
+          node = document.createElement('a');
+          node.href = directUrl;
+          node.target = '_blank';
+          node.rel = 'noopener';
+          node.textContent = profileKey;
+          node.title = 'Open this profile in the Insider panel';
+          node.style.cssText = linkStyle;
+        } else {
+          node = document.createElement('button');
+          node.type = 'button';
+          node.textContent = profileKey;
+          node.title = 'Copy this uuid and open User Profiles';
+          node.style.cssText = linkStyle;
+          node.addEventListener('click', function () {
+            openProfileInPanel();
+            node.textContent = 'copied — paste in search';
+            setTimeout(function () { node.textContent = profileKey; }, 2000);
+          });
+        }
         var dd = document.createElement('dd');
-        dd.appendChild(btn);
+        dd.appendChild(node);
         var dt = document.createElement('dt');
         dt.textContent = 'Profile';
         stat.appendChild(dt);
