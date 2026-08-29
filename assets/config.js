@@ -69,6 +69,12 @@ window.SITE_CONFIG = {
      Same rule: null means "accept the first SDK campaign that fires on this
      surface", which is what you want while there is one campaign per page.
      Use perAccount only once several recommenders run on the same page.
+
+     CAMPAIGN IDS ARE PER ACCOUNT. They are assigned at creation and do not
+     travel: rebuilding these campaigns on another account produces different
+     ids, and the ones below will silently match nothing there. So every id
+     lives under `perAccount`, keyed by the account vertical.js resolves from
+     the hostname, and never at the top level.
      --------------------------------------------------------------------- */
   reco: {
     enabled: true,
@@ -78,8 +84,19 @@ window.SITE_CONFIG = {
       cart:         null,   // #reco-cart         on cart.html
       confirmation: null    // #reco-confirmation on confirmation.html
     },
+
     perAccount: {
-      // partnersandbox: { home: 123, product: 124 }
+      partnersandbox: {
+        // PDP - Similar Products. en_GB, page rule "Page Type is Product
+        // Page", source "currently viewed item on page".
+        //
+        // The VARIATION id is what Insider.campaign.get() is keyed on — 8850,
+        // not 4236. The campaign id is for logging and attribution. Getting
+        // these the wrong way round returns undefined with no error.
+        campaignId: 4236,
+        variationId: 8850
+      }
+      // salesdemo: { campaignId: null, variationId: null },
     }
   },
 
@@ -146,8 +163,15 @@ window.SITE_CONFIG = {
       var over = cfg && cfg.perAccount && cfg.perAccount[acct];
       if (!over) return;
       Object.keys(over).forEach(function (k) {
-        if (section === 'reco') cfg.campaigns[k] = over[k];
-        else cfg[k] = over[k];
+        // reco carries two kinds of key: per-surface campaign ids, which
+        // belong in `campaigns`, and the campaign/variation pair for the
+        // single active recommender, which belongs on the section itself.
+        if (section === 'reco' && cfg.campaigns &&
+            Object.prototype.hasOwnProperty.call(cfg.campaigns, k)) {
+          cfg.campaigns[k] = over[k];
+        } else {
+          cfg[k] = over[k];
+        }
       });
     });
 
