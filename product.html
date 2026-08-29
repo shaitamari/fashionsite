@@ -35,13 +35,13 @@
 
 <!-- 3. Insider Tag — written by assets/vertical.js, because which
         account it points at depends on the hostname:
-          beauty.insiderdemo.com          -> salesdemo
+          beauty.insiderdemo.com          -> partnersandbox
           beauty-sandbox.insiderdemo.com  -> partnersandbox
         Account and partner id are listed in vertical.js and shown
         live in the SDK console. -->
 
 <!-- 4. Data pushes for this page. -->
-<script src="assets/reco.js"></script>
+<script src="assets/recs.js"></script>
 <script>
   var PID = new URLSearchParams(location.search).get('id');
   var PRODUCT = Store.byId(PID) || Store.catalog[0];
@@ -53,8 +53,7 @@
 
   // --- page type: product -----------------------------------------------
   // One product per page. `id` is the Shopify VARIANT id and `groupcode` is
-  // the product id — the same shape the live Posh site sends, so both sites
-  // write consistent records into the shared salesdemo catalogue.
+  // the product id — the same shape the feed carries into Eureka.
   window.InsiderQueue.push({ type: 'product', value: Store.productPayload(PRODUCT) });
 
   window.InsiderQueue.push({ type: 'init' });
@@ -152,7 +151,7 @@
 <footer class="foot">
   <div class="wrap foot__in">
     <span><span data-brand>Lumen</span> — Insider One demo storefront</span>
-    <span>onesandbox · 10014057</span>
+    <span data-env-label>partnersandbox · 10006846</span>
   </div>
 </footer>
 
@@ -165,7 +164,8 @@
     new MutationObserver(function () {
       if (!box.hidden && box.children.length) {
         note.className = 'source is-live';
-        note.textContent = 'Smart Recommender · live from salesdemo';
+        note.textContent = 'Smart Recommender · live from ' +
+          ((window.ENVIRONMENT && window.ENVIRONMENT.account) || 'the platform');
       }
     }).observe(box, { childList: true, attributes: true });
   }
@@ -289,6 +289,15 @@
   }).slice(0, 6));
 
   watchReco('product');
+
+  // The recommender resolves asynchronously — the tag announces it via
+  // `ins-sr:only-api-campaign:load` once campaigns are ready. recs.js handles
+  // both that event and the case where it fired before this page's scripts
+  // ran. The section stays hidden until products arrive, so a page with no
+  // campaign simply has no widget rather than an empty heading.
+  if (window.Recs && window.Recs.enabled) {
+    window.Recs.mount('#reco-product');
+  }
 </script>
 </body>
 </html>
