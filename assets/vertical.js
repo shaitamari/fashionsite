@@ -116,18 +116,25 @@
      `Insider.insiderObject` is built by draining window.InsiderQueue — the
      Web SDK path — and that is gated on an account flag (`inioa` in the
      served ins.js). It is FALSE on partnersandbox, so the queue is never
-     consumed: pushes pile up, insiderObject stays undefined, and every
-     system rule that reads the IO silently returns its hard-coded default:
+     consumed: pushes pile up, insiderObject stays undefined, and everything
+     that reads the IO falls back to defaults or is simply never sent.
 
-         getLang    -> getDataFromIO('user','language','en_US')  ->  en_US
-         getLocale  -> derives from getLang                      ->  en_US
+     Two consequences, both silent:
 
-     Eureka then serves the en_US index instead of en_GB — a different
-     account's leftover catalog — while the feed, campaign, locale and tag
-     are all correctly configured, and nothing anywhere reports an error.
+       1. System rules return their hard-coded defaults. getLang reads
+          getDataFromIO('user','language','en_US'), so getLocale resolves to
+          en_US and Eureka serves the wrong locale's index.
 
-     Setting the legacy global makes those rules resolve properly. getLocale
-     caches on first call, so this has to exist before the tag ever asks.
+       2. No user data reaches Insider at all. The Hit API builds its payload
+          from getValidUserData(), which reads through getInsiderObject() —
+          so uuid, email, opt-ins and custom attributes are never sent, and
+          no profile appears in the panel.
+
+     Seeding the legacy global fixes both, because the tag falls back to it
+     and takes the legacy path anyway when `inioa` is false.
+
+     Load order matters: getLocale caches on first call, and the Hit API
+     builds its payload during init, so this has to run before ins.js.
 
      REMOVE THIS once Web SDK ingestion is enabled on the account:
      Insider.insiderObject then takes precedence automatically, and one
@@ -151,6 +158,38 @@
     // page type without implying the cart has items in it.
     io.basket = io.basket || {};
     if (io.basket.currency == null) io.basket.currency = currency;
+
+    /* --- full user payload -----------------------------------------------
+       store.js builds the real payload — uuid, identifiers, opt-ins, custom
+       attributes — and pushes it to InsiderQueue, where nothing consumes it.
+       Merge the same object in here so the Hit API can actually send it.
+
+       store.js loads after this file, so poll briefly rather than assuming
+       it is ready. Merge rather than replace, so the locale and country set
+       above survive if the payload omits them.
+
+       The uuid matters more than it looks: the panel's User Profiles detail
+       page is keyed on it. Without this, no profile exists to open.
+       ------------------------------------------------------------------ */
+    var tries = 0;
+    var t = setInterval(function () {
+      var ready = window.Store && window.Store.userPayload;
+      if (!ready) { if (++tries > 200) clearInterval(t); return; }
+      clearInterval(t);
+      try {
+        var payload = window.Store.userPayload() || {};
+        Object.keys(payload).forEach(function (k) {
+          if (payload[k] === undefined) return;
+          // Never let a payload value clobber the locale fields above.
+          if (k === 'language' || k === 'country') return;
+          io.user[k] = payload[k];
+        });
+        if (window.insDebugNote) {
+          window.insDebugNote('insider_object user seeded: ' +
+            (payload.uuid || 'no uuid'), 'ok');
+        }
+      } catch (e) {}
+    }, 10);
   })(resolved.env);
 
   // The tag is written here rather than inline in each page, because which

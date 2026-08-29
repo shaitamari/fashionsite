@@ -131,15 +131,18 @@
     return 'https://' + account + '.inone.useinsider.com/user-profiles';
   }
 
-  // Copy the profile id and open the panel's User Profiles listing. The
-  // listing searches by profile id, so this is one paste rather than a hunt.
-  function openProfileInPanel() {
+  // Deep link straight to the profile. The panel resolves /user-profiles/<id>
+  // for the same id that its search box accepts, which is Insider's own
+  // profile id (spUID) — not our uuid, which it does not know about.
+  function panelProfileUrl() {
+    var base = panelProfilesUrl();
     var id = insiderProfileId();
-    var url = panelProfilesUrl();
+    return base && id ? base + '/' + encodeURIComponent(id) : base;
+  }
+
+  function openProfileInPanel() {
+    var url = panelProfileUrl();
     if (!url) return;
-    if (id && navigator.clipboard) {
-      navigator.clipboard.writeText(id).catch(function () {});
-    }
     window.open(url, '_blank', 'noopener');
   }
 
@@ -286,22 +289,26 @@
                String(r[1]) + '</dd></div>';
       }).join('');
 
-      // Profile id gets its own row because it is clickable: copies the id and
-      // opens User Profiles in the panel, so a demo can go from behaviour on
-      // the site to the recorded profile in two clicks.
-      if (profileId && panelProfilesUrl()) {
+      // Profile id gets its own row, as a real link straight to the profile in
+      // the panel. Styled inline so it reads as a link without depending on
+      // the site stylesheet, which does not know about this component.
+      if (profileId && panelProfileUrl()) {
         var stat = document.createElement('div');
         stat.className = 'ins-stat ins-stat--link';
-        stat.innerHTML = '<dt>Profile id</dt>' +
-                         '<dd><button type="button" class="ins-profile-link" ' +
-                         'title="Copy id and open User Profiles in the panel"></button></dd>';
-        var btn = stat.querySelector('.ins-profile-link');
-        btn.textContent = profileId;
-        btn.addEventListener('click', function () {
-          openProfileInPanel();
-          btn.textContent = 'copied — paste in search';
-          setTimeout(function () { btn.textContent = profileId; }, 2000);
-        });
+        var a = document.createElement('a');
+        a.href = panelProfileUrl();
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.textContent = profileId;
+        a.title = 'Open this profile in the Insider panel';
+        a.style.cssText = 'color:#7CC8A6;text-decoration:underline;' +
+                          'text-underline-offset:2px;cursor:pointer;word-break:break-all';
+        var dd = document.createElement('dd');
+        dd.appendChild(a);
+        var dt = document.createElement('dt');
+        dt.textContent = 'Profile id';
+        stat.appendChild(dt);
+        stat.appendChild(dd);
         el.status.appendChild(stat);
       }
 
