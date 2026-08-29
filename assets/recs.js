@@ -94,8 +94,33 @@
     };
   }
 
-  /* --- rendering ---------------------------------------------------------- */
+  /* --- rendering ----------------------------------------------------------
+     The widget markup carries Insider's required class names for click
+     tracking, and the site's own `.card` classes for styling. Those two are
+     independent: the tracking classes have no CSS, and the layout has to be
+     supplied here because `.grid` is not on this container.
+     ---------------------------------------------------------------------- */
+  var STYLE_ID = 'ins-recs-style';
+  function ensureStyle() {
+    if (document.getElementById(STYLE_ID)) return;
+    var css = document.createElement('style');
+    css.id = STYLE_ID;
+    css.textContent =
+      '.ins-web-smart-recommender-body{display:grid;' +
+      'grid-template-columns:repeat(auto-fill,minmax(13rem,1fr));' +
+      'gap:1.5rem 1.25rem}' +
+      '.ins-web-smart-recommender-box-item{min-width:0}' +
+      '.ins-web-smart-recommender-box-item .card{display:block;' +
+      'text-decoration:none;color:inherit}' +
+      '.ins-web-smart-recommender-box-item .card__media{position:relative;' +
+      'aspect-ratio:1/1;overflow:hidden;background:var(--alt)}' +
+      '.ins-web-smart-recommender-box-item .card__media img{width:100%;' +
+      'height:100%;object-fit:cover;display:block}';
+    document.head.appendChild(css);
+  }
+
   function render(host, products, campaignId, variationId) {
+    ensureStyle();
     host.innerHTML = '';
 
     var body = document.createElement('div');
