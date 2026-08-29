@@ -71,12 +71,76 @@
     return { label: 'unavailable', ok: false };
   }
 
+  /* --- resetting identity -------------------------------------------------
+     Store.resetVisitor() clears our own keys, but Insider keeps its profile:
+     the spUID lives in its own prefixed storage, so the panel would still
+     show the same user. For a demo you almost always want a genuinely new
+     profile, so clear both.
+     ---------------------------------------------------------------------- */
+  function resetEverything() {
+    // Insider's own storage is prefixed; clearing it forces a new spUID on
+    // the next init. Campaign state (shown/closed/joined) lives here too, so
+    // this also re-arms any campaign already dismissed in this session.
+    try {
+      Object.keys(localStorage)
+        .filter(function (k) { return k.indexOf('ins-') === 0; })
+        .forEach(function (k) { localStorage.removeItem(k); });
+    } catch (e) {}
+
+    // Cookies the tag may also be using.
+    try {
+      document.cookie.split(';').forEach(function (c) {
+        var name = c.split('=')[0].trim();
+        if (name.indexOf('ins-') === 0) {
+          document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
+        }
+      });
+    } catch (e) {}
+
+    // Then our own keys, which reloads the page.
+    if (window.Store && window.Store.resetVisitor) window.Store.resetVisitor();
+    else location.reload();
+  }
+
   function lastPageType() {
     var types = ['home', 'category', 'product', 'cart', 'purchase', 'other'];
     for (var i = log.length - 1; i >= 0; i--) {
       if (types.indexOf(log[i].type) > -1) return log[i].type;
     }
     return '—';
+  }
+
+  /* --- the Insider profile ------------------------------------------------
+     Two different ids are in play and they are easy to confuse:
+
+       Store.visitorId()      our own uuid, sent as `uuid` on the user push
+       Insider.getUserId()    Insider's own profile id (spUID)
+
+     User Profiles in the panel is keyed on the SECOND one. Searching the
+     panel for our uuid finds nothing, which is a confusing five minutes for
+     anyone who tries it.
+     ---------------------------------------------------------------------- */
+  function insiderProfileId() {
+    try { return (window.Insider && Insider.getUserId && Insider.getUserId()) || null; }
+    catch (e) { return null; }
+  }
+
+  function panelProfilesUrl() {
+    var account = (window.ENVIRONMENT || {}).account;
+    if (!account) return null;
+    return 'https://' + account + '.inone.useinsider.com/user-profiles';
+  }
+
+  // Copy the profile id and open the panel's User Profiles listing. The
+  // listing searches by profile id, so this is one paste rather than a hunt.
+  function openProfileInPanel() {
+    var id = insiderProfileId();
+    var url = panelProfilesUrl();
+    if (!url) return;
+    if (id && navigator.clipboard) {
+      navigator.clipboard.writeText(id).catch(function () {});
+    }
+    window.open(url, '_blank', 'noopener');
   }
 
   /* --- panel -------------------------------------------------------------- */
@@ -109,6 +173,7 @@
         '<dl class="ins-console__status" data-role="status"></dl>',
         '<div class="ins-console__bar">',
           '<button class="ins-console__btn" data-act="copy" type="button">Copy log</button>',
+          '<button class="ins-console__btn" data-act="profile" type="button">Open profile</button>',
           '<button class="ins-console__btn" data-act="clear" type="button">Clear</button>',
           '<button class="ins-console__btn" data-act="uuid" type="button">New visitor</button>',
         '</div>',
@@ -139,7 +204,8 @@
         setTimeout(function () { ev.target.textContent = 'Copy log'; }, 1200);
       }
       if (act === 'clear') { log.length = 0; render(); }
-      if (act === 'uuid' && window.Store) { window.Store.resetVisitor(); }
+      if (act === 'profile') { openProfileInPanel(); }
+      if (act === 'uuid') { resetEverything(); }
     });
 
     setOpen(open);
@@ -206,6 +272,7 @@
       var eu = eurekaState();
       var visitor = (window.Store && window.Store.visitorId && window.Store.visitorId()) || '—';
       var user = (window.Store && window.Store.currentUser && window.Store.currentUser());
+      var profileId = insiderProfileId();
       var rows = [
         ['Insider tag', tag.label, tag.ok],
         ['Eureka SDK', eu.label, eu.ok],
@@ -218,6 +285,25 @@
                '<dt>' + r[0] + '</dt><dd title="' + String(r[1]).replace(/"/g, '') + '">' +
                String(r[1]) + '</dd></div>';
       }).join('');
+
+      // Profile id gets its own row because it is clickable: copies the id and
+      // opens User Profiles in the panel, so a demo can go from behaviour on
+      // the site to the recorded profile in two clicks.
+      if (profileId && panelProfilesUrl()) {
+        var stat = document.createElement('div');
+        stat.className = 'ins-stat ins-stat--link';
+        stat.innerHTML = '<dt>Profile id</dt>' +
+                         '<dd><button type="button" class="ins-profile-link" ' +
+                         'title="Copy id and open User Profiles in the panel"></button></dd>';
+        var btn = stat.querySelector('.ins-profile-link');
+        btn.textContent = profileId;
+        btn.addEventListener('click', function () {
+          openProfileInPanel();
+          btn.textContent = 'copied — paste in search';
+          setTimeout(function () { btn.textContent = profileId; }, 2000);
+        });
+        el.status.appendChild(stat);
+      }
 
       if (!open) return;
       var stick = el.logEl.scrollTop + el.logEl.clientHeight >= el.logEl.scrollHeight - 40;
