@@ -127,6 +127,10 @@
 
 <style>
   .listing { display:grid; grid-template-columns: 15rem 1fr; gap:2.5rem; align-items:start }
+  /* The shared .grid sets a fixed column count for a full-width page. Inside
+     the listing layout the main column is narrower, so let it reflow. */
+  .listing__main { min-width:0 }
+  .listing .grid { grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr)) }
   @media (max-width: 860px) { .listing { grid-template-columns:1fr } .facets { order:-1 } }
   .facets__group { margin-bottom:2rem }
   .facets__title { font-size:.75rem; letter-spacing:.08em; text-transform:uppercase;

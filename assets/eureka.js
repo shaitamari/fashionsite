@@ -269,7 +269,7 @@
     return {
       items: (d.items || []).map(normalize),
       navigation: d.navigation || { total: (d.items || []).length, totalPageCount: 1 },
-      facets: d.facets || d.filters || []
+      facets: d.aggregations || d.facets || d.filters || []
     };
   }
 
