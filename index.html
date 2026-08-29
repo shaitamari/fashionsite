@@ -33,8 +33,12 @@
 <script src="assets/vertical.js"></script>
 <script src="assets/store.js"></script>
 
-<!-- 3. Insider Tag — account: onesandbox (10014057) -->
-<script async src="//onesandbox.api.useinsider.com/ins.js?id=10014057"></script>
+<!-- 3. Insider Tag — written by assets/vertical.js, because which
+        account it points at depends on the hostname:
+          beauty.insiderdemo.com          -> salesdemo
+          beauty-sandbox.insiderdemo.com  -> partnersandbox
+        Account and partner id are listed in vertical.js and shown
+        live in the SDK console. -->
 
 <!-- 4. Data pushes for this page. -->
 <script src="assets/reco.js"></script>
@@ -43,7 +47,7 @@
   window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });
 
   // --- currency ---------------------------------------------------------
-  window.InsiderQueue.push({ type: 'currency', value: 'USD' });
+  window.InsiderQueue.push({ type: 'currency', value: Store.currency() });
 
   // --- page type: home --------------------------------------------------
   // Default Home Page View parameters are sent automatically, so only custom

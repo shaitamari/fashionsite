@@ -251,6 +251,156 @@ def gen_airlines():
 
 GENERATORS = {"hotels": gen_hotels, "airlines": gen_airlines}
 
+# ------------------------------------------------------------------- banking
+
+CARD_TIERS = [
+    ("Everyday", 0, "No annual fee, 0% on purchases for 12 months"),
+    ("Rewards", 45, "1.5% back on everything, no category limits"),
+    ("Travel", 120, "No FX fees, lounge access, travel insurance included"),
+    ("Premier", 320, "Concierge, higher limits, dedicated relationship manager"),
+]
+ACCOUNTS = [
+    ("Current Account", 0, "Everyday banking with fee-free spending abroad"),
+    ("Savings Account", 0, "Instant access, interest paid monthly"),
+    ("Fixed Saver", 0, "Higher rate, locked for 12 or 24 months"),
+    ("Joint Account", 0, "Shared everyday banking for two"),
+    ("Business Current", 8, "For sole traders and small companies"),
+]
+LOANS = [
+    ("Personal Loan", "1,000 to 25,000 over 1 to 7 years"),
+    ("Car Finance", "Fixed rate, terms to 5 years"),
+    ("Home Improvement Loan", "Unsecured, no early repayment fee"),
+    ("Debt Consolidation", "One payment, one rate"),
+]
+MORTGAGES = [
+    ("2 Year Fixed", "Fixed for two years, then reverts"),
+    ("5 Year Fixed", "Longer certainty, higher rate"),
+    ("Tracker", "Follows base rate, no early repayment charge"),
+    ("First Time Buyer", "5% deposit accepted"),
+    ("Buy to Let", "For landlords, rental cover assessed"),
+]
+BANK_BRANDS = ["Northbank", "Ardent", "Wexford Financial", "Calder"]
+
+
+def gen_banking():
+    products, pid, vid = [], 8_300_000_000_000, 48_300_000_000_000
+    rnd = random.Random(11)
+    palette = ("#7FA8C9", "#1E3A57", "#FFE6B8")
+
+    def add(kind, name, price, blurb, variants_spec, ptype):
+        nonlocal pid, vid
+        pid += 1
+        brand = rnd.choice(BANK_BRANDS)
+        title = f"{brand} {name}"
+        slug = title.lower().replace(" ", "-")
+        img = gradient_art("banking", slug, name, brand, palette, "card")
+        vs = []
+        for label, mult in variants_spec:
+            vid += 1
+            vs.append({"id": vid, "title": label,
+                       "price": float(round(price * mult, 2)) if price else 0.01,
+                       "compare": None, "sku": slug[:16], "available": True})
+        products.append(shopify_product(pid, title, slug, ptype, brand, blurb,
+                                        [img], kind, vs, [brand, ptype]))
+
+    for name, fee, blurb in CARD_TIERS:
+        add("Card", f"{name} Credit Card", max(fee, 1), blurb,
+            [("Standard", 1.0), ("Plus", 1.4)], "Credit Cards")
+    for name, fee, blurb in ACCOUNTS:
+        add("Account", name, max(fee, 1), blurb,
+            [("Personal", 1.0), ("Premium", 2.5)], "Accounts")
+    for name, blurb in LOANS:
+        add("Term", name, 1, blurb,
+            [("3 years", 1.0), ("5 years", 1.0), ("7 years", 1.0)], "Loans")
+    for name, blurb in MORTGAGES:
+        add("Term", f"{name} Mortgage", 1, blurb,
+            [("60% LTV", 1.0), ("75% LTV", 1.0), ("90% LTV", 1.0)], "Mortgages")
+    return products
+
+
+# ----------------------------------------------------------------- insurance
+
+COVER = [
+    ("Car Insurance", "Motor", ["Third Party", "Third Party Fire & Theft", "Comprehensive"], 340),
+    ("Home Insurance", "Home", ["Buildings", "Contents", "Buildings & Contents"], 220),
+    ("Travel Insurance", "Travel", ["Single Trip", "Annual Multi-Trip", "Backpacker"], 55),
+    ("Pet Insurance", "Pet", ["Accident Only", "Time Limited", "Lifetime"], 190),
+    ("Life Insurance", "Life", ["Level Term", "Decreasing Term", "Whole of Life"], 260),
+    ("Health Insurance", "Health", ["Essential", "Standard", "Comprehensive"], 480),
+    ("Landlord Insurance", "Home", ["Buildings", "Contents", "Full Cover"], 310),
+    ("Business Insurance", "Business", ["Public Liability", "Professional Indemnity", "Combined"], 420),
+    ("Van Insurance", "Motor", ["Third Party", "Comprehensive"], 390),
+    ("Gadget Insurance", "Gadget", ["Single Item", "Family Cover"], 70),
+]
+INS_BRANDS = ["Fairhaven", "Ardent Cover", "Northbank Insure", "Calder Protect"]
+
+
+def gen_insurance():
+    products, pid, vid = [], 8_400_000_000_000, 48_400_000_000_000
+    rnd = random.Random(23)
+    palette = ("#9CC5B0", "#23503F", "#EAF6EE")
+    for name, ptype, levels, base in COVER:
+        for brand in rnd.sample(INS_BRANDS, 2):
+            pid += 1
+            title = f"{brand} {name}"
+            slug = title.lower().replace(" ", "-")
+            img = gradient_art("insurance", slug, name.replace(" Insurance", ""), brand, palette, "card")
+            vs = []
+            for i, level in enumerate(levels):
+                vid += 1
+                vs.append({"id": vid, "title": level,
+                           "price": float(round(base * (1 + i * 0.45))),
+                           "compare": float(round(base * (1 + i * 0.45) * 1.15)) if i == 0 else None,
+                           "sku": f"{slug[:14]}-{i}", "available": True})
+            products.append(shopify_product(
+                pid, title, slug, ptype, brand,
+                f"{name} from {brand}. Cover starts the day you buy, cancel any time in the "
+                f"first 14 days.", [img], "Level of cover", vs, [brand, ptype]))
+    return products
+
+
+# ------------------------------------------------------------------- fintech
+
+FINTECH = [
+    ("Personal Plan", "Plans", ["Free", "Plus", "Premium", "Metal"], 0),
+    ("Business Plan", "Plans", ["Starter", "Growth", "Scale"], 12),
+    ("Currency Account", "Accounts", ["Personal", "Business"], 0),
+    ("Investment Account", "Investing", ["General", "Tax-Free", "Pension"], 0),
+    ("Crypto Wallet", "Investing", ["Standard", "Pro"], 0),
+    ("Expense Cards", "Business", ["5 cards", "20 cards", "Unlimited"], 25),
+    ("Payment Links", "Business", ["Standard", "Pro"], 15),
+    ("Payroll", "Business", ["Up to 10", "Up to 50", "Unlimited"], 40),
+]
+FIN_BRANDS = ["Loop", "Kite Money", "Vantage", "Orbit"]
+
+
+def gen_fintech():
+    products, pid, vid = [], 8_500_000_000_000, 48_500_000_000_000
+    rnd = random.Random(31)
+    palette = ("#B8A8E8", "#2C2557", "#F2ECFF")
+    for name, ptype, tiers, base in FINTECH:
+        for brand in rnd.sample(FIN_BRANDS, 2):
+            pid += 1
+            title = f"{brand} {name}"
+            slug = title.lower().replace(" ", "-")
+            img = gradient_art("fintech", slug, name, brand, palette, "card")
+            vs = []
+            for i, tier in enumerate(tiers):
+                vid += 1
+                price = base + i * 9 if base or i else 1
+                vs.append({"id": vid, "title": tier, "price": float(price),
+                           "compare": None, "sku": f"{slug[:14]}-{i}", "available": True})
+            products.append(shopify_product(
+                pid, title, slug, ptype, brand,
+                f"{name} from {brand}. No minimum balance, cancel any time, "
+                f"everything managed from the app.", [img], "Tier", vs, [brand, ptype]))
+    return products
+
+
+GENERATORS.update({"banking": gen_banking, "insurance": gen_insurance,
+                   "fintech": gen_fintech})
+
+
 
 def write(key):
     products = GENERATORS[key]()

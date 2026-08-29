@@ -1,9 +1,32 @@
 # Insider One demo storefront — multi-vertical
 
-One deploy, one codebase, many subverticals — each on its own subdomain:
+One deploy, one codebase, many subverticals across multiple Insider accounts.
+The hostname decides both:
 
-    https://beauty.insiderdemo.com      Lumen        makeup, skincare, fragrance
-    https://lifestyle.insiderdemo.com   Posh Street  footwear, home, pets
+    beauty.insiderdemo.com           beauty vertical  ->  salesdemo
+    beauty-sandbox.insiderdemo.com   beauty vertical  ->  partnersandbox
+
+A page carries one Insider tag and a tag belongs to one account, so each
+account needs its own hostname. The subdomain suffix picks the environment;
+`assets/vertical.js` writes the right tag, locale and currency at load.
+
+## Environments
+
+Defined in `verticals.json` under `_environments`, mirrored in `vertical.js`:
+
+| | account | locale | currency |
+|---|---|---|---|
+| `beauty.` | salesdemo | en_GB | EUR |
+| `beauty-sandbox.` | partnersandbox | en_GB | EUR |
+
+**Why `en_GB`.** Both accounts already hold a large `en_US` catalog belonging
+to other demos. An XML sync replaces the contents of the locale it targets, so
+loading our feed into `en_US` would destroy work other people depend on. A
+separate locale keeps them untouched.
+
+**Why EUR.** Currency is visible on every product card, cart and order; locale
+only appears in Catalog Manager. EUR reads as neutral across most markets,
+where GBP or USD anchors the demo to one.
 
 The subdomain is what picks the vertical. That matters for campaign targeting:
 a rule scoped to `beauty.insiderdemo.com` cannot collide with another vertical,

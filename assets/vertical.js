@@ -28,6 +28,37 @@
   var DEFAULT = 'beauty';
   var KEY = 'demo.vertical';
 
+  /* --- environments -------------------------------------------------------
+     A page carries one Insider tag, and a tag belongs to one account. So the
+     account is decided by the hostname, via a suffix on the subdomain:
+
+         beauty.insiderdemo.com           -> salesdemo
+         beauty-sandbox.insiderdemo.com   -> partnersandbox
+
+     Locale and currency travel with the account, because they have to match
+     the catalog the feed was loaded into.
+     --------------------------------------------------------------------- */
+  var ENVIRONMENTS = {
+    'default': {
+      suffix: null, account: 'salesdemo', partnerId: '10002548',
+      locale: 'en_GB', currency: 'EUR'
+    },
+    'sandbox': {
+      suffix: '-sandbox', account: 'partnersandbox', partnerId: '10006846',
+      locale: 'en_GB', currency: 'EUR'
+    }
+  };
+
+  function resolveEnvironment(sub) {
+    for (var key in ENVIRONMENTS) {
+      var env = ENVIRONMENTS[key];
+      if (env.suffix && sub && sub.slice(-env.suffix.length) === env.suffix) {
+        return { key: key, env: env, vertical: sub.slice(0, -env.suffix.length) };
+      }
+    }
+    return { key: 'default', env: ENVIRONMENTS['default'], vertical: sub };
+  }
+
   // Hostnames that are never a vertical — the apex, www, and Netlify's own.
   var RESERVED = ['www', 'insiderdemo', 'localhost', 'netlify'];
 
@@ -53,8 +84,21 @@
     try { return localStorage.getItem(KEY) || DEFAULT; } catch (e) { return DEFAULT; }
   }
 
-  var vertical = pick();
+  var raw = pick();
+  var resolved = resolveEnvironment(fromSubdomain() ? raw : null);
+  var vertical = resolved.vertical || raw;
+
   window.VERTICAL_KEY = vertical;
+  window.ENVIRONMENT = resolved.env;
+  window.ENVIRONMENT_KEY = resolved.key;
+
+  // The tag is written here rather than inline in each page, because which
+  // account it points at depends on the hostname. Account and id are plainly
+  // readable above and in the console panel.
+  document.write(
+    '<script async src="//' + resolved.env.account +
+    '.api.useinsider.com/ins.js?id=' + resolved.env.partnerId + '"><\/script>'
+  );
 
   // Synchronous by design — see the note above. The second inline script runs
   // only after the catalog has executed, which is where the theme gets applied;

@@ -510,49 +510,6 @@
       "confirm_title": "Your order is confirmed."
     }
   },
-  "_planned_banking": {
-    "_status": "not built \u2014 needs a catalog source and a config block",
-    "vertical": "Banking",
-    "subvertical": "Banking",
-    "template": "booking",
-    "source": "sources/banking-1.json",
-    "labels": {
-      "add_to_cart": "Start application",
-      "cart": "Your application",
-      "checkout": "Review application",
-      "cart_title": "Your application",
-      "cart_empty": "No products selected yet",
-      "place_order": "Submit application",
-      "order": "application",
-      "confirm_title": "Your application is submitted.",
-      "browse_cta": "Explore products"
-    }
-  },
-  "_planned_insurance": {
-    "_status": "not built \u2014 needs a catalog source and a config block",
-    "vertical": "Banking",
-    "subvertical": "Insurance",
-    "template": "booking",
-    "source": "sources/insurance-1.json",
-    "labels": {
-      "add_to_cart": "Get a quote",
-      "cart": "Your quote",
-      "checkout": "Review quote",
-      "cart_title": "Your quote",
-      "cart_empty": "No cover selected yet",
-      "place_order": "Buy cover",
-      "order": "policy",
-      "confirm_title": "You're covered.",
-      "browse_cta": "Compare cover"
-    }
-  },
-  "_planned_fintech": {
-    "_status": "not built \u2014 needs a catalog source and a config block",
-    "vertical": "Banking",
-    "subvertical": "Fintech",
-    "template": "booking",
-    "source": "sources/fintech-1.json"
-  },
   "_labels_default": {
     "cart": "Cart",
     "add_to_cart": "Add to cart",
@@ -677,5 +634,225 @@
     "tiles_title": "Browse by route",
     "grid_title": "New routes",
     "reco_title": "Picked for you"
+  },
+  "_environments": {
+    "_README": [
+      "Which Insider account a site talks to is decided by its SUBDOMAIN SUFFIX,",
+      "because a page carries one tag and a tag belongs to one account:",
+      "",
+      "    beauty.insiderdemo.com           -> salesdemo",
+      "    beauty-sandbox.insiderdemo.com   -> partnersandbox",
+      "",
+      "`default` applies when a subdomain carries no recognised suffix.",
+      "",
+      "locale and currency must match the catalog these feeds load into.",
+      "en_GB keeps our products clear of the existing en_US catalog, which an",
+      "XML sync would otherwise replace. EUR because currency shows on every",
+      "product card and cart, while locale only appears in Catalog Manager."
+    ],
+    "default": {
+      "suffix": null,
+      "account": "salesdemo",
+      "partnerId": "10002548",
+      "locale": "en_GB",
+      "currency": "EUR",
+      "feed": "https://insiderdemo.com/feeds/master.xml"
+    },
+    "sandbox": {
+      "suffix": "-sandbox",
+      "account": "partnersandbox",
+      "partnerId": "10006846",
+      "locale": "en_GB",
+      "currency": "EUR",
+      "feed": "https://insiderdemo.com/feeds/master.xml"
+    }
+  },
+  "banking": {
+    "vertical": "Banking",
+    "subvertical": "Banking",
+    "brand": "Northbank",
+    "tagline": "Everyday banking, cards and lending",
+    "hero_title": "Banking that<br>stays out of the way.",
+    "hero_cta": "Explore products",
+    "hero_lede": "Accounts, cards, loans and mortgages, without the branch visit.",
+    "hero_eyebrow": "Personal",
+    "announce": "FSCS protected \u00b7 Open an account in minutes",
+    "search_placeholder": "Search accounts, cards, loans",
+    "newsletter_title": "Rate alerts",
+    "newsletter_lede": "Rate changes and new products.",
+    "tiles_title": "Browse products",
+    "grid_title": "Popular",
+    "reco_title": "You might also need",
+    "theme": {
+      "bg": "#FCFDFE",
+      "alt": "#EDF1F6",
+      "ink": "#131B24",
+      "muted": "#5E6A78",
+      "rule": "#DCE3EB",
+      "accent": "#1E3A57",
+      "display": "'Jost', Helvetica, sans-serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Jost:wght@300;400;500;600"
+    },
+    "template": "ecommerce",
+    "source": "sources/banking-*.json",
+    "collections": {
+      "Accounts": "Accounts",
+      "Mortgages": "Mortgages",
+      "Credit Cards": "Credit Cards",
+      "Loans": "Loans"
+    },
+    "order": [
+      "Accounts",
+      "Mortgages",
+      "Credit Cards",
+      "Loans"
+    ],
+    "subcats": {},
+    "defaults": {
+      "Accounts": "All",
+      "Mortgages": "All",
+      "Credit Cards": "All",
+      "Loans": "All"
+    },
+    "labels": {
+      "add_to_cart": "Start application",
+      "cart": "Your application",
+      "cart_title": "Your application",
+      "cart_empty": "Nothing selected yet",
+      "checkout": "Review application",
+      "place_order": "Submit application",
+      "order": "application",
+      "confirm_title": "Your application is submitted.",
+      "browse_cta": "Explore products"
+    }
+  },
+  "insurance": {
+    "vertical": "Banking",
+    "subvertical": "Insurance",
+    "brand": "Fairhaven",
+    "tagline": "Cover for the things that matter",
+    "hero_title": "Cover you can<br>actually read.",
+    "hero_cta": "Compare cover",
+    "hero_lede": "Motor, home, travel and life cover with no jargon and no auto-renewal.",
+    "hero_eyebrow": "Protect",
+    "announce": "Cover starts the day you buy \u00b7 14-day cooling off",
+    "search_placeholder": "Search cover types",
+    "newsletter_title": "Stay covered",
+    "newsletter_lede": "Renewal reminders and cover tips.",
+    "tiles_title": "Browse cover",
+    "grid_title": "Popular cover",
+    "reco_title": "Often taken together",
+    "theme": {
+      "bg": "#FCFDFC",
+      "alt": "#EBF3EE",
+      "ink": "#141E19",
+      "muted": "#5C6B63",
+      "rule": "#D8E5DD",
+      "accent": "#23503F",
+      "display": "'Jost', Helvetica, sans-serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Jost:wght@300;400;500;600"
+    },
+    "template": "ecommerce",
+    "source": "sources/insurance-*.json",
+    "collections": {
+      "Motor": "Motor",
+      "Home": "Home",
+      "Travel": "Travel",
+      "Pet": "Pet",
+      "Life": "Life",
+      "Health": "Health",
+      "Business": "Motor",
+      "Gadget": "Motor"
+    },
+    "order": [
+      "Motor",
+      "Home",
+      "Travel",
+      "Pet",
+      "Life",
+      "Health"
+    ],
+    "subcats": {},
+    "defaults": {
+      "Motor": "All",
+      "Home": "All",
+      "Travel": "All",
+      "Pet": "All",
+      "Life": "All",
+      "Health": "All"
+    },
+    "labels": {
+      "add_to_cart": "Get a quote",
+      "cart": "Your quote",
+      "cart_title": "Your quote",
+      "cart_empty": "No cover selected yet",
+      "checkout": "Review quote",
+      "place_order": "Buy cover",
+      "order": "policy",
+      "confirm_title": "You're covered.",
+      "browse_cta": "Compare cover"
+    }
+  },
+  "fintech": {
+    "vertical": "Banking",
+    "subvertical": "Fintech",
+    "brand": "Loop",
+    "tagline": "Money, moved properly",
+    "hero_title": "Money that<br>keeps up.",
+    "hero_cta": "Explore plans",
+    "hero_lede": "Spend, save, invest and get paid \u2014 personal and business, one app.",
+    "hero_eyebrow": "Plans",
+    "announce": "No minimum balance \u00b7 Cancel any time",
+    "search_placeholder": "Search plans and accounts",
+    "newsletter_title": "Product updates",
+    "newsletter_lede": "New features, monthly.",
+    "tiles_title": "Browse plans",
+    "grid_title": "Most popular",
+    "reco_title": "Works well with",
+    "theme": {
+      "bg": "#FDFCFF",
+      "alt": "#F0ECFA",
+      "ink": "#1A1630",
+      "muted": "#645C80",
+      "rule": "#E1DAF2",
+      "accent": "#4B3B9E",
+      "display": "'Jost', Helvetica, sans-serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Jost:wght@300;400;500;600"
+    },
+    "template": "ecommerce",
+    "source": "sources/fintech-*.json",
+    "collections": {
+      "Business": "Business",
+      "Plans": "Plans",
+      "Investing": "Investing",
+      "Accounts": "Accounts"
+    },
+    "order": [
+      "Business",
+      "Plans",
+      "Investing",
+      "Accounts"
+    ],
+    "subcats": {},
+    "defaults": {
+      "Business": "All",
+      "Plans": "All",
+      "Investing": "All",
+      "Accounts": "All"
+    },
+    "labels": {
+      "add_to_cart": "Get started",
+      "cart": "Your plan",
+      "cart_title": "Your plan",
+      "cart_empty": "Nothing selected yet",
+      "checkout": "Review",
+      "place_order": "Confirm",
+      "order": "signup",
+      "confirm_title": "You're all set.",
+      "browse_cta": "Explore plans"
+    }
   }
 }

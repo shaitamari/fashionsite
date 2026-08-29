@@ -196,7 +196,12 @@
 
       var tag = tagState();
       el.dot.className = 'ins-console__dot ' + (tag.ok ? 'is-ok' : 'is-wait');
-      el.account.textContent = (CFG.partnerName || '?') + ' · ' + (CFG.partnerId || '?');
+      // Read the resolved environment rather than static config, so the panel
+      // never disagrees with the tag that actually loaded.
+      var e = window.ENVIRONMENT || {};
+      el.account.textContent = (e.account || CFG.partnerName || '?') + ' · ' +
+                               (e.partnerId || CFG.partnerId || '?') +
+                               (e.locale ? '  ·  ' + e.locale + ' ' + (e.currency || '') : '');
 
       var eu = eurekaState();
       var visitor = (window.Store && window.Store.visitorId && window.Store.visitorId()) || '—';

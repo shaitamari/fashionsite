@@ -28,6 +28,12 @@ def site_for(key):
 
 os.chdir(ROOT)
 CONFIG = json.load(open("verticals.json"))
+ENVS = CONFIG.get("_environments", {})
+# Catalog records carry the locale and currency of the environment they will
+# be loaded into. Both environments share these today.
+ENV = ENVS.get("default", {})
+LOCALE = ENV.get("locale", "en_US")
+CURRENCY = ENV.get("currency", "USD")
 VERTICALS = {k: v for k, v in CONFIG.items() if not k.startswith("_")}
 PLANNED = {k[9:]: v for k, v in CONFIG.items() if k.startswith("_planned_")}
 
@@ -149,8 +155,8 @@ def build_catalog(key, cfg):
                 "vertical_label": cfg.get("subvertical", collection),
                 "unit_price": unit_price,
                 "unit_sale_price": price,
-                "currency": "USD",
-                "locale": "en_US",
+                "currency": CURRENCY,
+                "locale": LOCALE,
                 "color": color,
                 "size": size,
                 "stock": 250 if v.get("available") else 0,
@@ -263,7 +269,8 @@ def build(key):
     onsale = sum(1 for r in records if r["unit_sale_price"] < r["unit_price"])
 
     print(f"\n{cfg['brand']}  ({key})   {cfg.get('vertical','?')} / {cfg.get('subvertical','?')}")
-    print(f"  {groups} products / {len(records)} variants · {onsale} discounted")
+    print(f"  {groups} products / {len(records)} variants · {onsale} discounted"
+          f"  [{LOCALE} · {CURRENCY}]")
     if groups < 200:
         print(f"  note: {groups} products is thin for a search demo — "
               f"add more pages to `source` (Shopify caps at 250/page)")

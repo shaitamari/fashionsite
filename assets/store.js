@@ -108,9 +108,15 @@
     return 'product.html?id=' + encodeURIComponent(p.id);
   }
 
+  function env(key, fallback) {
+    return (window.ENVIRONMENT && window.ENVIRONMENT[key]) || fallback;
+  }
+
   function money(n) {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency', currency: 'USD', minimumFractionDigits: 2
+    // Currency is per-environment because it must match the catalog the feed
+    // was loaded into, and it is visible on every card, cart and order.
+    return new Intl.NumberFormat(env('locale', 'en_GB').replace('_', '-'), {
+      style: 'currency', currency: env('currency', 'EUR'), minimumFractionDigits: 2
     }).format(Number(n) || 0);
   }
 
@@ -121,7 +127,7 @@
       id: p.id,
       name: p.name,
       taxonomy: p.taxonomy,
-      currency: 'USD',
+      currency: env('currency', 'EUR'),
       unit_price: p.unit_price,
       unit_sale_price: p.unit_sale_price,
       url: p.url,
@@ -130,7 +136,7 @@
       in_stock: p.in_stock,
       groupcode: p.groupcode,
       sku: p.sku,
-      locale: 'en_US',
+      locale: env('locale', 'en_GB'),
       custom: {
         vendor: p.vendor,
         product_type: p.product_type,
@@ -214,7 +220,10 @@
 
   function userPayload() {
     var u = currentUser();
-    var base = { uuid: visitorId(), language: 'en_US', country: 'US', gdpr_optin: true };
+    // language must match the catalog locale or Eureka returns nothing.
+    var base = { uuid: visitorId(), language: env('locale', 'en_GB'),
+                 country: env('locale', 'en_GB').split('_')[1] || 'GB',
+                 gdpr_optin: true };
     if (!u) {
       base.custom = {
         membership_tier: 'Guest', loyalty_points: 0,
@@ -233,7 +242,7 @@
       gender: u.gender || undefined,
       birthday: u.birthday || undefined,
       city: u.city || undefined,
-      country: u.country || 'US',
+      country: u.country || env('locale', 'en_GB').split('_')[1] || 'GB',
       gdpr_optin: u.gdpr_optin !== false,
       custom: {
         membership_tier: u.membership_tier || 'Bronze',
@@ -358,6 +367,8 @@
   }
 
   window.Store = {
+    currency: function () { return env('currency', 'EUR'); },
+    locale: function () { return env('locale', 'en_GB'); },
     catalog: catalog, oneVariantEach: oneVariantEach, byId: byId, byCollection: byCollection,
     collections: collections, subcategories: subcategories, shortName: shortName,
     localSearch: localSearch, featured: featured, onSale: onSale,
