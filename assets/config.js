@@ -52,7 +52,7 @@ window.SITE_CONFIG = {
     perAccount: {
       partnersandbox: {
         searchCampaignId:  4233,   // JavaScript SDK campaign, en_GB
-        listingCampaignId: null    // none yet — category.html still local
+        listingCampaignId: 4235    // category pages, en_GB
       }
       // salesdemo: { searchCampaignId: null, listingCampaignId: null },
     },
