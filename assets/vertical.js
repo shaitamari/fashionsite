@@ -105,6 +105,54 @@
   window.ENVIRONMENT = resolved.env;
   window.ENVIRONMENT_KEY = resolved.key;
 
+  /* --- legacy insider_object seed ----------------------------------------
+     This MUST run before ins.js is written, and it is inline rather than a
+     separate file so the ordering cannot drift.
+
+     The tag reads page data through:
+
+         getInsiderObject = Insider.insiderObject || window.insider_object
+
+     `Insider.insiderObject` is built by draining window.InsiderQueue — the
+     Web SDK path — and that is gated on an account flag (`inioa` in the
+     served ins.js). It is FALSE on partnersandbox, so the queue is never
+     consumed: pushes pile up, insiderObject stays undefined, and every
+     system rule that reads the IO silently returns its hard-coded default:
+
+         getLang    -> getDataFromIO('user','language','en_US')  ->  en_US
+         getLocale  -> derives from getLang                      ->  en_US
+
+     Eureka then serves the en_US index instead of en_GB — a different
+     account's leftover catalog — while the feed, campaign, locale and tag
+     are all correctly configured, and nothing anywhere reports an error.
+
+     Setting the legacy global makes those rules resolve properly. getLocale
+     caches on first call, so this has to exist before the tag ever asks.
+
+     REMOVE THIS once Web SDK ingestion is enabled on the account:
+     Insider.insiderObject then takes precedence automatically, and one
+     source of page data is better than two.
+     --------------------------------------------------------------------- */
+  (function seedInsiderObject(env) {
+    var locale = env.locale || 'en_GB';
+    var currency = env.currency || 'EUR';
+    // getLang splits on "_" and validates the country against its own list.
+    // "en" permits GB, so en_GB passes through and getLocale returns it whole.
+    var country = locale.split('_')[1] || 'GB';
+
+    var io = window.insider_object = window.insider_object || {};
+
+    io.user = io.user || {};
+    io.user.language = locale;
+    io.user.country = country;
+
+    // getCurrency checks basket, then product, then transaction currency
+    // before falling back to the account default. Seeding basket covers every
+    // page type without implying the cart has items in it.
+    io.basket = io.basket || {};
+    if (io.basket.currency == null) io.basket.currency = currency;
+  })(resolved.env);
+
   // The tag is written here rather than inline in each page, because which
   // account it points at depends on the hostname. Account and id are plainly
   // readable above and in the console panel.
