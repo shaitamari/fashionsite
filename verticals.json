@@ -232,7 +232,55 @@
     "hero_eyebrow": "New season",
     "tiles_title": "Shop by category",
     "grid_title": "New in",
-    "reco_title": "Recommended for you"
+    "reco_title": "Recommended for you",
+    "profile": {
+      "tiers": [
+        "Member",
+        "Insider",
+        "VIP"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "Skin type",
+        "options": [
+          "Dry",
+          "Oily",
+          "Combination",
+          "Sensitive",
+          "Normal"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Book a consultation",
+      "lede": "Book time with an advisor for a colour match, a skincare consult or a lesson.",
+      "event": "consultation_booked",
+      "fields": [
+        {
+          "label": "Service",
+          "name": "service",
+          "options": [
+            "Colour match",
+            "Skincare consult",
+            "Makeup lesson"
+          ]
+        },
+        {
+          "label": "Store",
+          "name": "store",
+          "options": [
+            "Oxford Street",
+            "Shoreditch",
+            "Manchester"
+          ]
+        },
+        {
+          "label": "Date",
+          "name": "date",
+          "options": "date"
+        }
+      ]
+    }
   },
   "_template": {
     "_comment": "Copy this, rename the key, fill it in. Delete nothing else.",
@@ -293,194 +341,6 @@
     "tiles_title": "Shop by category",
     "grid_title": "New in",
     "reco_title": "Recommended for you"
-  },
-  "lifestyle": {
-    "brand": "Posh Street",
-    "tagline": "Footwear, Home and Pets",
-    "hero_title": "Everything for<br>the way you live.",
-    "hero_lede": "Footwear, home and pets \u2014 over 250 pieces, restocked weekly.",
-    "hero_cta": "Shop footwear",
-    "announce": "Free shipping on orders over $150 \u00b7 30-day returns",
-    "search_placeholder": "Search footwear, home, pets",
-    "newsletter_title": "Be in the know",
-    "newsletter_lede": "Promotions, new products and sales, straight to your inbox.",
-    "source": "sources/lifestyle*.json",
-    "theme": {
-      "bg": "#FFFFFF",
-      "alt": "#F7F7F7",
-      "ink": "#1A1A1A",
-      "muted": "#6B6B6B",
-      "rule": "#E3E3E3",
-      "accent": "#B12704",
-      "display": "'Jost', Helvetica, sans-serif",
-      "body": "'Jost', Helvetica, sans-serif",
-      "fonts": "family=Jost:wght@300;400;500;600"
-    },
-    "order": [
-      "Footwear",
-      "Home",
-      "Pets"
-    ],
-    "collections": {
-      "chair": "Home",
-      "Pet_Toy": "Pets",
-      "Pet_Walk": "Pets",
-      "Pet_Sleep": "Pets",
-      "Pet_Bowl": "Pets",
-      "Pet_Bed": "Pets",
-      "Pet_Cat Litter Box": "Pets",
-      "Canned wet dog food": "Pets",
-      "Chews, treats & rewards": "Pets",
-      "Air-dried dog food": "Pets",
-      "Air-dried cat food": "Pets",
-      "Canned wet cat food": "Pets",
-      "Adidas Shoes": "Footwear",
-      "Nike Womens Shoes": "Footwear",
-      "New Balance Shoes": "Footwear",
-      "Air Jordan Womens Shoes": "Footwear",
-      "Air Jordan Shoes": "Footwear",
-      "Nike Shoes": "Footwear",
-      "Air Jordan Children Shoes": "Footwear",
-      "Air Jordan Grade School Shoes": "Footwear",
-      "Salomon Shoes": "Footwear",
-      "Puma Shoes": "Footwear",
-      "Nike Children Shoes": "Footwear",
-      "UGG Shoes": "Footwear",
-      "Converse Shoes": "Footwear",
-      "Adidas Womens Shoes": "Footwear",
-      "Air Jordan Infant Shoes": "Footwear",
-      "Chairs": "Home",
-      "Bars": "Home",
-      "Desks": "Home",
-      "Family Room": "Home",
-      "Bedroom": "Home",
-      "Brickell": "Home",
-      "Benches": "Home",
-      "Buffets": "Home",
-      "Cabinets": "Home",
-      "Coffee Tables": "Home",
-      "Bedrooms": "Home",
-      "Chair": "Home",
-      "Dining Room": "Home"
-    },
-    "subcats": {
-      "Footwear": [
-        [
-          "Sneakers",
-          [
-            "nike",
-            "adidas",
-            "jordan",
-            "new balance",
-            "dunk",
-            "samba"
-          ]
-        ],
-        [
-          "Boots",
-          [
-            "boot"
-          ]
-        ],
-        [
-          "Sandals",
-          [
-            "sandal",
-            "slide"
-          ]
-        ]
-      ],
-      "Home": [
-        [
-          "Seating",
-          [
-            "chair",
-            "sofa",
-            "bench",
-            "stool"
-          ]
-        ],
-        [
-          "Tables",
-          [
-            "table",
-            "desk",
-            "buffet"
-          ]
-        ],
-        [
-          "Bedroom",
-          [
-            "bed",
-            "dresser",
-            "nightstand",
-            "wardrobe"
-          ]
-        ],
-        [
-          "Storage",
-          [
-            "cabinet",
-            "shelf",
-            "storage"
-          ]
-        ]
-      ],
-      "Pets": [
-        [
-          "Food",
-          [
-            "food",
-            "treat",
-            "chew"
-          ]
-        ],
-        [
-          "Beds",
-          [
-            "bed",
-            "crate",
-            "mat"
-          ]
-        ],
-        [
-          "Walk",
-          [
-            "leash",
-            "collar",
-            "harness",
-            "link"
-          ]
-        ],
-        [
-          "Bowls & Toys",
-          [
-            "bowl",
-            "toy"
-          ]
-        ]
-      ]
-    },
-    "defaults": {
-      "Footwear": "All Footwear",
-      "Home": "All Home",
-      "Pets": "All Pets"
-    },
-    "vertical": "Retail",
-    "subvertical": "Lifestyle",
-    "template": "ecommerce",
-    "labels": {},
-    "hero_eyebrow": "New season",
-    "tiles_title": "Shop by category",
-    "grid_title": "New arrivals",
-    "reco_title": "Recommended for you"
-  },
-  "_planned_supermarket": {
-    "_status": "not built \u2014 needs a catalog source and a config block",
-    "vertical": "Retail",
-    "subvertical": "Supermarkets",
-    "template": "ecommerce",
-    "source": "sources/supermarket-1.json"
   },
   "_labels_default": {
     "cart": "Cart",
@@ -551,7 +411,55 @@
     "hero_eyebrow": "Stay",
     "tiles_title": "Browse by type",
     "grid_title": "Recently added",
-    "reco_title": "Picked for you"
+    "reco_title": "Picked for you",
+    "profile": {
+      "tiers": [
+        "Member",
+        "Silver",
+        "Gold"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "Room preference",
+        "options": [
+          "Quiet floor",
+          "High floor",
+          "Near lift",
+          "Accessible"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Manage a booking",
+      "lede": "Add breakfast, request a late checkout, or change the dates of a stay.",
+      "event": "booking_managed",
+      "fields": [
+        {
+          "label": "Action",
+          "name": "action",
+          "options": [
+            "Add breakfast",
+            "Late checkout",
+            "Airport transfer",
+            "Change dates"
+          ]
+        },
+        {
+          "label": "Property",
+          "name": "store",
+          "options": [
+            "The Grand Lisbon",
+            "Casa Luz Kyoto",
+            "Riverside Lodge Amalfi"
+          ]
+        },
+        {
+          "label": "Date",
+          "name": "date",
+          "options": "date"
+        }
+      ]
+    }
   },
   "airlines": {
     "vertical": "Travel",
@@ -605,7 +513,55 @@
     "hero_eyebrow": "Fly",
     "tiles_title": "Browse by route",
     "grid_title": "New routes",
-    "reco_title": "Picked for you"
+    "reco_title": "Picked for you",
+    "profile": {
+      "tiers": [
+        "Blue",
+        "Silver",
+        "Gold"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "Seat preference",
+        "options": [
+          "Window",
+          "Aisle",
+          "Extra legroom",
+          "No preference"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Manage a trip",
+      "lede": "Add a bag, choose a seat, book lounge access or move a flight.",
+      "event": "trip_managed",
+      "fields": [
+        {
+          "label": "Action",
+          "name": "action",
+          "options": [
+            "Add bag",
+            "Choose seat",
+            "Add lounge",
+            "Change flight"
+          ]
+        },
+        {
+          "label": "Route",
+          "name": "route",
+          "options": [
+            "London to New York",
+            "Paris to Tokyo",
+            "Rome to Marrakesh"
+          ]
+        },
+        {
+          "label": "Date",
+          "name": "date",
+          "options": "date"
+        }
+      ]
+    }
   },
   "_environments": {
     "_README": [
@@ -697,6 +653,61 @@
       "order": "application",
       "confirm_title": "Your application is submitted.",
       "browse_cta": "Explore products"
+    },
+    "profile": {
+      "tiers": [
+        "Everyday",
+        "Plus",
+        "Premier"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "Life stage",
+        "options": [
+          "Renting",
+          "First home",
+          "Moving",
+          "Family",
+          "Retiring"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Start an application",
+      "lede": "Start an application. It takes a few minutes and you can save and return.",
+      "event": "application_started",
+      "fields": [
+        {
+          "label": "Product",
+          "name": "product",
+          "options": [
+            "Current account",
+            "Credit card",
+            "Personal loan",
+            "Mortgage"
+          ]
+        },
+        {
+          "label": "Purpose",
+          "name": "purpose",
+          "options": [
+            "Everyday banking",
+            "Consolidate debt",
+            "Buy a home",
+            "Save"
+          ]
+        },
+        {
+          "label": "Amount",
+          "name": "amount",
+          "options": [
+            "1000",
+            "5000",
+            "25000",
+            "250000"
+          ]
+        }
+      ]
     }
   },
   "insurance": {
@@ -765,6 +776,59 @@
       "order": "policy",
       "confirm_title": "You're covered.",
       "browse_cta": "Compare cover"
+    },
+    "profile": {
+      "tiers": [
+        "Standard",
+        "Plus",
+        "Premier"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "What matters most",
+        "options": [
+          "Lowest price",
+          "Best cover",
+          "Fast claims",
+          "Flexible excess"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Get a quote",
+      "lede": "Tell us what you need covered and we will price it in a minute.",
+      "event": "quote_requested",
+      "fields": [
+        {
+          "label": "Cover",
+          "name": "product",
+          "options": [
+            "Car",
+            "Home",
+            "Travel",
+            "Pet",
+            "Life"
+          ]
+        },
+        {
+          "label": "Level",
+          "name": "level",
+          "options": [
+            "Third Party",
+            "Standard",
+            "Comprehensive"
+          ]
+        },
+        {
+          "label": "Excess",
+          "name": "amount",
+          "options": [
+            "100",
+            "250",
+            "500"
+          ]
+        }
+      ]
     }
   },
   "fintech": {
@@ -825,6 +889,58 @@
       "order": "signup",
       "confirm_title": "You're all set.",
       "browse_cta": "Explore plans"
+    },
+    "profile": {
+      "tiers": [
+        "Free",
+        "Plus",
+        "Premium"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "Mainly used for",
+        "options": [
+          "Everyday spending",
+          "Travel",
+          "Investing",
+          "Business"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Change your plan",
+      "lede": "Upgrade, downgrade or add an account. Changes apply from your next cycle.",
+      "event": "plan_changed",
+      "fields": [
+        {
+          "label": "Action",
+          "name": "action",
+          "options": [
+            "Upgrade",
+            "Downgrade",
+            "Add currency account",
+            "Invite a friend"
+          ]
+        },
+        {
+          "label": "Plan",
+          "name": "plan",
+          "options": [
+            "Free",
+            "Plus",
+            "Premium",
+            "Metal"
+          ]
+        },
+        {
+          "label": "Billing",
+          "name": "billing",
+          "options": [
+            "Monthly",
+            "Annual"
+          ]
+        }
+      ]
     }
   },
   "fashion": {
@@ -925,6 +1041,54 @@
       "Dresses": "All",
       "Pants": "All",
       "Outerwear": "All"
+    },
+    "profile": {
+      "tiers": [
+        "Member",
+        "Silver",
+        "Gold"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "Size preference",
+        "options": [
+          "XS",
+          "S",
+          "M",
+          "L",
+          "XL"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Book a fitting",
+      "lede": "Book a fitting, alterations or an hour with a personal stylist.",
+      "event": "fitting_booked",
+      "fields": [
+        {
+          "label": "Service",
+          "name": "service",
+          "options": [
+            "Personal styling",
+            "Alterations",
+            "Fitting"
+          ]
+        },
+        {
+          "label": "Store",
+          "name": "store",
+          "options": [
+            "Regent Street",
+            "Leeds",
+            "Glasgow"
+          ]
+        },
+        {
+          "label": "Date",
+          "name": "date",
+          "options": "date"
+        }
+      ]
     }
   },
   "electronics": {
@@ -982,6 +1146,53 @@
       "Accessory": "All",
       "Subwoofer": "All",
       "Speaker": "All"
+    },
+    "profile": {
+      "tiers": [
+        "Member",
+        "Plus",
+        "Pro"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "Home setup",
+        "options": [
+          "Flat",
+          "House",
+          "Studio",
+          "Shared"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Book installation",
+      "lede": "Arrange delivery, installation and removal of your old appliance.",
+      "event": "installation_booked",
+      "fields": [
+        {
+          "label": "Service",
+          "name": "service",
+          "options": [
+            "Delivery only",
+            "Install & remove old",
+            "Full setup"
+          ]
+        },
+        {
+          "label": "Slot",
+          "name": "slot",
+          "options": [
+            "Morning",
+            "Afternoon",
+            "Evening"
+          ]
+        },
+        {
+          "label": "Date",
+          "name": "date",
+          "options": "date"
+        }
+      ]
     }
   },
   "telco": {
@@ -1145,6 +1356,59 @@
       "cart": "Basket",
       "cart_title": "Your basket",
       "confirm_title": "Your order is confirmed."
+    },
+    "profile": {
+      "tiers": [
+        "Pay As You Go",
+        "Monthly",
+        "Business"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "Plan type",
+        "options": [
+          "SIM only",
+          "Phone on contract",
+          "Broadband",
+          "Business"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Top up or change plan",
+      "lede": "Top up, change plan, add a data boost or renew your contract.",
+      "event": "plan_changed",
+      "fields": [
+        {
+          "label": "Action",
+          "name": "action",
+          "options": [
+            "Top up credit",
+            "Upgrade plan",
+            "Add data boost",
+            "Renew contract"
+          ]
+        },
+        {
+          "label": "Plan",
+          "name": "plan",
+          "options": [
+            "Vantis 5",
+            "Vantis 20",
+            "Vantis Unlimited"
+          ]
+        },
+        {
+          "label": "Amount",
+          "name": "amount",
+          "options": [
+            "10",
+            "20",
+            "30",
+            "50"
+          ]
+        }
+      ]
     }
   },
   "home": {
@@ -1230,6 +1494,54 @@
       "Outdoor Furniture": "All",
       "Sectionals": "All",
       "Shelving": "All"
+    },
+    "profile": {
+      "tiers": [
+        "Member",
+        "Silver",
+        "Gold"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "Room I'm working on",
+        "options": [
+          "Living room",
+          "Bedroom",
+          "Kitchen",
+          "Office"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Book a design consult",
+      "lede": "Talk through a room with a designer, in store, at home or over video.",
+      "event": "design_consult_booked",
+      "fields": [
+        {
+          "label": "Service",
+          "name": "service",
+          "options": [
+            "In-store consult",
+            "Home visit",
+            "Video call"
+          ]
+        },
+        {
+          "label": "Room",
+          "name": "room",
+          "options": [
+            "Living room",
+            "Bedroom",
+            "Kitchen",
+            "Office"
+          ]
+        },
+        {
+          "label": "Date",
+          "name": "date",
+          "options": "date"
+        }
+      ]
     }
   },
   "luxury": {
@@ -1299,6 +1611,164 @@
       "Wallets": "All",
       "Bracelets": "All",
       "Top Handle Bags": "All"
+    },
+    "profile": {
+      "tiers": [
+        "Client",
+        "Private Client",
+        "Cercle"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "Preferred boutique",
+        "options": [
+          "Mayfair",
+          "Milan",
+          "Paris",
+          "Online only"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Request an appointment",
+      "lede": "Request a private appointment with a client advisor at your boutique.",
+      "event": "appointment_requested",
+      "fields": [
+        {
+          "label": "Service",
+          "name": "service",
+          "options": [
+            "Private viewing",
+            "Personal shopping",
+            "Repairs"
+          ]
+        },
+        {
+          "label": "Boutique",
+          "name": "store",
+          "options": [
+            "Mayfair",
+            "Milan",
+            "Paris"
+          ]
+        },
+        {
+          "label": "Date",
+          "name": "date",
+          "options": "date"
+        }
+      ]
+    }
+  },
+  "supermarket": {
+    "vertical": "Retail",
+    "subvertical": "Supermarkets",
+    "brand": "Harvest Row",
+    "tagline": "Food, drink and household",
+    "hero_title": "Your weekly shop,<br>done properly.",
+    "hero_cta": "Start shopping",
+    "hero_lede": "Fresh food, cupboard staples and household essentials.",
+    "hero_eyebrow": "This week",
+    "announce": "Free delivery over \u20ac60 \u00b7 Slots seven days a week",
+    "search_placeholder": "Search groceries",
+    "newsletter_title": "This week's offers",
+    "newsletter_lede": "Deals and seasonal picks, weekly.",
+    "tiles_title": "Shop by aisle",
+    "grid_title": "New this week",
+    "reco_title": "Often bought together",
+    "theme": {
+      "bg": "#FDFDFA",
+      "alt": "#EFF3E9",
+      "ink": "#1A2016",
+      "muted": "#626B5B",
+      "rule": "#DEE5D4",
+      "accent": "#3F6B2E",
+      "display": "'Jost', Helvetica, sans-serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Jost:wght@300;400;500;600"
+    },
+    "template": "ecommerce",
+    "source": "sources/supermarket-*.json",
+    "collections": {
+      "Ingredients": "Ingredients",
+      "Tableware": "Tableware",
+      "Cookware": "Cookware",
+      "Cookbooks": "Cookbooks",
+      "Gifts": "Gifts",
+      "Bundle": "Bundle"
+    },
+    "order": [
+      "Ingredients",
+      "Tableware",
+      "Cookware",
+      "Cookbooks",
+      "Gifts",
+      "Bundle"
+    ],
+    "subcats": {},
+    "defaults": {
+      "Ingredients": "All",
+      "Tableware": "All",
+      "Cookware": "All",
+      "Cookbooks": "All",
+      "Gifts": "All",
+      "Bundle": "All"
+    },
+    "labels": {
+      "add_to_cart": "Add to trolley",
+      "cart": "Trolley",
+      "cart_title": "Your trolley",
+      "cart_empty": "Your trolley is empty",
+      "confirm_title": "Your order is confirmed.",
+      "browse_cta": "Start shopping"
+    },
+    "profile": {
+      "tiers": [
+        "Member",
+        "Plus",
+        "Plus Annual"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "Dietary preference",
+        "options": [
+          "None",
+          "Vegetarian",
+          "Vegan",
+          "Gluten Free",
+          "Dairy Free"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Book a delivery slot",
+      "lede": "Choose a delivery slot and a store. Change or cancel any time.",
+      "event": "delivery_slot_booked",
+      "fields": [
+        {
+          "label": "Slot",
+          "name": "slot",
+          "options": [
+            "Morning",
+            "Afternoon",
+            "Evening"
+          ]
+        },
+        {
+          "label": "Store",
+          "name": "store",
+          "options": [
+            "Camden",
+            "Islington",
+            "Hackney"
+          ]
+        },
+        {
+          "label": "Date",
+          "name": "date",
+          "options": "date"
+        }
+      ]
     }
   }
 }

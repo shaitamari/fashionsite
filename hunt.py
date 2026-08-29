@@ -77,9 +77,17 @@ CANDIDATES = {
     "luxury":      ["farfetch.com", "vestiairecollective.com", "therealreal.com",
                     "mytheresa.com", "cettire.com", "ssense.com", "matchesfashion.com",
                     "brownsfashion.com", "lyst.com", "hardlyeverwornit.com"],
-    "supermarket": ["thrivemarket.com", "misfitsmarket.com", "hollandandbarrett.com",
-                    "iherb.com", "sprouts.com", "naturesbasket.co.in", "farmdrop.com",
-                    "gopuff.com", "weee.com", "ocado.com"],
+    # Big grocers run custom platforms, so aim at specialty food retailers —
+    # they are on Shopify and have real product photography. Two or three
+    # together cover enough aisles to read as a supermarket.
+    "supermarket": ["souschef.co.uk", "thespicery.com", "borough-market-online.myshopify.com",
+                    "farmison.com", "pastaevangelists.com", "odysea.com",
+                    "buywholefoodsonline.co.uk", "healthysupplies.co.uk",
+                    "realfoods.co.uk", "hidayahfoods.co.uk", "melburyandappleton.co.uk",
+                    "theasiancookshop.co.uk", "britishcornershop.co.uk",
+                    "gousto.co.uk", "planetorganic.com", "wholefoodsearth.com",
+                    "japancentre.com", "souschef.co.uk", "natoora.co.uk",
+                    "hoxtonmonstersupplies.com"],
     "telco":       ["backmarket.com", "swappie.com", "reboxed.co", "gazelle.com",
                     "mobileshop.eu", "phonebot.com.au", "mresell.com", "refurbed.com"],
     "home":        ["article.com", "burrow.com", "floydhome.com", "made.com",
@@ -251,6 +259,20 @@ def invent_name(original, product_type, brand, rnd):
     return _re.sub(r"\s+", " ", f"{brand} {series} {spec}{kind}").strip()
 
 
+def _sized(url, width=1000):
+    """Ask the CDN for a resized copy rather than the original.
+
+    Shopify serves any product image at an arbitrary width via a query
+    parameter, so pulling `?width=1000` fetches roughly a tenth of the bytes
+    of the original and lands at exactly the size the site displays. Saves
+    both the download time and the shrink pass afterwards.
+    """
+    if "cdn.shopify.com" in url or "/cdn/shop/" in url:
+        sep = "&" if "?" in url else "?"
+        return f"{url}{sep}width={width}"
+    return url
+
+
 def download_image(url, out_dir, name, seen):
     """Fetch once, reuse thereafter. Rehosting rather than hotlinking so a
     demo never depends on someone else's CDN staying up."""
@@ -263,14 +285,18 @@ def download_image(url, out_dir, name, seen):
             break
     path = f"{out_dir}/{name}{ext}"
     if not os.path.exists(path):
-        try:
-            req = urllib.request.Request(url, headers={"User-Agent": UA})
-            with _open(req, 25) as r:
-                data = r.read()
-            if len(data) < 500:
-                return None
-            open(path, "wb").write(data)
-        except Exception:
+        for attempt in (_sized(url), url):        # sized first, original as fallback
+            try:
+                req = urllib.request.Request(attempt, headers={"User-Agent": UA})
+                with _open(req, 25) as r:
+                    data = r.read()
+                if len(data) < 500:
+                    continue
+                open(path, "wb").write(data)
+                break
+            except Exception:
+                continue
+        else:
             return None
     seen[url] = path
     return path

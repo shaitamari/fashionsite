@@ -4,10 +4,6 @@ window.VERTICALS = {
     "brand": "Lumen",
     "tagline": "Makeup, Skincare and Fragrance"
   },
-  "lifestyle": {
-    "brand": "Posh Street",
-    "tagline": "Footwear, Home and Pets"
-  },
   "hotels": {
     "brand": "Wayfarer",
     "tagline": "Places worth staying"
@@ -47,5 +43,9 @@ window.VERTICALS = {
   "luxury": {
     "brand": "Beaumont Vale",
     "tagline": "Designer, curated"
+  },
+  "supermarket": {
+    "brand": "Harvest Row",
+    "tagline": "Food, drink and household"
   }
 };

@@ -25,7 +25,7 @@
    ],
    "images": [
     {
-     "src": "assets/img/airlines/london-new-york.svg"
+     "src": "assets/img/airlines/london-new-york.jpg"
     }
    ],
    "variants": [
@@ -95,7 +95,7 @@
    ],
    "images": [
     {
-     "src": "assets/img/airlines/london-lisbon.svg"
+     "src": "assets/img/airlines/london-lisbon.jpg"
     }
    ],
    "variants": [
@@ -156,7 +156,7 @@
    ],
    "images": [
     {
-     "src": "assets/img/airlines/paris-tokyo.svg"
+     "src": "assets/img/airlines/paris-tokyo.jpg"
     }
    ],
    "variants": [
@@ -227,7 +227,7 @@
    ],
    "images": [
     {
-     "src": "assets/img/airlines/amsterdam-cape-town.svg"
+     "src": "assets/img/airlines/amsterdam-cape-town.jpg"
     }
    ],
    "variants": [
@@ -298,7 +298,7 @@
    ],
    "images": [
     {
-     "src": "assets/img/airlines/madrid-mexico-city.svg"
+     "src": "assets/img/airlines/madrid-mexico-city.jpg"
     }
    ],
    "variants": [
@@ -368,7 +368,7 @@
    ],
    "images": [
     {
-     "src": "assets/img/airlines/berlin-reykjavik.svg"
+     "src": "assets/img/airlines/berlin-reykjavik.jpg"
     }
    ],
    "variants": [
@@ -429,7 +429,7 @@
    ],
    "images": [
     {
-     "src": "assets/img/airlines/dublin-chicago.svg"
+     "src": "assets/img/airlines/dublin-chicago.jpg"
     }
    ],
    "variants": [
@@ -500,7 +500,7 @@
    ],
    "images": [
     {
-     "src": "assets/img/airlines/zurich-singapore.svg"
+     "src": "assets/img/airlines/zurich-singapore.jpg"
     }
    ],
    "variants": [
@@ -570,7 +570,7 @@
    ],
    "images": [
     {
-     "src": "assets/img/airlines/rome-marrakesh.svg"
+     "src": "assets/img/airlines/rome-marrakesh.jpg"
     }
    ],
    "variants": [
@@ -630,7 +630,7 @@
    ],
    "images": [
     {
-     "src": "assets/img/airlines/vienna-athens.svg"
+     "src": "assets/img/airlines/vienna-athens.jpg"
     }
    ],
    "variants": [
@@ -690,7 +690,7 @@
    ],
    "images": [
     {
-     "src": "assets/img/airlines/oslo-edinburgh.svg"
+     "src": "assets/img/airlines/oslo-edinburgh.jpg"
     }
    ],
    "variants": [
@@ -751,7 +751,7 @@
    ],
    "images": [
     {
-     "src": "assets/img/airlines/lisbon-sao-paulo.svg"
+     "src": "assets/img/airlines/lisbon-sao-paulo.jpg"
     }
    ],
    "variants": [
@@ -822,7 +822,7 @@
    ],
    "images": [
     {
-     "src": "assets/img/airlines/copenhagen-bangkok.svg"
+     "src": "assets/img/airlines/copenhagen-bangkok.jpg"
     }
    ],
    "variants": [
@@ -892,7 +892,7 @@
    ],
    "images": [
     {
-     "src": "assets/img/airlines/milan-casablanca.svg"
+     "src": "assets/img/airlines/milan-casablanca.jpg"
     }
    ],
    "variants": [
@@ -953,7 +953,7 @@
    ],
    "images": [
     {
-     "src": "assets/img/airlines/manchester-dubai.svg"
+     "src": "assets/img/airlines/manchester-dubai.jpg"
     }
    ],
    "variants": [

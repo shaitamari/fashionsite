@@ -1,0 +1,114 @@
+{
+  "hotels": {
+    "lisbon": {
+      "photographer": "Liam McKay",
+      "profile": "https://unsplash.com/@liammckay"
+    },
+    "kyoto": {
+      "photographer": "Cosmin Georgian",
+      "profile": "https://unsplash.com/@cosmingeorgian"
+    },
+    "reykjavik": {
+      "photographer": "Rose Breen",
+      "profile": "https://unsplash.com/@rose_breen"
+    },
+    "marrakesh": {
+      "photographer": "rigel",
+      "profile": "https://unsplash.com/@rigels"
+    },
+    "copenhagen": {
+      "photographer": "Mads Eneqvist",
+      "profile": "https://unsplash.com/@madseneqvist"
+    },
+    "cape-town": {
+      "photographer": "Tobias Reich",
+      "profile": "https://unsplash.com/@electerious"
+    },
+    "mexico-city": {
+      "photographer": "Bhargava Marripati",
+      "profile": "https://unsplash.com/@bk_advtravlr"
+    },
+    "queenstown": {
+      "photographer": "\u00d6mer Faruk Bekdemir",
+      "profile": "https://unsplash.com/@ofbekdemir"
+    },
+    "amalfi": {
+      "photographer": "Sebastian Leonhardt",
+      "profile": "https://unsplash.com/@icarium_imagery"
+    },
+    "singapore": {
+      "photographer": "Swapnil Bapat",
+      "profile": "https://unsplash.com/@unfilteredkopi"
+    },
+    "edinburgh": {
+      "photographer": "Henrique Ferreira",
+      "profile": "https://unsplash.com/@rickpsd"
+    },
+    "chiang-mai": {
+      "photographer": "Bharath Mohan",
+      "profile": "https://unsplash.com/@illusn"
+    }
+  },
+  "airlines": {
+    "london-new-york": {
+      "photographer": "Luca Bravo",
+      "profile": "https://unsplash.com/@lucabravo"
+    },
+    "london-lisbon": {
+      "photographer": "Aayush Gupta",
+      "profile": "https://unsplash.com/@aayush_gupta"
+    },
+    "paris-tokyo": {
+      "photographer": "Jezael Melgoza",
+      "profile": "https://unsplash.com/@jezar"
+    },
+    "amsterdam-cape-town": {
+      "photographer": "Janan",
+      "profile": "https://unsplash.com/@stuffinabox"
+    },
+    "madrid-mexico-city": {
+      "photographer": "Owen Roth",
+      "profile": "https://unsplash.com/@owenroth_v1"
+    },
+    "berlin-reykjavik": {
+      "photographer": "Jonatan Pie",
+      "profile": "https://unsplash.com/@r3dmax"
+    },
+    "dublin-chicago": {
+      "photographer": "Ricky Beron",
+      "profile": "https://unsplash.com/@nacio1966"
+    },
+    "zurich-singapore": {
+      "photographer": "Swapnil Bapat",
+      "profile": "https://unsplash.com/@unfilteredkopi"
+    },
+    "rome-marrakesh": {
+      "photographer": "rigel",
+      "profile": "https://unsplash.com/@rigels"
+    },
+    "vienna-athens": {
+      "photographer": "Constantinos Kollias",
+      "profile": "https://unsplash.com/@ckollias"
+    },
+    "oslo-edinburgh": {
+      "photographer": "J\u00f6rg Angeli",
+      "profile": "https://unsplash.com/@joerga"
+    },
+    "lisbon-sao-paulo": {
+      "photographer": "Agustin Diaz Gargiulo",
+      "profile": "https://unsplash.com/@agustindiazg"
+    },
+    "copenhagen-bangkok": {
+      "photographer": "Alejandro Cartagena \ud83c\uddf2\ud83c\uddfd\ud83c\udff3\u200d\ud83c\udf08",
+      "profile": "https://unsplash.com/@cartayen"
+    },
+    "milan-casablanca": {
+      "photographer": "Hans-J\u00fcrgen Weinhardt",
+      "profile": "https://unsplash.com/@hansjuergen"
+    },
+    "manchester-dubai": {
+      "photographer": "David Rodrigo",
+      "profile": "https://unsplash.com/@david__r"
+    }
+  }
+}

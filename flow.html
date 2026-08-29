@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Services — Lumen</title>
+
+<!-- Browsers largely ignore these; the real protection is the Cache-Control
+     headers in _headers / netlify.toml / vercel.json. Kept as a second line. -->
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<link rel="preconnect" href="https://cdn.shopify.com">
+<link rel="stylesheet" href="assets/styles.css">
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     INSIDER WEB SDK
+     Order is load-bearing:
+       1. InsiderQueue array
+       2. site scripts (telemetry wrapper must precede the first push)
+       3. Insider Tag (ins.js)
+       4. user data -> page data -> init
+     ═══════════════════════════════════════════════════════════════════════ -->
+
+<!-- 1. The queue. Must exist before the tag loads. -->
+<script>window.InsiderQueue = window.InsiderQueue || [];</script>
+
+<!-- 2. Site scripts. insider-debug.js wraps InsiderQueue.push to mirror every
+        payload into the on-page console, so it loads before anything is sent. -->
+<script src="assets/config.js"></script>
+<script src="assets/insider-debug.js"></script>
+<script src="assets/vertical.js"></script>
+<script src="assets/store.js"></script>
+
+<!-- 3. Insider Tag — written by assets/vertical.js, because which
+        account it points at depends on the hostname:
+          beauty.insiderdemo.com          -> salesdemo
+          beauty-sandbox.insiderdemo.com  -> partnersandbox
+        Account and partner id are listed in vertical.js and shown
+        live in the SDK console. -->
+
+<!-- 4. Data pushes for this page. -->
+<script>
+  window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });
+  window.InsiderQueue.push({ type: 'currency', value: Store.currency() });
+
+  window.InsiderQueue.push({
+    type: 'other',
+    value: { name: 'service', custom: { signed_in: !!Store.currentUser() } }
+  });
+
+  window.InsiderQueue.push({ type: 'init' });
+</script>
+</head></head>
+
+<body>
+
+<p class="announce" data-announce>Free shipping over $50</p>
+
+<header class="masthead">
+  <div class="masthead__in">
+    <a class="brand" href="index.html" data-brand>Lumen</a>
+    <form class="searchbox" data-search role="search" autocomplete="off">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" id="search-input" name="q" placeholder="Search products" data-search-placeholder aria-label="Search products">
+    </form>
+    <nav class="utils">
+      <a href="flow.html" data-flow-link>Services</a>
+      <a href="account.html" data-account-label>Log in</a>
+      <a class="cartlink" href="cart.html"><span data-label="cart">Cart</span><span data-cart-count hidden>0</span></a>
+    </nav>
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="mainnav__in" data-collection-nav></div>
+</nav>
+
+<main>
+  <div class="wrap">
+
+    <p class="eyebrow" style="margin-top:2.5rem">
+      <span data-flow-title>Services</span>
+      <span class="pagetype">page type: other · "service"</span>
+    </p>
+    <h1 class="h1" data-flow-title>Services</h1>
+    <p class="lede" id="flow-lede" style="max-width:44rem"></p>
+
+    <div class="cols" style="margin:2.5rem 0 4rem">
+      <form class="panel" id="flow-form" autocomplete="off">
+        <p class="eyebrow">Details</p>
+        <div id="flow-fields"></div>
+        <button class="btn btn--wide" type="submit" id="flow-btn" style="margin-top:1.5rem">
+          Continue
+        </button>
+        <p class="source" id="flow-msg" style="margin-top:1.25rem" hidden></p>
+      </form>
+
+      <div class="panel">
+        <p class="eyebrow">What this sends</p>
+        <p class="source" style="margin:.75rem 0 1.25rem">
+          A <code id="flow-event-name">custom_event</code> with the fields
+          below as parameters, plus a <code>user</code> push so the choice is
+          also written to the profile.
+        </p>
+        <pre class="code" id="flow-preview">—</pre>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <span><span data-brand>Lumen</span> — Insider One demo storefront</span>
+    <span><span data-brand>Lumen</span> — Insider One demo storefront</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  function ready(fn) {
+    if (document.readyState !== 'loading') fn();
+    else document.addEventListener('DOMContentLoaded', fn);
+  }
+
+  ready(function () {
+    var V = window.VERTICAL || {};
+    var flow = V.flow;
+    if (!flow) return;
+
+    document.querySelectorAll('[data-flow-title]').forEach(function (n) {
+      n.textContent = flow.title;
+    });
+    document.getElementById('flow-event-name').textContent = flow.event;
+    document.getElementById('flow-lede').textContent = flow.lede || '';
+    document.getElementById('flow-btn').textContent = flow.title;
+
+    var host = document.getElementById('flow-fields');
+    flow.fields.forEach(function (f) {
+      var wrap = document.createElement('div');
+      wrap.className = 'field';
+      var id = 'flow-' + f.name;
+      var label = document.createElement('label');
+      label.setAttribute('for', id);
+      label.textContent = f.label;
+      wrap.appendChild(label);
+
+      if (f.options === 'date') {
+        var input = document.createElement('input');
+        input.type = 'date';
+        input.id = id;
+        // Default a fortnight out, so the field is never empty in a demo.
+        var d = new Date(Date.now() + 14 * 864e5);
+        input.value = d.toISOString().slice(0, 10);
+        wrap.appendChild(input);
+      } else {
+        var sel = document.createElement('select');
+        sel.id = id;
+        f.options.forEach(function (o) {
+          var opt = document.createElement('option');
+          opt.textContent = o;
+          sel.appendChild(opt);
+        });
+        wrap.appendChild(sel);
+      }
+      host.appendChild(wrap);
+    });
+
+    function collect() {
+      var params = {};
+      flow.fields.forEach(function (f) {
+        var el = document.getElementById('flow-' + f.name);
+        if (el) params[f.name] = el.value;
+      });
+      return params;
+    }
+
+    function preview() {
+      document.getElementById('flow-preview').textContent =
+        JSON.stringify([{ event_name: flow.event, event_params: { custom: collect() } }], null, 2);
+    }
+    host.addEventListener('change', preview);
+    preview();
+
+    document.getElementById('flow-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var params = collect();
+
+      window.InsiderQueue.push({
+        type: 'custom_event',
+        value: [{ event_name: flow.event, event_params: { custom: params } }]
+      });
+
+      // Worth keeping the choice on the profile too, so it can be segmented
+      // on rather than only living in the event stream. signIn merges into
+      // the existing profile, so this does not clear anything.
+      var first = flow.fields[0];
+      if (first && params[first.name] && Store.currentUser()) {
+        Store.signIn({ service_preference: params[first.name] });
+        window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });
+      }
+      window.InsiderQueue.push({ type: 'init' });
+
+      var msg = document.getElementById('flow-msg');
+      msg.hidden = false;
+      msg.textContent = flow.event + ' sent · ' +
+        Object.keys(params).map(function (k) { return k + '=' + params[k]; }).join(' · ');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
