@@ -57,11 +57,14 @@
      hostname, so a hard-coded global id sends every vertical to the same
      account's campaign. Discovery below reads what the panel is actually
      serving on this page, which is correct per account by construction.
+
+     Returns { ids, sawPool }. `sawPool` distinguishes "this account has no
+     Eureka campaigns at all" from "campaigns exist but none apply here" —
+     two very different problems that otherwise look identical.
      ---------------------------------------------------------------------- */
   function discoverCampaignId() {
-    // The panel exposes the campaigns it decided to serve on this page. Read
-    // them directly rather than waiting to be told.
     var out = [];
+    var sawPool = false;
     try {
       var io = window.Insider && (window.Insider.insiderObject || window.Insider.campaign);
       var pools = [];
@@ -77,6 +80,7 @@
         var list = Array.isArray(pool) ? pool : Object.keys(pool || {}).map(function (k) {
           return pool[k];
         });
+        if (list.length) sawPool = true;
         list.forEach(function (c) {
           if (!c) return;
           var id = c.campId || c.campaignId || c.id;
@@ -84,7 +88,37 @@
         });
       });
     } catch (e) {}
-    return out;
+    return { ids: out, sawPool: sawPool };
+  }
+
+  /* --- why did we not get a campaign? -------------------------------------
+     One fallback message for four different causes is exactly the silent
+     failure this platform specialises in. Name the cause instead.
+     ---------------------------------------------------------------------- */
+  function diagnose(surface) {
+    var acct = environment().account || 'unknown account';
+
+    if (!window.Insider) {
+      return 'Eureka ' + surface + ': the Insider tag never loaded. Check the ' +
+             'script tag, and check this hostname is in multiDomains for ' +
+             acct + ' — a missing domain loads the tag but sends nothing.';
+    }
+    if (!window.Insider.eureka) {
+      return 'Eureka ' + surface + ': the tag loaded but exposes no eureka API. ' +
+             'Eureka is probably not enabled on ' + acct + '.';
+    }
+
+    var found = discoverCampaignId();
+    if (!found.sawPool) {
+      return 'Eureka ' + surface + ': no Eureka campaign found on ' + acct + '. ' +
+             'Most likely there is not one yet — indexing a locale does not ' +
+             'create a campaign. Campaigns > Search and Merchandising > new ' +
+             'campaign, JavaScript SDK type, locale ' +
+             (environment().locale || 'en_GB') + '.';
+    }
+    return 'Eureka ' + surface + ': campaigns exist on ' + acct + ' (' +
+           found.ids.join(', ') + ') but none is serving this page. Check the ' +
+           "campaign's page targeting and that it is live, not draft.";
   }
 
   /* --- campaign readiness -------------------------------------------------
@@ -126,10 +160,10 @@
       var tries = 0;
       var poll = setInterval(function () {
         if (settled) return clearInterval(poll);
-        var ids = discoverCampaignId();
-        if (ids.length) {
+        var found = discoverCampaignId();
+        if (found.ids.length) {
           clearInterval(poll);
-          settle(ids[0], null);
+          settle(found.ids[0], null);
         } else if (++tries > 60) {
           clearInterval(poll);
         }
@@ -170,19 +204,28 @@
   }
 
   /* --- normalising items --------------------------------------------------
-     Eureka nests the product under itemProperties.item_card, with prices as
-     per-currency objects and category as an array. The flat fallbacks below
-     cover older response shapes.
+     Eureka returns product fields in one of two shapes depending on account
+     and locale configuration:
 
-     If names come back as bare ids and prices as 0.00, the response did not
-     contain item_card at all — which almost always means the campaign being
-     queried belongs to a different account, with a differently shaped
-     catalogue. Check the campaign id in the console line before debugging
-     this function.
+       nested:  item.itemProperties.item_card.{name,price,...}
+       flat:    item.itemProperties.{name,price,...}
+
+     partnersandbox / en_GB returns the FLAT shape. Read item_card when it is
+     there, otherwise fall back to itemProperties itself, then to a variant,
+     then to the item. Prices are per-currency objects and category is an
+     array in both shapes.
+
+     If names come back as bare ids and prices as 0.00, none of these matched
+     — which usually means the campaign being queried belongs to a different
+     account or locale, with a differently shaped catalog. Check the campaign
+     id and the locale in the console line before debugging this function.
      ---------------------------------------------------------------------- */
   function normalize(item) {
-    var card = (item.itemProperties && item.itemProperties.item_card) ||
-               (item.itemVariants && item.itemVariants[0]) || item;
+    var props = item.itemProperties || {};
+    var card = props.item_card ||
+               (Object.keys(props).length ? props : null) ||
+               (item.itemVariants && item.itemVariants[0]) ||
+               item;
 
     var id = String(card.item_id || item.itemId || card.id || '').split(':')[0];
     var local = window.Store.byId(id);
@@ -196,6 +239,10 @@
     var cat = card.category;
     if (typeof cat === 'string') cat = [cat];
 
+    // stock_count is the flat shape's quantity field; in_stock is the flag.
+    var stock = card.in_stock != null ? card.in_stock
+              : (card.stock_count != null ? (card.stock_count > 0 ? 1 : 0) : 1);
+
     return {
       id: id,
       groupcode: card.groupcode || (item.contentGroupId || '').replace('groupcode:', ''),
@@ -208,7 +255,7 @@
       unit_sale_price: Number(salePrice != null ? salePrice : (local && local.unit_sale_price)) || 0,
       image: card.image_url || card.image || (local && local.image) || '',
       variant_label: (local && local.variant_label) || null,
-      in_stock: card.in_stock != null ? card.in_stock : 1,
+      in_stock: stock,
       // Products in our own catalog get a local link; anything else keeps the
       // URL Eureka returned, which may point off-site.
       url: local ? window.Store.localHref(local) : (card.url || '#'),
@@ -233,8 +280,8 @@
 
     onCampaignReady(CFG.listingCampaignId, function (campId, err) {
       if (err || !campId) {
-        window.insDebugNote('Eureka listing: ' + (err ? err.message : 'no campaign') +
-                            ' — rendering local catalog', 'warn');
+        window.insDebugNote(diagnose('listing'), 'warn');
+        window.insDebugNote('Rendering local catalog instead.', 'warn');
         return opts.onFallback();
       }
       state.campId = campId;
@@ -315,8 +362,8 @@
 
     onCampaignReady(CFG.searchCampaignId, function (campId, err) {
       if (err || !campId) {
-        window.insDebugNote('Eureka search: ' + (err ? err.message : 'no campaign') +
-                            ' — rendering local results', 'warn');
+        window.insDebugNote(diagnose('search'), 'warn');
+        window.insDebugNote('Rendering local results instead.', 'warn');
         return opts.onFallback();
       }
       state.campId = campId;
