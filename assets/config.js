@@ -1,49 +1,60 @@
 /* ============================================================================
-   MERIDIAN — Insider One demo storefront
-   Single source of truth for every account-specific setting.
-   Change things here, not in the page templates.
+   Insider One demo storefront — shared configuration
+   ----------------------------------------------------------------------------
+   Settings that are the SAME for every vertical live here.
+
+   Settings that DIFFER per vertical — brand name, account, locale, currency,
+   UX labels, catalogue — are resolved from the hostname by assets/vertical.js.
+   They are deliberately not repeated here: this file previously carried a
+   stale copy (onesandbox / en_US / USD) that contradicted the account the
+   site was actually served from.
    ========================================================================== */
 
 window.SITE_CONFIG = {
 
-  /* --- Insider Tag (InOne > Account Settings > Account Details) ------------ */
-  partnerName: 'onesandbox',
-  partnerId:   '10014057',
-  // Resulting tag: //salesdemo.api.useinsider.com/ins.js?id=10002548
-
-  /* --- Locale / currency -------------------------------------------------- */
-  language: 'en_US',
-  currency: 'USD',
-  country:  'US',
-
   /* --- Eureka (Search & Merchandising) ------------------------------------
-     SET THESE. Auto-discovery is attempted but is not reliable: the
-     'eureka:sdk:campaign:ready' event does not reach a listener bound after
-     the tag has initialised, which is always, because the tag loads async.
+     Campaign ids are per ACCOUNT, and the account is chosen by hostname, so
+     they must not be hard-coded globally. A single `searchCampaignId: 112`
+     meant every vertical queried campaign 112 on salesdemo no matter which
+     subdomain served it — which is why beauty.insiderdemo.com returned the
+     salesdemo catalogue with unusable field names.
 
-     To find a campaign id: open a search page, DevTools > Network, filter on
-     `useinsider`, and look for a request containing `?pa=eureka&`. The
-     response body starts with `campId`. It is also on the campaign's row in
-     the panel, under the information icon.
+     Leave these null. eureka.js discovers the campaign the panel is serving
+     on the current page, which is correct per account by construction.
+
+     Only set an id to disambiguate when several Eureka SDK campaigns run on
+     the same page at once. If you do, it is account-specific — key it under
+     `perAccount` below rather than setting it globally.
+
+     To find a campaign id: search page > DevTools > Network > filter
+     `useinsider` > request containing `?pa=eureka&`. The response body starts
+     with `campId`. Also on the campaign row in the panel, information icon.
      --------------------------------------------------------------------- */
   eureka: {
     enabled: true,
-    searchCampaignId:   112,    // full-page search results  (search.html)
-    listingCampaignId:  null,   // category listing pages    (category.html)
+
+    searchCampaignId:  null,   // auto-discover
+    listingCampaignId: null,   // auto-discover
+
+    // Optional overrides, keyed by the partner name vertical.js resolves.
+    // Anything found here wins over the nulls above.
+    perAccount: {
+      // salesdemo:      { searchCampaignId: 112, listingCampaignId: null },
+      // partnersandbox: { searchCampaignId: null, listingCampaignId: null }
+    },
+
     pageSize: 24,
     defaultSorting: 'Relevancy',
-    // Fall back to the local demo catalog when no campaign is live, when the
-    // visitor lands in the control group, or when a fetch fails.
+
+    // Fall back to the local demo catalogue when no campaign is live, when
+    // the visitor lands in the control group, or when a fetch fails.
     fallbackToLocalCatalog: true
   },
 
   /* --- Smart Recommender (JavaScript SDK campaigns) -----------------------
-     Each key maps a page surface to a Smart Recommender campaign ID.
-     Find the ID via Smart Recommender > campaign row > information icon.
-
-     Leave a value null and the surface will accept the first SDK campaign
-     that fires on that page — convenient for demos, ambiguous if you run
-     several campaigns at once.
+     Same rule: null means "accept the first SDK campaign that fires on this
+     surface", which is what you want while there is one campaign per page.
+     Use perAccount only once several recommenders run on the same page.
      --------------------------------------------------------------------- */
   reco: {
     enabled: true,
@@ -52,31 +63,41 @@ window.SITE_CONFIG = {
       product:      null,   // #reco-product      on product.html
       cart:         null,   // #reco-cart         on cart.html
       confirmation: null    // #reco-confirmation on confirmation.html
+    },
+    perAccount: {
+      // partnersandbox: { home: 123, product: 124 }
     }
   },
 
   /* --- Custom attributes & events -----------------------------------------
-     These must exist in InOne > Attributes and Events before values will
-     land on a profile. The names below are what this site sends.
+     These must exist in InOne > Attributes and Events before values land on a
+     profile. A mismatched name or type is dropped silently on a 200 — no
+     error anywhere.
+
+     NOTE: the account is at roughly 70 of its 80 custom-attribute cap, so
+     `service_preference` could not be created and an existing attribute was
+     repurposed. The name and type below must match that attribute exactly,
+     or every flow.html submission is silently discarded.
      --------------------------------------------------------------------- */
   customAttributes: [
-    'membership_tier',    // string   Bronze | Silver | Gold
-    'loyalty_points',     // number
-    'preferred_category', // string
-    'signup_date',        // datetime (ISO 8601, e.g. 2026-08-28T00:00:00Z)
-    'is_vip'              // boolean
+    'membership_tier',     // string   Bronze | Silver | Gold
+    'loyalty_points',      // number
+    'preferred_category',  // string
+    'signup_date',         // datetime (ISO 8601)
+    'is_vip',              // boolean
+    'service_preference'   // string   VERIFY against the reused attribute
   ],
 
   customEvents: [
-    'site_search',        // search_term (string), results_count (number)
-    'product_wishlisted', // product_id (string), product_name (string)
-    'size_guide_opened',  // product_id (string)
-    'newsletter_signup',  // source (string)
-    'filter_applied'      // filter_name (string), filter_value (string)
+    'site_search',         // search_term (string), results_count (number)
+    'product_wishlisted',  // product_id (string), product_name (string)
+    'size_guide_opened',   // product_id (string)
+    'newsletter_signup',   // source (string)
+    'filter_applied'       // filter_name (string), filter_value (string)
   ],
 
   /* --- Telemetry console --------------------------------------------------
-     The on-page panel that mirrors every InsiderQueue push.
+     On-page panel mirroring every InsiderQueue push.
      Append ?debug=0 to any URL to hide it for a clean screen share.
      --------------------------------------------------------------------- */
   debugPanel: {
@@ -85,3 +106,34 @@ window.SITE_CONFIG = {
     mirrorToConsole: true
   }
 };
+
+/* ----------------------------------------------------------------------------
+   Resolve per-account overrides once vertical.js has decided the account.
+   Safe to run before or after vertical.js loads: it re-runs on DOM ready.
+   -------------------------------------------------------------------------- */
+(function () {
+  function currentAccount() {
+    var v = window.VERTICAL || window.CURRENT_VERTICAL || {};
+    return v.partnerName || v.account ||
+           (window.SITE_CONFIG && window.SITE_CONFIG.partnerName) || null;
+  }
+
+  function apply() {
+    var acct = currentAccount();
+    if (!acct) return;
+    ['eureka', 'reco'].forEach(function (section) {
+      var cfg = window.SITE_CONFIG[section];
+      var over = cfg && cfg.perAccount && cfg.perAccount[acct];
+      if (!over) return;
+      Object.keys(over).forEach(function (k) {
+        if (section === 'reco') cfg.campaigns[k] = over[k];
+        else cfg[k] = over[k];
+      });
+    });
+  }
+
+  apply();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', apply);
+  }
+})();

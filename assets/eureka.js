@@ -24,6 +24,15 @@
   var CFG = (window.SITE_CONFIG || {}).eureka || {};
   var READY_TIMEOUT = 6000;
 
+  /* --- the active vertical ------------------------------------------------
+     vertical.js resolves brand, account, locale and currency from the
+     hostname. Read it defensively: this file must not care what it is called
+     or whether it has loaded yet.
+     ---------------------------------------------------------------------- */
+  function vertical() {
+    return window.VERTICAL || window.CURRENT_VERTICAL || {};
+  }
+
   /* --- waiting for the tag ------------------------------------------------
      ins.js loads async. Poll for the eventManager and bind as early as we can,
      so we do not miss the campaign:ready dispatch.
@@ -41,6 +50,12 @@
      Campaign ids come from the ready event, so nothing is hard-coded. A
      configured id in config.js only acts as a filter when several SDK
      campaigns fire on the same page.
+
+     NOTE: config.js now leaves searchCampaignId / listingCampaignId null by
+     default. Campaign ids are per ACCOUNT and the account is chosen by
+     hostname, so a hard-coded global id sends every vertical to the same
+     account's campaign. Discovery below reads what the panel is actually
+     serving on this page, which is correct per account by construction.
      ---------------------------------------------------------------------- */
   function discoverCampaignId() {
     // The panel exposes the campaigns it decided to serve on this page. Read
@@ -71,7 +86,7 @@
     return out;
   }
 
-  /* --- campaign discovery -------------------------------------------------
+  /* --- campaign readiness -------------------------------------------------
      Originally this waited on 'eureka:sdk:campaign:ready'. That event does not
      reliably reach a listener bound after the tag has already initialised —
      which is always, because the tag loads async and we can only bind once it
@@ -88,7 +103,9 @@
     }
 
     if (expectedId) {
-      // Explicitly configured — no discovery needed.
+      // Explicitly configured — no discovery needed. Only set this when
+      // several Eureka campaigns run on the same page, and set it per
+      // account in config.js `perAccount`, never globally.
       whenInsiderReady(function (err) { settle(err ? null : expectedId, err); });
       return;
     }
@@ -128,17 +145,22 @@
     catch (e) { return false; }
   }
 
-  /* --- normalising items --------------------------------------------------
-     Eureka returns catalog records from salesdemo. Field naming varies by
-     catalog, so map defensively and fill any gaps from the local catalog when
-     the product id matches. Display never depends on one exact key.
+  /* --- prices -------------------------------------------------------------
+     Eureka returns prices as currency-keyed objects, e.g. { EUR: 42.00 }.
+     Prefer the active vertical's currency, then EUR (the catalogue locale is
+     en_GB / EUR), then USD, then whatever is there. Never return nothing just
+     because the expected key is missing — a wrong-but-present price is far
+     easier to spot than a silent 0.00.
      ---------------------------------------------------------------------- */
   function pickCurrency(v) {
     if (v == null) return null;
     if (typeof v === 'number') return v;
     if (typeof v === 'object') {
-      var cur = (window.SITE_CONFIG && window.SITE_CONFIG.currency) || 'USD';
+      var cur = vertical().currency ||
+                (window.SITE_CONFIG && window.SITE_CONFIG.currency) ||
+                'EUR';
       if (v[cur] != null) return v[cur];
+      if (v.EUR != null) return v.EUR;
       if (v.USD != null) return v.USD;
       var vals = Object.keys(v).map(function (k) { return v[k]; });
       return vals.length ? vals[0] : null;
@@ -150,6 +172,12 @@
      Eureka nests the product under itemProperties.item_card, with prices as
      per-currency objects and category as an array. The flat fallbacks below
      cover older response shapes.
+
+     If names come back as bare ids and prices as 0.00, the response did not
+     contain item_card at all — which almost always means the campaign being
+     queried belongs to a different account, with a differently shaped
+     catalogue. Check the campaign id in the console line before debugging
+     this function.
      ---------------------------------------------------------------------- */
   function normalize(item) {
     var card = (item.itemProperties && item.itemProperties.item_card) ||
