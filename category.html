@@ -117,8 +117,28 @@
         <span id="result-count" style="font-size:.8125rem;color:var(--muted)"></span>
       </div>
 
-      <div class="grid" id="results"></div>
-      <div id="pager" style="margin-top:3rem;display:flex;gap:.75rem;justify-content:center"></div>
+      <div class="listing">
+        <aside class="facets" id="facets" hidden></aside>
+        <div class="listing__main">
+          <div class="grid" id="results"></div>
+          <div id="pager" style="margin-top:3rem;display:flex;gap:.75rem;justify-content:center"></div>
+        </div>
+      </div>
+
+<style>
+  .listing { display:grid; grid-template-columns: 15rem 1fr; gap:2.5rem; align-items:start }
+  @media (max-width: 860px) { .listing { grid-template-columns:1fr } .facets { order:-1 } }
+  .facets__group { margin-bottom:2rem }
+  .facets__title { font-size:.75rem; letter-spacing:.08em; text-transform:uppercase;
+                   color:var(--muted); margin:0 0 .75rem }
+  .facets__row { display:flex; align-items:center; gap:.5rem; padding:.25rem 0;
+                 font-size:.875rem; cursor:pointer }
+  .facets__row input { margin:0; cursor:pointer }
+  .facets__count { margin-left:auto; color:var(--muted); font-size:.8125rem }
+  .facets__clear { font-size:.8125rem; color:var(--muted); background:none; border:0;
+                   padding:0; cursor:pointer; text-decoration:underline }
+  .card--skeleton { opacity:.5 }
+</style>
     </section>
   </div>
 </main>
@@ -154,6 +174,104 @@
   var sourceEl = document.getElementById('listing-source');
   var countEl = document.getElementById('result-count');
   var listing = null;
+
+  /* --- facets -------------------------------------------------------------
+     Eureka returns every configured facet on each listing response, as
+     `aggregations`, which eureka.js maps to result.facets. Selections go back
+     as the `facets` array on the next request, so the sidebar is: draw what
+     came back, collect what is ticked, hand it to listing.update().
+
+     Two things worth knowing about the category facet specifically. It comes
+     back FLAT — `Beauty` (192), `Makeup` (192), then the leaves — because the
+     whole path is indexed rather than a hierarchy. So the vertical and the
+     current collection are dropped: both select the entire page and read as
+     noise. And the vertical facet eureka.js already applies is not shown,
+     because it is scoping rather than a choice the shopper makes.
+     ---------------------------------------------------------------------- */
+  var selected = {};   // field -> [values]
+
+  function hiddenCategoryValues() {
+    var v = (window.Store.catalog[0] && window.Store.catalog[0].taxonomy || [])[0];
+    return [v, COLLECTION].filter(Boolean);
+  }
+
+  function drawFacets(facets) {
+    var host = document.getElementById('facets');
+    if (!facets || !facets.length) { host.hidden = true; return; }
+    host.innerHTML = '';
+    var drew = 0;
+
+    facets.forEach(function (facet) {
+      var items = (facet.items || []).filter(function (it) {
+        if (!it.documentCount) return false;
+        if (facet.name === 'category' &&
+            hiddenCategoryValues().indexOf(it.name) > -1) return false;
+        return true;
+      });
+      if (!items.length) return;
+      drew++;
+
+      var group = document.createElement('div');
+      group.className = 'facets__group';
+      var title = document.createElement('p');
+      title.className = 'facets__title';
+      title.textContent = facet.label || facet.name;
+      group.appendChild(title);
+
+      items.slice(0, 10).forEach(function (it) {
+        var row = document.createElement('label');
+        row.className = 'facets__row';
+        var box = document.createElement('input');
+        box.type = 'checkbox';
+        box.checked = (selected[facet.name] || []).indexOf(it.name) > -1;
+        box.addEventListener('change', function () {
+          var list = selected[facet.name] || [];
+          if (box.checked) list = list.concat([it.name]);
+          else list = list.filter(function (v) { return v !== it.name; });
+          if (list.length) selected[facet.name] = list; else delete selected[facet.name];
+          applyFacets();
+        });
+        var name = document.createElement('span');
+        name.textContent = it.label || it.name;
+        var count = document.createElement('span');
+        count.className = 'facets__count';
+        count.textContent = it.documentCount;
+        row.appendChild(box); row.appendChild(name); row.appendChild(count);
+        group.appendChild(row);
+      });
+      host.appendChild(group);
+    });
+
+    if (Object.keys(selected).length) {
+      var clear = document.createElement('button');
+      clear.type = 'button';
+      clear.className = 'facets__clear';
+      clear.textContent = 'Clear all filters';
+      clear.addEventListener('click', function () { selected = {}; applyFacets(); });
+      host.appendChild(clear);
+    }
+
+    host.hidden = drew === 0;
+  }
+
+  function applyFacets() {
+    var list = Object.keys(selected).map(function (field) {
+      return { field: field, values: selected[field] };
+    });
+    // Always back to page 1: a filtered set rarely has the page you were on.
+    listing.update({ facets: list, page: 1 });
+
+    window.InsiderQueue.push({
+      type: 'custom_event',
+      value: [{ event_name: 'filter_applied',
+                event_parameters: { custom: {
+                  filter_name: 'facets',
+                  filter_value: list.map(function (f) {
+                    return f.field + ':' + f.values.join('|');
+                  }).join(', ') || 'cleared'
+                } } }]
+    });
+  }
 
   function paint(products, opts) {
     opts = opts || {};
@@ -210,6 +328,7 @@
                                ((window.ENVIRONMENT && window.ENVIRONMENT.account) || '?') +
                                ' catalogue · sort: ' + state.sorting;
         paint(result.items, { live: true, total: result.navigation.total });
+        drawFacets(result.facets);
         drawPager(result.navigation, state);
       },
       onFallback: renderFallback
