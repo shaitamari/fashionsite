@@ -26,21 +26,35 @@ window.SITE_CONFIG = {
      the same page at once. If you do, it is account-specific — key it under
      `perAccount` below rather than setting it globally.
 
-     To find a campaign id: search page > DevTools > Network > filter
-     `useinsider` > request containing `?pa=eureka&`. The response body starts
-     with `campId`. Also on the campaign row in the panel, information icon.
+     partnersandbox is set explicitly, and needs to be. Two Eureka campaigns
+     are live on that account — the JavaScript SDK campaign that drives
+     search.html, and an Instant Search pop-up bound to #searchinput. The
+     discovery in eureka.js reads the campaign pool the tag exposes and takes
+     the first id it finds, without filtering by campaign type. With two
+     campaigns live it can hand fetch.search() the pop-up's id, which is not
+     an SDK campaign and returns nothing — and because an id *was* found, the
+     "no campaign" diagnostic never fires. Naming the id removes the ambiguity.
+
+     To find a campaign id: Campaigns > Search and Merchandising > Eureka, the
+     campaign's row, information icon. Or: search page > DevTools > Network >
+     filter `useinsider` > request containing `?pa=eureka&`; the response body
+     starts with `campId`. Prefer the panel — it tells you which campaign is
+     which, and the network view does not.
      --------------------------------------------------------------------- */
   eureka: {
     enabled: true,
 
-    searchCampaignId:  null,   // auto-discover
+    searchCampaignId:  null,   // auto-discover unless overridden below
     listingCampaignId: null,   // auto-discover
 
-    // Optional overrides, keyed by the partner name vertical.js resolves.
-    // Anything found here wins over the nulls above.
+    // Keyed by the account name vertical.js resolves from the hostname.
+    // Anything set here wins over the nulls above.
     perAccount: {
-      // salesdemo:      { searchCampaignId: 112, listingCampaignId: null },
-      // partnersandbox: { searchCampaignId: null, listingCampaignId: null }
+      partnersandbox: {
+        searchCampaignId:  4233,   // JavaScript SDK campaign, en_GB
+        listingCampaignId: null    // none yet — category.html still local
+      }
+      // salesdemo: { searchCampaignId: null, listingCampaignId: null },
     },
 
     pageSize: 24,
@@ -108,8 +122,13 @@ window.SITE_CONFIG = {
 };
 
 /* ----------------------------------------------------------------------------
-   Resolve per-account overrides once vertical.js has decided the account.
-   Safe to run before or after vertical.js loads: it re-runs on DOM ready.
+   Apply per-account overrides once vertical.js has resolved the environment.
+
+   vertical.js runs first (it writes the tag and the catalog at parse time), so
+   window.ENVIRONMENT normally exists by the time this file executes. The poll
+   below removes the dependency on that ordering anyway: if the environment is
+   not there yet, keep looking briefly rather than silently skipping the
+   override and querying the wrong campaign.
    -------------------------------------------------------------------------- */
 (function () {
   // vertical.js puts account / partnerId / locale / currency on
@@ -120,7 +139,8 @@ window.SITE_CONFIG = {
 
   function apply() {
     var acct = currentAccount();
-    if (!acct) return;
+    if (!acct) return false;
+
     ['eureka', 'reco'].forEach(function (section) {
       var cfg = window.SITE_CONFIG[section];
       var over = cfg && cfg.perAccount && cfg.perAccount[acct];
@@ -130,10 +150,18 @@ window.SITE_CONFIG = {
         else cfg[k] = over[k];
       });
     });
+
+    if (window.insDebugNote) {
+      window.insDebugNote('Config resolved for account ' + acct, 'ok');
+    }
+    return true;
   }
 
-  apply();
-  if (document.readyState === 'loading') {
+  if (!apply()) {
+    var tries = 0;
+    var t = setInterval(function () {
+      if (apply() || ++tries > 100) clearInterval(t);
+    }, 20);
     document.addEventListener('DOMContentLoaded', apply);
   }
 })();
