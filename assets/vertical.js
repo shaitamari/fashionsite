@@ -213,6 +213,66 @@
       window.addEventListener('load', mergeUserPayload);
     }
 
+    /* --- re-merge on sign in / sign out ------------------------------------
+       The merge above runs once, with whatever the user is at page load —
+       usually anonymous. When someone signs in, store.js updates its own
+       storage but nothing rebuilds the IO, so the profile keeps the Guest
+       payload and the email never reaches the platform.
+
+       Worse, the Hit API builds its payload during init and never resends,
+       so even a corrected IO is not enough on its own: the attributes have
+       to be pushed explicitly.
+
+       Watch for the identity changing and redo both. Cheap, and it covers
+       sign in, sign out, and profile edits without store.js needing to know
+       this shim exists.
+       ------------------------------------------------------------------- */
+    var lastIdentity = null;
+
+    function identityFingerprint() {
+      try {
+        var u = window.Store && window.Store.currentUser && window.Store.currentUser();
+        return u ? (u.email || '') + '|' + (u.uuid || '') : 'anonymous';
+      } catch (e) { return null; }
+    }
+
+    function syncIdentity() {
+      var fp = identityFingerprint();
+      if (fp === null || fp === lastIdentity) return;
+      lastIdentity = fp;
+
+      // Force a fresh read rather than the once-only merge.
+      try {
+        var payload = window.Store.userPayload() || {};
+        Object.keys(payload).forEach(function (k) {
+          if (payload[k] === undefined) return;
+          if (k === 'language' || k === 'country') return;
+          io.user[k] = payload[k];
+        });
+
+        // Send identifiers and attributes explicitly, since the Hit API will
+        // not rebuild its payload on its own.
+        if (window.Insider) {
+          if (Insider.sendUserAttributes && payload.custom) {
+            Insider.sendUserAttributes(payload.custom);
+          }
+          if (Insider.initializeHitAPI) {
+            Insider.initializeHitAPI();
+          }
+        }
+
+        if (window.insDebugNote) {
+          window.insDebugNote('identity synced: ' +
+            (payload.email || 'anonymous'), 'ok');
+        }
+      } catch (e) {}
+    }
+
+    // Poll rather than patching store.js, so the site stays unaware of this.
+    // Cheap at this interval and stops mattering once the SDK path is on.
+    setInterval(syncIdentity, 500);
+    document.addEventListener('DOMContentLoaded', syncIdentity);
+
     /* --- page type, product, basket, transaction -------------------------
        The tag's page rules all read insider_object.page.type:
 
