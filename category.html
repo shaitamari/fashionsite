@@ -193,6 +193,7 @@
      because it is scoping rather than a choice the shopper makes.
      ---------------------------------------------------------------------- */
   var selected = {};   // field -> [values]
+  var currentTotal = 0;
 
   function hiddenCategoryValues() {
     var v = (window.Store.catalog[0] && window.Store.catalog[0].taxonomy || [])[0];
@@ -213,6 +214,12 @@
         return true;
       });
       if (!items.length) return;
+
+      // A single option that every product already matches is not a filter —
+      // it is a label. Happens on category when the collection has one leaf,
+      // and on any facet where the whole result set shares a value.
+      if (items.length === 1 && items[0].documentCount >= (currentTotal || 0)) return;
+
       drew++;
 
       var group = document.createElement('div');
@@ -332,6 +339,7 @@
                                ((window.ENVIRONMENT && window.ENVIRONMENT.account) || '?') +
                                ' catalogue · sort: ' + state.sorting;
         paint(result.items, { live: true, total: result.navigation.total });
+        currentTotal = result.navigation.total || result.items.length;
         drawFacets(result.facets);
         drawPager(result.navigation, state);
       },
