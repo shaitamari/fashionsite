@@ -149,63 +149,89 @@
          products.length + ' products', 'ok');
   }
 
-  /* --- waiting for the campaign ------------------------------------------- */
+  /* --- waiting for the campaign -------------------------------------------
+     The event fires once, during tag init, and does not replay: binding a
+     listener afterwards catches nothing (verified — `once` returns a handle
+     and no payload arrives). And it cannot be bound at file-load time either,
+     because `Insider.eventManager` does not exist until ins.js has run.
+
+     So poll for eventManager itself, at a short interval, and attach the
+     listener the moment it appears. That is early enough to be ahead of
+     campaign resolution while not depending on script order.
+
+     There is no fetch alternative: the campaign object carries a strategyId
+     but no products, and the tag exposes no Smart Recommender namespace. The
+     event is the only route.
+     ---------------------------------------------------------------------- */
   function onRecommendation(cb) {
     var done = false;
+    var bound = false;
+
     function deliver(data) {
       if (done || !data) return;
       done = true;
       cb(data);
     }
 
-    // 1. The documented path.
-    try {
-      if (window.Insider && Insider.eventManager && Insider.eventManager.once) {
-        Insider.eventManager.once('ins-sr:only-api-campaign:load', function (ev, data) {
+    function tryBind() {
+      if (bound) return true;
+      try {
+        var em = window.Insider && Insider.eventManager;
+        if (!em || !em.once) return false;
+        em.once('ins-sr:only-api-campaign:load', function (ev, data) {
           deliver(data);
         });
-      }
-    } catch (e) {}
-
-    // 2. In case the event fired before this file ran. The tag keeps the
-    //    resolved payload on the campaign object, so poll briefly for it.
-    var tries = 0;
-    var timer = setInterval(function () {
-      if (done || ++tries > 60) { clearInterval(timer); return; }
-      try {
-        var camp = window.Insider && Insider.campaign &&
-                   Insider.campaign.get(RECO.variationId);
-        if (camp && camp.products && camp.products.length) {
-          clearInterval(timer);
-          deliver({ campaignId: RECO.campaignId,
-                    variationId: RECO.variationId,
-                    products: camp.products });
+        // Some builds dispatch the plural form; binding both is harmless.
+        if (em.on) {
+          em.on('ins-sr:only-api-campaign:load', function (ev, data) {
+            deliver(data);
+          });
         }
-      } catch (e) {}
-    }, 250);
+        bound = true;
+        return true;
+      } catch (e) { return false; }
+    }
 
-    // 3. Give up quietly. No campaign is a legitimate outcome — the widget
-    //    simply does not appear — so this is a note rather than an error.
+    // Bind immediately if the tag is already there, otherwise watch for it.
+    if (!tryBind()) {
+      var bindTimer = setInterval(function () {
+        if (tryBind()) clearInterval(bindTimer);
+      }, 20);
+      setTimeout(function () { clearInterval(bindTimer); }, 20000);
+    }
+
+    // Give up quietly. No campaign is a legitimate outcome — the widget
+    // simply does not appear — so this is a note rather than an error.
     setTimeout(function () {
       if (!done) {
-        clearInterval(timer);
         note('Smart Recommender: no campaign resolved for this page', 'warn');
       }
-    }, 16000);
+    }, 20000);
   }
 
   /* --- public ------------------------------------------------------------- */
+  var pending = null;   // payload that arrived before mount() was called
+  var mounts = [];      // hosts waiting for a payload
+
+  // Start listening the moment this file runs, not when mount() is called.
+  // mount() is invoked from the bottom of the page; campaign resolution can
+  // easily beat it.
+  onRecommendation(function (data) {
+    pending = data;
+    mounts.splice(0).forEach(function (m) { m(data); });
+  });
+
   window.Recs = {
     enabled: RECO.enabled !== false,
 
-    // mount('#reco', { title: 'You might also like' })
+    // mount('#reco-product', { title: 'You might also like' })
     mount: function (target, opts) {
       opts = opts || {};
       var host = typeof target === 'string' ? document.querySelector(target) : target;
       if (!host) return;
       host.hidden = true;
 
-      onRecommendation(function (data) {
+      function paint(data) {
         var products = data.products || [];
         if (!products.length) {
           note('Smart Recommender returned no products', 'warn');
@@ -218,7 +244,10 @@
           host.parentNode.insertBefore(h, host);
         }
         render(host, products, data.campaignId, data.variationId);
-      });
+      }
+
+      if (pending) paint(pending);
+      else mounts.push(paint);
     }
   };
 })();
