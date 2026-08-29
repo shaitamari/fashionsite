@@ -19,10 +19,26 @@
     try { localStorage.setItem(key, JSON.stringify(value)); } catch (e) {}
   }
 
-  /* --- visitor identity --------------------------------------------------- */
+  /* --- visitor identity ---------------------------------------------------
+     The uuid must NEVER change, signed in or not.
+
+     Insider's Identity Resolution treats uuid as an identifier, and merges
+     an anonymous profile into a known one only when an incoming request
+     shares an identifier value with the existing profile. If the uuid is
+     swapped for the account id at sign-in, the two sessions have no shared
+     identifier and Insider correctly creates two unrelated profiles — the
+     anonymous browsing history is stranded and the "becomes known" moment
+     produces an empty profile.
+
+     So: one stable uuid for the lifetime of the browser, and let email
+     arrive on top of it at sign-in. Then the uuid links the sessions on this
+     device and email links the person across devices, which is what the
+     identifier priority (email 1, uuid 3) is designed for.
+
+     The account id is still sent, as a custom attribute, so it is visible on
+     the profile without participating in matching.
+     ---------------------------------------------------------------------- */
   function visitorId() {
-    var user = currentUser();
-    if (user && user.uuid) return user.uuid;
     var id = read(KEY.visitor, null);
     if (!id) {
       id = (crypto.randomUUID ? crypto.randomUUID()
@@ -249,7 +265,10 @@
         loyalty_points: typeof u.loyalty_points === 'number' ? u.loyalty_points : 0,
         preferred_category: u.preferred_category || preferredCategory(),
         signup_date: u.signup_date,
-        is_vip: u.membership_tier === 'Gold'
+        is_vip: u.membership_tier === 'Gold',
+        // The store's own account id. An attribute, not an identifier — the
+        // uuid above is what Insider matches on, and it must stay stable.
+        account_id: u.uuid || undefined
       }
     });
   }
