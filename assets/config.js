@@ -112,10 +112,10 @@ window.SITE_CONFIG = {
    Safe to run before or after vertical.js loads: it re-runs on DOM ready.
    -------------------------------------------------------------------------- */
 (function () {
+  // vertical.js puts account / partnerId / locale / currency on
+  // window.ENVIRONMENT. window.VERTICAL is the catalog object, not this.
   function currentAccount() {
-    var v = window.VERTICAL || window.CURRENT_VERTICAL || {};
-    return v.partnerName || v.account ||
-           (window.SITE_CONFIG && window.SITE_CONFIG.partnerName) || null;
+    return (window.ENVIRONMENT && window.ENVIRONMENT.account) || null;
   }
 
   function apply() {

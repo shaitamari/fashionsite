@@ -24,13 +24,14 @@
   var CFG = (window.SITE_CONFIG || {}).eureka || {};
   var READY_TIMEOUT = 6000;
 
-  /* --- the active vertical ------------------------------------------------
-     vertical.js resolves brand, account, locale and currency from the
-     hostname. Read it defensively: this file must not care what it is called
-     or whether it has loaded yet.
+  /* --- the active environment ---------------------------------------------
+     vertical.js resolves account, partnerId, locale and currency from the
+     hostname and puts them on window.ENVIRONMENT. (window.VERTICAL is a
+     different thing — the catalog object with brand, theme and labels.)
+     Read defensively: this file must not break if it has not loaded yet.
      ---------------------------------------------------------------------- */
-  function vertical() {
-    return window.VERTICAL || window.CURRENT_VERTICAL || {};
+  function environment() {
+    return window.ENVIRONMENT || {};
   }
 
   /* --- waiting for the tag ------------------------------------------------
@@ -156,7 +157,7 @@
     if (v == null) return null;
     if (typeof v === 'number') return v;
     if (typeof v === 'object') {
-      var cur = vertical().currency ||
+      var cur = environment().currency ||
                 (window.SITE_CONFIG && window.SITE_CONFIG.currency) ||
                 'EUR';
       if (v[cur] != null) return v[cur];

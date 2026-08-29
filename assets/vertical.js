@@ -32,15 +32,28 @@
      A page carries one Insider tag, and a tag belongs to one account. So the
      account is decided by the hostname, via a suffix on the subdomain:
 
-         beauty.insiderdemo.com           -> salesdemo
+         beauty.insiderdemo.com           -> partnersandbox   (temporary)
          beauty-sandbox.insiderdemo.com   -> partnersandbox
 
      Locale and currency travel with the account, because they have to match
      the catalog the feed was loaded into.
+
+     TEMPORARY — every subdomain currently points at partnersandbox.
+     salesdemo has no working catalog or Eureka campaign for this build yet,
+     so a bare subdomain served the wrong catalogue and Eureka returned
+     records the renderer could not read. Rather than have half the estate
+     broken, both environments resolve to the account that actually works.
+
+     TO RESTORE the split once salesdemo's catalog is fixed: put the
+     commented values below back into 'default'. Nothing else changes —
+     the suffix mechanism is untouched and '-sandbox' keeps working
+     throughout, so the switch is one edit here plus a deploy.
      --------------------------------------------------------------------- */
   var ENVIRONMENTS = {
     'default': {
-      suffix: null, account: 'salesdemo', partnerId: '10002548',
+      // Restore when salesdemo is ready:
+      //   account: 'salesdemo', partnerId: '10002548',
+      suffix: null, account: 'partnersandbox', partnerId: '10006846',
       locale: 'en_GB', currency: 'EUR'
     },
     'sandbox': {
