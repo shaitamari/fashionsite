@@ -247,6 +247,30 @@
       other: 'Other'
     };
 
+    /* --- basket shape ------------------------------------------------------
+       The tag reads the cart as:
+
+           getDataFromIO('basket', 'line_items')   ->  [{ product: {...},
+                                                          quantity: n }, ...]
+
+       The site pushes `items` instead, with the product fields flat on each
+       entry and quantity among them. Two mismatches, and both fail silently:
+       the tag sees an empty basket, logs a "Cart Clearance" event on the cart
+       page, and never records add-to-cart or abandoned-cart behaviour.
+
+       Translate rather than rename, and keep `items` in place as well so
+       anything reading the original shape still works.
+       ------------------------------------------------------------------- */
+    function toLineItems(items) {
+      if (!items || !items.length) return [];
+      return items.map(function (it) {
+        // Already wrapped — leave it alone.
+        if (it && it.product) return it;
+        var qty = it && it.quantity != null ? it.quantity : 1;
+        return { product: it, quantity: qty };
+      });
+    }
+
     function applyPush(entry) {
       if (!entry || !entry.type) return;
       var type = String(entry.type).toLowerCase();
@@ -263,8 +287,12 @@
             Object.keys(entry.value).forEach(function (k) {
               io.basket[k] = entry.value[k];
             });
+            io.basket.line_items = toLineItems(entry.value.items ||
+                                               entry.value.line_items);
           } else if (type === 'purchase' || type === 'confirmation') {
-            io.transaction = entry.value;
+            io.transaction = entry.value || {};
+            io.transaction.line_items = toLineItems(entry.value &&
+              (entry.value.items || entry.value.line_items));
           } else if (type === 'category') {
             io.listing = entry.value;
           }
