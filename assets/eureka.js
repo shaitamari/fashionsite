@@ -274,6 +274,41 @@
   }
 
   /* --- category listing --------------------------------------------------- */
+  /* --- vertical scoping ---------------------------------------------------
+     One catalog serves all twelve verticals, so every Eureka request has to
+     be constrained to the vertical the hostname resolved to. Without it the
+     beauty store searches all 17,092 products and returns supermarket
+     biscuits for "lipstick".
+
+     The value is the top level of the category path — `Beauty` in
+     `Beauty > Makeup > Lip`. build.py writes it from the vertical's
+     `subvertical` field, and it lands on every record's taxonomy, so read it
+     from the catalog rather than duplicating the config here. That way a new
+     vertical needs no change in this file.
+
+     Scoping site-side rather than per-campaign means one shared campaign
+     serves every vertical, which is the whole point of the single-locale
+     design.
+     ---------------------------------------------------------------------- */
+  function verticalName() {
+    // Explicit config wins, if a vertical ever needs to override it.
+    if (CFG.verticalCategory) return CFG.verticalCategory;
+    var v = window.VERTICAL || {};
+    if (v.vertical_label) return v.vertical_label;
+    var first = (window.Store && window.Store.catalog && window.Store.catalog[0]) || null;
+    if (first && first.taxonomy && first.taxonomy.length) return first.taxonomy[0];
+    return null;
+  }
+
+  // Eureka takes filters as `a={field}~{value}` pairs; the SDK wraps that as
+  // a facets array. `category` is the facet configured on the en_GB locale.
+  function verticalFacet(extra) {
+    var name = verticalName();
+    var facets = (extra || []).slice();
+    if (name) facets.push({ field: 'category', values: [name] });
+    return facets;
+  }
+
   function listing(opts) {
     var category = opts.category;
     var state = { page: 1, sorting: CFG.defaultSorting || 'Relevancy', campId: null, control: false };
@@ -302,7 +337,8 @@
       var size = CFG.pageSize || 24;
       Insider.eureka.fetch.productListing(state.campId, 'Category', category, {
         pagination: { from: (state.page - 1) * size, size: size },
-        sorting: state.sorting
+        sorting: state.sorting,
+        facets: verticalFacet(state.facets)
       }).then(function (response) {
         var r = readResponse(response);
         window.insDebugNote('Eureka listing: ' + r.items.length + ' of ' +
@@ -383,7 +419,8 @@
       var size = CFG.pageSize || 24;
       Insider.eureka.fetch.search(state.campId, query, {
         pagination: { from: (state.page - 1) * size, size: size },
-        sorting: state.sorting
+        sorting: state.sorting,
+        facets: verticalFacet(state.facets)
       }).then(function (response) {
         var r = readResponse(response);
         state.total = r.navigation.total || r.items.length;
