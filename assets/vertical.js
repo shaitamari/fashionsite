@@ -466,6 +466,74 @@
         io.basket = io.basket || {};
         io.basket.currency = entry.value;
       }
+
+      /* --- custom events ----------------------------------------------------
+         Everything above translates a push into page data on the insider
+         object, which the tag reads. An EVENT has nowhere to live there — it
+         is not page state — so custom_event pushes had no route at all and
+         went nowhere. That is why flow.html's `fitting_booked` never landed:
+         the page is correct, the queue that carries it is not consumed.
+
+         Insider.track is the SDK's own entry point and works on this account
+         even with the queue path off. Confirmed by probe:
+
+             Insider.track('custom_event', [{ event_name: …, event_params: … }])
+
+         Same two arguments as the queue entry, split. So forward it.
+
+         DELIBERATELY ONLY custom_event. Every other type already reaches the
+         platform through the insider object above, and forwarding those too
+         would send each one twice. If the other types are ever needed here,
+         confirm they are not already landing before widening this.
+
+         Remove the whole thing once `inioa` is enabled — the queue will be
+         drained natively and this becomes a duplicate. */
+      if (type === 'custom_event' && entry.value) {
+        trackEvent(entry.value);
+      }
+    }
+
+    /* ins.js may not have run yet when the first event is pushed, so hold
+       anything that arrives early and flush once Insider.track exists.
+       Gives up after about fifteen seconds rather than polling forever. */
+    var pendingEvents = [];
+
+    function flushEvents() {
+      if (!(window.Insider && typeof Insider.track === 'function')) return false;
+      while (pendingEvents.length) {
+        var value = pendingEvents.shift();
+        try {
+          Insider.track('custom_event', value);
+          if (window.insDebugNote) {
+            var name = (value && value[0] && value[0].event_name) || 'event';
+            window.insDebugNote('custom event sent via Insider.track: ' + name, 'ok');
+          }
+        } catch (e) {
+          if (window.insDebugNote) {
+            window.insDebugNote('Insider.track threw on a custom event: ' +
+                                (e && e.message), 'error');
+          }
+        }
+      }
+      return true;
+    }
+
+    function trackEvent(value) {
+      pendingEvents.push(value);
+      if (flushEvents()) return;
+      if (trackEvent.waiting) return;
+      trackEvent.waiting = true;
+      var tries = 0;
+      var t = setInterval(function () {
+        if (flushEvents() || ++tries > 600) {
+          clearInterval(t);
+          trackEvent.waiting = false;
+          if (tries > 600 && window.insDebugNote) {
+            window.insDebugNote('Insider.track never appeared — ' +
+                                pendingEvents.length + ' custom event(s) dropped', 'error');
+          }
+        }
+      }, 25);
     }
 
     // Anything already queued before this ran.
