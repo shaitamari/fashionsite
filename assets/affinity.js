@@ -85,7 +85,65 @@
     write(list);
   }
 
+  /* Colour families.
+
+     The catalogue carries "Navy", "Dark Navy", "Rich Blue", "Baby Blue" and
+     "Blue" as separate tokens, and matching on the literal string means each
+     builds its own signal — so a shopper who has plainly been looking at blue
+     dresses gets no blue preference at all, just five weak ones.
+
+     A person who looks at navy and then at cobalt has a preference for blue.
+     These groupings say so. They are deliberately coarse: wine is kept apart
+     from red, and beige from brown, because those genuinely are different
+     preferences on a rail rather than different words for one. */
+  var FAMILIES = {
+    blue:   ['navy', 'cobalt', 'azure', 'denim', 'indigo', 'marine', 'agate',
+             'powder', 'sky', 'blue'],
+    teal:   ['turquoise', 'aqua', 'cyan', 'teal'],
+    green:  ['mint', 'sage', 'olive', 'moss', 'forest', 'lichen', 'lime',
+             'jade', 'nori', 'emerald', 'green'],
+    red:    ['crimson', 'chilli', 'scarlet', 'ruby', 'red'],
+    wine:   ['burgundy', 'maroon', 'oxblood', 'merlot', 'wine', 'cherry'],
+    pink:   ['blush', 'rose', 'magenta', 'fuchsia', 'coral', 'salmon',
+             'raspberry', 'pink'],
+    purple: ['violet', 'lilac', 'lavender', 'plum', 'mulberry', 'mauve', 'purple'],
+    orange: ['apricot', 'peach', 'rust', 'terra', 'copper', 'bronze',
+             'tangerine', 'safflower', 'orange'],
+    yellow: ['butter', 'mustard', 'gold', 'honey', 'amber', 'champagne',
+             'lemon', 'yellow'],
+    brown:  ['chocolate', 'cocoa', 'espresso', 'chestnut', 'walnut', 'caramel',
+             'mocha', 'tortoiseshell', 'tort', 'coffee', 'brown'],
+    beige:  ['sandstone', 'almond', 'taupe', 'nude', 'oat', 'biscuit', 'latte',
+             'camel', 'sand', 'tan', 'beige', 'oyster', 'pebble'],
+    white:  ['ivory', 'cream', 'chalk', 'vanilla', 'pearl', 'coconut', 'cloud',
+             'opalite', 'white'],
+    grey:   ['charcoal', 'slate', 'granite', 'silver', 'pewter', 'steel',
+             'stone', 'platinum', 'titanium', 'grey', 'gray'],
+    black:  ['black', 'jet', 'onyx']
+  };
+
+  var FAMILY_WORDS = (function () {
+    var out = [];
+    Object.keys(FAMILIES).forEach(function (fam) {
+      FAMILIES[fam].forEach(function (w) { out.push({ w: w, fam: fam }); });
+    });
+    // Longest word first, so "sandstone" is not read as "sand" and
+    // "tortoiseshell" is not read as "tort".
+    return out.sort(function (a, b) { return b.w.length - a.w.length; });
+  })();
+
+  /* The family a token belongs to, or its hex as a fallback for colours the
+     list does not cover, so an unrecognised word still groups with itself. */
   function colourKey(token) {
+    var t = String(token || '').toLowerCase();
+    if (!t) return null;
+    var best = null, at = Infinity;
+    FAMILY_WORDS.forEach(function (e) {
+      var i = t.indexOf(e.w);
+      // Earliest match wins: "Carolina Blue" is blue, "Dark Navy" is blue.
+      if (i > -1 && i < at) { at = i; best = e.fam; }
+    });
+    if (best) return best;
     return (window.Store && window.Store.swatchHex && window.Store.swatchHex(token)) || null;
   }
 
@@ -109,6 +167,12 @@
       var label = Object.keys(slot.labels).sort(function (a, b) {
         return slot.labels[b] - slot.labels[a];
       })[0];
+      /* Show the family name when there is one — "Blue" rather than whichever
+         of Navy, Rich Blue or Baby Blue happened to be seen most, since the
+         family is what the preference actually is. */
+      if (dim === 'colour' && FAMILIES[slot.key]) {
+        label = slot.key.charAt(0).toUpperCase() + slot.key.slice(1);
+      }
       return { value: label, key: slot.key, score: slot.score };
     }).sort(function (a, b) { return b.score - a.score; });
   }
