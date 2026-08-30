@@ -126,8 +126,16 @@
        the search column of that second row, directly beneath the input. */
     var bar = box.parentNode;
     if (bar && getComputedStyle(bar).display === 'grid') {
+      /* The search box is `max-width: 520px; justify-self: center`, so it sits
+         centred in a much wider column. Aligning the dare to the column's start
+         leaves it floating well left of the input. Mirror the box instead —
+         same width, same centring — then left-align the text inside it, so the
+         dare lines up with where the input actually begins. */
+      var cs = getComputedStyle(box);
       a.style.gridColumn = '2';
-      a.style.justifySelf = 'start';
+      a.style.justifySelf = cs.justifySelf || 'center';
+      a.style.maxWidth = cs.maxWidth;
+      a.style.width = '100%';
       a.style.marginLeft = '0';
       a.style.marginTop = '.45rem';
       bar.appendChild(a);
@@ -170,7 +178,7 @@
   }
 
   var STYLE = '' +
-    '.dare{display:inline-flex;align-items:center;gap:.4rem;margin-left:.75rem;' +
+    '.dare{display:flex;align-items:center;justify-content:flex-start;gap:.4rem;' +
       'font-size:.8125rem;color:var(--muted,#888);text-decoration:none;' +
       'white-space:nowrap;transition:color .15s}' +
     '.dare:hover{color:var(--accent,#333)}' +
