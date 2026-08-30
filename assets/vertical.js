@@ -198,6 +198,83 @@
        The uuid matters more than it looks: the panel's User Profiles detail
        page is keyed on it. Without this, no profile exists to open.
        ------------------------------------------------------------------ */
+    /* --- the profile, synchronously ---------------------------------------
+       THE PROBLEM THIS SOLVES. The merge below waits for window.Store, which
+       loads after this file AND after the catalog — catalogs/home.js is 8.9MB,
+       so it can be seconds away. ins.js does not wait. The Hit API builds its
+       payload during init from whatever io.user holds at that moment, which
+       was language and country and nothing else, and it never rebuilds.
+
+       The result was an asymmetry that looked like nothing was working, and
+       was worse than that: CUSTOM attributes still landed, because the merge
+       calls sendUserAttributes() explicitly once Store appears. STANDARD ones
+       — email, name, surname, phone_number, city, the opt-ins — had no second
+       chance and were lost silently.
+
+       store.js is not actually needed for any of this. signIn() writes the
+       profile to localStorage synchronously, and this file runs before the
+       tag. So read storage directly and build io.user here, with no dependency
+       on load order. The merge below still runs afterwards and refines what it
+       finds — preferred_category comes from view history that only store.js
+       tracks — but the identity no longer depends on it arriving in time.
+
+       Deliberately duplicates a little of userPayload(). The alternative is
+       moving store.js ahead of the catalog, which is a bigger change to a file
+       every page depends on, for a workaround that should disappear the moment
+       Web SDK ingestion is enabled on the account.
+       ------------------------------------------------------------------ */
+    (function seedProfileFromStorage() {
+      function readJSON(key) {
+        try {
+          var raw = localStorage.getItem(key);
+          return raw ? JSON.parse(raw) : null;
+        } catch (e) { return null; }
+      }
+
+      // Same keys store.js uses. Kept in sync by hand; if store.js renames
+      // them this goes quiet rather than wrong, which the debug note catches.
+      var visitor = null;
+      try { visitor = localStorage.getItem('lmn.visitor'); } catch (e) {}
+      var u = readJSON('lmn.user');
+
+      if (visitor) io.user.uuid = visitor;
+      io.user.gdpr_optin = true;
+
+      if (!u) {
+        if (window.insDebugNote) {
+          window.insDebugNote('insider_object: anonymous visitor seeded', 'ok');
+        }
+        return;
+      }
+
+      // Standard attributes. Only set what exists, so an absent field does not
+      // overwrite anything the merge finds later with an empty string.
+      [['email', 'email'], ['name', 'name'], ['surname', 'surname'],
+       ['phone_number', 'phone_number'], ['gender', 'gender'],
+       ['birthday', 'birthday'], ['city', 'city']].forEach(function (pair) {
+        if (u[pair[1]]) io.user[pair[0]] = u[pair[1]];
+      });
+
+      if (u.country) io.user.country = String(u.country).toUpperCase();
+      io.user.email_optin = !!u.email_optin;
+      io.user.sms_optin = !!u.sms_optin;
+      io.user.whatsapp_optin = !!u.whatsapp_optin;
+      if (u.gdpr_optin === false) io.user.gdpr_optin = false;
+
+      io.user.custom = io.user.custom || {};
+      io.user.custom.membership_tier = u.membership_tier || 'Bronze';
+      io.user.custom.loyalty_points =
+        typeof u.loyalty_points === 'number' ? u.loyalty_points : 0;
+      io.user.custom.is_vip = u.membership_tier === 'Gold';
+      if (u.signup_date) io.user.custom.signup_date = u.signup_date;
+      if (u.uuid) io.user.custom.account_id = u.uuid;
+
+      if (window.insDebugNote) {
+        window.insDebugNote('insider_object: profile seeded from storage — ' +
+          (u.email || 'no email') + ', before the tag', 'ok');
+      }
+    })();
+
     var merged = false;
 
     function mergeUserPayload() {
