@@ -185,6 +185,12 @@ main { padding-bottom: 5rem; }
         white-space: nowrap; }
 
 .card__more { font-size: .6875rem; color: var(--muted); margin-left: .1rem; }
+
+/* A colourway swatch navigates to that colour's own product, so it reads as
+   interactive and the current colour is ringed. */
+.swatch--link { cursor: pointer; }
+.swatch--link:hover { transform: scale(1.18); }
+.swatch.is-current { box-shadow: 0 0 0 1.5px var(--bg), 0 0 0 3px var(--ink); }
 .card__price { font-size: .9375rem; margin: 0; }
 .card__price .was { color: var(--muted); margin-right: .4rem; }
 .card__price .now { color: var(--sale); }

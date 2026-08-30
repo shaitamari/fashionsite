@@ -148,6 +148,70 @@
      So try the group key, and if that misses, look the product up by id in our
      own catalog and use ITS groupcode. Every product Eureka can return is in
      the local catalog, so this always resolves. */
+  /* --- colourways ---------------------------------------------------------
+     On a real fashion site, a colour swatch navigates to a DIFFERENT product
+     and sizes are the SKUs within it. The catalog is already in that shape —
+     one groupcode per colourway, sizes inside — but nothing links the
+     colourways to each other. This builds that link.
+
+     Styles are matched by name, since the same style in two colours arrives
+     as two products with the same invented brand+style name. That is not
+     perfect: of 117 fashion styles spanning several groupcodes, 47 are
+     genuine colourways, 6 are the same colour twice (name collisions from
+     the rebranding step) and 64 have no clean colour token because colour is
+     fused into `variant_label`. So this only renders where the colours are
+     real and distinct, and stays silent otherwise.
+
+     The proper fix is in the feed — a separate `color` field, which the XML
+     already carries and only the local catalog lacks. Until then, this. */
+  var SIZE_TOKEN = /^(xxs|xs|s|m|l|xl|xxl|one ?size|au ?\d+|uk ?\d+|eu ?\d+|\d+(\.\d+)?\s*(cm|mm|ml|g|kg|l)?)$/i;
+
+  // A group's colour is the first variant token that is not a size, and only
+  // when the whole group agrees on it.
+  function colourOfGroup(list) {
+    var found = {};
+    list.forEach(function (p) {
+      var first = String(p.variant_label || p.color || '').split('/')[0].trim();
+      if (first && !SIZE_TOKEN.test(first)) found[first] = 1;
+    });
+    var keys = Object.keys(found);
+    return keys.length === 1 ? keys[0] : null;
+  }
+
+  // style name -> [{ colour, hex, groupcode, href }], only where >1 distinct colour
+  var styleColourways = {};
+  (function buildColourways() {
+    var byName = {};
+    catalog.forEach(function (p) {
+      if (!p.name) return;
+      var n = byName[p.name] || (byName[p.name] = {});
+      (n[p.groupcode] || (n[p.groupcode] = [])).push(p);
+    });
+    Object.keys(byName).forEach(function (name) {
+      var gcs = Object.keys(byName[name]);
+      if (gcs.length < 2) return;
+      var out = [], seen = {};
+      gcs.forEach(function (gc) {
+        var colour = colourOfGroup(byName[name][gc]);
+        if (!colour || seen[colour]) return;   // unparseable, or a duplicate colour
+        seen[colour] = 1;
+        var cheapest = byName[name][gc][0];
+        byName[name][gc].forEach(function (x) {
+          var a = Number(x.unit_sale_price) || Number(x.unit_price) || Infinity;
+          var b = Number(cheapest.unit_sale_price) || Number(cheapest.unit_price) || Infinity;
+          if (a < b) cheapest = x;
+        });
+        out.push({ colour: colour, hex: swatchHex(colour) || '#cfcfcf',
+                   groupcode: gc, href: localHref(cheapest) });
+      });
+      if (out.length > 1) styleColourways[name] = out;
+    });
+  })();
+
+  function colourways(p) {
+    return (p && styleColourways[p.name]) || [];
+  }
+
   var warnedGroupless = false;
   function variantsOf(p) {
     if (!p) return [];
@@ -562,7 +626,43 @@
     var facets = variantCount > 1 ? variantFacets(p) : { swatches: [], chips: [] };
     var MAX_SW = 6, MAX_CH = 4;
 
-    if (facets.swatches.length > 1) {
+    /* Colourways first, where they exist: on a fashion card a colour swatch
+       should take you to that colour's product, not filter within this one.
+       Each dot is a link to a sibling groupcode, with the current one ringed.
+       Rendered as spans rather than anchors because the whole card is already
+       wrapped in one and nested anchors are invalid. */
+    var ways = colourways(p);
+    if (ways.length > 1) {
+      var wrow = document.createElement('div');
+      wrow.className = 'card__swatches';
+      ways.slice(0, MAX_SW).forEach(function (w) {
+        var dot = document.createElement('span');
+        dot.className = 'swatch swatch--link' +
+                        (w.groupcode === p.groupcode ? ' is-current' : '');
+        dot.style.background = w.hex;
+        dot.title = w.colour;
+        dot.setAttribute('role', 'link');
+        dot.setAttribute('tabindex', '0');
+        dot.setAttribute('aria-label', w.colour);
+        dot.addEventListener('click', function (ev) {
+          ev.preventDefault();
+          ev.stopPropagation();          // do not follow the card's own link
+          location.href = w.href;
+        });
+        dot.addEventListener('keydown', function (ev) {
+          if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); location.href = w.href; }
+        });
+        wrow.appendChild(dot);
+      });
+      if (ways.length > MAX_SW) {
+        var wmore = document.createElement('span');
+        wmore.className = 'card__more';
+        wmore.textContent = '+' + (ways.length - MAX_SW);
+        wrow.appendChild(wmore);
+      }
+      meta.insertBefore(wrow, priceNode);
+
+    } else if (facets.swatches.length > 1) {
       var row = document.createElement('div');
       row.className = 'card__swatches';
       facets.swatches.slice(0, MAX_SW).forEach(function (sw) {
@@ -688,7 +788,8 @@
     noteCategoryView: noteCategoryView, preferredCategory: preferredCategory,
     toggleWish: toggleWish, isWished: isWished,
     card: card, grid: grid, paintChrome: paintChrome,
-    variantsOf: variantsOf, variantFacets: variantFacets, swatchHex: swatchHex
+    variantsOf: variantsOf, variantFacets: variantFacets, swatchHex: swatchHex,
+    colourways: colourways
   };
 
   document.addEventListener('DOMContentLoaded', function () {
