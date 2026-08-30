@@ -267,6 +267,9 @@
   function readResponse(response) {
     var d = (response && response.data) || {};
     return {
+      // 'Success' means the query matched. 'SuccessFallback' means it matched
+      // NOTHING and Eureka substituted recommendations — see scopeFallback().
+      status: (response && response.status) || null,
       items: (d.items || []).map(normalize),
       navigation: d.navigation || { total: (d.items || []).length, totalPageCount: 1 },
       facets: d.aggregations || d.facets || d.filters || []
@@ -309,6 +312,62 @@
     return facets;
   }
 
+  /* --- fallback scoping ---------------------------------------------------
+     THE PROBLEM. When a query matches nothing, Eureka returns
+     status 'SuccessFallback' with substitute products — and it DROPS the
+     facets we sent. So the vertical filter above is silently ignored on
+     exactly the path where a wrong result is most visible: search "sofa" on
+     beauty and you get supermarket biscuits, linking off to
+     supermarket.insiderdemo.com. A prospect clicking one leaves the vertical.
+
+     Fixing it needs no panel work: every item carries `category` as an array
+     whose first element is the vertical, so filter client-side.
+
+     Comparison is deliberately loose. The category path uses the PLURAL
+     display form (`Supermarkets > Ingredients > All`) while the vertical key
+     is singular (`supermarket`). An equality test would drop every
+     supermarket result and reproduce Friday's silent-empty bug in a new
+     place. catKey() lowercases, strips non-letters and trims a trailing 's'
+     so both forms collapse to the same token.
+
+     Fails OPEN: if the vertical cannot be resolved, nothing is filtered. A
+     slightly wrong result beats an empty page you cannot explain.
+     ---------------------------------------------------------------------- */
+  function catKey(s) {
+    return String(s == null ? '' : s).toLowerCase().replace(/[^a-z]/g, '').replace(/s$/, '');
+  }
+
+  function inVertical(item, key) {
+    var top = (item.taxonomy && item.taxonomy[0]) || item.collection || '';
+    return catKey(top) === key;
+  }
+
+  /* Returns the response unchanged unless it is a fallback, in which case the
+     items are cut to the current vertical. `surface` is only for logging. */
+  function scopeFallback(r, surface) {
+    if (r.status !== 'SuccessFallback') return r;
+
+    var name = verticalName();
+    if (!name) {
+      window.insDebugNote('Eureka ' + surface + ': no matches, and the vertical could ' +
+                          'not be resolved, so fallback results are unscoped.', 'warn');
+      return r;
+    }
+
+    var key = catKey(name);
+    var before = r.items.length;
+    var kept = r.items.filter(function (it) { return inVertical(it, key); });
+
+    window.insDebugNote('Eureka ' + surface + ': no matches. Eureka returned ' + before +
+                        ' fallback items ignoring our category facet; ' + kept.length +
+                        ' are in ' + name + '.', 'warn');
+
+    r.items = kept;
+    r.navigation = { total: kept.length, totalPageCount: 1 };
+    r.fallback = true;
+    return r;
+  }
+
   function listing(opts) {
     var category = opts.category;
     var state = { page: 1, sorting: CFG.defaultSorting || 'Relevancy', campId: null, control: false };
@@ -340,7 +399,15 @@
         sorting: state.sorting,
         facets: verticalFacet(state.facets)
       }).then(function (response) {
-        var r = readResponse(response);
+        var r = scopeFallback(readResponse(response), 'listing');
+
+        // Nothing left after scoping — show our own catalog rather than an
+        // empty grid or another vertical's products.
+        if (!r.items.length) {
+          window.insDebugNote('Rendering local catalog instead.', 'warn');
+          return opts.onFallback();
+        }
+
         window.insDebugNote('Eureka listing: ' + r.items.length + ' of ' +
                             (r.navigation.total || 0) + ' items', 'ok');
         opts.onRender(r, state);
@@ -422,10 +489,19 @@
         sorting: state.sorting,
         facets: verticalFacet(state.facets)
       }).then(function (response) {
-        var r = readResponse(response);
+        var r = scopeFallback(readResponse(response), 'search "' + query + '"');
+
+        // Nothing in this vertical matched, and the substitutes were all from
+        // other verticals. Hand back to the site's own search, which renders a
+        // proper no-results state from the local catalog.
+        if (!r.items.length) {
+          window.insDebugNote('No results in this vertical. Rendering local results instead.', 'warn');
+          return opts.onFallback();
+        }
+
         state.total = r.navigation.total || r.items.length;
         window.insDebugNote('Eureka search "' + query + '": ' + r.items.length + ' of ' +
-                            state.total, 'ok');
+                            state.total + (r.fallback ? ' (fallback, scoped to vertical)' : ''), 'ok');
         opts.onRender(r, state);
         track(r.items, r.navigation);
       }).catch(function (e) {
