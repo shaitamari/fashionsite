@@ -34,6 +34,7 @@
 <script src="assets/store.js"></script>
 <script src="assets/explain.js"></script>
 <script src="assets/affinity.js"></script>
+<script src="assets/agent.js"></script>
 
 <!-- 3. Insider Tag — written by assets/vertical.js, because which
         account it points at depends on the hostname:
@@ -273,32 +274,72 @@
   /* Sizes. Siblings share a groupcode, and switching size is a NAVIGATION —
      each is its own catalog record and needs its own product view pushed.
 
-     The label is cleaned before display: `variant_label` is a compound string
-     like "Blue / AU 4", so a raw button reads "Blue / AU 4" when the colour is
-     already stated above it. Strip any token that resolves to a colour and
-     keep the rest. (Fixing this at source is item 1 of feed-fixes.md.) */
-  function sizeLabel(v) {
-    var parts = String(v.variant_label || v.size || '').split('/')
-      .map(function (t) { return t.trim(); })
-      .filter(function (t) {
-        return t && !(Store.swatchHex && Store.swatchHex(t));
-      });
-    return parts.join(' / ') || v.variant_label || '';
+     The button shows every dimension EXCEPT the one already named above it,
+     read from `variant_parts` — each option in source order, tagged with the
+     slot it landed in.
+
+     This used to split `variant_label` and drop any token that looked like a
+     colour, because the label was one compound string. That silently deleted
+     real differentiators: a sofa varying by Leg Finish lost "Walnut - Wood",
+     "Oak - Wood" and "Black - Metal" (all colour words) while keeping "Ebony",
+     "Chrome" and "Brass" (not in the list), so three buttons collapsed to
+     identical text. The feed now carries the fields separately, so there is
+     nothing left to guess. */
+  function sizeLabel(v, showColour) {
+    var parts = (v.variant_parts || []).filter(function (x) {
+      return showColour || x.slot !== 'color';
+    });
+    if (parts.length) {
+      return parts.map(function (x) { return x.value; }).join(' / ');
+    }
+    // Colour-only product: the colour IS the thing being chosen, so show it.
+    return v.color || v.variant_label || '';
+  }
+
+  /* Whether the colour is safe to hide. In fashion one groupcode is one
+     colourway, so the colour is constant across siblings and stating it on
+     every button is noise. In home a groupcode spans several upholstery
+     colours as well as sizes and hardware, so hiding it makes six genuinely
+     different variants read identically. Decide from the data rather than
+     assuming one shape. */
+  function colourVaries(list) {
+    var seen = {}, n = 0;
+    list.forEach(function (v) {
+      var c = v.color || '';
+      if (!seen[c]) { seen[c] = 1; n++; }
+    });
+    return n > 1;
+  }
+
+  /* What to call the row. One remaining dimension gets its own name — "Size",
+     "Room", "Cabin", "Level of cover". More than one, and no single name is
+     honest, so stay generic rather than calling a leg finish a fabric. */
+  function variantHeading(p, showColour) {
+    var dims = [], seen = {};
+    (p.variant_parts || []).forEach(function (x) {
+      if ((!showColour && x.slot === 'color') || seen[x.name]) return;
+      seen[x.name] = 1;
+      dims.push(x.name);
+    });
+    if (dims.length === 1) return dims[0];
+    if (dims.length > 1) return 'Options';
+    return p.color_label || p.option_name || 'Shade';
   }
 
   var siblings = Store.catalog.filter(function (x) {
     return x.groupcode === PRODUCT.groupcode && x.variant_label;
   });
+  var showColour = colourVaries(siblings);
+
   if (siblings.length > 1) {
     document.getElementById('variant-block').hidden = false;
-    document.getElementById('variant-label').textContent =
-      PRODUCT.option_name || (ways.length > 1 ? 'Size' : 'Shade');
+    document.getElementById('variant-label').textContent = variantHeading(PRODUCT, showColour);
     var host = document.getElementById('p-variants');
     siblings.forEach(function (sib) {
       var b = document.createElement('button');
       b.className = 'shade';
       b.type = 'button';
-      b.textContent = sizeLabel(sib);
+      b.textContent = sizeLabel(sib, showColour);
       b.setAttribute('aria-pressed', String(sib.id === PRODUCT.id));
       b.addEventListener('click', function () {
         if (sib.id !== PRODUCT.id) location.href = Store.localHref(sib);
