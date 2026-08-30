@@ -136,13 +136,66 @@
     (groups[k] = groups[k] || []).push(p);
   });
 
+  /* Find every variant of a product.
+
+     Eureka is inconsistent about groupcode across its two response shapes:
+     fallback items come back flat with `groupcode` present, but search results
+     are nested under `item_card`, which is a display subset that can omit it.
+     When that happens the key misses, the product looks like a group of one,
+     and the card shows a lone "Coral Red / AU 4" instead of a size row — while
+     the local-catalogue fallback right next to it groups correctly.
+
+     So try the group key, and if that misses, look the product up by id in our
+     own catalog and use ITS groupcode. Every product Eureka can return is in
+     the local catalog, so this always resolves. */
+  var warnedGroupless = false;
   function variantsOf(p) {
-    return groups[p && (p.groupcode || ('_' + p.id))] || (p ? [p] : []);
+    if (!p) return [];
+    var direct = groups[p.groupcode || ('_' + p.id)];
+    if (direct && direct.length > 1) return direct;
+
+    var local = byId(p.id);
+    if (local && local.groupcode) {
+      var viaLocal = groups[local.groupcode];
+      if (viaLocal && viaLocal.length > 1) {
+        if (!warnedGroupless && window.insDebugNote) {
+          warnedGroupless = true;
+          window.insDebugNote('Eureka returned products without a usable groupcode; ' +
+                              'variants resolved from the local catalog instead.', 'warn');
+        }
+        return viaLocal;
+      }
+    }
+    return direct || [p];
+  }
+
+  /* Build facets from Eureka's own variant data, when we have it.
+
+     Smart Variant Grouping is enabled, so Eureka returns the other variants in
+     `itemVariants` with SEPARATE `size` and `color` fields. That is strictly
+     better than parsing our local compound label ("Coral Red / AU 4"), because
+     it is the platform's own view of the catalog and needs no guessing about
+     which half of the string is a colour. */
+  function facetsFromEureka(list) {
+    var sw = [], ch = [], seenSw = {}, seenCh = {};
+    list.forEach(function (v) {
+      if (v.color && !seenSw[v.color]) {
+        seenSw[v.color] = 1;
+        sw.push({ label: v.color, hex: swatchHex(v.color) || '#cfcfcf' });
+      }
+      if (v.size && !seenCh[v.size]) { seenCh[v.size] = 1; ch.push(v.size); }
+    });
+    return { swatches: sw, chips: ch };
   }
 
   /* Returns { swatches: [{label,hex}], chips: [label] } for a product's group.
      Whichever list is longer wins in the card; both are capped by the caller. */
   function variantFacets(p) {
+    // Eureka's data wins when present — see facetsFromEureka().
+    if (p && p._variantData && p._variantData.length > 1) {
+      var f = facetsFromEureka(p._variantData);
+      if (f.swatches.length > 1 || f.chips.length > 1) return f;
+    }
     var vs = variantsOf(p);
     if (vs.length < 2) return { swatches: [], chips: [] };
 
@@ -482,7 +535,12 @@
         '</div>' +
       '</a>';
 
-    el.querySelector('.card__vendor').textContent = p.subcategory || p.collection || '';
+    // "All" is a filler leaf in the category path (Fashion > Dresses > All) and
+    // reads as noise on every card. Fall back to the level above it.
+    var vendorText = p.subcategory || '';
+    if (!vendorText || /^all$/i.test(vendorText)) vendorText = p.collection || '';
+    if (/^all$/i.test(vendorText)) vendorText = '';
+    el.querySelector('.card__vendor').textContent = vendorText;
     el.querySelector('.card__name').textContent = p.name;
 
     /* What a collapsed group shows under the name, in priority order:
@@ -493,7 +551,15 @@
        swatches, hotels and airlines on chips, because of what their data is. */
     var meta = el.querySelector('.card__meta');
     var priceNode = el.querySelector('.card__price');
-    var facets = p._variants > 1 ? variantFacets(p) : { swatches: [], chips: [] };
+
+    /* Ask the CATALOG how many variants this product has, not the list this
+       card came from. Eureka often returns a single row per product, so
+       `_variants` (set during collapse) is 1 even for a dress that comes in
+       ten sizes — which showed a lone "S" under the name as though that were
+       the only one. The catalog knows better. */
+    var group = variantsOf(p);
+    var variantCount = Math.max(group.length, p._variants || 1);
+    var facets = variantCount > 1 ? variantFacets(p) : { swatches: [], chips: [] };
     var MAX_SW = 6, MAX_CH = 4;
 
     if (facets.swatches.length > 1) {
@@ -535,9 +601,9 @@
     } else {
       // Verticals can name their variants: labels.variants = "cabins".
       var variantText = null;
-      if (p._variants > 1) {
+      if (variantCount > 1) {
         var lbl = ((window.VERTICAL || {}).labels || {}).variants || 'options';
-        variantText = p._variants + ' ' + lbl;
+        variantText = variantCount + ' ' + lbl;
       } else if (p.variant_label) {
         variantText = p.variant_label;
       }
@@ -549,14 +615,52 @@
       }
     }
 
+    /* A "from" price has to be the cheapest in the GROUP. When the card came
+       straight from Eureka rather than through collapse, p is whichever
+       variant matched, not the cheapest — so recompute against the catalog or
+       the price on the card contradicts the word "from". */
     var priceEl = el.querySelector('.card__price');
-    var from = p._variants > 1 ? 'from ' : '';
+    var from = '';
+    var showUnit = p.unit_price, showSale = p.unit_sale_price;
+    if (variantCount > 1 && p._variantData && p._variantData.length > 1) {
+      // Cheapest across Eureka's own variants.
+      var lo = Infinity, loOrig = null;
+      p._variantData.forEach(function (v) {
+        var n = Number(v.price);
+        if (isFinite(n) && n > 0 && n < lo) { lo = n; loOrig = Number(v.original_price) || n; }
+      });
+      if (isFinite(lo)) {
+        from = 'from ';
+        showSale = lo;
+        showUnit = loOrig && loOrig > lo ? loOrig : lo;
+        sale = showSale < showUnit;
+      } else {
+        from = 'from ';
+      }
+    } else if (variantCount > 1 && group.length > 1) {
+      var cheapest = group[0];
+      for (var gi = 1; gi < group.length; gi++) {
+        if (groupPrice(group[gi]) < groupPrice(cheapest)) cheapest = group[gi];
+      }
+      from = 'from ';
+      showUnit = cheapest.unit_price;
+      showSale = cheapest.unit_sale_price;
+      sale = showSale < showUnit;
+    } else if (variantCount > 1) {
+      from = 'from ';
+    }
+
     if (sale) {
       priceEl.innerHTML = '<s class="was"></s> <span class="now"></span>';
-      priceEl.querySelector('.was').textContent = money(p.unit_price);
-      priceEl.querySelector('.now').textContent = from + money(p.unit_sale_price);
+      priceEl.querySelector('.was').textContent = money(showUnit);
+      priceEl.querySelector('.now').textContent = from + money(showSale);
     } else {
-      priceEl.textContent = from + money(p.unit_price);
+      priceEl.textContent = from + money(showUnit);
+    }
+
+    function groupPrice(x) {
+      var n = Number(x.unit_sale_price);
+      return isFinite(n) && n > 0 ? n : Number(x.unit_price) || Infinity;
     }
 
     if (opts.onClick) el.querySelector('.card__link').addEventListener('click', opts.onClick);

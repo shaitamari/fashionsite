@@ -243,9 +243,16 @@
     var stock = card.in_stock != null ? card.in_stock
               : (card.stock_count != null ? (card.stock_count > 0 ? 1 : 0) : 1);
 
+    var variantList = readVariants(item);
+
     return {
       id: id,
-      groupcode: card.groupcode || (item.contentGroupId || '').replace('groupcode:', ''),
+      // Prefer whatever Eureka gave us, but fall back to the local record:
+      // the nested `item_card` shape used by search results can omit
+      // groupcode entirely, which breaks variant grouping on the card.
+      groupcode: card.groupcode ||
+                 (item.contentGroupId || '').replace('groupcode:', '') ||
+                 (local && local.groupcode) || '',
       name: card.name || card.title || (local && local.name) || id,
       taxonomy: cat || (local && local.taxonomy) || [],
       subcategory: (cat && cat[cat.length - 1]) || (local && local.subcategory) || '',
@@ -260,8 +267,35 @@
       // URL Eureka returned, which may point off-site.
       url: local ? window.Store.localHref(local) : (card.url || '#'),
       _eureka: true,
-      _raw: item
+      _raw: item,
+
+      /* Smart Variant Grouping is enabled on this account, so Eureka already
+         collapses variants and returns the rest in `itemVariants`. That data
+         is cleaner than ours: separate `size` and `color` fields, where the
+         local catalog only has a compound label like "Coral Red / AU 4".
+         Carry it through so the card can build chips and swatches from the
+         platform's own view of the catalog rather than re-deriving them. */
+      _variants: variantList.length > 1 ? variantList.length : undefined,
+      _variantData: variantList.length > 1 ? variantList : undefined
     };
+  }
+
+  /* One entry per variant: { size, color, price, in_stock }. Prices are
+     currency-keyed objects here as everywhere else in Eureka. */
+  function readVariants(item) {
+    var raw = item && item.itemVariants;
+    if (!Array.isArray(raw) || raw.length < 2) return [];
+    return raw.map(function (v) {
+      var vp = v.itemProperties || v;
+      return {
+        id: String(vp.item_id || vp.id || '').split(':')[0],
+        size: vp.size || null,
+        color: vp.color || null,
+        price: pickCurrency(vp.price),
+        original_price: pickCurrency(vp.original_price),
+        in_stock: vp.in_stock
+      };
+    });
   }
 
   /* Eureka returns one row per VARIANT, so a route with four cabins comes back
