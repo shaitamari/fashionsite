@@ -121,6 +121,8 @@
       'border-radius:4px;background:var(--alt,#fafafa)}' +
       '.reco__strategy-icon{flex:0 0 auto;display:flex;color:var(--accent,#666);' +
       'margin-top:.1rem}' +
+      '.reco__strategy-src{margin:0 0 .15rem;font-size:.6875rem;letter-spacing:.06em;' +
+      'text-transform:uppercase;color:var(--accent,#666);font-weight:500}' +
       '.reco__strategy-name{margin:0;font-size:.875rem;font-weight:500;' +
       'display:flex;align-items:center;gap:.5rem}' +
       '.reco__strategy-group{font-size:.6875rem;letter-spacing:.06em;' +
@@ -205,6 +207,22 @@
                      (ICONS[def.icon] || ICONS.similar) + '</svg>';
 
     var text = document.createElement('div');
+
+    /* Name the PRODUCT, not just the algorithm. The strip said "New arrivals /
+       Generic", which describes what ran but never says what ran it — a viewer
+       has no way to know this row came from Smart Recommender rather than
+       something the site worked out for itself.
+
+       The campaign id goes next to it because it is checkable. Anyone can open
+       that campaign in the panel and see the same number, which turns a claim
+       into evidence. */
+    var cfg = slotConfig(slot);
+    var src = document.createElement('p');
+    src.className = 'reco__strategy-src';
+    src.textContent = 'Smart Recommender' +
+      (cfg.campaignId ? '  \u00b7  campaign ' + cfg.campaignId : '');
+    text.appendChild(src);
+
     var head = document.createElement('p');
     head.className = 'reco__strategy-name';
     head.textContent = def.label;
