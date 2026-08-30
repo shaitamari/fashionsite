@@ -292,6 +292,29 @@
     host.appendChild(wrap);
   }
 
+  function scopeToVertical(items) {
+    var name = (window.Store && window.Store.catalog && window.Store.catalog[0] &&
+                (window.Store.catalog[0].taxonomy || [])[0]) || null;
+    if (!name || !items.length) return items;
+
+    // The category path uses the plural display form ("Supermarkets") while
+    // the vertical key is singular. Compare loosely, as store.js does.
+    function key(v) {
+      return String(v == null ? '' : v).toLowerCase().replace(/[^a-z]/g, '').replace(/s$/, '');
+    }
+    var want = key(name);
+    var kept = items.filter(function (p) {
+      var top = (p.taxonomy && p.taxonomy[0]) || '';
+      return !top || key(top) === want;
+    });
+
+    if (kept.length !== items.length) {
+      note('Scoped ' + items.length + ' recommended products to ' + kept.length +
+           ' in ' + name, 'ok');
+    }
+    return kept.length ? kept : items;
+  }
+
   function addMore(row, n) {
     var more = document.createElement('span');
     more.className = 'card__more';
@@ -312,6 +335,22 @@
        surface does. The count is logged rather than shown, so the console
        still tells you what the campaign actually returned. */
     var normalized = products.map(normalize);
+
+    /* Scope to this store.
+
+       One catalogue serves all twelve verticals, and on a PDP the campaign's
+       dynamic filter handles this — it reads the category off the product
+       being viewed. A homepage has no viewed product, so nothing to read, and
+       New Arrivals happily returns the newest items across all 17,092 records:
+       supermarket ingredients and luxury handbags on a fashion homepage.
+
+       The alternative is a static category filter per campaign, which means
+       twelve campaigns instead of one. This is the same client-side scoping
+       eureka.js applies to search fallbacks, for the same reason.
+
+       Fails open: if the vertical cannot be resolved, nothing is filtered. */
+    normalized = scopeToVertical(normalized);
+
     var shown = normalized;
     if (window.Store && typeof window.Store.oneVariantEach === 'function') {
       try {
