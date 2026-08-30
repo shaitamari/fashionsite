@@ -33,6 +33,7 @@
 <script src="assets/vertical.js"></script>
 <script src="assets/store.js"></script>
 <script src="assets/explain.js"></script>
+<script src="assets/recs.js"></script>
 
 <!-- 3. Insider Tag — written by assets/vertical.js, because which
         account it points at depends on the hostname:
@@ -129,6 +130,17 @@
     </div>
   </section>
 
+  <!-- Second recommendation row. User based sits at the foot of the page by
+       convention, and that placement also means an empty row is survivable
+       rather than the first thing a visitor sees. -->
+  <section class="section wrap">
+    <div class="section__head">
+      <h2 class="h2" data-reco-foot-title>Picked for you</h2>
+      <span class="source" id="reco-homeFoot-note">Smart Recommender · waiting for campaign</span>
+    </div>
+    <div id="reco-homeFoot" hidden></div>
+  </section>
+
   <section class="section wrap">
     <div class="panel" style="max-width:540px">
       <p class="eyebrow">Newsletter</p>
@@ -210,6 +222,15 @@
   });
 
   watchReco('home');
+
+  // Smart Recommender. The slot is inferred from the host id, and the
+  // strategy strip reads config.reco.perAccount[account].slots[slot].
+  if (window.Recs && window.Recs.enabled) {
+    window.Recs.mount('#reco-home');
+    // The slot name is taken from the host id, so this reads
+    // config.reco.perAccount[account].slots.homeFoot.
+    window.Recs.mount('#reco-homeFoot');
+  }
 </script>
 </body>
 </html>

@@ -171,11 +171,27 @@
     auto:          '<path d="M12 3.5v3M12 17.5v3M3.5 12h3M17.5 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2"/><circle cx="12" cy="12" r="3.4"/>'
   };
 
-  function strategyStrip(host) {
-    if (RECO.showStrategy === false) return;
+  /* Resolve the config for one surface. Falls back to the account-level entry
+     so a single-campaign setup still works without slots. */
+  /* Resolution order, most specific first:
+       1. this vertical's override for this surface
+       2. the account's default for this surface
+       3. the account entry itself, so a single-campaign setup still works
+
+     A vertical override that names a strategy but has no campaignId is intent
+     rather than configuration — it still labels the strip correctly, which is
+     honest, but nothing renders until the campaign exists. */
+  function slotConfig(slot) {
     var acct = (window.ENVIRONMENT || {}).account;
     var per = (RECO.perAccount || {})[acct] || {};
-    var def = (RECO.strategies || {})[per.strategy];
+    var vert = ((per.perVertical || {})[window.VERTICAL_KEY] || {})[slot];
+    if (vert) return vert;
+    return ((per.slots || {})[slot]) || per;
+  }
+
+  function strategyStrip(host, slot) {
+    if (RECO.showStrategy === false) return;
+    var def = (RECO.strategies || {})[slotConfig(slot).strategy];
     if (!def) return;
 
     var wrap = document.createElement('div');
@@ -211,6 +227,17 @@
       n.className = 'reco__strategy-needs';
       n.textContent = def.needs;
       text.appendChild(n);
+    }
+
+    /* Some strategies degrade rather than fail. Saying so is honest, and it is
+       the stronger read: the row stays useful for a visitor the algorithm knows
+       nothing about. The payload does not report when a fallback fired, so this
+       is declared, not detected. */
+    if (def.fallback) {
+      var fb = document.createElement('p');
+      fb.className = 'reco__strategy-needs';
+      fb.textContent = 'Falls back to: ' + def.fallback;
+      text.appendChild(fb);
     }
 
     /* The three questions that come up in every recommendations demo:
@@ -272,10 +299,10 @@
     row.appendChild(more);
   }
 
-  function render(host, products, campaignId, variationId) {
+  function render(host, products, campaignId, variationId, slot) {
     ensureStyle();
     host.innerHTML = '';
-    strategyStrip(host);
+    strategyStrip(host, slot);
 
     var body = document.createElement('div');
     body.className = 'ins-web-smart-recommender-body recs__grid';
@@ -321,7 +348,17 @@
           '<p class="card__price"></p>' +
         '</div>';
 
-      box.querySelector('.card__vendor').textContent = p.subcategory;
+      // "All" is a filler leaf in the category path (Fashion > Dresses > All)
+      // and reads as noise on every card. Fall back to the level above it.
+      // Same rule as Store.card — recs has its own renderer, so it needs its
+      // own copy. Fixing it at source is feed-fixes.md #5.
+      var vendorText = p.subcategory || '';
+      if (!vendorText || /^all$/i.test(vendorText)) {
+        vendorText = (p.taxonomy && p.taxonomy.length > 1)
+          ? p.taxonomy[p.taxonomy.length - 2] : '';
+      }
+      if (/^all$/i.test(vendorText)) vendorText = '';
+      box.querySelector('.card__vendor').textContent = vendorText;
       box.querySelector('.card__name').textContent = p.name;
 
       // Same variant preview as the site's own cards — swatches where the
@@ -464,6 +501,8 @@
       var host = typeof target === 'string' ? document.querySelector(target) : target;
       if (!host) return;
       host.hidden = true;
+      // #reco-cart -> 'cart', so pages do not have to repeat themselves.
+      if (!opts.slot && host.id) opts.slot = host.id.replace(/^reco-/, '');
 
       function paint(data) {
         var products = data.products || [];
@@ -477,7 +516,7 @@
           h.textContent = opts.title;
           host.parentNode.insertBefore(h, host);
         }
-        render(host, products, data.campaignId, data.variationId);
+        render(host, products, data.campaignId, data.variationId, opts.slot);
       }
 
       if (pending) paint(pending);
