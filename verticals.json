@@ -280,7 +280,8 @@
           "options": "date"
         }
       ]
-    }
+    },
+    "hero_category": "Makeup"
   },
   "_template": {
     "_comment": "Copy this, rename the key, fill it in. Delete nothing else.",
@@ -459,7 +460,8 @@
           "options": "date"
         }
       ]
-    }
+    },
+    "hero_category": "Hotels"
   },
   "airlines": {
     "vertical": "Travel",
@@ -561,7 +563,8 @@
           "options": "date"
         }
       ]
-    }
+    },
+    "hero_category": "Long Haul"
   },
   "_environments": {
     "_README": [
@@ -708,7 +711,8 @@
           ]
         }
       ]
-    }
+    },
+    "hero_category": "Accounts"
   },
   "insurance": {
     "vertical": "Banking",
@@ -829,7 +833,8 @@
           ]
         }
       ]
-    }
+    },
+    "hero_category": "Motor"
   },
   "fintech": {
     "vertical": "Banking",
@@ -941,7 +946,8 @@
           ]
         }
       ]
-    }
+    },
+    "hero_category": "Business"
   },
   "fashion": {
     "vertical": "Retail",
@@ -1089,7 +1095,8 @@
           "options": "date"
         }
       ]
-    }
+    },
+    "hero_category": "Dresses"
   },
   "electronics": {
     "vertical": "Retail",
@@ -1193,7 +1200,8 @@
           "options": "date"
         }
       ]
-    }
+    },
+    "hero_category": "Speaker"
   },
   "telco": {
     "vertical": "Telco",
@@ -1409,7 +1417,8 @@
           ]
         }
       ]
-    }
+    },
+    "hero_category": "Iphone 17 Pro"
   },
   "home": {
     "vertical": "Retail",
@@ -1542,7 +1551,8 @@
           "options": "date"
         }
       ]
-    }
+    },
+    "hero_category": "Seating"
   },
   "luxury": {
     "vertical": "Retail",
@@ -1658,7 +1668,8 @@
           "options": "date"
         }
       ]
-    }
+    },
+    "hero_category": "Bags"
   },
   "supermarket": {
     "vertical": "Retail",
@@ -1769,6 +1780,7 @@
           "options": "date"
         }
       ]
-    }
+    },
+    "hero_category": "Ingredients"
   }
 }

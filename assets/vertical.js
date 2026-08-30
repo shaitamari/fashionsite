@@ -578,31 +578,38 @@
        that does not exist in fashion: page renders, Eureka declines to serve
        it, nought products.
 
-       Repoint anything aimed at a collection this vertical does not have, at
-       the first collection it does. window.COLLECTIONS is written by build.py
-       in `order`, so the first key is the one the vertical leads with — the
-       same one the nav shows first.
+       Repoint anything aimed at a collection this vertical does not have.
+       Destination is `hero_category` from verticals.json, chosen to match each
+       vertical's own hero copy — fashion says "Dress for the life you have"
+       and now lands on Dresses rather than Tops, which is merely first in the
+       order. Falls back to the first collection if none is declared.
 
        Only rewrites links whose target is genuinely absent, so a template that
-       already names a real collection is left alone. */
+       already names a real collection is left alone. And affinity.js sets the
+       hero href itself when it swaps the hero; it registers its handler after
+       this one, so it wins, which is correct — a hero about outerwear should
+       lead to outerwear. */
     (function fixCategoryLinks() {
       var cols = Object.keys(window.COLLECTIONS || {});
       if (!cols.length) return;
-      var first = cols[0];
+
+      var target = d.hero_category;
+      if (!target || cols.indexOf(target) === -1) {
+        if (target && window.insDebugNote) {
+          window.insDebugNote('hero_category "' + target + '" is not a collection ' +
+                              'in this vertical — falling back to "' + cols[0] + '"', 'warn');
+        }
+        target = cols[0];
+      }
 
       document.querySelectorAll('a[href*="category"]').forEach(function (a) {
         var href = a.getAttribute('href') || '';
         var m = /[?&]c=([^&#]*)/.exec(href);
         if (!m) return;
-        var target = decodeURIComponent(m[1]);
-        if (cols.indexOf(target) > -1) return;   // real collection here, leave it
+        if (cols.indexOf(decodeURIComponent(m[1])) > -1) return;   // real here, leave it
         a.setAttribute('href',
-          href.replace(/([?&]c=)[^&#]*/, '$1' + encodeURIComponent(first)));
+          href.replace(/([?&]c=)[^&#]*/, '$1' + encodeURIComponent(target)));
       });
-
-      if (window.insDebugNote && cols.indexOf('Makeup') === -1) {
-        window.insDebugNote('category links repointed to "' + first + '"', 'ok');
-      }
     })();
 
     // Journey wording — "Add to cart" becomes "Reserve", "Get a quote" and so on.
