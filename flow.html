@@ -213,8 +213,17 @@
          So the vertical declares it, in verticals.json as flow.attribute_field.
          Falls back to the first field where none is declared, which is what
          this always did. */
+      /* NOT gated on being signed in. Every visitor has a uuid from
+         visitorId(), so there is a profile to attach this to whether or not
+         they have ever given a name — which is the whole "personalise for
+         people who never signed up" argument.
+
+         This used to require Store.currentUser(). The flow form collects no
+         name or email, so on any browser that had not already been through
+         checkout the attribute was silently never written, and booking a
+         fitting did nothing at all. */
       var attrName = flow.attribute_field || (flow.fields[0] || {}).name;
-      if (attrName && params[attrName] && Store.currentUser()) {
+      if (attrName && params[attrName]) {
         Store.signIn({ preferred_store: params[attrName] });
         window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });
       }
