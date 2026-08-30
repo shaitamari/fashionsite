@@ -78,6 +78,178 @@ window.SITE_CONFIG = {
      --------------------------------------------------------------------- */
   reco: {
     enabled: true,
+
+    /* Name the strategy on the widget.
+
+       Academy's own overview says the recommendation process "appears as a
+       black box, with its workings remaining unclear". In a demo that is the
+       whole problem: a grid of products proves nothing, because a prospect
+       cannot tell personalisation from a static list. Saying which algorithm
+       produced the row, and what it reads, turns the widget into an argument.
+
+       Set showStrategy false to hide the strip without removing the config. */
+    showStrategy: true,
+
+    /* The algorithms, grouped as Academy groups them. `needs` is the honest
+       part — several of these are cold on a fresh account, and it is better to
+       say so on screen than to show an empty row and hope nobody asks. */
+    strategies: {
+      similar: {
+        label: 'Similar products',
+        group: 'AI similarity',
+        icon: 'similar',
+        blurb: 'Reads product descriptions and attributes to find items like the one being viewed.',
+        needs: 'Catalogue only — works from day one, including for new products.',
+        where: 'Large, well-described catalogues. It reads the words you already wrote, so it covers the long tail rather than only the bestsellers.',
+        pairs: 'Viewed together. Text says what a product is like; behaviour confirms which of those a shopper actually treats as alternatives.',
+        caveat: 'Only as good as your product copy. Thin descriptions give thin results.',
+        placement: 'Product page, first. Industry guidance is that if you can only run one recommendation unit anywhere, make it Similar Products on the PDP.'
+      },
+      visually_similar: {
+        label: 'Visually similar',
+        group: 'AI similarity',
+        icon: 'image',
+        blurb: 'Compares product images with a multimodal model — colour, shape, texture, style.',
+        needs: 'A valid image_url on each product. No behavioural data required.',
+        where: 'Apparel, furniture, jewellery, home decor — anywhere the look drives the decision. Fits how people actually shop these categories.',
+        pairs: 'Complementary. One finds the alternative, the other finds what goes with it.',
+        caveat: 'Image quality decides relevance. Clean, consistent shots on a plain background work best; busy lifestyle imagery works less well.',
+        placement: 'Product page and add-to-cart. Especially valuable when an item is out of stock in the shopper\u2019s size \u2014 it offers an alternative instead of a dead end.'
+      },
+      complementary: {
+        label: 'Complementary',
+        group: 'AI similarity',
+        icon: 'complementary',
+        blurb: 'Cross-sell chosen by AI category reasoning rather than co-purchase counts.',
+        needs: 'Catalogue only.',
+        where: 'The cart and the confirmation page, where the question is what goes with this rather than what is like it.',
+        pairs: 'Similar or Visually similar on the product page, Complementary at the cart.',
+        caveat: 'It reasons about categories rather than observing real baskets, so it will not find the odd pairing your customers actually make.',
+        placement: 'Cart and checkout. Last-minute add-ons at the cart are among the highest-converting placements there are.'
+      },
+      viewed_together: {
+        label: 'Viewed together',
+        group: 'Behavioural',
+        icon: 'together',
+        blurb: 'Products explored in the same sessions as this one, in this locale.',
+        needs: 'Session traffic. Cold on a new account.',
+        where: 'High-traffic catalogues where sessions are long enough to reveal genuine consideration sets.',
+        pairs: 'Similar, which covers the products behaviour has not reached yet.',
+        caveat: 'Needs session volume. Cold on a new account and on newly added products.',
+        placement: 'Product page, alongside Similar.'
+      },
+      purchased_together: {
+        label: 'Purchased together',
+        group: 'Behavioural',
+        icon: 'cart',
+        blurb: 'Items frequently bought alongside this one, ranked by purchase frequency.',
+        needs: 'Purchase history. Cold on a new account.',
+        where: 'Grocery, consumables, accessories — anywhere real baskets contain several items.',
+        pairs: 'Complementary, which fills the gap for products with no purchase history.',
+        caveat: 'Needs purchase volume, and reflects what people already buy together rather than what they might.',
+        placement: 'Cart. The classic AOV placement.'
+      },
+      purchased_with_last: {
+        label: 'Purchased with last purchased',
+        group: 'Personalised',
+        icon: 'user',
+        blurb: 'Bought alongside the visitor\u2019s own most recent purchase.',
+        needs: 'A known visitor with a purchase behind them.',
+        where: 'Repeat-purchase categories, and returning customers with a history.',
+        pairs: 'User based, for the visitors who browse more than they buy.',
+        caveat: 'Silent for anyone who has not bought yet, which is most first-time visitors.',
+        placement: 'Homepage and account pages for returning customers.'
+      },
+      user_based: {
+        label: 'User based',
+        group: 'Personalised',
+        icon: 'user',
+        blurb: 'Built from this visitor\u2019s own views, add-to-carts and purchases.',
+        needs: 'Browsing history for this visitor.',
+        where: 'Returning visitors and logged-in customers.',
+        pairs: 'A generic strategy as the fallback, for visitors with no history.',
+        caveat: 'Needs history for this specific visitor. Nothing to say to a first-time anonymous session.',
+        placement: 'Homepage for returning visitors \u2014 pick up where they left off.'
+      },
+      top_sellers: {
+        label: 'Top sellers',
+        group: 'Generic',
+        icon: 'trend',
+        blurb: 'Best-selling products over the lookback period. Same row for everyone.',
+        needs: 'Purchase data.',
+        where: 'Homepages and cold starts, where nothing is known about the visitor.',
+        pairs: 'Anything personalised, as the fallback beneath it.',
+        caveat: 'The same row for everyone. Reliable, not personal — and it reinforces what already sells rather than surfacing the rest.',
+        placement: 'Homepage, for first-time visitors with no history.'
+      },
+      most_popular: {
+        label: 'Most popular',
+        group: 'Generic',
+        icon: 'trend',
+        blurb: 'Ranked by total page views over the lookback period.',
+        needs: 'Page-view traffic.',
+        where: 'Homepages, and categories where views are a better signal than sales.',
+        pairs: 'Similar, to open up the catalogue beyond the popular few.',
+        caveat: 'Views are not intent. Popular is not the same as likely to convert.',
+        placement: 'Homepage and category pages, for new visitors.'
+      },
+      trending: {
+        label: 'Trending',
+        group: 'Generic',
+        icon: 'trend',
+        blurb: 'Products gaining interest fastest right now.',
+        needs: 'Recent traffic.',
+        where: 'Fast-moving catalogues — fashion drops, seasonal, news-driven demand.',
+        pairs: 'New arrivals.',
+        caveat: 'Short lookback makes it volatile, and it amplifies whatever is already moving.',
+        placement: 'Homepage, and category pages in fast-moving ranges.'
+      },
+      new_arrivals: {
+        label: 'New arrivals',
+        group: 'Generic',
+        icon: 'new',
+        blurb: 'Newest items, by when they entered the catalogue feed.',
+        needs: 'Catalogue only.',
+        where: 'Fashion and any catalogue with a drop cadence, where newness is itself the reason to look.',
+        pairs: 'Visually similar, so a new product is reachable the day it lands.',
+        caveat: 'Recency is not relevance. It says nothing about whether this visitor wants it.',
+        placement: 'Homepage and category landing pages.'
+      },
+      highest_discounted: {
+        label: 'Highest discounted',
+        group: 'Generic',
+        icon: 'tag',
+        blurb: 'Largest markdown against original price.',
+        needs: 'Catalogue only.',
+        where: 'Sale periods and clearance.',
+        pairs: 'Anything, as a secondary row rather than the main one.',
+        caveat: 'Trains people to wait for markdowns, and can cannibalise full-price sales.',
+        placement: 'Sale landing pages and a secondary row elsewhere.'
+      },
+      most_valuable: {
+        label: 'Most valuable',
+        group: 'Generic',
+        icon: 'trend',
+        blurb: 'Highest revenue contribution over the lookback period.',
+        needs: 'Purchase data.',
+        where: 'Where margin matters more than conversion rate.',
+        pairs: 'A relevance-driven strategy above it.',
+        caveat: 'Optimises for your revenue rather than the shopper, so it needs watching.',
+        placement: 'Category pages, where a nudge toward margin is defensible.'
+      },
+      auto_optimized: {
+        label: 'Auto-optimised',
+        group: 'Personalised',
+        icon: 'auto',
+        blurb: 'Picks the best-performing algorithm per context automatically.',
+        needs: 'About two months of traffic before it can choose.',
+        where: 'Established accounts with enough history for the model to compare algorithms.',
+        pairs: 'Nothing — it is the thing choosing.',
+        caveat: 'Needs roughly two months of traffic before it can pick anything.',
+        placement: 'Discovery surfaces \u2014 homepage, category, search \u2014 where there is no single obviously right answer.'
+      }
+    },
+
     campaigns: {
       home:         null,   // #reco-home         on index.html
       product:      null,   // #reco-product      on product.html
@@ -101,7 +273,12 @@ window.SITE_CONFIG = {
         // if the variation lookup ever stops resolving.
         campaignId: 4236,
         variationId: 8850,
-        recommendationId: 43622
+        recommendationId: 43622,
+        // Which algorithm this campaign was built with, for the strategy strip.
+        // The tag does not report it — the payload carries only campaignId,
+        // variationId and products — so it is declared here and must be kept
+        // in step with the panel by hand.
+        strategy: 'similar'
       }
       // salesdemo: { campaignId: null, variationId: null },
     }
