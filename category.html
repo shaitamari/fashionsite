@@ -166,14 +166,21 @@
   all.textContent = 'All';
   if (!SUBCAT) all.setAttribute('aria-pressed', 'true');
   chips.appendChild(all);
-  Store.subcategories(COLLECTION).forEach(function (s) {
-    var a = document.createElement('a');
-    a.className = 'chip';
-    a.href = 'category.html?c=' + encodeURIComponent(COLLECTION) + '&sub=' + encodeURIComponent(s);
-    a.textContent = s;
-    if (s === SUBCAT) a.setAttribute('aria-pressed', 'true');
-    chips.appendChild(a);
-  });
+  // "All" is a filler leaf in the category path (Fashion > Dresses > All), so
+  // it arrives as a subcategory and renders a second, identical "All" chip
+  // next to the real one. Drop it. Fixing it at source is feed-fixes.md #5.
+  Store.subcategories(COLLECTION)
+    .filter(function (s) { return !/^all$/i.test(s); })
+    .forEach(function (s) {
+      var a = document.createElement('a');
+      a.className = 'chip';
+      a.href = 'category.html?c=' + encodeURIComponent(COLLECTION) + '&sub=' + encodeURIComponent(s);
+      a.textContent = s;
+      if (s === SUBCAT) a.setAttribute('aria-pressed', 'true');
+      chips.appendChild(a);
+    });
+  // With no real subcategories the lone "All" chip is decoration.
+  if (chips.children.length < 2) chips.hidden = true;
 
   var sourceEl = document.getElementById('listing-source');
   var countEl = document.getElementById('result-count');
@@ -200,11 +207,56 @@
     return [v, COLLECTION].filter(Boolean);
   }
 
+  /* The feed writes the whole compound option string into g:color, so Eureka
+     indexes "Aqua / AU 10" as one value. The COLOR facet therefore comes back
+     as hundreds of entries with a count of 1 each — unusable as a filter.
+
+     Split those values and rebuild them into the two facets they actually
+     describe: colours and sizes. Each merged entry remembers the original
+     values so ticking it still sends Eureka something it recognises.
+
+     This is a workaround. feed-fixes.md #1 fixes it at source, at which point
+     this whole function can go. */
+  function splitCompound(facet) {
+    var items = facet.items || [];
+    var anyCompound = items.some(function (it) {
+      return String(it.name).indexOf('/') > -1;
+    });
+    if (!anyCompound) return [facet];
+
+    var colours = {}, sizes = {};
+    items.forEach(function (it) {
+      if (!it.documentCount) return;
+      String(it.name).split('/').forEach(function (raw) {
+        var tok = raw.trim();
+        if (!tok) return;
+        var bucket = (window.Store.swatchHex && window.Store.swatchHex(tok)) ? colours : sizes;
+        var e = bucket[tok] || (bucket[tok] = { name: tok, label: tok, documentCount: 0, values: [] });
+        e.documentCount += it.documentCount;
+        e.values.push(it.name);
+      });
+    });
+
+    var out = [];
+    function pack(map, name, label) {
+      var list = Object.keys(map).map(function (k) { return map[k]; })
+        .sort(function (a, b) { return b.documentCount - a.documentCount; });
+      if (list.length > 1) out.push({ name: facet.name, label: label, items: list, _split: true });
+    }
+    pack(colours, facet.name, 'Colour');
+    pack(sizes, facet.name, 'Size');
+    return out.length ? out : [facet];
+  }
+
   function drawFacets(facets) {
     var host = document.getElementById('facets');
     if (!facets || !facets.length) { host.hidden = true; return; }
     host.innerHTML = '';
     var drew = 0;
+
+    facets = facets.reduce(function (acc, f) {
+      return acc.concat(splitCompound(f));
+    }, []);
 
     facets.forEach(function (facet) {
       var items = (facet.items || []).filter(function (it) {
@@ -234,11 +286,18 @@
         row.className = 'facets__row';
         var box = document.createElement('input');
         box.type = 'checkbox';
-        box.checked = (selected[facet.name] || []).indexOf(it.name) > -1;
+        // A split entry stands for several original values ("Aqua" covers
+        // "Aqua / AU 4" through "Aqua / AU 22"), so tick and untick all of them.
+        var vals = it.values || [it.name];
+        var cur = selected[facet.name] || [];
+        box.checked = vals.every(function (v) { return cur.indexOf(v) > -1; });
         box.addEventListener('change', function () {
           var list = selected[facet.name] || [];
-          if (box.checked) list = list.concat([it.name]);
-          else list = list.filter(function (v) { return v !== it.name; });
+          if (box.checked) {
+            vals.forEach(function (v) { if (list.indexOf(v) === -1) list = list.concat([v]); });
+          } else {
+            list = list.filter(function (v) { return vals.indexOf(v) === -1; });
+          }
           if (list.length) selected[facet.name] = list; else delete selected[facet.name];
           applyFacets();
         });
