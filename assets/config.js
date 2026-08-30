@@ -340,8 +340,10 @@ window.SITE_CONFIG = {
             variationId: null,
             strategy: 'complementary'
           },
-          home:         { campaignId: null, variationId: null, strategy: 'new_arrivals' },
-          homeFoot:     { campaignId: null, variationId: null, strategy: 'user_based' },
+          home:     { campaignId: 4239, variationId: 8856, recommendationId: 43626,
+                      strategy: 'new_arrivals' },
+          homeFoot: { campaignId: 4240, variationId: 8858, recommendationId: 34371,
+                      strategy: 'user_based' },
           cart:         { campaignId: null, variationId: null, strategy: 'complementary' },
           /* Confirmation deliberately is NOT another Complementary row: PDP,
              cart and confirmation all running cross-sell would be the same
