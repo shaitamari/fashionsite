@@ -68,11 +68,25 @@
   /* Record one signal. `dim` is the dimension (category, colour, discount),
      `value` the observed value, `weight` how much this interaction counts —
      a product view is worth more than a category page. */
-  function record(dim, value, weight) {
+  /* `key` is what gets matched, `label` is what gets shown.
+
+     For colour these differ, and it matters. The catalogue carries "Blue",
+     "Baby Blue", "Rich Blue" and "Dark Navy" as separate tokens, so matching
+     on the literal string means browsing baby blue builds no affinity for a
+     dress labelled blue — which is not what anyone means by a colour
+     preference. Colours are therefore keyed by the hex their family resolves
+     to, so the whole family counts as one signal, while the panel still shows
+     the words actually seen. */
+  function record(dim, value, weight, key) {
     if (!dim || !value) return;
     var list = read();
-    list.push({ d: dim, v: String(value), w: weight || 1, t: Date.now() });
+    list.push({ d: dim, v: String(value), k: String(key || value),
+                w: weight || 1, t: Date.now() });
     write(list);
+  }
+
+  function colourKey(token) {
+    return (window.Store && window.Store.swatchHex && window.Store.swatchHex(token)) || null;
   }
 
   /* Score with exponential decay, so the signal follows the visitor rather
@@ -83,12 +97,20 @@
     var now = Date.now(), out = {};
     read().forEach(function (e) {
       if (e.d !== dim) return;
+      var k = e.k || e.v;
       var decay = Math.exp(-(now - e.t) / TAU);
-      out[e.v] = (out[e.v] || 0) + e.w * decay;
+      var slot = out[k] || (out[k] = { key: k, score: 0, labels: {} });
+      slot.score += e.w * decay;
+      slot.labels[e.v] = (slot.labels[e.v] || 0) + 1;
     });
-    return Object.keys(out)
-      .map(function (k) { return { value: k, score: out[k] }; })
-      .sort(function (a, b) { return b.score - a.score; });
+    return Object.keys(out).map(function (k) {
+      var slot = out[k];
+      // Show the wording most often seen for this family.
+      var label = Object.keys(slot.labels).sort(function (a, b) {
+        return slot.labels[b] - slot.labels[a];
+      })[0];
+      return { value: label, key: slot.key, score: slot.score };
+    }).sort(function (a, b) { return b.score - a.score; });
   }
 
   function top(dim) {
@@ -122,7 +144,7 @@
       var p = window.Store.byId(id);
       if (p) {
         record('category', (p.taxonomy || [])[1] || p.collection, 3);
-        coloursOf(p).forEach(function (c) { record('colour', c, 2); });
+        coloursOf(p).forEach(function (c) { record('colour', c, 2, colourKey(c)); });
         if (p.unit_sale_price < p.unit_price) record('discount', 'sale', 3);
         else record('discount', 'full', 1);
       }
@@ -149,15 +171,19 @@
   function rank(items) {
     if (!items || items.length < 2) return items;
     var cat = {}, col = {};
-    scores('category').forEach(function (e, i) { cat[e.value] = e.score; });
-    scores('colour').forEach(function (e, i) { col[e.value] = e.score; });
+    scores('category').forEach(function (e) { cat[e.value] = e.score; });
+    scores('colour').forEach(function (e) { col[e.key] = e.score; });   // by family
     if (!Object.keys(cat).length && !Object.keys(col).length) return items;
 
     var scored = items.map(function (p, i) {
       var s = 0;
       var pc = (p.taxonomy || [])[1] || p.collection;
       if (pc && cat[pc]) s += cat[pc] * 2;
-      coloursOf(p).forEach(function (c) { if (col[c]) s += col[c]; });
+      var seenKeys = {};
+      coloursOf(p).forEach(function (c) {
+        var k = colourKey(c);
+        if (k && col[k] && !seenKeys[k]) { seenKeys[k] = 1; s += col[k]; }
+      });
       return { p: p, s: s, i: i };
     });
     scored.sort(function (a, b) {
@@ -308,8 +334,10 @@
     // Within the pool, prefer one that also matches the top colour.
     var best = pool[0];
     if (wantCol) {
+      var wantKey = colourKey(wantCol);
       for (var i = 0; i < pool.length; i++) {
-        if (coloursOf(pool[i]).indexOf(wantCol) > -1) { best = pool[i]; break; }
+        var match = coloursOf(pool[i]).some(function (c) { return colourKey(c) === wantKey; });
+        if (match) { best = pool[i]; break; }
       }
     }
     if (best && best.image) {
@@ -414,8 +442,21 @@
     var wrapped = function (target, products, opts) {
       var ranked = rank(products);
       var moved = ranked.some(function (p, i) { return p !== products[i]; });
-      if (moved) note('reordered ' + products.length + ' products by affinity');
-      return original.call(window.Store, target, ranked, opts);
+
+      /* Reorder the caller's array IN PLACE rather than passing a new one.
+
+         Pages keep their own reference to the array they handed in and use the
+         card's DOM index to look the product back up — search.html does this
+         for Eureka click tracking. Handing the grid a reordered copy leaves
+         the DOM in one order and the page's array in another, so a click on
+         the first card reports whichever product used to be first. Splicing
+         the original array keeps both in step. */
+      if (moved && Array.isArray(products)) {
+        products.length = 0;
+        Array.prototype.push.apply(products, ranked);
+        note('reordered ' + products.length + ' products by affinity');
+      }
+      return original.call(window.Store, target, products, opts);
     };
     wrapped.__afx = true;
     window.Store.grid = wrapped;
