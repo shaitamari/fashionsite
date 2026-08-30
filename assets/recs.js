@@ -310,9 +310,16 @@
 
     if (kept.length !== items.length) {
       note('Scoped ' + items.length + ' recommended products to ' + kept.length +
-           ' in ' + name, 'ok');
+           ' in ' + name, kept.length ? 'ok' : 'warn');
     }
-    return kept.length ? kept : items;
+    /* Fails CLOSED. An earlier version returned the unfiltered set when nothing
+       survived, on the reasoning that a slightly wrong row beats an empty one.
+       That is true of a search fallback and false here: New Arrivals on a
+       homepage has no viewed product to filter against, returns the newest
+       items across all twelve verticals, and none of them are fashion. The row
+       then filled with supermarket goods on a fashion storefront, which is
+       worse than the section simply not appearing. */
+    return kept;
   }
 
   function addMore(row, n) {
@@ -325,7 +332,6 @@
   function render(host, products, campaignId, variationId, slot) {
     ensureStyle();
     host.innerHTML = '';
-    strategyStrip(host, slot);
 
     var body = document.createElement('div');
     body.className = 'ins-web-smart-recommender-body recs__grid';
@@ -348,13 +354,25 @@
        twelve campaigns instead of one. This is the same client-side scoping
        eureka.js applies to search fallbacks, for the same reason.
 
-       Fails open: if the vertical cannot be resolved, nothing is filtered. */
+       Fails closed on an empty result — see below. Fails OPEN only when the
+       vertical itself cannot be resolved, in which case nothing is filtered. */
     normalized = scopeToVertical(normalized);
 
     // Affinity exhibit, when enabled. No-op when affinity.js is absent or off.
     if (window.Affinity && window.Affinity.rank) {
       normalized = window.Affinity.rank(normalized);
     }
+
+    /* Nothing survived scoping, so leave the section hidden. The strategy
+       strip is drawn AFTER this check rather than before, or an emptied row
+       would render a label and a heading with no products under it. */
+    if (!normalized.length) {
+      note('Nothing left after scoping to this store; leaving the row hidden', 'warn');
+      host.hidden = true;
+      return;
+    }
+
+    strategyStrip(host, slot);
 
     var shown = normalized;
     if (window.Store && typeof window.Store.oneVariantEach === 'function') {
