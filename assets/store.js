@@ -86,16 +86,42 @@
     return oneVariantEach(hits).slice(0, 48);
   }
 
-  // Spread across collections so the homepage reads as curated rather than
-  // showing forty sneakers in a row.
+  /* Collapse a list to one card per product.
+
+     Every record is a VARIANT, so a route with four cabins, or a room with
+     six rates, is four or six records sharing a groupcode and an image. Shown
+     raw they read as duplicates — four identical "London to New York" cards
+     differing only by a price.
+
+     So: one card per groupcode, showing the CHEAPEST variant, annotated with
+     how many there are. card() turns that into "from EUR 340 - 4 options".
+     Picking the cheapest rather than the first also makes the from-price
+     honest, which the first-variant version was only by luck.
+
+     Records with no groupcode pass through untouched. */
   function oneVariantEach(list) {
-    var seen = {}, out = [];
+    var groups = {}, order = [];
     list.forEach(function (p) {
-      if (seen[p.groupcode]) return;
-      seen[p.groupcode] = true;
-      out.push(p);
+      var key = p.groupcode || ('_' + p.id);
+      if (!groups[key]) { groups[key] = []; order.push(key); }
+      groups[key].push(p);
     });
-    return out;
+    return order.map(function (key) {
+      var vs = groups[key];
+      var best = vs[0];
+      for (var i = 1; i < vs.length; i++) {
+        if (price(vs[i]) < price(best)) best = vs[i];
+      }
+      if (vs.length < 2) return best;
+      // Copy, so annotations never leak back into the catalog itself.
+      var out = Object.assign({}, best);
+      out._variants = vs.length;
+      return out;
+    });
+    function price(p) {
+      var n = Number(p.unit_sale_price);
+      return isFinite(n) && n > 0 ? n : Number(p.unit_price) || Infinity;
+    }
   }
 
   function featured(n) {
@@ -358,20 +384,33 @@
 
     el.querySelector('.card__vendor').textContent = p.subcategory || p.collection || '';
     el.querySelector('.card__name').textContent = p.name;
-    if (p.variant_label) {
+
+    // A collapsed group shows how many variants it stands for rather than the
+    // label of the one that happened to be cheapest — "4 options", not
+    // "Economy". Verticals can name them: labels.variants = "cabins" gives
+    // "4 cabins", labels.variants_one = "cabin" gives "1 cabin".
+    var variantText = null;
+    if (p._variants > 1) {
+      var lbl = ((window.VERTICAL || {}).labels || {}).variants || 'options';
+      variantText = p._variants + ' ' + lbl;
+    } else if (p.variant_label) {
+      variantText = p.variant_label;
+    }
+    if (variantText) {
       var v = document.createElement('p');
       v.className = 'card__variant';
-      v.textContent = p.variant_label;
+      v.textContent = variantText;
       el.querySelector('.card__meta').insertBefore(v, el.querySelector('.card__price'));
     }
 
     var priceEl = el.querySelector('.card__price');
+    var from = p._variants > 1 ? 'from ' : '';
     if (sale) {
       priceEl.innerHTML = '<s class="was"></s> <span class="now"></span>';
       priceEl.querySelector('.was').textContent = money(p.unit_price);
-      priceEl.querySelector('.now').textContent = money(p.unit_sale_price);
+      priceEl.querySelector('.now').textContent = from + money(p.unit_sale_price);
     } else {
-      priceEl.textContent = money(p.unit_price);
+      priceEl.textContent = from + money(p.unit_price);
     }
 
     if (opts.onClick) el.querySelector('.card__link').addEventListener('click', opts.onClick);

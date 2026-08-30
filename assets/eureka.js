@@ -264,13 +264,25 @@
     };
   }
 
+  /* Eureka returns one row per VARIANT, so a route with four cabins comes back
+     as four near-identical cards. Every local path (localSearch, byCollection,
+     featured) already collapses by groupcode via Store.oneVariantEach; Eureka
+     results were the one path that did not, which is why airline search looked
+     like duplicates. Collapse here so every surface behaves the same. */
+  function collapse(items) {
+    if (window.Store && typeof window.Store.oneVariantEach === 'function') {
+      try { return window.Store.oneVariantEach(items); } catch (e) {}
+    }
+    return items;
+  }
+
   function readResponse(response) {
     var d = (response && response.data) || {};
     return {
       // 'Success' means the query matched. 'SuccessFallback' means it matched
       // NOTHING and Eureka substituted recommendations — see scopeFallback().
       status: (response && response.status) || null,
-      items: (d.items || []).map(normalize),
+      items: collapse((d.items || []).map(normalize)),
       navigation: d.navigation || { total: (d.items || []).length, totalPageCount: 1 },
       facets: d.aggregations || d.facets || d.filters || []
     };

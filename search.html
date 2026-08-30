@@ -188,7 +188,10 @@
      because Store.catalog is already scoped to the hostname's vertical. */
   function suggestions(n) {
     var cat = (window.Store && window.Store.catalog) || [];
-    return cat.filter(function (p) { return p.in_stock !== 0; }).slice(0, n || 8);
+    var live = cat.filter(function (p) { return p.in_stock !== 0; });
+    // Collapse variants, or an airline shows the same route four times, once
+    // per cabin. Every other listing on the site goes through this.
+    return Store.oneVariantEach(live).slice(0, n || 8);
   }
 
   function paint(products, opts) {
