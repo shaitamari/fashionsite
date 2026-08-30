@@ -416,6 +416,16 @@
 
     host.appendChild(body);
     host.hidden = false;
+
+    // Each section has a "<id>-note" span that the page sets to "waiting for
+    // campaign". Nothing was updating it once the campaign answered, so a
+    // populated row still read as waiting.
+    var note_el = host.id && document.getElementById(host.id + '-note');
+    if (note_el) {
+      note_el.textContent = 'Smart Recommender \u00b7 live from ' +
+                            ((window.ENVIRONMENT || {}).account || 'platform');
+      note_el.className = 'source is-live';
+    }
     note('Smart Recommender ' + campaignId + '/' + variationId + ': ' +
          shown.length + ' products', 'ok');
   }
