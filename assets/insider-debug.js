@@ -159,8 +159,25 @@
       var raw = localStorage.getItem('ins-mb-uid');
       if (!raw) return null;
       var value = JSON.parse(raw);
-      // Only the UUID form is a profile id; earlier it holds the spUID.
-      if (typeof value === 'string' && /^[0-9a-f-]{36}$/i.test(value)) return value;
+      if (typeof value !== 'string' || !value) return null;
+
+      /* Two shapes are known to work as /user-profiles/<id>:
+
+           178794192268422e0c19d52.6c7ec023   hex, a dot, more hex
+           e46544a0-0378-4be3-8dfb-...        a 36-char UUID
+
+         This used to accept only the UUID, on the assumption that the dotted
+         form was the spUID and a UUID would replace it later. That was wrong:
+         on partnersandbox the dotted value is what the panel resolves, and it
+         never becomes a UUID. The guard therefore rejected the only id we had,
+         insiderId() returned null, and every attempt to open a profile fell
+         through to the listing — which looked like a redirect and cost an
+         afternoon of chasing a data problem that did not exist.
+
+         Both forms are allowed now. Anything else still falls back rather than
+         opening a URL that 404s. */
+      if (/^[0-9a-f]+\.[0-9a-f]+$/i.test(value)) return value;
+      if (/^[0-9a-f-]{36}$/i.test(value)) return value;
       return null;
     } catch (e) { return null; }
   }
