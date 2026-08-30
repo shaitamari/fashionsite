@@ -443,10 +443,33 @@
       'builds the same kind of signal from months of behaviour across sessions ' +
       'and devices, refreshed daily. This is a stand-in so the mechanic is ' +
       'visible on a new account \u2014 it reacts faster and knows far less.</p>' +
-      '<button type="button" class="afx__reset">Forget everything</button>';
+      '<button type="button" class="afx__reset">Forget everything</button>' +
+      '<button type="button" class="afx__off">Turn the exhibit off</button>';
+
+    /* Forget everything clears the event log but leaves the exhibit ON, which
+       is right when you want to restart a demo from a clean profile. */
     body.querySelector('.afx__reset').addEventListener('click', function () {
       try { localStorage.removeItem(KEY); } catch (e) {}
       location.reload();
+    });
+
+    /* Off switch. The flag lives in localStorage, so once the exhibit is
+       enabled it stays enabled on every page load until somebody remembers
+       the ?affinity=0 querystring. That has already cost time: affinity
+       silently overrode an onsite campaign's hero and looked like the campaign
+       was broken. An exhibit that is hard to turn off is a trap, so put the
+       switch where the exhibit is.
+
+       Reloads without the querystring, so a stale ?affinity=1 in the address
+       bar cannot immediately switch it back on. */
+    body.querySelector('.afx__off').addEventListener('click', function () {
+      try {
+        localStorage.removeItem(FLAG);
+        localStorage.removeItem(KEY);
+      } catch (e) {}
+      var clean = location.origin + location.pathname +
+        location.search.replace(/([?&])affinity=[^&]*/g, '$1').replace(/[?&]$/, '');
+      location.href = clean;
     });
   }
 
@@ -488,7 +511,7 @@
     '#afx .afx__none{margin:0;color:#7d7873}' +
     '#afx .afx__foot{margin:.9rem 0 .6rem;padding-top:.7rem;border-top:1px solid #2c2c30;' +
       'font-size:.6875rem;color:#9b9691;line-height:1.45}' +
-    '#afx .afx__reset{border:1px solid #3a3a3e;background:none;color:#c9c4bf;' +
+    '#afx .afx__off{display:block;width:100%;margin-top:.4rem;padding:.45rem;font:inherit;font-size:.75rem;color:#EE3524;background:transparent;border:1px solid #EE3524;border-radius:4px;cursor:pointer}.afx__off:hover{background:#EE3524;color:#fff}.afx__reset{border:1px solid #3a3a3e;background:none;color:#c9c4bf;' +
       'border-radius:3px;padding:.3rem .6rem;font:inherit;font-size:.6875rem;cursor:pointer}';
 
   function note(text) {
