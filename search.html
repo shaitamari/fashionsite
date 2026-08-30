@@ -1,4 +1,3 @@
-<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -103,6 +102,16 @@
 
       <p class="source" id="search-source">Eureka · resolving campaign…</p>
 
+      <!-- Shown when the query matched nothing and the products below are
+           substitutes rather than results. Styled inline so it does not
+           depend on a class existing in styles.css. -->
+      <div id="search-notice" hidden
+           style="margin:1.5rem 0 0;padding:1rem 1.25rem;border:1px solid var(--line,#e5e5e5);
+                  border-radius:.5rem;background:var(--surface,#fafafa)">
+        <strong id="search-notice-title" style="display:block;font-size:.9375rem;margin-bottom:.25rem"></strong>
+        <span id="search-notice-body" style="font-size:.875rem;color:var(--muted,#666)"></span>
+      </div>
+
       <div class="toolbar">
         <label for="sortby" style="font-size:.8125rem;color:var(--muted)">Sort</label>
         <select id="sortby">
@@ -128,7 +137,7 @@
 <footer class="foot">
   <div class="wrap foot__in">
     <span><span data-brand>Lumen</span> — Insider One demo storefront</span>
-    <span>onesandbox · 10014057</span>
+    <span id="foot-account">—</span>
   </div>
 </footer>
 
@@ -142,7 +151,45 @@
   var sourceEl = document.getElementById('search-source');
   var countEl = document.getElementById('result-count');
   var emptyEl = document.getElementById('empty');
+  var noticeEl = document.getElementById('search-notice');
+  var noticeTitleEl = document.getElementById('search-notice-title');
+  var noticeBodyEl = document.getElementById('search-notice-body');
   var search = null;
+
+  // Footer shows the account this hostname actually resolved to, rather than
+  // a hard-coded one that goes stale when the estate moves accounts.
+  (function () {
+    var env = window.ENVIRONMENT || {};
+    var foot = document.getElementById('foot-account');
+    if (foot && env.account) foot.textContent = env.account + ' · ' + (env.partnerId || '');
+  })();
+
+  /* --- the no-results notice ---------------------------------------------
+     Shown whenever the products on screen are substitutes rather than
+     matches. Being explicit is better than silently swapping in other
+     products: a visitor who searched "sofa" and sees lipsticks with no
+     explanation assumes the search is broken.
+     ---------------------------------------------------------------------- */
+  function showNotice(title, body) {
+    noticeTitleEl.textContent = title;
+    noticeBodyEl.textContent = body || '';
+    noticeEl.hidden = false;
+  }
+
+  function hideNotice() { noticeEl.hidden = true; }
+
+  function noResultsTitle() {
+    return QUERY ? 'No results for \u201c' + QUERY + '\u201d' : 'No results';
+  }
+
+  /* Suggestions of last resort — used when the query matched nothing in
+     Eureka AND nothing in the local catalogue, so there is genuinely
+     nothing relevant to show. In-stock items from this vertical only,
+     because Store.catalog is already scoped to the hostname's vertical. */
+  function suggestions(n) {
+    var cat = (window.Store && window.Store.catalog) || [];
+    return cat.filter(function (p) { return p.in_stock !== 0; }).slice(0, n || 8);
+  }
 
   function paint(products, opts) {
     opts = opts || {};
@@ -157,12 +204,32 @@
     countEl.textContent = (opts.total != null ? opts.total : products.length) + ' results';
   }
 
+  /* Called by eureka.js whenever it cannot serve real results: no campaign,
+     a fetch error, or a fallback whose substitutes were all from other
+     verticals. Renders the site's own catalogue instead. */
   function renderFallback() {
     var local = Store.localSearch(QUERY);
     sourceEl.className = 'source is-fallback';
     sourceEl.textContent = 'Local catalogue · Eureka not serving this page';
-    paint(local, { live: false });
-    return local;
+
+    if (local.length) {
+      hideNotice();
+      paint(local, { live: false });
+      return local;
+    }
+
+    // Nothing matched locally either. Show suggestions rather than a bare
+    // empty state, and say plainly that they are suggestions.
+    var picks = suggestions(8);
+    if (picks.length) {
+      showNotice(noResultsTitle(), 'Nothing matched your search. You might be interested in these instead.');
+      paint(picks, { live: false, total: picks.length });
+      countEl.textContent = picks.length + ' suggestions';
+    } else {
+      showNotice(noResultsTitle(), 'Try a broader term.');
+      paint([], { live: false });
+    }
+    return [];
   }
 
   if (QUERY && window.Eureka && window.Eureka.enabled) {
@@ -171,17 +238,37 @@
     search = window.Eureka.search({
       query: QUERY,
       onRender: function (result, state) {
+        var env = window.ENVIRONMENT || {};
         sourceEl.className = 'source is-live';
         sourceEl.textContent = 'Eureka campaign ' + state.campId +
-                               ' · salesdemo catalogue · sort: ' + state.sorting;
+                               ' · ' + (env.account || 'catalogue') +
+                               ' · sort: ' + state.sorting;
+
+        // result.fallback is set by eureka.js when Eureka matched nothing and
+        // returned substitutes. Those have already been scoped to this
+        // vertical — but they are still not results, so say so.
+        if (result.fallback) {
+          showNotice(noResultsTitle(),
+                     'Nothing matched your search. You might be interested in these instead.');
+        } else {
+          hideNotice();
+        }
+
         paint(result.items, { live: true, total: state.total });
+        if (result.fallback) countEl.textContent = result.items.length + ' suggestions';
         drawPager(result.navigation, state);
 
-        // Restate the custom event now the real count is known.
+        // Restate the custom event now the real count is known. A fallback
+        // matched nothing, so the honest count is zero — recording the
+        // substitute count would make zero-result searches invisible in the
+        // panel, which is exactly the report worth having.
         window.InsiderQueue.push({
           type: 'custom_event',
           value: [{ event_name: 'site_search',
-                    event_parameters: { custom: { search_term: QUERY, results_count: state.total } } }]
+                    event_parameters: { custom: {
+                      search_term: QUERY,
+                      results_count: result.fallback ? 0 : state.total
+                    } } }]
         });
       },
       onFallback: renderFallback
