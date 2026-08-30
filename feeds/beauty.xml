@@ -180,6 +180,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
     <g:size>50 ml</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>47501395886325</g:id>
@@ -197,6 +198,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
     <g:size>8 ml</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>46731773575413</g:id>
@@ -262,6 +264,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Hand</g:custom_label_0>
     <g:size>Glossier You</g:size>
+    <g:custom_label_1>scent</g:custom_label_1>
   </item>
   <item>
     <g:id>47045518557429</g:id>
@@ -279,6 +282,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Hand</g:custom_label_0>
     <g:size>Orange Blossom Neroli</g:size>
+    <g:custom_label_1>scent</g:custom_label_1>
   </item>
   <item>
     <g:id>47045518590197</g:id>
@@ -296,6 +300,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Hand</g:custom_label_0>
     <g:size>Sandstone</g:size>
+    <g:custom_label_1>scent</g:custom_label_1>
   </item>
   <item>
     <g:id>47045518622965</g:id>
@@ -313,6 +318,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Hand</g:custom_label_0>
     <g:size>Lilyhaze</g:size>
+    <g:custom_label_1>scent</g:custom_label_1>
   </item>
   <item>
     <g:id>46973454090485</g:id>
@@ -617,6 +623,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
     <g:size>I Love NY</g:size>
+    <g:custom_label_1>Flavor</g:custom_label_1>
   </item>
   <item>
     <g:id>46731565859061</g:id>
@@ -634,6 +641,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
     <g:size>Black Cherry</g:size>
+    <g:custom_label_1>Flavor</g:custom_label_1>
   </item>
   <item>
     <g:id>46731565891829</g:id>
@@ -651,6 +659,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
     <g:size>Birthday</g:size>
+    <g:custom_label_1>Flavor</g:custom_label_1>
   </item>
   <item>
     <g:id>46731565924597</g:id>
@@ -668,6 +677,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
     <g:size>Strawberry</g:size>
+    <g:custom_label_1>Flavor</g:custom_label_1>
   </item>
   <item>
     <g:id>46731566088437</g:id>
@@ -685,6 +695,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
     <g:size>Original</g:size>
+    <g:custom_label_1>Flavor</g:custom_label_1>
   </item>
   <item>
     <g:id>46731566121205</g:id>
@@ -702,6 +713,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
     <g:size>Mint</g:size>
+    <g:custom_label_1>Flavor</g:custom_label_1>
   </item>
   <item>
     <g:id>46731566153973</g:id>
@@ -719,6 +731,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
     <g:size>Mango</g:size>
+    <g:custom_label_1>Flavor</g:custom_label_1>
   </item>
   <item>
     <g:id>46731565990133</g:id>
@@ -736,6 +749,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
     <g:size>Rose</g:size>
+    <g:custom_label_1>Flavor</g:custom_label_1>
   </item>
   <item>
     <g:id>46731566022901</g:id>
@@ -753,6 +767,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
     <g:size>Coconut</g:size>
+    <g:custom_label_1>Flavor</g:custom_label_1>
   </item>
   <item>
     <g:id>46731565957365</g:id>
@@ -770,6 +785,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
     <g:size>Wild Fig</g:size>
+    <g:custom_label_1>Flavor</g:custom_label_1>
   </item>
   <item>
     <g:id>46731566055669</g:id>
@@ -787,6 +803,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
     <g:size>Lavender</g:size>
+    <g:custom_label_1>Flavor</g:custom_label_1>
   </item>
   <item>
     <g:id>46731565826293</g:id>
@@ -804,6 +821,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
     <g:size>Espresso</g:size>
+    <g:custom_label_1>Flavor</g:custom_label_1>
   </item>
   <item>
     <g:id>44451546497269</g:id>
@@ -853,6 +871,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Body Care</g:custom_label_0>
     <g:size>Sandstone</g:size>
+    <g:custom_label_1>scent</g:custom_label_1>
   </item>
   <item>
     <g:id>46654804492533</g:id>
@@ -870,6 +889,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Body Care</g:custom_label_0>
     <g:size>Orange Blossom Neroli</g:size>
+    <g:custom_label_1>scent</g:custom_label_1>
   </item>
   <item>
     <g:id>46579394117877</g:id>
@@ -887,6 +907,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Body Mist</g:custom_label_0>
     <g:size>Orange Blossom Neroli</g:size>
+    <g:custom_label_1>Scent</g:custom_label_1>
   </item>
   <item>
     <g:id>46579394150645</g:id>
@@ -904,6 +925,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Body Mist</g:custom_label_0>
     <g:size>Sandstone</g:size>
+    <g:custom_label_1>Scent</g:custom_label_1>
   </item>
   <item>
     <g:id>47047565279477</g:id>
@@ -921,6 +943,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Body Mist</g:custom_label_0>
     <g:size>Lilyhaze</g:size>
+    <g:custom_label_1>Scent</g:custom_label_1>
   </item>
   <item>
     <g:id>46654792827125</g:id>
@@ -938,6 +961,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Cleanser</g:custom_label_0>
     <g:size>Orange Blossom Neroli</g:size>
+    <g:custom_label_1>scent</g:custom_label_1>
   </item>
   <item>
     <g:id>46654792859893</g:id>
@@ -955,6 +979,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Cleanser</g:custom_label_0>
     <g:size>Sandstone</g:size>
+    <g:custom_label_1>scent</g:custom_label_1>
   </item>
   <item>
     <g:id>43781992022261</g:id>
@@ -2516,6 +2541,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Candles</g:custom_label_0>
     <g:size>Glossier You</g:size>
+    <g:custom_label_1>Scent</g:custom_label_1>
   </item>
   <item>
     <g:id>44207176450293</g:id>
@@ -2533,6 +2559,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Candles</g:custom_label_0>
     <g:size>Orange Blossom Neroli</g:size>
+    <g:custom_label_1>Scent</g:custom_label_1>
   </item>
   <item>
     <g:id>44207181365493</g:id>
@@ -2550,6 +2577,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Candles</g:custom_label_0>
     <g:size>Sandstone</g:size>
+    <g:custom_label_1>Scent</g:custom_label_1>
   </item>
   <item>
     <g:id>47047567868149</g:id>
@@ -2567,6 +2595,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Candles</g:custom_label_0>
     <g:size>Lilyhaze</g:size>
+    <g:custom_label_1>Scent</g:custom_label_1>
   </item>
   <item>
     <g:id>44784129736949</g:id>
@@ -3229,6 +3258,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
     <g:size>50 ml</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>46373327077621</g:id>
@@ -3246,6 +3276,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
     <g:size>8 ml</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>46313447653621</g:id>
@@ -3665,6 +3696,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
     <g:size>50 ml</g:size>
+    <g:custom_label_1>size</g:custom_label_1>
   </item>
   <item>
     <g:id>46147021996277</g:id>
@@ -3682,6 +3714,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
     <g:size>8 ml</g:size>
+    <g:custom_label_1>size</g:custom_label_1>
   </item>
   <item>
     <g:id>46964207026421</g:id>
@@ -3699,6 +3732,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
     <g:size>100 ml</g:size>
+    <g:custom_label_1>size</g:custom_label_1>
   </item>
   <item>
     <g:id>46147023896821</g:id>
@@ -3716,6 +3750,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
     <g:size>50 ml</g:size>
+    <g:custom_label_1>size</g:custom_label_1>
   </item>
   <item>
     <g:id>46147023929589</g:id>
@@ -3733,6 +3768,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
     <g:size>8 ml</g:size>
+    <g:custom_label_1>size</g:custom_label_1>
   </item>
   <item>
     <g:id>44209550557429</g:id>
@@ -4019,6 +4055,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Cleanser</g:custom_label_0>
     <g:size>177 mL</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>44415832785141</g:id>
@@ -4036,6 +4073,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Cleanser</g:custom_label_0>
     <g:size>60 mL</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>44415835275509</g:id>
@@ -4053,6 +4091,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Cleanser</g:custom_label_0>
     <g:size>300 mL</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>45923589259509</g:id>
@@ -4070,6 +4109,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Cleanser</g:custom_label_0>
     <g:size>15 mL</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>44416231604469</g:id>
@@ -4087,6 +4127,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
     <g:size>50 mL</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>44416231637237</g:id>
@@ -4104,6 +4145,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
     <g:size>125 mL</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>45923610329333</g:id>
@@ -4121,6 +4163,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
     <g:size>15 mL</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>44181679898869</g:id>
@@ -4170,6 +4213,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
     <g:size>100 ml</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>44056890540277</g:id>
@@ -4187,6 +4231,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
     <g:size>50 ml</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>45133430554869</g:id>
@@ -4204,6 +4249,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
     <g:size>8 ml</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>43781982224629</g:id>
@@ -4386,6 +4432,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Deodorant</g:custom_label_0>
     <g:size>Orange Blossom Neroli</g:size>
+    <g:custom_label_1>Scent</g:custom_label_1>
   </item>
   <item>
     <g:id>43781987565813</g:id>
@@ -4403,6 +4450,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Deodorant</g:custom_label_0>
     <g:size>Glossier You</g:size>
+    <g:custom_label_1>Scent</g:custom_label_1>
   </item>
   <item>
     <g:id>43781987631349</g:id>
@@ -4420,6 +4468,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Deodorant</g:custom_label_0>
     <g:size>Sandstone</g:size>
+    <g:custom_label_1>Scent</g:custom_label_1>
   </item>
   <item>
     <g:id>43781982093557</g:id>

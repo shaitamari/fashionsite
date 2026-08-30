@@ -65,6 +65,99 @@ def subcategory(title, collection, cfg):
 
 
 # --------------------------------------------------------------------------
+# Variant options.
+#
+# Shopify already separates a variant's options: `option1`, `option2` and
+# `option3` line up positionally with the names in `product["options"]`.
+# The previous build ignored those and read `variant["title"]`, which is the
+# JOINED string — "Chocolate / AU 4" — then guessed which field to put the
+# whole thing in from the FIRST option name only. That is the single upstream
+# cause of the compound `g:color`, the duplicate swatches, the broken Colour
+# and Size facets, and the 64 fashion styles whose colourway could not be read.
+#
+# Reading option1..3 instead removes the guess entirely. No splitting, no
+# heuristics: the values arrive clean and stay clean.
+#
+# The role of each option is decided by its NAME, checked against the real
+# names across all twelve verticals (`Shade`, `COLOR`, `Upholstery`,
+# `Leg Finish`, `Italian Size MEN`, `Room`, `Cabin`, `Tier` and so on).
+# Size is tested before colour so "Frame Size" is a size, and "style" is
+# excluded from colour so "Leg Style" (Hairpin, Straight) is not mistaken for
+# one.
+SIZE_HINTS = ("size", "length", "capacity", "volume", "dimension")
+COLOR_HINTS = ("colour", "color", "shade", "upholstery", "fabric", "finish",
+               "wood", "panel", "leg", "hardware", "material")
+NULL_OPTIONS = ("title", "defaulttitle", "default title")
+
+
+def option_role(name):
+    """'size', 'color', 'other', or None for Shopify's placeholder option."""
+    n = str(name or "").strip().lower()
+    if not n or n in NULL_OPTIONS:
+        return None
+    if "style" in n and "colour" not in n and "color" not in n:
+        return "other"
+    # "Upholstery Add On" holds "Queen/Headboard Upholstery" — a configuration
+    # choice that happens to contain an upholstery word. Without this it wins
+    # the colour slot ahead of "Upholstered Fabric", which is the real colour,
+    # because the first colour-ish option encountered takes it.
+    if "add on" in n or "add-on" in n or "addon" in n:
+        return "other"
+    if any(h in n for h in SIZE_HINTS):
+        return "size"
+    if any(h in n for h in COLOR_HINTS):
+        return "color"
+    return "other"
+
+
+def split_options(product, variant):
+    """Clean {color, size, tier, ...} for one variant, plus the label of each
+    dimension so the front end can call a chip row "Room" rather than "Size".
+
+    `tier` is the first option that is neither a colour nor a size — a hotel
+    Room, an airline Cabin, a fintech Tier, an insurance Level of cover. It is
+    kept separate from `size` here so the two never contaminate each other,
+    even though the feed still falls back to g:size for it (see feed_item)."""
+    names = [o.get("name") for o in product.get("options", [])] or ["Title"]
+    values = [variant.get("option1"), variant.get("option2"), variant.get("option3")]
+
+    out = {"color": None, "color_label": None,
+           "size": None, "size_label": None,
+           "tier": None, "tier_label": None,
+           "extras": [], "parts": []}
+
+    for name, value in zip(names, values):
+        value = (value or "").strip()
+        if not value or value in ("Default Title", "DefaultTitle"):
+            continue
+        role = option_role(name)
+        if role is None:
+            continue
+        if role in ("color", "size") and out[role] is None:
+            out[role] = value
+            out[role + "_label"] = name
+            slot = role
+        elif role == "other" and out["tier"] is None:
+            out["tier"] = value
+            out["tier_label"] = name
+            slot = "tier"
+        else:
+            # Third and fourth dimensions: home's Arm Style, Configuration,
+            # Power. Kept so nothing is lost, not promoted to a facet.
+            out["extras"].append({"name": name, "value": value})
+            slot = "extra"
+
+        # Source order, with where each option ACTUALLY landed rather than what
+        # the classifier thought of it. A product with two colour-ish options —
+        # home's Fabric and Leg Finish — puts the first in `color` and the
+        # second in `extras`, and only the first should be treated as the
+        # colour downstream. The renderer needs that distinction to know which
+        # token is safe to hide, so it is recorded rather than re-derived.
+        out["parts"].append({"name": name, "value": value, "slot": slot})
+
+    return out
+
+
 def load_sources(cfg):
     """`source` may be one path, a list of paths, or a glob.
 
@@ -122,6 +215,7 @@ def build_catalog(key, cfg):
         option_name = p["options"][0]["name"] if p.get("options") else "Title"
 
         for v in p["variants"]:
+            opts = split_options(p, v)
             price = money(v.get("price"))
             if price <= 0:
                 continue                              # samples and placeholders
@@ -131,13 +225,6 @@ def build_catalog(key, cfg):
             label = v.get("title")
             if label in (None, "Default Title"):
                 label = None
-
-            color = size = None
-            if label:
-                if option_name.lower() in ("shade", "color", "colour"):
-                    color = label
-                else:
-                    size = label
 
             records.append({
                 "id": str(v["id"]),                    # Shopify VARIANT id
@@ -157,8 +244,19 @@ def build_catalog(key, cfg):
                 "unit_sale_price": price,
                 "currency": CURRENCY,
                 "locale": LOCALE,
-                "color": color,
-                "size": size,
+                "color": opts["color"],
+                "size": opts["size"],
+                # The dimension names, so a chip row can be labelled with the
+                # word the vertical actually uses.
+                "color_label": opts["color_label"],
+                "size_label": opts["size_label"],
+                # Room / Cabin / Tier / Level of cover.
+                "tier": opts["tier"],
+                "tier_label": opts["tier_label"],
+                "variant_extras": opts["extras"],
+                # Every option in source order, tagged with the slot it landed
+                # in. The PDP reads this to label its variant buttons.
+                "variant_parts": opts["parts"],
                 "stock": 250 if v.get("available") else 0,
                 "in_stock": 1 if v.get("available") else 0,
                 "sku": v.get("sku") or str(v["id"]),
@@ -239,8 +337,24 @@ def feed_item(p):
     ]
     if p.get("color"):
         parts.append(f"    <g:color>{escape(clean(p['color'], 512))}</g:color>")
-    if p.get("size"):
-        parts.append(f"    <g:size>{escape(clean(p['size'], 512))}</g:size>")
+
+    # g:size carries the real size when there is one. Where a vertical has no
+    # sizes at all — hotels, airlines, banking, insurance, fintech — its single
+    # variant dimension falls back into g:size so the existing facet keeps
+    # working. It never shares the field with a real size, so fashion's Colour
+    # and Size facets stay clean either way. When Eureka gains a custom
+    # searchable attribute (blocked item 2), tier moves out of g:size and the
+    # fallback below can go.
+    size_value = p.get("size") or p.get("tier")
+    if size_value:
+        parts.append(f"    <g:size>{escape(clean(size_value, 512))}</g:size>")
+
+    # Which dimension g:size actually holds, so a campaign or the Shopping
+    # Agent can tell a Cabin from a dress size.
+    dimension = p.get("size_label") or p.get("tier_label")
+    if dimension:
+        parts.append(f"    <g:custom_label_1>{escape(clean(dimension, 512))}</g:custom_label_1>")
+
     parts.append("  </item>")
     return "\n".join(parts)
 

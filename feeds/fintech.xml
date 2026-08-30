@@ -20,6 +20,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Free</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000002</g:id>
@@ -37,6 +38,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Plus</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000003</g:id>
@@ -54,6 +56,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Premium</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000004</g:id>
@@ -71,6 +74,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Metal</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000005</g:id>
@@ -88,6 +92,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Free</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000006</g:id>
@@ -105,6 +110,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Plus</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000007</g:id>
@@ -122,6 +128,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Premium</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000008</g:id>
@@ -139,6 +146,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Metal</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000009</g:id>
@@ -156,6 +164,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Starter</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000010</g:id>
@@ -173,6 +182,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Growth</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000011</g:id>
@@ -190,6 +200,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Scale</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000012</g:id>
@@ -207,6 +218,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Starter</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000013</g:id>
@@ -224,6 +236,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Growth</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000014</g:id>
@@ -241,6 +254,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Scale</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000015</g:id>
@@ -258,6 +272,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Personal</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000016</g:id>
@@ -275,6 +290,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Business</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000017</g:id>
@@ -292,6 +308,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Personal</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000018</g:id>
@@ -309,6 +326,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Business</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000019</g:id>
@@ -326,6 +344,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>General</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000020</g:id>
@@ -343,6 +362,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Tax-Free</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000021</g:id>
@@ -360,6 +380,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Pension</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000022</g:id>
@@ -377,6 +398,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>General</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000023</g:id>
@@ -394,6 +416,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Tax-Free</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000024</g:id>
@@ -411,6 +434,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Pension</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000025</g:id>
@@ -428,6 +452,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Standard</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000026</g:id>
@@ -445,6 +470,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Pro</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000027</g:id>
@@ -462,6 +488,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Standard</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000028</g:id>
@@ -479,6 +506,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Pro</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000029</g:id>
@@ -496,6 +524,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>5 cards</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000030</g:id>
@@ -513,6 +542,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>20 cards</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000031</g:id>
@@ -530,6 +560,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Unlimited</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000032</g:id>
@@ -547,6 +578,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>5 cards</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000033</g:id>
@@ -564,6 +596,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>20 cards</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000034</g:id>
@@ -581,6 +614,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Unlimited</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000035</g:id>
@@ -598,6 +632,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Standard</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000036</g:id>
@@ -615,6 +650,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Pro</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000037</g:id>
@@ -632,6 +668,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Standard</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000038</g:id>
@@ -649,6 +686,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Pro</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000039</g:id>
@@ -666,6 +704,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Up to 10</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000040</g:id>
@@ -683,6 +722,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Up to 50</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000041</g:id>
@@ -700,6 +740,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Unlimited</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000042</g:id>
@@ -717,6 +758,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Up to 10</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000043</g:id>
@@ -734,6 +776,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Up to 50</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
   <item>
     <g:id>48500000000044</g:id>
@@ -751,6 +794,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Unlimited</g:size>
+    <g:custom_label_1>Tier</g:custom_label_1>
   </item>
 </channel>
 </rss>

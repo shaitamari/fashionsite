@@ -100,6 +100,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>SB13-Ultra</g:size>
+    <g:custom_label_1>Type</g:custom_label_1>
   </item>
   <item>
     <g:id>31980619300973</g:id>
@@ -117,6 +118,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>PB13-Ultra</g:size>
+    <g:custom_label_1>Type</g:custom_label_1>
   </item>
   <item>
     <g:id>46718564270269</g:id>
@@ -181,7 +183,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Piano Gloss Black</g:size>
+    <g:color>Piano Gloss Black</g:color>
   </item>
   <item>
     <g:id>46533422219453</g:id>
@@ -198,7 +200,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Piano Gloss White</g:size>
+    <g:color>Piano Gloss White</g:color>
   </item>
   <item>
     <g:id>29905134220</g:id>
@@ -312,6 +314,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>6 Foot</g:size>
+    <g:custom_label_1>Feet</g:custom_label_1>
   </item>
   <item>
     <g:id>46271531090109</g:id>
@@ -328,7 +331,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Premium Black Ash</g:size>
+    <g:color>Premium Black Ash</g:color>
   </item>
   <item>
     <g:id>46271531122877</g:id>
@@ -345,7 +348,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Piano Gloss Black</g:size>
+    <g:color>Piano Gloss Black</g:color>
   </item>
   <item>
     <g:id>46830794408125</g:id>
@@ -362,7 +365,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Piano Gloss White</g:size>
+    <g:color>Piano Gloss White</g:color>
   </item>
   <item>
     <g:id>46278378782909</g:id>
@@ -379,7 +382,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Premium Black Ash</g:size>
+    <g:color>Premium Black Ash</g:color>
   </item>
   <item>
     <g:id>33232078092</g:id>
@@ -5644,7 +5647,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Premium Black Ash</g:size>
+    <g:color>Premium Black Ash</g:color>
   </item>
   <item>
     <g:id>44930760704189</g:id>
@@ -5661,7 +5664,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Piano Gloss Black</g:size>
+    <g:color>Piano Gloss Black</g:color>
   </item>
   <item>
     <g:id>44930774630589</g:id>
@@ -5678,7 +5681,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Premium Black Ash</g:size>
+    <g:color>Premium Black Ash</g:color>
   </item>
   <item>
     <g:id>44930774663357</g:id>
@@ -5695,7 +5698,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Piano Gloss Black</g:size>
+    <g:color>Piano Gloss Black</g:color>
   </item>
   <item>
     <g:id>46238148395197</g:id>
@@ -5712,7 +5715,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Piano Gloss White</g:size>
+    <g:color>Piano Gloss White</g:color>
   </item>
   <item>
     <g:id>25666800134</g:id>
@@ -6353,7 +6356,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Piano Gloss Black</g:size>
+    <g:color>Piano Gloss Black</g:color>
   </item>
   <item>
     <g:id>20515873414</g:id>
@@ -6578,7 +6581,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Piano Gloss Black</g:size>
+    <g:color>Piano Gloss Black</g:color>
   </item>
   <item>
     <g:id>44540166996157</g:id>
@@ -6595,7 +6598,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Black Oak Veneer</g:size>
+    <g:color>Black Oak Veneer</g:color>
   </item>
   <item>
     <g:id>44506955579581</g:id>
@@ -6612,7 +6615,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Piano Gloss Black</g:size>
+    <g:color>Piano Gloss Black</g:color>
   </item>
   <item>
     <g:id>44506955612349</g:id>
@@ -6629,7 +6632,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Black Oak Veneer</g:size>
+    <g:color>Black Oak Veneer</g:color>
   </item>
   <item>
     <g:id>30895954764</g:id>
@@ -6790,7 +6793,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Piano Gloss Black</g:size>
+    <g:color>Piano Gloss Black</g:color>
   </item>
   <item>
     <g:id>43529575596221</g:id>
@@ -6807,7 +6810,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Piano Gloss White</g:size>
+    <g:color>Piano Gloss White</g:color>
   </item>
   <item>
     <g:id>43608922587325</g:id>
@@ -6824,7 +6827,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Black Oak Veneer</g:size>
+    <g:color>Black Oak Veneer</g:color>
   </item>
   <item>
     <g:id>43589046960317</g:id>
@@ -6841,7 +6844,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Piano Gloss Black</g:size>
+    <g:color>Piano Gloss Black</g:color>
   </item>
   <item>
     <g:id>44360977121469</g:id>
@@ -6858,7 +6861,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Black Oak Veneer</g:size>
+    <g:color>Black Oak Veneer</g:color>
   </item>
   <item>
     <g:id>44389203968189</g:id>
@@ -6875,7 +6878,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Piano Gloss White</g:size>
+    <g:color>Piano Gloss White</g:color>
   </item>
   <item>
     <g:id>43513877397693</g:id>
@@ -6892,7 +6895,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Piano Gloss Black</g:size>
+    <g:color>Piano Gloss Black</g:color>
   </item>
   <item>
     <g:id>43513877430461</g:id>
@@ -6909,7 +6912,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Piano Gloss White</g:size>
+    <g:color>Piano Gloss White</g:color>
   </item>
   <item>
     <g:id>43608918851773</g:id>
@@ -6926,7 +6929,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Black Oak Veneer</g:size>
+    <g:color>Black Oak Veneer</g:color>
   </item>
   <item>
     <g:id>43439329804477</g:id>
@@ -6943,7 +6946,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Piano Gloss Black</g:size>
+    <g:color>Piano Gloss Black</g:color>
   </item>
   <item>
     <g:id>43439329837245</g:id>
@@ -6960,7 +6963,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Piano Gloss White</g:size>
+    <g:color>Piano Gloss White</g:color>
   </item>
   <item>
     <g:id>43608914165949</g:id>
@@ -6977,7 +6980,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Black Oak Veneer</g:size>
+    <g:color>Black Oak Veneer</g:color>
   </item>
   <item>
     <g:id>43608911315133</g:id>
@@ -6994,7 +6997,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Black Oak Veneer</g:size>
+    <g:color>Black Oak Veneer</g:color>
   </item>
   <item>
     <g:id>44052105265341</g:id>
@@ -7011,7 +7014,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Piano Gloss Black</g:size>
+    <g:color>Piano Gloss Black</g:color>
   </item>
   <item>
     <g:id>44052119683261</g:id>
@@ -7028,7 +7031,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Piano Gloss White</g:size>
+    <g:color>Piano Gloss White</g:color>
   </item>
   <item>
     <g:id>43439332786365</g:id>
@@ -7045,7 +7048,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Piano Gloss Black</g:size>
+    <g:color>Piano Gloss Black</g:color>
   </item>
   <item>
     <g:id>43439332819133</g:id>
@@ -7062,7 +7065,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Piano Gloss White</g:size>
+    <g:color>Piano Gloss White</g:color>
   </item>
   <item>
     <g:id>43608898797757</g:id>
@@ -7079,7 +7082,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Black Oak Veneer</g:size>
+    <g:color>Black Oak Veneer</g:color>
   </item>
   <item>
     <g:id>43439332294845</g:id>
@@ -7096,7 +7099,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Piano Gloss Black</g:size>
+    <g:color>Piano Gloss Black</g:color>
   </item>
   <item>
     <g:id>43439332360381</g:id>
@@ -7113,7 +7116,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Piano Gloss White</g:size>
+    <g:color>Piano Gloss White</g:color>
   </item>
   <item>
     <g:id>44070618431677</g:id>
@@ -7130,7 +7133,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Black Oak Veneer</g:size>
+    <g:color>Black Oak Veneer</g:color>
   </item>
   <item>
     <g:id>26930855046</g:id>
@@ -7163,7 +7166,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Piano Gloss White</g:size>
+    <g:color>Piano Gloss White</g:color>
   </item>
   <item>
     <g:id>39300459331773</g:id>
@@ -7180,7 +7183,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Piano Gloss Black</g:size>
+    <g:color>Piano Gloss Black</g:color>
   </item>
   <item>
     <g:id>434847842329</g:id>
@@ -7325,7 +7328,8 @@
     <g:product_type>Electronics &gt; Accessory &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>10 Feet / Banana</g:size>
+    <g:size>10 Feet</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>43300049977533</g:id>
@@ -7342,7 +7346,8 @@
     <g:product_type>Electronics &gt; Accessory &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>10 Feet / Spade</g:size>
+    <g:size>10 Feet</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>43306877288637</g:id>
@@ -7359,7 +7364,8 @@
     <g:product_type>Electronics &gt; Accessory &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>10 Feet / Mixed - 2 Banana &amp; 4 Spade</g:size>
+    <g:size>10 Feet</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>43279267594429</g:id>
@@ -7376,7 +7382,8 @@
     <g:product_type>Electronics &gt; Accessory &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>20 Feet / Banana</g:size>
+    <g:size>20 Feet</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>43300050010301</g:id>
@@ -7393,7 +7400,8 @@
     <g:product_type>Electronics &gt; Accessory &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>20 Feet / Spade</g:size>
+    <g:size>20 Feet</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>43306877321405</g:id>
@@ -7410,7 +7418,8 @@
     <g:product_type>Electronics &gt; Accessory &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>20 Feet / Mixed - 2 Banana &amp; 4 Spade</g:size>
+    <g:size>20 Feet</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>32732138444</g:id>
@@ -8244,6 +8253,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>SoundBase</g:size>
+    <g:custom_label_1>System</g:custom_label_1>
   </item>
   <item>
     <g:id>23451765766</g:id>
@@ -11268,7 +11278,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Premium Black Ash</g:size>
+    <g:color>Premium Black Ash</g:color>
   </item>
   <item>
     <g:id>38064755245245</g:id>
@@ -11285,7 +11295,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Piano Gloss Black</g:size>
+    <g:color>Piano Gloss Black</g:color>
   </item>
   <item>
     <g:id>38064755278013</g:id>
@@ -11302,7 +11312,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Piano Gloss White</g:size>
+    <g:color>Piano Gloss White</g:color>
   </item>
   <item>
     <g:id>42633429647549</g:id>
@@ -11320,6 +11330,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Single Subwoofer System</g:size>
+    <g:custom_label_1>Option</g:custom_label_1>
   </item>
   <item>
     <g:id>42667387093181</g:id>
@@ -11337,6 +11348,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Dual Subwoofer System</g:size>
+    <g:custom_label_1>Option</g:custom_label_1>
   </item>
   <item>
     <g:id>19628951494</g:id>
@@ -11833,7 +11845,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Piano Gloss Black</g:size>
+    <g:color>Piano Gloss Black</g:color>
   </item>
   <item>
     <g:id>42199614521533</g:id>
@@ -11850,7 +11862,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Piano Gloss White</g:size>
+    <g:color>Piano Gloss White</g:color>
   </item>
   <item>
     <g:id>42460445147325</g:id>
@@ -11947,7 +11959,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>High-Grade Black Fabric</g:size>
+    <g:color>High-Grade Black Fabric</g:color>
   </item>
   <item>
     <g:id>14855808838</g:id>
@@ -12125,6 +12137,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>1 Meter</g:size>
+    <g:custom_label_1>Length</g:custom_label_1>
   </item>
   <item>
     <g:id>41988880433341</g:id>
@@ -12142,6 +12155,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>2 Meter</g:size>
+    <g:custom_label_1>Length</g:custom_label_1>
   </item>
   <item>
     <g:id>41988880466109</g:id>
@@ -12159,6 +12173,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>3 Meter</g:size>
+    <g:custom_label_1>Length</g:custom_label_1>
   </item>
   <item>
     <g:id>188301115417</g:id>
@@ -13168,6 +13183,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>1 Meter</g:size>
+    <g:custom_label_1>Length</g:custom_label_1>
   </item>
   <item>
     <g:id>41468378218685</g:id>
@@ -13185,6 +13201,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>2 Meter</g:size>
+    <g:custom_label_1>Length</g:custom_label_1>
   </item>
   <item>
     <g:id>41468378251453</g:id>
@@ -13202,6 +13219,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>3 Meter</g:size>
+    <g:custom_label_1>Length</g:custom_label_1>
   </item>
   <item>
     <g:id>35634108236</g:id>
@@ -13315,6 +13333,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>1 Meter (single)</g:size>
+    <g:custom_label_1>Length</g:custom_label_1>
   </item>
   <item>
     <g:id>41507158327485</g:id>
@@ -13332,6 +13351,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>1 Meter (pair)</g:size>
+    <g:custom_label_1>Length</g:custom_label_1>
   </item>
   <item>
     <g:id>41425081237693</g:id>
@@ -13349,6 +13369,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>2 Meter (single)</g:size>
+    <g:custom_label_1>Length</g:custom_label_1>
   </item>
   <item>
     <g:id>41507163799741</g:id>
@@ -13366,6 +13387,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>2 Meter (pair)</g:size>
+    <g:custom_label_1>Length</g:custom_label_1>
   </item>
   <item>
     <g:id>41425081270461</g:id>
@@ -13383,6 +13405,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>3 Meter (single)</g:size>
+    <g:custom_label_1>Length</g:custom_label_1>
   </item>
   <item>
     <g:id>41425081303229</g:id>
@@ -13400,6 +13423,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>5 Meter (single)</g:size>
+    <g:custom_label_1>Length</g:custom_label_1>
   </item>
   <item>
     <g:id>41425081335997</g:id>
@@ -13417,6 +13441,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>8 Meter (single)</g:size>
+    <g:custom_label_1>Length</g:custom_label_1>
   </item>
   <item>
     <g:id>41425081368765</g:id>
@@ -13434,6 +13459,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>12 Meter (single)</g:size>
+    <g:custom_label_1>Length</g:custom_label_1>
   </item>
   <item>
     <g:id>41425081401533</g:id>
@@ -13451,6 +13477,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>15 Meter (single)</g:size>
+    <g:custom_label_1>Length</g:custom_label_1>
   </item>
   <item>
     <g:id>31884988364</g:id>

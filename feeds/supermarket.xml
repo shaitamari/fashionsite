@@ -20,6 +20,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>50g</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>41524982317114</g:id>
@@ -37,6 +38,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>200g</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>41524987428922</g:id>
@@ -422,6 +424,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>50g</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>41524982186042</g:id>
@@ -439,6 +442,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>200g</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>41524982251578</g:id>
@@ -2423,7 +2427,6 @@
     <g:product_type>Supermarkets &gt; Tableware &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>31cm</g:size>
   </item>
   <item>
     <g:id>41436626812986</g:id>
@@ -2440,7 +2443,6 @@
     <g:product_type>Supermarkets &gt; Tableware &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>31cm</g:size>
   </item>
   <item>
     <g:id>41436626780218</g:id>
@@ -2457,7 +2459,6 @@
     <g:product_type>Supermarkets &gt; Tableware &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>31cm</g:size>
   </item>
   <item>
     <g:id>41436626649146</g:id>
@@ -2474,7 +2475,6 @@
     <g:product_type>Supermarkets &gt; Tableware &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>20x2x2cm</g:size>
   </item>
   <item>
     <g:id>41436626616378</g:id>
@@ -2491,7 +2491,6 @@
     <g:product_type>Supermarkets &gt; Tableware &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>1.8x1.8x20cm</g:size>
   </item>
   <item>
     <g:id>41436626583610</g:id>
@@ -2508,7 +2507,6 @@
     <g:product_type>Supermarkets &gt; Tableware &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>1.8x1.8x20cm</g:size>
   </item>
   <item>
     <g:id>41436626387002</g:id>
@@ -2525,7 +2523,6 @@
     <g:product_type>Supermarkets &gt; Tableware &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>7.8x8.2x6cm</g:size>
   </item>
   <item>
     <g:id>41436626321466</g:id>
@@ -2542,7 +2539,6 @@
     <g:product_type>Supermarkets &gt; Tableware &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>8.8x5.9x5.8cm</g:size>
   </item>
   <item>
     <g:id>41436626223162</g:id>
@@ -2559,7 +2555,6 @@
     <g:product_type>Supermarkets &gt; Tableware &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>8x5x6.7cm</g:size>
   </item>
   <item>
     <g:id>41436626190394</g:id>
@@ -2576,7 +2571,6 @@
     <g:product_type>Supermarkets &gt; Tableware &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>8.7x3.8x4cm</g:size>
   </item>
   <item>
     <g:id>41436626157626</g:id>
@@ -2593,7 +2587,6 @@
     <g:product_type>Supermarkets &gt; Tableware &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>9.6x4x3.5cm</g:size>
   </item>
   <item>
     <g:id>41436626059322</g:id>
@@ -2610,7 +2603,6 @@
     <g:product_type>Supermarkets &gt; Cookware &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>12.6x2.7x6.7cm</g:size>
   </item>
   <item>
     <g:id>41436625961018</g:id>
@@ -2627,7 +2619,6 @@
     <g:product_type>Supermarkets &gt; Tableware &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>10x10x4.3cm</g:size>
   </item>
   <item>
     <g:id>41436625928250</g:id>
@@ -2644,7 +2635,6 @@
     <g:product_type>Supermarkets &gt; Tableware &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>15.7x13.4x4.7cm</g:size>
   </item>
   <item>
     <g:id>41436625764410</g:id>
@@ -2661,7 +2651,6 @@
     <g:product_type>Supermarkets &gt; Tableware &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>16.8x10.2x7cm</g:size>
   </item>
   <item>
     <g:id>41436625731642</g:id>
@@ -2678,7 +2667,6 @@
     <g:product_type>Supermarkets &gt; Tableware &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>12.6x12.3x2cm</g:size>
   </item>
   <item>
     <g:id>41436625633338</g:id>
@@ -2695,7 +2683,6 @@
     <g:product_type>Supermarkets &gt; Tableware &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>17.5x15.2x1.6cm</g:size>
   </item>
   <item>
     <g:id>41436625436730</g:id>
@@ -2985,6 +2972,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>500ml</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>41361648058426</g:id>
@@ -3002,6 +2990,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>3 Litres</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>41436619997242</g:id>
@@ -3723,6 +3712,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>250ml</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>41361647992890</g:id>
@@ -3740,6 +3730,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>500ml</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>41361648091194</g:id>
@@ -3757,6 +3748,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>250ml</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>41361648123962</g:id>
@@ -3774,6 +3766,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>500ml</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>41361647894586</g:id>
@@ -3791,6 +3784,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>250ml</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>41361647927354</g:id>
@@ -3808,6 +3802,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>500ml</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>41312894844986</g:id>
@@ -3969,6 +3964,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>1lbs</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>41249642938426</g:id>
@@ -3986,6 +3982,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>2lbs</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>40867395633210</g:id>
@@ -4179,6 +4176,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>5kg</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>41417400877114</g:id>
@@ -4196,6 +4194,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>15kg</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>41312893141050</g:id>
@@ -4357,6 +4356,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>1lbs</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>41249639727162</g:id>
@@ -4374,6 +4374,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>2lbs</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>41217438974010</g:id>
@@ -5287,6 +5288,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>250g (Short Dated: BBD 17/09/2026)</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>40546993995834</g:id>
@@ -5304,6 +5306,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>350g</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>40546994028602</g:id>
@@ -5321,6 +5324,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>500g</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>41312894615610</g:id>
@@ -6746,6 +6750,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>500g</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>41321272672314</g:id>
@@ -6763,6 +6768,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>5kg</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>41285183012922</g:id>
@@ -7132,6 +7138,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>115g</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>40209947525178</g:id>
@@ -7149,6 +7156,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>270g</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>41285185044538</g:id>
@@ -7710,6 +7718,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>12x10x2.5in; 30x25.5x6cm</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>41249644150842</g:id>
@@ -7727,6 +7736,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>14.5x12x2.5in; 37x30x6cm</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>41249643036730</g:id>
@@ -7792,6 +7802,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>6.1cm</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>41249643003962</g:id>
@@ -7809,6 +7820,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>6.3cm</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>41249644019770</g:id>
@@ -7986,6 +7998,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>13.5x8.5in ; 34x21.5cm</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>41249643135034</g:id>
@@ -8003,6 +8016,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>17.3x13.5in ; 44x34cm</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>41249639596090</g:id>
@@ -8020,6 +8034,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>13x11in ; 33x28cm</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>41249639628858</g:id>
@@ -8037,6 +8052,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>15x13in ; 38x33cm</g:size>
+    <g:custom_label_1>Size</g:custom_label_1>
   </item>
   <item>
     <g:id>41219016196154</g:id>
