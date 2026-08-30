@@ -100,7 +100,7 @@ window.SITE_CONFIG = {
         icon: 'similar',
         blurb: 'Reads product descriptions and attributes to find items like the one being viewed.',
         needs: 'Catalogue only — works from day one, including for new products.',
-        where: 'Large, well-described catalogues. It reads the words you already wrote, so it covers the long tail rather than only the bestsellers.',
+        where: 'Large, well-described catalogues. It reads the words you already wrote, so it covers the long tail rather than only the bestsellers — and it is only as good as that copy, which is why Visually similar is the better choice where descriptions are thin.',
         pairs: 'Viewed together. Text says what a product is like; behaviour confirms which of those a shopper actually treats as alternatives.',
         caveat: 'Only as good as your product copy. Thin descriptions give thin results.',
         placement: 'Product page, first. Industry guidance is that if you can only run one recommendation unit anywhere, make it Similar Products on the PDP.'
@@ -111,8 +111,8 @@ window.SITE_CONFIG = {
         icon: 'image',
         blurb: 'Compares product images with a multimodal model — colour, shape, texture, style.',
         needs: 'A valid image_url on each product. No behavioural data required.',
-        where: 'Apparel, furniture, jewellery, home decor — anywhere the look drives the decision. Fits how people actually shop these categories.',
-        pairs: 'Complementary. One finds the alternative, the other finds what goes with it.',
+        where: 'Two cases. Categories where the look drives the decision — apparel, furniture, jewellery, home decor — and any catalogue where the product copy is thin, inconsistent or machine-generated. It reads the pictures, so it does not care how well anything is written.',
+        pairs: 'Complementary — one finds the alternative, the other finds what goes with it. Note you would normally choose EITHER this or Similar products, not both: they answer the same question from different evidence. Similar when your copy is strong, this when it is not, or when your customers shop by eye.',
         caveat: 'Image quality decides relevance. Clean, consistent shots on a plain background work best; busy lifestyle imagery works less well.',
         placement: 'Product page and add-to-cart. Especially valuable when an item is out of stock in the shopper\u2019s size \u2014 it offers an alternative instead of a dead end.'
       },
@@ -313,7 +313,14 @@ window.SITE_CONFIG = {
              first thing anyone sees. */
           // Second PDP row. Similar reads the words, Visually Similar reads
           // the pictures — worth showing side by side on a visual vertical.
-          productVisual: { campaignId: null, variationId: null, strategy: 'visually_similar' },
+          productVisual: {
+            campaignId: 4237,
+            variationId: 8852,
+            recommendationId: 43624,
+            strategy: 'visually_similar'
+          },
+          // Third PDP row: what goes with this, rather than what is like it.
+          productComplement: { campaignId: null, variationId: null, strategy: 'complementary' },
           home:         { campaignId: null, variationId: null, strategy: 'new_arrivals' },
           homeFoot:     { campaignId: null, variationId: null, strategy: 'user_based' },
           cart:         { campaignId: null, variationId: null, strategy: 'complementary' },
