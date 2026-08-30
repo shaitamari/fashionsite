@@ -243,11 +243,26 @@
   function facetsFromEureka(list) {
     var sw = [], ch = [], seenSw = {}, seenCh = {};
     list.forEach(function (v) {
-      if (v.color && !seenSw[v.color]) {
-        seenSw[v.color] = 1;
-        sw.push({ label: v.color, hex: swatchHex(v.color) || '#cfcfcf' });
-      }
-      if (v.size && !seenCh[v.size]) { seenCh[v.size] = 1; ch.push(v.size); }
+      /* `color` and `size` are separate fields here, but the feed writes the
+         WHOLE compound label into whichever one it picks — g:color comes back
+         as "Blue / AU 4", not "Blue". Ten sizes of one blue shirt therefore
+         look like ten distinct colours that all resolve to the same hex, and
+         the card shows ten identical blue dots.
+
+         So split both fields and classify the tokens rather than trusting the
+         field name. Fixing this at source is item 1 of feed-fixes.md. */
+      [v.color, v.size].forEach(function (field) {
+        String(field == null ? '' : field).split('/').forEach(function (raw) {
+          var tok = raw.trim();
+          if (!tok) return;
+          var hex = swatchHex(tok);
+          if (hex) {
+            if (!seenSw[tok]) { seenSw[tok] = 1; sw.push({ label: tok, hex: hex }); }
+          } else {
+            if (!seenCh[tok]) { seenCh[tok] = 1; ch.push(tok); }
+          }
+        });
+      });
     });
     return { swatches: sw, chips: ch };
   }
