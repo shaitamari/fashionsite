@@ -191,6 +191,11 @@ main { padding-bottom: 5rem; }
 .swatch--link { cursor: pointer; }
 .swatch--link:hover { transform: scale(1.18); }
 .swatch.is-current { box-shadow: 0 0 0 1.5px var(--bg), 0 0 0 3px var(--ink); }
+
+/* Bigger swatches on the product page, where choosing colour is the task
+   rather than a preview. */
+.swatch--lg { width: 26px; height: 26px; }
+#p-colourways { gap: .5rem; }
 .card__price { font-size: .9375rem; margin: 0; }
 .card__price .was { color: var(--muted); margin-right: .4rem; }
 .card__price .now { color: var(--sale); }
