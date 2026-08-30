@@ -162,6 +162,18 @@ window.SITE_CONFIG = {
         caveat: 'Silent for anyone who has not bought yet, which is most first-time visitors.',
         placement: 'Homepage and account pages for returning customers.'
       },
+      user_engagement: {
+        label: 'Real time user engagement',
+        group: 'Personalised',
+        icon: 'auto',
+        blurb: 'Reacts to what this visitor has done in the current session.',
+        needs: 'Nothing but the session itself \u2014 no model, no warm-up.',
+        placement: 'Post-purchase and continuation moments, where the question is what to look at next rather than what to add.',
+        where: 'The one algorithm here that responds within a visit rather than on a daily or weekly cycle. Strongest where sessions are long enough to reveal intent.',
+        pairs: 'A catalogue-driven strategy beneath it, for the first page view before there is any session to read.',
+        caveat: 'Only knows this session on this device. It cannot draw on anything the visitor did last week or on another channel.'
+      },
+
       user_based: {
         label: 'User based',
         group: 'Personalised',
@@ -331,7 +343,16 @@ window.SITE_CONFIG = {
           home:         { campaignId: null, variationId: null, strategy: 'new_arrivals' },
           homeFoot:     { campaignId: null, variationId: null, strategy: 'user_based' },
           cart:         { campaignId: null, variationId: null, strategy: 'complementary' },
-          confirmation: { campaignId: null, variationId: null, strategy: 'visually_similar' }
+          /* Confirmation deliberately is NOT another Complementary row: PDP,
+             cart and confirmation all running cross-sell would be the same
+             answer three times, and after the money is taken the question is
+             what to look at next rather than what to add. Real time user
+             engagement reads the session, which is the right read for a
+             post-purchase browse.
+
+             Currently a placeholder — the algorithm is unchecked in Gachapon.
+             See monday.md. */
+          confirmation: { campaignId: null, variationId: null, strategy: 'user_engagement' }
         },
 
         /* Per-vertical overrides.
