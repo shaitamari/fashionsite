@@ -159,9 +159,18 @@
       <div id="reco-productVisual" hidden></div>
     </section>
 
+    <!-- Third row: what GOES WITH this, rather than what is like it.
+         Replaces a static "more from this category" grid, which was the one
+         row on this page not driven by the platform and sat awkwardly beneath
+         two that are. Academy puts Complementary on product detail and cart
+         pages both; on fashion the PDP is arguably the better of the two,
+         since outfit-building is exactly what someone is doing here. -->
     <section class="section">
-      <div class="section__head"><h2 class="h2">More from this category</h2></div>
-      <div class="grid" id="related"></div>
+      <div class="section__head">
+        <h2 class="h2">Goes well with</h2>
+        <span class="source" id="reco-productComplement-note">Smart Recommender · waiting for campaign</span>
+      </div>
+      <div id="reco-productComplement" hidden></div>
     </section>
   </div>
 </main>
@@ -344,12 +353,9 @@
     say('custom_event size_guide_opened sent');
   });
 
-  var seen = {};
-  Store.grid('#related', Store.byCollection(PRODUCT.collection).filter(function (p) {
-    if (p.groupcode === PRODUCT.groupcode || seen[p.groupcode]) return false;
-    seen[p.groupcode] = true;
-    return true;
-  }).slice(0, 6));
+  // The local "more from this category" grid was removed: every row on this
+  // page is now platform-driven, and a static list sitting beneath two AI
+  // strategies weakened both.
 
   watchReco('product');
 
@@ -363,6 +369,7 @@
     // Slot name is taken from the host id, so this reads
     // config.reco.perAccount[account].slots.productVisual.
     window.Recs.mount('#reco-productVisual');
+    window.Recs.mount('#reco-productComplement');
   }
 </script>
 </body>
