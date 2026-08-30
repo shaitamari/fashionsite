@@ -524,6 +524,16 @@
         preferred_category: u.preferred_category || preferredCategory(),
         signup_date: u.signup_date,
         is_vip: u.membership_tier === 'Gold',
+        /* Set by the flow page — skin type, size preference, cover level,
+           whatever that vertical's service journey asks for. It was written to
+           storage by signIn() but never mapped in here, so it never left the
+           browser even when everything else did.
+
+           VERIFY THE NAME. config.js records that the account is near its
+           80-attribute cap, so `service_preference` could not be created and an
+           existing attribute was repurposed. If the name or type does not match
+           that attribute exactly, this is dropped silently on a 200. */
+        service_preference: u.service_preference || undefined,
         // The store's own account id. An attribute, not an identifier — the
         // uuid above is what Insider matches on, and it must stay stable.
         account_id: u.uuid || undefined

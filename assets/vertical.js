@@ -267,6 +267,7 @@
         typeof u.loyalty_points === 'number' ? u.loyalty_points : 0;
       io.user.custom.is_vip = u.membership_tier === 'Gold';
       if (u.signup_date) io.user.custom.signup_date = u.signup_date;
+      if (u.service_preference) io.user.custom.service_preference = u.service_preference;
       if (u.uuid) io.user.custom.account_id = u.uuid;
 
       if (window.insDebugNote) {
@@ -568,6 +569,17 @@
     set('[data-reco-title]', d.reco_title);
     set('[data-newsletter-title]', d.newsletter_title);
     set('[data-newsletter-lede]', d.newsletter_lede);
+
+    /* The service journey — the non-transactional path that matters for
+       banking, insurance and telco, where nobody adds a policy to a basket.
+       Every vertical configures its own wording: "Book a fitting" on fashion,
+       "Get a quote" on insurance, "Manage a trip" on airlines.
+
+       The link used to appear only in flow.html's own masthead, so the page
+       was unreachable unless you already knew the URL. It is in every
+       masthead now; this gives it the right words. */
+    var flow = d.flow || {};
+    if (flow.title) set('[data-flow-link]', flow.title);
     setHTML('[data-hero-title]', d.hero_title);
 
     /* --- category links in the templates ----------------------------------
