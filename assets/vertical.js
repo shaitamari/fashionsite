@@ -650,6 +650,11 @@
     if (flow.title) set('[data-flow-link]', flow.title);
     setHTML('[data-hero-title]', d.hero_title);
 
+    /* Reveal the hero now the copy is this vertical's rather than the
+       template's. See the note in index.html: without this, every storefront
+       except beauty flashes "Skin first. Makeup second." first. */
+    document.documentElement.classList.add('hero-ready');
+
     /* --- category links in the templates ----------------------------------
        The page templates were written against beauty, so the hero button and
        the "View all" link both point at category.html?c=Makeup. The COPY is

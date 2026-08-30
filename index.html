@@ -13,6 +13,23 @@
 
 <link rel="preconnect" href="https://cdn.shopify.com">
 <link rel="stylesheet" href="assets/styles.css">
+<style>
+/* The hero copy in the markup below is beauty's, because the template was
+   written against Lumen. vertical.js replaces it per vertical, but only on
+   DOMContentLoaded — so on the other eleven storefronts the visitor sees
+   "Skin first. Makeup second." for a beat before Ashford Lane's headline
+   appears. On a demo that is the worst possible flash: another brand's words.
+
+   So hide the copy until it has been painted. visibility rather than display,
+   so the layout does not shift. vertical.js adds `hero-ready` once it has set
+   the text; the inline timer below is the safety net if anything throws, so a
+   broken script can never leave the hero permanently blank. */
+[data-hero-eyebrow], [data-hero-title], [data-hero-lede], [data-hero-cta] { visibility: hidden }
+.hero-ready [data-hero-eyebrow], .hero-ready [data-hero-title],
+.hero-ready [data-hero-lede], .hero-ready [data-hero-cta] { visibility: visible }
+</style>
+<script>setTimeout(function(){document.documentElement.classList.add('hero-ready')},1500);</script>
+
 
 <!-- ══════════════════════════════════════════════════════════════════════════
      INSIDER WEB SDK
