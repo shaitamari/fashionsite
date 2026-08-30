@@ -171,7 +171,39 @@
      The most legible change on the site: same page, different opening,
      according to what this visitor has been looking at. Copy is per top
      category, with a discount variant that wins when sale-browsing dominates. */
+  /* Keyed by the second level of the category path, which is what `observe()`
+     records. Beauty and fashion only — the two verticals where a homepage
+     that reacts to browsing is a story anyone buys. Anything not listed here
+     leaves the original hero copy alone, which is why the exhibit degrades
+     quietly rather than writing beauty copy onto a bank. */
   var HERO = {
+    // Fashion — Ashford Lane
+    'Tops':         { eyebrow: 'Because you have been looking at tops',
+                      title: 'Start at the top.',
+                      lede: 'The layer everything else is built around.',
+                      cta: 'Shop tops', href: 'category.html?c=Tops' },
+    'Maxi Dresses': { eyebrow: 'Because you have been looking at maxi dresses',
+                      title: 'Full length.',
+                      lede: 'For the evenings that ask for it.',
+                      cta: 'Shop maxi dresses', href: 'category.html?c=Maxi%20Dresses' },
+    'Mini Dresses': { eyebrow: 'Because you have been looking at mini dresses',
+                      title: 'Short story.',
+                      lede: 'Cut to move, made to be seen.',
+                      cta: 'Shop mini dresses', href: 'category.html?c=Mini%20Dresses' },
+    'Dresses':      { eyebrow: 'Because you have been looking at dresses',
+                      title: 'One decision.',
+                      lede: 'The whole outfit, sorted in a single piece.',
+                      cta: 'Shop dresses', href: 'category.html?c=Dresses' },
+    'Pants':        { eyebrow: 'Because you have been looking at trousers',
+                      title: 'Cut properly.',
+                      lede: 'Tailoring that holds its line all day.',
+                      cta: 'Shop trousers', href: 'category.html?c=Pants' },
+    'Outerwear':    { eyebrow: 'Because you have been looking at outerwear',
+                      title: 'Weather permitting.',
+                      lede: 'The piece everyone sees first.',
+                      cta: 'Shop outerwear', href: 'category.html?c=Outerwear' },
+
+    // Beauty — Lumen
     Makeup:    { eyebrow: 'Because you have been looking at makeup',
                  title: 'Colour, considered.',
                  lede: 'Shades built to layer, wear and rewear.',
@@ -190,10 +222,18 @@
                  cta: 'Shop body', href: 'category.html?c=Body' }
   };
 
+  /* The sale hero is vertical-agnostic, so its CTA points at whatever the
+     first collection of this store happens to be rather than a hard-coded
+     beauty category. */
   var HERO_SALE = { eyebrow: 'Because you have been browsing the sale',
                     title: 'Still on sale.',
                     lede: 'Reduced this season, while the sizes last.',
-                    cta: 'Shop sale', href: 'category.html?c=Makeup' };
+                    cta: 'Shop the sale', href: null };
+
+  function saleHref() {
+    var c = (window.Store && window.Store.collections && window.Store.collections()) || [];
+    return c.length ? 'category.html?c=' + encodeURIComponent(c[0]) : 'index.html';
+  }
 
   function swapHero() {
     var hero = document.querySelector('[data-hero-title]');
@@ -211,11 +251,29 @@
     else if (c && HERO[c.value]) pick = HERO[c.value];
     if (!pick) return;
 
-    set('[data-hero-eyebrow]', pick.eyebrow);
+    /* Name the colour in the eyebrow when there is a clear one. It is the most
+       legible form the exhibit takes — the line says exactly what was learned,
+       so nobody has to be told what changed. Only when the leading colour is
+       clearly ahead, or the hero starts claiming a preference off one glance. */
+    var eyebrow = pick.eyebrow;
+    var cols = scores('colour');
+    if (cols.length && cols[0].score > 2 &&
+        (!cols[1] || cols[0].score > cols[1].score * 1.4) &&
+        pick !== HERO_SALE) {
+      eyebrow += ' in ' + cols[0].value.toLowerCase();
+    }
+    set('[data-hero-eyebrow]', eyebrow);
     setHTML('[data-hero-title]', pick.title);
     set('[data-hero-lede]', pick.lede);
     var cta = document.querySelector('[data-hero-cta]');
-    if (cta) { cta.textContent = pick.cta; cta.href = pick.href; }
+    if (cta) { cta.textContent = pick.cta; cta.href = pick.href || saleHref(); }
+
+    /* The image too, or the change is only half made — copy swaps and the
+       photograph underneath still shows whatever the homepage always showed.
+       index.html sets this to the first featured product; here it becomes a
+       product from whatever the visitor has actually been looking at, so the
+       whole hero moves together. */
+    swapHeroImage(pick);
 
     note('hero swapped to "' + pick.title + '"');
 
@@ -224,6 +282,40 @@
     }
     function setHTML(sel, v) {
       document.querySelectorAll(sel).forEach(function (n) { n.innerHTML = v; });
+    }
+  }
+
+  /* Choose the picture from the catalogue, matching whatever drove the copy.
+     Prefers a product carrying a top colour as well as the top category, so
+     someone who has been looking at burgundy gets a burgundy hero. */
+  function swapHeroImage(pick) {
+    var img = document.getElementById('hero-img');
+    var cat = (window.Store && window.Store.catalog) || [];
+    if (!img || !cat.length) return;
+
+    var wantCat = (top('category') || {}).value;
+    var wantCol = (top('colour') || {}).value;
+    var sale = pick && pick.title === HERO_SALE.title;
+
+    var pool = cat.filter(function (p) {
+      if (!p.image) return false;
+      if (sale) return p.unit_sale_price < p.unit_price;
+      var pc = (p.taxonomy || [])[1] || p.collection;
+      return !wantCat || pc === wantCat;
+    });
+    if (!pool.length) return;
+
+    // Within the pool, prefer one that also matches the top colour.
+    var best = pool[0];
+    if (wantCol) {
+      for (var i = 0; i < pool.length; i++) {
+        if (coloursOf(pool[i]).indexOf(wantCol) > -1) { best = pool[i]; break; }
+      }
+    }
+    if (best && best.image) {
+      img.src = best.image;
+      img.alt = best.name || '';
+      note('hero image \u2192 ' + (best.name || best.id));
     }
   }
 
