@@ -342,8 +342,13 @@ window.SITE_CONFIG = {
           },
           home:     { campaignId: 4239, variationId: 8856, recommendationId: 43626,
                       strategy: 'new_arrivals' },
-          homeFoot: { campaignId: 4240, variationId: 8858, recommendationId: 34371,
-                      strategy: 'user_based' },
+          /* 4240 was abandoned: its variation never had a widget design attached,
+             so it launched, served, and did nothing. Successive edits kept
+             reassigning the variation id (8857 through 8861) and none of them
+             ever gained a design. 4241 is a duplicate of the working homepage
+             campaign with the strategy swapped, which carries the template
+             across. See friction log #25. */
+          homeFoot: { campaignId: 4241, variationId: null, strategy: 'user_based' },
           cart:         { campaignId: null, variationId: null, strategy: 'complementary' },
           /* Confirmation deliberately is NOT another Complementary row: PDP,
              cart and confirmation all running cross-sell would be the same
