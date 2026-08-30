@@ -33,6 +33,8 @@
 <script src="assets/vertical.js"></script>
 <script src="assets/store.js"></script>
 <script src="assets/explain.js"></script>
+<script src="assets/affinity.js"></script>
+<script src="assets/recs.js"></script>
 
 <!-- 3. Insider Tag — written by assets/vertical.js, because which
         account it points at depends on the hostname:
@@ -227,6 +229,10 @@
 
   paint();
   watchReco('cart');
+
+  // Smart Recommender. The slot is inferred from the host id, and the
+  // strategy strip reads config.reco.perAccount[account].slots[slot].
+  if (window.Recs && window.Recs.enabled) window.Recs.mount('#reco-cart');
 </script>
 </body>
 </html>

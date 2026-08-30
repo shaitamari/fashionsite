@@ -351,6 +351,11 @@
        Fails open: if the vertical cannot be resolved, nothing is filtered. */
     normalized = scopeToVertical(normalized);
 
+    // Affinity exhibit, when enabled. No-op when affinity.js is absent or off.
+    if (window.Affinity && window.Affinity.rank) {
+      normalized = window.Affinity.rank(normalized);
+    }
+
     var shown = normalized;
     if (window.Store && typeof window.Store.oneVariantEach === 'function') {
       try {
