@@ -33,6 +33,7 @@
 <script src="assets/store.js"></script>
 <script src="assets/explain.js"></script>
 <script src="assets/affinity.js"></script>
+<script src="assets/agent.js"></script>
 
 <!-- 3. Insider Tag — written by assets/vertical.js, because which
         account it points at depends on the hostname:
@@ -237,8 +238,33 @@
     return [];
   }
 
+  // Placeholder cards while the tag loads and the campaign resolves. Painting
+  // the local catalogue here instead would show one set of results and then
+  // replace it with Eureka's a moment later — a visible flash on every search,
+  // and one that reads as the platform arriving second. Eureka is the source
+  // of truth for this grid; the local catalogue is only the failure path, in
+  // renderFallback(). Same treatment as category.html.
+  function paintSkeleton(n) {
+    var grid = document.querySelector('#results');
+    if (!grid) return;
+    grid.innerHTML = '';
+    for (var i = 0; i < (n || 8); i++) {
+      var card = document.createElement('article');
+      card.className = 'card card--skeleton';
+      card.setAttribute('aria-hidden', 'true');
+      card.innerHTML =
+        '<div class="card__media" style="background:var(--alt)"></div>' +
+        '<div class="card__meta">' +
+          '<p style="height:.7rem;width:40%;background:var(--alt);border-radius:2px"></p>' +
+          '<p style="height:.9rem;width:75%;background:var(--alt);border-radius:2px;margin-top:.4rem"></p>' +
+          '<p style="height:.8rem;width:30%;background:var(--alt);border-radius:2px;margin-top:.6rem"></p>' +
+        '</div>';
+      grid.appendChild(card);
+    }
+  }
+
   if (QUERY && window.Eureka && window.Eureka.enabled) {
-    paint(Store.localSearch(QUERY), { live: false });
+    paintSkeleton(8);
 
     search = window.Eureka.search({
       query: QUERY,
