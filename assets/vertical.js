@@ -105,6 +105,30 @@
   window.ENVIRONMENT = resolved.env;
   window.ENVIRONMENT_KEY = resolved.key;
 
+  /* --- favicon ------------------------------------------------------------
+     One estate, twelve storefronts, so the tab mark is the Insider One ring
+     recoloured per vertical — same shape, twelve hues. Injected here rather
+     than in each page's <head> because the vertical is only known once the
+     hostname has resolved, and putting it in twelve HTML files would drift.
+
+     Runs immediately, not on DOMContentLoaded: browsers request the favicon
+     early, and a late <link> means a flash of the default page icon.
+
+     `apple-touch-icon` is included so a bookmarked storefront on iOS gets the
+     mark rather than a screenshot of the page. */
+  (function favicon() {
+    var href = 'assets/img/favicon/' + vertical + '.svg';
+    // Pages all sit at the site root, so a relative path is correct. Absolute
+    // would break local preview and the ?v= URLs.
+    [['icon', 'image/svg+xml'], ['apple-touch-icon', null]].forEach(function (pair) {
+      var link = document.createElement('link');
+      link.rel = pair[0];
+      if (pair[1]) link.type = pair[1];
+      link.href = href;
+      document.head.appendChild(link);
+    });
+  })();
+
   /* --- legacy insider_object seed ----------------------------------------
      This MUST run before ins.js is written, and it is inline rather than a
      separate file so the ordering cannot drift.
