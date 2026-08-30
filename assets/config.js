@@ -311,6 +311,9 @@ window.SITE_CONFIG = {
              placed at the foot of the page where retailers conventionally put
              it, which also means an empty row is survivable rather than the
              first thing anyone sees. */
+          // Second PDP row. Similar reads the words, Visually Similar reads
+          // the pictures — worth showing side by side on a visual vertical.
+          productVisual: { campaignId: null, variationId: null, strategy: 'visually_similar' },
           home:         { campaignId: null, variationId: null, strategy: 'new_arrivals' },
           homeFoot:     { campaignId: null, variationId: null, strategy: 'user_based' },
           cart:         { campaignId: null, variationId: null, strategy: 'complementary' },

@@ -147,6 +147,18 @@
       <div id="reco-product" hidden></div>
     </section>
 
+    <!-- Second recommendation row. Two rows on a PDP is the standard retail
+         layout, and here the pairing is deliberate: Similar reads product
+         descriptions and attributes, Visually Similar reads the images. Same
+         product, two different ways of deciding what belongs next to it. -->
+    <section class="section">
+      <div class="section__head">
+        <h2 class="h2">Similar in look</h2>
+        <span class="source" id="reco-productVisual-note">Smart Recommender · waiting for campaign</span>
+      </div>
+      <div id="reco-productVisual" hidden></div>
+    </section>
+
     <section class="section">
       <div class="section__head"><h2 class="h2">More from this category</h2></div>
       <div class="grid" id="related"></div>
@@ -348,6 +360,9 @@
   // campaign simply has no widget rather than an empty heading.
   if (window.Recs && window.Recs.enabled) {
     window.Recs.mount('#reco-product');
+    // Slot name is taken from the host id, so this reads
+    // config.reco.perAccount[account].slots.productVisual.
+    window.Recs.mount('#reco-productVisual');
   }
 </script>
 </body>
