@@ -434,30 +434,62 @@
      but no products, and the tag exposes no Smart Recommender namespace. The
      event is the only route.
      ---------------------------------------------------------------------- */
-  function onRecommendation(cb) {
+  /* Two campaigns on one page.
+
+     The event fires once PER CAMPAIGN, but the original implementation kept a
+     single `done` flag and handed the first payload to every mount. With two
+     recommendation rows on a product page that renders the same products
+     twice, under two different strategy labels — which is worse than showing
+     nothing, because it looks like the algorithms agree when in fact only one
+     of them ran.
+
+     So: collect every payload, and let each mount take the one whose
+     campaignId matches its slot. A mount with no configured campaignId falls
+     back to the first unclaimed payload, which keeps single-campaign pages
+     working exactly as before. */
+  var seen = [];          // every payload that has arrived
+  var claimed = {};       // campaignId -> true, so two mounts cannot share one
+  var listeners = [];     // mounts still waiting
+
+  // Bind the shared listener as early as possible without consuming anything.
+  function bindEarly() { onRecommendation(function () {}, '__none__'); }
+
+  function onRecommendation(cb, wantId) {
     var done = false;
     var bound = false;
 
+    function matches(data) {
+      if (!data) return false;
+      if (wantId == null) return !claimed[data.campaignId];
+      return String(data.campaignId) === String(wantId);
+    }
+
     function deliver(data) {
-      if (done || !data) return;
+      if (done || !matches(data)) return;
       done = true;
+      claimed[data.campaignId] = true;
       cb(data);
     }
+
+    // Anything that arrived before this mount bound.
+    seen.forEach(deliver);
+    if (!done) listeners.push(deliver);
 
     function tryBind() {
       if (bound) return true;
       try {
         var em = window.Insider && Insider.eventManager;
         if (!em || !em.once) return false;
-        em.once('ins-sr:only-api-campaign:load', function (ev, data) {
-          deliver(data);
+        // `on`, not `once` — a second campaign on the same page dispatches a
+        // second event, and `once` would discard it.
+        em.on('ins-sr:only-api-campaign:load', function (ev, data) {
+          if (!data) return;
+          if (seen.indexOf(data) === -1) seen.push(data);
+          note('Smart Recommender event: campaign ' + data.campaignId +
+               '/' + data.variationId + ', ' + ((data.products || []).length) +
+               ' products', 'ok');
+          listeners.slice().forEach(function (fn) { fn(data); });
         });
-        // Some builds dispatch the plural form; binding both is harmless.
-        if (em.on) {
-          em.on('ins-sr:only-api-campaign:load', function (ev, data) {
-            deliver(data);
-          });
-        }
         bound = true;
         return true;
       } catch (e) { return false; }
@@ -481,16 +513,10 @@
   }
 
   /* --- public ------------------------------------------------------------- */
-  var pending = null;   // payload that arrived before mount() was called
-  var mounts = [];      // hosts waiting for a payload
-
-  // Start listening the moment this file runs, not when mount() is called.
-  // mount() is invoked from the bottom of the page; campaign resolution can
-  // easily beat it.
-  onRecommendation(function (data) {
-    pending = data;
-    mounts.splice(0).forEach(function (m) { m(data); });
-  });
+  /* Binding happens inside onRecommendation now, and every payload is kept in
+     `seen`, so a mount called from the bottom of the page still receives an
+     event that fired during tag init. No separate pending/mounts queue. */
+  bindEarly();
 
   window.Recs = {
     enabled: RECO.enabled !== false,
@@ -519,8 +545,8 @@
         render(host, products, data.campaignId, data.variationId, opts.slot);
       }
 
-      if (pending) paint(pending);
-      else mounts.push(paint);
+      var want = slotConfig(opts.slot).campaignId;
+      onRecommendation(paint, want);
     }
   };
 })();
