@@ -267,7 +267,7 @@
         typeof u.loyalty_points === 'number' ? u.loyalty_points : 0;
       io.user.custom.is_vip = u.membership_tier === 'Gold';
       if (u.signup_date) io.user.custom.signup_date = u.signup_date;
-      if (u.service_preference) io.user.custom.service_preference = u.service_preference;
+      if (u.preferred_store) io.user.custom.preferred_store = u.preferred_store;
       if (u.uuid) io.user.custom.account_id = u.uuid;
 
       if (window.insDebugNote) {

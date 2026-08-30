@@ -34,6 +34,7 @@
 <script src="assets/store.js"></script>
 <script src="assets/explain.js"></script>
 <script src="assets/affinity.js"></script>
+<script src="assets/agent.js"></script>
 
 <!-- 3. Insider Tag — written by assets/vertical.js, because which
         account it points at depends on the hostname:
@@ -197,12 +198,24 @@
         value: [{ event_name: flow.event, event_params: { custom: params } }]
       });
 
-      // Worth keeping the choice on the profile too, so it can be segmented
-      // on rather than only living in the event stream. signIn merges into
-      // the existing profile, so this does not clear anything.
-      var first = flow.fields[0];
-      if (first && params[first.name] && Store.currentUser()) {
-        Store.signIn({ service_preference: params[first.name] });
+      /* One field from the form is worth keeping on the PROFILE rather than
+         only in the event stream, because it is a durable fact about the
+         person rather than a thing that happened once.
+
+         Which field that is depends on the vertical, and it is not the first
+         one. Retail's first field is the service type — "Personal styling",
+         "Colour match" — which says little and dates quickly. The STORE is the
+         valuable one: it orders search results, scopes campaigns
+         geographically, decides which shop's stock a browse-abandonment email
+         shows. Insurance is the opposite: its first field is the cover type,
+         which is exactly the durable fact.
+
+         So the vertical declares it, in verticals.json as flow.attribute_field.
+         Falls back to the first field where none is declared, which is what
+         this always did. */
+      var attrName = flow.attribute_field || (flow.fields[0] || {}).name;
+      if (attrName && params[attrName] && Store.currentUser()) {
+        Store.signIn({ preferred_store: params[attrName] });
         window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });
       }
       window.InsiderQueue.push({ type: 'init' });

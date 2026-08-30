@@ -406,21 +406,29 @@ window.SITE_CONFIG = {
 
   /* --- Custom attributes & events -----------------------------------------
      These must exist in InOne > Attributes and Events before values land on a
-     profile. A mismatched name or type is dropped silently on a 200 — no
-     error anywhere.
+     profile. A mismatched name or type is dropped silently on a 200 — no error
+     anywhere. insider-debug.js diffs every outgoing payload against this list
+     and warns about anything absent, which is what turns a silent drop into a
+     visible one. Re-export and update this after creating attributes.
 
-     NOTE: the account is at roughly 70 of its 80 custom-attribute cap, so
-     `service_preference` could not be created and an existing attribute was
-     repurposed. The name and type below must match that attribute exactly,
-     or every flow.html submission is silently discarded.
-     --------------------------------------------------------------------- */
+     THE ACCOUNT IS FULL. partnersandbox sits at 188 of 188 custom attributes,
+     so creating one means deleting one first. 167 of the 188 are orphans with
+     no usage anywhere and no data in the last month — other people's abandoned
+     demos — but dormant is not the same as dead, so delete carefully.
+
+     Array of Objects is a SEPARATE quota and is nearly empty at 2 of 20. That
+     is where per-vertical records belong (bookings, products, plans,
+     accounts), because they cost nothing from the pool above. */
   customAttributes: [
-    'membership_tier',     // string   Bronze | Silver | Gold
-    'loyalty_points',      // number
-    'preferred_category',  // string
-    'signup_date',         // datetime (ISO 8601)
-    'is_vip',              // boolean
-    'service_preference'   // string   VERIFY against the reused attribute
+    'membership_tier',     // String    Bronze | Silver | Gold
+    'preferred_store',     // String    the durable field from the flow page
+    'preferred_category',  // String    derived from view history
+    'loyalty_points',      // Number
+    'signup_date',         // Date      written as ISO 8601
+    'is_vip',              // Boolean   true when tier is Gold
+    'account_id'           // String    the store's own id, not an identifier
+    // If any of these were not created, remove them here — otherwise the
+    // console warning goes quiet on exactly the ones still being dropped.
   ],
 
   customEvents: [
