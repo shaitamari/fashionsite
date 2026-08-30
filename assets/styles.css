@@ -169,6 +169,22 @@ main { padding-bottom: 5rem; }
                 text-transform: uppercase; color: var(--muted); margin: 0 0 .3rem; }
 .card__name { font-size: .9375rem; font-weight: 400; margin: 0 0 .35rem; line-height: 1.35; }
 .card__variant { font-size: .8125rem; color: var(--muted); margin: 0 0 .35rem; }
+
+/* Variant previews under the card name. A collapsed card stands for several
+   variants, so show what they are: colour dots where the tokens are colours,
+   text chips where they are sizes, cabins, room types or tiers. */
+.card__swatches { display: flex; align-items: center; gap: .3rem; margin: 0 0 .45rem;
+                  flex-wrap: wrap; min-height: 14px; }
+.swatch { width: 13px; height: 13px; border-radius: 50%; display: inline-block;
+          border: 1px solid rgba(0,0,0,.16); box-shadow: inset 0 0 0 1px rgba(255,255,255,.35); }
+
+.card__chips { display: flex; align-items: center; gap: .3rem; margin: 0 0 .45rem;
+               flex-wrap: wrap; }
+.chip { font-size: .6875rem; letter-spacing: .04em; color: var(--muted);
+        border: 1px solid var(--rule); border-radius: 2px; padding: .1rem .375rem;
+        white-space: nowrap; }
+
+.card__more { font-size: .6875rem; color: var(--muted); margin-left: .1rem; }
 .card__price { font-size: .9375rem; margin: 0; }
 .card__price .was { color: var(--muted); margin-right: .4rem; }
 .card__price .now { color: var(--sale); }

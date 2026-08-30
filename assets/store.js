@@ -62,6 +62,106 @@
 
   function byId(id) { return index[String(id)] || null; }
 
+  /* --- variant swatches and chips ------------------------------------------
+     Cards collapse to one per groupcode (see oneVariantEach), which hides how
+     many colours or sizes a product comes in. This restores that as a swatch
+     row or a text chip row under the name.
+
+     The catalogs are borrowed Shopify data, so `variant_label` is a compound
+     option string rather than clean fields: fashion gives "Chocolate / AU 4",
+     home gives "Queen + Headboard / Sandstone / Black". The `color` column is
+     no better — it holds the same compound string. So split on "/" and
+     classify each token instead of trusting the columns.
+
+     A token becomes a SWATCH only if it contains a recognised colour word;
+     everything else becomes a text CHIP. That is deliberately conservative:
+     Glossier shade names like "Puff" or "Storm" have no knowable colour, and
+     a wrong swatch reads worse than a word.
+
+     Which means no per-vertical configuration. Fashion and telco get
+     swatches because their tokens are colours; hotels, banking and airlines
+     get chips because theirs are room types, tiers and cabins. The data
+     decides.
+     ---------------------------------------------------------------------- */
+  var COLOR_WORDS = {
+    black:'#1c1c1c', white:'#f7f5f2', ivory:'#f2ead9', cream:'#f3e9d6', chalk:'#ece9e3',
+    grey:'#8d8d8d', gray:'#8d8d8d', charcoal:'#3a3a3a', slate:'#5a6672', granite:'#6f6f6f',
+    silver:'#c5c8ca', platinum:'#d8d8d5', steel:'#7c8a96', stainless:'#b6bcc0',
+    navy:'#1f2a4a', blue:'#2f5fa8', cobalt:'#1c4fa1', azure:'#3f7fd0', sky:'#8fc0e8',
+    denim:'#4a6c8c', indigo:'#333a6b', marine:'#20456b', teal:'#1f6f6b', turquoise:'#3fb3ab',
+    aqua:'#79cfd0', agate:'#5b7fa6',
+    green:'#3d7a4a', mint:'#b7e0c4', sage:'#a3b39a', olive:'#6b6b3a', moss:'#5c6b4a',
+    forest:'#22432c', lichen:'#9aa88a', lime:'#b6d84a', jade:'#3f8f77', nori:'#33473b',
+    red:'#b23b34', chilli:'#c0392b', cherry:'#8f2233', wine:'#6b2434', burgundy:'#5c2233',
+    maroon:'#5e2028', ruby:'#9b1b3a', coral:'#e0715f', salmon:'#e79c86',
+    pink:'#e3a2b5', blush:'#edc3c6', rose:'#d98a95', raspberry:'#a8365c', magenta:'#b5399a',
+    fuchsia:'#c2439a', lilac:'#c3b0d8', lavender:'#c0b3d9', violet:'#7d5aa6', purple:'#6b4a8f',
+    plum:'#6a3a56', mulberry:'#6d3d55',
+    orange:'#d9803f', apricot:'#e8b184', peach:'#f0c3a6', terra:'#b5674a', rust:'#a75a3a',
+    yellow:'#e3c14a', butter:'#f0dfa0', mustard:'#c9a227', honey:'#d9a441', gold:'#bfa14a',
+    champagne:'#e5d5b8', amber:'#c98f2b', bronze:'#9a6f42', copper:'#b06f4a',
+    brown:'#6b4a37', chocolate:'#4a3128', cocoa:'#5a3f33', espresso:'#3e2b25',
+    chestnut:'#6b4230', walnut:'#5b4034', oak:'#b9985f', birch:'#ddd0b8',
+    almond:'#e2d3bd', beige:'#ded2bd', tan:'#c9ab86', camel:'#b8956a', caramel:'#b5793f',
+    sand:'#ddc9a6', sandstone:'#cbb493', stone:'#c2bbae', taupe:'#a8998a', pebble:'#c8c2b6',
+    oyster:'#ded6c8', vanilla:'#f0e5cc', pearl:'#eee8e0', opalite:'#dfe4e6',
+    clear:'#eef1f3', tortoiseshell:'#7a4a26', safflower:'#e08a3c', coastal:'#a8c3d4',
+    floral:'#d6a8bd', mauve:'#a9808f', tort:'#7a4a26', cloud:'#eef0f1', pewter:'#8f8d88', tiger:'#c98a3a', zebra:'#3a3a3a', strawberry:'#c8455a',
+    mango:'#e59a3c', coconut:'#f0e8da', fig:'#5c4358', starry:'#4a5570'
+  };
+
+  // Longest colour word first, so "sandstone" wins over "sand" and
+  // "tortoiseshell" over "shell".
+  var COLOR_KEYS = Object.keys(COLOR_WORDS).sort(function (a, b) { return b.length - a.length; });
+
+  function swatchHex(token) {
+    var t = String(token || '').toLowerCase();
+    if (!t) return null;
+    // Pure sizes never carry colour, and "Blue 8" style tokens are rare.
+    if (/^[\d\s.,/+-]+(ml|cm|mm|g|kg|l|oz|"|in)?$/.test(t)) return null;
+    var best = null, bestAt = Infinity;
+    for (var i = 0; i < COLOR_KEYS.length; i++) {
+      var at = t.indexOf(COLOR_KEYS[i]);
+      // Earliest colour word in the string wins: "Carolina Blue" -> blue,
+      // "Dark Navy" -> navy, "Sheer Twinkle Silver" -> silver.
+      if (at > -1 && at < bestAt) { bestAt = at; best = COLOR_KEYS[i]; }
+    }
+    return best ? COLOR_WORDS[best] : null;
+  }
+
+  // groupcode -> every variant record, built once.
+  var groups = {};
+  catalog.forEach(function (p) {
+    var k = p.groupcode || ('_' + p.id);
+    (groups[k] = groups[k] || []).push(p);
+  });
+
+  function variantsOf(p) {
+    return groups[p && (p.groupcode || ('_' + p.id))] || (p ? [p] : []);
+  }
+
+  /* Returns { swatches: [{label,hex}], chips: [label] } for a product's group.
+     Whichever list is longer wins in the card; both are capped by the caller. */
+  function variantFacets(p) {
+    var vs = variantsOf(p);
+    if (vs.length < 2) return { swatches: [], chips: [] };
+
+    var sw = [], ch = [], seenSw = {}, seenCh = {};
+    vs.forEach(function (v) {
+      String(v.variant_label || v.color || v.size || '').split('/').forEach(function (raw) {
+        var tok = raw.trim();
+        if (!tok) return;
+        var hex = swatchHex(tok);
+        if (hex) {
+          if (!seenSw[tok]) { seenSw[tok] = 1; sw.push({ label: tok, hex: hex }); }
+        } else {
+          if (!seenCh[tok]) { seenCh[tok] = 1; ch.push(tok); }
+        }
+      });
+    });
+    return { swatches: sw, chips: ch };
+  }
+
   function byCollection(name, subcategory) {
     return oneVariantEach(catalog.filter(function (p) {
       if (p.collection !== name) return false;
@@ -385,22 +485,68 @@
     el.querySelector('.card__vendor').textContent = p.subcategory || p.collection || '';
     el.querySelector('.card__name').textContent = p.name;
 
-    // A collapsed group shows how many variants it stands for rather than the
-    // label of the one that happened to be cheapest — "4 options", not
-    // "Economy". Verticals can name them: labels.variants = "cabins" gives
-    // "4 cabins", labels.variants_one = "cabin" gives "1 cabin".
-    var variantText = null;
-    if (p._variants > 1) {
-      var lbl = ((window.VERTICAL || {}).labels || {}).variants || 'options';
-      variantText = p._variants + ' ' + lbl;
-    } else if (p.variant_label) {
-      variantText = p.variant_label;
-    }
-    if (variantText) {
-      var v = document.createElement('p');
-      v.className = 'card__variant';
-      v.textContent = variantText;
-      el.querySelector('.card__meta').insertBefore(v, el.querySelector('.card__price'));
+    /* What a collapsed group shows under the name, in priority order:
+         1. colour swatches, where the tokens are recognisably colours
+         2. text chips, where they are sizes, cabins, room types, tiers
+         3. "4 options", where there is nothing readable to show
+       No per-vertical switch — see variantFacets(). Fashion and telco land on
+       swatches, hotels and airlines on chips, because of what their data is. */
+    var meta = el.querySelector('.card__meta');
+    var priceNode = el.querySelector('.card__price');
+    var facets = p._variants > 1 ? variantFacets(p) : { swatches: [], chips: [] };
+    var MAX_SW = 6, MAX_CH = 4;
+
+    if (facets.swatches.length > 1) {
+      var row = document.createElement('div');
+      row.className = 'card__swatches';
+      facets.swatches.slice(0, MAX_SW).forEach(function (sw) {
+        var dot = document.createElement('span');
+        dot.className = 'swatch';
+        dot.style.background = sw.hex;
+        dot.title = sw.label;              // hover shows the real name
+        dot.setAttribute('aria-label', sw.label);
+        row.appendChild(dot);
+      });
+      if (facets.swatches.length > MAX_SW) {
+        var more = document.createElement('span');
+        more.className = 'card__more';
+        more.textContent = '+' + (facets.swatches.length - MAX_SW);
+        row.appendChild(more);
+      }
+      meta.insertBefore(row, priceNode);
+
+    } else if (facets.chips.length > 1) {
+      var crow = document.createElement('div');
+      crow.className = 'card__chips';
+      facets.chips.slice(0, MAX_CH).forEach(function (label) {
+        var chip = document.createElement('span');
+        chip.className = 'chip';
+        chip.textContent = label;
+        crow.appendChild(chip);
+      });
+      if (facets.chips.length > MAX_CH) {
+        var cmore = document.createElement('span');
+        cmore.className = 'card__more';
+        cmore.textContent = '+' + (facets.chips.length - MAX_CH);
+        crow.appendChild(cmore);
+      }
+      meta.insertBefore(crow, priceNode);
+
+    } else {
+      // Verticals can name their variants: labels.variants = "cabins".
+      var variantText = null;
+      if (p._variants > 1) {
+        var lbl = ((window.VERTICAL || {}).labels || {}).variants || 'options';
+        variantText = p._variants + ' ' + lbl;
+      } else if (p.variant_label) {
+        variantText = p.variant_label;
+      }
+      if (variantText) {
+        var v = document.createElement('p');
+        v.className = 'card__variant';
+        v.textContent = variantText;
+        meta.insertBefore(v, priceNode);
+      }
     }
 
     var priceEl = el.querySelector('.card__price');
@@ -437,7 +583,8 @@
     currentUser: currentUser, signIn: signIn, signOut: signOut, userPayload: userPayload,
     noteCategoryView: noteCategoryView, preferredCategory: preferredCategory,
     toggleWish: toggleWish, isWished: isWished,
-    card: card, grid: grid, paintChrome: paintChrome
+    card: card, grid: grid, paintChrome: paintChrome,
+    variantsOf: variantsOf, variantFacets: variantFacets, swatchHex: swatchHex
   };
 
   document.addEventListener('DOMContentLoaded', function () {
