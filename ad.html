@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Facebook</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='16' fill='%230866FF'/><text x='16' y='25' font-size='26' font-family='Georgia' font-weight='bold' fill='white' text-anchor='middle'>f</text></svg>">
+<style>
+/* ─────────────────────────────────────────────
+   DEMO SETUP — put your Ashford Lane store URL here.
+   You can also override it live: click the pill
+   in the bottom-left corner, or load this page
+   with  ?store=https://fashion-sandbox.insiderdemo.com
+   ───────────────────────────────────────────── */
+:root{
+  --bg:#f0f2f5; --card:#fff; --line:#ced0d4; --divider:#e4e6eb;
+  --ink:#080809; --ink-2:#65676b; --ink-3:#8a8d91;
+  --blue:#0866ff; --hover:#f2f2f2; --chip:#e4e6eb;
+  --al-ink:#211E1C; --al-accent:#8C5A3C;
+  --shadow:0 1px 2px rgba(0,0,0,.2);
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--ink); font-family:var(--sans);
+  font-size:15px; line-height:1.34; -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;border:0;background:none;cursor:pointer;color:inherit}
+.icon{width:20px;height:20px;display:block;fill:currentColor}
+
+/* ── top bar ───────────────────────────────── */
+.topbar{
+  position:sticky; top:0; z-index:40; height:56px; background:#fff;
+  box-shadow:0 1px 2px rgba(0,0,0,.1); display:flex; align-items:center;
+  padding:0 16px; gap:8px;
+}
+.topbar-left{display:flex;align-items:center;gap:8px;flex:1 1 0;min-width:0}
+.fb-mark{
+  width:40px;height:40px;border-radius:50%;background:var(--blue);color:#fff;
+  display:grid;place-items:center;font:italic 700 27px/1 Georgia,serif;
+  flex:none;padding-bottom:3px;
+}
+.searchbox{
+  display:flex;align-items:center;gap:8px;background:var(--chip);
+  border-radius:50px;height:40px;padding:0 12px;color:var(--ink-2);
+  max-width:240px;flex:1 1 auto;min-width:40px;
+}
+.searchbox span{font-size:15px;white-space:nowrap;overflow:hidden}
+.topbar-center{display:flex;gap:4px;flex:0 1 auto}
+.tab{
+  width:112px;height:48px;border-radius:8px;display:grid;place-items:center;
+  color:var(--ink-2);position:relative;
+}
+.tab:hover{background:var(--hover)}
+.tab.is-active{color:var(--blue)}
+.tab.is-active::after{
+  content:"";position:absolute;left:0;right:0;bottom:-4px;height:3px;
+  background:var(--blue);border-radius:2px;
+}
+.tab .icon{width:26px;height:26px}
+.topbar-right{display:flex;align-items:center;gap:8px;flex:1 1 0;justify-content:flex-end}
+.round{
+  width:40px;height:40px;border-radius:50%;background:var(--chip);
+  display:grid;place-items:center;color:var(--ink);flex:none;position:relative;
+}
+.round:hover{background:#d8dadf}
+.badge{
+  position:absolute;top:-2px;right:-2px;background:#e41e3f;color:#fff;
+  font-size:11px;font-weight:600;border-radius:50px;padding:1px 5px;border:2px solid #fff;
+}
+.avatar{
+  width:40px;height:40px;border-radius:50%;flex:none;display:grid;place-items:center;
+  color:#fff;font-weight:600;font-size:15px;background:#7b6cf6;
+}
+
+/* ── layout ────────────────────────────────── */
+.shell{
+  display:grid; grid-template-columns:360px minmax(0,1fr) 360px;
+  gap:0; max-width:1600px; margin:0 auto; align-items:start;
+}
+.rail{padding:16px 8px;position:sticky;top:56px}
+.rail-right{padding:16px 16px 16px 8px}
+.feed{padding:16px 0 80px;display:flex;flex-direction:column;align-items:center;gap:16px}
+.card{
+  width:min(590px,100%); background:var(--card); border-radius:8px;
+  box-shadow:var(--shadow);
+}
+
+/* ── left rail ─────────────────────────────── */
+.rail-item{
+  display:flex;align-items:center;gap:12px;padding:8px;border-radius:8px;
+  font-weight:500;font-size:15px;
+}
+.rail-item:hover{background:#e4e6eb}
+.rail-glyph{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;flex:none}
+.rail hr{border:0;border-top:1px solid var(--line);margin:12px 8px}
+.rail h3{font-size:17px;color:var(--ink-2);margin:8px 8px 4px;font-weight:600}
+.rail-foot{font-size:12px;color:var(--ink-3);padding:8px;line-height:1.5}
+
+/* ── composer ──────────────────────────────── */
+.composer{padding:12px 16px}
+.composer-top{display:flex;gap:8px;align-items:center}
+.composer-input{
+  flex:1;background:var(--chip);border-radius:50px;padding:9px 14px;
+  color:var(--ink-2);font-size:17px;
+}
+.composer-input:hover{background:#d8dadf}
+.composer hr{border:0;border-top:1px solid var(--divider);margin:12px 0 8px}
+.composer-actions{display:flex}
+.composer-actions button{
+  flex:1;display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:8px;border-radius:8px;color:var(--ink-2);font-weight:600;font-size:15px;
+}
+.composer-actions button:hover{background:var(--hover)}
+
+/* ── post ──────────────────────────────────── */
+.post-head{display:flex;align-items:flex-start;gap:8px;padding:12px 16px 0}
+.post-name{font-weight:600;font-size:15px;display:flex;align-items:center;gap:4px}
+.post-meta{font-size:13px;color:var(--ink-2);display:flex;align-items:center;gap:4px;margin-top:1px}
+.post-head-actions{margin-left:auto;display:flex;gap:4px;color:var(--ink-2)}
+.post-head-actions button{width:36px;height:36px;border-radius:50%;display:grid;place-items:center}
+.post-head-actions button:hover{background:var(--hover)}
+.post-body{padding:8px 16px 12px;font-size:15px;white-space:pre-line}
+.post-counts{
+  display:flex;align-items:center;gap:6px;padding:10px 16px;
+  font-size:15px;color:var(--ink-2);
+}
+.reactions{display:flex}
+.reactions span{
+  width:18px;height:18px;border-radius:50%;display:grid;place-items:center;
+  font-size:10px;border:2px solid #fff;margin-right:-4px;
+}
+.post-counts .right{margin-left:auto;display:flex;gap:8px}
+.post-bar{display:flex;padding:4px 8px;border-top:1px solid var(--divider);margin:0 8px}
+.post-bar button{
+  flex:1;display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:8px;border-radius:8px;color:var(--ink-2);font-weight:600;font-size:15px;
+}
+.post-bar button:hover{background:var(--hover)}
+.verified{width:14px;height:14px;fill:var(--blue)}
+
+/* ── the ad creative ───────────────────────── */
+.creative{display:block;position:relative;background:#f5f5f5}
+.creative img{display:block;width:100%;height:auto}
+.creative-label{
+  position:absolute;left:0;top:23%;background:var(--al-ink);color:#fff;
+  padding:10px 22px 12px;font-size:clamp(17px,3.4vw,26px);font-weight:400;
+  letter-spacing:.16em;white-space:nowrap;
+}
+.creative-eyebrow{
+  position:absolute;left:0;top:12%;background:var(--al-accent);color:#fff;
+  padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:.22em;
+}
+.link-card{
+  display:flex;align-items:center;gap:12px;padding:10px 16px;
+  background:#f7f8fa;border-top:1px solid var(--divider);
+}
+.link-card-text{min-width:0;flex:1}
+.link-domain{font-size:12px;text-transform:uppercase;color:var(--ink-2);letter-spacing:.02em}
+.link-title{
+  font-size:17px;font-weight:600;letter-spacing:.02em;margin-top:2px;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.link-desc{
+  font-size:14px;color:var(--ink-2);margin-top:2px;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.cta{
+  flex:none;background:var(--chip);color:var(--ink);font-weight:600;font-size:15px;
+  padding:8px 12px;border-radius:6px;
+}
+.cta:hover{background:#d8dadf}
+
+/* ── right rail ────────────────────────────── */
+.rail-right h3{font-size:17px;color:var(--ink-2);font-weight:600;margin:4px 8px 8px}
+.side-ad{display:flex;gap:12px;padding:8px;border-radius:8px}
+.side-ad:hover{background:#e4e6eb}
+.side-ad-thumb{
+  width:128px;height:128px;border-radius:8px;flex:none;overflow:hidden;background:#eceff3;
+}
+.side-ad-thumb img{width:100%;height:100%;object-fit:cover;object-position:50% 78%;display:block}
+.side-ad-thumb.solid{background:var(--al-ink);display:grid;place-items:center}
+.side-ad-copy{font-size:15px;font-weight:600;padding-top:6px}
+.side-ad-copy small{display:block;font-weight:400;color:var(--ink-2);font-size:13px;margin-top:2px}
+.contact{display:flex;align-items:center;gap:12px;padding:8px;border-radius:8px;font-weight:500}
+.contact:hover{background:#e4e6eb}
+.dot{
+  width:10px;height:10px;border-radius:50%;background:#31a24c;border:2px solid #fff;
+  margin-left:-16px;align-self:flex-end;
+}
+
+/* ── posh marks ────────────────────────────── */
+.posh-mark{
+  background:#0f172a;color:#fff;font-weight:700;letter-spacing:.12em;
+  display:grid;place-items:center;
+}
+.posh-avatar{width:40px;height:40px;border-radius:50%;font-size:11px}
+
+/* ── setup pill ────────────────────────────── */
+.setup{position:fixed;left:16px;bottom:16px;z-index:60;font-size:13px}
+.setup-pill{
+  background:#1c1e21;color:#fff;border-radius:50px;padding:8px 14px;
+  box-shadow:0 4px 14px rgba(0,0,0,.28);opacity:.55;transition:opacity .15s;
+  display:flex;align-items:center;gap:8px;font-weight:600;
+}
+.setup-pill:hover{opacity:1}
+.setup-pill.needs-url{opacity:1;background:#b8341f}
+.setup-panel{
+  display:none;background:#1c1e21;color:#fff;border-radius:12px;padding:14px;
+  width:360px;box-shadow:0 8px 28px rgba(0,0,0,.35);margin-bottom:8px;
+}
+.setup.is-open .setup-panel{display:block}
+.setup-panel label{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.6;margin-bottom:5px}
+.setup-panel input{
+  width:100%;padding:8px 10px;border-radius:6px;border:1px solid #3a3d42;
+  background:#111;color:#fff;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;
+}
+.setup-panel input:focus{outline:2px solid var(--blue);outline-offset:-1px}
+.setup-out{
+  margin-top:10px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;
+  color:#8bd450;word-break:break-all;line-height:1.5;
+}
+.setup-hint{margin-top:10px;opacity:.55;font-size:11px;line-height:1.5}
+.setup-hide{margin-top:10px;background:#3a3d42;border-radius:6px;padding:6px 10px;font-weight:600;font-size:12px}
+
+@media (max-width:1100px){
+  .shell{grid-template-columns:1fr}
+  .rail,.rail-right{display:none}
+  .topbar-center{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-left">
+    <div class="fb-mark">f</div>
+    <div class="searchbox">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M10 4a6 6 0 104.47 10.03l4.25 4.25 1.41-1.41-4.25-4.25A6 6 0 0010 4zm0 2a4 4 0 110 8 4 4 0 010-8z"/></svg>
+      <span>Search Facebook</span>
+    </div>
+  </div>
+  <nav class="topbar-center">
+    <a class="tab is-active" href="#" aria-label="Home"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3l9 8h-2.5v9h-5v-6h-3v6h-5v-9H3l9-8z"/></svg></a>
+    <a class="tab" href="#" aria-label="Video"><svg class="icon" viewBox="0 0 24 24"><path d="M4 6h11a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2zm14 4l4-2.5v9L18 14v-4z"/></svg></a>
+    <a class="tab" href="#" aria-label="Marketplace"><svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16l1.5 5a3 3 0 01-5.25 2.6A3 3 0 0112 12a3 3 0 01-4.25-.4A3 3 0 012.5 9L4 4zm0 9.7V20h6v-5h4v5h6v-6.3a4.9 4.9 0 01-4-.9 4.9 4.9 0 01-4 .9 4.9 4.9 0 01-4-.9 4.9 4.9 0 01-4 .9z"/></svg></a>
+    <a class="tab" href="#" aria-label="Groups"><svg class="icon" viewBox="0 0 24 24"><path d="M8 11a3.5 3.5 0 100-7 3.5 3.5 0 000 7zm8 0a3 3 0 100-6 3 3 0 000 6zM8 12.5c-3 0-6 1.5-6 4V20h12v-3.5c0-2.5-3-4-6-4zm8 .5c-.7 0-1.4.08-2 .23 1.2 1 1.9 2.3 1.9 3.77V20H22v-3c0-2.2-2.7-4-6-4z"/></svg></a>
+  </nav>
+  <div class="topbar-right">
+    <div class="round" aria-label="Menu"><svg class="icon" viewBox="0 0 24 24"><path d="M4 4h5v5H4V4zm6.5 0h5v5h-5V4zM17 4h3v5h-3V4zM4 10.5h5v5H4v-5zm6.5 0h5v5h-5v-5zm6.5 0h3v5h-3v-5zM4 17h5v3H4v-3zm6.5 0h5v3h-5v-3zm6.5 0h3v3h-3v-3z"/></svg></div>
+    <div class="round" aria-label="Messages"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3c5 0 9 3.6 9 8.1s-4 8.1-9 8.1a10 10 0 01-2.6-.34L5 20.8l.1-3.2A7.8 7.8 0 013 11.1C3 6.6 7 3 12 3zm-5.3 10.5l4.3-2.6 2.2 1.7 3.9-2.4-4.3 2.6-2.2-1.7-3.9 2.4z"/></svg></div>
+    <div class="round" aria-label="Notifications"><svg class="icon" viewBox="0 0 24 24"><path d="M12 22a2.4 2.4 0 002.4-2.2H9.6A2.4 2.4 0 0012 22zm7-6.3V11a7 7 0 00-5.3-6.8V3.5a1.7 1.7 0 10-3.4 0v.7A7 7 0 005 11v4.7L3.3 17.5v.9h17.4v-.9L19 15.7z"/></svg><span class="badge">3</span></div>
+    <div class="avatar" title="Shai">S</div>
+  </div>
+</header>
+
+<div class="shell">
+
+  <!-- ── left rail ─────────────────────────── -->
+  <aside class="rail">
+    <a class="rail-item" href="#"><span class="avatar" style="width:36px;height:36px;font-size:14px">S</span> Shai</a>
+    <a class="rail-item" href="#"><span class="rail-glyph" style="background:#e7f0fd;color:#0866ff"><svg class="icon" viewBox="0 0 24 24"><path d="M8 11a3.5 3.5 0 100-7 3.5 3.5 0 000 7zm8 0a3 3 0 100-6 3 3 0 000 6zM8 12.5c-3 0-6 1.5-6 4V20h12v-3.5c0-2.5-3-4-6-4zm8 .5c-.7 0-1.4.08-2 .23 1.2 1 1.9 2.3 1.9 3.77V20H22v-3c0-2.2-2.7-4-6-4z"/></svg></span> Friends</a>
+    <a class="rail-item" href="#"><span class="rail-glyph" style="background:#e9f7ee;color:#31a24c"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3a9 9 0 109 9h-2a7 7 0 11-2.05-4.95L14 10h7V3l-2.6 2.6A9 9 0 0012 3zm-1 4v6l5 3 .9-1.6-3.9-2.3V7h-2z"/></svg></span> Memories</a>
+    <a class="rail-item" href="#"><span class="rail-glyph" style="background:#f5e9fb;color:#a033ff"><svg class="icon" viewBox="0 0 24 24"><path d="M6 3h12a1 1 0 011 1v17l-7-4-7 4V4a1 1 0 011-1z"/></svg></span> Saved</a>
+    <a class="rail-item" href="#"><span class="rail-glyph" style="background:#fdeef0;color:#e41e3f"><svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16l1.5 5a3 3 0 01-5.25 2.6A3 3 0 0112 12a3 3 0 01-4.25-.4A3 3 0 012.5 9L4 4zm0 9.7V20h6v-5h4v5h6v-6.3a4.9 4.9 0 01-4-.9 4.9 4.9 0 01-4 .9 4.9 4.9 0 01-4-.9 4.9 4.9 0 01-4 .9z"/></svg></span> Marketplace</a>
+    <a class="rail-item" href="#"><span class="rail-glyph" style="background:#e7f0fd;color:#0866ff"><svg class="icon" viewBox="0 0 24 24"><path d="M4 6h11a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2zm14 4l4-2.5v9L18 14v-4z"/></svg></span> Video</a>
+    <a class="rail-item" href="#"><span class="rail-glyph" style="background:#e4e6eb"><svg class="icon" viewBox="0 0 24 24"><path d="M12 15.5L5.5 9h13L12 15.5z"/></svg></span> See more</a>
+    <hr>
+    <h3>Your shortcuts</h3>
+    <a class="rail-item" href="#"><span class="posh-mark rail-glyph" style="border-radius:8px;font-size:9px">AL</span> AL</a>
+    <a class="rail-item" href="#"><span class="rail-glyph" style="background:#c9d6e5;border-radius:8px"></span> Weekend Cyclists</a>
+    <a class="rail-item" href="#"><span class="rail-glyph" style="background:#d9cfc2;border-radius:8px"></span> Tel Aviv Coffee Club</a>
+    <p class="rail-foot">Privacy · Terms · Advertising · Ad choices · Cookies · More · Meta © 2026</p>
+  </aside>
+
+  <!-- ── feed ──────────────────────────────── -->
+  <main class="feed">
+
+    <section class="card composer">
+      <div class="composer-top">
+        <span class="avatar">S</span>
+        <div class="composer-input">What's on your mind, Shai?</div>
+      </div>
+      <hr>
+      <div class="composer-actions">
+        <button><svg class="icon" viewBox="0 0 24 24" style="fill:#f3425f"><circle cx="12" cy="12" r="9"/><path d="M10 8l6 4-6 4V8z" fill="#fff"/></svg> Live video</button>
+        <button><svg class="icon" viewBox="0 0 24 24" style="fill:#45bd62"><path d="M4 5h16a1 1 0 011 1v12a1 1 0 01-1 1H4a1 1 0 01-1-1V6a1 1 0 011-1zm2 11h12l-4-5-3 3.5L9 13l-3 3z"/></svg> Photo/video</button>
+        <button><svg class="icon" viewBox="0 0 24 24" style="fill:#f7b928"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zM9 9.5a1.2 1.2 0 112.4 0 1.2 1.2 0 01-2.4 0zm5 0a1.2 1.2 0 112.4 0 1.2 1.2 0 01-2.4 0zM7.7 14h8.6a4.5 4.5 0 01-8.6 0z"/></svg> Feeling/activity</button>
+      </div>
+    </section>
+
+    <!-- ── THE AD ─────────────────────────── -->
+    <article class="card" id="ad">
+      <div class="post-head">
+        <span class="posh-mark posh-avatar" data-ad="initials">AL</span>
+        <div>
+          <div class="post-name">
+            <span data-ad="brand">AL</span>
+            <svg class="verified" viewBox="0 0 24 24"><path d="M12 1.5l2.6 2.1 3.3-.3.9 3.2 2.9 1.7-1.3 3.1 1.3 3.1-2.9 1.7-.9 3.2-3.3-.3L12 22.5l-2.6-2.1-3.3.3-.9-3.2-2.9-1.7L3.6 12.6 2.3 9.5l2.9-1.7.9-3.2 3.3.3L12 1.5zm-1.2 13.9l5.6-5.6-1.4-1.4-4.2 4.2-2-2-1.4 1.4 3.4 3.4z"/></svg>
+          </div>
+          <div class="post-meta">
+            Sponsored ·
+            <svg class="icon" viewBox="0 0 24 24" style="width:12px;height:12px;fill:var(--ink-2)"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm6.9 9h-3a15 15 0 00-1.2-5.4A8 8 0 0118.9 11zM12 4.2c.8 1.1 1.6 3.3 1.8 6.8h-3.6c.2-3.5 1-5.7 1.8-6.8zM9.3 5.6A15 15 0 008.1 11h-3a8 8 0 014.2-5.4zM5.1 13h3a15 15 0 001.2 5.4A8 8 0 015.1 13zM12 19.8c-.8-1.1-1.6-3.3-1.8-6.8h3.6c-.2 3.5-1 5.7-1.8 6.8zm2.7-1.4a15 15 0 001.2-5.4h3a8 8 0 01-4.2 5.4z"/></svg>
+          </div>
+        </div>
+        <div class="post-head-actions">
+          <button aria-label="More"><svg class="icon" viewBox="0 0 24 24"><circle cx="6" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="18" cy="12" r="1.8"/></svg></button>
+          <button aria-label="Hide"><svg class="icon" viewBox="0 0 24 24"><path d="M18.3 5.7L12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7l1.4-1.4L10.6 10.6l6.3-6.3z"/></svg></button>
+        </div>
+      </div>
+
+      <div class="post-body" data-ad="body">The coat you'll wear until March.
+
+Every Oxford in the house is marked down — hand-finished leather, Goodyear welt, the pair you'll still be wearing five summers from now. Up to 40% off through 31 August. 🖤</div>
+
+      <a class="creative" data-cta href="#" target="_blank" rel="noopener">
+        <img data-ad="image" src="" alt="">
+        <span class="creative-eyebrow" data-ad="eyebrow"></span>
+        <span class="creative-label" data-ad="label"></span>
+      </a>
+
+      <a class="link-card" data-cta href="#" target="_blank" rel="noopener">
+        <div class="link-card-text">
+          <div class="link-domain" data-domain>fashion-sandbox.insiderdemo.com</div>
+          <div class="link-title" data-ad="title"></div>
+          <div class="link-desc" data-ad="desc"></div>
+        </div>
+        <span class="cta">Shop now</span>
+      </a>
+
+      <div class="post-counts">
+        <span class="reactions">
+          <span style="background:#0866ff">👍</span>
+          <span style="background:#f3425f">❤️</span>
+        </span>
+        <span>1.2K</span>
+        <span class="right"><span>84 comments</span><span>37 shares</span></span>
+      </div>
+      <div class="post-bar">
+        <button><svg class="icon" viewBox="0 0 24 24"><path d="M9 21H5a1 1 0 01-1-1v-9a1 1 0 011-1h4v11zm2-11l3.8-6.6a1 1 0 011.7.1l.4.8a3 3 0 01.2 2.3L16.4 9h4.1a1.5 1.5 0 011.5 1.8l-1.6 8A1.5 1.5 0 0118.9 20H11V10z"/></svg> Like</button>
+        <button><svg class="icon" viewBox="0 0 24 24"><path d="M12 3c5 0 9 3.4 9 7.6s-4 7.6-9 7.6a11 11 0 01-2.6-.3L5 20.5l.6-3.4A7.4 7.4 0 013 10.6C3 6.4 7 3 12 3z"/></svg> Comment</button>
+        <button><svg class="icon" viewBox="0 0 24 24"><path d="M13 4l8 7-8 7v-4c-4.4 0-7.5 1.3-10 4 1-5.4 4.3-9.3 10-10V4z"/></svg> Share</button>
+      </div>
+    </article>
+
+    <!-- ── filler post ────────────────────── -->
+    <article class="card">
+      <div class="post-head">
+        <span class="avatar" style="background:#31a24c">DR</span>
+        <div>
+          <div class="post-name">Dana Rosen</div>
+          <div class="post-meta">4h · <svg class="icon" viewBox="0 0 24 24" style="width:12px;height:12px;fill:var(--ink-2)"><path d="M8 11a3.5 3.5 0 100-7 3.5 3.5 0 000 7zm8 0a3 3 0 100-6 3 3 0 000 6zM8 12.5c-3 0-6 1.5-6 4V20h12v-3.5c0-2.5-3-4-6-4zm8 .5c-.7 0-1.4.08-2 .23 1.2 1 1.9 2.3 1.9 3.77V20H22v-3c0-2.2-2.7-4-6-4z"/></svg></div>
+        </div>
+        <div class="post-head-actions">
+          <button aria-label="More"><svg class="icon" viewBox="0 0 24 24"><circle cx="6" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="18" cy="12" r="1.8"/></svg></button>
+        </div>
+      </div>
+      <div class="post-body">Four hours of queueing at the airport and I still forgot to pack a charger. Ask me how the trip is going. ✈️</div>
+      <div class="post-counts">
+        <span class="reactions"><span style="background:#0866ff">👍</span><span style="background:#f7b928">😆</span></span>
+        <span>46</span>
+        <span class="right"><span>12 comments</span></span>
+      </div>
+      <div class="post-bar">
+        <button><svg class="icon" viewBox="0 0 24 24"><path d="M9 21H5a1 1 0 01-1-1v-9a1 1 0 011-1h4v11zm2-11l3.8-6.6a1 1 0 011.7.1l.4.8a3 3 0 01.2 2.3L16.4 9h4.1a1.5 1.5 0 011.5 1.8l-1.6 8A1.5 1.5 0 0118.9 20H11V10z"/></svg> Like</button>
+        <button><svg class="icon" viewBox="0 0 24 24"><path d="M12 3c5 0 9 3.4 9 7.6s-4 7.6-9 7.6a11 11 0 01-2.6-.3L5 20.5l.6-3.4A7.4 7.4 0 013 10.6C3 6.4 7 3 12 3z"/></svg> Comment</button>
+        <button><svg class="icon" viewBox="0 0 24 24"><path d="M13 4l8 7-8 7v-4c-4.4 0-7.5 1.3-10 4 1-5.4 4.3-9.3 10-10V4z"/></svg> Share</button>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- ── right rail ────────────────────────── -->
+  <aside class="rail rail-right">
+    <h3>Sponsored</h3>
+    <a class="side-ad" data-cta href="#" target="_blank" rel="noopener">
+      <span class="side-ad-thumb"><img data-ad="sideimage" src="" alt=""></span>
+      <span class="side-ad-copy" data-ad="sidecopy"><small data-domain></small></span>
+    </a>
+    <a class="side-ad" href="#">
+      <span class="side-ad-thumb solid" style="background:#3d4b3f"></span>
+      <span class="side-ad-copy">Repair, don't replace<small>coblerandsons.com</small></span>
+    </a>
+    <hr style="border:0;border-top:1px solid var(--line);margin:12px 8px">
+    <h3>Contacts</h3>
+    <a class="contact" href="#"><span class="avatar" style="background:#31a24c;width:36px;height:36px;font-size:14px">DR</span><span class="dot"></span> Dana Rosen</a>
+    <a class="contact" href="#"><span class="avatar" style="background:#f7b928;width:36px;height:36px;font-size:14px">MK</span><span class="dot"></span> Maya Klein</a>
+    <a class="contact" href="#"><span class="avatar" style="background:#e41e3f;width:36px;height:36px;font-size:14px">TB</span><span class="dot"></span> Tom Barak</a>
+    <a class="contact" href="#"><span class="avatar" style="background:#7b6cf6;width:36px;height:36px;font-size:14px">AL</span><span class="dot"></span> Adi Levi</a>
+  </aside>
+</div>
+
+<!-- ── demo setup (hidden with H, not part of the story) ── -->
+<div class="setup" id="setup">
+  <div class="setup-panel">
+    <label for="storeUrl">Ashford Lane store URL</label>
+    <input id="storeUrl" type="url" spellcheck="false" placeholder="https://fashion-sandbox.insiderdemo.com">
+    <div class="setup-out" id="finalUrl"></div>
+    <div class="setup-hint">Every link in the ad points here. Press <b>H</b> to hide this before you present — hover the Shop now button to show the UTMs in the browser status bar.</div>
+    <button class="setup-hide" id="hideBtn">Hide for demo (H)</button>
+  </div>
+  <button class="setup-pill" id="pill">⚙︎ <span id="pillText">Demo setup</span></button>
+</div>
+
+<script>
+(function(){
+  /* ── Posh demo store ─────────────────────────────────── */
+
+/* ─────────────────────────────────────────────
+   ONE FILE, TWELVE STOREFRONTS
+
+   The vertical is read the same way the estate reads it everywhere else:
+   from the hostname. Served at fashion-sandbox.insiderdemo.com/ad.html this
+   is the Ashford Lane ad; at hotels.insiderdemo.com/ad.html it is Wayfarer.
+   ?v=<vertical> overrides, for localhost and Netlify previews where there is
+   no subdomain to read — same convention as vertical.js.
+
+   Each entry only needs a real product image from that vertical's own
+   catalogue, so the click-through lands on a store selling the thing in the
+   picture. Copy is written per vertical because a hotel ad and a car
+   insurance ad do not sound alike.
+   ───────────────────────────────────────────── */
+var ADS = {
+  fashion: { brand:"Ashford Lane", initials:"AL", host:"fashion",
+    body:"The coat you'll wear until March.\n\nNew outerwear, in now. Wool, weight, and pockets that fit a phone. 🧥",
+    eyebrow:"OUTERWEAR", label:"NEW IN",
+    title:"Outerwear, new in", desc:"Free returns within 30 days.",
+    campaign:"120210481633050", adid:"120210481633051", slug:"outerwear", category:"Outerwear",
+    image:"https://insiderdemo.com/assets/img/fashion/8650096967740-0.jpg",
+    side:"https://insiderdemo.com/assets/img/fashion/8981044723772-0.jpg",
+    sidecopy:"Outerwear, new in — Ashford Lane" },
+
+  beauty: { brand:"Lumen", initials:"LU", host:"beauty",
+    body:"Shade matched, not guessed.\n\nFind yours in ninety seconds, or book a consultation and we'll do it with you.",
+    eyebrow:"MAKEUP", label:"SHADE FINDER",
+    title:"Find your shade", desc:"Free samples with every order.",
+    campaign:"120210481633060", adid:"120210481633061", slug:"shade-finder", category:"Makeup",
+    image:"https://insiderdemo.com/assets/img/fashion/8884488831036-0.jpg",
+    side:"https://insiderdemo.com/assets/img/fashion/8629866266684-0.jpg",
+    sidecopy:"Book a shade consultation — Lumen" },
+
+  home: { brand:"Aldgate", initials:"AG", host:"home",
+    body:"Rooms that settle in.\n\nSofas, beds and shelving built to be lived with. Free design consultation, no obligation.",
+    eyebrow:"SEATING", label:"NEW SEASON",
+    title:"Book a design consult", desc:"Delivery and assembly included.",
+    campaign:"120210481633070", adid:"120210481633071", slug:"design-consult", category:"Seating",
+    image:"https://insiderdemo.com/assets/img/home/9286863519906-0.jpg",
+    side:"https://insiderdemo.com/assets/img/home/9286863519906-0.jpg",
+    sidecopy:"Free design consultation — Aldgate" },
+
+  luxury: { brand:"Beaumont Vale", initials:"BV", host:"luxury",
+    body:"Fewer things. Better ones.",
+    eyebrow:"BAGS", label:"THE EDIT",
+    title:"The autumn edit", desc:"By appointment, in store or online.",
+    campaign:"120210481633080", adid:"120210481633081", slug:"the-edit", category:"Bags",
+    image:"https://insiderdemo.com/assets/img/luxury/9491286163694-0.jpg",
+    side:"https://insiderdemo.com/assets/img/luxury/9491286163694-0.jpg",
+    sidecopy:"Request an appointment — Beaumont Vale" },
+
+  electronics: { brand:"Kestrel", initials:"KE", host:"electronics",
+    body:"Sounds better than it looks. And it looks quite good.\n\nInstallation included on every speaker over €300.",
+    eyebrow:"SPEAKERS", label:"INSTALLATION INCLUDED",
+    title:"Speakers, installed", desc:"Book a fitting at checkout.",
+    campaign:"120210481633090", adid:"120210481633091", slug:"speakers", category:"Speaker",
+    image:"https://insiderdemo.com/assets/img/electronics/7625455042749-0.jpg",
+    side:"https://insiderdemo.com/assets/img/electronics/7625455042749-0.jpg",
+    sidecopy:"Free installation — Kestrel" },
+
+  supermarket: { brand:"Harvest Row", initials:"HR", host:"supermarket",
+    body:"Book the slot. We'll do the rest.\n\nSame-day delivery on orders before 11am.",
+    eyebrow:"GROCERY", label:"SAME-DAY SLOTS",
+    title:"Book a delivery slot", desc:"Same-day, seven days a week.",
+    campaign:"120210481633100", adid:"120210481633101", slug:"delivery-slots", category:"Ingredients",
+    image:"https://insiderdemo.com/assets/img/supermarket/7573936341050-0.jpg",
+    side:"https://insiderdemo.com/assets/img/supermarket/7573936341050-0.jpg",
+    sidecopy:"Same-day delivery — Harvest Row" },
+
+  telco: { brand:"Vantis", initials:"VA", host:"telco",
+    body:"Better signal. Fewer surprises.\n\nNo lock-in, no mid-contract price rises.",
+    eyebrow:"DEVICES", label:"NO LOCK-IN",
+    title:"Switch to Vantis", desc:"Keep your number. Keep your plan flexible.",
+    campaign:"120210481633110", adid:"120210481633111", slug:"switch", category:"Iphone 17 Pro",
+    image:"https://insiderdemo.com/assets/img/telco/8928682770568-0.jpg",
+    side:"https://insiderdemo.com/assets/img/telco/8928682770568-0.jpg",
+    sidecopy:"No lock-in plans — Vantis" },
+
+  hotels: { brand:"Wayfarer", initials:"WF", host:"hotels",
+    body:"Somewhere to actually stop.\n\nTwelve cities, ninety-six properties, flexible cancellation on every one.",
+    eyebrow:"CITY STAYS", label:"FLEXIBLE RATES",
+    title:"City stays, flexible rates", desc:"Free cancellation up to 48 hours.",
+    campaign:"120210481633120", adid:"120210481633121", slug:"city-stays", category:"Hotels",
+    image:"https://insiderdemo.com/assets/img/hotels/lisbon.jpg",
+    side:"https://insiderdemo.com/assets/img/hotels/lisbon.jpg",
+    sidecopy:"Flexible city stays — Wayfarer" },
+
+  airlines: { brand:"Meridian Air", initials:"MA", host:"airlines",
+    body:"London to New York, without the middle seat lottery.\n\nPick your seat when you book, not at the gate.",
+    eyebrow:"LONG HAUL", label:"SEAT SELECTION INCLUDED",
+    title:"Long haul, seat included", desc:"Choose your seat at booking.",
+    campaign:"120210481633130", adid:"120210481633131", slug:"long-haul", category:"Long Haul",
+    image:"https://insiderdemo.com/assets/img/airlines/london-new-york.jpg",
+    side:"https://insiderdemo.com/assets/img/airlines/london-new-york.jpg",
+    sidecopy:"Seat selection included — Meridian Air" },
+
+  banking: { brand:"Northbank", initials:"NB", host:"banking",
+    body:"An account that does the admin.\n\nOpen in ten minutes. No monthly fee, no minimum balance.",
+    eyebrow:"CURRENT ACCOUNTS", label:"OPEN IN 10 MINUTES",
+    title:"Open a current account", desc:"No monthly fee. No minimum balance.",
+    campaign:"120210481633140", adid:"120210481633141", slug:"current-account", category:"Accounts",
+    image:"https://insiderdemo.com/assets/img/banking/ardent-current-account.svg",
+    side:"https://insiderdemo.com/assets/img/banking/ardent-current-account.svg",
+    sidecopy:"Open an account — Northbank" },
+
+  insurance: { brand:"Fairhaven", initials:"FH", host:"insurance",
+    body:"A quote in two minutes. Valid for thirty days.\n\nCar, home, travel and pet — compare cover levels side by side.",
+    eyebrow:"CAR INSURANCE", label:"QUOTE IN 2 MINUTES",
+    title:"Get a car insurance quote", desc:"Held for 30 days. No obligation.",
+    campaign:"120210481633150", adid:"120210481633151", slug:"car-quote", category:"Motor",
+    image:"https://insiderdemo.com/assets/img/insurance/northbank-insure-car-insurance.svg",
+    side:"https://insiderdemo.com/assets/img/insurance/northbank-insure-car-insurance.svg",
+    sidecopy:"Two-minute car quote — Fairhaven" },
+
+  fintech: { brand:"Loop", initials:"LO", host:"fintech",
+    body:"Expense cards your finance team won't chase you about.\n\nIssue a card in seconds. Set the limit before it's spent.",
+    eyebrow:"BUSINESS", label:"CARDS IN SECONDS",
+    title:"Expense cards for teams", desc:"Set limits before the spend, not after.",
+    campaign:"120210481633160", adid:"120210481633161", slug:"expense-cards", category:"Business",
+    image:"https://insiderdemo.com/assets/img/fintech/kite-money-expense-cards.svg",
+    side:"https://insiderdemo.com/assets/img/fintech/kite-money-expense-cards.svg",
+    sidecopy:"Expense cards — Loop" }
+};
+
+/* Hostname first, ?v= second, fashion last. Mirrors vertical.js: the suffix
+   ("-sandbox") is stripped, so both fashion. and fashion-sandbox. resolve. */
+function resolveVertical(){
+  var q = new URLSearchParams(location.search).get("v");
+  if (q && ADS[q]) return q;
+  var parts = location.hostname.split(".");
+  if (parts.length > 2) {
+    var sub = parts[0].replace(/-sandbox$/, "");
+    if (ADS[sub]) return sub;
+  }
+  return "fashion";
+}
+
+var AD = ADS[resolveVertical()];
+
+  var STORE_URL = location.protocol + "//" + location.host + "/";
+
+  /* The parameter the Posh personalisation rule listens for.
+     Add utm_source / utm_medium here if you want a fuller-looking
+     link — anything already present in STORE_URL is never duplicated. */
+  var UTM = {
+    utm_source: "meta",
+    utm_medium: "paid_social",
+    /* Meta writes numeric ids through {{campaign.id}} / {{ad.id}}, so that is
+       what a real click carries. The rule matches utm_source, not these, so
+       the ids are free to look exactly like the platform's own. */
+    utm_campaign: AD.campaign,
+    utm_content: AD.adid
+  };
+
+
+  /* Paint the ad from AD. Runs before the link wiring below so the domain
+     shown on the link card is the one the click actually goes to. */
+  (function paintAd(){
+    function set(name, value){
+      document.querySelectorAll('[data-ad="' + name + '"]').forEach(function(n){
+        if (n.tagName === "IMG") { n.src = value; n.alt = AD.brand + " " + AD.eyebrow.toLowerCase(); }
+        else n.firstChild && n.firstChild.nodeType === 3 ? n.firstChild.nodeValue = value : n.textContent = value;
+      });
+    }
+    set("brand", AD.brand);      set("initials", AD.initials);
+    set("body", AD.body);        set("eyebrow", AD.brand.toUpperCase() + " · " + AD.eyebrow);
+    set("label", AD.label);      set("title", AD.title);
+    set("desc", AD.desc);        set("image", AD.image);
+    set("sideimage", AD.side);
+    var sc = document.querySelector('[data-ad="sidecopy"]');
+    if (sc) sc.insertBefore(document.createTextNode(AD.sidecopy), sc.firstChild);
+    document.title = AD.brand + " — sponsored";
+  })();
+
+  var PLACEHOLDER = "fashion-sandbox.insiderdemo.com";
+  var setup   = document.getElementById("setup");
+  var pill    = document.getElementById("pill");
+  var pillTxt = document.getElementById("pillText");
+  var input   = document.getElementById("storeUrl");
+  var out     = document.getElementById("finalUrl");
+
+  // allow ?store=https://... so this page can be bookmarked ready to go
+  try{
+    var q = new URLSearchParams(location.search).get("store");
+    if(q) STORE_URL = q;
+  }catch(e){}
+
+  function build(base){
+    var url = (base || "").trim();
+    if(!url) return "";
+    if(!/^https?:\/\//i.test(url)) url = "https://" + url;
+    var hasQ     = url.indexOf("?") > -1;
+    var existing = hasQ ? url.slice(url.indexOf("?") + 1) : "";
+    var add = Object.keys(UTM).filter(function(k){
+      return !new RegExp("(^|&)" + k + "=").test(existing);
+    }).map(function(k){
+      return encodeURIComponent(k) + "=" + encodeURIComponent(UTM[k]);
+    });
+    if(!add.length) return url;
+    return url + (hasQ ? (existing ? "&" : "") : "?") + add.join("&");
+  }
+
+  function hostOf(url){
+    try{ return new URL(url).hostname.replace(/^www\./,""); }
+    catch(e){ return PLACEHOLDER; }
+  }
+
+  function apply(base){
+    var full = build(base);
+    [].forEach.call(document.querySelectorAll("[data-cta]"), function(a){
+      a.href = full || "#";
+    });
+    var host = hostOf(full);
+    [].forEach.call(document.querySelectorAll("[data-domain]"), function(el){
+      el.textContent = host;
+    });
+    out.textContent = full || "— no URL set —";
+    var unset = !base || host === PLACEHOLDER;
+    pill.classList.toggle("needs-url", unset);
+    pillTxt.textContent = unset ? "Set your Posh URL" : "Demo setup";
+    if(unset) setup.classList.add("is-open");
+  }
+
+  pill.addEventListener("click", function(){ setup.classList.toggle("is-open"); });
+  input.addEventListener("input", function(){ apply(input.value); });
+  document.getElementById("hideBtn").addEventListener("click", function(){ setup.style.display = "none"; });
+  document.addEventListener("keydown", function(e){
+    if(e.key === "h" || e.key === "H"){
+      if(document.activeElement === input) return;
+      setup.style.display = (setup.style.display === "none") ? "" : "none";
+    }
+  });
+
+  input.value = (STORE_URL === "https://fashion-sandbox.insiderdemo.com") ? "" : STORE_URL;
+  apply(input.value);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1798 @@
+{
+  "_README": [
+    "Two levels: `vertical` is the parent (Retail, Travel, Banking, Telco),",
+    "`subvertical` is the child (Beauty, Fashion, Hotels, Insurance). A vertical",
+    "with no sub-verticals \u2014 Telco \u2014 simply repeats the name in both.",
+    "",
+    "`template` selects the page model:",
+    "  ecommerce  browse -> cart -> checkout -> purchase   (Retail)",
+    "  booking    search -> select -> book -> confirmation (Travel, Banking, Telco)",
+    "",
+    "Each entry gets its own subdomain: <key>.insiderdemo.com, so campaign rules",
+    "scope to a hostname and cannot collide.",
+    "",
+    "To add one:",
+    "  1. drop the catalog source at sources/<key>-1.json (see README for volume)",
+    "  2. copy a block below, edit brand / theme / collections",
+    "  3. python3 build.py <key>",
+    "  4. add the subdomain in Netlify and to multiDomains in InOne"
+  ],
+  "beauty": {
+    "brand": "Lumen",
+    "tagline": "Makeup, Skincare and Fragrance",
+    "hero_title": "Skin first.<br>Makeup second.",
+    "hero_lede": "Makeup, skincare and fragrance made to be worn every day.",
+    "hero_cta": "Shop makeup",
+    "announce": "Free shipping over $50 \u00b7 Free samples with every order",
+    "search_placeholder": "Search makeup, skincare, fragrance",
+    "newsletter_title": "Join the list",
+    "newsletter_lede": "Early access to launches, restocks and offers.",
+    "source": "sources/beauty*.json",
+    "theme": {
+      "bg": "#FFFDFC",
+      "alt": "#F7F0EC",
+      "ink": "#2A2124",
+      "muted": "#7A6B70",
+      "rule": "#E9DFDA",
+      "accent": "#B4655F",
+      "display": "'Fraunces', Georgia, serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Jost:wght@300;400;500"
+    },
+    "order": [
+      "Makeup",
+      "Skincare",
+      "Body",
+      "Fragrance"
+    ],
+    "collections": {
+      "Makeup": "Makeup",
+      "Skincare": "Skincare",
+      "Balms": "Skincare",
+      "Fragrance": "Fragrance",
+      "Body": "Body"
+    },
+    "subcats": {
+      "Makeup": [
+        [
+          "Sets",
+          [
+            "set",
+            "duo",
+            "trio",
+            "quintet",
+            "icons",
+            "kit",
+            "bundle"
+          ]
+        ],
+        [
+          "Lip",
+          [
+            "balm dotcom",
+            "lip",
+            "gloss",
+            "ultralip",
+            "generation g"
+          ]
+        ],
+        [
+          "Cheek",
+          [
+            "cloud paint",
+            "blush",
+            "bronzer",
+            "solar paint",
+            "haloscope"
+          ]
+        ],
+        [
+          "Eyes",
+          [
+            "boy brow",
+            "brow",
+            "lash",
+            "lidstar",
+            "pencil",
+            "eye"
+          ]
+        ],
+        [
+          "Complexion",
+          [
+            "skin tint",
+            "concealer",
+            "perfecting",
+            "foundation",
+            "futuredew",
+            "stretch"
+          ]
+        ]
+      ],
+      "Skincare": [
+        [
+          "Sets",
+          [
+            "set",
+            "duo",
+            "trio",
+            "quintet",
+            "icons",
+            "kit"
+          ]
+        ],
+        [
+          "Cleanser",
+          [
+            "milky jelly",
+            "cleanser",
+            "wash"
+          ]
+        ],
+        [
+          "Serum",
+          [
+            "serum",
+            "super",
+            "bha",
+            "retinol"
+          ]
+        ],
+        [
+          "Sunscreen",
+          [
+            "invisible shield",
+            "spf",
+            "sunscreen"
+          ]
+        ],
+        [
+          "Mask",
+          [
+            "mask",
+            "mega greens"
+          ]
+        ],
+        [
+          "Moisturiser",
+          [
+            "priming",
+            "moisturizer",
+            "cream",
+            "balm"
+          ]
+        ]
+      ],
+      "Body": [
+        [
+          "Sets",
+          [
+            "set",
+            "duo",
+            "trio",
+            "kit"
+          ]
+        ],
+        [
+          "Cleanser",
+          [
+            "wash",
+            "cleanser",
+            "exfoliat"
+          ]
+        ],
+        [
+          "Deodorant",
+          [
+            "deodorant"
+          ]
+        ],
+        [
+          "Hand",
+          [
+            "hand"
+          ]
+        ]
+      ],
+      "Fragrance": [
+        [
+          "Sets",
+          [
+            "set",
+            "duo",
+            "discovery"
+          ]
+        ],
+        [
+          "Body Mist",
+          [
+            "mist",
+            "hair",
+            "body"
+          ]
+        ],
+        [
+          "Candles",
+          [
+            "candle"
+          ]
+        ]
+      ]
+    },
+    "defaults": {
+      "Makeup": "Makeup",
+      "Skincare": "Treatments",
+      "Body": "Body Care",
+      "Fragrance": "Perfume"
+    },
+    "vertical": "Retail",
+    "subvertical": "Beauty",
+    "template": "ecommerce",
+    "labels": {},
+    "hero_eyebrow": "New season",
+    "tiles_title": "Shop by category",
+    "grid_title": "New in",
+    "reco_title": "Recommended for you",
+    "profile": {
+      "tiers": [
+        "Member",
+        "Insider",
+        "VIP"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "Skin type",
+        "options": [
+          "Dry",
+          "Oily",
+          "Combination",
+          "Sensitive",
+          "Normal"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Book a consultation",
+      "lede": "Book time with an advisor for a colour match, a skincare consult or a lesson.",
+      "event": "consultation_booked",
+      "fields": [
+        {
+          "label": "Service",
+          "name": "service",
+          "options": [
+            "Colour match",
+            "Skincare consult",
+            "Makeup lesson"
+          ]
+        },
+        {
+          "label": "Store",
+          "name": "store",
+          "options": [
+            "Oxford Street",
+            "Shoreditch",
+            "Manchester"
+          ]
+        },
+        {
+          "label": "Date",
+          "name": "date",
+          "options": "date"
+        }
+      ],
+      "attribute_field": "store"
+    },
+    "hero_category": "Makeup"
+  },
+  "_template": {
+    "_comment": "Copy this, rename the key, fill it in. Delete nothing else.",
+    "brand": "Brand Name",
+    "tagline": "What the store sells",
+    "hero_title": "Headline here.",
+    "hero_lede": "One supporting sentence.",
+    "hero_cta": "Shop now",
+    "announce": "Free shipping over $50 \u00b7 30-day returns",
+    "search_placeholder": "Search products",
+    "newsletter_title": "Join the list",
+    "newsletter_lede": "Offers and new arrivals, straight to your inbox.",
+    "source": [
+      "sources/<key>-1.json",
+      "sources/<key>-2.json"
+    ],
+    "theme": {
+      "bg": "#FFFFFF",
+      "alt": "#F5F5F3",
+      "ink": "#1A1A1A",
+      "muted": "#6B6B6B",
+      "rule": "#E3E3E3",
+      "accent": "#1A1A1A",
+      "display": "'Jost', Helvetica, sans-serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Jost:wght@300;400;500"
+    },
+    "order": [
+      "Collection A",
+      "Collection B"
+    ],
+    "collections": {
+      "Shopify Product Type": "Collection A"
+    },
+    "subcats": {
+      "Collection A": [
+        [
+          "Subcat",
+          [
+            "keyword"
+          ]
+        ]
+      ]
+    },
+    "defaults": {
+      "Collection A": "All",
+      "Collection B": "All"
+    },
+    "vertical": "Retail",
+    "subvertical": "Sub-vertical name",
+    "template": "ecommerce",
+    "labels": {
+      "_comment": "Override only what differs. Anything omitted falls back to _labels_default.",
+      "cart": "Cart",
+      "add_to_cart": "Add to cart"
+    },
+    "hero_eyebrow": "New season",
+    "tiles_title": "Shop by category",
+    "grid_title": "New in",
+    "reco_title": "Recommended for you"
+  },
+  "_labels_default": {
+    "cart": "Cart",
+    "add_to_cart": "Add to cart",
+    "checkout": "Checkout",
+    "cart_title": "Your cart",
+    "cart_empty": "Your cart is empty",
+    "place_order": "Place order",
+    "order": "order",
+    "confirm_title": "Thank you for your order.",
+    "browse_cta": "Start shopping"
+  },
+  "hotels": {
+    "vertical": "Travel",
+    "subvertical": "Hotels",
+    "template": "ecommerce",
+    "brand": "Wayfarer",
+    "tagline": "Places worth staying",
+    "hero_title": "Somewhere<br>worth waking up.",
+    "hero_lede": "Boutique stays, city hotels and quiet lodges in twelve countries.",
+    "hero_cta": "Find a room",
+    "announce": "Free cancellation up to 48 hours before arrival",
+    "search_placeholder": "Search a city or a hotel",
+    "newsletter_title": "Where next?",
+    "newsletter_lede": "New properties and seasonal rates, once a month.",
+    "source": "sources/hotels*.json",
+    "theme": {
+      "bg": "#FCFBF9",
+      "alt": "#F0EDE7",
+      "ink": "#23282B",
+      "muted": "#6E7478",
+      "rule": "#E2DDD4",
+      "accent": "#1F5C63",
+      "display": "'Fraunces', Georgia, serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Jost:wght@300;400;500"
+    },
+    "order": [
+      "Hotels",
+      "Boutique",
+      "Lodges",
+      "Apartments"
+    ],
+    "collections": {
+      "Hotels": "Hotels",
+      "Boutique": "Boutique",
+      "Lodges": "Lodges",
+      "Apartments": "Apartments"
+    },
+    "subcats": {},
+    "defaults": {
+      "Hotels": "City",
+      "Boutique": "Boutique",
+      "Lodges": "Countryside",
+      "Apartments": "Self-catering"
+    },
+    "labels": {
+      "add_to_cart": "Reserve",
+      "cart": "Your stay",
+      "cart_title": "Your stay",
+      "cart_empty": "No rooms selected yet",
+      "checkout": "Complete booking",
+      "place_order": "Confirm booking",
+      "order": "booking",
+      "confirm_title": "Your booking is confirmed.",
+      "browse_cta": "Find a room"
+    },
+    "hero_eyebrow": "Stay",
+    "tiles_title": "Browse by type",
+    "grid_title": "Recently added",
+    "reco_title": "Picked for you",
+    "profile": {
+      "tiers": [
+        "Member",
+        "Silver",
+        "Gold"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "Room preference",
+        "options": [
+          "Quiet floor",
+          "High floor",
+          "Near lift",
+          "Accessible"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Manage a booking",
+      "lede": "Add breakfast, request a late checkout, or change the dates of a stay.",
+      "event": "booking_managed",
+      "fields": [
+        {
+          "label": "Action",
+          "name": "action",
+          "options": [
+            "Add breakfast",
+            "Late checkout",
+            "Airport transfer",
+            "Change dates"
+          ]
+        },
+        {
+          "label": "Property",
+          "name": "store",
+          "options": [
+            "The Grand Lisbon",
+            "Casa Luz Kyoto",
+            "Riverside Lodge Amalfi"
+          ]
+        },
+        {
+          "label": "Date",
+          "name": "date",
+          "options": "date"
+        }
+      ],
+      "attribute_field": "store"
+    },
+    "hero_category": "Hotels"
+  },
+  "airlines": {
+    "vertical": "Travel",
+    "subvertical": "Airlines",
+    "template": "ecommerce",
+    "brand": "Meridian Air",
+    "tagline": "Direct routes, fifteen cities",
+    "hero_title": "Fewer stops.<br>More places.",
+    "hero_lede": "Direct routes across Europe, Africa, Asia and the Americas.",
+    "hero_cta": "Search flights",
+    "announce": "Two cabin bags included on every fare",
+    "search_placeholder": "Where are you going?",
+    "newsletter_title": "Fare alerts",
+    "newsletter_lede": "New routes and seat sales, straight to your inbox.",
+    "source": "sources/airlines*.json",
+    "theme": {
+      "bg": "#FBFCFD",
+      "alt": "#EDF1F5",
+      "ink": "#16202B",
+      "muted": "#63707E",
+      "rule": "#DCE3EA",
+      "accent": "#1B4F8A",
+      "display": "'Jost', Helvetica, sans-serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Jost:wght@300;400;500;600"
+    },
+    "order": [
+      "Long Haul",
+      "Short Haul"
+    ],
+    "collections": {
+      "Long Haul": "Long Haul",
+      "Short Haul": "Short Haul"
+    },
+    "subcats": {},
+    "defaults": {
+      "Long Haul": "Intercontinental",
+      "Short Haul": "Regional"
+    },
+    "labels": {
+      "add_to_cart": "Select flight",
+      "cart": "Your trip",
+      "cart_title": "Your trip",
+      "cart_empty": "No flights selected yet",
+      "checkout": "Continue to payment",
+      "place_order": "Confirm booking",
+      "order": "booking",
+      "confirm_title": "Your trip is booked.",
+      "browse_cta": "Search flights"
+    },
+    "hero_eyebrow": "Fly",
+    "tiles_title": "Browse by route",
+    "grid_title": "New routes",
+    "reco_title": "Picked for you",
+    "profile": {
+      "tiers": [
+        "Blue",
+        "Silver",
+        "Gold"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "Seat preference",
+        "options": [
+          "Window",
+          "Aisle",
+          "Extra legroom",
+          "No preference"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Manage a trip",
+      "lede": "Add a bag, choose a seat, book lounge access or move a flight.",
+      "event": "trip_managed",
+      "fields": [
+        {
+          "label": "Action",
+          "name": "action",
+          "options": [
+            "Add bag",
+            "Choose seat",
+            "Add lounge",
+            "Change flight"
+          ]
+        },
+        {
+          "label": "Route",
+          "name": "route",
+          "options": [
+            "London to New York",
+            "Paris to Tokyo",
+            "Rome to Marrakesh"
+          ]
+        },
+        {
+          "label": "Date",
+          "name": "date",
+          "options": "date"
+        }
+      ],
+      "attribute_field": "route"
+    },
+    "hero_category": "Long Haul"
+  },
+  "_environments": {
+    "_README": [
+      "Which Insider account a site talks to is decided by its SUBDOMAIN SUFFIX,",
+      "because a page carries one tag and a tag belongs to one account:",
+      "",
+      "    beauty.insiderdemo.com           -> salesdemo",
+      "    beauty-sandbox.insiderdemo.com   -> partnersandbox",
+      "",
+      "`default` applies when a subdomain carries no recognised suffix.",
+      "",
+      "locale and currency must match the catalog these feeds load into.",
+      "en_GB keeps our products clear of the existing en_US catalog, which an",
+      "XML sync would otherwise replace. EUR because currency shows on every",
+      "product card and cart, while locale only appears in Catalog Manager."
+    ],
+    "default": {
+      "suffix": null,
+      "account": "salesdemo",
+      "partnerId": "10002548",
+      "locale": "en_GB",
+      "currency": "EUR",
+      "feed": "https://insiderdemo.com/feeds/master.xml"
+    },
+    "sandbox": {
+      "suffix": "-sandbox",
+      "account": "partnersandbox",
+      "partnerId": "10006846",
+      "locale": "en_GB",
+      "currency": "EUR",
+      "feed": "https://insiderdemo.com/feeds/master.xml"
+    }
+  },
+  "banking": {
+    "vertical": "Banking",
+    "subvertical": "Banking",
+    "brand": "Northbank",
+    "tagline": "Everyday banking, cards and lending",
+    "hero_title": "Banking that<br>stays out of the way.",
+    "hero_cta": "Explore products",
+    "hero_lede": "Accounts, cards, loans and mortgages, without the branch visit.",
+    "hero_eyebrow": "Personal",
+    "announce": "FSCS protected \u00b7 Open an account in minutes",
+    "search_placeholder": "Search accounts, cards, loans",
+    "newsletter_title": "Rate alerts",
+    "newsletter_lede": "Rate changes and new products.",
+    "tiles_title": "Browse products",
+    "grid_title": "Popular",
+    "reco_title": "You might also need",
+    "theme": {
+      "bg": "#FCFDFE",
+      "alt": "#EDF1F6",
+      "ink": "#131B24",
+      "muted": "#5E6A78",
+      "rule": "#DCE3EB",
+      "accent": "#1E3A57",
+      "display": "'Jost', Helvetica, sans-serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Jost:wght@300;400;500;600"
+    },
+    "template": "ecommerce",
+    "source": "sources/banking-*.json",
+    "collections": {
+      "Accounts": "Accounts",
+      "Mortgages": "Mortgages",
+      "Credit Cards": "Credit Cards",
+      "Loans": "Loans"
+    },
+    "order": [
+      "Accounts",
+      "Mortgages",
+      "Credit Cards",
+      "Loans"
+    ],
+    "subcats": {},
+    "defaults": {
+      "Accounts": "All",
+      "Mortgages": "All",
+      "Credit Cards": "All",
+      "Loans": "All"
+    },
+    "labels": {
+      "add_to_cart": "Start application",
+      "cart": "Your application",
+      "cart_title": "Your application",
+      "cart_empty": "Nothing selected yet",
+      "checkout": "Review application",
+      "place_order": "Submit application",
+      "order": "application",
+      "confirm_title": "Your application is submitted.",
+      "browse_cta": "Explore products"
+    },
+    "profile": {
+      "tiers": [
+        "Everyday",
+        "Plus",
+        "Premier"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "Life stage",
+        "options": [
+          "Renting",
+          "First home",
+          "Moving",
+          "Family",
+          "Retiring"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Start an application",
+      "lede": "Start an application. It takes a few minutes and you can save and return.",
+      "event": "application_started",
+      "fields": [
+        {
+          "label": "Product",
+          "name": "product",
+          "options": [
+            "Current account",
+            "Credit card",
+            "Personal loan",
+            "Mortgage"
+          ]
+        },
+        {
+          "label": "Purpose",
+          "name": "purpose",
+          "options": [
+            "Everyday banking",
+            "Consolidate debt",
+            "Buy a home",
+            "Save"
+          ]
+        },
+        {
+          "label": "Amount",
+          "name": "amount",
+          "options": [
+            "1000",
+            "5000",
+            "25000",
+            "250000"
+          ]
+        }
+      ],
+      "attribute_field": "product"
+    },
+    "hero_category": "Accounts"
+  },
+  "insurance": {
+    "vertical": "Banking",
+    "subvertical": "Insurance",
+    "brand": "Fairhaven",
+    "tagline": "Cover for the things that matter",
+    "hero_title": "Cover you can<br>actually read.",
+    "hero_cta": "Compare cover",
+    "hero_lede": "Motor, home, travel and life cover with no jargon and no auto-renewal.",
+    "hero_eyebrow": "Protect",
+    "announce": "Cover starts the day you buy \u00b7 14-day cooling off",
+    "search_placeholder": "Search cover types",
+    "newsletter_title": "Stay covered",
+    "newsletter_lede": "Renewal reminders and cover tips.",
+    "tiles_title": "Browse cover",
+    "grid_title": "Popular cover",
+    "reco_title": "Often taken together",
+    "theme": {
+      "bg": "#FCFDFC",
+      "alt": "#EBF3EE",
+      "ink": "#141E19",
+      "muted": "#5C6B63",
+      "rule": "#D8E5DD",
+      "accent": "#23503F",
+      "display": "'Jost', Helvetica, sans-serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Jost:wght@300;400;500;600"
+    },
+    "template": "ecommerce",
+    "source": "sources/insurance-*.json",
+    "collections": {
+      "Motor": "Motor",
+      "Home": "Home",
+      "Travel": "Travel",
+      "Pet": "Pet",
+      "Life": "Life",
+      "Health": "Health",
+      "Business": "Motor",
+      "Gadget": "Motor"
+    },
+    "order": [
+      "Motor",
+      "Home",
+      "Travel",
+      "Pet",
+      "Life",
+      "Health"
+    ],
+    "subcats": {},
+    "defaults": {
+      "Motor": "All",
+      "Home": "All",
+      "Travel": "All",
+      "Pet": "All",
+      "Life": "All",
+      "Health": "All"
+    },
+    "labels": {
+      "add_to_cart": "Get a quote",
+      "cart": "Your quote",
+      "cart_title": "Your quote",
+      "cart_empty": "No cover selected yet",
+      "checkout": "Review quote",
+      "place_order": "Buy cover",
+      "order": "policy",
+      "confirm_title": "You're covered.",
+      "browse_cta": "Compare cover"
+    },
+    "profile": {
+      "tiers": [
+        "Standard",
+        "Plus",
+        "Premier"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "What matters most",
+        "options": [
+          "Lowest price",
+          "Best cover",
+          "Fast claims",
+          "Flexible excess"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Get a quote",
+      "lede": "Tell us what you need covered and we will price it in a minute.",
+      "event": "quote_requested",
+      "fields": [
+        {
+          "label": "Cover",
+          "name": "product",
+          "options": [
+            "Car",
+            "Home",
+            "Travel",
+            "Pet",
+            "Life"
+          ]
+        },
+        {
+          "label": "Level",
+          "name": "level",
+          "options": [
+            "Third Party",
+            "Standard",
+            "Comprehensive"
+          ]
+        },
+        {
+          "label": "Excess",
+          "name": "amount",
+          "options": [
+            "100",
+            "250",
+            "500"
+          ]
+        }
+      ],
+      "attribute_field": "product"
+    },
+    "hero_category": "Motor"
+  },
+  "fintech": {
+    "vertical": "Banking",
+    "subvertical": "Fintech",
+    "brand": "Loop",
+    "tagline": "Money, moved properly",
+    "hero_title": "Money that<br>keeps up.",
+    "hero_cta": "Explore plans",
+    "hero_lede": "Spend, save, invest and get paid \u2014 personal and business, one app.",
+    "hero_eyebrow": "Plans",
+    "announce": "No minimum balance \u00b7 Cancel any time",
+    "search_placeholder": "Search plans and accounts",
+    "newsletter_title": "Product updates",
+    "newsletter_lede": "New features, monthly.",
+    "tiles_title": "Browse plans",
+    "grid_title": "Most popular",
+    "reco_title": "Works well with",
+    "theme": {
+      "bg": "#FDFCFF",
+      "alt": "#F0ECFA",
+      "ink": "#1A1630",
+      "muted": "#645C80",
+      "rule": "#E1DAF2",
+      "accent": "#4B3B9E",
+      "display": "'Jost', Helvetica, sans-serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Jost:wght@300;400;500;600"
+    },
+    "template": "ecommerce",
+    "source": "sources/fintech-*.json",
+    "collections": {
+      "Business": "Business",
+      "Plans": "Plans",
+      "Investing": "Investing",
+      "Accounts": "Accounts"
+    },
+    "order": [
+      "Business",
+      "Plans",
+      "Investing",
+      "Accounts"
+    ],
+    "subcats": {},
+    "defaults": {
+      "Business": "All",
+      "Plans": "All",
+      "Investing": "All",
+      "Accounts": "All"
+    },
+    "labels": {
+      "add_to_cart": "Get started",
+      "cart": "Your plan",
+      "cart_title": "Your plan",
+      "cart_empty": "Nothing selected yet",
+      "checkout": "Review",
+      "place_order": "Confirm",
+      "order": "signup",
+      "confirm_title": "You're all set.",
+      "browse_cta": "Explore plans"
+    },
+    "profile": {
+      "tiers": [
+        "Free",
+        "Plus",
+        "Premium"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "Mainly used for",
+        "options": [
+          "Everyday spending",
+          "Travel",
+          "Investing",
+          "Business"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Change your plan",
+      "lede": "Upgrade, downgrade or add an account. Changes apply from your next cycle.",
+      "event": "plan_changed",
+      "fields": [
+        {
+          "label": "Action",
+          "name": "action",
+          "options": [
+            "Upgrade",
+            "Downgrade",
+            "Add currency account",
+            "Invite a friend"
+          ]
+        },
+        {
+          "label": "Plan",
+          "name": "plan",
+          "options": [
+            "Free",
+            "Plus",
+            "Premium",
+            "Metal"
+          ]
+        },
+        {
+          "label": "Billing",
+          "name": "billing",
+          "options": [
+            "Monthly",
+            "Annual"
+          ]
+        }
+      ],
+      "attribute_field": "plan"
+    },
+    "hero_category": "Business"
+  },
+  "fashion": {
+    "vertical": "Retail",
+    "subvertical": "Fashion",
+    "brand": "Ashford Lane",
+    "tagline": "Womenswear, menswear and footwear",
+    "hero_title": "Dress for the<br>life you have.",
+    "hero_cta": "Shop new in",
+    "hero_lede": "Everyday clothing built to last longer than the season.",
+    "hero_eyebrow": "New season",
+    "announce": "Free returns within 30 days",
+    "search_placeholder": "Search clothing, shoes, accessories",
+    "newsletter_title": "First look",
+    "newsletter_lede": "New arrivals and early access to sale.",
+    "tiles_title": "Shop by category",
+    "grid_title": "New in",
+    "reco_title": "Picked for you",
+    "theme": {
+      "bg": "#FFFDFB",
+      "alt": "#F4EFE9",
+      "ink": "#211E1C",
+      "muted": "#726A64",
+      "rule": "#E5DDD4",
+      "accent": "#8C5A3C",
+      "display": "'Fraunces', Georgia, serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Jost:wght@300;400;500"
+    },
+    "template": "ecommerce",
+    "source": "sources/fashion-*.json",
+    "collections": {
+      "Tops": "Tops",
+      "Maxi Dresses": "Maxi Dresses",
+      "Mini Dresses": "Mini Dresses",
+      "Dresses": "Dresses",
+      "Pants": "Pants",
+      "Outerwear": "Outerwear",
+      "Corset Tops": "Tops",
+      "Midi Dresses": "Maxi Dresses",
+      "Maxi Skirts": "Maxi Dresses",
+      "Earrings": "Tops",
+      "Necklaces": "Tops",
+      "Bags": "Tops",
+      "Shorts": "Tops",
+      "Cami Tops": "Tops",
+      "Midi Skirts": "Tops",
+      "One Shoulder Tops": "Tops",
+      "Bustier Tops": "Tops",
+      "Mini Skirts": "Mini Dresses",
+      "Bracelets": "Tops",
+      "Shirts + Blouses": "Tops",
+      "Halter Tops": "Tops",
+      "Long Sleeve Tops": "Tops",
+      "Jackets": "Tops",
+      "Blazers": "Tops",
+      "Coats": "Tops",
+      "Skorts": "Tops",
+      "Jeans": "Tops",
+      "Denim Skorts": "Tops",
+      "Sunglasses": "Tops",
+      "Jackets + Coats": "Tops",
+      "Sweater": "Tops",
+      "T-Shirts": "Tops",
+      "Pants + Leggings": "Pants",
+      "Swim Tops": "Tops",
+      "Denim Shorts": "Tops",
+      "Swim Bottoms": "Tops",
+      "Belts": "Tops",
+      "Rings": "Tops",
+      "Knit Tops": "Tops",
+      "Bodysuits": "Tops",
+      "Bags & Wallets": "Tops",
+      "Hats": "Tops",
+      "Denim Skirts": "Tops",
+      "Socks + Stockings": "Tops",
+      "Accessories": "Tops",
+      "Skirts": "Tops",
+      "Shoes": "Tops",
+      "Denim": "Tops",
+      "Intimates": "Tops",
+      "Swimwear": "Tops",
+      "Activewear": "Tops"
+    },
+    "order": [
+      "Tops",
+      "Maxi Dresses",
+      "Mini Dresses",
+      "Dresses",
+      "Pants",
+      "Outerwear"
+    ],
+    "subcats": {},
+    "defaults": {
+      "Tops": "All",
+      "Maxi Dresses": "All",
+      "Mini Dresses": "All",
+      "Dresses": "All",
+      "Pants": "All",
+      "Outerwear": "All"
+    },
+    "profile": {
+      "tiers": [
+        "Member",
+        "Silver",
+        "Gold"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "Size preference",
+        "options": [
+          "XS",
+          "S",
+          "M",
+          "L",
+          "XL"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Book a fitting",
+      "lede": "Book a fitting, alterations or an hour with a personal stylist.",
+      "event": "fitting_booked",
+      "fields": [
+        {
+          "label": "Service",
+          "name": "service",
+          "options": [
+            "Personal styling",
+            "Alterations",
+            "Fitting"
+          ]
+        },
+        {
+          "label": "Store",
+          "name": "store",
+          "options": [
+            "Regent Street",
+            "Leeds",
+            "Glasgow"
+          ]
+        },
+        {
+          "label": "Date",
+          "name": "date",
+          "options": "date"
+        }
+      ],
+      "attribute_field": "store"
+    },
+    "hero_category": "Dresses"
+  },
+  "electronics": {
+    "vertical": "Retail",
+    "subvertical": "Electronics",
+    "brand": "Kestrel",
+    "tagline": "Home appliances and technology",
+    "hero_title": "Built to run<br>for years.",
+    "hero_cta": "Shop appliances",
+    "hero_lede": "Appliances, audio and technology, with installation included.",
+    "hero_eyebrow": "This season",
+    "announce": "Free delivery and installation over \u20ac300",
+    "search_placeholder": "Search appliances, TVs, audio",
+    "newsletter_title": "Deals first",
+    "newsletter_lede": "Price drops and new models, monthly.",
+    "tiles_title": "Shop by category",
+    "grid_title": "New models",
+    "reco_title": "You might also like",
+    "theme": {
+      "bg": "#FCFCFD",
+      "alt": "#EFF1F4",
+      "ink": "#15181C",
+      "muted": "#616873",
+      "rule": "#DDE1E7",
+      "accent": "#1D4E89",
+      "display": "'Jost', Helvetica, sans-serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Jost:wght@300;400;500;600"
+    },
+    "template": "ecommerce",
+    "source": "sources/electronics-*.json",
+    "collections": {
+      "Speaker Outlet": "Speaker Outlet",
+      "Subwoofer Outlet": "Subwoofer Outlet",
+      "Warranty Part": "Warranty Part",
+      "Accessory": "Accessory",
+      "Subwoofer": "Subwoofer",
+      "Speaker": "Speaker",
+      "Amplifier": "Speaker Outlet",
+      "Replacement Part": "Warranty Part"
+    },
+    "order": [
+      "Speaker Outlet",
+      "Subwoofer Outlet",
+      "Warranty Part",
+      "Accessory",
+      "Subwoofer",
+      "Speaker"
+    ],
+    "subcats": {},
+    "defaults": {
+      "Speaker Outlet": "All",
+      "Subwoofer Outlet": "All",
+      "Warranty Part": "All",
+      "Accessory": "All",
+      "Subwoofer": "All",
+      "Speaker": "All"
+    },
+    "profile": {
+      "tiers": [
+        "Member",
+        "Plus",
+        "Pro"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "Home setup",
+        "options": [
+          "Flat",
+          "House",
+          "Studio",
+          "Shared"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Book installation",
+      "lede": "Arrange delivery, installation and removal of your old appliance.",
+      "event": "installation_booked",
+      "fields": [
+        {
+          "label": "Service",
+          "name": "service",
+          "options": [
+            "Delivery only",
+            "Install & remove old",
+            "Full setup"
+          ]
+        },
+        {
+          "label": "Slot",
+          "name": "slot",
+          "options": [
+            "Morning",
+            "Afternoon",
+            "Evening"
+          ]
+        },
+        {
+          "label": "Date",
+          "name": "date",
+          "options": "date"
+        }
+      ],
+      "attribute_field": "service"
+    },
+    "hero_category": "Speaker"
+  },
+  "telco": {
+    "vertical": "Telco",
+    "subvertical": "Telco",
+    "brand": "Vantis",
+    "tagline": "Phones, plans and accessories",
+    "hero_title": "Better signal.<br>Fewer surprises.",
+    "hero_cta": "Shop devices",
+    "hero_lede": "Handsets, accessories and plans with no lock-in.",
+    "hero_eyebrow": "Connect",
+    "announce": "Keep your number \u00b7 No contract",
+    "search_placeholder": "Search phones and accessories",
+    "newsletter_title": "Stay posted",
+    "newsletter_lede": "New devices and plan changes.",
+    "tiles_title": "Shop by category",
+    "grid_title": "Latest devices",
+    "reco_title": "Pairs well with",
+    "theme": {
+      "bg": "#FDFDFC",
+      "alt": "#EEF2EF",
+      "ink": "#12201A",
+      "muted": "#5F6F68",
+      "rule": "#DAE3DE",
+      "accent": "#136B4B",
+      "display": "'Jost', Helvetica, sans-serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Jost:wght@300;400;500;600"
+    },
+    "template": "ecommerce",
+    "source": "sources/telco-*.json",
+    "collections": {
+      "Modern Folio - iPhone": "Modern Folio Iphone",
+      "iPhone 17 Pro Max": "Iphone 17 Pro Max",
+      "iPhone 17 Pro": "Iphone 17 Pro",
+      "iPhone 17": "Iphone 17",
+      "bundles": "Bundles",
+      "iPhone 17e/ 16e": "Iphone 17e/ 16e",
+      "Wireless Charger": "Modern Folio Iphone",
+      "Galaxy S26 FE": "Modern Folio Iphone",
+      "Tote Bag": "Modern Folio Iphone",
+      "iPhone 16 Pro Max": "Iphone 17 Pro Max",
+      "Ice Pack": "Modern Folio Iphone",
+      "Pixel 11 Pro XL": "Iphone 17 Pro Max",
+      "Pixel 11 Pro": "Iphone 17 Pro Max",
+      "Pixel 11": "Modern Folio Iphone",
+      "AirTag Case": "Modern Folio Iphone",
+      "Phone Pouch": "Modern Folio Iphone",
+      "Phone Charms & Straps": "Modern Folio Iphone",
+      "MagSafe Accessories": "Modern Folio Iphone",
+      "Keychain Wallet": "Modern Folio Iphone",
+      "Adhesive Accessories": "Modern Folio Iphone",
+      "iPad (A16) / (10th gen.)": "Modern Folio Iphone",
+      "Phone Chains": "Modern Folio Iphone",
+      "Cooler Tote": "Modern Folio Iphone",
+      "Mahjong Tote Set": "Modern Folio Iphone",
+      "iPhone Air": "Modern Folio Iphone",
+      "iPhone 16": "Modern Folio Iphone",
+      "iPhone 16 Pro": "Iphone 17 Pro Max",
+      "Bag Organizer": "Modern Folio Iphone",
+      "Galaxy S26+": "Modern Folio Iphone",
+      "Galaxy S26 Ultra": "Modern Folio Iphone",
+      "Galaxy S26": "Modern Folio Iphone",
+      "Pixel 10a": "Modern Folio Iphone",
+      "iPad Pro 13\" (M5/M4)": "Iphone 17 Pro Max",
+      "iPad Pro 11\" (M5/M4)": "Iphone 17 Pro Max",
+      "iPhone 12 / iPhone 12 Pro": "Iphone 17 Pro Max",
+      "Train Case": "Modern Folio Iphone",
+      "Phone Mount": "Modern Folio Iphone",
+      "Fast Charger": "Modern Folio Iphone",
+      "AirPods Pro 3": "Iphone 17 Pro Max",
+      "Pixel 9 / 9 Pro": "Iphone 17 Pro Max",
+      "Travel Pouch": "Modern Folio Iphone",
+      "Galaxy S25 Ultra": "Modern Folio Iphone",
+      "iPhone 17 Pro / 17 Pro Max": "Iphone 17 Pro Max",
+      "Galaxy S25 FE": "Modern Folio Iphone",
+      "Series 4/5/6/SE Apple Watch 44mm": "Modern Folio Iphone",
+      "Pixel 10 Pro XL": "Iphone 17 Pro Max",
+      "Pixel 10 Pro Fold": "Iphone 17 Pro Max",
+      "Pixel 10 Pro": "Iphone 17 Pro Max",
+      "Pixel 10": "Modern Folio Iphone",
+      "Pixel 10 / 10 Pro": "Iphone 17 Pro Max",
+      "Bag Charm": "Modern Folio Iphone",
+      "Galaxy S25 Edge": "Modern Folio Iphone",
+      "AirPods Pro 1 & 2": "Iphone 17 Pro Max",
+      "AirPods 4": "Modern Folio Iphone",
+      "Pixel 9 Pro XL": "Iphone 17 Pro Max",
+      "Pixel 9a": "Modern Folio Iphone",
+      "Waterproof Case": "Modern Folio Iphone",
+      "Apple Watch 42-49mm (Large Series 1-11 / SE / Ultra 1-3)": "Modern Folio Iphone",
+      "Laptop Sleeve 14\"": "Modern Folio Iphone",
+      "Laptop Sleeve 16\"": "Modern Folio Iphone",
+      "Galaxy S25+": "Modern Folio Iphone",
+      "Galaxy S25": "Modern Folio Iphone",
+      "Traditional Case - iPhone": "Modern Folio Iphone",
+      "Apparel - Apparel": "Modern Folio Iphone",
+      "Modern Band - Apple Watch": "Modern Folio Iphone",
+      "Modern Case - iPhone": "Modern Folio Iphone",
+      "Skin - iPhone": "Modern Folio Iphone",
+      "Modern Case - Airpods": "Modern Folio Iphone",
+      "Modern Case - Pixel Buds": "Modern Folio Iphone",
+      "Rugged Case - iPhone": "Modern Folio Iphone",
+      "Sport Case - iPhone": "Modern Folio Iphone",
+      "Rugged Band - Apple Watch": "Modern Folio Iphone",
+      "Tempo Band - Apple Watch": "Modern Folio Iphone",
+      "Base & Stand - Wireless Charging (No AW)": "Modern Folio Iphone",
+      "Cable - Cable": "Modern Folio Iphone",
+      "Find My - Find My": "Modern Folio Iphone",
+      "Modern Case - Airpods - Horween Leather": "Modern Folio Iphone",
+      "Airtag Case - Airtag": "Modern Folio Iphone",
+      "Screen Protector - iPhone": "Modern Folio Iphone",
+      "Sport Band - Apple Watch": "Modern Folio Iphone",
+      "Charge Key - Cable": "Modern Folio Iphone",
+      "Wallet - Wallet": "Modern Folio Iphone",
+      "Stratos Band - Apple Watch": "Modern Folio Iphone",
+      "Wallet - Find My": "Modern Folio Iphone",
+      "Modern Case - Pixel Buds - Horween Leather": "Modern Folio Iphone",
+      "Rocky Point Band - Apple Watch": "Modern Folio Iphone",
+      "Modern Folio - iPad": "Modern Folio Iphone",
+      "Base & Stand - Wireless Charging (with AW)": "Modern Folio Iphone",
+      "Metal Band - Apple Watch": "Modern Folio Iphone",
+      "Active Band - Watch": "Modern Folio Iphone",
+      "Adapter - Power Supply": "Modern Folio Iphone",
+      "Rugged Case - iPhone - Horween Leather": "Modern Folio Iphone",
+      "Modern Case - iPhone - Horween Leather": "Modern Folio Iphone",
+      "Rugged Case - iPhone - IML": "Modern Folio Iphone",
+      "Lanyard - Miscellaneous": "Modern Folio Iphone",
+      "Modern Case - iPhone - Camino Leather": "Modern Folio Iphone",
+      "Active Band - Pixel Watch": "Modern Folio Iphone",
+      "Modern Case - Airpods - Camino Leather": "Modern Folio Iphone",
+      "Other - Keychain": "Modern Folio Iphone",
+      "Base & Stand - Power Supply": "Modern Folio Iphone",
+      "Sport Case - Airpods": "Modern Folio Iphone",
+      "Slim Case - iPhone": "Modern Folio Iphone",
+      "Rugged Case - Apple Watch - Stainless Steel": "Modern Folio Iphone",
+      "Pen - Pen": "Modern Folio Iphone",
+      "Sport Slim Band - Apple Watch": "Modern Folio Iphone",
+      "Traditional Band - Apple Watch": "Modern Folio Iphone",
+      "Active Band - Apple Watch": "Modern Folio Iphone",
+      "Modern Case - iPhone - Active Leather": "Modern Folio Iphone"
+    },
+    "order": [
+      "Modern Folio Iphone",
+      "Iphone 17 Pro Max",
+      "Iphone 17 Pro",
+      "Iphone 17",
+      "Bundles",
+      "Iphone 17e/ 16e"
+    ],
+    "subcats": {},
+    "defaults": {
+      "Modern Folio Iphone": "All",
+      "Iphone 17 Pro Max": "All",
+      "Iphone 17 Pro": "All",
+      "Iphone 17": "All",
+      "Bundles": "All",
+      "Iphone 17e/ 16e": "All"
+    },
+    "labels": {
+      "add_to_cart": "Add to basket",
+      "cart": "Basket",
+      "cart_title": "Your basket",
+      "confirm_title": "Your order is confirmed."
+    },
+    "profile": {
+      "tiers": [
+        "Pay As You Go",
+        "Monthly",
+        "Business"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "Plan type",
+        "options": [
+          "SIM only",
+          "Phone on contract",
+          "Broadband",
+          "Business"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Top up or change plan",
+      "lede": "Top up, change plan, add a data boost or renew your contract.",
+      "event": "plan_changed",
+      "fields": [
+        {
+          "label": "Action",
+          "name": "action",
+          "options": [
+            "Top up credit",
+            "Upgrade plan",
+            "Add data boost",
+            "Renew contract"
+          ]
+        },
+        {
+          "label": "Plan",
+          "name": "plan",
+          "options": [
+            "Vantis 5",
+            "Vantis 20",
+            "Vantis Unlimited"
+          ]
+        },
+        {
+          "label": "Amount",
+          "name": "amount",
+          "options": [
+            "10",
+            "20",
+            "30",
+            "50"
+          ]
+        }
+      ],
+      "attribute_field": "plan"
+    },
+    "hero_category": "Iphone 17 Pro"
+  },
+  "home": {
+    "vertical": "Retail",
+    "subvertical": "Home",
+    "brand": "Aldgate",
+    "tagline": "Furniture and homeware",
+    "hero_title": "Rooms that<br>settle in.",
+    "hero_cta": "Shop living",
+    "hero_lede": "Furniture made to be lived with, not looked after.",
+    "hero_eyebrow": "New collection",
+    "announce": "Free delivery on orders over \u20ac200",
+    "search_placeholder": "Search furniture and homeware",
+    "newsletter_title": "Room by room",
+    "newsletter_lede": "New pieces and styling ideas.",
+    "tiles_title": "Shop by room",
+    "grid_title": "New in",
+    "reco_title": "Completes the room",
+    "theme": {
+      "bg": "#FDFCFA",
+      "alt": "#F1EDE6",
+      "ink": "#221F1B",
+      "muted": "#6E6862",
+      "rule": "#E3DCD1",
+      "accent": "#6B5B3E",
+      "display": "'Fraunces', Georgia, serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Jost:wght@300;400;500"
+    },
+    "template": "ecommerce",
+    "source": "sources/home-*.json",
+    "collections": {
+      "Seating": "Seating",
+      "Replacement Parts": "Replacement Parts",
+      "Components": "Components",
+      "Outdoor Furniture": "Outdoor Furniture",
+      "Sectionals": "Sectionals",
+      "Shelving": "Shelving",
+      "Beds": "Seating",
+      "Bed Add-Ons": "Seating",
+      "Swatch": "Seating",
+      "Chairs": "Seating",
+      "Bed Sheets": "Seating",
+      "Duvet Covers": "Seating",
+      "Shelving & Storage": "Shelving",
+      "Sofas": "Seating",
+      "Tables": "Seating",
+      "Add On/Expansion": "Seating",
+      "Rugs": "Seating",
+      "Serviceability": "Seating",
+      "Adjustable Base": "Seating",
+      "Recycling Fee": "Seating",
+      "Mattresses": "Seating",
+      "Subscription": "Seating",
+      "Shipping": "Seating",
+      "Lounge Chairs": "Seating",
+      "Benches": "Seating",
+      "Simple": "Seating",
+      "Hidden": "Seating",
+      "Ancillary/Add On": "Seating",
+      "Hardware": "Seating",
+      "Accessories": "Seating",
+      "Accent Seating": "Seating",
+      "Furniture": "Outdoor Furniture",
+      "Assembly Service": "Seating",
+      "Accent Table": "Seating",
+      "Accent Furniture": "Outdoor Furniture",
+      "Protection Plan": "Seating"
+    },
+    "order": [
+      "Seating",
+      "Replacement Parts",
+      "Components",
+      "Outdoor Furniture",
+      "Sectionals",
+      "Shelving"
+    ],
+    "subcats": {},
+    "defaults": {
+      "Seating": "All",
+      "Replacement Parts": "All",
+      "Components": "All",
+      "Outdoor Furniture": "All",
+      "Sectionals": "All",
+      "Shelving": "All"
+    },
+    "profile": {
+      "tiers": [
+        "Member",
+        "Silver",
+        "Gold"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "Room I'm working on",
+        "options": [
+          "Living room",
+          "Bedroom",
+          "Kitchen",
+          "Office"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Book a design consult",
+      "lede": "Talk through a room with a designer, in store, at home or over video.",
+      "event": "design_consult_booked",
+      "fields": [
+        {
+          "label": "Service",
+          "name": "service",
+          "options": [
+            "In-store consult",
+            "Home visit",
+            "Video call"
+          ]
+        },
+        {
+          "label": "Room",
+          "name": "room",
+          "options": [
+            "Living room",
+            "Bedroom",
+            "Kitchen",
+            "Office"
+          ]
+        },
+        {
+          "label": "Date",
+          "name": "date",
+          "options": "date"
+        }
+      ],
+      "attribute_field": "service"
+    },
+    "hero_category": "Seating"
+  },
+  "luxury": {
+    "vertical": "Retail",
+    "subvertical": "Luxury",
+    "brand": "Beaumont Vale",
+    "tagline": "Designer, curated",
+    "hero_title": "Fewer things.<br>Better ones.",
+    "hero_cta": "Shop the edit",
+    "hero_lede": "A small, considered selection from designers worth keeping.",
+    "hero_eyebrow": "The edit",
+    "announce": "Complimentary delivery and returns worldwide",
+    "search_placeholder": "Search designers and pieces",
+    "newsletter_title": "Private view",
+    "newsletter_lede": "New arrivals, before anyone else.",
+    "tiles_title": "Browse the edit",
+    "grid_title": "Just arrived",
+    "reco_title": "You may also like",
+    "theme": {
+      "bg": "#FBFAF8",
+      "alt": "#EDEAE4",
+      "ink": "#191714",
+      "muted": "#6B655C",
+      "rule": "#DFD9CE",
+      "accent": "#8A7145",
+      "display": "'Fraunces', Georgia, serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Jost:wght@300;400;500"
+    },
+    "template": "ecommerce",
+    "source": "sources/luxury-*.json",
+    "collections": {
+      "Bags": "Bags",
+      "Sunglasses": "Sunglasses",
+      "Belts": "Belts",
+      "Wallets": "Wallets",
+      "Bracelets": "Bracelets",
+      "Top Handle Bags": "Top Handle Bags",
+      "Scarfs": "Bags",
+      "Card Cases": "Bags",
+      "Baseball Caps": "Bags",
+      "Beanies": "Bags",
+      "Hobo Bags": "Bags",
+      "Ties": "Bags",
+      "Wallets & Purses": "Wallets",
+      "Brooches & Pins": "Bags",
+      "Earrings": "Bags",
+      "Bucket Bags": "Bags",
+      "Neckties": "Bags",
+      "Rings": "Bags",
+      "Wallets & Cardholders": "Wallets",
+      "Necklaces": "Bags"
+    },
+    "order": [
+      "Bags",
+      "Sunglasses",
+      "Belts",
+      "Wallets",
+      "Bracelets",
+      "Top Handle Bags"
+    ],
+    "subcats": {},
+    "defaults": {
+      "Bags": "All",
+      "Sunglasses": "All",
+      "Belts": "All",
+      "Wallets": "All",
+      "Bracelets": "All",
+      "Top Handle Bags": "All"
+    },
+    "profile": {
+      "tiers": [
+        "Client",
+        "Private Client",
+        "Cercle"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "Preferred boutique",
+        "options": [
+          "Mayfair",
+          "Milan",
+          "Paris",
+          "Online only"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Request an appointment",
+      "lede": "Request a private appointment with a client advisor at your boutique.",
+      "event": "appointment_requested",
+      "fields": [
+        {
+          "label": "Service",
+          "name": "service",
+          "options": [
+            "Private viewing",
+            "Personal shopping",
+            "Repairs"
+          ]
+        },
+        {
+          "label": "Boutique",
+          "name": "store",
+          "options": [
+            "Mayfair",
+            "Milan",
+            "Paris"
+          ]
+        },
+        {
+          "label": "Date",
+          "name": "date",
+          "options": "date"
+        }
+      ],
+      "attribute_field": "store"
+    },
+    "hero_category": "Bags"
+  },
+  "supermarket": {
+    "vertical": "Retail",
+    "subvertical": "Supermarkets",
+    "brand": "Harvest Row",
+    "tagline": "Food, drink and household",
+    "hero_title": "Your weekly shop,<br>done properly.",
+    "hero_cta": "Start shopping",
+    "hero_lede": "Fresh food, cupboard staples and household essentials.",
+    "hero_eyebrow": "This week",
+    "announce": "Free delivery over \u20ac60 \u00b7 Slots seven days a week",
+    "search_placeholder": "Search groceries",
+    "newsletter_title": "This week's offers",
+    "newsletter_lede": "Deals and seasonal picks, weekly.",
+    "tiles_title": "Shop by aisle",
+    "grid_title": "New this week",
+    "reco_title": "Often bought together",
+    "theme": {
+      "bg": "#FDFDFA",
+      "alt": "#EFF3E9",
+      "ink": "#1A2016",
+      "muted": "#626B5B",
+      "rule": "#DEE5D4",
+      "accent": "#3F6B2E",
+      "display": "'Jost', Helvetica, sans-serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Jost:wght@300;400;500;600"
+    },
+    "template": "ecommerce",
+    "source": "sources/supermarket-*.json",
+    "collections": {
+      "Ingredients": "Ingredients",
+      "Tableware": "Tableware",
+      "Cookware": "Cookware",
+      "Cookbooks": "Cookbooks",
+      "Gifts": "Gifts",
+      "Bundle": "Bundle"
+    },
+    "order": [
+      "Ingredients",
+      "Tableware",
+      "Cookware",
+      "Cookbooks",
+      "Gifts",
+      "Bundle"
+    ],
+    "subcats": {},
+    "defaults": {
+      "Ingredients": "All",
+      "Tableware": "All",
+      "Cookware": "All",
+      "Cookbooks": "All",
+      "Gifts": "All",
+      "Bundle": "All"
+    },
+    "labels": {
+      "add_to_cart": "Add to trolley",
+      "cart": "Trolley",
+      "cart_title": "Your trolley",
+      "cart_empty": "Your trolley is empty",
+      "confirm_title": "Your order is confirmed.",
+      "browse_cta": "Start shopping"
+    },
+    "profile": {
+      "tiers": [
+        "Member",
+        "Plus",
+        "Plus Annual"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "Dietary preference",
+        "options": [
+          "None",
+          "Vegetarian",
+          "Vegan",
+          "Gluten Free",
+          "Dairy Free"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Book a delivery slot",
+      "lede": "Choose a delivery slot and a store. Change or cancel any time.",
+      "event": "delivery_slot_booked",
+      "fields": [
+        {
+          "label": "Slot",
+          "name": "slot",
+          "options": [
+            "Morning",
+            "Afternoon",
+            "Evening"
+          ]
+        },
+        {
+          "label": "Store",
+          "name": "store",
+          "options": [
+            "Camden",
+            "Islington",
+            "Hackney"
+          ]
+        },
+        {
+          "label": "Date",
+          "name": "date",
+          "options": "date"
+        }
+      ],
+      "attribute_field": "store"
+    },
+    "hero_category": "Ingredients"
+  }
+}
