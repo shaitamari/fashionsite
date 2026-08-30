@@ -570,6 +570,41 @@
     set('[data-newsletter-lede]', d.newsletter_lede);
     setHTML('[data-hero-title]', d.hero_title);
 
+    /* --- category links in the templates ----------------------------------
+       The page templates were written against beauty, so the hero button and
+       the "View all" link both point at category.html?c=Makeup. The COPY is
+       templated above — every vertical gets the right words — but the HREF
+       never was, so Ashford Lane's "Shop new in" led to a Makeup collection
+       that does not exist in fashion: page renders, Eureka declines to serve
+       it, nought products.
+
+       Repoint anything aimed at a collection this vertical does not have, at
+       the first collection it does. window.COLLECTIONS is written by build.py
+       in `order`, so the first key is the one the vertical leads with — the
+       same one the nav shows first.
+
+       Only rewrites links whose target is genuinely absent, so a template that
+       already names a real collection is left alone. */
+    (function fixCategoryLinks() {
+      var cols = Object.keys(window.COLLECTIONS || {});
+      if (!cols.length) return;
+      var first = cols[0];
+
+      document.querySelectorAll('a[href*="category"]').forEach(function (a) {
+        var href = a.getAttribute('href') || '';
+        var m = /[?&]c=([^&#]*)/.exec(href);
+        if (!m) return;
+        var target = decodeURIComponent(m[1]);
+        if (cols.indexOf(target) > -1) return;   // real collection here, leave it
+        a.setAttribute('href',
+          href.replace(/([?&]c=)[^&#]*/, '$1' + encodeURIComponent(first)));
+      });
+
+      if (window.insDebugNote && cols.indexOf('Makeup') === -1) {
+        window.insDebugNote('category links repointed to "' + first + '"', 'ok');
+      }
+    })();
+
     // Journey wording — "Add to cart" becomes "Reserve", "Get a quote" and so on.
     var labels = d.labels || {};
     document.querySelectorAll('[data-label]').forEach(function (n) {
