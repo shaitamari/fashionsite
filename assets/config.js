@@ -320,7 +320,14 @@ window.SITE_CONFIG = {
             strategy: 'visually_similar'
           },
           // Third PDP row: what goes with this, rather than what is like it.
-          productComplement: { campaignId: null, variationId: null, strategy: 'complementary' },
+          productComplement: {
+            campaignId: 4238,
+            // Variation id still to come from the panel. Until it is set the
+            // row claims by campaignId alone, which is enough with three
+            // campaigns on the page.
+            variationId: null,
+            strategy: 'complementary'
+          },
           home:         { campaignId: null, variationId: null, strategy: 'new_arrivals' },
           homeFoot:     { campaignId: null, variationId: null, strategy: 'user_based' },
           cart:         { campaignId: null, variationId: null, strategy: 'complementary' },
