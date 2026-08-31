@@ -50,10 +50,37 @@
      throughout, so the switch is one edit here plus a deploy.
      --------------------------------------------------------------------- */
   var ENVIRONMENTS = {
+    /* The bare subdomain runs on salesdemo, which already has Agent One, user
+       engagement recommendations and a much richer attribute set. The
+       -sandbox alias stays on partnersandbox, so both accounts are reachable
+       from the same codebase and the same deploy:
+
+           fashion.insiderdemo.com          -> salesdemo
+           fashion-sandbox.insiderdemo.com  -> partnersandbox
+
+       LOCALE. en_GB/EUR on salesdemo too, and deliberately NOT en_US.
+       salesdemo's own catalogue lives in en_US, and an XML integration is
+       configured per locale — so loading the master feed there would merge
+       17,092 records into the same index as the existing products and neither
+       catalogue would be trustworthy again. A separate locale keeps them
+       apart, which is the same reason partnersandbox was built en_GB/EUR.
+
+       The pair is load-bearing: a mismatch here silently returns the wrong
+       catalogue rather than erroring. */
+    /* The bare subdomain is salesdemo — its eventual home. It has Agent One,
+       user-engagement recommendations, a far richer attribute set and a
+       working onsite campaign history.
+
+       UNTIL THE FEED LANDS THERE, these hostnames have no catalogue: search
+       and category pages fall back to the local one and recommendation slots
+       render nothing. That is deliberate rather than broken. Build and demo on
+       -sandbox meanwhile, which stays on partnersandbox and has everything.
+
+       Locale is en_GB/EUR here too, NOT en_US. An XML integration is per
+       locale and salesdemo's own catalogue is en_US, so sharing the locale
+       would merge 17,092 records into it and neither would be trustworthy. */
     'default': {
-      // Restore when salesdemo is ready:
-      //   account: 'salesdemo', partnerId: '10002548',
-      suffix: null, account: 'partnersandbox', partnerId: '10006846',
+      suffix: null, account: 'salesdemo', partnerId: '10002548',
       locale: 'en_GB', currency: 'EUR'
     },
     'sandbox': {
@@ -426,10 +453,24 @@
     function toLineItems(items) {
       if (!items || !items.length) return [];
       return items.map(function (it) {
-        // Already wrapped — leave it alone.
-        if (it && it.product) return it;
-        var qty = it && it.quantity != null ? it.quantity : 1;
-        return { product: it, quantity: qty };
+        var line = (it && it.product) ? it : null;
+        var qty = (it && it.quantity != null) ? it.quantity : 1;
+        var p = line ? line.product : it;
+        if (!p) return { product: {}, quantity: qty };
+
+        /* The transaction object wants product_image_url, not the catalogue's
+           own `image`, and it wants a per-line subtotal. Without those the line
+           items are accepted but incomplete, and revenue reporting has nothing
+           to break down by product. */
+        if (p.image && !p.product_image_url) {
+          p.product_image_url = p.image.indexOf('http') === 0
+            ? p.image
+            : location.origin + '/' + p.image.replace(/^\//, '');
+        }
+        var unit = Number(p.unit_sale_price != null ? p.unit_sale_price : p.unit_price) || 0;
+        var out = line || { product: p, quantity: qty };
+        if (out.subtotal == null) out.subtotal = Math.round(unit * qty * 100) / 100;
+        return out;
       });
     }
 
@@ -455,6 +496,21 @@
             io.transaction = entry.value || {};
             io.transaction.line_items = toLineItems(entry.value &&
               (entry.value.items || entry.value.line_items));
+
+            /* CURRENCY IS REQUIRED AND WAS MISSING. confirmation.html sends
+               order_id, total, shipping_cost and items — no currency. The tag
+               falls back through basket, product, then transaction currency,
+               so the page rendered fine and the purchase looked sent, but
+               revenue never landed on the profile.
+
+               Take it from the environment, which is the same source the
+               catalogue and the feed use. */
+            if (io.transaction.currency == null) {
+              io.transaction.currency = currency;
+            }
+            if (io.transaction.total != null) {
+              io.transaction.total = Number(io.transaction.total) || 0;
+            }
           } else if (type === 'category') {
             io.listing = entry.value;
           }
@@ -650,10 +706,21 @@
     if (flow.title) set('[data-flow-link]', flow.title);
     setHTML('[data-hero-title]', d.hero_title);
 
-    /* Reveal the hero now the copy is this vertical's rather than the
-       template's. See the note in index.html: without this, every storefront
-       except beauty flashes "Skin first. Makeup second." first. */
-    document.documentElement.classList.add('hero-ready');
+    /* Reveal the hero — but only if nothing else is about to rewrite it.
+
+       On a campaign arrival the onsite campaign paints a different headline
+       and a different photograph a frame or two after this runs. Revealing
+       here would show the default first and the campaign second, which is the
+       flicker anti-flicker exists to prevent. So on those page loads we stay
+       hidden and let the campaign reveal instead.
+
+       The test is the URL rather than a platform signal, because there is no
+       event that fires to say "no campaign applies to this page". A UTM is
+       present on exactly the arrivals a campaign targets, and index.html's
+       failsafe covers the case where one is present but no campaign runs. */
+    if (!/[?&]utm_/.test(location.search)) {
+      document.documentElement.classList.add('hero-ready');
+    }
 
     /* --- category links in the templates ----------------------------------
        The page templates were written against beauty, so the hero button and
