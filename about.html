@@ -15,7 +15,7 @@
 .doc p, .doc li { font-size: .9375rem; line-height: 1.7 }
 .lede { font-size: 1.0625rem; line-height: 1.65 }
 
-.act { margin: 2.75rem 0 0; padding-top: 2rem; border-top: 1px solid var(--rule) }
+.act { margin: 2.25rem 0 0; padding-top: 1.75rem; border-top: 1px solid var(--rule) }
 .act:first-of-type { border-top: 0; padding-top: 0 }
 .act__no {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -29,17 +29,15 @@
 .do p { margin: 0 }
 .do p + p { margin-top: .5rem }
 
-.watch { margin: 1.1rem 0 0; padding-left: 1.1rem }
-.watch li { margin-bottom: .45rem }
-
-.why {
-  background: var(--alt); border-radius: 6px; padding: .9rem 1.1rem;
-  margin: 1.25rem 0 0; font-size: .875rem; line-height: 1.6;
+.hint { margin: .9rem 0 0; color: var(--muted); font-style: italic }
+.go { margin: .7rem 0 0; font-size: .875rem }
+.go a { border-bottom: 1px solid var(--rule) }
+.how { margin: .9rem 0 0 }
+.how summary {
+  cursor: pointer; font-size: .8125rem; color: var(--accent);
+  letter-spacing: .02em;
 }
-.why b {
-  display: block; font-size: .6875rem; letter-spacing: .1em;
-  text-transform: uppercase; color: var(--muted); margin-bottom: .3rem;
-}
+.how p { margin: .7rem 0 0; font-size: .875rem; line-height: 1.6; color: var(--muted) }
 
 .doc code {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -78,6 +76,7 @@
       <input type="search" id="search-input" name="q" placeholder="Search products" data-search-placeholder aria-label="Search products">
     </form>
     <nav class="utils">
+      <span class="loy" data-loyalty-strip hidden></span>
       <a href="flow.html" data-flow-link>Services</a>
       <a href="account.html" data-account-label>Log in</a>
       <a class="cartlink" href="cart.html"><span data-label="cart">Cart</span><span data-cart-count hidden>0</span></a>
@@ -92,146 +91,83 @@
 <main class="wrap doc" style="padding-top:2.5rem;padding-bottom:4rem">
 
   <p class="eyebrow">Start here <span class="pagetype">page type: other · about</span></p>
-  <h1 class="h1" style="margin-bottom:1rem">Ten minutes, three acts</h1>
+  <h1 class="h1" style="margin-bottom:.9rem">Three things to try</h1>
 
   <p class="lede" id="intro"></p>
-  <p class="lede" style="margin-top:1rem">Do them in order. Each takes a few
-  minutes, and the third only works because you did the first two — which is
-  rather the point.</p>
 
   <section class="act">
-    <p class="act__no">Act one <span class="act__time">· about two minutes</span></p>
-    <h2>Arrive as a stranger</h2>
-
-    <p>Nothing is known about you. No account, no history, no useful cookie.
-    This is the hardest state for personalization, and it is where most of the
-    industry gives up and shows everyone the same thing.</p>
-
+    <p class="act__no">One <span class="act__time">· two minutes</span></p>
+    <h2>Search for a colour, not a product</h2>
     <div class="do">
-      <p><b>Do this.</b> Search using a word rather than a product name — a
-      colour, a material, a category. Then open a collection from the nav and
-      use the filters.</p>
+      <p>Then open a collection and use the filters.</p>
+      <p class="go">Or start here: <a id="go-search" href="#"></a></p>
     </div>
-
-    <ul class="watch">
-      <li><b>One card per product, not one per variant.</b> The same item in
-        eight sizes is a single result, with the sizes as chips underneath.</li>
-      <li><b>The colour swatches are real.</b> They come from the product feed,
-        not from someone hand-picking hex codes.</li>
-      <li><b>The filters know what they contain.</b> Colour and size are
-        separate facets with sensible values in each.</li>
-    </ul>
-
-    <div class="why">
-      <b>Why this matters</b>
-      Every personalization decision downstream is made against this catalogue.
-      If colour and size are muddled into one field, nothing can recommend by
-      colour, filter by size, or learn that someone prefers navy. Most failed
-      personalization projects fail here — quietly, months before anyone notices
-      the recommendations are poor.
-    </div>
+    <p class="hint">Count the results. There are fewer than you expect.</p>
+    <details class="how">
+      <summary>How we did it</summary>
+      <p>Eureka search and category listing, running on a 17,000-record product
+      feed. Colour and size are separate fields in the catalogue, which is why
+      the swatches and the facets know what they contain.</p>
+    </details>
   </section>
 
   <section class="act">
-    <p class="act__no">Act two <span class="act__time">· about three minutes</span></p>
-    <h2>Show some intent</h2>
-
-    <p>You are still anonymous. But you are no longer random — you have looked
-    at things, and what you looked at says something.</p>
-
+    <p class="act__no">Two <span class="act__time">· three minutes</span></p>
+    <h2>Browse a few things, then abandon a basket</h2>
     <div class="do">
-      <p><b>Do this.</b> Open three or four products from the same part of the
-      catalogue. Linger on one. Add something to the basket and leave it
-      there.</p>
-      <p>Then open <b id="fy-name">Just for you</b> in the nav.</p>
+      <p>Open <b id="fy-name">Just for you</b> in the nav afterwards.</p>
     </div>
-
-    <ul class="watch">
-      <li><b>Recommendation rows say what produced them.</b> Above each one: the
-        algorithm and the campaign id. You can open that campaign in your panel
-        and check it is telling the truth.</li>
-      <li><b>The basket survives.</b> Close the tab, come back, still there —
-        and so is the intent behind it.</li>
-      <li><b>Some rows are empty, and say so.</b> Those are the ones that need
-        history rather than a catalogue.</li>
-    </ul>
-
-    <div class="why">
-      <b>Why this matters</b>
-      This is the state most of your traffic is actually in: interested,
-      unidentified, about to leave. What a platform can do here — before a
-      login, before an email address — is the difference between personalization
-      and a loyalty programme.
-    </div>
+    <p class="go">Or jump straight to a page with good ones:
+      <a id="go-product" href="#">this product</a></p>
+    <p class="hint">Look above each row of products before you look at the
+    products.</p>
+    <details class="how">
+      <summary>How we did it</summary>
+      <p>Smart Recommender campaigns, one per surface. Each row names its
+      algorithm and its campaign id, so you can open that campaign in your panel
+      and check it says what we say it says.</p>
+      <p>Some rows are empty on purpose. Those are the ones that need history
+      rather than a catalogue.</p>
+    </details>
   </section>
 
   <section class="act">
-    <p class="act__no">Act three <span class="act__time">· about four minutes</span></p>
-    <h2>Become someone</h2>
-
-    <p>The moment an anonymous session turns into a person, everything from the
-    first two acts should attach to them. Worth watching closely — it is where
-    most integrations lose the thread.</p>
-
+    <p class="act__no">Three <span class="act__time">· four minutes</span></p>
+    <h2>Book something, then buy something</h2>
     <div class="do">
-      <p><b>Do this.</b> Use <b id="flow-name">the services link</b> in the
-      header and book something. Then check out; the basket you left in act two
-      is still waiting.</p>
-      <p>Now open <b>User Profiles</b> in your Insider One panel and find
-      yourself.</p>
+      <p>Use <b id="flow-name">the services link</b> in the header. Then check
+      out — the basket from act two is still there.</p>
+      <p>Now open <b>User Profiles</b> in your panel and find yourself.</p>
     </div>
-
-    <ul class="watch">
-      <li><b>The choice you made is on your profile</b> as a durable attribute,
-        not only as an event that happened once.</li>
-      <li><b>Your browsing became an attribute too.</b> Preferred category was
-        never typed by anyone — it was derived from act two.</li>
-      <li><b>Revenue and line items land</b> a minute or two after checkout.</li>
-      <li><b>The session you began as a stranger is now attached to you.</b>
-        That join is the whole game.</li>
-    </ul>
-
-    <div class="why">
-      <b>Why this matters</b>
-      A profile that only knows what someone typed into a form is a mailing
-      list. A profile that knows what they did before they said who they were is
-      a customer record — and it is what every later message, offer and
-      recommendation is built on.
-    </div>
+    <p class="hint">One of the attributes on your profile was never typed by
+    anyone.</p>
+    <details class="how">
+      <summary>How we did it</summary>
+      <p>The booking writes a durable attribute rather than only an event.
+      Preferred category is derived from what you browsed in act two. Revenue
+      and line items land a minute or so after checkout.</p>
+      <p>The session you started as a stranger is attached to the person you
+      became. That join is the part worth checking.</p>
+    </details>
   </section>
 
   <div class="ends">
+    <h2>Two more things</h2>
+    <p>The line under the search box is a dare — take it. And the pill in the
+    bottom right opens a console showing every payload as it leaves the browser,
+    so you can check our work rather than take it on trust.</p>
 
-    <h2>Then try breaking it</h2>
-    <p>The line under the search box is a dare. Take it. Search for something
-    this shop plainly does not sell and see what comes back instead of a dead
-    end.</p>
-
-    <h2>How to see what is happening</h2>
-    <p>The pill in the bottom right corner opens an on-page console showing
-    every payload as it leaves the browser — page type, attributes, basket,
-    events. It is not part of the product; it is here so you can check our work
-    rather than take it on trust. <code>?debug=0</code> hides it.</p>
-    <p>If you plan to build campaigns against these pages, install the
-    <a id="ext-link" href="#" target="_blank" rel="noopener">Insider One Chrome
-    extension</a> — the visual editor needs it.</p>
-
-    <h2>What you will not see yet, and why</h2>
-    <p>Affinities and predictive segments read as <b>Not Available</b> on a new
-    profile. They are built from around thirty days of behaviour, so a profile
-    created ten minutes ago has nothing to calculate from. Worth knowing rather
-    than working around: it is also what the first month of a real deployment
-    looks like.</p>
-    <p>Anything computed by this website rather than by the platform is labelled
-    as such wherever it appears. If a block does not say where it came from, it
-    came from the product catalogue.</p>
+    <h2>Before you wonder</h2>
+    <p>Affinities and predictive segments read as <b>Not Available</b> on a
+    profile made ten minutes ago. They need about thirty days of behaviour —
+    which is also what month one of a real deployment looks like.</p>
+    <p>The panel is read-only here. When you want to build something, that is a
+    conversation rather than a limitation.</p>
 
     <h2>Stuck, or curious</h2>
-    <p>There is an <a href="ask.html">Ask a question</a> link at the top of every
-    page. Use it — questions from people exploring on their own are the ones we
-    most want, because there is nobody sitting beside you to ask.</p>
-    <p>And <a href="feedback.html">tell us what you think</a> when you are done.</p>
-
+    <p><a href="ask.html">Ask a question</a> is at the top of every page. Use it
+    — there is nobody sitting beside you to ask, which is exactly why we want
+    the question.</p>
   </div>
 
 </main>
@@ -252,14 +188,37 @@
   var d = window.VERTICAL || {};
 
   document.getElementById('intro').textContent =
-    'This is ' + (d.brand || 'a demo storefront') + ' \u2014 a working shop, built ' +
-    'to show what Insider One does when it has a real catalogue behind it. ' +
-    'Everything is safe to click; nothing here is real except the behaviour.';
+    'This is ' + (d.brand || 'a demo storefront') + ', a working shop running on ' +
+    'Insider One. Do these in order \u2014 the third only works because you did ' +
+    'the first two.';
 
   /* Name the pages as this storefront names them. "Just for you" on a fashion
      site is "Where to next" on an airline, and sending someone to click the
      wrong words is a small thing that makes a guide feel written for a
      different site. */
+  /* Straight into a good example, per vertical. A guide that says "search for
+     something" is asking the reader to guess a term that works; a guide that
+     says "search for burgundy" has already done that for them, and lands them
+     somewhere the catalogue looks its best.
+
+     The terms and the product are per vertical in verticals.json, checked
+     against each catalogue — so hotels says Kyoto and Wayfarer's guide is not
+     telling anyone to search for a dress. */
+  var show = d.showcase || {};
+  var gs = document.getElementById('go-search');
+  if (show.search) {
+    gs.href = 'search.html?q=' + encodeURIComponent(show.search);
+    gs.textContent = '\u201c' + show.search + '\u201d';
+  } else if (gs) {
+    gs.parentNode.style.display = 'none';
+  }
+  var gp = document.getElementById('go-product');
+  if (show.product) {
+    gp.href = 'product.html?id=' + encodeURIComponent(show.product);
+  } else if (gp) {
+    gp.parentNode.style.display = 'none';
+  }
+
   var fy = d.foryou_title;
   if (fy) document.getElementById('fy-name').textContent = fy;
   var flow = (d.flow || {}).title;

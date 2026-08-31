@@ -383,3 +383,13 @@ main { padding-bottom: 5rem; }
 }
 
 :focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+
+/* --- signed-in loyalty strip ---------------------------------------------- */
+.loy {
+  display: inline-flex; align-items: center; gap: .45rem;
+  font-size: .8125rem; color: var(--muted); margin-right: .35rem;
+}
+.loy__tier { color: var(--ink); font-weight: 500 }
+.loy__sep { opacity: .45 }
+@media (max-width: 860px) { .loy { display: none } }

@@ -575,6 +575,32 @@
       n.hidden = count === 0;
     });
     var u = currentUser();
+    /* --- the signed-in strip -----------------------------------------------
+       Tier, points and home store in the masthead once someone is known.
+
+       This is the payoff for act three made visible on every page rather than
+       only on the profile in the panel: the visitor gave one thing, and the
+       site now greets them with it everywhere. It is also the natural home for
+       a loyalty lookup — the profile holds which tier and which store, and a
+       lookup table holds what that tier is worth and where that store is.
+
+       Hidden entirely when signed out, so it never shows an empty shell. */
+    document.querySelectorAll('[data-loyalty-strip]').forEach(function (host) {
+      var u = currentUser();
+      if (!u) { host.hidden = true; host.innerHTML = ''; return; }
+      var bits = [];
+      if (u.membership_tier) bits.push(u.membership_tier);
+      if (typeof u.loyalty_points === 'number') {
+        bits.push(u.loyalty_points.toLocaleString() + ' pts');
+      }
+      if (u.preferred_store) bits.push(u.preferred_store);
+      if (!bits.length) { host.hidden = true; host.innerHTML = ''; return; }
+      host.innerHTML = bits.map(function (b, i) {
+        return '<span' + (i === 0 ? ' class="loy__tier"' : '') + '>' + b + '</span>';
+      }).join('<span class="loy__sep">·</span>');
+      host.hidden = false;
+    });
+
     document.querySelectorAll('[data-account-label]').forEach(function (n) {
       n.textContent = u ? (u.name || 'Account') : 'Log in';
     });

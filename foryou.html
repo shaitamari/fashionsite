@@ -33,6 +33,33 @@
 .context__text b { font-weight: 600 }
 .context__cta { margin-left: auto; font-size: .875rem; white-space: nowrap }
 
+.fyhero {
+  display: grid; grid-template-columns: 1.1fr 1fr; gap: 2rem; align-items: center;
+  margin: 0 0 2.5rem; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden;
+}
+.fyhero__media { aspect-ratio: 4 / 3; background: var(--alt) }
+.fyhero__media img { width: 100%; height: 100%; object-fit: cover; display: block }
+.fyhero__copy { padding: 1.75rem 2rem 1.75rem 0 }
+.fyhero__copy .h2 { margin: .35rem 0 .6rem }
+.fyhero__copy .lede { margin: 0; color: var(--muted); font-size: .9375rem; line-height: 1.6 }
+@media (max-width: 720px) {
+  .fyhero { grid-template-columns: 1fr }
+  .fyhero__copy { padding: 1.5rem }
+}
+
+.fycol { margin: 0 0 1.75rem }
+.fycol__label {
+  margin: 0 0 .6rem; font-size: .6875rem; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--muted);
+}
+.fycol__row { display: flex; gap: .9rem; flex-wrap: wrap; align-items: center }
+.fycol__chip { display: flex; align-items: center; gap: .45rem; font-size: .8125rem }
+.fycol__dot {
+  width: 1.15rem; height: 1.15rem; border-radius: 50%;
+  border: 1px solid rgba(0,0,0,.18); display: inline-block;
+}
+.fycol__chip small { color: var(--muted); font-size: .6875rem }
+
 /* Source strip — same idea as the recommendation strategy strips. Every block
    on this page says where it came from, because a page called "Just for you"
    invites exactly the question this answers. */
@@ -86,6 +113,7 @@
       <input type="search" id="search-input" name="q" placeholder="Search products" data-search-placeholder aria-label="Search products">
     </form>
     <nav class="utils">
+      <span class="loy" data-loyalty-strip hidden></span>
       <a href="flow.html" data-flow-link>Services</a>
       <a href="account.html" data-account-label>Log in</a>
       <a class="cartlink" href="cart.html"><span data-label="cart">Cart</span><span data-cart-count hidden>0</span></a>
@@ -102,6 +130,19 @@
   <p class="eyebrow">For you <span class="pagetype">page type: other · foryou</span></p>
   <h1 class="h1" id="fy-title" style="margin-bottom:1.5rem">Just for you</h1>
 
+  <!-- Hero. The image is pulled from whatever category this visitor has spent
+       the most time in, so the page leads with a picture of the thing they
+       were actually looking at rather than a house image. -->
+  <section class="fyhero" id="fy-hero" hidden>
+    <div class="fyhero__media"><img id="fy-hero-img" alt=""></div>
+    <div class="fyhero__copy">
+      <p class="eyebrow" id="fy-hero-eyebrow"></p>
+      <h2 class="h2" id="fy-hero-title"></h2>
+      <p class="lede" id="fy-hero-lede"></p>
+      <p style="margin-top:1.25rem"><a class="btn" id="fy-hero-cta" href="#"></a></p>
+    </div>
+  </section>
+
   <!-- Filled by an onsite campaign carrying a Weather rule and a Location
        segment. Left empty by the site on purpose. -->
   <section id="context" aria-live="polite">
@@ -110,6 +151,14 @@
       <p class="context__text" data-context-text></p>
       <a class="context__cta" data-context-cta href="#"></a>
     </div>
+  </section>
+
+  <!-- Colour affinity. A second dimension, and the one that reads as
+       personalization rather than as merchandising: category is what you
+       browsed, colour is a taste. -->
+  <section class="fycol" id="fy-colours" hidden>
+    <p class="fycol__label">Colours you keep coming back to</p>
+    <div class="fycol__row" id="fy-swatches"></div>
   </section>
 
   <p class="srcline" id="fy-src"></p>
@@ -151,19 +200,88 @@
      Cross-category is the whole reason this page exists. A category page is
      already filtered to one thing, so ranking inside it has little to show.
      Ranking across everything is where affinity is legible. */
+  /* Which category this visitor has spent the most time in.
+
+     In production this is the platform's Attribute Affinity. It is not
+     available here and will not be: affinity is built from around thirty days
+     of behaviour, and a profile created ten minutes ago has nothing to
+     calculate from. So the page derives the same signal from this session and
+     says so, rather than showing an empty state that implies the capability
+     does not exist. */
+  function topCategory() {
+    if (window.Affinity && window.Affinity.enabled && window.Affinity.top) {
+      var t = window.Affinity.top();
+      if (t && t.value) return t.value;
+    }
+    return (Store.preferredCategory && Store.preferredCategory()) || null;
+  }
+
+  /* Lead with a picture of the thing they were actually looking at. A house
+     image here would waste the one slot on the page where the visitor can see
+     at a glance that it knows something about them. */
+  function paintHero(cat) {
+    var host = document.getElementById('fy-hero');
+    if (!cat) { host.hidden = true; return; }
+
+    var items = (Store.byCollection(cat) || []).filter(function (p) { return p.image; });
+    if (!items.length) { host.hidden = true; return; }
+
+    var pick = items[0];
+    var img = document.getElementById('fy-hero-img');
+    img.src = pick.image;
+    img.alt = '';
+
+    var short = Store.shortName ? Store.shortName(cat) : cat;
+    document.getElementById('fy-hero-eyebrow').textContent = 'Because you have been looking at';
+    document.getElementById('fy-hero-title').textContent = short;
+    document.getElementById('fy-hero-lede').textContent =
+      'The rest of this page is ordered the same way \u2014 what you spent time ' +
+      'on first, everything else after.';
+    var cta = document.getElementById('fy-hero-cta');
+    cta.textContent = 'Shop ' + short.toLowerCase();
+    cta.href = 'category.html?c=' + encodeURIComponent(cat);
+    host.hidden = false;
+  }
+
+  /* Colour affinity, shown as swatches rather than a list. Category tells you
+     what someone was shopping for; colour tells you something closer to taste,
+     and it is the dimension a person recognises about themselves. */
+  function paintColours() {
+    var host = document.getElementById('fy-colours');
+    var row = document.getElementById('fy-swatches');
+    if (!window.Affinity || !window.Affinity.enabled || !window.Affinity.scores) {
+      host.hidden = true; return;
+    }
+    var cols = (window.Affinity.scores('colour') || []).slice(0, 6);
+    if (!cols.length) { host.hidden = true; return; }
+
+    row.innerHTML = '';
+    var strongest = cols[0].score || 1;
+    cols.forEach(function (c) {
+      var hex = (window.Store && Store.swatchHex && Store.swatchHex(c.key)) ||
+                (window.Store && Store.swatchHex && Store.swatchHex(c.value)) || null;
+      var chip = document.createElement('span');
+      chip.className = 'fycol__chip';
+      var pct = Math.round((c.score / strongest) * 100);
+      chip.innerHTML =
+        '<span class="fycol__dot" style="background:' + (hex || 'var(--alt)') + '"></span>' +
+        '<span>' + c.value + ' <small>' + pct + '%</small></span>';
+      row.appendChild(chip);
+    });
+    host.hidden = false;
+  }
+
   function paint() {
     var pool = Store.oneVariantEach ? Store.oneVariantEach(Store.catalog) : Store.catalog;
+    var cat = topCategory();
+    paintHero(cat);
+    paintColours();
 
     if (window.Affinity && window.Affinity.enabled) {
-      var top = window.Affinity.top && window.Affinity.top();
       var ranked = window.Affinity.rank(pool).slice(0, LIMIT);
-      label('<b>SITE-SIDE EXHIBIT</b> · affinity.js · ranked across all ' +
+      label('<b>SITE-SIDE EXHIBIT</b> \u00b7 affinity.js \u00b7 ranked across all ' +
             Store.collections().length + ' collections' +
-            (top && top.value ? ' · strongest signal: ' + top.value : ''));
-      document.getElementById('fy-note').textContent =
-        'This ranking is computed in the browser by affinity.js, not by the ' +
-        'platform. It exists to show what real-time affinity would look like ' +
-        'if the platform produced it.';
+            (cat ? ' \u00b7 strongest signal: ' + cat : ''));
       Store.grid('#fy-grid', ranked);
       return;
     }
@@ -173,10 +291,8 @@
       var items = Store.byCollection(c) || [];
       mix = mix.concat(items.slice(0, 2));
     });
-    label('<b>LOCAL CATALOGUE</b> · newest across every collection · no ' +
+    label('<b>LOCAL CATALOGUE</b> \u00b7 newest across every collection \u00b7 no ' +
           'personalization active');
-    document.getElementById('fy-note').textContent =
-      'Add ?affinity=1 to rank this page by what you have browsed.';
     Store.grid('#fy-grid', mix.slice(0, LIMIT));
   }
 
