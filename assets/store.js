@@ -496,7 +496,7 @@
     var u = currentUser();
     // language must match the catalog locale or Eureka returns nothing.
     var base = { uuid: visitorId(), language: env('locale', 'en_GB'),
-                 country: env('locale', 'en_GB').split('_')[1] || 'GB',
+
                  gdpr_optin: true };
     if (!u) {
       base.custom = {
@@ -516,7 +516,12 @@
       gender: u.gender || undefined,
       birthday: u.birthday || undefined,
       city: u.city || undefined,
-      country: u.country || env('locale', 'en_GB').split('_')[1] || 'GB',
+      /* Only when a person actually typed it. Deriving a country from the
+         locale meant every visitor was recorded in the UK and the platform's
+         own IP-derived geo was overwritten on every page load — which breaks
+         Location segments and Weather rules, the two things that most need it
+         to be true. */
+      country: u.country || undefined,
       gdpr_optin: u.gdpr_optin !== false,
       custom: {
         membership_tier: u.membership_tier || 'Bronze',

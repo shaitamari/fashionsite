@@ -194,15 +194,34 @@
   (function seedInsiderObject(env) {
     var locale = env.locale || 'en_GB';
     var currency = env.currency || 'EUR';
-    // getLang splits on "_" and validates the country against its own list.
-    // "en" permits GB, so en_GB passes through and getLocale returns it whole.
-    var country = locale.split('_')[1] || 'GB';
-
     var io = window.insider_object = window.insider_object || {};
 
     io.user = io.user || {};
+
+    /* Language carries the locale, and getLang splits on "_" and validates the
+       country half against its own list — "en" permits GB, so en_GB passes
+       through and getLocale returns it whole. That is all the platform needs
+       to match the catalogue.
+
+       COUNTRY IS DELIBERATELY NOT SET.
+
+       It used to be, derived from the locale string: en_GB gave GB, written on
+       every page load. Which meant every visitor on this estate was recorded as
+       being in the United Kingdom regardless of where they actually were — the
+       site was overwriting the country the platform had derived from their IP.
+
+       It showed up as a contradiction on a profile: City said Dublin, from the
+       IP, and Country said GB, from us. The two cannot both be right.
+
+       That matters beyond tidiness. Location segments and Weather rules key off
+       the platform's own geo, and a hard-coded country either fights it or
+       quietly wins. A demo whose whole point is "we know where this visitor is"
+       cannot also be telling the platform where they are.
+
+       So the site says nothing about location and lets the platform work it
+       out. A country typed by a person at checkout is different and is still
+       sent — see seedProfileFromStorage below. */
     io.user.language = locale;
-    io.user.country = country;
 
     // getCurrency checks basket, then product, then transaction currency
     // before falling back to the account default. Seeding basket covers every
