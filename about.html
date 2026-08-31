@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>About this demo</title>
+<title>Start here</title>
 
 <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
 <meta name="robots" content="noindex">
@@ -11,28 +11,43 @@
 <link rel="stylesheet" href="assets/styles.css">
 
 <style>
-.doc { max-width: 46rem }
-.doc h2 { margin: 2.25rem 0 .6rem; font-size: 1.125rem }
-.doc p, .doc li { font-size: .9375rem; line-height: 1.65 }
-.doc ul { padding-left: 1.1rem; margin: .5rem 0 1rem }
-.doc li { margin-bottom: .35rem }
+.doc { max-width: 44rem }
+.doc p, .doc li { font-size: .9375rem; line-height: 1.7 }
+.lede { font-size: 1.0625rem; line-height: 1.65 }
+
+.act { margin: 2.75rem 0 0; padding-top: 2rem; border-top: 1px solid var(--rule) }
+.act:first-of-type { border-top: 0; padding-top: 0 }
+.act__no {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: .6875rem; letter-spacing: .1em; color: var(--accent);
+  text-transform: uppercase; margin: 0 0 .35rem;
+}
+.act h2 { margin: 0 0 .5rem; font-size: 1.25rem }
+.act__time { color: var(--muted); font-weight: 400; font-size: .8125rem }
+
+.do { border-left: 2px solid var(--ink); padding: .1rem 0 .1rem 1rem; margin: 1.1rem 0 }
+.do p { margin: 0 }
+.do p + p { margin-top: .5rem }
+
+.watch { margin: 1.1rem 0 0; padding-left: 1.1rem }
+.watch li { margin-bottom: .45rem }
+
+.why {
+  background: var(--alt); border-radius: 6px; padding: .9rem 1.1rem;
+  margin: 1.25rem 0 0; font-size: .875rem; line-height: 1.6;
+}
+.why b {
+  display: block; font-size: .6875rem; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: .3rem;
+}
+
 .doc code {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: .8125rem; background: var(--alt); padding: .1rem .35rem; border-radius: 3px;
 }
-.card-note {
-  border: 1px solid var(--rule); border-radius: 6px;
-  padding: 1rem 1.15rem; margin: 1.25rem 0; background: var(--alt);
-}
-.card-note p:last-child { margin-bottom: 0 }
-.fb label { display: block; font-size: .8125rem; color: var(--muted); margin: .9rem 0 .3rem }
-.fb input, .fb select, .fb textarea {
-  width: 100%; padding: .6rem .7rem; font: inherit; font-size: .9375rem;
-  border: 1px solid var(--rule); border-radius: 4px; background: var(--bg); color: var(--ink);
-}
-.fb textarea { min-height: 8rem; resize: vertical }
-.fb .btn { margin-top: 1.1rem }
-.hp { position: absolute; left: -9999px }
+.ends { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--rule) }
+.ends h2 { font-size: 1.0625rem; margin: 1.75rem 0 .5rem }
+.ends h2:first-child { margin-top: 0 }
 </style>
 
 <script>window.InsiderQueue = window.InsiderQueue || [];</script>
@@ -76,66 +91,148 @@
 
 <main class="wrap doc" style="padding-top:2.5rem;padding-bottom:4rem">
 
-  <p class="eyebrow">Sandbox <span class="pagetype">page type: other · about</span></p>
-  <h1 class="h1" style="margin-bottom:1rem">About this demo</h1>
+  <p class="eyebrow">Start here <span class="pagetype">page type: other · about</span></p>
+  <h1 class="h1" style="margin-bottom:1rem">Ten minutes, three acts</h1>
 
-  <p id="intro"></p>
+  <p class="lede" id="intro"></p>
+  <p class="lede" style="margin-top:1rem">Do them in order. Each takes a few
+  minutes, and the third only works because you did the first two — which is
+  rather the point.</p>
 
-  <h2>Seeing what the platform is doing</h2>
+  <section class="act">
+    <p class="act__no">Act one <span class="act__time">· about two minutes</span></p>
+    <h2>Arrive as a stranger</h2>
 
-  <p>Every page carries an on-page SDK console — the pill in the bottom right.
-  Open it to watch each payload as it leaves the browser: page type, user
-  attributes, basket, custom events. It also logs notes from the site itself,
-  so campaigns, affinity and the agent all announce themselves there.</p>
+    <p>Nothing is known about you. No account, no history, no useful cookie.
+    This is the hardest state for personalization, and it is where most of the
+    industry gives up and shows everyone the same thing.</p>
 
-  <ul>
-    <li><code>?debug=0</code> hides it, for a clean screen share.</li>
-    <li>Notes are colour coded — green for confirmations, amber for warnings.</li>
-  </ul>
+    <div class="do">
+      <p><b>Do this.</b> Search using a word rather than a product name — a
+      colour, a material, a category. Then open a collection from the nav and
+      use the filters.</p>
+    </div>
 
-  <div class="card-note">
-    <p><b>Install the Insider One Chrome Extension.</b> It is needed for Action
-    Builder to work properly when you build campaigns against these sites, and
-    it makes event inspection considerably easier.</p>
-    <p style="margin-top:.6rem"><a class="btn" id="ext-link" href="#" target="_blank" rel="noopener">Get the extension</a></p>
+    <ul class="watch">
+      <li><b>One card per product, not one per variant.</b> The same item in
+        eight sizes is a single result, with the sizes as chips underneath.</li>
+      <li><b>The colour swatches are real.</b> They come from the product feed,
+        not from someone hand-picking hex codes.</li>
+      <li><b>The filters know what they contain.</b> Colour and size are
+        separate facets with sensible values in each.</li>
+    </ul>
+
+    <div class="why">
+      <b>Why this matters</b>
+      Every personalization decision downstream is made against this catalogue.
+      If colour and size are muddled into one field, nothing can recommend by
+      colour, filter by size, or learn that someone prefers navy. Most failed
+      personalization projects fail here — quietly, months before anyone notices
+      the recommendations are poor.
+    </div>
+  </section>
+
+  <section class="act">
+    <p class="act__no">Act two <span class="act__time">· about three minutes</span></p>
+    <h2>Show some intent</h2>
+
+    <p>You are still anonymous. But you are no longer random — you have looked
+    at things, and what you looked at says something.</p>
+
+    <div class="do">
+      <p><b>Do this.</b> Open three or four products from the same part of the
+      catalogue. Linger on one. Add something to the basket and leave it
+      there.</p>
+      <p>Then open <b id="fy-name">Just for you</b> in the nav.</p>
+    </div>
+
+    <ul class="watch">
+      <li><b>Recommendation rows say what produced them.</b> Above each one: the
+        algorithm and the campaign id. You can open that campaign in your panel
+        and check it is telling the truth.</li>
+      <li><b>The basket survives.</b> Close the tab, come back, still there —
+        and so is the intent behind it.</li>
+      <li><b>Some rows are empty, and say so.</b> Those are the ones that need
+        history rather than a catalogue.</li>
+    </ul>
+
+    <div class="why">
+      <b>Why this matters</b>
+      This is the state most of your traffic is actually in: interested,
+      unidentified, about to leave. What a platform can do here — before a
+      login, before an email address — is the difference between personalization
+      and a loyalty programme.
+    </div>
+  </section>
+
+  <section class="act">
+    <p class="act__no">Act three <span class="act__time">· about four minutes</span></p>
+    <h2>Become someone</h2>
+
+    <p>The moment an anonymous session turns into a person, everything from the
+    first two acts should attach to them. Worth watching closely — it is where
+    most integrations lose the thread.</p>
+
+    <div class="do">
+      <p><b>Do this.</b> Use <b id="flow-name">the services link</b> in the
+      header and book something. Then check out; the basket you left in act two
+      is still waiting.</p>
+      <p>Now open <b>User Profiles</b> in your Insider One panel and find
+      yourself.</p>
+    </div>
+
+    <ul class="watch">
+      <li><b>The choice you made is on your profile</b> as a durable attribute,
+        not only as an event that happened once.</li>
+      <li><b>Your browsing became an attribute too.</b> Preferred category was
+        never typed by anyone — it was derived from act two.</li>
+      <li><b>Revenue and line items land</b> a minute or two after checkout.</li>
+      <li><b>The session you began as a stranger is now attached to you.</b>
+        That join is the whole game.</li>
+    </ul>
+
+    <div class="why">
+      <b>Why this matters</b>
+      A profile that only knows what someone typed into a form is a mailing
+      list. A profile that knows what they did before they said who they were is
+      a customer record — and it is what every later message, offer and
+      recommendation is built on.
+    </div>
+  </section>
+
+  <div class="ends">
+
+    <h2>Then try breaking it</h2>
+    <p>The line under the search box is a dare. Take it. Search for something
+    this shop plainly does not sell and see what comes back instead of a dead
+    end.</p>
+
+    <h2>How to see what is happening</h2>
+    <p>The pill in the bottom right corner opens an on-page console showing
+    every payload as it leaves the browser — page type, attributes, basket,
+    events. It is not part of the product; it is here so you can check our work
+    rather than take it on trust. <code>?debug=0</code> hides it.</p>
+    <p>If you plan to build campaigns against these pages, install the
+    <a id="ext-link" href="#" target="_blank" rel="noopener">Insider One Chrome
+    extension</a> — the visual editor needs it.</p>
+
+    <h2>What you will not see yet, and why</h2>
+    <p>Affinities and predictive segments read as <b>Not Available</b> on a new
+    profile. They are built from around thirty days of behaviour, so a profile
+    created ten minutes ago has nothing to calculate from. Worth knowing rather
+    than working around: it is also what the first month of a real deployment
+    looks like.</p>
+    <p>Anything computed by this website rather than by the platform is labelled
+    as such wherever it appears. If a block does not say where it came from, it
+    came from the product catalogue.</p>
+
+    <h2>Stuck, or curious</h2>
+    <p>There is an <a href="ask.html">Ask a question</a> link at the top of every
+    page. Use it — questions from people exploring on their own are the ones we
+    most want, because there is nobody sitting beside you to ask.</p>
+    <p>And <a href="feedback.html">tell us what you think</a> when you are done.</p>
+
   </div>
-
-  <h2>Things worth trying</h2>
-  <ul>
-    <li>The line under the search box is a dare. Take it — the payoff is the point.</li>
-    <li><code>?affinity=1</code> turns on the affinity exhibit. It ranks what you
-      see by what you have browsed, and shows a panel explaining itself. Turn it
-      off from that panel, or with <code>?affinity=0</code>.</li>
-    <li>Book something from the services link in the header. It writes a durable
-      attribute to your profile, which you can then see in the panel.</li>
-    <li>Buy something. Revenue and line items land on the profile a minute or
-      two later.</li>
-  </ul>
-
-  <h2>What is real and what is not</h2>
-  <p>Everything the platform does is labelled. Recommendation rows name the
-  algorithm and the campaign id above the grid, so you can open the campaign and
-  check. Anything computed by the site rather than the platform says so — the
-  affinity exhibit is the main one, and it is marked site-side wherever it
-  appears.</p>
-  <p>If a block does not say where it came from, it came from the catalogue.</p>
-
-  <h2>Known gaps</h2>
-  <ul>
-    <li>Some recommendation slots return nothing. Those are waiting on account
-      configuration rather than being broken.</li>
-    <li>Predictive segments and affinities need around thirty days of history,
-      so they read as Not Available on fresh profiles. That is expected.</li>
-    <li>Search matches product names well and descriptions less well, pending a
-      searchable-attributes change.</li>
-  </ul>
-
-  <h2>Tell us what you think</h2>
-  <p>Especially if something looked wrong, or if a vertical is missing the one
-  thing you needed for a conversation.</p>
-
-  <p><a class="btn" href="feedback.html">Send feedback</a></p>
-
 
 </main>
 
@@ -149,17 +246,24 @@
 <script>
 (function () {
   'use strict';
-  var EXT = 'https://chromewebstore.google.com/detail/insider-one-extension/fnecdmjccbhicpabhgalobcbnoieedon';
-  document.getElementById('ext-link').href = EXT;
+  document.getElementById('ext-link').href =
+    'https://chromewebstore.google.com/detail/insider-one-extension/fnecdmjccbhicpabhgalobcbnoieedon';
 
   var d = window.VERTICAL || {};
-  var env = window.ENVIRONMENT || {};
-  document.getElementById('intro').textContent =
-    'This is ' + (d.brand || 'a demo storefront') + ', one of twelve built on ' +
-    'a single codebase and a single catalogue. They exist to show Insider One ' +
-    'personalization on a shop that behaves like a real one. This copy runs on ' +
-    'the ' + (env.account || '') + ' account, so anything you do here is safe.';
 
+  document.getElementById('intro').textContent =
+    'This is ' + (d.brand || 'a demo storefront') + ' \u2014 a working shop, built ' +
+    'to show what Insider One does when it has a real catalogue behind it. ' +
+    'Everything is safe to click; nothing here is real except the behaviour.';
+
+  /* Name the pages as this storefront names them. "Just for you" on a fashion
+     site is "Where to next" on an airline, and sending someone to click the
+     wrong words is a small thing that makes a guide feel written for a
+     different site. */
+  var fy = d.foryou_title;
+  if (fy) document.getElementById('fy-name').textContent = fy;
+  var flow = (d.flow || {}).title;
+  if (flow) document.getElementById('flow-name').textContent = '\u201c' + flow + '\u201d';
 })();
 </script>
 

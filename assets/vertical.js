@@ -726,10 +726,18 @@
        and already non-product chrome — so brand copy keeps the middle and the
        demo links sit to the right, plainly not part of the storefront.
 
-       Which links depends on the environment:
-         sandbox — About this demo, Feedback. Colleagues, who need orientation.
-         demo    — Feedback, Ask a question. Customer-facing, where a question
-                   from a prospect is worth more than a rating.
+       Ask a question appears everywhere. The sandbox copies are the ones
+       customers get hands on, so that is where questions actually come from —
+       someone exploring alone, without a person beside them to ask. The bare
+       storefronts are usually being demoed by a colleague who is answering in
+       real time, so the link matters less there, but it costs nothing.
+
+       Start here is sandbox-only, and it is a guided route rather than a page
+       of tips: three acts, in order, ending with the visitor looking at their
+       own profile filling up. The sandbox is where a customer explores before
+       buying, usually alone and with no stated goal — so the page supplies the
+       goal the environment does not. On the bare storefronts a colleague is
+       driving, and a guide would be in the way.
 
        Injected here rather than added to a dozen HTML files. */
     (function demoLinks() {
@@ -739,8 +747,9 @@
       var sandbox = window.ENVIRONMENT_KEY === 'sandbox';
       var here = location.pathname;
       var links = sandbox
-        ? [['about.html', 'About this demo'], ['feedback.html', 'Feedback']]
-        : [['feedback.html', 'Feedback'], ['ask.html', 'Ask a question']];
+        ? [['about.html', 'Start here'], ['ask.html', 'Ask a question'],
+           ['feedback.html', 'Feedback']]
+        : [['ask.html', 'Ask a question'], ['feedback.html', 'Feedback']];
 
       var wrap = document.createElement('span');
       wrap.setAttribute('data-demo-links', '');

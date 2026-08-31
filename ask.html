@@ -68,10 +68,7 @@
   <p class="eyebrow">Ask <span class="pagetype">page type: other · ask</span></p>
   <h1 class="h1" style="margin-bottom:.75rem">Ask us anything</h1>
 
-  <p style="font-size:.9375rem;line-height:1.65">Whether the platform can do
-  something, how you would show it to a customer, or what you would need to
-  build a use case you have in mind. It reaches the people who built these
-  storefronts, and gets routed on from there.</p>
+  <p style="font-size:.9375rem;line-height:1.65" id="ask-intro"></p>
 
   <!-- Separate form from the feedback one, on purpose.
 
@@ -140,6 +137,18 @@
   document.getElementById('fb-vertical').value = window.VERTICAL_KEY || '';
   document.getElementById('fb-brand').value = d.brand || '';
   document.getElementById('fb-page').value = location.hostname;
+
+  /* Different readers, so different framing. On a sandbox copy the person is
+     usually exploring alone with nobody beside them to ask, which is precisely
+     when a question goes unasked. */
+  document.getElementById('ask-intro').textContent =
+    window.ENVIRONMENT_KEY === 'sandbox'
+      ? 'Whether the platform can do something, how you would set it up, or ' +
+        'what you would need for a use case you have in mind. No question is ' +
+        'too small \u2014 this reaches the people who built these storefronts.'
+      : 'Whether the platform can do something, how you would show it to a ' +
+        'customer, or what you would need to build a use case you have in ' +
+        'mind. It reaches the people who built these storefronts.';
 
   var u = (window.Store && Store.currentUser && Store.currentUser()) || null;
   if (u) {
