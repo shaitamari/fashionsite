@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ask a question</title>
+
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+<meta name="robots" content="noindex">
+
+<link rel="stylesheet" href="assets/styles.css">
+
+<style>
+.doc { max-width: 40rem }
+.fb label { display: block; font-size: .8125rem; color: var(--muted); margin: 1.1rem 0 .3rem }
+.fb input, .fb textarea {
+  width: 100%; padding: .6rem .7rem; font: inherit; font-size: .9375rem;
+  border: 1px solid var(--rule); border-radius: 4px; background: var(--bg); color: var(--ink);
+}
+.fb textarea { min-height: 9rem; resize: vertical }
+.fb .btn { margin-top: 1.35rem }
+.hint { color: var(--muted); font-weight: 400 }
+.hp { position: absolute; left: -9999px }
+.note { margin: 1.1rem 0 0; font-size: .75rem; color: var(--muted); line-height: 1.55 }
+</style>
+
+<script>window.InsiderQueue = window.InsiderQueue || [];</script>
+<script src="assets/config.js"></script>
+<script src="assets/insider-debug.js"></script>
+<script src="assets/vertical.js"></script>
+<script src="assets/store.js"></script>
+<script src="assets/agent.js"></script>
+<script>
+  window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });
+  window.InsiderQueue.push({ type: 'currency', value: Store.currency() });
+  window.InsiderQueue.push({
+    type: 'other', value: { name: 'ask', custom: { signed_in: !!Store.currentUser() } }
+  });
+  window.InsiderQueue.push({ type: 'init' });
+</script>
+</head>
+
+<body>
+
+<p class="announce" data-announce>Free shipping over $50</p>
+
+<header class="masthead">
+  <div class="masthead__in">
+    <a class="brand" href="index.html" data-brand>Lumen</a>
+    <form class="searchbox" data-search role="search" autocomplete="off">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" id="search-input" name="q" placeholder="Search products" data-search-placeholder aria-label="Search products">
+    </form>
+    <nav class="utils">
+      <a href="flow.html" data-flow-link>Services</a>
+      <a href="account.html" data-account-label>Log in</a>
+      <a class="cartlink" href="cart.html"><span data-label="cart">Cart</span><span data-cart-count hidden>0</span></a>
+    </nav>
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="mainnav__in" data-collection-nav></div>
+</nav>
+
+<main class="wrap doc" style="padding-top:2.5rem;padding-bottom:4rem">
+
+  <p class="eyebrow">Ask <span class="pagetype">page type: other · ask</span></p>
+  <h1 class="h1" style="margin-bottom:.75rem">Ask us anything</h1>
+
+  <p style="font-size:.9375rem;line-height:1.65">Whether the platform can do
+  something, how you would show it to a customer, or what you would need to
+  build a use case you have in mind. It reaches the people who built these
+  storefronts, and gets routed on from there.</p>
+
+  <!-- Separate form from the feedback one, on purpose.
+
+       The feedback form requires a rating, which would mean someone with an
+       urgent question had to score the demo out of five before asking it —
+       friction on the higher-value action.
+
+       Separate form names also mean separate routing: Netlify notifies per
+       form, so questions can go to a Slack channel or a different address
+       without anyone forwarding by hand. And "tell us what you think" and
+       "ask us anything" are different invitations; asking both at once
+       dilutes each. -->
+  <form class="fb" name="demo-question" method="POST"
+        data-netlify="true" netlify-honeypot="bot-field" action="?sent=1">
+    <input type="hidden" name="form-name" value="demo-question">
+    <input type="hidden" name="source"   id="fb-source"   value="">
+    <input type="hidden" name="vertical" id="fb-vertical" value="">
+    <input type="hidden" name="brand"    id="fb-brand"    value="">
+    <input type="hidden" name="page"     id="fb-page"     value="">
+    <p class="hp"><label>Leave this empty <input name="bot-field"></label></p>
+
+    <!-- Question first. Everything else is what we need in order to answer it,
+         and asking for that before the question turns a question into a form. -->
+    <label for="q-msg">Your question</label>
+    <textarea id="q-msg" name="question" required
+      placeholder="Can this do X? How would I show Y to a customer?"></textarea>
+
+    <!-- Required here, unlike on the feedback form. A question with no way to
+         reply is a dead end, and it is better to say so than to accept one and
+         silently drop it. -->
+    <label for="q-email">Email <span class="hint">so we can reply</span></label>
+    <input id="q-email" name="email" type="email" autocomplete="email" required>
+
+    <label for="q-name">Name</label>
+    <input id="q-name" name="name" type="text" autocomplete="name">
+
+    <label for="q-company">Company <span class="hint">optional — helps us answer in context</span></label>
+    <input id="q-company" name="company" type="text" autocomplete="organization">
+
+    <button class="btn" type="submit">Send</button>
+
+    <p class="note">This goes to the people who build these demo storefronts and
+    is used to answer you. Nothing here is added to a marketing list.</p>
+  </form>
+
+  <p class="source" id="q-thanks" hidden style="margin-top:1.25rem">
+    Thanks — someone will come back to you.
+  </p>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <span><span data-brand>Lumen</span> — Insider One demo storefront</span>
+    <span data-env-label>partnersandbox · 10006846</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  var d = window.VERTICAL || {};
+
+  document.getElementById('fb-source').value =
+    window.ENVIRONMENT_KEY === 'sandbox' ? 'sandbox' : 'demo';
+  document.getElementById('fb-vertical').value = window.VERTICAL_KEY || '';
+  document.getElementById('fb-brand').value = d.brand || '';
+  document.getElementById('fb-page').value = location.hostname;
+
+  var u = (window.Store && Store.currentUser && Store.currentUser()) || null;
+  if (u) {
+    if (u.name)  document.getElementById('q-name').value  = u.name;
+    if (u.email) document.getElementById('q-email').value = u.email;
+  }
+
+  if (/[?&]sent=1/.test(location.search)) {
+    document.querySelector('.fb').hidden = true;
+    document.getElementById('q-thanks').hidden = false;
+  }
+
+  document.querySelector('.fb').addEventListener('submit', function () {
+    try {
+      window.InsiderQueue.push({
+        type: 'custom_event',
+        value: [{
+          event_name: 'demo_question_asked',
+          event_params: { custom: {
+            vertical: window.VERTICAL_KEY || '',
+            source: document.getElementById('fb-source').value
+          } }
+        }]
+      });
+    } catch (e) {}
+  });
+})();
+</script>
+
+</body>
+</html>

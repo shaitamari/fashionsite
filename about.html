@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About this demo</title>
+
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+<meta name="robots" content="noindex">
+
+<link rel="stylesheet" href="assets/styles.css">
+
+<style>
+.doc { max-width: 46rem }
+.doc h2 { margin: 2.25rem 0 .6rem; font-size: 1.125rem }
+.doc p, .doc li { font-size: .9375rem; line-height: 1.65 }
+.doc ul { padding-left: 1.1rem; margin: .5rem 0 1rem }
+.doc li { margin-bottom: .35rem }
+.doc code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: .8125rem; background: var(--alt); padding: .1rem .35rem; border-radius: 3px;
+}
+.card-note {
+  border: 1px solid var(--rule); border-radius: 6px;
+  padding: 1rem 1.15rem; margin: 1.25rem 0; background: var(--alt);
+}
+.card-note p:last-child { margin-bottom: 0 }
+.fb label { display: block; font-size: .8125rem; color: var(--muted); margin: .9rem 0 .3rem }
+.fb input, .fb select, .fb textarea {
+  width: 100%; padding: .6rem .7rem; font: inherit; font-size: .9375rem;
+  border: 1px solid var(--rule); border-radius: 4px; background: var(--bg); color: var(--ink);
+}
+.fb textarea { min-height: 8rem; resize: vertical }
+.fb .btn { margin-top: 1.1rem }
+.hp { position: absolute; left: -9999px }
+</style>
+
+<script>window.InsiderQueue = window.InsiderQueue || [];</script>
+<script src="assets/config.js"></script>
+<script src="assets/insider-debug.js"></script>
+<script src="assets/vertical.js"></script>
+<script src="assets/store.js"></script>
+<script src="assets/agent.js"></script>
+<script>
+  window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });
+  window.InsiderQueue.push({ type: 'currency', value: Store.currency() });
+  window.InsiderQueue.push({
+    type: 'other', value: { name: 'about', custom: { signed_in: !!Store.currentUser() } }
+  });
+  window.InsiderQueue.push({ type: 'init' });
+</script>
+</head>
+
+<body>
+
+<p class="announce" data-announce>Free shipping over $50</p>
+
+<header class="masthead">
+  <div class="masthead__in">
+    <a class="brand" href="index.html" data-brand>Lumen</a>
+    <form class="searchbox" data-search role="search" autocomplete="off">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" id="search-input" name="q" placeholder="Search products" data-search-placeholder aria-label="Search products">
+    </form>
+    <nav class="utils">
+      <a href="flow.html" data-flow-link>Services</a>
+      <a href="account.html" data-account-label>Log in</a>
+      <a class="cartlink" href="cart.html"><span data-label="cart">Cart</span><span data-cart-count hidden>0</span></a>
+    </nav>
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="mainnav__in" data-collection-nav></div>
+</nav>
+
+<main class="wrap doc" style="padding-top:2.5rem;padding-bottom:4rem">
+
+  <p class="eyebrow">Sandbox <span class="pagetype">page type: other · about</span></p>
+  <h1 class="h1" style="margin-bottom:1rem">About this demo</h1>
+
+  <p id="intro"></p>
+
+  <h2>Seeing what the platform is doing</h2>
+
+  <p>Every page carries an on-page SDK console — the pill in the bottom right.
+  Open it to watch each payload as it leaves the browser: page type, user
+  attributes, basket, custom events. It also logs notes from the site itself,
+  so campaigns, affinity and the agent all announce themselves there.</p>
+
+  <ul>
+    <li><code>?debug=0</code> hides it, for a clean screen share.</li>
+    <li>Notes are colour coded — green for confirmations, amber for warnings.</li>
+  </ul>
+
+  <div class="card-note">
+    <p><b>Install the Insider One Chrome Extension.</b> It is needed for Action
+    Builder to work properly when you build campaigns against these sites, and
+    it makes event inspection considerably easier.</p>
+    <p style="margin-top:.6rem"><a class="btn" id="ext-link" href="#" target="_blank" rel="noopener">Get the extension</a></p>
+  </div>
+
+  <h2>Things worth trying</h2>
+  <ul>
+    <li>The line under the search box is a dare. Take it — the payoff is the point.</li>
+    <li><code>?affinity=1</code> turns on the affinity exhibit. It ranks what you
+      see by what you have browsed, and shows a panel explaining itself. Turn it
+      off from that panel, or with <code>?affinity=0</code>.</li>
+    <li>Book something from the services link in the header. It writes a durable
+      attribute to your profile, which you can then see in the panel.</li>
+    <li>Buy something. Revenue and line items land on the profile a minute or
+      two later.</li>
+  </ul>
+
+  <h2>What is real and what is not</h2>
+  <p>Everything the platform does is labelled. Recommendation rows name the
+  algorithm and the campaign id above the grid, so you can open the campaign and
+  check. Anything computed by the site rather than the platform says so — the
+  affinity exhibit is the main one, and it is marked site-side wherever it
+  appears.</p>
+  <p>If a block does not say where it came from, it came from the catalogue.</p>
+
+  <h2>Known gaps</h2>
+  <ul>
+    <li>Some recommendation slots return nothing. Those are waiting on account
+      configuration rather than being broken.</li>
+    <li>Predictive segments and affinities need around thirty days of history,
+      so they read as Not Available on fresh profiles. That is expected.</li>
+    <li>Search matches product names well and descriptions less well, pending a
+      searchable-attributes change.</li>
+  </ul>
+
+  <h2>Tell us what you think</h2>
+  <p>Especially if something looked wrong, or if a vertical is missing the one
+  thing you needed for a conversation.</p>
+
+  <p><a class="btn" href="feedback.html">Send feedback</a></p>
+
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <span><span data-brand>Lumen</span> — Insider One demo storefront</span>
+    <span data-env-label>partnersandbox · 10006846</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  var EXT = 'https://chromewebstore.google.com/detail/insider-one-extension/fnecdmjccbhicpabhgalobcbnoieedon';
+  document.getElementById('ext-link').href = EXT;
+
+  var d = window.VERTICAL || {};
+  var env = window.ENVIRONMENT || {};
+  document.getElementById('intro').textContent =
+    'This is ' + (d.brand || 'a demo storefront') + ', one of twelve built on ' +
+    'a single codebase and a single catalogue. They exist to show Insider One ' +
+    'personalization on a shop that behaves like a real one. This copy runs on ' +
+    'the ' + (env.account || '') + ' account, so anything you do here is safe.';
+
+})();
+</script>
+
+</body>
+</html>

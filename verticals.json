@@ -279,9 +279,11 @@
           "name": "date",
           "options": "date"
         }
-      ]
+      ],
+      "attribute_field": "store"
     },
-    "hero_category": "Makeup"
+    "hero_category": "Makeup",
+    "foryou_title": "Just for you"
   },
   "_template": {
     "_comment": "Copy this, rename the key, fill it in. Delete nothing else.",
@@ -459,9 +461,11 @@
           "name": "date",
           "options": "date"
         }
-      ]
+      ],
+      "attribute_field": "store"
     },
-    "hero_category": "Hotels"
+    "hero_category": "Hotels",
+    "foryou_title": "Trips for you"
   },
   "airlines": {
     "vertical": "Travel",
@@ -562,9 +566,11 @@
           "name": "date",
           "options": "date"
         }
-      ]
+      ],
+      "attribute_field": "route"
     },
-    "hero_category": "Long Haul"
+    "hero_category": "Long Haul",
+    "foryou_title": "Where to next"
   },
   "_environments": {
     "_README": [
@@ -710,9 +716,11 @@
             "250000"
           ]
         }
-      ]
+      ],
+      "attribute_field": "product"
     },
-    "hero_category": "Accounts"
+    "hero_category": "Accounts",
+    "foryou_title": "Right for you"
   },
   "insurance": {
     "vertical": "Banking",
@@ -832,9 +840,11 @@
             "500"
           ]
         }
-      ]
+      ],
+      "attribute_field": "product"
     },
-    "hero_category": "Motor"
+    "hero_category": "Motor",
+    "foryou_title": "Cover for you"
   },
   "fintech": {
     "vertical": "Banking",
@@ -945,9 +955,11 @@
             "Annual"
           ]
         }
-      ]
+      ],
+      "attribute_field": "plan"
     },
-    "hero_category": "Business"
+    "hero_category": "Business",
+    "foryou_title": "Right for you"
   },
   "fashion": {
     "vertical": "Retail",
@@ -1094,9 +1106,11 @@
           "name": "date",
           "options": "date"
         }
-      ]
+      ],
+      "attribute_field": "store"
     },
-    "hero_category": "Dresses"
+    "hero_category": "Dresses",
+    "foryou_title": "Just for you"
   },
   "electronics": {
     "vertical": "Retail",
@@ -1199,9 +1213,11 @@
           "name": "date",
           "options": "date"
         }
-      ]
+      ],
+      "attribute_field": "service"
     },
-    "hero_category": "Speaker"
+    "hero_category": "Speaker",
+    "foryou_title": "Picked for you"
   },
   "telco": {
     "vertical": "Telco",
@@ -1416,9 +1432,11 @@
             "50"
           ]
         }
-      ]
+      ],
+      "attribute_field": "plan"
     },
-    "hero_category": "Iphone 17 Pro"
+    "hero_category": "Iphone 17 Pro",
+    "foryou_title": "Picked for you"
   },
   "home": {
     "vertical": "Retail",
@@ -1550,9 +1568,11 @@
           "name": "date",
           "options": "date"
         }
-      ]
+      ],
+      "attribute_field": "service"
     },
-    "hero_category": "Seating"
+    "hero_category": "Seating",
+    "foryou_title": "Just for you"
   },
   "luxury": {
     "vertical": "Retail",
@@ -1667,9 +1687,11 @@
           "name": "date",
           "options": "date"
         }
-      ]
+      ],
+      "attribute_field": "store"
     },
-    "hero_category": "Bags"
+    "hero_category": "Bags",
+    "foryou_title": "Selected for you"
   },
   "supermarket": {
     "vertical": "Retail",
@@ -1779,8 +1801,10 @@
           "name": "date",
           "options": "date"
         }
-      ]
+      ],
+      "attribute_field": "store"
     },
-    "hero_category": "Ingredients"
+    "hero_category": "Ingredients",
+    "foryou_title": "Your usuals"
   }
 }

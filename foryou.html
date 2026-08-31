@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Just for you</title>
+
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<link rel="preconnect" href="https://cdn.shopify.com">
+<link rel="stylesheet" href="assets/styles.css">
+
+<style>
+/* The context band. Empty and collapsed until something fills it — the site
+   never writes copy here. An onsite campaign with a Weather rule and a
+   Location segment does, which is the point: the band proves the platform
+   knows where the visitor is and what it is doing outside their window.
+
+   Collapsed rather than hidden so there is no layout shift when it arrives,
+   and no empty box on a page load where no campaign matched. */
+#context { display: none }
+#context.is-filled { display: block }
+.context {
+  border: 1px solid var(--rule); border-radius: 6px;
+  padding: .9rem 1.1rem; margin: 0 0 1.75rem;
+  display: flex; align-items: center; gap: .85rem; flex-wrap: wrap;
+  background: var(--alt);
+}
+.context__icon { font-size: 1.25rem; line-height: 1 }
+.context__text { margin: 0; font-size: .9375rem }
+.context__text b { font-weight: 600 }
+.context__cta { margin-left: auto; font-size: .875rem; white-space: nowrap }
+
+/* Source strip — same idea as the recommendation strategy strips. Every block
+   on this page says where it came from, because a page called "Just for you"
+   invites exactly the question this answers. */
+.srcline {
+  display: flex; align-items: baseline; gap: .6rem; flex-wrap: wrap;
+  margin: 0 0 .9rem; padding-left: .7rem;
+  border-left: 2px solid var(--rule);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: .6875rem; letter-spacing: .04em; color: var(--muted);
+}
+.srcline b { color: var(--accent); font-weight: 600; letter-spacing: .06em }
+</style>
+
+<script>window.InsiderQueue = window.InsiderQueue || [];</script>
+
+<script src="assets/config.js"></script>
+<script src="assets/insider-debug.js"></script>
+<script src="assets/vertical.js"></script>
+<script src="assets/store.js"></script>
+<script src="assets/explain.js"></script>
+<script src="assets/affinity.js"></script>
+<script src="assets/agent.js"></script>
+
+<script>
+  window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });
+  window.InsiderQueue.push({ type: 'currency', value: Store.currency() });
+
+  /* Page type. Deliberately `other` rather than `category`: this page is not a
+     collection and should not be targetable as one, or category campaigns will
+     fire here and the beats blur.
+
+     `foryou` is the handle a campaign rule matches on. */
+  window.InsiderQueue.push({
+    type: 'other',
+    value: { name: 'foryou', custom: { signed_in: !!Store.currentUser() } }
+  });
+
+  window.InsiderQueue.push({ type: 'init' });
+</script>
+</head>
+
+<body>
+
+<p class="announce" data-announce>Free shipping over $50</p>
+
+<header class="masthead">
+  <div class="masthead__in">
+    <a class="brand" href="index.html" data-brand>Lumen</a>
+    <form class="searchbox" data-search role="search" autocomplete="off">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" id="search-input" name="q" placeholder="Search products" data-search-placeholder aria-label="Search products">
+    </form>
+    <nav class="utils">
+      <a href="flow.html" data-flow-link>Services</a>
+      <a href="account.html" data-account-label>Log in</a>
+      <a class="cartlink" href="cart.html"><span data-label="cart">Cart</span><span data-cart-count hidden>0</span></a>
+    </nav>
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="mainnav__in" data-collection-nav data-current="__foryou__"></div>
+</nav>
+
+<main class="wrap" style="padding-top:2.5rem">
+
+  <p class="eyebrow">For you <span class="pagetype">page type: other · foryou</span></p>
+  <h1 class="h1" id="fy-title" style="margin-bottom:1.5rem">Just for you</h1>
+
+  <!-- Filled by an onsite campaign carrying a Weather rule and a Location
+       segment. Left empty by the site on purpose. -->
+  <section id="context" aria-live="polite">
+    <div class="context">
+      <span class="context__icon" data-context-icon></span>
+      <p class="context__text" data-context-text></p>
+      <a class="context__cta" data-context-cta href="#"></a>
+    </div>
+  </section>
+
+  <p class="srcline" id="fy-src"></p>
+  <div class="grid" id="fy-grid"></div>
+
+  <p class="source" id="fy-note" style="margin-top:2rem"></p>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <span><span data-brand>Lumen</span> — Insider One demo storefront</span>
+    <span data-env-label>partnersandbox · 10006846</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  var LIMIT = 12;
+
+  function label(html) {
+    document.getElementById('fy-src').innerHTML = html;
+  }
+
+  /* --- the grid ------------------------------------------------------------
+     Two possible sources, and the page says which one it used.
+
+     AFFINITY ON — rank the whole catalogue by what this visitor has actually
+     browsed, across every collection. This is the site-side exhibit, and it is
+     labelled as such here exactly as it is everywhere else. A page called
+     "Just for you" that quietly used a home-made ranking and let people assume
+     it was platform output would be the one dishonest thing in the estate.
+
+     AFFINITY OFF — a cross-category mix of new arrivals, so the page is never
+     empty and never pretends to know anything.
+
+     Cross-category is the whole reason this page exists. A category page is
+     already filtered to one thing, so ranking inside it has little to show.
+     Ranking across everything is where affinity is legible. */
+  function paint() {
+    var pool = Store.oneVariantEach ? Store.oneVariantEach(Store.catalog) : Store.catalog;
+
+    if (window.Affinity && window.Affinity.enabled) {
+      var top = window.Affinity.top && window.Affinity.top();
+      var ranked = window.Affinity.rank(pool).slice(0, LIMIT);
+      label('<b>SITE-SIDE EXHIBIT</b> · affinity.js · ranked across all ' +
+            Store.collections().length + ' collections' +
+            (top && top.value ? ' · strongest signal: ' + top.value : ''));
+      document.getElementById('fy-note').textContent =
+        'This ranking is computed in the browser by affinity.js, not by the ' +
+        'platform. It exists to show what real-time affinity would look like ' +
+        'if the platform produced it.';
+      Store.grid('#fy-grid', ranked);
+      return;
+    }
+
+    var mix = [];
+    Store.collections().forEach(function (c) {
+      var items = Store.byCollection(c) || [];
+      mix = mix.concat(items.slice(0, 2));
+    });
+    label('<b>LOCAL CATALOGUE</b> · newest across every collection · no ' +
+          'personalization active');
+    document.getElementById('fy-note').textContent =
+      'Add ?affinity=1 to rank this page by what you have browsed.';
+    Store.grid('#fy-grid', mix.slice(0, LIMIT));
+  }
+
+  /* --- the context band ----------------------------------------------------
+     Public so a campaign can fill it in one call rather than reaching into the
+     DOM. Anything the campaign passes is what shows; the site supplies none of
+     it, which keeps the demo honest — the weather and the city come from the
+     platform's Weather rule and Location segment.
+
+     Example, from an onsite campaign's custom JavaScript:
+
+         window.ForYou.context({
+           icon: '\uD83C\uDF27',
+           text: '<b>9\u00B0 and raining in London.</b> Start with the waterproofs.',
+           cta:  'Shop outerwear',
+           href: 'category.html?c=Outerwear'
+         });
+
+     NOTE: location is only available from the SECOND page view onward — the
+     geo segment attaches after the first beacon resolves. That is why this
+     lives here rather than on the homepage, where a visitor arriving from an
+     ad would never see it. Friction log. */
+  window.ForYou = {
+    context: function (o) {
+      o = o || {};
+      var sec = document.getElementById('context');
+      if (!sec) return false;
+      document.querySelector('[data-context-icon]').textContent = o.icon || '';
+      document.querySelector('[data-context-text]').innerHTML = o.text || '';
+      var cta = document.querySelector('[data-context-cta]');
+      if (o.cta && o.href) {
+        cta.textContent = o.cta;
+        cta.setAttribute('href', o.href);
+        cta.hidden = false;
+      } else {
+        cta.hidden = true;
+      }
+      sec.classList.add('is-filled');
+      if (window.insDebugNote) {
+        window.insDebugNote('for-you context band filled by campaign', 'ok');
+      }
+      return true;
+    },
+    repaint: paint
+  };
+
+  function boot() {
+    var d = window.VERTICAL || {};
+    var title = d.foryou_title || 'Just for you';
+    document.getElementById('fy-title').textContent = title;
+    document.title = title + ' — ' + (d.brand || '');
+    paint();
+  }
+
+  if (window.Store && window.Store.catalog) boot();
+  else document.addEventListener('DOMContentLoaded', boot);
+})();
+</script>
+
+</body>
+</html>

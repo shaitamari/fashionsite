@@ -704,6 +704,66 @@
        masthead now; this gives it the right words. */
     var flow = d.flow || {};
     if (flow.title) set('[data-flow-link]', flow.title);
+
+    /* --- the sandbox orientation link --------------------------------------
+       -sandbox hostnames only. These are the copies colleagues and prospects
+       are pointed at, and they arrive with no idea what they are looking at or
+       how to see the platform working. The bare subdomains are the polished
+       ones and stay clean.
+
+       Injected here rather than added to ten HTML files, and only when the
+       resolved environment is the sandbox one — so it cannot leak onto a
+       storefront being demoed. */
+    /* --- demo links, top right of the announce bar --------------------------
+       Where these go matters more than it looks.
+
+       The FOOTER is where this kind of thing usually lives, and it is where it
+       goes unfound. The UTILS NAV is discoverable but wrong: "Feedback" sitting
+       beside Cart and Log in breaks the illusion of a real shop at exactly the
+       moment a prospect is meant to forget they are looking at a demo.
+
+       The announce bar is neither. It is the top of every page, always visible,
+       and already non-product chrome — so brand copy keeps the middle and the
+       demo links sit to the right, plainly not part of the storefront.
+
+       Which links depends on the environment:
+         sandbox — About this demo, Feedback. Colleagues, who need orientation.
+         demo    — Feedback, Ask a question. Customer-facing, where a question
+                   from a prospect is worth more than a rating.
+
+       Injected here rather than added to a dozen HTML files. */
+    (function demoLinks() {
+      var bar = document.querySelector('.announce');
+      if (!bar || bar.querySelector('[data-demo-links]')) return;
+
+      var sandbox = window.ENVIRONMENT_KEY === 'sandbox';
+      var here = location.pathname;
+      var links = sandbox
+        ? [['about.html', 'About this demo'], ['feedback.html', 'Feedback']]
+        : [['feedback.html', 'Feedback'], ['ask.html', 'Ask a question']];
+
+      var wrap = document.createElement('span');
+      wrap.setAttribute('data-demo-links', '');
+      wrap.style.cssText =
+        'position:absolute;right:1rem;top:50%;transform:translateY(-50%);' +
+        'display:flex;gap:1.1rem;letter-spacing:.04em';
+
+      links.forEach(function (l) {
+        if (here.indexOf(l[0]) > -1) return;      // don't link to the page you are on
+        var a = document.createElement('a');
+        a.href = l[0];
+        a.textContent = l[1];
+        a.style.cssText = 'color:inherit;opacity:.72;text-decoration:none;' +
+                          'border-bottom:1px solid rgba(255,255,255,.35)';
+        a.addEventListener('mouseenter', function () { a.style.opacity = '1'; });
+        a.addEventListener('mouseleave', function () { a.style.opacity = '.72'; });
+        wrap.appendChild(a);
+      });
+
+      if (!wrap.children.length) return;
+      bar.style.position = 'relative';
+      bar.appendChild(wrap);
+    })();
     setHTML('[data-hero-title]', d.hero_title);
 
 

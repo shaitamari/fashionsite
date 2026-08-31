@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Feedback</title>
+
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+<meta name="robots" content="noindex">
+
+<link rel="stylesheet" href="assets/styles.css">
+
+<style>
+.doc { max-width: 40rem }
+.fb label { display: block; font-size: .8125rem; color: var(--muted); margin: 1rem 0 .3rem }
+.fb input, .fb select, .fb textarea {
+  width: 100%; padding: .6rem .7rem; font: inherit; font-size: .9375rem;
+  border: 1px solid var(--rule); border-radius: 4px; background: var(--bg); color: var(--ink);
+}
+.fb textarea { min-height: 9rem; resize: vertical }
+.fb .btn { margin-top: 1.25rem }
+.hp { position: absolute; left: -9999px }
+.rate { border: 0; padding: 0; margin: 1.5rem 0 .5rem }
+.rate legend { font-size: .8125rem; color: var(--muted); padding: 0 }
+.rate__row { display: flex; gap: .5rem; margin-top: .55rem }
+.rate__row label { flex: 1 }
+.rate__row input { position: absolute; opacity: 0; width: 0; height: 0 }
+.rate__row span {
+  display: block; text-align: center; padding: .65rem 0; cursor: pointer;
+  border: 1px solid var(--rule); border-radius: 4px; font-size: .9375rem;
+}
+.rate__row input:checked + span { background: var(--ink); color: var(--bg); border-color: var(--ink) }
+.rate__row input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 2px }
+.rate__ends {
+  display: flex; justify-content: space-between; margin: .4rem 0 0;
+  font-size: .75rem; color: var(--muted);
+}
+.fb__who { margin-top: 1.5rem }
+.fb__who summary { font-size: .8125rem; color: var(--muted); cursor: pointer }
+.hint { color: var(--muted); font-weight: 400 }
+.fb__anon { display: flex; align-items: center; gap: .5rem; margin-top: 1rem; font-size: .875rem; color: var(--ink) }
+.fb__anon input { width: auto }
+.fb__purpose { margin: 1rem 0 0; font-size: .75rem; color: var(--muted); line-height: 1.55 }
+</style>
+
+<script>window.InsiderQueue = window.InsiderQueue || [];</script>
+<script src="assets/config.js"></script>
+<script src="assets/insider-debug.js"></script>
+<script src="assets/vertical.js"></script>
+<script src="assets/store.js"></script>
+<script src="assets/agent.js"></script>
+<script>
+  window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });
+  window.InsiderQueue.push({ type: 'currency', value: Store.currency() });
+  window.InsiderQueue.push({
+    type: 'other', value: { name: 'feedback', custom: { signed_in: !!Store.currentUser() } }
+  });
+  window.InsiderQueue.push({ type: 'init' });
+</script>
+</head>
+
+<body>
+
+<p class="announce" data-announce>Free shipping over $50</p>
+
+<header class="masthead">
+  <div class="masthead__in">
+    <a class="brand" href="index.html" data-brand>Lumen</a>
+    <form class="searchbox" data-search role="search" autocomplete="off">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" id="search-input" name="q" placeholder="Search products" data-search-placeholder aria-label="Search products">
+    </form>
+    <nav class="utils">
+      <a href="flow.html" data-flow-link>Services</a>
+      <a href="account.html" data-account-label>Log in</a>
+      <a class="cartlink" href="cart.html"><span data-label="cart">Cart</span><span data-cart-count hidden>0</span></a>
+    </nav>
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="mainnav__in" data-collection-nav></div>
+</nav>
+
+<main class="wrap doc" style="padding-top:2.5rem;padding-bottom:4rem">
+
+  <p class="eyebrow">Feedback <span class="pagetype">page type: other · feedback</span></p>
+  <h1 class="h1" style="margin-bottom:.75rem">Tell us what you think</h1>
+
+  <p id="fb-intro" style="font-size:.9375rem;line-height:1.65"></p>
+
+  <!-- Netlify Forms. Detected at deploy time from this static markup;
+       `data-netlify` plus the hidden form-name input is all that is needed.
+       Email and Slack notifications are configured in the Netlify UI under
+       Forms > Notifications — not here.
+
+       ONE form for the whole estate, with hidden fields carrying the context.
+       `source` says whether this came from a polished storefront or a sandbox
+       copy, which is the distinction worth having in the notification; the
+       vertical and hostname say which of the twelve. Two separate forms would
+       mean two sets of notifications to keep in step. -->
+  <form class="fb" name="demo-feedback" method="POST"
+        data-netlify="true" netlify-honeypot="bot-field" action="?sent=1">
+    <input type="hidden" name="form-name" value="demo-feedback">
+    <input type="hidden" name="source"   id="fb-source"   value="">
+    <input type="hidden" name="vertical" id="fb-vertical" value="">
+    <input type="hidden" name="brand"    id="fb-brand"    value="">
+    <input type="hidden" name="page"     id="fb-page"     value="">
+    <p class="hp"><label>Leave this empty <input name="bot-field"></label></p>
+
+    <!-- Rating first, and it is the only required field.
+
+         Every field costs responses, so the entry point has to be one click.
+         The number itself is close to meaningless at this volume — twenty
+         responses averaging 4.1 tells you nothing — but it gets people into
+         the form, and a rating-only submission is still a signal. -->
+    <fieldset class="rate">
+      <legend>How is this demo?</legend>
+      <div class="rate__row" role="radiogroup" aria-label="Rating out of five">
+        <label><input type="radio" name="rating" value="1" required><span>1</span></label>
+        <label><input type="radio" name="rating" value="2"><span>2</span></label>
+        <label><input type="radio" name="rating" value="3"><span>3</span></label>
+        <label><input type="radio" name="rating" value="4"><span>4</span></label>
+        <label><input type="radio" name="rating" value="5"><span>5</span></label>
+      </div>
+      <p class="rate__ends"><span>Not useful</span><span>Very useful</span></p>
+    </fieldset>
+
+    <!-- Two boxes rather than one. A single box gets whichever side the person
+         felt more strongly about, and you never learn the other half. This is
+         the one place where an extra field pays for itself. -->
+    <label for="fb-good">What worked well?</label>
+    <textarea id="fb-good" name="worked"
+      placeholder="Anything that landed, or that you would show a customer."></textarea>
+
+    <label for="fb-bad">What didn’t?</label>
+    <textarea id="fb-bad" name="didnt"
+      placeholder="Something that looked wrong, or a use case you needed and could not show."></textarea>
+
+    <!-- Identity last, and optional. Asking who you are before asking what
+         you think reads as a form to be processed rather than as a question.
+
+         COMPANY is the most useful field here and the least intrusive: it is
+         not personal data on its own, it implies no follow-up, and "a retailer
+         with three fasciae" is more actionable for a product decision than a
+         person's name. Framed as context rather than as lead capture, which is
+         the difference between a field people fill in and one they skip.
+
+         ANONYMOUS is an explicit checkbox rather than just leaving the fields
+         blank. The one time a colleague genuinely wants anonymity is when the
+         criticism is of your work, and "notice the field is optional and leave
+         it empty" asks them to sneak. A checkbox gives permission. -->
+    <details class="fb__who" id="fb-who">
+      <summary>Your details, if you want a reply</summary>
+
+      <label for="fb-company">Company <span class="hint">so we know what this needs to work for</span></label>
+      <input id="fb-company" name="company" type="text" autocomplete="organization">
+
+      <label for="fb-name">Name</label>
+      <input id="fb-name" name="name" type="text" autocomplete="name">
+
+      <label for="fb-email">Email</label>
+      <input id="fb-email" name="email" type="email" autocomplete="email">
+
+      <label class="fb__anon">
+        <input type="checkbox" id="fb-anon" name="anonymous" value="yes">
+        <span>Send this anonymously</span>
+      </label>
+    </details>
+
+    <p class="fb__purpose" id="fb-purpose"></p>
+
+    <button class="btn" type="submit">Send</button>
+  </form>
+
+  <p class="source" id="fb-thanks" hidden style="margin-top:1.25rem">
+    Thanks — that has gone to Shai and Ishan.
+  </p>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <span><span data-brand>Lumen</span> — Insider One demo storefront</span>
+    <span data-env-label>partnersandbox · 10006846</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  var d = window.VERTICAL || {};
+
+  document.getElementById('fb-source').value =
+    window.ENVIRONMENT_KEY === 'sandbox' ? 'sandbox' : 'demo';
+  document.getElementById('fb-vertical').value = window.VERTICAL_KEY || '';
+  document.getElementById('fb-brand').value = d.brand || '';
+  document.getElementById('fb-page').value = location.hostname;
+
+  document.getElementById('fb-intro').textContent =
+    'This goes straight to the people who build these storefronts. Especially ' +
+    'useful: something that looked wrong, or a use case you needed for a ' +
+    'conversation and could not show here.';
+
+  /* If they have signed in on this storefront we already know who they are.
+     Prefilling means the optional block is answered before it is opened,
+     rather than being one more thing to type. */
+  var u = (window.Store && Store.currentUser && Store.currentUser()) || null;
+  if (u) {
+    if (u.name)  document.getElementById('fb-name').value  = u.name;
+    if (u.email) document.getElementById('fb-email').value = u.email;
+  }
+
+  /* Anonymous means anonymous. Clear the identity fields and stop them being
+     re-filled, rather than relying on whoever reads the notification to
+     respect the checkbox. */
+  var anon = document.getElementById('fb-anon');
+  anon.addEventListener('change', function () {
+    ['fb-company', 'fb-name', 'fb-email'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (anon.checked) { el.value = ''; }
+      el.disabled = anon.checked;
+    });
+  });
+
+  /* A line about what happens to this, shown on the customer-facing
+     storefronts. Short, because a wall of privacy text on a feedback form is
+     its own deterrent — but a form on a public site collecting a name and an
+     email should say where it goes. */
+  document.getElementById('fb-purpose').textContent =
+    document.getElementById('fb-source').value === 'demo'
+      ? 'This goes to the two people who build these demo storefronts, and is ' +
+        'used to improve them. Nothing here is added to a marketing list.'
+      : '';
+
+  if (/[?&]sent=1/.test(location.search)) {
+    document.querySelector('.fb').hidden = true;
+    document.getElementById('fb-thanks').hidden = false;
+  }
+
+  /* Mirror the submission into the platform as well as into Netlify, so
+     feedback lands on the visitor's profile alongside everything else they
+     did. Same custom-event path the flow page uses. */
+  document.querySelector('.fb').addEventListener('submit', function () {
+    try {
+      window.InsiderQueue.push({
+        type: 'custom_event',
+        value: [{
+          event_name: 'demo_feedback_sent',
+          event_params: { custom: {
+            vertical: window.VERTICAL_KEY || '',
+            source: document.getElementById('fb-source').value,
+            rating: (document.querySelector('input[name=rating]:checked') || {}).value || ''
+          } }
+        }]
+      });
+    } catch (e) {}
+  });
+})();
+</script>
+
+</body>
+</html>

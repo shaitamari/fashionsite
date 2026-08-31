@@ -592,6 +592,23 @@
     document.querySelectorAll('[data-collection-nav]').forEach(function (host) {
       var current = host.getAttribute('data-current');
       host.innerHTML = '';
+
+      /* "Just for you" leads the nav, because it is the only entry that is
+         about the visitor rather than about the catalogue. Its wording comes
+         from the vertical — "Your usuals" on a supermarket, "Where to next"
+         on an airline — so it reads as that brand's own language rather than
+         as a platform feature bolted on.
+
+         data-current="__foryou__" marks it on the page itself. */
+      var fy = (window.VERTICAL || {}).foryou_title;
+      if (fy) {
+        var f = document.createElement('a');
+        f.href = 'foryou.html';
+        f.textContent = fy;
+        if (current === '__foryou__') f.setAttribute('aria-current', 'page');
+        host.appendChild(f);
+      }
+
       collections().forEach(function (c) {
         var a = document.createElement('a');
         a.href = 'category.html?c=' + encodeURIComponent(c);
