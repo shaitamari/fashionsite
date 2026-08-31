@@ -706,6 +706,28 @@
     if (flow.title) set('[data-flow-link]', flow.title);
     setHTML('[data-hero-title]', d.hero_title);
 
+
+    /* Reveal the page once the hero image has actually decoded, not merely once
+       its src has been set. Revealing earlier means the text arrives, then the
+       photograph pops in a beat later — the same flicker moved rather than
+       removed.
+
+       Capped, because a slow or broken image must not hold the page. */
+    function revealPage(cap) {
+      var done = false;
+      function go() {
+        if (done) return;
+        done = true;
+        document.documentElement.classList.add('hero-ready');
+      }
+      var img = document.getElementById('hero-img');
+      if (!img || !img.getAttribute('src')) { go(); return; }
+      if (img.complete && img.naturalWidth) { go(); return; }
+      img.addEventListener('load', go);
+      img.addEventListener('error', go);
+      setTimeout(go, cap || 900);
+    }
+
     /* Reveal the hero — but only if nothing else is about to rewrite it.
 
        On a campaign arrival the onsite campaign paints a different headline
@@ -719,7 +741,7 @@
        present on exactly the arrivals a campaign targets, and index.html's
        failsafe covers the case where one is present but no campaign runs. */
     if (!/[?&]utm_/.test(location.search)) {
-      document.documentElement.classList.add('hero-ready');
+      revealPage(700);
     }
 
     /* --- category links in the templates ----------------------------------

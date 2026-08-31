@@ -14,51 +14,53 @@
 <link rel="preconnect" href="https://cdn.shopify.com">
 <link rel="stylesheet" href="assets/styles.css">
 <style>
-/* ANTI-FLICKER.
+/* ANTI-FLICKER — the whole page, not just the hero.
 
-   Two separate flashes were happening on this hero, and both are the kind of
-   thing that gets held against client-side personalization generally, so both
-   are worth eliminating rather than shortening.
+   Three flashes were happening, and all three are the kind of thing held
+   against client-side personalization generally. Worth eliminating rather
+   than shortening.
 
    1. The copy in the markup below is beauty's, because the template was
-      written against Lumen. On the other eleven storefronts a visitor saw
-      "Skin first. Makeup second." before their own brand's headline appeared —
-      another brand's words, which is the worst possible flash on a demo.
+      written against Lumen. Eleven storefronts flashed "Skin first. Makeup
+      second." before their own headline — another brand's words.
+   2. On a campaign arrival the default hero painted first and the campaign
+      overwrote it a frame later: wrong headline, wrong photograph, then right.
+   3. The rest of the page painted immediately while the hero arrived late, so
+      the page assembled in two stages even when the hero was correct.
 
-   2. On a campaign arrival, the default hero painted first and the campaign
-      overwrote it a frame or two later. The visitor saw the wrong headline
-      and the wrong photograph before the right ones.
+   The third is the one that matters most for the argument. A page that
+   arrives complete is indistinguishable from server-side rendering, and the
+   standard objection to client-side personalization — "it flickers" — has
+   nothing to point at.
 
-   So the hero starts hidden and is revealed exactly once, when whatever is
-   going to write it has finished. visibility rather than display, so the
-   layout never shifts and nothing reflows on reveal. The image is included —
-   swapping a corset top for a coat in front of someone is more noticeable
-   than swapping the words.
+   So the whole body is held at opacity 0 and revealed once, when whatever is
+   going to write the hero has finished AND the hero image has decoded.
+   Opacity rather than visibility or display: no layout shift, and it can be
+   faded, which reads as deliberate rather than as a stall.
 
-   Who reveals it:
-     - vertical.js, after painting the vertical's own copy, IF no campaign is
+   Who reveals:
+     - vertical.js, after painting the vertical's copy, IF no campaign is
        expected on this page load.
-     - the onsite campaign, after it has applied, if one is.
-     - the timer below, unconditionally, as a failsafe. A broken script must
-       never leave the hero permanently blank.
+     - the onsite campaign, after applying, if one is.
+     - the timer below, unconditionally. A broken script must never leave a
+       blank page.
 
-   "Is a campaign expected" is a URL test, not a platform callback — there is
-   no event that fires to say "no campaign applies here". See vertical.js. */
-[data-hero-eyebrow], [data-hero-title], [data-hero-lede], [data-hero-cta],
-#hero-img { visibility: hidden }
-.hero-ready [data-hero-eyebrow], .hero-ready [data-hero-title],
-.hero-ready [data-hero-lede], .hero-ready [data-hero-cta],
-.hero-ready #hero-img { visibility: visible }
+   The cost is honest: first paint is delayed by however long the slower of
+   those two takes. On a demo estate that is the right trade. On a real site
+   it is the same trade every anti-flicker snippet makes, and the failsafe is
+   what keeps it safe. */
+body { opacity: 0; transition: opacity .18s ease-out }
+.hero-ready body { opacity: 1 }
 </style>
 <script>
-/* Failsafe. Longer when a campaign might act, because waiting 1.2s for the
-   right hero beats showing the wrong one. Short otherwise, so ordinary
+/* Failsafe. Longer when a campaign might act — waiting a beat for the right
+   page beats showing the wrong one — and short otherwise, so ordinary
    browsing is not held up by machinery it will never use. */
 (function () {
   var expects = /[?&]utm_/.test(location.search);
   setTimeout(function () {
     document.documentElement.classList.add('hero-ready');
-  }, expects ? 1200 : 600);
+  }, expects ? 1400 : 700);
 })();
 </script>
 
