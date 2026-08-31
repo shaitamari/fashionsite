@@ -50,6 +50,7 @@
   var PRODUCT = Store.byId(PID) || Store.catalog[0];
 
   Store.noteCategoryView(PRODUCT.collection);
+  Store.noteProductView();   // session counter, read by the low-intent rule
 
   window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });
   window.InsiderQueue.push({ type: 'currency', value: Store.currency() });

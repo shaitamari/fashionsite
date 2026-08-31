@@ -550,6 +550,63 @@
     Object.keys(views).forEach(function (k) { if (views[k] > top) { top = views[k]; best = k; } });
     return best || 'Makeup';
   }
+  /* --- session counters ----------------------------------------------------
+     The site counts what the site does. A campaign rule then only reads.
+
+     This used to live inside the custom rule itself, which was wrong twice
+     over: a rule that writes state is keeping a diary rather than answering a
+     question, and it only counted pages where a campaign happened to be
+     evaluated rather than pages actually viewed.
+
+     Session-scoped on purpose. Intent is a property of this visit — someone
+     who browsed heavily last week and arrived cold today is a different person
+     to talk to, which is the same reasoning behind the platform's own
+     in-session model.
+
+     Everything is wrapped: under a consent framework or a cookie-free tag,
+     storage can be unavailable, and a browsing counter must never be the thing
+     that breaks a page. */
+  var SES = { views: 'lmn.s.views', start: 'lmn.s.start' };
+
+  function sread(k, d) {
+    try { var v = sessionStorage.getItem(k); return v == null ? d : v; }
+    catch (e) { return d; }
+  }
+  function swrite(k, v) {
+    try { sessionStorage.setItem(k, String(v)); } catch (e) {}
+  }
+
+  function noteProductView() {
+    swrite(SES.views, (parseInt(sread(SES.views, '0'), 10) || 0) + 1);
+  }
+
+  /* Stamped once per session, on the first page of any kind. */
+  function startSession() {
+    if (!sread(SES.start, null)) swrite(SES.start, Date.now());
+    // Visits are lifetime rather than per-session, so they live in localStorage
+    // and only increment when a new session begins.
+    if (!sread('lmn.s.counted', null)) {
+      swrite('lmn.s.counted', 1);
+      try {
+        var n = parseInt(localStorage.getItem('lmn.visits') || '0', 10) || 0;
+        localStorage.setItem('lmn.visits', String(n + 1));
+      } catch (e) {}
+    }
+  }
+
+  function sessionStats() {
+    var start = parseInt(sread(SES.start, '0'), 10) || 0;
+    var visits = 0;
+    try { visits = parseInt(localStorage.getItem('lmn.visits') || '0', 10) || 0; } catch (e) {}
+    return {
+      productViews: parseInt(sread(SES.views, '0'), 10) || 0,
+      seconds: start ? Math.round((Date.now() - start) / 1000) : 0,
+      visits: visits,
+      cartCount: (read(KEY.cart, []) || []).length,
+      hasPurchased: !!(currentUser() && currentUser().last_purchase_date)
+    };
+  }
+
   function noteCategoryView(c) {
     if (!c) return;
     var views = read('lmn.views', {});
@@ -569,6 +626,7 @@
 
   /* --- shared chrome ------------------------------------------------------ */
   function paintChrome() {
+    startSession();
     var count = cartCount();
     document.querySelectorAll('[data-cart-count]').forEach(function (n) {
       n.textContent = count;
@@ -857,6 +915,7 @@
     addToCart: addToCart, removeFromCart: removeFromCart, setQty: setQty, clearCart: clearCart,
     currentUser: currentUser, signIn: signIn, signOut: signOut, userPayload: userPayload,
     noteCategoryView: noteCategoryView, preferredCategory: preferredCategory,
+    noteProductView: noteProductView, sessionStats: sessionStats,
     toggleWish: toggleWish, isWished: isWished,
     card: card, grid: grid, paintChrome: paintChrome,
     variantsOf: variantsOf, variantFacets: variantFacets, swatchHex: swatchHex,
