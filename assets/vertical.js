@@ -759,6 +759,29 @@
        driving, and a guide would be in the way.
 
        Injected here rather than added to a dozen HTML files. */
+    /* --- the ad link, in the footer ------------------------------------------
+       ad.html is linked from nowhere else, so without this nobody finds it
+       unless they are told. The footer is the right home: a shop would
+       plausibly link its own social advertising there, and it does not crowd
+       the masthead or the demo links at the top.
+
+       Every storefront, not only the sandbox ones. A shop linking its own
+       advertising is ordinary, and the arrival beat is worth being findable
+       wherever someone lands. */
+    (function adLink() {
+      if (document.querySelector('[data-ad-link]')) return;
+      if (/ad\.html$/.test(location.pathname)) return;
+      document.querySelectorAll('.foot__in').forEach(function (host) {
+        var a = document.createElement('a');
+        a.href = 'ad.html';
+        a.textContent = 'See our latest Facebook ad';
+        a.setAttribute('data-ad-link', '');
+        a.style.cssText = 'margin-left:1.25rem;text-decoration:underline';
+        var last = host.lastElementChild;
+        if (last) last.appendChild(a); else host.appendChild(a);
+      });
+    })();
+
     (function demoLinks() {
       var bar = document.querySelector('.announce');
       if (!bar || bar.querySelector('[data-demo-links]')) return;
