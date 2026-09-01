@@ -283,7 +283,11 @@
       "attribute_field": "store"
     },
     "hero_category": "Makeup",
-    "foryou_title": "Just for you"
+    "foryou_title": "Just for you",
+    "showcase": {
+      "search": "balm",
+      "product": "48440263049461"
+    }
   },
   "_template": {
     "_comment": "Copy this, rename the key, fill it in. Delete nothing else.",
@@ -465,7 +469,11 @@
       "attribute_field": "store"
     },
     "hero_category": "Hotels",
-    "foryou_title": "Trips for you"
+    "foryou_title": "Trips for you",
+    "showcase": {
+      "search": "kyoto",
+      "product": "48100000000001"
+    }
   },
   "airlines": {
     "vertical": "Travel",
@@ -570,7 +578,11 @@
       "attribute_field": "route"
     },
     "hero_category": "Long Haul",
-    "foryou_title": "Where to next"
+    "foryou_title": "Where to next",
+    "showcase": {
+      "search": "tokyo",
+      "product": "48200000000001"
+    }
   },
   "_environments": {
     "_README": [
@@ -720,7 +732,11 @@
       "attribute_field": "product"
     },
     "hero_category": "Accounts",
-    "foryou_title": "Right for you"
+    "foryou_title": "Right for you",
+    "showcase": {
+      "search": "mortgage",
+      "product": "48300000000001"
+    }
   },
   "insurance": {
     "vertical": "Banking",
@@ -844,7 +860,11 @@
       "attribute_field": "product"
     },
     "hero_category": "Motor",
-    "foryou_title": "Cover for you"
+    "foryou_title": "Cover for you",
+    "showcase": {
+      "search": "travel",
+      "product": "48400000000001"
+    }
   },
   "fintech": {
     "vertical": "Banking",
@@ -959,7 +979,11 @@
       "attribute_field": "plan"
     },
     "hero_category": "Business",
-    "foryou_title": "Right for you"
+    "foryou_title": "Right for you",
+    "showcase": {
+      "search": "business",
+      "product": "48500000000001"
+    }
   },
   "fashion": {
     "vertical": "Retail",
@@ -1110,7 +1134,11 @@
       "attribute_field": "store"
     },
     "hero_category": "Dresses",
-    "foryou_title": "Just for you"
+    "foryou_title": "Just for you",
+    "showcase": {
+      "search": "burgundy",
+      "product": "55693210845352"
+    }
   },
   "electronics": {
     "vertical": "Retail",
@@ -1217,7 +1245,11 @@
       "attribute_field": "service"
     },
     "hero_category": "Speaker",
-    "foryou_title": "Picked for you"
+    "foryou_title": "Picked for you",
+    "showcase": {
+      "search": "bookshelf",
+      "product": "45033161687229"
+    }
   },
   "telco": {
     "vertical": "Telco",
@@ -1436,7 +1468,11 @@
       "attribute_field": "plan"
     },
     "hero_category": "Iphone 17 Pro",
-    "foryou_title": "Picked for you"
+    "foryou_title": "Picked for you",
+    "showcase": {
+      "search": "case",
+      "product": "45914954334344"
+    }
   },
   "home": {
     "vertical": "Retail",
@@ -1572,7 +1608,11 @@
       "attribute_field": "service"
     },
     "hero_category": "Seating",
-    "foryou_title": "Just for you"
+    "foryou_title": "Just for you",
+    "showcase": {
+      "search": "velvet",
+      "product": "50013105553710"
+    }
   },
   "luxury": {
     "vertical": "Retail",
@@ -1691,7 +1731,11 @@
       "attribute_field": "store"
     },
     "hero_category": "Bags",
-    "foryou_title": "Selected for you"
+    "foryou_title": "Selected for you",
+    "showcase": {
+      "search": "tote",
+      "product": "49508261069038"
+    }
   },
   "supermarket": {
     "vertical": "Retail",
@@ -1805,6 +1849,10 @@
       "attribute_field": "store"
     },
     "hero_category": "Ingredients",
-    "foryou_title": "Your usuals"
+    "foryou_title": "Your usuals",
+    "showcase": {
+      "search": "olive",
+      "product": "40954224476218"
+    }
   }
 }
