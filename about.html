@@ -109,7 +109,7 @@
       <p><b>Why.</b> Paid traffic is expensive and it usually lands on a page
       built for everyone. Someone who clicked an ad for coats has told you
       something, and a homepage that ignores it wastes the click.</p>
-      <p><b>How.</b> One campaign, one condition \u2014 arrived from paid social.
+      <p><b>How.</b> One campaign, one condition — arrived from paid social.
       It reads which storefront it is on and dresses the page accordingly, so
       twelve brands share a single campaign rather than twelve. The copy and the
       image live in the platform, not in the site.</p>
@@ -183,7 +183,7 @@
     <details class="how">
       <summary>Why it matters, and how it is done</summary>
       <p><b>Why.</b> Two sizes of one item is a return already in progress. The
-      shop can help now \u2014 or find out in a fortnight when one comes back.
+      shop can help now — or find out in a fortnight when one comes back.
       Offering free returns before checkout is service, and it costs less than
       the return.</p>
       <p><b>How.</b> A rule reads the basket and looks for one style in two
@@ -202,12 +202,12 @@
     <p class="hint">Something turns up.</p>
     <details class="how">
       <summary>Why it matters, and how it is done</summary>
-      <p><b>Why.</b> This is most of your traffic \u2014 interested, unidentified,
+      <p><b>Why.</b> This is most of your traffic — interested, unidentified,
       about to leave. Every visit that ends here is one you never get to follow
       up. Trading something small for an email address is the difference
       between a session and a customer.</p>
-      <p><b>How.</b> Product views, time on site and an empty basket \u2014 the
-      same signals the platform\u2019s own purchase-intent model reads. A rule
+      <p><b>How.</b> Product views, time on site and an empty basket — the
+      same signals the platform’s own purchase-intent model reads. A rule
       thresholds them and a template does the asking.</p>
     </details>
   </section>
@@ -223,12 +223,12 @@
     <p class="hint">It follows you around.</p>
     <details class="how">
       <summary>Why it matters, and how it is done</summary>
-      <p><b>Why.</b> Tier is only useful if everything downstream can see it \u2014
+      <p><b>Why.</b> Tier is only useful if everything downstream can see it —
       the site, the email, the message, the recommendation. Held on the profile
       rather than in one campaign, it is available everywhere at once, and the
       VIP flag is derived from it rather than typed by anyone.</p>
       <p><b>How.</b> The profile holds which tier you are in. A lookup table
-      holds what each tier is worth \u2014 the discount, the free-shipping
+      holds what each tier is worth — the discount, the free-shipping
       threshold, the points multiplier. One is about you, the other is about the
       programme. Change the table and every campaign that quotes it updates,
       rather than someone re-editing twelve of them.</p>
@@ -240,6 +240,10 @@
     <p>The line under the search box is a dare — take it. And the pill in the
     bottom right opens a console showing every payload as it leaves the browser,
     so you can check our work rather than take it on trust.</p>
+
+    <h2>If you plan to build</h2>
+    <p>Install the <a id="ext-link" href="#" target="_blank" rel="noopener">Insider
+    One Chrome extension</a> — the visual campaign editor needs it.</p>
 
     <h2>Before you wonder</h2>
     <p>Affinities and predictive segments read as <b>Not Available</b> on a
@@ -266,14 +270,22 @@
 <script>
 (function () {
   'use strict';
-  document.getElementById('ext-link').href =
-    'https://chromewebstore.google.com/detail/insider-one-extension/fnecdmjccbhicpabhgalobcbnoieedon';
+  try {
+  /* Guarded. This element was removed when the page was shortened and the
+     unguarded assignment threw, which killed the whole script — so the intro
+     was blank and every showcase link stayed empty. One missing element should
+     never take out the page. */
+  var ext = document.getElementById('ext-link');
+  if (ext) {
+    ext.href = 'https://chromewebstore.google.com/detail/' +
+               'insider-one-extension/fnecdmjccbhicpabhgalobcbnoieedon';
+  }
 
   var d = window.VERTICAL || {};
 
   document.getElementById('intro').textContent =
     'This is ' + (d.brand || 'a demo storefront') + ', a working shop running on ' +
-    'Insider One. Do these in order \u2014 the third only works because you did ' +
+    'Insider One. Do these in order — the third only works because you did ' +
     'the first two.';
 
   /* Name the pages as this storefront names them. "Just for you" on a fashion
@@ -298,7 +310,7 @@
   var term = show.search || d.hero_category || '';
   if (gs && term) {
     gs.href = 'search.html?q=' + encodeURIComponent(term);
-    gs.textContent = '\u201c' + term + '\u201d';
+    gs.textContent = '“' + term + '”';
   } else if (gs && gs.parentNode) {
     gs.parentNode.style.display = 'none';
   }
@@ -313,7 +325,11 @@
   var fy = d.foryou_title;
   if (fy) document.getElementById('fy-name').textContent = fy;
   var flow = (d.flow || {}).title;
-  if (flow) document.getElementById('flow-name').textContent = '\u201c' + flow + '\u201d';
+  var fl = document.getElementById('flow-name');
+  if (flow && fl) fl.textContent = '“' + flow + '”';
+  } catch (e) {
+    if (window.console) console.warn('[about] setup failed:', e);
+  }
 })();
 </script>
 
