@@ -372,49 +372,7 @@
     // add_to_cart does NOT need an init afterwards.
     window.InsiderQueue.push({ type: 'add_to_cart', value: payload });
     say('add_to_cart sent · variant ' + PRODUCT.id + ' ×' + qty);
-    offerTheDare();
   });
-
-  /* --- the dare ------------------------------------------------------------
-     Once something is in the basket, invite the visitor to add the same style
-     in a second size. There is a cart campaign waiting for exactly that, and
-     without a nudge nobody stumbles into it.
-
-     DELIBERATELY SITE-SIDE, and not a campaign. A rule that encourages someone
-     to order two sizes is not something a retailer would ever ship — it exists
-     to set up the next beat. Dressing stagecraft as product is the one thing
-     this estate does not do. The cart message that follows IS a campaign, and
-     is a real merchandising decision; this is the shop showing you where to
-     look, in the same voice as the search dare under the masthead. */
-  function offerTheDare() {
-    if (document.getElementById('pdp-dare')) return;
-
-    // Only when this style has another size to add, and only while the basket
-    // does not already hold one.
-    var siblings = (Store.catalog || []).filter(function (p) {
-      return p.groupcode === PRODUCT.groupcode && p.id !== PRODUCT.id && p.size;
-    });
-    if (!siblings.length) return;
-
-    var inCart = {};
-    (JSON.parse(localStorage.getItem('lmn.cart') || '[]')).forEach(function (l) {
-      var p = Store.byId(String(l.id));
-      if (p && p.groupcode === PRODUCT.groupcode) inCart[p.size] = true;
-    });
-    if (Object.keys(inCart).length > 1) return;   // the dare has been taken
-
-    var other = siblings.filter(function (p) { return !inCart[p.size]; })[0];
-    if (!other) return;
-
-    var el = document.createElement('p');
-    el.id = 'pdp-dare';
-    el.className = 'source';
-    el.style.cssText = 'margin-top:.9rem;font-style:italic';
-    el.innerHTML = 'Torn between sizes? Add the ' + other.size +
-      ' as well, then look at your basket. <a href="product.html?id=' +
-      encodeURIComponent(other.id) + '">We dare you.</a>';
-    msg.parentNode.insertBefore(el, msg.nextSibling);
-  }
 
   var wishBtn = document.getElementById('wish-btn');
   function paintWish() { wishBtn.textContent = Store.isWished(PRODUCT.id) ? 'Saved' : 'Save for later'; }
