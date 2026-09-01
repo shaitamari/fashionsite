@@ -86,7 +86,7 @@
 <main class="wrap doc" style="padding-top:2.5rem;padding-bottom:4rem">
 
   <p class="eyebrow">Feedback <span class="pagetype">page type: other · feedback</span></p>
-  <h1 class="h1" style="margin-bottom:.75rem">Tell us what you think</h1>
+  <h1 class="h1" style="margin-bottom:.75rem" id="fb-title">Tell us what you think</h1>
 
   <p id="fb-intro" style="font-size:.9375rem;line-height:1.65"></p>
 
@@ -116,7 +116,7 @@
          responses averaging 4.1 tells you nothing — but it gets people into
          the form, and a rating-only submission is still a signal. -->
     <fieldset class="rate">
-      <legend>How is this demo?</legend>
+      <legend id="fb-rate-q">How is this demo?</legend>
       <div class="rate__row" role="radiogroup" aria-label="Rating out of five">
         <label><input type="radio" name="rating" value="1" required><span>1</span></label>
         <label><input type="radio" name="rating" value="2"><span>2</span></label>
@@ -130,11 +130,11 @@
     <!-- Two boxes rather than one. A single box gets whichever side the person
          felt more strongly about, and you never learn the other half. This is
          the one place where an extra field pays for itself. -->
-    <label for="fb-good">What worked well?</label>
+    <label for="fb-good" id="fb-good-q">What worked well?</label>
     <textarea id="fb-good" name="worked"
       placeholder="Anything that landed, or that you would show a customer."></textarea>
 
-    <label for="fb-bad">What didn’t?</label>
+    <label for="fb-bad" id="fb-bad-q">What didn’t?</label>
     <textarea id="fb-bad" name="didnt"
       placeholder="Something that looked wrong, or a use case you needed and could not show."></textarea>
 
@@ -190,6 +190,7 @@
 <script>
 (function () {
   'use strict';
+  try {
   var d = window.VERTICAL || {};
 
   document.getElementById('fb-source').value =
@@ -198,10 +199,42 @@
   document.getElementById('fb-brand').value = d.brand || '';
   document.getElementById('fb-page').value = location.hostname;
 
-  document.getElementById('fb-intro').textContent =
-    'This goes straight to the people who build these storefronts. Especially ' +
-    'useful: something that looked wrong, or a use case you needed for a ' +
-    'conversation and could not show here.';
+  /* Different question depending on who is asking.
+
+     On a sandbox the reader has been using Insider One itself — exploring the
+     panel, building things, forming a view of the product. Asking them about
+     our storefronts wastes the one chance to hear what the product was like to
+     use, which is the thing worth knowing.
+
+     On the customer-facing sites the reader is a colleague showing a prospect
+     around, and the storefront is exactly what they can comment on. */
+  var sandbox = window.ENVIRONMENT_KEY === 'sandbox';
+
+  if (sandbox) {
+    document.getElementById('fb-title').textContent = 'How was the sandbox?';
+    document.getElementById('fb-intro').textContent =
+      'You have been using Insider One, not just looking at a shop. We would ' +
+      'like to know what that was like \u2014 what made sense, what did not, and ' +
+      'anything you expected to find and could not.';
+  } else {
+    document.getElementById('fb-intro').textContent =
+      'This goes straight to the people who build these storefronts. Especially ' +
+      'useful: something that looked wrong, or a use case you needed for a ' +
+      'conversation and could not show here.';
+  }
+
+  if (sandbox) {
+    document.getElementById('fb-rate-q').textContent =
+      'How useful was this sandbox for working out whether the platform fits?';
+    document.getElementById('fb-good-q').textContent =
+      'What worked well \u2014 in the product, or here?';
+    document.getElementById('fb-bad-q').textContent =
+      'What was harder than it should have been?';
+    document.getElementById('fb-good').placeholder =
+      'Anything that made sense straight away, or that you would show a colleague.';
+    document.getElementById('fb-bad').placeholder =
+      'Anything you expected to find and could not, or that took longer than it should.';
+  }
 
   /* If they have signed in on this storefront we already know who they are.
      Prefilling means the optional block is answered before it is opened,
@@ -257,6 +290,9 @@
       });
     } catch (e) {}
   });
+  } catch (e) {
+    if (window.console) console.warn('[feedback] setup failed:', e);
+  }
 })();
 </script>
 
