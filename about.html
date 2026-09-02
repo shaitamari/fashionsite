@@ -91,7 +91,7 @@
 <main class="wrap doc" style="padding-top:2.5rem;padding-bottom:4rem">
 
   <p class="eyebrow">Start here <span class="pagetype">page type: other · about</span></p>
-  <h1 class="h1" style="margin-bottom:.9rem">Seven things to try</h1>
+  <h1 class="h1" style="margin-bottom:.9rem">Nine things to try</h1>
 
   <p class="lede" id="intro"></p>
 
@@ -235,6 +235,89 @@
     </details>
   </section>
 
+  <section class="act">
+    <p class="act__no">Eight</p>
+    <h2>Give yourself a past</h2>
+
+    <div class="do">
+      <p>Some of what this platform does needs history you do not have yet.
+        <a href="history.html">Write yourself some</a> — a purchase from last
+        summer, or a product you reorder every few weeks.</p>
+    </div>
+    <p class="hint">Then look at your profile again. It has a memory now.</p>
+    <details class="how">
+      <summary>Why it matters, and how it is done</summary>
+      <p><b>Why.</b> The most valuable journeys run on time rather than on
+      clicks: reorder before someone runs out, come back a year after they
+      bought the thing they buy once a year. Neither is visible in a
+      ten-minute session, and neither can be faked convincingly at the point of
+      use — so the history has to be real.</p>
+      <p><b>How.</b> Purchases are stored as an array on the profile, one entry
+      per item with its own date. A journey anchors on a date inside that array
+      and the message is built from it. Buy the same thing twice and the gap
+      between becomes the interval we expect next time — which beats any table
+      of shelf lives, because a household of five gets through shampoo faster
+      than one person does.</p>
+      <p>Everything that page writes goes through the same code a real checkout
+      uses, so a journey cannot tell the difference.</p>
+    </details>
+  </section>
+
+  <section class="act">
+    <p class="act__no">Nine <span class="act__time">· the one worth the login</span></p>
+    <h2>Then go and read the email you would have been sent</h2>
+
+    <div class="do">
+      <p><b>1.</b> Open three or four products here. Do not buy anything.</p>
+      <p><b>2.</b> Open the console — the pill in the bottom right — and click
+        <b>Copy profile ID</b>.</p>
+      <p><b>3.</b> Open <a id="journey-email-link" href="#" target="_blank"
+        rel="noopener">the email in the browse abandonment journey</a>.</p>
+      <p><b>4.</b> Top right of the preview it says <b>Previewing as
+        Anonymous</b>. Change the user, choose <b>Profile ID</b>, paste yours
+        in, and reload.</p>
+    </div>
+    <p class="hint">The product in that email is the one you were just looking
+    at. Its picture, its name, its link.</p>
+    <details class="how">
+      <summary>Why it matters, and how it is done</summary>
+
+      <p><b>Nothing in that email was written for you.</b> The product name, the
+      image and the link are tokens, resolved per recipient at the moment of
+      sending. Paste a different profile id in and the whole thing changes.
+      There is one email, and it is different for everyone who receives it.</p>
+
+      <p><b>And the site did not calculate any of it.</b> Those values are
+      derived by the platform from ordinary page views — last visited product,
+      its image, its URL, its category. The shop reported that a page was
+      viewed. Working out which one mattered, and keeping it, happened here.</p>
+
+      <p><b>Now go back to the canvas and look at the whole thing.</b> There is
+      an entry condition, a wait, and a check that removes anyone who has
+      bought in the meantime — because the worst abandonment email is the one
+      that arrives after the purchase.</p>
+
+      <p><b>The split is the part worth pausing on.</b> One arm routes with Next
+      Best Channel: a model choosing the channel this person has responded to
+      before. The other routes with the <b>Decision Agent</b>, which decides per
+      send — which channel, at what time, with which variant — inside the goal
+      and the guardrails set for it. Sometimes it decides not to send at all,
+      and the restraint is the point: intelligence is not always about action.</p>
+
+      <p>Both arms are running on the same journey and the same data, so you can
+      see which one is winning rather than take anyone’s word for it.</p>
+
+      <p><b>And the journey itself was not built by hand.</b> It was described
+      in a sentence and assembled by the Journey Agent — starter, waits,
+      checks, channels, wired and connected. That saves an afternoon, which is
+      the obvious part. The less obvious part is that it brings the patterns
+      with it: the exit condition, the wait before the send, the check that
+      stops the email chasing someone who has already bought. Those are the
+      things people forget, and forgetting them is what makes an abandonment
+      programme annoy customers instead of recovering them.</p>
+    </details>
+  </section>
+
   <div class="ends">
     <h2>Two more things</h2>
     <p>The line under the search box is a dare — take it. And the pill in the
@@ -271,6 +354,36 @@
 (function () {
   'use strict';
   try {
+
+  /* ---------------------------------------------------------------------
+     THE ONE THING TO EDIT ON THIS PAGE.
+
+     Paste the panel URL of the browse abandonment journey's email element
+     here once the journey exists. The shape is:
+
+       https://partnersandbox.inone.useinsider.com/architect/<journey>/<element>/email/<id>/html
+
+     That deep-links straight to the email rather than the canvas, which is
+     the point — the visitor should land on the thing that is about them and
+     work outwards, not hunt for it on a canvas they have never seen.
+
+     Everyone exploring the sandbox uses the same panel, so one URL serves
+     all of them. Until it is set, act nine hides itself rather than offering
+     a dead link. */
+  var JOURNEY_EMAIL_URL =
+    'https://partnersandbox.inone.useinsider.com/architect/2789/64690/email/64575?focus=7';
+  /* --------------------------------------------------------------------- */
+
+  var jl = document.getElementById('journey-email-link');
+  if (jl) {
+    if (JOURNEY_EMAIL_URL) {
+      jl.href = JOURNEY_EMAIL_URL;
+    } else {
+      var act = jl.closest('section.act');
+      if (act) act.hidden = true;
+    }
+  }
+
   /* Guarded. This element was removed when the page was shortened and the
      unguarded assignment threw, which killed the whole script — so the intro
      was blank and every showcase link stayed empty. One missing element should

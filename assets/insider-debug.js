@@ -43,9 +43,59 @@
   // Anything pushed before this file ran.
   window.InsiderQueue.forEach(function (e) { record(e, 'pre-existing'); });
 
+  /* --- sent but not declared ----------------------------------------------
+     A custom attribute that does not exist on the account is dropped
+     SILENTLY, on a 200. So is one whose type disagrees. There is no error in
+     the console, nothing in the network tab, and the profile simply never
+     shows the value — which reads as "the platform is broken" and costs hours.
+
+     Five of the seven attributes this site writes turned out never to have
+     existed on partnersandbox. Nothing said so.
+
+     So compare what goes out against SITE_CONFIG.customAttributes, which is
+     the list actually declared on the account. One line per unknown name, once
+     per session, and NOTHING AT ALL when everything matches — this is a build
+     tool, not a demo feature, and it should be invisible unless it has
+     something to say.
+
+     Keeping the list current is manual: export Attributes and Events and paste
+     the names in. That is a chore, but a stale list here fails loudly, which
+     is the opposite of how this fails without it. */
+  var declared = null;
+  var flagged = {};
+
+  function checkAttributes(entry) {
+    if (!entry || String(entry.type).toLowerCase() !== 'user') return;
+    var custom = entry.value && entry.value.custom;
+    if (!custom || typeof custom !== 'object') return;
+
+    if (declared === null) {
+      var list = (window.SITE_CONFIG || {}).customAttributes;
+      declared = {};
+      if (Array.isArray(list) && list.length) {
+        list.forEach(function (n) { declared[n] = 1; });
+      } else {
+        declared = false;   // nothing to check against; stay quiet
+      }
+    }
+    if (!declared) return;
+
+    Object.keys(custom).forEach(function (name) {
+      if (declared[name] || flagged[name]) return;
+      if (custom[name] === undefined) return;   // never sent anyway
+      flagged[name] = 1;
+      window.insDebugNote('custom attribute "' + name + '" is not declared on ' +
+        'this account — it will be dropped silently on a 200. Create it in ' +
+        'Attributes and Events, or remove it from userPayload().', 'warn');
+    });
+  }
+
   var nativePush = window.InsiderQueue.push;
   window.InsiderQueue.push = function () {
-    for (var i = 0; i < arguments.length; i++) record(arguments[i]);
+    for (var i = 0; i < arguments.length; i++) {
+      record(arguments[i]);
+      try { checkAttributes(arguments[i]); } catch (e) {}
+    }
     return nativePush.apply(window.InsiderQueue, arguments);
   };
 
@@ -231,6 +281,7 @@
         '</header>',
         '<dl class="ins-console__status" data-role="status"></dl>',
         '<div class="ins-console__bar">',
+          '<button class="ins-console__btn ins-console__btn--primary" data-act="copyid" type="button">Copy profile ID</button>',
           '<button class="ins-console__btn" data-act="copy" type="button">Copy log</button>',
           '<button class="ins-console__btn" data-act="profile" type="button">Open profile</button>',
           '<button class="ins-console__btn" data-act="logout" type="button">Log out</button>',
@@ -262,6 +313,27 @@
         ));
         ev.target.textContent = 'Copied';
         setTimeout(function () { ev.target.textContent = 'Copy log'; }, 1200);
+      }
+      /* The single most-copied value on this estate.
+
+         The guide asks a visitor to take their profile id from here and paste
+         it into the panel's email preview, so the tokens resolve against their
+         own browsing. Making them select a monospace string out of a status
+         list was the friction in that instruction — it is easy to grab one
+         character short and end up previewing as nobody.
+
+         Falls back to the site's own uuid when the platform has not issued an
+         insider_id yet, which is what the profile search accepts. */
+      if (act === 'copyid') {
+        var pid = insiderId() || panelProfileKey();
+        if (!pid) {
+          ev.target.textContent = 'No profile yet';
+          setTimeout(function () { ev.target.textContent = 'Copy profile ID'; }, 1600);
+          return;
+        }
+        if (navigator.clipboard) navigator.clipboard.writeText(pid).catch(function () {});
+        ev.target.textContent = 'Copied \u2713';
+        setTimeout(function () { ev.target.textContent = 'Copy profile ID'; }, 1600);
       }
       if (act === 'clear') { log.length = 0; render(); }
       if (act === 'profile') { openProfileInPanel(); }
