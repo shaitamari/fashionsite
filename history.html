@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Give yourself a past</title>
+
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+<meta name="robots" content="noindex">
+
+<link rel="stylesheet" href="assets/styles.css">
+
+<style>
+.doc { max-width: 46rem }
+.doc p, .doc li { font-size: .9375rem; line-height: 1.65 }
+
+.preset {
+  border: 1px solid var(--rule); border-radius: 4px;
+  padding: 1.1rem 1.25rem; margin: 0 0 .75rem;
+  display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: center;
+}
+.preset h3 { margin: 0 0 .3rem; font-size: 1rem }
+.preset p { margin: 0; font-size: .8125rem; color: var(--muted); line-height: 1.5 }
+.preset .btn { white-space: nowrap }
+
+.custom { border: 1px solid var(--rule); border-radius: 4px; padding: 1.25rem; margin-top: 1.5rem }
+.custom label { display: block; font-size: .75rem; color: var(--muted); margin: .9rem 0 .3rem }
+.custom select, .custom input {
+  width: 100%; padding: .55rem .7rem; font: inherit; font-size: .9375rem;
+  border: 1px solid var(--rule); border-radius: 3px; background: var(--bg); color: var(--ink);
+}
+.custom .row { display: grid; grid-template-columns: 2fr 1fr; gap: .9rem }
+
+#result { margin-top: 1.75rem }
+.hist { width: 100%; border-collapse: collapse; font-size: .8125rem; margin-top: .75rem }
+.hist th, .hist td { text-align: left; padding: .45rem .6rem; border-bottom: 1px solid var(--rule) }
+.hist th { font-size: .6875rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted) }
+.hist td.due { font-family: var(--mono, monospace); font-size: .75rem }
+.soon { color: var(--accent); font-weight: 500 }
+.note { font-size: .8125rem; color: var(--muted); margin-top: 1rem; line-height: 1.6 }
+</style>
+
+<script>window.InsiderQueue = window.InsiderQueue || [];</script>
+<script src="assets/config.js"></script>
+<script src="assets/insider-debug.js"></script>
+<script src="assets/vertical.js"></script>
+<script src="assets/store.js"></script>
+<script src="assets/agent.js"></script>
+<script>
+  window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });
+  window.InsiderQueue.push({ type: 'currency', value: Store.currency() });
+  window.InsiderQueue.push({
+    type: 'other', value: { name: 'history', custom: { signed_in: !!Store.currentUser() } }
+  });
+  window.InsiderQueue.push({ type: 'init' });
+</script>
+</head>
+
+<body>
+
+<p class="announce" data-announce>Free shipping over $50</p>
+
+<header class="masthead">
+  <div class="masthead__in">
+    <a class="brand" href="index.html" data-brand>Lumen</a>
+    <form class="searchbox" data-search role="search" autocomplete="off">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" id="search-input" name="q" placeholder="Search products" data-search-placeholder aria-label="Search products">
+    </form>
+    <nav class="utils">
+      <span class="loy" data-loyalty-strip hidden></span>
+      <a href="flow.html" data-flow-link>Services</a>
+      <a href="account.html" data-account-label>Log in</a>
+      <a class="cartlink" href="cart.html"><span data-label="cart">Cart</span><span data-cart-count hidden>0</span></a>
+    </nav>
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="mainnav__in" data-collection-nav></div>
+</nav>
+
+<main class="wrap doc" style="padding-top:2.5rem;padding-bottom:4rem">
+
+  <p class="eyebrow">Sandbox <span class="pagetype">page type: other · history</span></p>
+  <h1 class="h1" style="margin-bottom:.9rem">Give yourself a past</h1>
+
+  <p class="lede" style="font-size:1.0625rem;line-height:1.6">Some of the more
+  interesting journeys need history — a swimsuit bought last May, a serum you
+  reorder every six weeks. A profile created ten minutes ago has neither, so
+  this page writes some.</p>
+
+  <p class="note" style="margin-bottom:2rem">It writes real purchase records with
+  real dates onto your profile, exactly as a checkout would. Nothing is faked at
+  the point of use: the journeys read the same data whether it arrived from here
+  or from an order placed a year ago.</p>
+
+  <h2 style="font-size:1.0625rem;margin:0 0 .9rem">Pick a shape</h2>
+  <div id="presets"></div>
+
+  <div class="custom">
+    <h2 style="font-size:1rem;margin:0">Or build your own</h2>
+    <p style="margin:.4rem 0 0;font-size:.8125rem;color:var(--muted)">Any product,
+    any point in the past. Buy the same thing more than once and the interval
+    between the purchases becomes the one we expect next time.</p>
+
+    <label for="c-product">Product</label>
+    <select id="c-product"></select>
+
+    <div class="row">
+      <div>
+        <label for="c-when">How long ago</label>
+        <select id="c-when">
+          <option value="7">A week ago</option>
+          <option value="30">A month ago</option>
+          <option value="60">Two months ago</option>
+          <option value="90">Three months ago</option>
+          <option value="180">Six months ago</option>
+          <option value="330" selected>Eleven months ago</option>
+          <option value="365">A year ago</option>
+        </select>
+      </div>
+      <div>
+        <label for="c-times">Bought</label>
+        <select id="c-times">
+          <option value="1" selected>Once</option>
+          <option value="2">Twice</option>
+          <option value="3">Three times</option>
+        </select>
+      </div>
+    </div>
+
+    <p style="margin-top:1.1rem"><button class="btn" id="c-add" type="button">Add to my history</button></p>
+  </div>
+
+  <div id="result"></div>
+
+  <p class="note" id="whatnext" hidden>
+    <b>Now go and look.</b> Open your profile in User Profiles and you will find
+    the purchases array and the next due date. Then open the replenishment or
+    anniversary journey and preview the email — the tokens resolve against this
+    history, so you will see your own products in it.
+  </p>
+
+  <p style="margin-top:2rem"><button class="btn btn--ghost" id="clear" type="button">Clear my history</button></p>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <span><span data-brand>Lumen</span> — Insider One demo storefront</span>
+    <span data-env-label>partnersandbox · 10006846</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  try {
+
+  /* SANDBOX ONLY, enforced here rather than only by hiding the link.
+
+     The whole estate is public. This page writes purchase records to a real
+     profile, so leaving it reachable on the customer-facing storefronts is
+     wrong twice over: it would let anyone create junk profiles that consume
+     MTUs on the account, and — worse — a prospect who stumbled on a page
+     called "Give yourself a past" would reasonably conclude the demo is
+     staged.
+
+     Nothing here is a security hole. There is no credential on the page, and
+     everything goes through the Insider tag, which is on every page already
+     and accepts arbitrary pushes by design; anyone with devtools can do this
+     without us. The gate is about MTU hygiene and about not undermining the
+     thing this estate is for. */
+  if (window.ENVIRONMENT_KEY !== 'sandbox') {
+    document.querySelector('main').innerHTML =
+      '<p class="eyebrow">Not here</p>' +
+      '<h1 class="h1" style="margin-bottom:.9rem">This one lives on the sandbox</h1>' +
+      '<p class="lede">Seeding purchase history is a sandbox tool. On this ' +
+      'storefront everything on a profile got there by someone actually doing ' +
+      'it.</p>' +
+      '<p style="margin-top:1.5rem"><a class="btn" href="index.html">Back to the shop</a></p>';
+    return;
+  }
+
+  var DAY = 86400000;
+  var d = window.VERTICAL || {};
+  var repl = d.replenishment_days || null;
+
+  function pool() {
+    var all = (Store.oneVariantEach ? Store.oneVariantEach(Store.catalog) : Store.catalog) || [];
+    return all.filter(function (p) { return p.name && p.image; });
+  }
+
+  function inCollection(name) {
+    return pool().filter(function (p) { return p.collection === name; });
+  }
+
+  function daysFor(p) {
+    if (!repl) return 0;
+    return repl[p.collection] || repl._default || 0;
+  }
+
+  /* Write straight into the same store the checkout writes, with our own
+     timestamps rather than Date.now(). Everything downstream — the due date,
+     the learned interval, the flat attributes — is computed by the same code
+     that runs on a real purchase, so seeded history and real history are
+     indistinguishable to a journey. */
+  function addEntries(product, daysAgo, times) {
+    var hist = Store.purchaseHistory();
+    var base = daysFor(product) || 90;
+    var stamps = [];
+    for (var i = times - 1; i >= 0; i--) {
+      stamps.push(Date.now() - (daysAgo + i * base) * DAY);
+    }
+    stamps.forEach(function (ts, idx) {
+      var prev = stamps.slice(0, idx);
+      var days = base;
+      if (prev.length) {
+        var gaps = [];
+        var all = prev.concat([ts]);
+        for (var j = 1; j < all.length; j++) gaps.push((all[j] - all[j - 1]) / DAY);
+        var mean = gaps.reduce(function (a, b) { return a + b; }, 0) / gaps.length;
+        if (mean > 3 && mean < 400) days = Math.round(mean);
+      }
+      hist.push({
+        product_id: String(product.id),
+        groupcode: product.groupcode || String(product.id),
+        name: product.name,
+        // Absolute, so the image resolves in an email as well as on a page.
+        image: (product.image && product.image.indexOf('http') !== 0)
+          ? location.origin + '/' + product.image.replace(/^\//, '')
+          : product.image,
+        url: product.url || ('product.html?id=' + product.id),
+        category: product.collection,
+        purchased_at: ts,
+        due_at: ts + days * DAY,
+        interval_days: days,
+        learned: prev.length > 0,
+        seeded: true
+      });
+    });
+    hist.sort(function (a, b) { return a.purchased_at - b.purchased_at; });
+    localStorage.setItem('lmn.purchases', JSON.stringify(hist.slice(-60)));
+    send();
+    render();
+  }
+
+  /* Push the array and the flat fields, exactly as confirmation.html does. */
+  function send() {
+    var hist = Store.purchaseHistory();
+    window.InsiderQueue.push({
+      type: 'user',
+      value: Object.assign({}, Store.userPayload(), {
+        purchases: hist.map(function (h) {
+          return {
+            product_id: h.product_id, name: h.name, image: h.image, url: h.url,
+            category: h.category,
+            purchased_at: new Date(h.purchased_at).toISOString().replace(/\.\d+Z$/, 'Z'),
+            due_at: new Date(h.due_at).toISOString().replace(/\.\d+Z$/, 'Z')
+          };
+        })
+      })
+    });
+    if (window.insDebugNote) {
+      window.insDebugNote('purchase history seeded: ' + hist.length + ' lines', 'ok');
+    }
+  }
+
+  /* --- presets -------------------------------------------------------------
+     Built from this vertical's own catalogue, so the wording and the products
+     are right on all twelve rather than being written for fashion. */
+  function presets() {
+    var cols = Store.collections();
+    var seasonal = inCollection(d.hero_category) .length
+      ? inCollection(d.hero_category) : pool();
+    var out = [];
+
+    var anniv = d.anniversary_months;
+    if (anniv) {
+      out.push({
+        title: 'This time last year',
+        note: 'One purchase, ' + anniv + ' months ago. The anniversary journey ' +
+              'fires before the year is up — the season has come round again, ' +
+              'and this is the thing they bought for it last time.',
+        run: function () { addEntries(seasonal[0], anniv * 30, 1); }
+      });
+    }
+
+    if (repl) {
+      var rep = null;
+      Object.keys(repl).forEach(function (c) {
+        if (c === '_default' || rep) return;
+        var items = inCollection(c);
+        if (items.length) rep = items[0];
+      });
+      rep = rep || pool()[0];
+      var days = daysFor(rep) || 60;
+
+      out.push({
+        title: 'A regular habit',
+        note: 'The same product three times, ' + days + ' days apart. The third ' +
+              'purchase teaches us the interval, so the next reminder is timed ' +
+              'to this person rather than to a shelf-life table.',
+        run: function () { addEntries(rep, days, 3); }
+      });
+
+      out.push({
+        title: 'Due in a few days',
+        note: 'One purchase, timed so the replenishment date lands this week. ' +
+              'Use this one if you want the journey to fire while you watch.',
+        run: function () { addEntries(rep, Math.max(days - 4, 1), 1); }
+      });
+    }
+
+    if (!out.length || true) out.push({
+      title: 'A few things over a year',
+      note: 'Four purchases across different categories, spread over twelve ' +
+            'months. Closest to a real customer, and the best one for looking ' +
+            'at a profile rather than firing a single journey.',
+      run: function () {
+        var picks = cols.slice(0, 4).map(function (c) { return inCollection(c)[0]; })
+                        .filter(Boolean);
+        [300, 200, 110, 40].forEach(function (ago, i) {
+          if (picks[i]) addEntries(picks[i], ago, 1);
+        });
+      }
+    });
+
+    return out;
+  }
+
+  function renderPresets() {
+    var host = document.getElementById('presets');
+    host.innerHTML = '';
+    presets().forEach(function (p) {
+      var el = document.createElement('div');
+      el.className = 'preset';
+      el.innerHTML = '<div><h3>' + p.title + '</h3><p>' + p.note + '</p></div>';
+      var b = document.createElement('button');
+      b.className = 'btn';
+      b.type = 'button';
+      b.textContent = 'Add this';
+      b.addEventListener('click', p.run);
+      el.appendChild(b);
+      host.appendChild(el);
+    });
+  }
+
+  function renderProducts() {
+    var sel = document.getElementById('c-product');
+    sel.innerHTML = '';
+    pool().slice(0, 300).forEach(function (p) {
+      var o = document.createElement('option');
+      o.value = p.id;
+      o.textContent = p.collection + ' — ' + p.name;
+      sel.appendChild(o);
+    });
+  }
+
+  function render() {
+    var hist = Store.purchaseHistory();
+    var host = document.getElementById('result');
+    if (!hist.length) {
+      host.innerHTML = '<p class="note">No purchase history yet.</p>';
+      document.getElementById('whatnext').hidden = true;
+      return;
+    }
+    var rows = hist.slice().sort(function (a, b) { return a.due_at - b.due_at; })
+      .map(function (h) {
+        var soon = h.due_at - Date.now() < 14 * DAY;
+        return '<tr><td>' + h.name + '</td><td>' + (h.category || '') + '</td>' +
+               '<td class="due">' + new Date(h.purchased_at).toDateString() + '</td>' +
+               '<td class="due' + (soon ? ' soon' : '') + '">' +
+               new Date(h.due_at).toDateString() + '</td>' +
+               '<td>' + h.interval_days + 'd' + (h.learned ? ' (learned)' : '') + '</td></tr>';
+      }).join('');
+    host.innerHTML =
+      '<h2 style="font-size:1.0625rem;margin:0">Your history</h2>' +
+      '<table class="hist"><thead><tr><th>Product</th><th>Category</th>' +
+      '<th>Bought</th><th>Due again</th><th>Interval</th></tr></thead><tbody>' +
+      rows + '</tbody></table>';
+    document.getElementById('whatnext').hidden = false;
+  }
+
+  document.getElementById('c-add').addEventListener('click', function () {
+    var id = document.getElementById('c-product').value;
+    var p = Store.byId(String(id));
+    if (!p) return;
+    addEntries(p, parseInt(document.getElementById('c-when').value, 10),
+               parseInt(document.getElementById('c-times').value, 10));
+  });
+
+  document.getElementById('clear').addEventListener('click', function () {
+    localStorage.removeItem('lmn.purchases');
+    send();
+    render();
+  });
+
+  renderPresets();
+  renderProducts();
+  render();
+
+  } catch (e) {
+    if (window.console) console.warn('[history] setup failed:', e);
+  }
+})();
+</script>
+
+</body>
+</html>

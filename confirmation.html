@@ -74,6 +74,38 @@
 
   window.InsiderQueue.push({ type: 'init' });
 
+  /* Append the order to the purchase-history array before the cart is cleared.
+     This is what replenishment is built on: one object per line item, each with
+     its own date and a due date derived from this person's own interval where
+     we have seen the product before.
+
+     Pushed as a user update afterwards so the array and the two flat fields
+     reach the profile in the same visit rather than on the next page load. */
+  if (ORDER && Store.notePurchase) {
+    var hist = Store.notePurchase(ORDER.items);
+    window.InsiderQueue.push({
+      type: 'user',
+      value: Object.assign({}, Store.userPayload(), {
+        purchases: hist.map(function (h) {
+          return {
+            product_id: h.product_id,
+            name: h.name,
+            image: h.image,
+            url: h.url,
+            category: h.category,
+            purchased_at: new Date(h.purchased_at).toISOString().replace(/\.\d+Z$/, 'Z'),
+            due_at: new Date(h.due_at).toISOString().replace(/\.\d+Z$/, 'Z')
+          };
+        })
+      })
+    });
+    if (window.insDebugNote) {
+      var d = Store.nextDue();
+      window.insDebugNote('purchase history: ' + hist.length + ' lines' +
+        (d ? ' · next due ' + d.name + ' on ' + new Date(d.due_at).toDateString() : ''), 'ok');
+    }
+  }
+
   // The purchase payload is queued, so the cart can be emptied safely.
   if (ORDER) Store.clearCart();
 </script>

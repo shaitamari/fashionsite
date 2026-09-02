@@ -789,8 +789,8 @@
       var sandbox = window.ENVIRONMENT_KEY === 'sandbox';
       var here = location.pathname;
       var links = sandbox
-        ? [['about.html', 'Start here'], ['ask.html', 'Ask a question'],
-           ['feedback.html', 'Feedback']]
+        ? [['about.html', 'Start here'], ['history.html', 'Give yourself a past'],
+           ['ask.html', 'Ask a question'], ['feedback.html', 'Feedback']]
         : [['ask.html', 'Ask a question'], ['feedback.html', 'Feedback']];
 
       var wrap = document.createElement('span');

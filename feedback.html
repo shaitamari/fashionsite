@@ -138,6 +138,20 @@
     <textarea id="fb-bad" name="didnt"
       placeholder="Something that looked wrong, or a use case you needed and could not show."></textarea>
 
+    <!-- Sandbox only. Someone exploring alone accumulates questions they never
+         ask, because there is nobody beside them to ask. Catching them here
+         costs one field, and an unanswered question is a better thing to know
+         about than a rating.
+
+         Deliberately not the same as the Ask a question page: that is for
+         someone who wants an answer now. This is for the ones they shrugged
+         off, and it does not promise a reply. -->
+    <div id="fb-questions" hidden>
+      <label for="fb-q">Anything you wanted to ask along the way?</label>
+      <textarea id="fb-q" name="questions"
+        placeholder="Even half-formed ones. If you would like a proper answer, the Ask a question link at the top of every page is quicker."></textarea>
+    </div>
+
     <!-- Identity last, and optional. Asking who you are before asking what
          you think reads as a form to be processed rather than as a question.
 
@@ -224,6 +238,7 @@
   }
 
   if (sandbox) {
+    document.getElementById('fb-questions').hidden = false;
     document.getElementById('fb-rate-q').textContent =
       'How useful was this sandbox for working out whether the platform fits?';
     document.getElementById('fb-good-q').textContent =

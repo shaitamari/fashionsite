@@ -395,6 +395,15 @@
   }
 
   /* --- the Insider product payload ---------------------------------------- */
+  /* Turn a catalogue image path into something that resolves anywhere. Left
+     alone if it is already absolute, so a rehosted or CDN-hosted image passes
+     through untouched. */
+  function absoluteImage(img) {
+    if (!img) return undefined;
+    if (img.indexOf('http') === 0 || img.indexOf('//') === 0) return img;
+    return location.origin + '/' + String(img).replace(/^\//, '');
+  }
+
   function productPayload(p, quantity) {
     if (!p) return null;
     var payload = {
@@ -405,7 +414,22 @@
       unit_price: p.unit_price,
       unit_sale_price: p.unit_sale_price,
       url: p.url,
-      product_image_url: p.image,
+
+      /* ABSOLUTE, ALWAYS. The catalogue stores image paths relative to the
+         site root, which is right for a page — the browser resolves them
+         against the current URL.
+
+         Nothing outside the browser can do that. An email, a web push and an
+         app push all render this value with no page to resolve against, so a
+         relative path is a broken image in every message the platform sends.
+         And because last_visited_product_img is derived from THIS field, the
+         breakage is stored on the profile rather than introduced later, which
+         means fixing it in a template would fix one message and leave the
+         rest wrong.
+
+         The feed already carries absolute URLs; this is the page-view payload,
+         which did not. */
+      product_image_url: absoluteImage(p.image),
       stock: p.stock,
       in_stock: p.in_stock,
       groupcode: p.groupcode,
@@ -537,6 +561,22 @@
            Named properly now. It used to be written into `service_preference`,
            an unrelated attribute repurposed when the account looked full. */
         preferred_store: u.preferred_store || undefined,
+
+        /* Replenishment. The array is the record; these two are what a journey
+           and an onsite campaign can actually read.
+
+           next_due_date anchors the Dynamic Date starter — it fires a few days
+           before, and the message names the product. next_due_product is there
+           so an onsite message can say it too, since onsite personalization
+           cannot read an Array of Objects. */
+        next_due_date: (function () {
+          var d = nextDue();
+          return d ? new Date(d.due_at).toISOString().replace(/\.\d+Z$/, 'Z') : undefined;
+        })(),
+        next_due_product: (function () {
+          var d = nextDue();
+          return d ? d.name : undefined;
+        })(),
         // The store's own account id. An attribute, not an identifier — the
         // uuid above is what Insider matches on, and it must stay stable.
         account_id: u.uuid || undefined
@@ -550,6 +590,122 @@
     Object.keys(views).forEach(function (k) { if (views[k] > top) { top = views[k]; best = k; } });
     return best || 'Makeup';
   }
+  /* --- purchase history, as an Array of Objects ----------------------------
+     One object per line item, appended at checkout. This is the data behind
+     replenishment: the platform can anchor a journey on a datetime key inside
+     an Array of Objects, and Liquid can loop the array to render the items in
+     the message.
+
+     WHY AN ARRAY RATHER THAN FLAT ATTRIBUTES
+
+     `last_purchase_date` is one field per profile. Buy toothpaste and then
+     milk and it holds the milk. An aggregate does not help either — it returns
+     one value per definition, so "last bought in Skincare" is one aggregate
+     per category and does not scale past a handful.
+
+     An array holds every line with its own date, so "when did they last buy
+     this" is answerable per product.
+
+     THE DUE DATE IS COMPUTED FROM THEIR OWN BEHAVIOUR WHERE POSSIBLE.
+
+     On the second purchase of the same product we know the interval that
+     person actually keeps, which beats any table of shelf lives — a household
+     of five gets through shampoo faster than one person, and only their own
+     history knows that. The configured interval is the fallback for a first
+     purchase, and it is per collection because mascara and fragrance are not
+     on the same clock. */
+  function replenishmentDays(product) {
+    var map = (window.VERTICAL || {}).replenishment_days;
+    if (!map) return 0;
+    return map[product.collection] || map._default || 0;
+  }
+
+  function purchaseHistory() { return read('lmn.purchases', []); }
+
+  function notePurchase(items) {
+    if (!items || !items.length) return purchaseHistory();
+    var hist = purchaseHistory();
+    var now = Date.now();
+
+    items.forEach(function (line) {
+      var p = line.product || line;
+      if (!p || !p.id) return;
+
+      /* Record the purchase EVERYWHERE. Two different journeys read this and
+         they need different things:
+
+         REPLENISHMENT needs an interval — buy it again in about six weeks.
+         Only some verticals have one: beauty, supermarket, anything
+         consumable.
+
+         ANNIVERSARY needs only the date. "You bought a swimsuit last May, and
+         it is May again" works on fashion, luxury, hotels and airlines, none
+         of which have a replenishment cycle at all. Insurance renewal is the
+         same shape on a twelve-month clock.
+
+         So an absent interval means no due date, not no record. */
+      var days = replenishmentDays(p);
+
+      /* Their own interval, if we have seen this product before. Averaged over
+         everything we have, so one holiday-driven early rebuy cannot skew it. */
+      var previous = hist.filter(function (h) { return h.groupcode === p.groupcode; })
+                         .map(function (h) { return h.purchased_at; })
+                         .sort();
+      if (previous.length) {
+        var gaps = [];
+        var all = previous.concat([now]);
+        for (var i = 1; i < all.length; i++) {
+          gaps.push((all[i] - all[i - 1]) / 86400000);
+        }
+        var mean = gaps.reduce(function (a, b) { return a + b; }, 0) / gaps.length;
+        if (mean > 3 && mean < 400) days = Math.round(mean);
+      }
+
+      var entry = {
+        product_id: String(p.id),
+        groupcode: p.groupcode || String(p.id),
+        name: p.name,
+        image: absoluteImage(p.image),
+        url: p.url || localHref(p),
+        category: p.collection,
+        purchased_at: now
+      };
+      if (days) {
+        entry.due_at = now + days * 86400000;
+        entry.interval_days = days;
+        entry.learned = previous.length > 0;
+      }
+      hist.push(entry);
+    });
+
+    /* Keep it bounded. Arrays of Objects have a size limit and two years of
+       weekly grocery shopping would breach it; the recent history is what the
+       intervals are computed from anyway. */
+    hist = hist.slice(-60);
+    write('lmn.purchases', hist);
+    return hist;
+  }
+
+  /* The soonest thing due, as flat values. The array anchors the journey and
+     renders the message, but onsite personalization reads default and custom
+     attributes only — so anything the site or an onsite campaign needs has to
+     be flat as well. */
+  function nextDue() {
+    var hist = purchaseHistory();
+    if (!hist.length) return null;
+    var seen = {}, best = null;
+    // Latest purchase per product wins; an older line is already superseded.
+    hist.forEach(function (h) {
+      var cur = seen[h.groupcode];
+      if (!cur || h.purchased_at > cur.purchased_at) seen[h.groupcode] = h;
+    });
+    Object.keys(seen).forEach(function (g) {
+      if (!seen[g].due_at) return;             // anniversary-only, nothing due
+      if (!best || seen[g].due_at < best.due_at) best = seen[g];
+    });
+    return best;
+  }
+
   /* --- session counters ----------------------------------------------------
      The site counts what the site does. A campaign rule then only reads.
 
@@ -916,6 +1072,7 @@
     currentUser: currentUser, signIn: signIn, signOut: signOut, userPayload: userPayload,
     noteCategoryView: noteCategoryView, preferredCategory: preferredCategory,
     noteProductView: noteProductView, sessionStats: sessionStats,
+    notePurchase: notePurchase, purchaseHistory: purchaseHistory, nextDue: nextDue,
     toggleWish: toggleWish, isWished: isWished,
     card: card, grid: grid, paintChrome: paintChrome,
     variantsOf: variantsOf, variantFacets: variantFacets, swatchHex: swatchHex,

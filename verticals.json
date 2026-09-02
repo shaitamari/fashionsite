@@ -287,6 +287,14 @@
     "showcase": {
       "search": "balm",
       "product": "48440263049461"
+    },
+    "replenishment_days": {
+      "Makeup": 90,
+      "Skincare": 60,
+      "Balms": 45,
+      "Fragrance": 180,
+      "Body": 45,
+      "_default": 75
     }
   },
   "_template": {
@@ -473,7 +481,8 @@
     "showcase": {
       "search": "kyoto",
       "product": "48100000000001"
-    }
+    },
+    "anniversary_months": 11
   },
   "airlines": {
     "vertical": "Travel",
@@ -582,7 +591,8 @@
     "showcase": {
       "search": "tokyo",
       "product": "48200000000001"
-    }
+    },
+    "anniversary_months": 11
   },
   "_environments": {
     "_README": [
@@ -864,7 +874,8 @@
     "showcase": {
       "search": "travel",
       "product": "48400000000001"
-    }
+    },
+    "anniversary_months": 11
   },
   "fintech": {
     "vertical": "Banking",
@@ -1138,7 +1149,8 @@
     "showcase": {
       "search": "burgundy",
       "product": "55693210845352"
-    }
+    },
+    "anniversary_months": 11
   },
   "electronics": {
     "vertical": "Retail",
@@ -1735,7 +1747,8 @@
     "showcase": {
       "search": "tote",
       "product": "49508261069038"
-    }
+    },
+    "anniversary_months": 11
   },
   "supermarket": {
     "vertical": "Retail",
@@ -1853,6 +1866,9 @@
     "showcase": {
       "search": "olive",
       "product": "40954224476218"
+    },
+    "replenishment_days": {
+      "_default": 14
     }
   }
 }
