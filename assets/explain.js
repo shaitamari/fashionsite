@@ -193,6 +193,10 @@
       'color:var(--accent,#333);text-decoration:none;border-bottom:1px solid currentColor;' +
       'padding-bottom:1px}';
 
+  /* Exposed so other pages can link straight to the dare rather than asking
+     someone to retype it. The guide uses this. */
+  window.Explain = { dare: dareFor };
+
   document.addEventListener('DOMContentLoaded', function () {
     if ((window.SITE_CONFIG || {}).dares === false) return;
     var d = dareFor();

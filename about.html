@@ -15,6 +15,15 @@
 .doc p, .doc li { font-size: .9375rem; line-height: 1.7 }
 .lede { font-size: 1.0625rem; line-height: 1.65 }
 
+.group { margin: 3rem 0 0 }
+.group__h {
+  margin: 0 0 .4rem;
+  font-family: 'Fraunces', Georgia, serif; font-weight: 400;
+  font-size: 1.375rem; line-height: 1.2; color: var(--ink);
+}
+.group__lede { margin: 0; font-size: .9375rem; line-height: 1.6; color: var(--muted) }
+.group + .act { border-top: 0; padding-top: 1.25rem }
+
 .act { margin: 2.25rem 0 0; padding-top: 1.75rem; border-top: 1px solid var(--rule) }
 .act:first-of-type { border-top: 0; padding-top: 0 }
 .act__no {
@@ -53,6 +62,7 @@
 <script src="assets/insider-debug.js"></script>
 <script src="assets/vertical.js"></script>
 <script src="assets/store.js"></script>
+<script src="assets/explain.js"></script>
 <script src="assets/agent.js"></script>
 <script>
   window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });
@@ -95,8 +105,13 @@
 
   <p class="lede" id="intro"></p>
 
+  <section class="group">
+    <h2 class="group__h">Before they tell you anything</h2>
+    <p class="group__lede">Most of your traffic is anonymous and most of it leaves that way. What a platform can do here — before a login, before an email address — is the difference between personalization and a loyalty programme.</p>
+  </section>
+
   <section class="act">
-    <p class="act__no">One <span class="act__time">· one minute</span></p>
+    <p class="act__no">One</p>
     <h2>Arrive the way a customer would</h2>
 
     <div class="do">
@@ -117,10 +132,11 @@
   </section>
 
   <section class="act">
-    <p class="act__no">Two <span class="act__time">· two minutes</span></p>
+    <p class="act__no">Two</p>
     <h2>Search for a colour, not a product</h2>
     <div class="do">
-      <p>Then open a collection and use the filters.</p>
+      <p>Then open <a id="go-collection" href="category.html">a collection</a>
+        and use the filters.</p>
       <p class="go">Or start here: <a id="go-search" href="#"></a></p>
     </div>
     <p class="hint">Count the results. There are fewer than you expect.</p>
@@ -133,10 +149,10 @@
   </section>
 
   <section class="act">
-    <p class="act__no">Three <span class="act__time">· three minutes</span></p>
+    <p class="act__no">Three</p>
     <h2>Browse a few things, then abandon a basket</h2>
     <div class="do">
-      <p>Open <b id="fy-name">Just for you</b> in the nav afterwards.</p>
+      <p>Open <a href="foryou.html" id="fy-name">Just for you</a> afterwards.</p>
     </div>
     <p class="go">Or jump straight to a page with good ones:
       <a id="go-product" href="#">this product</a></p>
@@ -153,27 +169,7 @@
   </section>
 
   <section class="act">
-    <p class="act__no">Four <span class="act__time">· four minutes</span></p>
-    <h2>Book something, then buy something</h2>
-    <div class="do">
-      <p>Use <b id="flow-name">the services link</b> in the header. Then check
-      out — the basket from act three is still there.</p>
-      <p>Now open <b>User Profiles</b> in your panel and find yourself.</p>
-    </div>
-    <p class="hint">One of the attributes on your profile was never typed by
-    anyone.</p>
-    <details class="how">
-      <summary>How we did it</summary>
-      <p>The booking writes a durable attribute rather than only an event.
-      Preferred category is derived from what you browsed in act three. Revenue
-      and line items land a minute or so after checkout.</p>
-      <p>The session you started as a stranger is attached to the person you
-      became. That join is the part worth checking.</p>
-    </details>
-  </section>
-
-  <section class="act">
-    <p class="act__no">Five</p>
+    <p class="act__no">Four</p>
     <h2>Put the same thing in your basket twice</h2>
 
     <div class="do">
@@ -193,7 +189,7 @@
   </section>
 
   <section class="act">
-    <p class="act__no">Six</p>
+    <p class="act__no">Five</p>
     <h2>Look at several things and add none of them</h2>
 
     <div class="do">
@@ -212,12 +208,39 @@
     </details>
   </section>
 
+  <section class="group">
+    <h2 class="group__h">The moment they become someone</h2>
+    <p class="group__lede">One thing given, and it should follow them everywhere — every page, every channel, every later decision. This is where most integrations lose the thread.</p>
+  </section>
+
+  <section class="act">
+    <p class="act__no">Six</p>
+    <h2>Book something, then buy something</h2>
+    <div class="do">
+      <p>Use <a href="flow.html" id="flow-name">the services link</a> in the
+      header. Then <a href="cart.html">check out</a> — the basket from act three
+      is still there.</p>
+      <p>Now open <b>User Profiles</b> in your panel and find yourself.</p>
+    </div>
+    <p class="hint">One of the attributes on your profile was never typed by
+    anyone.</p>
+    <details class="how">
+      <summary>How we did it</summary>
+      <p>The booking writes a durable attribute rather than only an event.
+      Preferred category is derived from what you browsed in act three. Revenue
+      and line items land a minute or so after checkout.</p>
+      <p>The session you started as a stranger is attached to the person you
+      became. That join is the part worth checking.</p>
+    </details>
+  </section>
+
   <section class="act">
     <p class="act__no">Seven</p>
     <h2>Sign in and give yourself a tier</h2>
 
     <div class="do">
-      <p>Open the account page, set your membership to Gold, save. Then look at
+      <p>Open the <a href="account.html">account page</a>, set your membership
+      to Gold, save. Then look at
       the top of any page.</p>
     </div>
     <p class="hint">It follows you around.</p>
@@ -233,6 +256,11 @@
       programme. Change the table and every campaign that quotes it updates,
       rather than someone re-editing twelve of them.</p>
     </details>
+  </section>
+
+  <section class="group">
+    <h2 class="group__h">After they have gone</h2>
+    <p class="group__lede">The session ends; the relationship does not. What happens next is built from what they did, sent on the channel they respond to, and timed to them rather than to a schedule.</p>
   </section>
 
   <section class="act">
@@ -322,7 +350,8 @@
 
   <div class="ends">
     <h2>Two more things</h2>
-    <p>The line under the search box is a dare — take it. And the pill in the
+    <p>The line under the search box is <a id="go-dare" href="#">a dare</a> —
+    take it. And the pill in the
     bottom right opens a console showing every payload as it leaves the browser,
     so you can check our work rather than take it on trust.</p>
 
@@ -458,6 +487,25 @@
 
   var fy = d.foryou_title;
   if (fy) document.getElementById('fy-name').textContent = fy;
+
+  /* Link the collection instruction at this vertical's own hero category
+     rather than at a bare category page with nothing selected. */
+  var gc = document.getElementById('go-collection');
+  if (gc && d.hero_category) {
+    gc.href = 'category.html?c=' + encodeURIComponent(d.hero_category);
+    gc.textContent = d.hero_category;
+  }
+
+  /* The dare under the search box is defined per vertical in explain.js, so
+     read it from there rather than parsing the chip text out of the masthead.
+     Taking the dare should be one click, not a retype. */
+  var gd = document.getElementById('go-dare');
+  if (gd) {
+    var q = (window.Explain && window.Explain.dare && window.Explain.dare().q) || '';
+    if (q) gd.href = 'search.html?q=' + encodeURIComponent(q);
+    else gd.removeAttribute('href');
+  }
+
   var flow = (d.flow || {}).title;
   var fl = document.getElementById('flow-name');
   if (flow && fl) fl.textContent = '“' + flow + '”';
