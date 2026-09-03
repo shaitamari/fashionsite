@@ -73,7 +73,12 @@
 
   var CHANNELS = {
     beauty:      null,     // Lumen
-    fashion:     null,     // Ashford Lane
+    /* Ashford Lane. The only vertical with a live channel, and deliberately
+       not DEFAULT: the assistant is trained on one catalogue, so pointing it
+       at Wayfarer or Northbank would produce confident answers about the wrong
+       shop. Worse than no agent. Each vertical gets its own id when it gets
+       its own assistant. */
+    fashion:     '6a99de97f901f0237d1ec0ab',   // Ashford Lane
     electronics: null,     // Kestrel
     home:        null,     // Aldgate
     luxury:      null,     // Beaumont Vale
