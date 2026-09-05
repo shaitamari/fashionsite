@@ -208,7 +208,17 @@
      indistinguishable to a journey. */
   function addEntries(product, daysAgo, times) {
     var hist = Store.purchaseHistory();
-    var base = daysFor(product) || 90;
+
+    /* No fallback interval. A vertical with no replenishment_days has no
+       replenishment cycle, and inventing a 90-day one put a "Due again" date
+       against a dress — which is exactly the claim the anniversary story is
+       built on NOT making. Nobody rebuys a dress in three months.
+
+       base is only used to space repeat purchases apart, so where there is no
+       interval it falls back to a spacing value that is never written to the
+       record. */
+    var configured = daysFor(product);
+    var base = configured || 90;
     var stamps = [];
     for (var i = times - 1; i >= 0; i--) {
       stamps.push(Date.now() - (daysAgo + i * base) * DAY);
@@ -223,7 +233,7 @@
         var mean = gaps.reduce(function (a, b) { return a + b; }, 0) / gaps.length;
         if (mean > 3 && mean < 400) days = Math.round(mean);
       }
-      hist.push({
+      var entry = {
         product_id: String(product.id),
         groupcode: product.groupcode || String(product.id),
         name: product.name,
@@ -234,11 +244,15 @@
         url: product.url || ('product.html?id=' + product.id),
         category: product.collection,
         purchased_at: ts,
-        due_at: ts + days * DAY,
-        interval_days: days,
-        learned: prev.length > 0,
         seeded: true
-      });
+      };
+      /* Only where the vertical actually has a replenishment cycle. */
+      if (configured) {
+        entry.due_at = ts + days * DAY;
+        entry.interval_days = days;
+        entry.learned = prev.length > 0;
+      }
+      hist.push(entry);
     });
     hist.sort(function (a, b) { return a.purchased_at - b.purchased_at; });
     localStorage.setItem('lmn.purchases', JSON.stringify(hist.slice(-60)));
@@ -411,21 +425,34 @@
       document.getElementById('whatnext').hidden = true;
       return;
     }
-    var rows = hist.slice().sort(function (a, b) { return a.due_at - b.due_at; })
+    /* Only show the replenishment columns where this vertical has a cycle.
+       On fashion every row would read blank, which looks like missing data
+       rather than the deliberate absence it is. */
+    var replen = hist.some(function (h) { return !!h.due_at; });
+
+    var rows = hist.slice()
+      .sort(function (a, b) { return (a.due_at || a.purchased_at) - (b.due_at || b.purchased_at); })
       .map(function (h) {
-        var soon = h.due_at - Date.now() < 14 * DAY;
-        return '<tr><td>' + h.name + '</td><td>' + (h.category || '') + '</td>' +
-               '<td class="due">' + new Date(h.purchased_at).toDateString() + '</td>' +
-               '<td class="due' + (soon ? ' soon' : '') + '">' +
-               new Date(h.due_at).toDateString() + '</td>' +
-               '<td>' + h.interval_days + 'd' + (h.learned ? ' (learned)' : '') + '</td></tr>';
+        var cells =
+          '<td>' + h.name + '</td>' +
+          '<td>' + (h.category || '') + '</td>' +
+          '<td class="due">' + new Date(h.purchased_at).toDateString() + '</td>';
+        if (replen) {
+          var soon = h.due_at && (h.due_at - Date.now() < 14 * DAY);
+          cells += '<td class="due' + (soon ? ' soon' : '') + '">' +
+                   (h.due_at ? new Date(h.due_at).toDateString() : '\u2014') + '</td>' +
+                   '<td>' + (h.interval_days ? h.interval_days + 'd' : '\u2014') +
+                   (h.learned ? ' (learned)' : '') + '</td>';
+        }
+        return '<tr>' + cells + '</tr>';
       }).join('');
+
     host.innerHTML =
       '<h2 style="font-size:1.0625rem;margin:0">Your history \u2014 ' +
       hist.length + (hist.length === 1 ? ' purchase' : ' purchases') + '</h2>' +
       '<table class="hist"><thead><tr><th>Product</th><th>Category</th>' +
-      '<th>Bought</th><th>Due again</th><th>Interval</th></tr></thead><tbody>' +
-      rows + '</tbody></table>';
+      '<th>Bought</th>' + (replen ? '<th>Due again</th><th>Interval</th>' : '') +
+      '</tr></thead><tbody>' + rows + '</tbody></table>';
     document.getElementById('whatnext').hidden = false;
   }
 
