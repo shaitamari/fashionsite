@@ -344,12 +344,55 @@
       b.type = 'button';
       b.textContent = sizeLabel(sib, showColour);
       b.setAttribute('aria-pressed', String(sib.id === PRODUCT.id));
+
+      /* OUT OF STOCK, PER VARIANT.
+
+         The catalogue already carries stock per record — each size is its own
+         item with its own availability, straight from the source feed. The
+         page simply had not been showing it, so every size looked buyable and
+         a shopper only found out at the basket.
+
+         This matters beyond tidiness. Back in Stock matches a user's product
+         view against a catalogue item going from 0 to 1, keyed on the product
+         id. If a site keeps one id across every size, the platform records
+         every view against the parent and cannot tell which size someone
+         wanted — which is why variant-level Back in Stock does not work on
+         most Shopify storefronts (IDEA-8429).
+
+         Here each size is its own id and its own record, so the view is
+         recorded against the exact variant. Marking it unavailable is what
+         makes that view mean "I wanted this one and could not have it". */
+      if (!sib.in_stock) {
+        b.classList.add('shade--out');
+        b.setAttribute('aria-disabled', 'true');
+        b.title = 'Out of stock';
+      }
+
       b.addEventListener('click', function () {
         if (sib.id !== PRODUCT.id) location.href = Store.localHref(sib);
       });
       host.appendChild(b);
     });
   }
+
+  /* Say it plainly under the sizes, and stop the basket accepting something
+     that is not there. A shopper who adds an out-of-stock size and finds out
+     at checkout is the experience this whole use case exists to fix. */
+  (function stockState() {
+    var line = document.getElementById('p-stockline');
+    var add = document.getElementById('add-btn');
+    if (PRODUCT.in_stock) return;
+    if (line) {
+      line.textContent = 'Out of stock in this size';
+      line.style.color = 'var(--accent)';
+    }
+    if (add) {
+      add.disabled = true;
+      add.textContent = 'Out of stock';
+      add.style.opacity = '.5';
+      add.style.cursor = 'not-allowed';
+    }
+  })();
 
   var qty = 1;
   var qval = document.getElementById('q-val');
@@ -372,7 +415,49 @@
     // add_to_cart does NOT need an init afterwards.
     window.InsiderQueue.push({ type: 'add_to_cart', value: payload });
     say('add_to_cart sent · variant ' + PRODUCT.id + ' ×' + qty);
+    offerTheDare();
   });
+
+  /* --- the dare ------------------------------------------------------------
+     Once something is in the basket, invite the visitor to add the same style
+     in a second size. There is a cart campaign waiting for exactly that, and
+     without a nudge nobody stumbles into it.
+
+     DELIBERATELY SITE-SIDE, and not a campaign. A rule that encourages someone
+     to order two sizes is not something a retailer would ever ship — it exists
+     to set up the next beat. Dressing stagecraft as product is the one thing
+     this estate does not do. The cart message that follows IS a campaign, and
+     is a real merchandising decision; this is the shop showing you where to
+     look, in the same voice as the search dare under the masthead. */
+  function offerTheDare() {
+    if (document.getElementById('pdp-dare')) return;
+
+    // Only when this style has another size to add, and only while the basket
+    // does not already hold one.
+    var siblings = (Store.catalog || []).filter(function (p) {
+      return p.groupcode === PRODUCT.groupcode && p.id !== PRODUCT.id && p.size;
+    });
+    if (!siblings.length) return;
+
+    var inCart = {};
+    (JSON.parse(localStorage.getItem('lmn.cart') || '[]')).forEach(function (l) {
+      var p = Store.byId(String(l.id));
+      if (p && p.groupcode === PRODUCT.groupcode) inCart[p.size] = true;
+    });
+    if (Object.keys(inCart).length > 1) return;   // the dare has been taken
+
+    var other = siblings.filter(function (p) { return !inCart[p.size]; })[0];
+    if (!other) return;
+
+    var el = document.createElement('p');
+    el.id = 'pdp-dare';
+    el.className = 'source';
+    el.style.cssText = 'margin-top:.9rem;font-style:italic';
+    el.innerHTML = 'Torn between sizes? Add the ' + other.size +
+      ' as well, then look at your basket. <a href="product.html?id=' +
+      encodeURIComponent(other.id) + '">We dare you.</a>';
+    msg.parentNode.insertBefore(el, msg.nextSibling);
+  }
 
   var wishBtn = document.getElementById('wish-btn');
   function paintWish() { wishBtn.textContent = Store.isWished(PRODUCT.id) ? 'Saved' : 'Save for later'; }

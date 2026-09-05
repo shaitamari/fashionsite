@@ -399,3 +399,15 @@ main { padding-bottom: 5rem; }
 .loy__tier { color: var(--ink); font-weight: 500 }
 .loy__sep { opacity: .45 }
 @media (max-width: 860px) { .loy { display: none } }
+
+
+/* --- out-of-stock size chip ----------------------------------------------
+   Struck through rather than hidden. A missing size tells a shopper nothing;
+   a struck-through one tells them it exists and is gone, which is the whole
+   premise of a back-in-stock notification. */
+.shade--out {
+  opacity: .45;
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+}
+.shade--out:hover { opacity: .6 }
