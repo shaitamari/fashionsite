@@ -73,6 +73,70 @@
     window.insider_object.basket.currency = currency;
   }
 
+  /* --- the wishlist, on every page ----------------------------------------
+     Wishlist does not work like a custom event. The platform reads the FULL
+     wishlist from insider_object on every page load — the same shape as the
+     basket — and works out for itself what was added. A custom event named
+     product_wishlisted fires happily and matches none of the four native
+     wishlist journey templates, because they all listen for the default
+     item_added_to_wishlist.
+
+     Sending it on every page rather than only when something is saved is
+     deliberate and is what the integration guidance calls for: Price Drop and
+     Back in Stock both need to know what is currently on the list, not what
+     was added during this visit. A shopper who saved a dress last week and has
+     not touched the wishlist since must still be reachable when it comes back
+     into stock.
+
+     Each entry is a full variant — its own id, its own stock. That is what
+     makes Back in Stock size-specific here rather than style-specific. */
+  function paintWishlist() {
+    try {
+      if (!window.Store || !Store.wishlist) return;
+      var items = Store.wishlist();
+      if (!items.length) return;
+      window.insider_object.wishlist = {
+        currency: currency,
+        line_items: items.map(function (p) {
+          return {
+            product: {
+              id: String(p.id),
+              name: p.name,
+              taxonomy: p.taxonomy,
+              currency: currency,
+              unit_price: p.unit_price,
+              unit_sale_price: p.unit_sale_price,
+              url: p.url,
+              product_image_url: p.image,
+              groupcode: p.groupcode,
+              stock: p.stock,
+              in_stock: p.in_stock,
+              size: p.size,
+              color: p.color,
+              quantity: 1
+            },
+            quantity: 1
+          };
+        })
+      };
+      if (window.insDebugNote) {
+        window.insDebugNote('wishlist on object: ' + items.length + ' item' +
+          (items.length === 1 ? '' : 's'), 'ok');
+      }
+    } catch (e) {
+      if (window.console) console.warn('[io-shim] wishlist failed:', e);
+    }
+  }
+
+  /* store.js may load after this file, so try now and again once it has. */
+  paintWishlist();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', paintWishlist);
+  } else {
+    setTimeout(paintWishlist, 0);
+  }
+  window.insPaintWishlist = paintWishlist;
+
   if (window.insDebugNote) {
     window.insDebugNote('insider_object seeded: ' + locale + ' / ' + currency, 'ok');
   }

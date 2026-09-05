@@ -577,6 +577,25 @@
           var d = nextDue();
           return d ? d.name : undefined;
         })(),
+
+        /* Anniversary, flattened. See anniversaryPick above for why these are
+           four separate attributes rather than a read into the array. */
+        anniversary_date: (function () {
+          var a = anniversaryPick();
+          if (!a) return undefined;
+          var months = (window.VERTICAL || {}).anniversary_months || 11;
+          var when = a.purchased_at + months * 30 * 86400000;
+          return new Date(when).toISOString().replace(/\.\d+Z$/, 'Z');
+        })(),
+        anniversary_product: (function () {
+          var a = anniversaryPick(); return a ? a.name : undefined;
+        })(),
+        anniversary_image: (function () {
+          var a = anniversaryPick(); return a ? a.image : undefined;
+        })(),
+        anniversary_url: (function () {
+          var a = anniversaryPick(); return a ? a.url : undefined;
+        })(),
         // The store's own account id. An attribute, not an identifier — the
         // uuid above is what Insider matches on, and it must stay stable.
         account_id: u.uuid || undefined
@@ -706,6 +725,42 @@
     return best;
   }
 
+  /* --- the anniversary pick ------------------------------------------------
+     Flattened deliberately.
+
+     The purchases array is the right data structure and it stays in the
+     browser. What the platform gets is four ordinary attributes, because the
+     legacy insider_object path does not carry an Array of Objects — the SDK
+     drops shapes it does not recognise, client-side, before anything is sent.
+     Web SDK ingestion would carry it; that is switched off on this account.
+
+     So: array here, four flat fields there. A journey can anchor on the date
+     and an email can name and picture the product, which is everything the
+     anniversary beat needs. When inioa is enabled the array becomes the source
+     and these four can go.
+
+     WHICH PURCHASE. The oldest one whose anniversary has not yet passed —
+     that is the next occasion coming round, which is what the journey should
+     fire on. Falls back to the oldest purchase outright so a profile whose
+     anniversaries have all gone by still has something to show. */
+  function anniversaryPick() {
+    var months = (window.VERTICAL || {}).anniversary_months;
+    if (!months) return null;
+    var hist = purchaseHistory();
+    if (!hist.length) return null;
+
+    var now = Date.now();
+    var lead = months * 30 * 86400000;
+    var upcoming = hist.filter(function (h) {
+      return (h.purchased_at + lead) > now;
+    });
+    var pool = upcoming.length ? upcoming : hist;
+
+    return pool.slice().sort(function (a, b) {
+      return a.purchased_at - b.purchased_at;
+    })[0];
+  }
+
   /* --- session counters ----------------------------------------------------
      The site counts what the site does. A campaign rule then only reads.
 
@@ -779,6 +834,14 @@
     return list.indexOf(String(id)) > -1;
   }
   function isWished(id) { return read(KEY.wish, []).indexOf(String(id)) > -1; }
+
+  /* The saved items as full catalogue records, for insider_object.wishlist.
+     Ids that no longer resolve are dropped rather than sent as holes. */
+  function wishlist() {
+    return read(KEY.wish, [])
+      .map(function (id) { return byId(String(id)); })
+      .filter(Boolean);
+  }
 
   /* --- shared chrome ------------------------------------------------------ */
   function paintChrome() {
@@ -1073,7 +1136,8 @@
     noteCategoryView: noteCategoryView, preferredCategory: preferredCategory,
     noteProductView: noteProductView, sessionStats: sessionStats,
     notePurchase: notePurchase, purchaseHistory: purchaseHistory, nextDue: nextDue,
-    toggleWish: toggleWish, isWished: isWished,
+    anniversaryPick: anniversaryPick,
+    toggleWish: toggleWish, isWished: isWished, wishlist: wishlist,
     card: card, grid: grid, paintChrome: paintChrome,
     variantsOf: variantsOf, variantFacets: variantFacets, swatchHex: swatchHex,
     colourways: colourways
