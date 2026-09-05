@@ -466,12 +466,56 @@
     var added = Store.toggleWish(PRODUCT.id);
     paintWish();
     if (!added) return;
+
+    /* THE DEFAULT EVENT, NOT A CUSTOM ONE.
+
+       This used to fire a custom event called product_wishlisted, which is
+       fine for segmentation and useless for everything else: the four native
+       wishlist journey templates — Wishlist Reminder, Price Drop, Back in
+       Stock, and Cross-sell — all listen for the DEFAULT event
+       item_added_to_wishlist. A custom event with a similar name matches none
+       of them, silently.
+
+       Back in Stock is the one that matters here. It targets users who viewed
+       an out-of-stock product or wishlisted it, matched on product id. Because
+       every size on this estate is its own catalogue record with its own id,
+       wishlisting the AU 10 records that exact variant — so when the AU 10
+       comes back, the notification is about the AU 10 rather than about the
+       style. Most sites cannot do that: they keep one id across every size, so
+       the platform never learns which one the shopper wanted. */
+    var line = {
+      product: {
+        id: String(PRODUCT.id),
+        name: PRODUCT.name,
+        taxonomy: PRODUCT.taxonomy,
+        currency: Store.currency(),
+        unit_price: PRODUCT.unit_price,
+        unit_sale_price: PRODUCT.unit_sale_price,
+        url: PRODUCT.url || Store.localHref(PRODUCT),
+        product_image_url: PRODUCT.image,
+        groupcode: PRODUCT.groupcode,
+        stock: PRODUCT.stock,
+        in_stock: PRODUCT.in_stock,
+        size: PRODUCT.size,
+        color: PRODUCT.color,
+        quantity: 1
+      },
+      quantity: 1
+    };
+
+    window.InsiderQueue.push({ type: 'wishlist', value: { line_items: [line] } });
+
+    /* Kept alongside, because the custom event is already used in segments and
+       removing it would break them. The default event is what the journeys
+       need; the custom one costs nothing. */
     window.InsiderQueue.push({
       type: 'custom_event',
       value: [{ event_name: 'product_wishlisted',
                 event_parameters: { custom: { product_id: PRODUCT.id, product_name: PRODUCT.name } } }]
     });
-    say('custom_event product_wishlisted sent');
+
+    say('wishlist push sent \u00b7 variant ' + PRODUCT.id +
+        (PRODUCT.in_stock ? '' : ' \u00b7 out of stock'));
   });
 
   document.getElementById('size-btn').addEventListener('click', function () {
