@@ -246,22 +246,43 @@
     render();
   }
 
-  /* Push the array and the flat fields, exactly as confirmation.html does. */
+
+  /* Build the purchases array in the shape the platform stores.
+
+     CUSTOM ATTRIBUTES GO INSIDE `custom`. Putting the array at the top level
+     of the user payload alongside uuid and language means the platform does
+     not recognise it as an attribute at all — and drops it silently on a 200,
+     which is how this went unnoticed. Only default attributes live at the top
+     level.
+
+     Entries with no due_at are skipped rather than sent as null: fashion has
+     no replenishment interval, so anniversary-only records carry a purchase
+     date and nothing else, and a null against a Date key is the other common
+     way a value gets dropped without complaint. */
+  function purchasesPayload(hist) {
+    return hist.map(function (h) {
+      var o = {
+        product_id: h.product_id,
+        name: h.name,
+        image: h.image,
+        url: h.url,
+        category: h.category,
+        purchased_at: new Date(h.purchased_at).toISOString().replace(/\.\d+Z$/, 'Z')
+      };
+      if (h.due_at) {
+        o.due_at = new Date(h.due_at).toISOString().replace(/\.\d+Z$/, 'Z');
+      }
+      return o;
+    });
+  }
+
+  /* Push the array, exactly as confirmation.html does. */
   function send() {
     var hist = Store.purchaseHistory();
-    window.InsiderQueue.push({
-      type: 'user',
-      value: Object.assign({}, Store.userPayload(), {
-        purchases: hist.map(function (h) {
-          return {
-            product_id: h.product_id, name: h.name, image: h.image, url: h.url,
-            category: h.category,
-            purchased_at: new Date(h.purchased_at).toISOString().replace(/\.\d+Z$/, 'Z'),
-            due_at: new Date(h.due_at).toISOString().replace(/\.\d+Z$/, 'Z')
-          };
-        })
-      })
-    });
+    var payload = Store.userPayload();
+    payload.custom = payload.custom || {};
+    payload.custom.purchases = purchasesPayload(hist);
+    window.InsiderQueue.push({ type: 'user', value: payload });
     if (window.insDebugNote) {
       window.insDebugNote('purchase history seeded: ' + hist.length + ' lines', 'ok');
     }
@@ -341,7 +362,31 @@
       b.className = 'btn';
       b.type = 'button';
       b.textContent = 'Add this';
-      b.addEventListener('click', p.run);
+      /* Confirm on the button itself, and scroll the result into view.
+
+         Without this the button looks broken: the history table is below the
+         fold, so a click writes eight entries and the visitor sees nothing
+         move. They click again. And again. Somebody ended up with three
+         copies of last year's purchase before noticing.
+
+         The button also disables itself briefly, which stops a double click
+         landing twice while the write is in flight. */
+      b.addEventListener('click', function () {
+        b.disabled = true;
+        var was = b.textContent;
+        try { p.run(); } catch (e) {
+          if (window.console) console.warn('[history] preset failed:', e);
+        }
+        b.textContent = 'Added \u2713';
+        var res = document.getElementById('result');
+        if (res && res.scrollIntoView) {
+          res.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        setTimeout(function () {
+          b.textContent = was;
+          b.disabled = false;
+        }, 1800);
+      });
       el.appendChild(b);
       host.appendChild(el);
     });
@@ -376,7 +421,8 @@
                '<td>' + h.interval_days + 'd' + (h.learned ? ' (learned)' : '') + '</td></tr>';
       }).join('');
     host.innerHTML =
-      '<h2 style="font-size:1.0625rem;margin:0">Your history</h2>' +
+      '<h2 style="font-size:1.0625rem;margin:0">Your history \u2014 ' +
+      hist.length + (hist.length === 1 ? ' purchase' : ' purchases') + '</h2>' +
       '<table class="hist"><thead><tr><th>Product</th><th>Category</th>' +
       '<th>Bought</th><th>Due again</th><th>Interval</th></tr></thead><tbody>' +
       rows + '</tbody></table>';
@@ -384,11 +430,20 @@
   }
 
   document.getElementById('c-add').addEventListener('click', function () {
+    var btn = this;
     var id = document.getElementById('c-product').value;
     var p = Store.byId(String(id));
     if (!p) return;
+    btn.disabled = true;
+    var was = btn.textContent;
     addEntries(p, parseInt(document.getElementById('c-when').value, 10),
                parseInt(document.getElementById('c-times').value, 10));
+    btn.textContent = 'Added \u2713';
+    var res = document.getElementById('result');
+    if (res && res.scrollIntoView) {
+      res.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    setTimeout(function () { btn.textContent = was; btn.disabled = false; }, 1800);
   });
 
   document.getElementById('clear').addEventListener('click', function () {

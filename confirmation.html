@@ -83,22 +83,31 @@
      reach the profile in the same visit rather than on the next page load. */
   if (ORDER && Store.notePurchase) {
     var hist = Store.notePurchase(ORDER.items);
-    window.InsiderQueue.push({
-      type: 'user',
-      value: Object.assign({}, Store.userPayload(), {
-        purchases: hist.map(function (h) {
-          return {
-            product_id: h.product_id,
-            name: h.name,
-            image: h.image,
-            url: h.url,
-            category: h.category,
-            purchased_at: new Date(h.purchased_at).toISOString().replace(/\.\d+Z$/, 'Z'),
-            due_at: new Date(h.due_at).toISOString().replace(/\.\d+Z$/, 'Z')
-          };
-        })
-      })
+    /* CUSTOM ATTRIBUTES GO INSIDE `custom`. At the top level of the payload,
+       alongside uuid and language, the platform does not recognise the array
+       as an attribute and drops it silently on a 200. Only default attributes
+       live at the top level.
+
+       due_at is omitted rather than sent as null where a vertical has no
+       replenishment interval — a null against a Date key is the other common
+       way a value disappears without complaint. */
+    var payload = Store.userPayload();
+    payload.custom = payload.custom || {};
+    payload.custom.purchases = hist.map(function (h) {
+      var o = {
+        product_id: h.product_id,
+        name: h.name,
+        image: h.image,
+        url: h.url,
+        category: h.category,
+        purchased_at: new Date(h.purchased_at).toISOString().replace(/\.\d+Z$/, 'Z')
+      };
+      if (h.due_at) {
+        o.due_at = new Date(h.due_at).toISOString().replace(/\.\d+Z$/, 'Z');
+      }
+      return o;
     });
+    window.InsiderQueue.push({ type: 'user', value: payload });
     if (window.insDebugNote) {
       var d = Store.nextDue();
       window.insDebugNote('purchase history: ' + hist.length + ' lines' +
