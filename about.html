@@ -151,7 +151,7 @@
     <p class="act__no">Three</p>
     <h2>Browse a few things, then abandon a basket</h2>
     <div class="do">
-      <p>Open <a href="foryou.html" id="fy-name">Just for you</a> afterwards.</p>
+      <p>Then go back to the homepage and the product pages you visited.</p>
     </div>
     <p class="go">Or jump straight to a page with good ones:
       <a id="go-product" href="#">this product</a></p>
@@ -472,10 +472,6 @@
     'knows anything about you, what changes the moment it does, and what ' +
     'happens after you have gone.';
 
-  /* Name the pages as this storefront names them. "Just for you" on a fashion
-     site is "Where to next" on an airline, and sending someone to click the
-     wrong words is a small thing that makes a guide feel written for a
-     different site. */
   /* Straight into a good example, per vertical. A guide that says "search for
      something" is asking the reader to guess a term that works; a guide that
      says "search for burgundy" has already done that for them, and lands them
@@ -523,9 +519,6 @@
   } else if (gp && gp.parentNode) {
     gp.parentNode.style.display = 'none';
   }
-
-  var fy = d.foryou_title;
-  if (fy) document.getElementById('fy-name').textContent = fy;
 
   /* Link the collection instruction at this vertical's own hero category
      rather than at a bare category page with nothing selected. */

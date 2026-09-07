@@ -78,6 +78,14 @@
 <script src="assets/config.js"></script>
 <script src="assets/insider-debug.js"></script>
 <script src="assets/vertical.js"></script>
+<!-- SC demo only. On a sandbox copy this page invites a closer look than it
+     can survive: the ranking is derived in the browser, and a partner who
+     opens it alone will find that out. So the sandbox bounces to the
+     homepage here, before the SDK initialises, and the nav never links to
+     it (store.js). -->
+<script>
+  if (window.ENVIRONMENT_KEY === 'sandbox') location.replace('index.html');
+</script>
 <script src="assets/store.js"></script>
 <script src="assets/explain.js"></script>
 <script src="assets/affinity.js"></script>

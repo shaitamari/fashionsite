@@ -907,9 +907,12 @@
          on an airline — so it reads as that brand's own language rather than
          as a platform feature bolted on.
 
-         data-current="__foryou__" marks it on the page itself. */
+         data-current="__foryou__" marks it on the page itself.
+
+         SC demo only: the page is left out of the sandbox nav, since it
+         invites a closer look than a browser-derived ranking survives. */
       var fy = (window.VERTICAL || {}).foryou_title;
-      if (fy) {
+      if (fy && window.ENVIRONMENT_KEY !== 'sandbox') {
         var f = document.createElement('a');
         f.href = 'foryou.html';
         f.textContent = fy;
