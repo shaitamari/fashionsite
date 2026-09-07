@@ -295,7 +295,7 @@
     var hist = Store.purchaseHistory();
     var payload = Store.userPayload();
     payload.custom = payload.custom || {};
-    payload.custom.purchases = purchasesPayload(hist);
+    payload.custom.c_purchases = purchasesPayload(hist);
     window.InsiderQueue.push({ type: 'user', value: payload });
     if (window.insDebugNote) {
       window.insDebugNote('purchase history seeded: ' + hist.length + ' lines', 'ok');

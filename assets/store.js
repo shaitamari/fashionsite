@@ -728,16 +728,23 @@
   /* --- the anniversary pick ------------------------------------------------
      Flattened deliberately.
 
-     The purchases array is the right data structure and it stays in the
-     browser. What the platform gets is four ordinary attributes, because the
-     legacy insider_object path does not carry an Array of Objects — the SDK
-     drops shapes it does not recognise, client-side, before anything is sent.
-     Web SDK ingestion would carry it; that is switched off on this account.
+     Kept alongside the array, not instead of it.
 
-     So: array here, four flat fields there. A journey can anchor on the date
-     and an email can name and picture the product, which is everything the
-     anniversary beat needs. When inioa is enabled the array becomes the source
-     and these four can go.
+     The array (c_purchases) is the right structure and is sent too. These four
+     exist because the array has never been verifiable on this account: it is
+     absent from the profile view, the broad segment filter returns zero, and
+     the keyed filter returns the same number for any value including nonsense.
+     None of those three tell you whether the data is stored.
+
+     Note the c_ prefix on the array. Every working implementation found
+     internally uses one — c_clube, c_lottery_tickets, c_settlements — and a
+     panel-created attribute without it is classified as Default rather than
+     Custom, which would explain a value that is declared, accepted and then
+     looked for in the wrong place.
+
+     So: array as the record, four flat fields as the fallback a journey can
+     anchor on today. Drop these once the array is proven — one anniversary per
+     person is a poor substitute for every purchase with its own date.
 
      WHICH PURCHASE. The oldest one whose anniversary has not yet passed —
      that is the next occasion coming round, which is what the journey should
@@ -907,12 +914,9 @@
          on an airline — so it reads as that brand's own language rather than
          as a platform feature bolted on.
 
-         data-current="__foryou__" marks it on the page itself.
-
-         SC demo only: the page is left out of the sandbox nav, since it
-         invites a closer look than a browser-derived ranking survives. */
+         data-current="__foryou__" marks it on the page itself. */
       var fy = (window.VERTICAL || {}).foryou_title;
-      if (fy && window.ENVIRONMENT_KEY !== 'sandbox') {
+      if (fy) {
         var f = document.createElement('a');
         f.href = 'foryou.html';
         f.textContent = fy;

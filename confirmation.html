@@ -93,7 +93,7 @@
        way a value disappears without complaint. */
     var payload = Store.userPayload();
     payload.custom = payload.custom || {};
-    payload.custom.purchases = hist.map(function (h) {
+    payload.custom.c_purchases = hist.map(function (h) {
       var o = {
         product_id: h.product_id,
         name: h.name,
