@@ -29,6 +29,11 @@
   background: var(--alt);
 }
 .context__icon { font-size: 1.25rem; line-height: 1 }
+.context__thumb { display: block; flex: 0 0 auto; width: 56px; height: 72px }
+.context__thumb img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  border-radius: 2px; border: 1px solid var(--rule);
+}
 .context__text { margin: 0; font-size: .9375rem }
 .context__text b { font-weight: 600 }
 .context__cta { margin-left: auto; font-size: .875rem; white-space: nowrap }
@@ -78,14 +83,6 @@
 <script src="assets/config.js"></script>
 <script src="assets/insider-debug.js"></script>
 <script src="assets/vertical.js"></script>
-<!-- SC demo only. On a sandbox copy this page invites a closer look than it
-     can survive: the ranking is derived in the browser, and a partner who
-     opens it alone will find that out. So the sandbox bounces to the
-     homepage here, before the SDK initialises, and the nav never links to
-     it (store.js). -->
-<script>
-  if (window.ENVIRONMENT_KEY === 'sandbox') location.replace('index.html');
-</script>
 <script src="assets/store.js"></script>
 <script src="assets/explain.js"></script>
 <script src="assets/affinity.js"></script>
@@ -155,6 +152,7 @@
        segment. Left empty by the site on purpose. -->
   <section id="context" aria-live="polite">
     <div class="context">
+      <a class="context__thumb" data-context-thumb hidden><img alt=""></a>
       <span class="context__icon" data-context-icon></span>
       <p class="context__text" data-context-text></p>
       <a class="context__cta" data-context-cta href="#"></a>
@@ -310,7 +308,21 @@
      it, which keeps the demo honest — the weather and the city come from the
      platform's Weather rule and Location segment.
 
-     Example, from an onsite campaign's custom JavaScript:
+     Two things a campaign can put here, both platform-derived.
+
+     LAST VIEWED PRODUCT. The strongest one, because every value comes from
+     attributes Insider derives from events rather than anything the site
+     pushed — last_visited_product_name, _img and _url are default attributes,
+     and onsite personalization can read default and custom attributes.
+
+         window.ForYou.context({
+           image: '{{user.last_visited_product_img}}',
+           text:  'Still thinking about <b>{{user.last_visited_product_name}}</b>?',
+           cta:   'Take another look',
+           href:  '{{user.last_visited_product_url}}'
+         });
+
+     WEATHER AND LOCATION.
 
          window.ForYou.context({
            icon: '\uD83C\uDF27',
@@ -328,6 +340,20 @@
       o = o || {};
       var sec = document.getElementById('context');
       if (!sec) return false;
+      /* A picture of the thing they were looking at. The campaign passes the
+         URL — on this page that comes from last_visited_product_img, which the
+         platform derives from page-view events rather than the site pushing
+         it. Worth being precise about, because it is one of the few places in
+         this estate where the personalization is entirely the platform's. */
+      var thumb = document.querySelector('[data-context-thumb]');
+      if (o.image) {
+        thumb.querySelector('img').src = o.image;
+        thumb.setAttribute('href', o.href || '#');
+        thumb.hidden = false;
+      } else {
+        thumb.hidden = true;
+      }
+
       document.querySelector('[data-context-icon]').textContent = o.icon || '';
       document.querySelector('[data-context-text]').innerHTML = o.text || '';
       var cta = document.querySelector('[data-context-cta]');
