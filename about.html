@@ -101,7 +101,7 @@
 <main class="wrap doc" style="padding-top:2.5rem;padding-bottom:4rem">
 
   <p class="eyebrow">Start here <span class="pagetype">page type: other · about</span></p>
-  <h1 class="h1" style="margin-bottom:.9rem">Nine things to try</h1>
+  <h1 class="h1" style="margin-bottom:.9rem">Ten things to try</h1>
 
   <p class="lede" id="intro"></p>
 
@@ -215,6 +215,42 @@
 
   <section class="act">
     <p class="act__no">Six</p>
+    <h2>Find a size that is gone</h2>
+
+    <div class="do">
+      <p>Open a product and look at the size row. Some sizes are struck
+      through. Click one.</p>
+    </div>
+    <p class="hint">It is still selectable, and it still tells the platform
+    something.</p>
+    <details class="how">
+      <summary>Why it matters, and how it is done</summary>
+
+      <p><b>Every size here is its own product.</b> Its own id, its own stock,
+      its own page. Selecting the AU 10 does not change a dropdown — it moves
+      you to a different catalogue record, and the platform is told you looked
+      at that one.</p>
+
+      <p><b>Which is why the size stays struck through rather than hidden.</b>
+      A missing size tells a shopper nothing. A struck-through one tells them
+      it exists and is gone, and it lets them land on it — so the platform
+      learns which size they actually wanted, not just which style.</p>
+
+      <p><b>Most shops cannot do this.</b> They keep one product id across
+      every size, so every view of every size is recorded against the parent.
+      When the AU 10 comes back, there is no record of anyone having wanted the
+      AU 10 — only of people having looked at the dress. The notification goes
+      out saying the style is available, to people whose size still is not.</p>
+
+      <p>It is not a platform limitation on either side. It is whether the shop
+      gives each size its own identity, and keeps that identity consistent
+      between the page and the catalogue. Here it does, so a back-in-stock
+      message can be about the AU 10.</p>
+    </details>
+  </section>
+
+  <section class="act">
+    <p class="act__no">Seven</p>
     <h2>Book something, then buy something</h2>
     <div class="do">
       <p>Use <a href="flow.html" id="flow-name">the services link</a> in the
@@ -235,7 +271,7 @@
   </section>
 
   <section class="act">
-    <p class="act__no">Seven</p>
+    <p class="act__no">Eight</p>
     <h2>Sign in and give yourself a tier</h2>
 
     <div class="do">
@@ -250,11 +286,23 @@
       the site, the email, the message, the recommendation. Held on the profile
       rather than in one campaign, it is available everywhere at once, and the
       VIP flag is derived from it rather than typed by anyone.</p>
-      <p><b>How.</b> The profile holds which tier you are in. A lookup table
-      holds what each tier is worth — the discount, the free-shipping
-      threshold, the points multiplier. One is about you, the other is about the
-      programme. Change the table and every campaign that quotes it updates,
-      rather than someone re-editing twelve of them.</p>
+      <p><b>How.</b> The profile holds which tier you are in and how many
+      points you have. A lookup table holds what each tier is worth — the
+      discount, the free-shipping threshold, the points multiplier, and what
+      the next tier costs. One is about you, the other is about the programme.
+      Change the table and every campaign that quotes it updates, rather than
+      someone re-editing twelve of them.</p>
+
+      <p><b>The basket line is the interesting one.</b> It is not reading a
+      tier and printing a benefit — it is working out the gap. Your points,
+      the next threshold, the difference, and whether that difference is small
+      enough to be worth mentioning. Someone already at the top is told
+      nothing, because there is nothing to tell them.</p>
+
+      <p>That matters more than it sounds. “10,000 points gets you Gold”
+      shown to someone on 9,999 is a shop not paying attention. The arithmetic
+      is what makes the message safe to send at all — and it is the difference
+      between quoting a programme and knowing where somebody stands in it.</p>
     </details>
   </section>
 
@@ -264,7 +312,7 @@
   </section>
 
   <section class="act">
-    <p class="act__no">Eight <span class="act__time">· the one worth the login</span></p>
+    <p class="act__no">Nine <span class="act__time">· the one worth the login</span></p>
     <h2>Then go and read the email you would have been sent</h2>
 
     <div class="do">
@@ -319,7 +367,7 @@
   </section>
 
   <section class="act">
-    <p class="act__no">Nine <span class="act__time">· for the ones that need time</span></p>
+    <p class="act__no">Ten <span class="act__time">· for the ones that need time</span></p>
     <h2>And if you want to see the journeys that run on time</h2>
 
     <div class="do">
@@ -358,13 +406,6 @@
     <h2>If you plan to build</h2>
     <p>Install the <a id="ext-link" href="#" target="_blank" rel="noopener">Insider
     One Chrome extension</a> — the visual campaign editor needs it.</p>
-
-    <h2>Before you wonder</h2>
-    <p>Affinities and predictive segments read as <b>Not Available</b> on a
-    profile made ten minutes ago. They need about thirty days of behaviour —
-    which is also what month one of a real deployment looks like.</p>
-    <p>The panel is read-only here. When you want to build something, that is a
-    conversation rather than a limitation.</p>
 
     <h2>Stuck, or curious</h2>
     <p><a href="ask.html">Ask a question</a> is at the top of every page. Use it
@@ -429,9 +470,9 @@
 
   document.getElementById('intro').textContent =
     'This is ' + (d.brand || 'a demo storefront') + ', a working shop running on ' +
-    'Insider One. The first four are a journey and work best in order — the ' +
-    'fourth only pays off because you did the others. The rest you can set off ' +
-    'whenever you like.';
+    'Insider One. Ten things in three groups — what it can do before it ' +
+    'knows anything about you, what changes the moment it does, and what ' +
+    'happens after you have gone.';
 
   /* Name the pages as this storefront names them. "Just for you" on a fashion
      site is "Where to next" on an airline, and sending someone to click the
