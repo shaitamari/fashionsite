@@ -593,6 +593,45 @@ def build_master():
             per_brand[p["vendor"]] += 1
             items.append(feed_item(p))
 
+    # Retired products. The XML sync adds and updates but never removes, so a
+    # product dropped from the feed stays in Insider's catalog, in stock and
+    # searchable, until someone retires it by hand — 5,600 variants at fifteen
+    # per page after the fashion swap. The only lever the sync does pull is
+    # UPDATE, so retired ids are kept in the feed as out-of-stock, zero-
+    # quantity stubs: the next sync flips them, and any campaign that excludes
+    # out-of-stock products drops them. Needs the integration set to send all
+    # products with stock status (the only-in-stock toggle OFF), otherwise the
+    # stubs are skipped as out of stock and never applied.
+    #
+    # retired.json is a list of {id, groupcode, name}; append to it whenever a
+    # catalog is replaced. Never remove entries — they cost nothing and keep
+    # the product retired if it ever reappears.
+    retired = json.load(open("retired.json")) if os.path.exists("retired.json") else []
+    n_ret = 0
+    for r in retired:
+        if str(r["id"]) in seen:
+            continue
+        items.append("\n".join([
+            "  <item>",
+            f"    <g:id>{escape(str(r['id']))}</g:id>",
+            f"    <g:item_group_id>{escape(str(r.get('groupcode', r['id'])))}</g:item_group_id>",
+            f"    <g:title>{escape(clean(r.get('name', 'Retired product'), 512))}</g:title>",
+            "    <description>Retired</description>",
+            f"    <link>https://{APEX}/</link>",
+            f"    <g:image_link>https://{APEX}/assets/img/retired.svg</g:image_link>",
+            "    <g:price>1.00</g:price>",
+            "    <g:sale_price>1.00</g:sale_price>",
+            "    <g:availability>out of stock</g:availability>",
+            "    <g:quantity>0</g:quantity>",
+            "    <g:brand>Retired</g:brand>",
+            "    <g:product_type>Retired</g:product_type>",
+            "    <g:condition>new</g:condition>",
+            "  </item>",
+        ]))
+        n_ret += 1
+    if n_ret:
+        print(f"  retired stubs: {n_ret} (out of stock, brand Retired)")
+
     os.makedirs("feeds", exist_ok=True)
     with open("feeds/master.xml", "w") as f:
         f.write('<?xml version="1.0" encoding="UTF-8"?>\n'
