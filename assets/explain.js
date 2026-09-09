@@ -23,12 +23,12 @@
      swap — the follow-up is usually the better half of the demo. */
   var DARES = {
     fashion: {
-      q: 'Halden Solace burgundy',
-      chip: 'Search \u201cHalden Solace burgundy\u201d. We dare you.',
+      q: 'Cape Dress dark green',
+      chip: 'Search \u201cCape Dress dark green\u201d. We dare you.',
       payoff: 'One dress, two colourways \u2014 and the platform picked the one your words ' +
-              'described, not whichever ranked highest. Swap burgundy for zebra and watch ' +
+              'described, not whichever ranked highest. Swap dark green for black and watch ' +
               'it change.',
-      next: { q: 'Halden Solace zebra', label: 'Now try zebra' }
+      next: { q: 'Cape Dress black', label: 'Now try black' }
     },
     beauty: {
       q: 'balm',

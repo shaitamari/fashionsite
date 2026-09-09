@@ -14,7 +14,7 @@ Feed format notes, learned from a failed validation and encoded here:
   - the title tag must be g:title, not title
   - g:sale_price goes on EVERY item, because Insider marks price.USD required
 """
-import json, os, re, sys, glob, collections
+import json, os, re, sys, glob, collections, datetime, hashlib
 from xml.sax.saxutils import escape
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -56,7 +56,13 @@ def money(v):
         return 0.0
 
 
-def subcategory(title, collection, cfg):
+def subcategory(title, collection, cfg, ptype=""):
+    # A vertical can name the subcategory straight from the product type
+    # ("Women's Tops" -> "Tops") and only fall back to title keywords when the
+    # type is too coarse to say. The salesdemo import relies on this.
+    direct = cfg.get("type_subcats", {}).get(ptype)
+    if direct:
+        return direct
     t = title.lower()
     for name, keys in cfg.get("subcats", {}).get(collection, []):
         if any(k in t for k in keys):
@@ -191,6 +197,118 @@ def load_sources(cfg):
     return products, paths, dupes
 
 
+# --------------------------------------------------------------------------
+# Enrichment: rating, margin, activation date, season, gender, material.
+#
+# The salesdemo catalog carries these for its own products (the search team
+# tuned on them). Every other product in the estate gets a value too, chosen
+# deterministically from the product id so a rebuild never reshuffles them.
+# A merchandiser can then boost by margin, sort by rating, facet on gender or
+# material, and "new in" means something — on every vertical, not one.
+#
+# Activation dates are ALWAYS regenerated, even where the source has one: the
+# source dates are all the day the catalog was imported, which says nothing.
+# They spread past / recent / future relative to the build date, so a rebuild
+# is what moves a product from "coming soon" to "new in".
+
+GENDER_VERTICALS = {"fashion", "luxury"}
+MATERIAL_VERTICALS = {"fashion", "luxury", "home"}
+SEASON_VERTICALS = {"fashion", "luxury"}
+
+MATERIALS = [
+    # (keywords in subcategory or title, choices)
+    (("knit", "sweater", "cardigan", "jumper", "cashmere", "wool"), ["Wool", "Cashmere", "Merino Wool", "Cotton"]),
+    (("jean", "denim"), ["Denim"]),
+    (("coat", "jacket", "blazer", "trench", "parka"), ["Wool", "Cotton", "Polyester", "Leather", "Nylon"]),
+    (("dress", "blouse", "skirt", "slip", "gown"), ["Viscose", "Silk", "Cotton", "Linen", "Polyester"]),
+    (("shirt", "tee", "t-shirt", "top", "tunic", "trouser", "pant", "short", "chino"), ["Cotton", "Linen", "Cotton, Elastane", "Polyester"]),
+    (("sneaker", "trainer", "runner"), ["Leather", "Canvas", "Mesh", "Suede"]),
+    (("boot", "loafer", "heel", "sandal", "flat", "shoe", "pump"), ["Leather", "Suede", "Patent Leather"]),
+    (("bag", "belt", "wallet", "clutch", "tote", "purse"), ["Leather", "Canvas", "Suede", "Nylon"]),
+    (("ring", "necklace", "bracelet", "earring", "jewel", "cuff", "pendant"), ["Sterling Silver", "Gold-plated Brass", "18k Gold", "Stainless Steel"]),
+    (("sock", "scarf", "hat", "beanie", "glove", "mitten"), ["Cotton", "Wool", "Cashmere"]),
+    (("sunglass", "glasses"), ["Acetate", "Metal"]),
+    (("sofa", "seating", "sectional", "chair", "armchair", "ottoman", "bench", "stool"), ["Velvet", "Linen", "Leather", "Boucle", "Performance Fabric"]),
+    (("table", "shelv", "desk", "console", "drawer", "cabinet", "bed", "frame"), ["Oak", "Walnut", "Ash", "Powder-coated Steel", "Marble"]),
+    (("pillow", "throw", "cushion", "blanket", "sheet", "duvet"), ["Linen", "Cotton", "Wool", "Velvet"]),
+    (("outdoor", "patio", "garden"), ["Teak", "Powder-coated Aluminium", "Rattan"]),
+    (("lamp", "light"), ["Brass", "Steel", "Glass"]),
+]
+
+
+def _h(seed, mod):
+    return int(hashlib.md5(str(seed).encode()).hexdigest(), 16) % mod
+
+
+def _pick(seed, choices):
+    return choices[_h(seed, len(choices))]
+
+
+def enrich(rec, key, extra, today):
+    seed = rec["groupcode"]
+    words = (rec["subcategory"] + " " + rec["collection"] + " " + rec["name"]).lower()
+
+    # rating: 1 dp, skewed to the good end like a real store
+    if extra.get("rating") is not None:
+        rec["rating"] = round(float(extra["rating"]), 1)
+    else:
+        rec["rating"] = round(3.4 + _h(seed + "r", 16) / 10, 1)        # 3.4 .. 4.9
+
+    # margin: percent, in steps of 5
+    if extra.get("margin") is not None:
+        rec["margin"] = int(extra["margin"])
+    else:
+        rec["margin"] = 20 + 5 * _h(seed + "m", 10)                    # 20 .. 65
+
+    # activation date: 60% older, 25% last month, 15% still to come
+    bucket = _h(seed + "d", 100)
+    if bucket < 60:
+        days = -(31 + _h(seed + "d1", 510))                            # -31 .. -540
+    elif bucket < 85:
+        days = -_h(seed + "d2", 31)                                    # -30 .. 0
+    else:
+        days = 1 + _h(seed + "d3", 60)                                 # +1 .. +60
+    d = today + datetime.timedelta(days=days)
+    rec["activation_date"] = d.isoformat()
+    rec["is_new"] = -30 <= days <= 0
+    rec["is_upcoming"] = days > 0
+
+    # season, only where a vertical has seasons
+    if key in SEASON_VERTICALS:
+        src = extra.get("season")
+        if src:
+            rec["season"] = src
+        else:
+            half = "Spring/Summer" if 3 <= d.month <= 8 else "Fall/Winter"
+            rec["season"] = f"{half} {str(d.year)[2:]}"
+
+    # gender, only where it means something
+    if key in GENDER_VERTICALS:
+        g = extra.get("gender")
+        if not g:
+            col = rec["collection"].lower()
+            if col in ("women", "womens", "womenswear") or "women" in words or "wmns" in words:
+                g = "Women"
+            elif col in ("men", "mens", "menswear") or " men" in words:
+                g = "Men"
+            else:
+                g = "Unisex"
+        rec["gender"] = g
+    elif key == "beauty" and rec["collection"] == "Fragrance":
+        rec["gender"] = extra.get("gender") or ("Women" if "women" in words else "Men" if " men" in words else "Unisex")
+
+    # material, only where a product is made of something
+    if key in MATERIAL_VERTICALS:
+        m = extra.get("material")
+        if not m:
+            for keys, choices in MATERIALS:
+                if any(k in words for k in keys):
+                    m = _pick(seed + "t", choices)
+                    break
+        if m:
+            rec["material"] = m
+
+
 def build_catalog(key, cfg):
     products, paths, dupes = load_sources(cfg)
     site = site_for(key)
@@ -211,7 +329,7 @@ def build_catalog(key, cfg):
             continue
 
         collection = colmap[ptype]
-        subcat = subcategory(p["title"], collection, cfg)
+        subcat = subcategory(p["title"], collection, cfg, ptype)
         option_name = p["options"][0]["name"] if p.get("options") else "Title"
 
         for v in p["variants"]:
@@ -257,7 +375,8 @@ def build_catalog(key, cfg):
                 # Every option in source order, tagged with the slot it landed
                 # in. The PDP reads this to label its variant buttons.
                 "variant_parts": opts["parts"],
-                "stock": 250 if v.get("available") else 0,
+                "stock": (v.get("inventory_quantity") if v.get("inventory_quantity") is not None
+                          else (250 if v.get("available") else 0)),
                 "in_stock": 1 if v.get("available") else 0,
                 "sku": v.get("sku") or str(v["id"]),
                 "vendor": cfg["brand"],
@@ -269,6 +388,11 @@ def build_catalog(key, cfg):
                 "url": f"{site}/product.html?id={v['id']}",
                 "tags": p.get("tags", [])[:8],
             })
+
+    today = datetime.date.today()
+    for rec in records:
+        prod_extra = next((p.get("salesdemo", {}) for p in products if str(p.get("id")) == rec["groupcode"]), {})
+        enrich(rec, key, prod_extra, today)
 
     if not records:
         raise ValueError(f"{key}: no products survived filtering — check `collections`")
@@ -354,6 +478,23 @@ def feed_item(p):
     dimension = p.get("size_label") or p.get("tier_label")
     if dimension:
         parts.append(f"    <g:custom_label_1>{escape(clean(dimension, 512))}</g:custom_label_1>")
+
+    # Enrichment. Google Merchant has fields for gender and material; the rest
+    # go out both as custom labels (auto-mapped) and as plainly named tags,
+    # so the attribute mapping in the panel reads <rating>, <margin>,
+    # <activation_date>, <season> rather than a label number.
+    if p.get("gender"):
+        parts.append(f"    <g:gender>{escape(p['gender'])}</g:gender>")
+    if p.get("material"):
+        parts.append(f"    <g:material>{escape(clean(p['material'], 512))}</g:material>")
+    if p.get("season"):
+        parts.append(f"    <g:custom_label_2>{escape(clean(p['season'], 512))}</g:custom_label_2>")
+        parts.append(f"    <season>{escape(clean(p['season'], 512))}</season>")
+    parts.append(f"    <g:custom_label_3>{p['rating']:.1f}</g:custom_label_3>")
+    parts.append(f"    <rating>{p['rating']:.1f}</rating>")
+    parts.append(f"    <g:custom_label_4>{p['margin']}</g:custom_label_4>")
+    parts.append(f"    <margin>{p['margin']}</margin>")
+    parts.append(f"    <activation_date>{p['activation_date']}</activation_date>")
 
     parts.append("  </item>")
     return "\n".join(parts)

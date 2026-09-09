@@ -2,7 +2,7 @@
   "_README": [
     "Two levels: `vertical` is the parent (Retail, Travel, Banking, Telco),",
     "`subvertical` is the child (Beauty, Fashion, Hotels, Insurance). A vertical",
-    "with no sub-verticals \u2014 Telco \u2014 simply repeats the name in both.",
+    "with no sub-verticals — Telco — simply repeats the name in both.",
     "",
     "`template` selects the page model:",
     "  ecommerce  browse -> cart -> checkout -> purchase   (Retail)",
@@ -23,8 +23,8 @@
     "hero_title": "Skin first.<br>Makeup second.",
     "hero_lede": "Makeup, skincare and fragrance made to be worn every day.",
     "hero_cta": "Shop makeup",
-    "announce": "Free shipping over $50 \u00b7 Free samples with every order",
-    "search_placeholder": "Search makeup, skincare, fragrance",
+    "announce": "Free shipping over $50 · Free samples with every order",
+    "search_placeholder": "Search makeup, skincare, hair, fragrance",
     "newsletter_title": "Join the list",
     "newsletter_lede": "Early access to launches, restocks and offers.",
     "source": "sources/beauty*.json",
@@ -43,14 +43,17 @@
       "Makeup",
       "Skincare",
       "Body",
-      "Fragrance"
+      "Fragrance",
+      "Hair"
     ],
     "collections": {
       "Makeup": "Makeup",
       "Skincare": "Skincare",
       "Balms": "Skincare",
       "Fragrance": "Fragrance",
-      "Body": "Body"
+      "Body": "Body",
+      "Hair Care": "Hair",
+      "Cosmetics": "Makeup"
     },
     "subcats": {
       "Makeup": [
@@ -196,6 +199,23 @@
       ],
       "Fragrance": [
         [
+          "Eau de Parfum",
+          [
+            "parfum",
+            "edp",
+            "perfume",
+            "eau de"
+          ]
+        ],
+        [
+          "Gift Sets",
+          [
+            "gift",
+            "pc",
+            "set"
+          ]
+        ],
+        [
           "Sets",
           [
             "set",
@@ -217,13 +237,78 @@
             "candle"
           ]
         ]
+      ],
+      "Hair": [
+        [
+          "Tools",
+          [
+            "dryer",
+            "styler",
+            "iron",
+            "wand",
+            "brush",
+            "curler",
+            "straightener",
+            "diffuser"
+          ]
+        ],
+        [
+          "Shampoo",
+          [
+            "shampoo"
+          ]
+        ],
+        [
+          "Conditioner",
+          [
+            "conditioner"
+          ]
+        ],
+        [
+          "Treatments",
+          [
+            "mask",
+            "treatment",
+            "oil",
+            "serum",
+            "repair",
+            "bond"
+          ]
+        ],
+        [
+          "Styling",
+          [
+            "spray",
+            "cream",
+            "gel",
+            "mousse",
+            "curl",
+            "wax",
+            "paste",
+            "foam",
+            "texture",
+            "hold"
+          ]
+        ],
+        [
+          "Sets",
+          [
+            "set",
+            "kit",
+            "duo",
+            "trio",
+            "bundle",
+            "box"
+          ]
+        ]
       ]
     },
     "defaults": {
       "Makeup": "Makeup",
       "Skincare": "Treatments",
       "Body": "Body Care",
-      "Fragrance": "Perfume"
+      "Fragrance": "Perfume",
+      "Hair": "All"
     },
     "vertical": "Retail",
     "subvertical": "Beauty",
@@ -304,7 +389,7 @@
     "hero_title": "Headline here.",
     "hero_lede": "One supporting sentence.",
     "hero_cta": "Shop now",
-    "announce": "Free shipping over $50 \u00b7 30-day returns",
+    "announce": "Free shipping over $50 · 30-day returns",
     "search_placeholder": "Search products",
     "newsletter_title": "Join the list",
     "newsletter_lede": "Offers and new arrivals, straight to your inbox.",
@@ -635,7 +720,7 @@
     "hero_cta": "Explore products",
     "hero_lede": "Accounts, cards, loans and mortgages, without the branch visit.",
     "hero_eyebrow": "Personal",
-    "announce": "FSCS protected \u00b7 Open an account in minutes",
+    "announce": "FSCS protected · Open an account in minutes",
     "search_placeholder": "Search accounts, cards, loans",
     "newsletter_title": "Rate alerts",
     "newsletter_lede": "Rate changes and new products.",
@@ -757,7 +842,7 @@
     "hero_cta": "Compare cover",
     "hero_lede": "Motor, home, travel and life cover with no jargon and no auto-renewal.",
     "hero_eyebrow": "Protect",
-    "announce": "Cover starts the day you buy \u00b7 14-day cooling off",
+    "announce": "Cover starts the day you buy · 14-day cooling off",
     "search_placeholder": "Search cover types",
     "newsletter_title": "Stay covered",
     "newsletter_lede": "Renewal reminders and cover tips.",
@@ -884,9 +969,9 @@
     "tagline": "Money, moved properly",
     "hero_title": "Money that<br>keeps up.",
     "hero_cta": "Explore plans",
-    "hero_lede": "Spend, save, invest and get paid \u2014 personal and business, one app.",
+    "hero_lede": "Spend, save, invest and get paid — personal and business, one app.",
     "hero_eyebrow": "Plans",
-    "announce": "No minimum balance \u00b7 Cancel any time",
+    "announce": "No minimum balance · Cancel any time",
     "search_placeholder": "Search plans and accounts",
     "newsletter_title": "Product updates",
     "newsletter_lede": "New features, monthly.",
@@ -1000,7 +1085,7 @@
     "vertical": "Retail",
     "subvertical": "Fashion",
     "brand": "Ashford Lane",
-    "tagline": "Womenswear, menswear and footwear",
+    "tagline": "Womenswear, menswear, shoes and accessories",
     "hero_title": "Dress for the<br>life you have.",
     "hero_cta": "Shop new in",
     "hero_lede": "Everyday clothing built to last longer than the season.",
@@ -1026,74 +1111,354 @@
     "template": "ecommerce",
     "source": "sources/fashion-*.json",
     "collections": {
-      "Tops": "Tops",
-      "Maxi Dresses": "Maxi Dresses",
-      "Mini Dresses": "Mini Dresses",
-      "Dresses": "Dresses",
-      "Pants": "Pants",
-      "Outerwear": "Outerwear",
-      "Corset Tops": "Tops",
-      "Midi Dresses": "Maxi Dresses",
-      "Maxi Skirts": "Maxi Dresses",
-      "Earrings": "Tops",
-      "Necklaces": "Tops",
-      "Bags": "Tops",
-      "Shorts": "Tops",
-      "Cami Tops": "Tops",
-      "Midi Skirts": "Tops",
-      "One Shoulder Tops": "Tops",
-      "Bustier Tops": "Tops",
-      "Mini Skirts": "Mini Dresses",
-      "Bracelets": "Tops",
-      "Shirts + Blouses": "Tops",
-      "Halter Tops": "Tops",
-      "Long Sleeve Tops": "Tops",
-      "Jackets": "Tops",
-      "Blazers": "Tops",
-      "Coats": "Tops",
-      "Skorts": "Tops",
-      "Jeans": "Tops",
-      "Denim Skorts": "Tops",
-      "Sunglasses": "Tops",
-      "Jackets + Coats": "Tops",
-      "Sweater": "Tops",
-      "T-Shirts": "Tops",
-      "Pants + Leggings": "Pants",
-      "Swim Tops": "Tops",
-      "Denim Shorts": "Tops",
-      "Swim Bottoms": "Tops",
-      "Belts": "Tops",
-      "Rings": "Tops",
-      "Knit Tops": "Tops",
-      "Bodysuits": "Tops",
-      "Bags & Wallets": "Tops",
-      "Hats": "Tops",
-      "Denim Skirts": "Tops",
-      "Socks + Stockings": "Tops",
-      "Accessories": "Tops",
-      "Skirts": "Tops",
-      "Shoes": "Tops",
-      "Denim": "Tops",
-      "Intimates": "Tops",
-      "Swimwear": "Tops",
-      "Activewear": "Tops"
+      "Women's Collection": "Women",
+      "Women's Tops": "Women",
+      "Women's Bottoms": "Women",
+      "Women's Jackets": "Women",
+      "Women's T-Shirts": "Women",
+      "Women's Vests": "Women",
+      "Men's Collection": "Men",
+      "Men's Jackets": "Men",
+      "Men's Shirts": "Men",
+      "Men's T-Shirts": "Men",
+      "Men's Knitwear": "Men",
+      "Sneakers": "Shoes",
+      "Boots": "Shoes",
+      "Shoes Collection": "Shoes",
+      "Women's Shoes": "Shoes",
+      "Men's Shoes": "Shoes",
+      "Accessories": "Accessories",
+      "Women's Accessories": "Accessories",
+      "Men's Accessories": "Accessories",
+      "Jewelry": "Accessories",
+      "Women's Jewelry": "Accessories",
+      "Bracelets": "Accessories",
+      "Necklaces": "Accessories",
+      "Rings": "Accessories",
+      "Earrings": "Accessories"
     },
     "order": [
-      "Tops",
-      "Maxi Dresses",
-      "Mini Dresses",
-      "Dresses",
-      "Pants",
-      "Outerwear"
+      "Women",
+      "Men",
+      "Shoes",
+      "Accessories"
     ],
-    "subcats": {},
+    "subcats": {
+      "Women": [
+        [
+          "Dresses",
+          [
+            "dress",
+            "gown",
+            "shift ",
+            "flightsuit"
+          ]
+        ],
+        [
+          "Trousers & Skirts",
+          [
+            "pant",
+            "trouser",
+            "jean",
+            "short",
+            "legging",
+            "jumpsuit",
+            "skirt",
+            "skort",
+            "culotte",
+            "denim",
+            "chino"
+          ]
+        ],
+        [
+          "Knitwear",
+          [
+            "cardigan",
+            "sweater",
+            "knit",
+            "pullover",
+            "turtle",
+            "jumper",
+            "crew"
+          ]
+        ],
+        [
+          "Jackets & Coats",
+          [
+            "jacket",
+            "coat",
+            "blazer",
+            "vest",
+            "parka",
+            "gilet",
+            "trench",
+            "anorak",
+            "bomber"
+          ]
+        ],
+        [
+          "Shirts",
+          [
+            "shirt",
+            "blouse",
+            "button",
+            "chambray",
+            "plaid",
+            "tuxedo"
+          ]
+        ],
+        [
+          "T-Shirts",
+          [
+            "t-shirt",
+            "tee",
+            "tshirt"
+          ]
+        ],
+        [
+          "Tops",
+          [
+            "top",
+            "tunic",
+            "camisole",
+            "cami",
+            "bodysuit",
+            "hoodie",
+            "sweatshirt",
+            "slip"
+          ]
+        ]
+      ],
+      "Men": [
+        [
+          "Trousers",
+          [
+            "pant",
+            "trouser",
+            "jean",
+            "short",
+            "legging",
+            "jumpsuit",
+            "skirt",
+            "skort",
+            "culotte",
+            "denim",
+            "chino"
+          ]
+        ],
+        [
+          "Knitwear",
+          [
+            "cardigan",
+            "sweater",
+            "knit",
+            "pullover",
+            "turtle",
+            "jumper",
+            "crew"
+          ]
+        ],
+        [
+          "Jackets & Coats",
+          [
+            "jacket",
+            "coat",
+            "blazer",
+            "vest",
+            "parka",
+            "gilet",
+            "trench",
+            "anorak",
+            "bomber"
+          ]
+        ],
+        [
+          "Shirts",
+          [
+            "shirt",
+            "blouse",
+            "button",
+            "chambray",
+            "plaid",
+            "tuxedo"
+          ]
+        ],
+        [
+          "T-Shirts",
+          [
+            "t-shirt",
+            "tee",
+            "tshirt"
+          ]
+        ],
+        [
+          "Tops",
+          [
+            "top",
+            "tunic",
+            "camisole",
+            "cami",
+            "bodysuit",
+            "hoodie",
+            "sweatshirt",
+            "slip"
+          ]
+        ]
+      ],
+      "Shoes": [
+        [
+          "Boots",
+          [
+            "boot",
+            "chelsea",
+            "dr martens",
+            "ugg",
+            "pallatech"
+          ]
+        ],
+        [
+          "Sneakers",
+          [
+            "sneaker",
+            "trainer",
+            "slip-on",
+            "slip on",
+            "runner",
+            "vans",
+            "nike",
+            "adidas",
+            "jordan",
+            "converse",
+            "new balance",
+            "puma",
+            "salomon",
+            "asics",
+            "supra",
+            "dunk",
+            "gazelle",
+            "superstar",
+            "low top",
+            "lo pro",
+            "hi ",
+            "court",
+            "roshe",
+            "gel-lyte"
+          ]
+        ],
+        [
+          "Sandals",
+          [
+            "sandal",
+            "slide",
+            "mule",
+            "flip"
+          ]
+        ],
+        [
+          "Heels",
+          [
+            "heel",
+            "pump",
+            "stiletto",
+            "wedge"
+          ]
+        ],
+        [
+          "Flats",
+          [
+            "loafer",
+            "flat",
+            "oxford",
+            "derby",
+            "brogue",
+            "ballet",
+            "moccasin",
+            "lace up",
+            "golf",
+            "buckle shoe",
+            "shoe"
+          ]
+        ]
+      ],
+      "Accessories": [
+        [
+          "Jewellery",
+          [
+            "ring",
+            "bracelet",
+            "necklace",
+            "earring",
+            "cuff",
+            "pendant",
+            "pearl",
+            "brooch",
+            "chain",
+            "anklet"
+          ]
+        ],
+        [
+          "Bags",
+          [
+            "bag",
+            "clutch",
+            "tote",
+            "backpack",
+            "wallet",
+            "purse",
+            "pouch",
+            "iona"
+          ]
+        ],
+        [
+          "Belts",
+          [
+            "belt",
+            "sash"
+          ]
+        ],
+        [
+          "Socks",
+          [
+            "sock",
+            "no show",
+            "crew"
+          ]
+        ],
+        [
+          "Ties",
+          [
+            "tie",
+            "bandana"
+          ]
+        ],
+        [
+          "Hats & Scarves",
+          [
+            "hat",
+            "cap",
+            "beanie",
+            "scarf",
+            "shawl",
+            "glove",
+            "mitten",
+            "neck warmer",
+            "square"
+          ]
+        ],
+        [
+          "Sunglasses",
+          [
+            "sunglass",
+            "glasses"
+          ]
+        ]
+      ]
+    },
     "defaults": {
-      "Tops": "All",
-      "Maxi Dresses": "All",
-      "Mini Dresses": "All",
-      "Dresses": "All",
-      "Pants": "All",
-      "Outerwear": "All"
+      "Women": "All",
+      "Men": "All",
+      "Shoes": "All",
+      "Accessories": "All"
     },
     "profile": {
       "tiers": [
@@ -1144,13 +1509,32 @@
       ],
       "attribute_field": "store"
     },
-    "hero_category": "Dresses",
+    "hero_category": "Women",
     "foryou_title": "Just for you",
     "showcase": {
-      "search": "burgundy",
-      "product": "55693210845352"
+      "search": "navy",
+      "product": "46160936173842"
     },
-    "anniversary_months": 11
+    "anniversary_months": 11,
+    "type_subcats": {
+      "Women's Tops": "Tops",
+      "Women's Bottoms": "Trousers & Skirts",
+      "Women's Jackets": "Jackets & Coats",
+      "Women's T-Shirts": "T-Shirts",
+      "Women's Vests": "Jackets & Coats",
+      "Men's Jackets": "Jackets & Coats",
+      "Men's Shirts": "Shirts",
+      "Men's T-Shirts": "T-Shirts",
+      "Men's Knitwear": "Knitwear",
+      "Sneakers": "Sneakers",
+      "Boots": "Boots",
+      "Women's Jewelry": "Jewellery",
+      "Jewelry": "Jewellery",
+      "Bracelets": "Jewellery",
+      "Necklaces": "Jewellery",
+      "Rings": "Jewellery",
+      "Earrings": "Jewellery"
+    }
   },
   "electronics": {
     "vertical": "Retail",
@@ -1161,7 +1545,7 @@
     "hero_cta": "Shop appliances",
     "hero_lede": "Appliances, audio and technology, with installation included.",
     "hero_eyebrow": "This season",
-    "announce": "Free delivery and installation over \u20ac300",
+    "announce": "Free delivery and installation over €300",
     "search_placeholder": "Search appliances, TVs, audio",
     "newsletter_title": "Deals first",
     "newsletter_lede": "Price drops and new models, monthly.",
@@ -1272,7 +1656,7 @@
     "hero_cta": "Shop devices",
     "hero_lede": "Handsets, accessories and plans with no lock-in.",
     "hero_eyebrow": "Connect",
-    "announce": "Keep your number \u00b7 No contract",
+    "announce": "Keep your number · No contract",
     "search_placeholder": "Search phones and accessories",
     "newsletter_title": "Stay posted",
     "newsletter_lede": "New devices and plan changes.",
@@ -1495,8 +1879,8 @@
     "hero_cta": "Shop living",
     "hero_lede": "Furniture made to be lived with, not looked after.",
     "hero_eyebrow": "New collection",
-    "announce": "Free delivery on orders over \u20ac200",
-    "search_placeholder": "Search furniture and homeware",
+    "announce": "Free delivery on orders over €200",
+    "search_placeholder": "Search furniture, appliances, decor",
     "newsletter_title": "Room by room",
     "newsletter_lede": "New pieces and styling ideas.",
     "tiles_title": "Shop by room",
@@ -1530,7 +1914,7 @@
       "Duvet Covers": "Seating",
       "Shelving & Storage": "Shelving",
       "Sofas": "Seating",
-      "Tables": "Seating",
+      "Tables": "Decor",
       "Add On/Expansion": "Seating",
       "Rugs": "Seating",
       "Serviceability": "Seating",
@@ -1551,7 +1935,23 @@
       "Assembly Service": "Seating",
       "Accent Table": "Seating",
       "Accent Furniture": "Outdoor Furniture",
-      "Protection Plan": "Seating"
+      "Protection Plan": "Seating",
+      "Appliances": "Appliances",
+      "Heating & Cooling": "Appliances",
+      "Ovens": "Appliances",
+      "Refrigerators": "Appliances",
+      "Kitchen Appliances": "Appliances",
+      "Small Appliances": "Appliances",
+      "Dishwasher": "Appliances",
+      "Washer & Dryers": "Appliances",
+      "Stoves": "Appliances",
+      "Living Room": "Seating",
+      "Ottomans": "Seating",
+      "Patio & Garden": "Outdoor Furniture",
+      "Home Decor": "Decor",
+      "Bedroom": "Decor",
+      "Pillows & Accessories": "Decor",
+      "Dining Room": "Decor"
     },
     "order": [
       "Seating",
@@ -1559,16 +1959,84 @@
       "Components",
       "Outdoor Furniture",
       "Sectionals",
-      "Shelving"
+      "Shelving",
+      "Appliances",
+      "Decor"
     ],
-    "subcats": {},
+    "subcats": {
+      "Appliances": [
+        [
+          "Ovens & Stoves",
+          [
+            "oven",
+            "stove",
+            "cooker",
+            "hob",
+            "hood",
+            "grill",
+            "range"
+          ]
+        ],
+        [
+          "Refrigeration",
+          [
+            "fridge",
+            "refrigerator",
+            "freezer",
+            "wine"
+          ]
+        ],
+        [
+          "Laundry",
+          [
+            "washer",
+            "dryer",
+            "laundry",
+            "loader",
+            "washing"
+          ]
+        ],
+        [
+          "Dishwashers",
+          [
+            "dishwasher"
+          ]
+        ],
+        [
+          "Heating & Cooling",
+          [
+            "heater",
+            "fan",
+            "air",
+            "cooling",
+            "aircon",
+            "conditioner"
+          ]
+        ],
+        [
+          "Kitchen",
+          [
+            "kettle",
+            "toaster",
+            "blender",
+            "mixer",
+            "microwave",
+            "coffee",
+            "espresso",
+            "fryer"
+          ]
+        ]
+      ]
+    },
     "defaults": {
       "Seating": "All",
       "Replacement Parts": "All",
       "Components": "All",
       "Outdoor Furniture": "All",
       "Sectionals": "All",
-      "Shelving": "All"
+      "Shelving": "All",
+      "Appliances": "All",
+      "Decor": "All"
     },
     "profile": {
       "tiers": [
@@ -1624,6 +2092,22 @@
     "showcase": {
       "search": "velvet",
       "product": "50013105553710"
+    },
+    "type_subcats": {
+      "Heating & Cooling": "Heating & Cooling",
+      "Ovens": "Ovens & Stoves",
+      "Stoves": "Ovens & Stoves",
+      "Refrigerators": "Refrigeration",
+      "Kitchen Appliances": "Kitchen",
+      "Small Appliances": "Small Appliances",
+      "Dishwasher": "Dishwashers",
+      "Washer & Dryers": "Laundry",
+      "Bedroom": "Bedroom",
+      "Tables": "Tables",
+      "Dining Room": "Tables",
+      "Pillows & Accessories": "Pillows & Throws",
+      "Living Room": "Living Room",
+      "Ottomans": "Ottomans"
     }
   },
   "luxury": {
@@ -1759,7 +2243,7 @@
     "hero_cta": "Start shopping",
     "hero_lede": "Fresh food, cupboard staples and household essentials.",
     "hero_eyebrow": "This week",
-    "announce": "Free delivery over \u20ac60 \u00b7 Slots seven days a week",
+    "announce": "Free delivery over €60 · Slots seven days a week",
     "search_placeholder": "Search groceries",
     "newsletter_title": "This week's offers",
     "newsletter_lede": "Deals and seasonal picks, weekly.",
@@ -1869,6 +2353,184 @@
     },
     "replenishment_days": {
       "_default": 14
+    }
+  },
+  "nutrition": {
+    "vertical": "Retail",
+    "subvertical": "Nutrition",
+    "brand": "Verdant",
+    "tagline": "Supplements, superfoods and snacks",
+    "hero_title": "Feed the<br>week ahead.",
+    "hero_lede": "Protein, superfoods and daily essentials, delivered on your rhythm.",
+    "hero_cta": "Shop supplements",
+    "hero_eyebrow": "Daily essentials",
+    "announce": "Subscribe and save 15% on every order",
+    "search_placeholder": "Search protein, vitamins, superfoods",
+    "newsletter_title": "The weekly scoop",
+    "newsletter_lede": "Recipes, new blends and subscriber-only offers.",
+    "tiles_title": "Shop by category",
+    "grid_title": "New in",
+    "reco_title": "Goes well with your routine",
+    "theme": {
+      "bg": "#FCFCF8",
+      "alt": "#EEF3E6",
+      "ink": "#1B2418",
+      "muted": "#5E6B57",
+      "rule": "#DCE4D0",
+      "accent": "#2F6B3C",
+      "display": "'Fraunces', Georgia, serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Jost:wght@300;400;500;600"
+    },
+    "template": "ecommerce",
+    "source": "sources/nutrition-*.json",
+    "collections": {
+      "Nutrition": "Supplements",
+      "Treats": "Snacks"
+    },
+    "order": [
+      "Supplements",
+      "Snacks"
+    ],
+    "subcats": {
+      "Supplements": [
+        [
+          "Protein",
+          [
+            "protein",
+            "whey",
+            "blend",
+            "collagen"
+          ]
+        ],
+        [
+          "Vitamins",
+          [
+            "vitamin",
+            "d3",
+            "omega",
+            "capsule",
+            "tablet",
+            "probiotic",
+            "multi"
+          ]
+        ],
+        [
+          "Superfoods",
+          [
+            "seed",
+            "powder",
+            "mushroom",
+            "turmeric",
+            "yeast",
+            "chia",
+            "greens",
+            "cacao",
+            "spirulina",
+            "maca",
+            "root",
+            "organic"
+          ]
+        ],
+        [
+          "Starter Packs",
+          [
+            "starter",
+            "pack",
+            "kit",
+            "set",
+            "bundle"
+          ]
+        ]
+      ],
+      "Snacks": [
+        [
+          "Bars",
+          [
+            "bar"
+          ]
+        ],
+        [
+          "Bites",
+          [
+            "bite",
+            "ball",
+            "cookie"
+          ]
+        ]
+      ]
+    },
+    "defaults": {
+      "Supplements": "All",
+      "Snacks": "All"
+    },
+    "labels": {
+      "cart": "Basket",
+      "add_to_cart": "Add to basket",
+      "cart_title": "Your basket",
+      "cart_empty": "Your basket is empty",
+      "confirm_title": "Your order is on its way.",
+      "browse_cta": "Start shopping"
+    },
+    "profile": {
+      "tiers": [
+        "Member",
+        "Subscriber",
+        "Subscriber Plus"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "Goal",
+        "options": [
+          "Energy",
+          "Recovery",
+          "Everyday health",
+          "Weight",
+          "Sleep"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Set up a subscription",
+      "lede": "Choose what arrives, how often, and when the first box lands. Pause any time.",
+      "event": "subscription_set",
+      "fields": [
+        {
+          "label": "Goal",
+          "name": "goal",
+          "options": [
+            "Energy",
+            "Recovery",
+            "Everyday health",
+            "Weight",
+            "Sleep"
+          ]
+        },
+        {
+          "label": "Frequency",
+          "name": "frequency",
+          "options": [
+            "Every 2 weeks",
+            "Every month",
+            "Every 2 months"
+          ]
+        },
+        {
+          "label": "First delivery",
+          "name": "date",
+          "options": "date"
+        }
+      ],
+      "attribute_field": "goal"
+    },
+    "hero_category": "Supplements",
+    "foryou_title": "Your routine",
+    "showcase": {
+      "search": "protein",
+      "product": "46171412234514"
+    },
+    "replenishment_days": {
+      "_default": 30
     }
   }
 }

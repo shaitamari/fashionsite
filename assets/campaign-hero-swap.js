@@ -26,13 +26,13 @@
 
   var COPY = {
     fashion: {
-      eyebrow: 'Outerwear',
+      eyebrow: 'Coats',
       title:   "The coat you'll wear<br>until March.",
       lede:    'New in, and built for the walk to the station.',
-      cta:     'Shop outerwear',
-      href:    'category.html?c=Outerwear',
-      image:   'https://insiderdemo.com/assets/img/fashion/8650096967740-0.jpg',
-      product: 'product.html?id=43463778435132'
+      cta:     'Shop coats',
+      href:    'category.html?c=Women&sub=Jackets%20%26%20Coats',
+      image:   'https://cdn.shopify.com/s/files/1/0804/7552/1298/products/20141215_Lana-887.jpg?v=1691696660',
+      product: 'product.html?id=46155959992594'
     },
     beauty: {
       eyebrow: 'Shade finder',
