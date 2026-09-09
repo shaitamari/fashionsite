@@ -21,6 +21,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Third Party</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.4</g:custom_label_3>
+    <rating>4.4</rating>
+    <g:custom_label_4>35</g:custom_label_4>
+    <margin>35</margin>
+    <activation_date>2026-09-02</activation_date>
   </item>
   <item>
     <g:id>48400000000002</g:id>
@@ -39,6 +44,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Third Party Fire &amp; Theft</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.4</g:custom_label_3>
+    <rating>4.4</rating>
+    <g:custom_label_4>35</g:custom_label_4>
+    <margin>35</margin>
+    <activation_date>2026-09-02</activation_date>
   </item>
   <item>
     <g:id>48400000000003</g:id>
@@ -57,6 +67,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Comprehensive</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.4</g:custom_label_3>
+    <rating>4.4</rating>
+    <g:custom_label_4>35</g:custom_label_4>
+    <margin>35</margin>
+    <activation_date>2026-09-02</activation_date>
   </item>
   <item>
     <g:id>48400000000004</g:id>
@@ -75,6 +90,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Third Party</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.4</g:custom_label_3>
+    <rating>4.4</rating>
+    <g:custom_label_4>35</g:custom_label_4>
+    <margin>35</margin>
+    <activation_date>2026-09-09</activation_date>
   </item>
   <item>
     <g:id>48400000000005</g:id>
@@ -93,6 +113,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Third Party Fire &amp; Theft</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.4</g:custom_label_3>
+    <rating>4.4</rating>
+    <g:custom_label_4>35</g:custom_label_4>
+    <margin>35</margin>
+    <activation_date>2026-09-09</activation_date>
   </item>
   <item>
     <g:id>48400000000006</g:id>
@@ -111,6 +136,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Comprehensive</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.4</g:custom_label_3>
+    <rating>4.4</rating>
+    <g:custom_label_4>35</g:custom_label_4>
+    <margin>35</margin>
+    <activation_date>2026-09-09</activation_date>
   </item>
   <item>
     <g:id>48400000000007</g:id>
@@ -129,6 +159,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Buildings</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.3</g:custom_label_3>
+    <rating>4.3</rating>
+    <g:custom_label_4>60</g:custom_label_4>
+    <margin>60</margin>
+    <activation_date>2026-03-01</activation_date>
   </item>
   <item>
     <g:id>48400000000008</g:id>
@@ -147,6 +182,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Contents</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.3</g:custom_label_3>
+    <rating>4.3</rating>
+    <g:custom_label_4>60</g:custom_label_4>
+    <margin>60</margin>
+    <activation_date>2026-03-01</activation_date>
   </item>
   <item>
     <g:id>48400000000009</g:id>
@@ -165,6 +205,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Buildings &amp; Contents</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.3</g:custom_label_3>
+    <rating>4.3</rating>
+    <g:custom_label_4>60</g:custom_label_4>
+    <margin>60</margin>
+    <activation_date>2026-03-01</activation_date>
   </item>
   <item>
     <g:id>48400000000010</g:id>
@@ -183,6 +228,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Buildings</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.4</g:custom_label_3>
+    <rating>4.4</rating>
+    <g:custom_label_4>55</g:custom_label_4>
+    <margin>55</margin>
+    <activation_date>2026-06-01</activation_date>
   </item>
   <item>
     <g:id>48400000000011</g:id>
@@ -201,6 +251,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Contents</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.4</g:custom_label_3>
+    <rating>4.4</rating>
+    <g:custom_label_4>55</g:custom_label_4>
+    <margin>55</margin>
+    <activation_date>2026-06-01</activation_date>
   </item>
   <item>
     <g:id>48400000000012</g:id>
@@ -219,6 +274,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Buildings &amp; Contents</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.4</g:custom_label_3>
+    <rating>4.4</rating>
+    <g:custom_label_4>55</g:custom_label_4>
+    <margin>55</margin>
+    <activation_date>2026-06-01</activation_date>
   </item>
   <item>
     <g:id>48400000000013</g:id>
@@ -237,6 +297,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Single Trip</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.8</g:custom_label_3>
+    <rating>4.8</rating>
+    <g:custom_label_4>55</g:custom_label_4>
+    <margin>55</margin>
+    <activation_date>2025-07-08</activation_date>
   </item>
   <item>
     <g:id>48400000000014</g:id>
@@ -255,6 +320,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Annual Multi-Trip</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.8</g:custom_label_3>
+    <rating>4.8</rating>
+    <g:custom_label_4>55</g:custom_label_4>
+    <margin>55</margin>
+    <activation_date>2025-07-08</activation_date>
   </item>
   <item>
     <g:id>48400000000015</g:id>
@@ -273,6 +343,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Backpacker</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.8</g:custom_label_3>
+    <rating>4.8</rating>
+    <g:custom_label_4>55</g:custom_label_4>
+    <margin>55</margin>
+    <activation_date>2025-07-08</activation_date>
   </item>
   <item>
     <g:id>48400000000016</g:id>
@@ -291,6 +366,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Single Trip</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>3.5</g:custom_label_3>
+    <rating>3.5</rating>
+    <g:custom_label_4>50</g:custom_label_4>
+    <margin>50</margin>
+    <activation_date>2026-08-18</activation_date>
   </item>
   <item>
     <g:id>48400000000017</g:id>
@@ -309,6 +389,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Annual Multi-Trip</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>3.5</g:custom_label_3>
+    <rating>3.5</rating>
+    <g:custom_label_4>50</g:custom_label_4>
+    <margin>50</margin>
+    <activation_date>2026-08-18</activation_date>
   </item>
   <item>
     <g:id>48400000000018</g:id>
@@ -327,6 +412,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Backpacker</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>3.5</g:custom_label_3>
+    <rating>3.5</rating>
+    <g:custom_label_4>50</g:custom_label_4>
+    <margin>50</margin>
+    <activation_date>2026-08-18</activation_date>
   </item>
   <item>
     <g:id>48400000000019</g:id>
@@ -345,6 +435,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Accident Only</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>3.6</g:custom_label_3>
+    <rating>3.6</rating>
+    <g:custom_label_4>60</g:custom_label_4>
+    <margin>60</margin>
+    <activation_date>2026-08-26</activation_date>
   </item>
   <item>
     <g:id>48400000000020</g:id>
@@ -363,6 +458,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Time Limited</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>3.6</g:custom_label_3>
+    <rating>3.6</rating>
+    <g:custom_label_4>60</g:custom_label_4>
+    <margin>60</margin>
+    <activation_date>2026-08-26</activation_date>
   </item>
   <item>
     <g:id>48400000000021</g:id>
@@ -381,6 +481,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Lifetime</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>3.6</g:custom_label_3>
+    <rating>3.6</rating>
+    <g:custom_label_4>60</g:custom_label_4>
+    <margin>60</margin>
+    <activation_date>2026-08-26</activation_date>
   </item>
   <item>
     <g:id>48400000000022</g:id>
@@ -399,6 +504,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Accident Only</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>3.6</g:custom_label_3>
+    <rating>3.6</rating>
+    <g:custom_label_4>35</g:custom_label_4>
+    <margin>35</margin>
+    <activation_date>2026-01-16</activation_date>
   </item>
   <item>
     <g:id>48400000000023</g:id>
@@ -417,6 +527,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Time Limited</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>3.6</g:custom_label_3>
+    <rating>3.6</rating>
+    <g:custom_label_4>35</g:custom_label_4>
+    <margin>35</margin>
+    <activation_date>2026-01-16</activation_date>
   </item>
   <item>
     <g:id>48400000000024</g:id>
@@ -435,6 +550,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Lifetime</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>3.6</g:custom_label_3>
+    <rating>3.6</rating>
+    <g:custom_label_4>35</g:custom_label_4>
+    <margin>35</margin>
+    <activation_date>2026-01-16</activation_date>
   </item>
   <item>
     <g:id>48400000000025</g:id>
@@ -453,6 +573,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Level Term</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.6</g:custom_label_3>
+    <rating>4.6</rating>
+    <g:custom_label_4>50</g:custom_label_4>
+    <margin>50</margin>
+    <activation_date>2026-06-20</activation_date>
   </item>
   <item>
     <g:id>48400000000026</g:id>
@@ -471,6 +596,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Decreasing Term</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.6</g:custom_label_3>
+    <rating>4.6</rating>
+    <g:custom_label_4>50</g:custom_label_4>
+    <margin>50</margin>
+    <activation_date>2026-06-20</activation_date>
   </item>
   <item>
     <g:id>48400000000027</g:id>
@@ -489,6 +619,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Whole of Life</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.6</g:custom_label_3>
+    <rating>4.6</rating>
+    <g:custom_label_4>50</g:custom_label_4>
+    <margin>50</margin>
+    <activation_date>2026-06-20</activation_date>
   </item>
   <item>
     <g:id>48400000000028</g:id>
@@ -507,6 +642,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Level Term</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>3.4</g:custom_label_3>
+    <rating>3.4</rating>
+    <g:custom_label_4>60</g:custom_label_4>
+    <margin>60</margin>
+    <activation_date>2026-08-17</activation_date>
   </item>
   <item>
     <g:id>48400000000029</g:id>
@@ -525,6 +665,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Decreasing Term</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>3.4</g:custom_label_3>
+    <rating>3.4</rating>
+    <g:custom_label_4>60</g:custom_label_4>
+    <margin>60</margin>
+    <activation_date>2026-08-17</activation_date>
   </item>
   <item>
     <g:id>48400000000030</g:id>
@@ -543,6 +688,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Whole of Life</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>3.4</g:custom_label_3>
+    <rating>3.4</rating>
+    <g:custom_label_4>60</g:custom_label_4>
+    <margin>60</margin>
+    <activation_date>2026-08-17</activation_date>
   </item>
   <item>
     <g:id>48400000000031</g:id>
@@ -561,6 +711,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Essential</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.1</g:custom_label_3>
+    <rating>4.1</rating>
+    <g:custom_label_4>65</g:custom_label_4>
+    <margin>65</margin>
+    <activation_date>2026-09-12</activation_date>
   </item>
   <item>
     <g:id>48400000000032</g:id>
@@ -579,6 +734,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Standard</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.1</g:custom_label_3>
+    <rating>4.1</rating>
+    <g:custom_label_4>65</g:custom_label_4>
+    <margin>65</margin>
+    <activation_date>2026-09-12</activation_date>
   </item>
   <item>
     <g:id>48400000000033</g:id>
@@ -597,6 +757,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Comprehensive</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.1</g:custom_label_3>
+    <rating>4.1</rating>
+    <g:custom_label_4>65</g:custom_label_4>
+    <margin>65</margin>
+    <activation_date>2026-09-12</activation_date>
   </item>
   <item>
     <g:id>48400000000034</g:id>
@@ -615,6 +780,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Essential</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.5</g:custom_label_3>
+    <rating>4.5</rating>
+    <g:custom_label_4>60</g:custom_label_4>
+    <margin>60</margin>
+    <activation_date>2025-12-07</activation_date>
   </item>
   <item>
     <g:id>48400000000035</g:id>
@@ -633,6 +803,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Standard</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.5</g:custom_label_3>
+    <rating>4.5</rating>
+    <g:custom_label_4>60</g:custom_label_4>
+    <margin>60</margin>
+    <activation_date>2025-12-07</activation_date>
   </item>
   <item>
     <g:id>48400000000036</g:id>
@@ -651,6 +826,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Comprehensive</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.5</g:custom_label_3>
+    <rating>4.5</rating>
+    <g:custom_label_4>60</g:custom_label_4>
+    <margin>60</margin>
+    <activation_date>2025-12-07</activation_date>
   </item>
   <item>
     <g:id>48400000000037</g:id>
@@ -669,6 +849,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Buildings</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.9</g:custom_label_3>
+    <rating>4.9</rating>
+    <g:custom_label_4>30</g:custom_label_4>
+    <margin>30</margin>
+    <activation_date>2026-08-17</activation_date>
   </item>
   <item>
     <g:id>48400000000038</g:id>
@@ -687,6 +872,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Contents</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.9</g:custom_label_3>
+    <rating>4.9</rating>
+    <g:custom_label_4>30</g:custom_label_4>
+    <margin>30</margin>
+    <activation_date>2026-08-17</activation_date>
   </item>
   <item>
     <g:id>48400000000039</g:id>
@@ -705,6 +895,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Full Cover</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.9</g:custom_label_3>
+    <rating>4.9</rating>
+    <g:custom_label_4>30</g:custom_label_4>
+    <margin>30</margin>
+    <activation_date>2026-08-17</activation_date>
   </item>
   <item>
     <g:id>48400000000040</g:id>
@@ -723,6 +918,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Buildings</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.0</g:custom_label_3>
+    <rating>4.0</rating>
+    <g:custom_label_4>60</g:custom_label_4>
+    <margin>60</margin>
+    <activation_date>2025-09-10</activation_date>
   </item>
   <item>
     <g:id>48400000000041</g:id>
@@ -741,6 +941,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Contents</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.0</g:custom_label_3>
+    <rating>4.0</rating>
+    <g:custom_label_4>60</g:custom_label_4>
+    <margin>60</margin>
+    <activation_date>2025-09-10</activation_date>
   </item>
   <item>
     <g:id>48400000000042</g:id>
@@ -759,6 +964,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Full Cover</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.0</g:custom_label_3>
+    <rating>4.0</rating>
+    <g:custom_label_4>60</g:custom_label_4>
+    <margin>60</margin>
+    <activation_date>2025-09-10</activation_date>
   </item>
   <item>
     <g:id>48400000000043</g:id>
@@ -777,6 +987,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Public Liability</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.7</g:custom_label_3>
+    <rating>4.7</rating>
+    <g:custom_label_4>35</g:custom_label_4>
+    <margin>35</margin>
+    <activation_date>2026-07-08</activation_date>
   </item>
   <item>
     <g:id>48400000000044</g:id>
@@ -795,6 +1010,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Professional Indemnity</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.7</g:custom_label_3>
+    <rating>4.7</rating>
+    <g:custom_label_4>35</g:custom_label_4>
+    <margin>35</margin>
+    <activation_date>2026-07-08</activation_date>
   </item>
   <item>
     <g:id>48400000000045</g:id>
@@ -813,6 +1033,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Combined</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.7</g:custom_label_3>
+    <rating>4.7</rating>
+    <g:custom_label_4>35</g:custom_label_4>
+    <margin>35</margin>
+    <activation_date>2026-07-08</activation_date>
   </item>
   <item>
     <g:id>48400000000046</g:id>
@@ -831,6 +1056,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Public Liability</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>3.6</g:custom_label_3>
+    <rating>3.6</rating>
+    <g:custom_label_4>45</g:custom_label_4>
+    <margin>45</margin>
+    <activation_date>2026-04-20</activation_date>
   </item>
   <item>
     <g:id>48400000000047</g:id>
@@ -849,6 +1079,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Professional Indemnity</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>3.6</g:custom_label_3>
+    <rating>3.6</rating>
+    <g:custom_label_4>45</g:custom_label_4>
+    <margin>45</margin>
+    <activation_date>2026-04-20</activation_date>
   </item>
   <item>
     <g:id>48400000000048</g:id>
@@ -867,6 +1102,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Combined</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>3.6</g:custom_label_3>
+    <rating>3.6</rating>
+    <g:custom_label_4>45</g:custom_label_4>
+    <margin>45</margin>
+    <activation_date>2026-04-20</activation_date>
   </item>
   <item>
     <g:id>48400000000049</g:id>
@@ -885,6 +1125,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Third Party</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.7</g:custom_label_3>
+    <rating>4.7</rating>
+    <g:custom_label_4>50</g:custom_label_4>
+    <margin>50</margin>
+    <activation_date>2025-08-03</activation_date>
   </item>
   <item>
     <g:id>48400000000050</g:id>
@@ -903,6 +1148,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Comprehensive</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.7</g:custom_label_3>
+    <rating>4.7</rating>
+    <g:custom_label_4>50</g:custom_label_4>
+    <margin>50</margin>
+    <activation_date>2025-08-03</activation_date>
   </item>
   <item>
     <g:id>48400000000051</g:id>
@@ -921,6 +1171,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Third Party</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.0</g:custom_label_3>
+    <rating>4.0</rating>
+    <g:custom_label_4>60</g:custom_label_4>
+    <margin>60</margin>
+    <activation_date>2026-10-04</activation_date>
   </item>
   <item>
     <g:id>48400000000052</g:id>
@@ -939,6 +1194,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Comprehensive</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.0</g:custom_label_3>
+    <rating>4.0</rating>
+    <g:custom_label_4>60</g:custom_label_4>
+    <margin>60</margin>
+    <activation_date>2026-10-04</activation_date>
   </item>
   <item>
     <g:id>48400000000053</g:id>
@@ -957,6 +1217,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Single Item</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.3</g:custom_label_3>
+    <rating>4.3</rating>
+    <g:custom_label_4>45</g:custom_label_4>
+    <margin>45</margin>
+    <activation_date>2026-07-16</activation_date>
   </item>
   <item>
     <g:id>48400000000054</g:id>
@@ -975,6 +1240,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Family Cover</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>4.3</g:custom_label_3>
+    <rating>4.3</rating>
+    <g:custom_label_4>45</g:custom_label_4>
+    <margin>45</margin>
+    <activation_date>2026-07-16</activation_date>
   </item>
   <item>
     <g:id>48400000000055</g:id>
@@ -993,6 +1263,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Single Item</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>3.7</g:custom_label_3>
+    <rating>3.7</rating>
+    <g:custom_label_4>40</g:custom_label_4>
+    <margin>40</margin>
+    <activation_date>2026-02-02</activation_date>
   </item>
   <item>
     <g:id>48400000000056</g:id>
@@ -1011,6 +1286,11 @@
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>Family Cover</g:size>
     <g:custom_label_1>Level of cover</g:custom_label_1>
+    <g:custom_label_3>3.7</g:custom_label_3>
+    <rating>3.7</rating>
+    <g:custom_label_4>40</g:custom_label_4>
+    <margin>40</margin>
+    <activation_date>2026-02-02</activation_date>
   </item>
 </channel>
 </rss>
