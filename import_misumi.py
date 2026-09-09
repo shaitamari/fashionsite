@@ -30,34 +30,34 @@ BRAND = "MISUMI"
 
 # Order matters: the first rule whose keywords hit wins. Specific before broad.
 CATEGORIES = [
-    ("Cutting Tools", "Milling",      ("face mill", "end mill", "slot mill", "milling", "insert", "cutter")),
-    ("Cutting Tools", "Drilling",     ("drill", "reamer", "tap ", "tapping", "countersink", "diamond bit", "bit set", "bit ")),
-    ("Cutting Tools", "Blades",       ("blade", "saw", "shear", "knife", "cutting wheel", "grinding", "abrasive", "file")),
-    ("Hand Tools",    "Wrenches",     ("wrench", "spanner", "ratchet", "socket", "hex key", "allen")),
-    ("Hand Tools",    "Workholding",  ("vise", "vice", "clamp", "chuck", "jig")),
+    ("Cutting Tools", "Milling",      ("end mills", "carbide", "flute", "flutes", "tool bit", "grooving", "boring", "face mill", "end mill", "slot mill", "milling", "insert", "cutter")),
+    ("Cutting Tools", "Drilling",     ("drill", "reamer", "tap", "taps", "tapping", "countersink", "diamond bit", "bit set", "bit", "bits")),
+    ("Cutting Tools", "Blades",       ("punching", "blade", "saw", "shear", "knife", "cutting wheel", "grinding", "abrasive", "file")),
+    ("Hand Tools",    "Wrenches",     ("driver", "wrench", "spanner", "ratchet", "socket", "hex key", "allen")),
+    ("Hand Tools",    "Workholding",  ("clamps", "jaw", "holder", "vise", "vice", "clamp", "chuck", "jig")),
     ("Hand Tools",    "Tool Sets",    ("tool set", "tool kit", "screwdriver", "pliers", "hammer", "crimper", "crimping", "nipper", "tweezers")),
     ("Fasteners",     "Screws & Bolts", ("screw", "bolt", "stud", "thread")),
-    ("Fasteners",     "Nuts & Washers", ("nut ", "nuts", "washer", "rivet", "anchor", "dowel", "pin ", "clip", "clasp")),
-    ("Motion & Drives", "Bearings",   ("bearing", "bushing", "linear guide", "shaft", "coupling")),
-    ("Motion & Drives", "Actuators",  ("actuator", "slider", "cylinder", "cam unit", "cam ", "servo", "servomotor", "stepping motor", "motor", "gear", "pulley", "belt", "conveyor")),
-    ("Electrical & Control", "Switchgear", ("breaker", "disconnect", "switch", "relay", "contactor", "fuse")),
-    ("Electrical & Control", "Automation", ("controller", "plc", "hmi", "got1000", "inverter", "sensor", "encoder", "module", "unit", "power supply", "transformer")),
-    ("Electrical & Control", "Cables & Connectors", ("cable", "wire", "connector", "terminal", "harness", "cord", "thermocouple", "enclosure", "junction box")),
-    ("Pneumatics & Fluid", "Pumps & Valves", ("pump", "valve", "regulator", "compressor", "solenoid")),
+    ("Fasteners",     "Nuts & Washers", ("nut", "nuts", "washer", "rivet", "anchor", "dowel", "pin", "pins", "clip", "clasp")),
+    ("Motion & Drives", "Bearings",   ("bearings", "skf", "shock absorber", "slide", "bearing", "bushing", "linear guide", "shaft", "coupling")),
+    ("Motion & Drives", "Actuators",  ("actuator", "slider", "cylinder", "cam unit", "cam", "servo", "servomotor", "stepping motor", "motor", "gear", "pulley", "belt", "conveyor")),
+    ("Electrical & Control", "Switchgear", ("breakers", "elcb", "contact", "breaker", "disconnect", "switch", "relay", "contactor", "fuse")),
+    ("Electrical & Control", "Automation", ("simatic", "modules", "positioning", "modbus", "signal", "interface", "wireless", "radio", "battery", "board", "generator", "system", "device", "router", "ethernet", "devicenet", "controller", "plc", "hmi", "got1000", "inverter", "sensor", "encoder", "module", "unit", "power supply", "transformer")),
+    ("Electrical & Control", "Cables & Connectors", ("lead", "leads", "conn", "insertion tool", "extraction tool", "cable", "wire", "connector", "terminal", "harness", "cord", "thermocouple", "enclosure", "junction box")),
+    ("Pneumatics & Fluid", "Pumps & Valves", ("pneumatic", "hydraulic", "air", "pump", "valve", "regulator", "compressor", "solenoid")),
     ("Pneumatics & Fluid", "Hose & Fittings", ("hose", "fitting", "tube", "tubing", "pipe", "nozzle", "coupler", "reel", "pressure tank", "tank")),
-    ("Lab & Measurement", "Lab Equipment", ("centrifuge", "water bath", "incubator", "laboratory", "beaker", "flask", "pipette", "test paper", "stirrer", "shaker", "petri", "as one")),
-    ("Lab & Measurement", "Measuring",   ("level", "gauge", "caliper", "micrometer", "scale", "meter", "thermometer", "indicator", "tester", "microscope", "ruler", "square")),
-    ("Storage & Furniture", "Cabinets & Shelving", ("cabinet", "shelf", "shelving", "rack", "locker", "drawer")),
+    ("Lab & Measurement", "Lab Equipment", ("stereomicroscope", "microscope", "lab coat", "deionized", "prism", "lens", "oven", "centrifuge", "water bath", "mortar", "incubator", "laboratory", "beaker", "flask", "pipette", "test paper", "stirrer", "shaker", "petri", "as one")),
+    ("Lab & Measurement", "Measuring",   ("calipers", "borematic", "levelnic", "leveling", "clock", "temperature", "level", "gauge", "caliper", "micrometer", "scale", "meter", "thermometer", "indicator", "tester", "microscope", "ruler", "square")),
+    ("Storage & Furniture", "Cabinets & Shelving", ("storage", "stocker", "cabinet", "shelf", "shelving", "rack", "locker", "drawer")),
     ("Storage & Furniture", "Benches & Carts", ("bench", "table", "cart", "trolley", "chair", "lounge", "stool", "desk", "ladder", "step")),
-    ("Safety & Facility", "Facility",   ("fan", "light", "lamp", "heater", "air conditioner", "spring balancer", "balancer", "hoist", "sling", "vacuum", "cleaner", "blower")),
-    ("Safety & Facility", "Safety",     ("glove", "helmet", "goggle", "mask", "mat", "sign", "safety", "guard", "earplug", "vest", "boot")),
+    ("Safety & Facility", "Facility",   ("scrubber", "jack", "hatch", "hinge", "latch", "lever", "lock", "handle", "case", "fan", "light", "lamp", "heater", "air conditioner", "spring balancer", "balancer", "hoist", "sling", "vacuum", "cleaner", "blower")),
+    ("Safety & Facility", "Safety",     ("gloves", "apron", "finger cover", "resistant", "cloth", "coat", "cover", "shield", "glove", "helmet", "goggle", "mask", "mat", "sign", "safety", "guard", "earplug", "vest", "boot")),
     ("Materials & Consumables", "Adhesives & Tapes", ("adhesive", "tape", "sealant", "grease", "lubricant", "oil", "paint", "cleaner", "spray")),
     ("Materials & Consumables", "Raw Materials", ("plate", "sheet", "bar", "rod", "steel", "aluminum", "aluminium", "resin", "rubber", "foam", "block", "profile", "rail", "flange", "wheel", "caster", "spring", "stopper", "handwheel", "leg", "post", "stand", "frame")),
     # second pass, broader nets for what the specific rules missed
-    ("Electrical & Control", "Automation", ("panel", "display", "monitor", "reader", "detector", "filter", "supply", "series (", "ekip", "emax", "compact", "platform", "electronic", "electric", "code", "station")),
+    ("Electrical & Control", "Automation", ("panel", "display", "monitor", "reader", "detector", "filter", "supply",  "ekip", "emax", "compact", "platform", "electronic", "electric", "code", "station")),
     ("Safety & Facility", "Facility",   ("lifter", "stacker", "crane", "hoist", "trash", "cleaning", "clean", "mop", "brush", "wiper", "container", "wagon", "lantern", "dust", "waterproof", "door", "airbrush", "lubricator", "blanket", "clothes", "work clothes", "hood")),
     ("Lab & Measurement", "Measuring",   ("balance", "calibration", "paper", "cup", "sieve", "detection", "detector", "stage", "edge", "port")),
-    ("Hand Tools", "Tool Sets",          ("set", "kit", "pickup", "puncher", "stone", "mill")),
+    ("Hand Tools", "Tool Sets",          ("shovel", "set", "kit", "pickup", "puncher", "stone", "mill")),
 ]
 FALLBACK = ("Materials & Consumables", "General")
 
@@ -76,10 +76,17 @@ PALETTES = {
 
 
 def classify(name):
-    t = " " + name.lower() + " "
+    """Whole-word matching. Substring matching filed an EtherNet/IP router
+    under Workholding ("DeviceNet" contains "vice"), an oven under Safety
+    ("Automatic" contains "mat") and a grooving bit under Measuring
+    ("Diameter" contains "meter"). A keyword must start and end at a word
+    boundary; multi-word keys match as phrases."""
+    t = name.lower()
     for coll, sub, keys in CATEGORIES:
-        if any(k in t for k in keys):
-            return coll, sub
+        for k in keys:
+            k = k.strip()
+            if re.search(r"(?<![a-z])" + re.escape(k) + r"(?![a-z])", t):
+                return coll, sub
     return FALLBACK
 
 
