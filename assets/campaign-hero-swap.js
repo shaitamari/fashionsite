@@ -31,8 +31,17 @@
       lede:    'New in, and built for the walk to the station.',
       cta:     'Shop coats',
       href:    'category.html?c=Women&sub=Jackets%20%26%20Coats',
-      image:   'https://cdn.shopify.com/s/files/1/0804/7552/1298/products/20141215_Lana-887.jpg?v=1691696660',
+      image:   'https://insiderdemo.com/assets/img/fashion/8525960872210-0.jpg',
       product: 'product.html?id=46155959992594'
+    },
+    misumi: {
+      eyebrow: 'Cutting tools',
+      title:   'Tooling that ships<br>today.',
+      lede:    'Face mills, drills and inserts from stock, with volume pricing on account.',
+      cta:     'Browse cutting tools',
+      href:    'category.html?c=Cutting%20Tools',
+      image:   'https://insiderdemo.com/assets/img/misumi/223004996195.svg',
+      product: 'product.html?id=223004996195'
     },
     beauty: {
       eyebrow: 'Shade finder',

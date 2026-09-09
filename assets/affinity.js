@@ -285,6 +285,16 @@
                      lede: 'Bags, belts and jewellery that make the outfit yours.',
                      cta: 'Shop accessories', href: 'category.html?c=Accessories' },
 
+    // Industrial — MISUMI
+    'Cutting Tools':        { eyebrow: 'Because you have been looking at cutting tools',
+                              title: 'Keep the spindle turning.',
+                              lede: 'Mills, drills and inserts from stock.',
+                              cta: 'Shop cutting tools', href: 'category.html?c=Cutting%20Tools' },
+    'Electrical & Control': { eyebrow: 'Because you have been looking at control gear',
+                              title: 'Switch, sense, control.',
+                              lede: 'Breakers, sensors and automation modules.',
+                              cta: 'Shop electrical', href: 'category.html?c=Electrical%20%26%20Control' },
+
     // Beauty — Lumen
     Makeup:    { eyebrow: 'Because you have been looking at makeup',
                  title: 'Colour, considered.',

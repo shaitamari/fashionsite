@@ -51,5 +51,9 @@ window.VERTICALS = {
   "nutrition": {
     "brand": "Verdant",
     "tagline": "Supplements, superfoods and snacks"
+  },
+  "misumi": {
+    "brand": "MISUMI",
+    "tagline": "Industrial components, tools and equipment"
   }
 };

@@ -1534,7 +1534,8 @@
       "Necklaces": "Jewellery",
       "Rings": "Jewellery",
       "Earrings": "Jewellery"
-    }
+    },
+    "size_gaps": true
   },
   "electronics": {
     "vertical": "Retail",
@@ -2531,6 +2532,185 @@
     },
     "replenishment_days": {
       "_default": 30
+    }
+  },
+  "misumi": {
+    "vertical": "B2B",
+    "subvertical": "Industrial",
+    "brand": "MISUMI",
+    "tagline": "Industrial components, tools and equipment",
+    "hero_title": "Every part.<br>On time.",
+    "hero_lede": "Cutting tools, automation, fasteners and workshop equipment for manufacturers, shipped from stock.",
+    "hero_cta": "Browse cutting tools",
+    "hero_eyebrow": "Industrial supply",
+    "announce": "Same-day dispatch on stocked items · Volume pricing for account holders",
+    "search_placeholder": "Search by part number, product or brand",
+    "newsletter_title": "Engineering updates",
+    "newsletter_lede": "New ranges, price changes and stock alerts for your industry.",
+    "tiles_title": "Shop by category",
+    "grid_title": "New in range",
+    "reco_title": "Frequently ordered together",
+    "theme": {
+      "bg": "#FFFFFF",
+      "alt": "#F2F4F7",
+      "ink": "#111827",
+      "muted": "#5B6472",
+      "rule": "#DDE2EA",
+      "accent": "#0B4A8B",
+      "display": "'Jost', Helvetica, sans-serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Jost:wght@400;500;600;700"
+    },
+    "template": "ecommerce",
+    "source": "sources/misumi-*.json",
+    "collections": {
+      "Cutting Tools > Blades": "Cutting Tools",
+      "Cutting Tools > Drilling": "Cutting Tools",
+      "Cutting Tools > Milling": "Cutting Tools",
+      "Electrical & Control > Automation": "Electrical & Control",
+      "Electrical & Control > Cables & Connectors": "Electrical & Control",
+      "Electrical & Control > Switchgear": "Electrical & Control",
+      "Fasteners > Nuts & Washers": "Fasteners",
+      "Fasteners > Screws & Bolts": "Fasteners",
+      "Hand Tools > Tool Sets": "Hand Tools",
+      "Hand Tools > Workholding": "Hand Tools",
+      "Hand Tools > Wrenches": "Hand Tools",
+      "Lab & Measurement > Lab Equipment": "Lab & Measurement",
+      "Lab & Measurement > Measuring": "Lab & Measurement",
+      "Materials & Consumables > Adhesives & Tapes": "Materials & Consumables",
+      "Materials & Consumables > General": "Materials & Consumables",
+      "Materials & Consumables > Raw Materials": "Materials & Consumables",
+      "Motion & Drives > Actuators": "Motion & Drives",
+      "Motion & Drives > Bearings": "Motion & Drives",
+      "Pneumatics & Fluid > Hose & Fittings": "Pneumatics & Fluid",
+      "Pneumatics & Fluid > Pumps & Valves": "Pneumatics & Fluid",
+      "Safety & Facility > Facility": "Safety & Facility",
+      "Safety & Facility > Safety": "Safety & Facility",
+      "Storage & Furniture > Benches & Carts": "Storage & Furniture",
+      "Storage & Furniture > Cabinets & Shelving": "Storage & Furniture"
+    },
+    "type_subcats": {
+      "Cutting Tools > Blades": "Blades",
+      "Cutting Tools > Drilling": "Drilling",
+      "Cutting Tools > Milling": "Milling",
+      "Electrical & Control > Automation": "Automation",
+      "Electrical & Control > Cables & Connectors": "Cables & Connectors",
+      "Electrical & Control > Switchgear": "Switchgear",
+      "Fasteners > Nuts & Washers": "Nuts & Washers",
+      "Fasteners > Screws & Bolts": "Screws & Bolts",
+      "Hand Tools > Tool Sets": "Tool Sets",
+      "Hand Tools > Workholding": "Workholding",
+      "Hand Tools > Wrenches": "Wrenches",
+      "Lab & Measurement > Lab Equipment": "Lab Equipment",
+      "Lab & Measurement > Measuring": "Measuring",
+      "Materials & Consumables > Adhesives & Tapes": "Adhesives & Tapes",
+      "Materials & Consumables > General": "General",
+      "Materials & Consumables > Raw Materials": "Raw Materials",
+      "Motion & Drives > Actuators": "Actuators",
+      "Motion & Drives > Bearings": "Bearings",
+      "Pneumatics & Fluid > Hose & Fittings": "Hose & Fittings",
+      "Pneumatics & Fluid > Pumps & Valves": "Pumps & Valves",
+      "Safety & Facility > Facility": "Facility",
+      "Safety & Facility > Safety": "Safety",
+      "Storage & Furniture > Benches & Carts": "Benches & Carts",
+      "Storage & Furniture > Cabinets & Shelving": "Cabinets & Shelving"
+    },
+    "order": [
+      "Cutting Tools",
+      "Hand Tools",
+      "Fasteners",
+      "Motion & Drives",
+      "Electrical & Control",
+      "Pneumatics & Fluid",
+      "Lab & Measurement",
+      "Storage & Furniture",
+      "Safety & Facility",
+      "Materials & Consumables"
+    ],
+    "subcats": {},
+    "defaults": {
+      "Cutting Tools": "All",
+      "Hand Tools": "All",
+      "Fasteners": "All",
+      "Motion & Drives": "All",
+      "Electrical & Control": "All",
+      "Pneumatics & Fluid": "All",
+      "Lab & Measurement": "All",
+      "Storage & Furniture": "All",
+      "Safety & Facility": "All",
+      "Materials & Consumables": "All"
+    },
+    "labels": {
+      "cart": "Order",
+      "add_to_cart": "Add to order",
+      "cart_title": "Your order",
+      "cart_empty": "Your order is empty",
+      "checkout": "Continue to purchase order",
+      "place_order": "Place purchase order",
+      "order": "purchase order",
+      "confirm_title": "Purchase order received.",
+      "browse_cta": "Browse the catalogue"
+    },
+    "profile": {
+      "tiers": [
+        "Account",
+        "Preferred",
+        "Key Account"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "Industry",
+        "options": [
+          "Automotive",
+          "Electronics",
+          "Food & Beverage",
+          "Machinery",
+          "Pharmaceutical",
+          "Other"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Request a quote",
+      "lede": "Volume pricing, lead times and alternatives for a part or a whole bill of materials.",
+      "event": "quote_requested",
+      "fields": [
+        {
+          "label": "Order size",
+          "name": "volume",
+          "options": [
+            "Under 50 units",
+            "50–500 units",
+            "500+ units",
+            "Annual contract"
+          ]
+        },
+        {
+          "label": "Delivery site",
+          "name": "site",
+          "options": [
+            "Singapore",
+            "Johor",
+            "Bangkok",
+            "Ho Chi Minh City"
+          ]
+        },
+        {
+          "label": "Needed by",
+          "name": "date",
+          "options": "date"
+        }
+      ],
+      "attribute_field": "site"
+    },
+    "hero_category": "Cutting Tools",
+    "foryou_title": "Your usual parts",
+    "showcase": {
+      "search": "bearing",
+      "product": "223012365475"
+    },
+    "replenishment_days": {
+      "_default": 90
     }
   }
 }

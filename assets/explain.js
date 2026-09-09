@@ -30,6 +30,13 @@
               'it change.',
       next: { q: 'Cape Dress black', label: 'Now try black' }
     },
+    misumi: {
+      q: 'face mill',
+      chip: 'Search \u201cface mill\u201d. We dare you.',
+      payoff: 'Every result is filed under Cutting Tools \u203a Milling \u2014 a category the source data never had. ' +
+              'The taxonomy was derived from the part names, and search facets on it.',
+      next: { q: '90AP', label: 'Now try a part number' }
+    },
     beauty: {
       q: 'balm',
       chip: 'Search \u201cbalm\u201d. Count the cards, then count the shades.',

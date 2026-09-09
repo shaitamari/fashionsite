@@ -394,6 +394,28 @@ def build_catalog(key, cfg):
         prod_extra = next((p.get("salesdemo", {}) for p in products if str(p.get("id")) == rec["groupcode"]), {})
         enrich(rec, key, prod_extra, today)
 
+    # Size gaps. The salesdemo source carries stock per product, not per size,
+    # so nothing is ever "gone in your size" — and act six of the guide, the
+    # Agent One back-in-stock capture, needs exactly that. Where a vertical
+    # asks for it, one size on roughly a quarter of the multi-size styles is
+    # marked out of stock, chosen from the id so it is the same size every
+    # build. Real per-size stock from a source is never overridden.
+    if cfg.get("size_gaps"):
+        by_group = collections.defaultdict(list)
+        for rec in records:
+            by_group[rec["groupcode"]].append(rec)
+        for gid, recs in by_group.items():
+            sized = [r for r in recs if r.get("size") and r["in_stock"]]
+            sizes = sorted({r["size"] for r in sized})
+            if len(sizes) < 3 or len(sizes) != len({r["size"] for r in recs}):
+                continue
+            if _h(gid + "gap", 4) != 0:
+                continue
+            gone = sizes[_h(gid + "which", len(sizes))]
+            for r in recs:
+                if r["size"] == gone:
+                    r["stock"], r["in_stock"] = 0, 0
+
     if not records:
         raise ValueError(f"{key}: no products survived filtering — check `collections`")
 
