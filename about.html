@@ -225,7 +225,7 @@
       <summary>Why it matters, and how it is done</summary>
 
       <p><b>Every size here is its own product.</b> Its own id, its own stock,
-      its own page. Selecting the AU 10 does not change a dropdown — it moves
+      its own page. Selecting the M does not change a dropdown — it moves
       you to a different catalogue record, and the platform is told you looked
       at that one.</p>
 
@@ -236,14 +236,14 @@
 
       <p><b>Most shops cannot do this.</b> They keep one product id across
       every size, so every view of every size is recorded against the parent.
-      When the AU 10 comes back, there is no record of anyone having wanted the
-      AU 10 — only of people having looked at the dress. The notification goes
+      When the M comes back, there is no record of anyone having wanted the
+      M — only of people having looked at the dress. The notification goes
       out saying the style is available, to people whose size still is not.</p>
 
       <p>It is not a platform limitation on either side. It is whether the shop
       gives each size its own identity, and keeps that identity consistent
       between the page and the catalogue. Here it does, so a back-in-stock
-      message can be about the AU 10.</p>
+      message can be about the M.</p>
     </details>
   </section>
 
@@ -277,8 +277,7 @@
       to Gold, save. Then look at
       the top of any page.</p>
     </div>
-    <p class="hint">Every page knows it, straight away — and on the basket it
-    does arithmetic.</p>
+    <p class="hint">Every page knows it, straight away.</p>
     <details class="how">
       <summary>Why it matters, and how it is done</summary>
       <p><b>Why.</b> Tier is only useful if everything downstream can see it —
@@ -287,21 +286,10 @@
       VIP flag is derived from it rather than typed by anyone.</p>
       <p><b>How.</b> The profile holds which tier you are in and how many
       points you have. A lookup table holds what each tier is worth — the
-      discount, the free-shipping threshold, the points multiplier, and what
-      the next tier costs. One is about you, the other is about the programme.
-      Change the table and every campaign that quotes it updates, rather than
-      someone re-editing twelve of them.</p>
-
-      <p><b>The basket line is the interesting one.</b> It is not reading a
-      tier and printing a benefit — it is working out the gap. Your points,
-      the next threshold, the difference, and whether that difference is small
-      enough to be worth mentioning. Someone already at the top is told
-      nothing, because there is nothing to tell them.</p>
-
-      <p>That matters more than it sounds. “10,000 points gets you Gold”
-      shown to someone on 9,999 is a shop not paying attention. The arithmetic
-      is what makes the message safe to send at all — and it is the difference
-      between quoting a programme and knowing where somebody stands in it.</p>
+      discount, the free-shipping threshold, the points multiplier. One is
+      about you, the other is about the programme. Change the table and every
+      campaign that quotes it updates, rather than someone re-editing twelve
+      of them.</p>
     </details>
   </section>
 
@@ -343,16 +331,6 @@
       bought in the meantime — because the worst abandonment email is the one
       that arrives after the purchase.</p>
 
-      <p><b>The split is the part worth pausing on.</b> One arm routes with Next
-      Best Channel: a model choosing the channel this person has responded to
-      before. The other routes with the <b>Decision Agent</b>, which decides per
-      send — which channel, at what time, with which variant — inside the goal
-      and the guardrails set for it. Sometimes it decides not to send at all,
-      and the restraint is the point: intelligence is not always about action.</p>
-
-      <p>Both arms are running on the same journey and the same data, so you can
-      see which one is winning rather than take anyone’s word for it.</p>
-
       <p><b>And the journey itself was not built by hand.</b> It was described
       in a sentence and assembled by the Journey Agent — starter, waits,
       checks, channels, wired and connected. That saves an afternoon, which is
@@ -361,36 +339,6 @@
       stops the email chasing someone who has already bought. Those are the
       things people forget, and forgetting them is what makes an abandonment
       programme annoy customers instead of recovering them.</p>
-    </details>
-  </section>
-
-  <section class="act">
-    <p class="act__no">Ten <span class="act__time">· for the ones that need time</span></p>
-    <h2>And if you want to see the journeys that run on time</h2>
-
-    <div class="do">
-      <p>Some journeys do not run on clicks. They run on dates — reorder before
-        someone runs out, come back a year after they bought the thing they buy
-        once a year. Neither is visible in a ten-minute session, so
-        <a href="history.html">write yourself some history</a> and they have
-        something to fire on.</p>
-    </div>
-    <p class="hint">Then look at your profile again. It has a memory now.</p>
-    <details class="how">
-      <summary>Why it matters, and how it is done</summary>
-      <p><b>Why.</b> The most valuable journeys run on time rather than on
-      clicks: reorder before someone runs out, come back a year after they
-      bought the thing they buy once a year. Neither is visible in a
-      ten-minute session, and neither can be faked convincingly at the point of
-      use — so the history has to be real.</p>
-      <p><b>How.</b> Purchases are stored as an array on the profile, one entry
-      per item with its own date. A journey anchors on a date inside that array
-      and the message is built from it. Buy the same thing twice and the gap
-      between becomes the interval we expect next time — which beats any table
-      of shelf lives, because a household of five gets through shampoo faster
-      than one person does.</p>
-      <p>Everything that page writes goes through the same code a real checkout
-      uses, so a journey cannot tell the difference.</p>
     </details>
   </section>
 
