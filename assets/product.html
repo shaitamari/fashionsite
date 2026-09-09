@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Product — Lumen</title>
+
+<!-- Browsers largely ignore these; the real protection is the Cache-Control
+     headers in _headers / netlify.toml / vercel.json. Kept as a second line. -->
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<link rel="preconnect" href="https://cdn.shopify.com">
+<link rel="stylesheet" href="assets/styles.css">
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     INSIDER WEB SDK
+     Order is load-bearing:
+       1. InsiderQueue array
+       2. site scripts (telemetry wrapper must precede the first push)
+       3. Insider Tag (ins.js)
+       4. user data -> page data -> init
+     ═══════════════════════════════════════════════════════════════════════ -->
+
+<!-- 1. The queue. Must exist before the tag loads. -->
+<script>window.InsiderQueue = window.InsiderQueue || [];</script>
+
+<!-- 2. Site scripts. insider-debug.js wraps InsiderQueue.push to mirror every
+        payload into the on-page console, so it loads before anything is sent. -->
+<script src="assets/config.js"></script>
+<script src="assets/insider-debug.js"></script>
+<script src="assets/vertical.js"></script>
+<script src="assets/store.js"></script>
+<script src="assets/explain.js"></script>
+<script src="assets/affinity.js"></script>
+<script src="assets/agent.js"></script>
+
+<!-- 3. Insider Tag — written by assets/vertical.js, because which
+        account it points at depends on the hostname:
+          beauty.insiderdemo.com          -> partnersandbox
+          beauty-sandbox.insiderdemo.com  -> partnersandbox
+        Account and partner id are listed in vertical.js and shown
+        live in the SDK console. -->
+
+<!-- 4. Data pushes for this page. -->
+<script src="assets/recs.js"></script>
+<script>
+  var PID = new URLSearchParams(location.search).get('id');
+  var PRODUCT = Store.byId(PID) || Store.catalog[0];
+
+  Store.noteCategoryView(PRODUCT.collection);
+  Store.noteProductView();   // session counter, read by the low-intent rule
+
+  window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });
+  window.InsiderQueue.push({ type: 'currency', value: Store.currency() });
+
+  // --- page type: product -----------------------------------------------
+  // One product per page. `id` is the Shopify VARIANT id and `groupcode` is
+  // the product id — the same shape the feed carries into Eureka.
+  window.InsiderQueue.push({ type: 'product', value: Store.productPayload(PRODUCT) });
+
+  window.InsiderQueue.push({ type: 'init' });
+</script>
+</head>
+
+<body>
+
+<p class="announce" data-announce>Free shipping over $50</p>
+
+<header class="masthead">
+  <div class="masthead__in">
+    <a class="brand" href="index.html" data-brand>Lumen</a>
+    <form class="searchbox" data-search role="search" autocomplete="off">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" id="search-input" name="q" placeholder="Search products" data-search-placeholder aria-label="Search products">
+    </form>
+    <nav class="utils">
+      <span class="loy" data-loyalty-strip hidden></span>
+      <a href="flow.html" data-flow-link>Services</a>
+      <a href="account.html" data-account-label>Log in</a>
+      <a class="cartlink" href="cart.html"><span data-label="cart">Cart</span><span data-cart-count hidden>0</span></a>
+    </nav>
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="mainnav__in" data-collection-nav></div>
+</nav>
+
+<main>
+
+  <div class="wrap">
+    <section class="pdp">
+      <div class="pdp__gallery">
+        <div class="pdp__main"><img id="p-img" alt=""></div>
+        <div class="pdp__thumbs" id="p-thumbs"></div>
+      </div>
+
+      <div>
+        <p class="pdp__vendor" id="p-vendor"></p>
+        <p class="eyebrow" style="margin-bottom:.75rem"><span id="p-crumb"></span> <span class="pagetype">page type: product</span></p>
+        <h1 class="h1" style="font-size:clamp(1.5rem,3vw,2.25rem)" id="p-name"></h1>
+        <p class="pdp__price" id="p-price"></p>
+        <p class="lede" id="p-desc" style="margin-bottom:2rem;font-size:.9375rem"></p>
+
+        <div id="colourway-block" hidden style="margin-bottom:1.5rem">
+          <p class="eyebrow" style="margin-bottom:.6rem">Colour: <span id="colourway-name"></span></p>
+          <div class="card__swatches" id="p-colourways"></div>
+        </div>
+
+        <div id="variant-block" hidden>
+          <p class="eyebrow" style="margin-bottom:.6rem"><span id="variant-label"></span></p>
+          <div class="sizes" id="p-variants"></div>
+        </div>
+
+        <div class="qtyrow">
+          <div class="qty">
+            <button type="button" id="q-dec">&minus;</button>
+            <span id="q-val">1</span>
+            <button type="button" id="q-inc">+</button>
+          </div>
+          <span style="font-size:.8125rem;color:var(--muted)" id="p-stockline"></span>
+        </div>
+
+        <button class="btn btn--wide" id="add-btn" data-label="add_to_cart">Add to cart</button>
+
+        <div style="display:flex;gap:1.5rem;margin-top:1.25rem">
+          <button class="linkish" id="wish-btn">Save for later</button>
+          <button class="linkish" id="size-btn">Size &amp; fit</button>
+        </div>
+
+        <p class="source" id="pdp-msg" style="margin-top:1.5rem" hidden></p>
+
+        <div class="spec">
+          <dl>
+            <dt>Variant ID</dt><dd id="p-id"></dd>
+            <dt>Product ID</dt><dd id="p-group"></dd>
+            <dt>Variant</dt><dd id="p-sku"></dd>
+            <dt>Category</dt><dd id="p-vend2"></dd>
+            <dt>Collection</dt><dd id="p-type"></dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section__head">
+        <h2 class="h2">You may also like</h2>
+        <span class="source" id="reco-product-note">Smart Recommender · waiting for campaign</span>
+      </div>
+      <div id="reco-product" hidden></div>
+    </section>
+
+    <!-- Second recommendation row. Two rows on a PDP is the standard retail
+         layout, and here the pairing is deliberate: Similar reads product
+         descriptions and attributes, Visually Similar reads the images. Same
+         product, two different ways of deciding what belongs next to it. -->
+    <section class="section">
+      <div class="section__head">
+        <h2 class="h2">Similar in look</h2>
+        <span class="source" id="reco-productVisual-note">Smart Recommender · waiting for campaign</span>
+      </div>
+      <div id="reco-productVisual" hidden></div>
+    </section>
+
+    <!-- Third row: what GOES WITH this, rather than what is like it.
+         Replaces a static "more from this category" grid, which was the one
+         row on this page not driven by the platform and sat awkwardly beneath
+         two that are. Academy puts Complementary on product detail and cart
+         pages both; on fashion the PDP is arguably the better of the two,
+         since outfit-building is exactly what someone is doing here. -->
+    <section class="section">
+      <div class="section__head">
+        <h2 class="h2">Goes well with</h2>
+        <span class="source" id="reco-productComplement-note">Smart Recommender · waiting for campaign</span>
+      </div>
+      <div id="reco-productComplement" hidden></div>
+    </section>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <span><span data-brand>Lumen</span> — Insider One demo storefront</span>
+    <span data-env-label>partnersandbox · 10006846</span>
+  </div>
+</footer>
+
+<script>
+
+  function watchReco(key) {
+    var box = document.getElementById('reco-' + key);
+    var note = document.getElementById('reco-' + key + '-note');
+    if (!box || !note) return;
+    new MutationObserver(function () {
+      if (!box.hidden && box.children.length) {
+        note.className = 'source is-live';
+        note.textContent = 'Smart Recommender · live from ' +
+          ((window.ENVIRONMENT && window.ENVIRONMENT.account) || 'the platform');
+      }
+    }).observe(box, { childList: true, attributes: true });
+  }
+
+  document.title = PRODUCT.name + ' — Lumen';
+  document.getElementById('p-img').src = PRODUCT.image;
+  document.getElementById('p-name').textContent = PRODUCT.name;
+  document.getElementById('p-vendor').textContent = PRODUCT.subcategory || '';
+  document.getElementById('p-desc').textContent = PRODUCT.description || '';
+  document.getElementById('p-id').textContent = PRODUCT.id;
+  document.getElementById('p-group').textContent = PRODUCT.groupcode;
+  document.getElementById('p-sku').textContent = PRODUCT.variant_label || '—';
+  document.getElementById('p-vend2').textContent = PRODUCT.subcategory || '—';
+  document.getElementById('p-type').textContent = PRODUCT.collection || '—';
+  document.getElementById('p-stockline').textContent =
+    PRODUCT.in_stock ? 'In stock' : 'Out of stock';
+
+  var crumb = document.getElementById('p-crumb');
+  crumb.innerHTML = '<a href="category.html?c=' + encodeURIComponent(PRODUCT.collection) +
+                    '" style="color:inherit">' + PRODUCT.collection + '</a>';
+
+  var priceEl = document.getElementById('p-price');
+  if (PRODUCT.unit_sale_price < PRODUCT.unit_price) {
+    priceEl.innerHTML = '<s class="was">' + Store.money(PRODUCT.unit_price) +
+                        '</s><span class="now">' + Store.money(PRODUCT.unit_sale_price) + '</span>';
+  } else {
+    priceEl.textContent = Store.money(PRODUCT.unit_price);
+  }
+
+  var thumbs = document.getElementById('p-thumbs');
+  (PRODUCT.images || [PRODUCT.image]).forEach(function (src, i) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('aria-pressed', String(i === 0));
+    b.innerHTML = '<img alt="" src="' + src + '">';
+    b.addEventListener('click', function () {
+      document.getElementById('p-img').src = src;
+      thumbs.querySelectorAll('button').forEach(function (n) {
+        n.setAttribute('aria-pressed', String(n === b));
+      });
+    });
+    thumbs.appendChild(b);
+  });
+  if (thumbs.children.length < 2) thumbs.hidden = true;
+
+  /* Colourways. A colour is a DIFFERENT product here — its own groupcode, its
+     own sizes, its own URL — so these navigate, exactly like the swatches on
+     the cards. Only rendered where the style genuinely exists in more than one
+     colour; see Store.colourways(). */
+  var ways = (Store.colourways ? Store.colourways(PRODUCT) : []);
+  if (ways.length > 1) {
+    var cblock = document.getElementById('colourway-block');
+    var chost = document.getElementById('p-colourways');
+    cblock.hidden = false;
+
+    var current = null;
+    ways.forEach(function (w) {
+      if (w.groupcode === PRODUCT.groupcode) current = w;
+      var dot = document.createElement('span');
+      dot.className = 'swatch swatch--lg swatch--link' +
+                      (w.groupcode === PRODUCT.groupcode ? ' is-current' : '');
+      dot.style.background = w.hex;
+      dot.title = w.colour;
+      dot.setAttribute('role', 'link');
+      dot.setAttribute('tabindex', '0');
+      dot.setAttribute('aria-label', w.colour);
+      function go() { if (w.groupcode !== PRODUCT.groupcode) location.href = w.href; }
+      dot.addEventListener('click', go);
+      dot.addEventListener('keydown', function (ev) {
+        if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); go(); }
+      });
+      chost.appendChild(dot);
+    });
+    document.getElementById('colourway-name').textContent = current ? current.colour : '';
+  }
+
+  /* Sizes. Siblings share a groupcode, and switching size is a NAVIGATION —
+     each is its own catalog record and needs its own product view pushed.
+
+     The button shows every dimension EXCEPT the one already named above it,
+     read from `variant_parts` — each option in source order, tagged with the
+     slot it landed in.
+
+     This used to split `variant_label` and drop any token that looked like a
+     colour, because the label was one compound string. That silently deleted
+     real differentiators: a sofa varying by Leg Finish lost "Walnut - Wood",
+     "Oak - Wood" and "Black - Metal" (all colour words) while keeping "Ebony",
+     "Chrome" and "Brass" (not in the list), so three buttons collapsed to
+     identical text. The feed now carries the fields separately, so there is
+     nothing left to guess. */
+  function sizeLabel(v, showColour) {
+    var parts = (v.variant_parts || []).filter(function (x) {
+      return showColour || x.slot !== 'color';
+    });
+    if (parts.length) {
+      return parts.map(function (x) { return x.value; }).join(' / ');
+    }
+    // Colour-only product: the colour IS the thing being chosen, so show it.
+    return v.color || v.variant_label || '';
+  }
+
+  /* Whether the colour is safe to hide. In fashion one groupcode is one
+     colourway, so the colour is constant across siblings and stating it on
+     every button is noise. In home a groupcode spans several upholstery
+     colours as well as sizes and hardware, so hiding it makes six genuinely
+     different variants read identically. Decide from the data rather than
+     assuming one shape. */
+  function colourVaries(list) {
+    var seen = {}, n = 0;
+    list.forEach(function (v) {
+      var c = v.color || '';
+      if (!seen[c]) { seen[c] = 1; n++; }
+    });
+    return n > 1;
+  }
+
+  /* What to call the row. One remaining dimension gets its own name — "Size",
+     "Room", "Cabin", "Level of cover". More than one, and no single name is
+     honest, so stay generic rather than calling a leg finish a fabric. */
+  function variantHeading(p, showColour) {
+    var dims = [], seen = {};
+    (p.variant_parts || []).forEach(function (x) {
+      if ((!showColour && x.slot === 'color') || seen[x.name]) return;
+      seen[x.name] = 1;
+      dims.push(x.name);
+    });
+    if (dims.length === 1) return dims[0];
+    if (dims.length > 1) return 'Options';
+    return p.color_label || p.option_name || 'Shade';
+  }
+
+  var siblings = Store.catalog.filter(function (x) {
+    return x.groupcode === PRODUCT.groupcode && x.variant_label;
+  });
+  var showColour = colourVaries(siblings);
+
+  if (siblings.length > 1) {
+    document.getElementById('variant-block').hidden = false;
+    document.getElementById('variant-label').textContent = variantHeading(PRODUCT, showColour);
+    var host = document.getElementById('p-variants');
+    siblings.forEach(function (sib) {
+      var b = document.createElement('button');
+      b.className = 'shade';
+      b.type = 'button';
+      b.textContent = sizeLabel(sib, showColour);
+      b.setAttribute('aria-pressed', String(sib.id === PRODUCT.id));
+
+      /* OUT OF STOCK, PER VARIANT.
+
+         The catalogue already carries stock per record — each size is its own
+         item with its own availability, straight from the source feed. The
+         page simply had not been showing it, so every size looked buyable and
+         a shopper only found out at the basket.
+
+         This matters beyond tidiness. Back in Stock matches a user's product
+         view against a catalogue item going from 0 to 1, keyed on the product
+         id. If a site keeps one id across every size, the platform records
+         every view against the parent and cannot tell which size someone
+         wanted — which is why variant-level Back in Stock does not work on
+         most Shopify storefronts (IDEA-8429).
+
+         Here each size is its own id and its own record, so the view is
+         recorded against the exact variant. Marking it unavailable is what
+         makes that view mean "I wanted this one and could not have it". */
+      if (!sib.in_stock) {
+        b.classList.add('shade--out');
+        b.setAttribute('aria-disabled', 'true');
+        b.title = 'Out of stock';
+      }
+
+      b.addEventListener('click', function () {
+        if (sib.id !== PRODUCT.id) location.href = Store.localHref(sib);
+      });
+      host.appendChild(b);
+    });
+  }
+
+  /* Say it plainly under the sizes, and stop the basket accepting something
+     that is not there. A shopper who adds an out-of-stock size and finds out
+     at checkout is the experience this whole use case exists to fix. */
+  (function stockState() {
+    var line = document.getElementById('p-stockline');
+    var add = document.getElementById('add-btn');
+    if (PRODUCT.in_stock) return;
+    if (line) {
+      line.textContent = 'Out of stock in this size';
+      line.style.color = 'var(--accent)';
+    }
+    if (add) {
+      add.disabled = true;
+      add.textContent = 'Out of stock';
+      add.style.opacity = '.5';
+      add.style.cursor = 'not-allowed';
+    }
+  })();
+
+  var qty = 1;
+  var qval = document.getElementById('q-val');
+  document.getElementById('q-inc').addEventListener('click', function () {
+    qty++; qval.textContent = qty;
+  });
+  document.getElementById('q-dec').addEventListener('click', function () {
+    if (qty > 1) { qty--; qval.textContent = qty; }
+  });
+
+  var msg = document.getElementById('pdp-msg');
+  function say(text, cls) {
+    msg.hidden = false;
+    msg.className = 'source ' + (cls || 'is-live');
+    msg.textContent = text;
+  }
+
+  document.getElementById('add-btn').addEventListener('click', function () {
+    var payload = Store.addToCart(PRODUCT.id, qty);
+    // add_to_cart does NOT need an init afterwards.
+    window.InsiderQueue.push({ type: 'add_to_cart', value: payload });
+    say('add_to_cart sent · variant ' + PRODUCT.id + ' ×' + qty);
+    offerTheDare();
+  });
+
+  /* --- the dare ------------------------------------------------------------
+     Once something is in the basket, invite the visitor to add the same style
+     in a second size. There is a cart campaign waiting for exactly that, and
+     without a nudge nobody stumbles into it.
+
+     DELIBERATELY SITE-SIDE, and not a campaign. A rule that encourages someone
+     to order two sizes is not something a retailer would ever ship — it exists
+     to set up the next beat. Dressing stagecraft as product is the one thing
+     this estate does not do. The cart message that follows IS a campaign, and
+     is a real merchandising decision; this is the shop showing you where to
+     look, in the same voice as the search dare under the masthead. */
+  function offerTheDare() {
+    if (document.getElementById('pdp-dare')) return;
+
+    // Only when this style has another size to add, and only while the basket
+    // does not already hold one.
+    var siblings = (Store.catalog || []).filter(function (p) {
+      return p.groupcode === PRODUCT.groupcode && p.id !== PRODUCT.id && p.size;
+    });
+    if (!siblings.length) return;
+
+    var inCart = {};
+    (JSON.parse(localStorage.getItem('lmn.cart') || '[]')).forEach(function (l) {
+      var p = Store.byId(String(l.id));
+      if (p && p.groupcode === PRODUCT.groupcode) inCart[p.size] = true;
+    });
+    if (Object.keys(inCart).length > 1) return;   // the dare has been taken
+
+    var other = siblings.filter(function (p) { return !inCart[p.size]; })[0];
+    if (!other) return;
+
+    var el = document.createElement('p');
+    el.id = 'pdp-dare';
+    el.className = 'source';
+    el.style.cssText = 'margin-top:.9rem;font-style:italic';
+    el.innerHTML = 'Torn between sizes? Add the ' + other.size +
+      ' as well, then look at your basket. <a href="product.html?id=' +
+      encodeURIComponent(other.id) + '">We dare you.</a>';
+    msg.parentNode.insertBefore(el, msg.nextSibling);
+  }
+
+  var wishBtn = document.getElementById('wish-btn');
+  function paintWish() { wishBtn.textContent = Store.isWished(PRODUCT.id) ? 'Saved' : 'Save for later'; }
+  paintWish();
+  wishBtn.addEventListener('click', function () {
+    var added = Store.toggleWish(PRODUCT.id);
+    paintWish();
+    if (!added) return;
+
+    /* THE DEFAULT EVENT, NOT A CUSTOM ONE.
+
+       This used to fire a custom event called product_wishlisted, which is
+       fine for segmentation and useless for everything else: the four native
+       wishlist journey templates — Wishlist Reminder, Price Drop, Back in
+       Stock, and Cross-sell — all listen for the DEFAULT event
+       item_added_to_wishlist. A custom event with a similar name matches none
+       of them, silently.
+
+       Back in Stock is the one that matters here. It targets users who viewed
+       an out-of-stock product or wishlisted it, matched on product id. Because
+       every size on this estate is its own catalogue record with its own id,
+       wishlisting the AU 10 records that exact variant — so when the AU 10
+       comes back, the notification is about the AU 10 rather than about the
+       style. Most sites cannot do that: they keep one id across every size, so
+       the platform never learns which one the shopper wanted. */
+    var line = {
+      product: {
+        id: String(PRODUCT.id),
+        name: PRODUCT.name,
+        taxonomy: PRODUCT.taxonomy,
+        currency: Store.currency(),
+        unit_price: PRODUCT.unit_price,
+        unit_sale_price: PRODUCT.unit_sale_price,
+        url: PRODUCT.url || Store.localHref(PRODUCT),
+        product_image_url: PRODUCT.image,
+        groupcode: PRODUCT.groupcode,
+        stock: PRODUCT.stock,
+        in_stock: PRODUCT.in_stock,
+        size: PRODUCT.size,
+        color: PRODUCT.color,
+        quantity: 1
+      },
+      quantity: 1
+    };
+
+    /* Repaint insider_object.wishlist so the full list is current, then let
+       the tag re-read it. The platform derives item_added_to_wishlist from the
+       object rather than from a push, so the object has to be right BEFORE the
+       re-init rather than after. */
+    if (window.insPaintWishlist) window.insPaintWishlist();
+    window.InsiderQueue.push({ type: 'wishlist', value: { line_items: [line] } });
+    window.InsiderQueue.push({ type: 'init' });
+
+    /* Kept alongside, because the custom event is already used in segments and
+       removing it would break them. The default event is what the journeys
+       need; the custom one costs nothing. */
+    window.InsiderQueue.push({
+      type: 'custom_event',
+      value: [{ event_name: 'product_wishlisted',
+                event_parameters: { custom: { product_id: PRODUCT.id, product_name: PRODUCT.name } } }]
+    });
+
+    say('wishlist push sent \u00b7 variant ' + PRODUCT.id +
+        (PRODUCT.in_stock ? '' : ' \u00b7 out of stock'));
+  });
+
+  document.getElementById('size-btn').addEventListener('click', function () {
+    window.InsiderQueue.push({
+      type: 'custom_event',
+      value: [{ event_name: 'size_guide_opened',
+                event_parameters: { custom: { product_id: PRODUCT.id } } }]
+    });
+    say('custom_event size_guide_opened sent');
+  });
+
+  // The local "more from this category" grid was removed: every row on this
+  // page is now platform-driven, and a static list sitting beneath two AI
+  // strategies weakened both.
+
+  watchReco('product');
+
+  // The recommender resolves asynchronously — the tag announces it via
+  // `ins-sr:only-api-campaign:load` once campaigns are ready. recs.js handles
+  // both that event and the case where it fired before this page's scripts
+  // ran. The section stays hidden until products arrive, so a page with no
+  // campaign simply has no widget rather than an empty heading.
+  if (window.Recs && window.Recs.enabled) {
+    window.Recs.mount('#reco-product');
+    // Slot name is taken from the host id, so this reads
+    // config.reco.perAccount[account].slots.productVisual.
+    window.Recs.mount('#reco-productVisual');
+    window.Recs.mount('#reco-productComplement');
+  }
+</script>
+</body>
+</html>
