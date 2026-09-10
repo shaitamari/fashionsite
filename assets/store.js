@@ -436,6 +436,9 @@
       sku: p.sku,
       locale: env('locale', 'en_GB'),
       custom: {
+        /* On the product payload too, so onsite rules can scope to a
+           storefront without a URL condition. */
+        vertical: window.VERTICAL_KEY || null,
         vendor: p.vendor,
         product_type: p.product_type,
         handle: p.handle,
@@ -548,6 +551,23 @@
       country: u.country || undefined,
       gdpr_optin: u.gdpr_optin !== false,
       custom: {
+        /* WHICH STOREFRONT THIS IS.
+
+           Sent so a campaign rule can target the vertical by name rather than
+           by hostname. Hostname matching is fragile across environments —
+           fashion.insiderdemo.com and fashion-sandbox.insiderdemo.com are the
+           same brand on two accounts, and a substring rule like "home" would
+           catch paths on other sites too.
+
+           It also reaches email and push, which cannot read the page. That is
+           what makes one journey able to serve twelve storefronts, branching
+           on this for the copy, rather than twelve journeys. */
+        vertical: window.VERTICAL_KEY || null,
+        /* And the display name, so a template can say the shop's name with a
+           token rather than having it typed in. Removing the brand from a
+           shared template makes every message slightly anonymous; a token
+           keeps it warm and still lets one template serve twelve. */
+        brand: (window.VERTICAL && window.VERTICAL.brand) || null,
         membership_tier: u.membership_tier || 'Bronze',
         loyalty_points: typeof u.loyalty_points === 'number' ? u.loyalty_points : 0,
         preferred_category: u.preferred_category || preferredCategory(),
