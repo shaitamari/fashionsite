@@ -72,13 +72,13 @@
   var DEFAULT = null;      // <- one channel id here gets the widget on all twelve
 
   var CHANNELS = {
-    beauty:      null,     // Lumen
+    beauty:      { sandbox: '6aa411991e38ba0119dfc911', demo: null },   // Lumen
     /* Ashford Lane. The only vertical with a live channel, and deliberately
        not DEFAULT: the assistant is trained on one catalogue, so pointing it
        at Wayfarer or Northbank would produce confident answers about the wrong
        shop. Worse than no agent. Each vertical gets its own id when it gets
        its own assistant. */
-    fashion:     '6a99de97f901f0237d1ec0ab',   // Ashford Lane
+    fashion:     { sandbox: '6a99de97f901f0237d1ec0ab', demo: null },   // Ashford Lane
     electronics: null,     // Kestrel
     home:        null,     // Aldgate
     luxury:      null,     // Beaumont Vale
@@ -142,7 +142,18 @@
 
     var key = window.VERTICAL_KEY;
     if (!key) return null;
-    return CHANNELS[key] || DEFAULT || null;
+    /* An entry is either one id (same agent on both accounts) or a pair:
+       { sandbox: '<partnersandbox channel>', demo: '<salesdemo channel>' }.
+       The agent's action writes to one Insider account, so once salesdemo
+       has its own agents every vertical becomes a pair, picked by the
+       environment the hostname resolved to. A missing half stays null and
+       fails visibly, as before. */
+    var entry = CHANNELS[key];
+    if (entry && typeof entry === 'object') {
+      var env = window.ENVIRONMENT_KEY === 'sandbox' ? 'sandbox' : 'demo';
+      return entry[env] || null;
+    }
+    return entry || DEFAULT || null;
   }
 
   /* --- load --------------------------------------------------------------- */
