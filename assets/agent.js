@@ -88,6 +88,8 @@
     airlines:    null,     // Meridian Air
     banking:     null,     // Northbank
     insurance:   null,     // Fairhaven
+    nutrition:   null,     // Verdant
+    misumi:      null,     // MISUMI
     fintech:     null      // Loop
   };
 

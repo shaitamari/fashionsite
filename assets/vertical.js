@@ -779,6 +779,16 @@
         a.style.cssText = 'margin-left:1.25rem;text-decoration:underline';
         var last = host.lastElementChild;
         if (last) last.appendChild(a); else host.appendChild(a);
+
+        /* Help centre: static pages per storefront under help/<key>/, the
+           Shopping Agent's knowledge base is crawled from them, and a
+           visitor can read the same answers. */
+        var help = document.createElement('a');
+        help.href = 'help/' + window.VERTICAL_KEY + '/index.html';
+        help.textContent = 'Help centre';
+        help.setAttribute('data-help-link', '');
+        help.style.cssText = 'margin-left:1.25rem;text-decoration:underline';
+        (host.lastElementChild || host).appendChild(help);
       });
     })();
 
