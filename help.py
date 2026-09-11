@@ -284,6 +284,25 @@ def build(key):
     # about
     body = f"<h1>About {escape(brand)}</h1><p class='lede'>{escape(cfg['tagline'])}.</p>" + "".join(f"<p>{escape(x)}</p>" for x in about)
     open(f"{out}/about.html", "w").write(page(cfg, key, "about", f"About {brand}", body, "about"))
+
+    # all-in-one page for the knowledge base crawl. Agent One allows five
+    # sources per knowledge base and four knowledge bases per account, so a
+    # brand gets ONE crawled page, not five, and a knowledge base holds up to
+    # five brands. Every heading and every answer names the brand, so that
+    # when several brands share a knowledge base the retrieved text carries
+    # its own attribution and the agent can tell whose policy it is reading.
+    B = escape(brand)
+    def qa(items):
+        return "<dl>" + "".join(f"<dt>{B}: {escape(q)}</dt><dd>{B}. {escape(a)}</dd>" for q, a in items) + "</dl>"
+    body = f"<h1>{B} — everything a customer asks</h1><p class='lede'>{escape(cfg['tagline'])}. This page covers {B}'s {escape(macro['delivery_title'].lower())}, questions, membership tiers, {escape(stores_title.lower())} and story. Every answer below is about {B} only.</p>"
+    body += f"<h2>{B}: {escape(macro['delivery_title'])}</h2>" + qa(macro["delivery"])
+    body += f"<h2>{B}: Frequently asked questions</h2>" + qa(macro["faq"])
+    body += f"<h2>{B}: Membership and rewards</h2><dl>" + "".join(
+        f"<dt>{B} {escape(t)} tier</dt><dd>{B} {escape(t)} — how you get it: {escape(how)} What it includes: {escape(what)}</dd>" for t, (how, what) in rows) + "</dl>"
+    body += f"<h2>{B}: {escape(stores_title)}</h2><dl>" + "".join(
+        f"<dt>{B} — {escape(x.split(' — ')[0])}</dt><dd>{B} {escape(x.split(' — ')[0])}: {escape(x.split(' — ', 1)[1] if ' — ' in x else '')}</dd>" for x in stores) + "</dl>"
+    body += f"<h2>About {B}</h2>" + "".join(f"<p>{escape(x)}</p>" for x in about)
+    open(f"{out}/all.html", "w").write(page(cfg, key, "all", f"{brand} — everything a customer asks", body, "index"))
     return out
 
 
