@@ -338,11 +338,30 @@
     document.getElementById('variant-block').hidden = false;
     document.getElementById('variant-label').textContent = variantHeading(PRODUCT, showColour);
     var host = document.getElementById('p-variants');
-    siblings.forEach(function (sib) {
+
+    /* Colour-like options get a swatch dot beside the name, the same
+       colour the card's swatches use. Decided per product: if most of the
+       variants resolve to a colour (shades, flavours, finishes) the row is
+       a colour row; sizes and capacities never resolve, so they stay as
+       plain chips. The name stays, because "Black Cherry" and "Rose" are
+       the choice — the dot is what makes it read as colours at a glance. */
+    var labels = siblings.map(function (sib) { return sizeLabel(sib, showColour); });
+    var resolved = labels.filter(function (l) { return Store.swatchHex && Store.swatchHex(l); }).length;
+    var colourRow = resolved >= Math.ceil(labels.length / 2);
+
+    siblings.forEach(function (sib, i) {
       var b = document.createElement('button');
-      b.className = 'shade';
+      b.className = 'shade' + (colourRow ? ' shade--colour' : '');
       b.type = 'button';
-      b.textContent = sizeLabel(sib, showColour);
+      if (colourRow) {
+        var dot = document.createElement('span');
+        dot.className = 'shade__dot';
+        dot.style.background = Store.swatchHex(labels[i]) || '#cfcfcf';
+        b.appendChild(dot);
+        b.appendChild(document.createTextNode(labels[i]));
+      } else {
+        b.textContent = labels[i];
+      }
       b.setAttribute('aria-pressed', String(sib.id === PRODUCT.id));
 
       /* OUT OF STOCK, PER VARIANT.

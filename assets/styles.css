@@ -405,6 +405,9 @@ main { padding-bottom: 5rem; }
    Struck through rather than hidden. A missing size tells a shopper nothing;
    a struck-through one tells them it exists and is gone, which is the whole
    premise of a back-in-stock notification. */
+.shade--colour { padding-left: .55rem; }
+.shade__dot { display: inline-block; width: .8em; height: .8em; border-radius: 50%; margin-right: .45em;
+  vertical-align: -1px; border: 1px solid rgba(0,0,0,.18); box-shadow: inset 0 0 0 1px rgba(255,255,255,.35); }
 .shade--out {
   opacity: .45;
   text-decoration: line-through;
