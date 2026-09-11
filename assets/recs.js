@@ -411,7 +411,7 @@
 
       var box = document.createElement('a');
       box.className = 'ins-product-box ins-element-link ins-sr-api card';
-      box.href = p.url;
+      box.href = (window.Store && window.Store.localHref) ? window.Store.localHref(p) : p.url;   // stay on this hostname
       box.setAttribute('ins-product-id', p.id);
       box.setAttribute('data-product-categories', p.taxonomy.join(','));
       box.setAttribute('event-collection', 'true');

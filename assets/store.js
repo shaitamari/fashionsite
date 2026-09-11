@@ -436,9 +436,6 @@
       sku: p.sku,
       locale: env('locale', 'en_GB'),
       custom: {
-        /* On the product payload too, so onsite rules can scope to a
-           storefront without a URL condition. */
-        vertical: window.VERTICAL_KEY || null,
         vendor: p.vendor,
         product_type: p.product_type,
         handle: p.handle,
@@ -551,23 +548,6 @@
       country: u.country || undefined,
       gdpr_optin: u.gdpr_optin !== false,
       custom: {
-        /* WHICH STOREFRONT THIS IS.
-
-           Sent so a campaign rule can target the vertical by name rather than
-           by hostname. Hostname matching is fragile across environments —
-           fashion.insiderdemo.com and fashion-sandbox.insiderdemo.com are the
-           same brand on two accounts, and a substring rule like "home" would
-           catch paths on other sites too.
-
-           It also reaches email and push, which cannot read the page. That is
-           what makes one journey able to serve twelve storefronts, branching
-           on this for the copy, rather than twelve journeys. */
-        vertical: window.VERTICAL_KEY || null,
-        /* And the display name, so a template can say the shop's name with a
-           token rather than having it typed in. Removing the brand from a
-           shared template makes every message slightly anonymous; a token
-           keeps it warm and still lets one template serve twelve. */
-        brand: (window.VERTICAL && window.VERTICAL.brand) || null,
         membership_tier: u.membership_tier || 'Bronze',
         loyalty_points: typeof u.loyalty_points === 'number' ? u.loyalty_points : 0,
         preferred_category: u.preferred_category || preferredCategory(),
@@ -748,23 +728,16 @@
   /* --- the anniversary pick ------------------------------------------------
      Flattened deliberately.
 
-     Kept alongside the array, not instead of it.
+     The purchases array is the right data structure and it stays in the
+     browser. What the platform gets is four ordinary attributes, because the
+     legacy insider_object path does not carry an Array of Objects — the SDK
+     drops shapes it does not recognise, client-side, before anything is sent.
+     Web SDK ingestion would carry it; that is switched off on this account.
 
-     The array (c_purchases) is the right structure and is sent too. These four
-     exist because the array has never been verifiable on this account: it is
-     absent from the profile view, the broad segment filter returns zero, and
-     the keyed filter returns the same number for any value including nonsense.
-     None of those three tell you whether the data is stored.
-
-     Note the c_ prefix on the array. Every working implementation found
-     internally uses one — c_clube, c_lottery_tickets, c_settlements — and a
-     panel-created attribute without it is classified as Default rather than
-     Custom, which would explain a value that is declared, accepted and then
-     looked for in the wrong place.
-
-     So: array as the record, four flat fields as the fallback a journey can
-     anchor on today. Drop these once the array is proven — one anniversary per
-     person is a poor substitute for every purchase with its own date.
+     So: array here, four flat fields there. A journey can anchor on the date
+     and an email can name and picture the product, which is everything the
+     anniversary beat needs. When inioa is enabled the array becomes the source
+     and these four can go.
 
      WHICH PURCHASE. The oldest one whose anniversary has not yet passed —
      that is the next occasion coming round, which is what the journey should
@@ -934,9 +907,12 @@
          on an airline — so it reads as that brand's own language rather than
          as a platform feature bolted on.
 
-         data-current="__foryou__" marks it on the page itself. */
+         data-current="__foryou__" marks it on the page itself.
+
+         SC demo only: the page is left out of the sandbox nav, since it
+         invites a closer look than a browser-derived ranking survives. */
       var fy = (window.VERTICAL || {}).foryou_title;
-      if (fy) {
+      if (fy && window.ENVIRONMENT_KEY !== 'sandbox') {
         var f = document.createElement('a');
         f.href = 'foryou.html';
         f.textContent = fy;
@@ -962,7 +938,11 @@
     var sale = p.unit_sale_price < p.unit_price;
 
     el.innerHTML =
-      '<a class="card__link" href="' + (opts.href || p.url || localHref(p)) + '">' +
+      /* Always a relative link. The catalogue's `url` is the canonical
+         product URL on the bare domain — right for the feed and the SDK's
+         product object, wrong for navigation: from a -sandbox storefront it
+         would carry the visitor to the salesdemo site mid-demo. */
+      '<a class="card__link" href="' + (opts.href || localHref(p)) + '">' +
         '<div class="card__media">' +
           (sale ? '<span class="badge">Sale</span>' : '') +
           '<img loading="lazy" alt="" src="' + (p.image || '') + '">' +
