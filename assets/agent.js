@@ -89,7 +89,7 @@
     banking:     null,     // Northbank
     insurance:   null,     // Fairhaven
     nutrition:   null,     // Verdant
-    misumi:      null,     // MISUMI
+    misumi:      { sandbox: '6aa41e6b1e38ba0119dfc942', demo: null },   // MISUMI
     fintech:     null      // Loop
   };
 
