@@ -496,6 +496,8 @@
 
     host.appendChild(body);
     host.hidden = false;
+    var sec = host.closest ? host.closest('.section') : null;
+    if (sec) sec.hidden = false;
 
     // Each section has a "<id>-note" span that the page sets to "waiting for
     // campaign". Nothing was updating it once the campaign answered, so a
@@ -617,6 +619,15 @@
       var host = typeof target === 'string' ? document.querySelector(target) : target;
       if (!host) return;
       host.hidden = true;
+
+      /* The whole section stays hidden until products arrive. A heading over
+         an empty row ("You may also like" — nothing) reads as broken, and a
+         campaign returning nothing for a product is ordinary: behaviour-based
+         algorithms on a store with no traffic, or a product the precompute
+         has not reached yet. The SDK console still gets the note, so the
+         demo operator can see which row is waiting and why. */
+      var section = host.closest ? host.closest('.section') : null;
+      if (section) section.hidden = true;
       // #reco-cart -> 'cart', so pages do not have to repeat themselves.
       if (!opts.slot && host.id) opts.slot = host.id.replace(/^reco-/, '');
 
