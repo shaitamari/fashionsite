@@ -222,19 +222,24 @@
     load();
   }
 
-  /* --- what is NOT here yet -----------------------------------------------
-     Passing page context into the conversation — vertical, brand, the product
-     being viewed — so the agent knows which storefront it is standing on
-     without inferring it from the question.
+  /* --- page context ---------------------------------------------------------
+     Nothing to do here, and that was a surprise: the MindBehind widget reads
+     the Insider SDK on the page directly (mb-webchat, useInsider.js) and
+     forwards INSIDER_ID, LOCALE, CURRENCY, IS_LOGGED_IN, PARTNER_NAME and, on
+     a real product page, CURRENT_PRODUCT — the product id travels with every
+     message as productId, and the Shopping Agent takes it as item_id. So "this
+     product" and the storefront's locale (Canon is en_CA) reach the agent
+     without any parameter from this file.
 
-     Web Messenger does support parameters from the host page, but the key
-     names for CUSTOM parameters are not the mb* layout flags above and are
-     not written down anywhere I could confirm. Guessing them would produce a
-     widget that looks configured and silently is not, which is worse than an
-     obvious gap. See "Send Parameters from Webchat" in the MindBehind docs,
-     or ask whoever provisioned the account.
+     The one condition: window.Insider must exist, which means the hostname
+     has to be in the account's multiDomains. On a hostname the tag will not
+     load for, the agent gets no locale and no product. That is the first
+     thing to check when a storefront's chat seems to know nothing.
 
-     Until then, scoping is prompt-level: one agent per vertical, each told in
-     its Default Instructions which brand it is and what that brand sells.
+     What is NOT passed to the agent is the brand. CHAT_URL and any window.MB_*
+     parameter reach the MindBehind flow (usable for routing on the canvas),
+     not the Agent One agent. On a product page the agent can read the brand
+     off the product's own brand attribute, which is enough for a demo that
+     starts on a product page.
      ---------------------------------------------------------------------- */
 })();
