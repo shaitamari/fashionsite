@@ -345,6 +345,15 @@
        a colour row; sizes and capacities never resolve, so they stay as
        plain chips. The name stays, because "Black Cherry" and "Rose" are
        the choice — the dot is what makes it read as colours at a glance. */
+    /* One chip per option. The salesdemo source repeats some variant rows
+       (two ids for Hunter / XL), which would otherwise show twice. Keep the
+       first in-stock variant for each label, else the first seen. */
+    var byLabel = {};
+    siblings.forEach(function (sib) {
+      var l = sizeLabel(sib, showColour);
+      if (!byLabel[l] || (!byLabel[l].in_stock && sib.in_stock)) byLabel[l] = sib;
+    });
+    siblings = Object.keys(byLabel).map(function (l) { return byLabel[l]; });
     var labels = siblings.map(function (sib) { return sizeLabel(sib, showColour); });
     var resolved = labels.filter(function (l) { return Store.swatchHex && Store.swatchHex(l); }).length;
     var colourRow = resolved >= Math.ceil(labels.length / 2);
@@ -361,6 +370,10 @@
         b.appendChild(document.createTextNode(labels[i]));
       } else {
         b.textContent = labels[i];
+      }
+      if (!sib.in_stock) {
+        b.title = 'Out of stock — ask the assistant to tell you when it is back';
+        b.setAttribute('aria-label', labels[i] + ', out of stock');
       }
       b.setAttribute('aria-pressed', String(sib.id === PRODUCT.id));
 
