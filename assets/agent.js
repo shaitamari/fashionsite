@@ -69,28 +69,36 @@
      whether the thing renders. Once there are twelve, DEFAULT goes to null so
      a missing id fails visibly rather than silently serving the wrong brand.
      -------------------------------------------------------------------------- */
-  var DEFAULT = null;      // <- one channel id here gets the widget on all twelve
+  var DEFAULT = null;
+
+  /* Three channels, three agents. The nine subvertical storefronts share ONE
+     agent: the MindBehind widget hands it the product being viewed (via the
+     Insider SDK on the page), the product's brand attribute tells it which
+     store it is standing in, and its knowledge bases and single action carry
+     every brand. Ten per-brand agents were built first and thrown away when
+     that turned out to be true — see the page-context note below.
+
+     MISUMI and Canon are separate on purpose: POCs with their own knowledge
+     base, and Canon in its own locale (en_CA), so a customer's agent only
+     ever sees the customer's catalogue. */
+  var SHARED = { sandbox: '6aa547a91e38ba0119dfcaf5', demo: null };   // "Shared Web" channel
 
   var CHANNELS = {
-    beauty:      { sandbox: '6aa411991e38ba0119dfc911', demo: null },   // Lumen
-    /* Ashford Lane. Deliberately not DEFAULT: the assistant is trained on one catalogue, so pointing it
-       at Wayfarer or Northbank would produce confident answers about the wrong
-       shop. Worse than no agent. Each vertical gets its own id when it gets
-       its own assistant. */
-    fashion:     { sandbox: '6a99de97f901f0237d1ec0ab', demo: null },   // Ashford Lane
-    electronics: null,     // Kestrel
-    home:        { sandbox: '6aa51f0f1e38ba0119dfca6d', demo: null },   // Aldgate
-    luxury:      null,     // Beaumont Vale
-    supermarket: { sandbox: '6aa51e421e38ba0119dfca65', demo: null },   // Harvest Row
-    telco:       { sandbox: '6aa51ea61e38ba0119dfca6a', demo: null },   // Vantis
-    hotels:      { sandbox: '6aa51cc71e38ba0119dfca60', demo: null },   // Wayfarer
-    airlines:    { sandbox: '6aa51e7e1e38ba0119dfca68', demo: null },   // Meridian Air
-    banking:     { sandbox: '6aa51db31e38ba0119dfca62', demo: null },   // Northbank
-    insurance:   null,     // Fairhaven
-    nutrition:   null,     // Verdant
-    misumi:      { sandbox: '6aa41e6b1e38ba0119dfc942', demo: null },   // MISUMI
-    canon:       { sandbox: '6aa51e051e38ba0119dfca63', demo: null },   // Canon Canada (en_CA locale)
-    fintech:     null      // Loop
+    fashion:     SHARED,   // Ashford Lane
+    beauty:      SHARED,   // Lumen
+    home:        SHARED,   // Aldgate
+    supermarket: SHARED,   // Harvest Row
+    hotels:      SHARED,   // Wayfarer
+    airlines:    SHARED,   // Meridian Air
+    banking:     SHARED,   // Northbank
+    telco:       SHARED,   // Vantis
+    electronics: SHARED,   // Kestrel
+    luxury:      SHARED,   // Beaumont Vale
+    insurance:   SHARED,   // Fairhaven
+    fintech:     SHARED,   // Loop
+    nutrition:   SHARED,   // Verdant
+    misumi:      { sandbox: '6aa41e6b1e38ba0119dfc942', demo: null },   // MISUMI — own agent
+    canon:       { sandbox: '6aa51e051e38ba0119dfca63', demo: null }    // Canon Canada — own agent, en_CA
   };
 
   /* Layout flags, applied to `window` before the SDK loads because that is
