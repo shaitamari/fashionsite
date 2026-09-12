@@ -2711,7 +2711,10 @@
     },
     "replenishment_days": {
       "_default": 90
-    }
+    },
+    "locale": "en_SG",
+    "currency": "SGD",
+    "standalone_feed": true
   },
   "canon": {
     "vertical": "Retail",

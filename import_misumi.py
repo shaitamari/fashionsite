@@ -15,7 +15,7 @@ So this does three things the salesdemo import never had to:
     every card and page has an image — industrial parts have no
     photography we can source cleanly, and a broken image is worse than a
     designed one;
-  * NORMALISES price to EUR and marks the range in stock, since the export
+  * NORMALISES price to SGD and marks the range in stock, since the export
     carries every item as out of stock, which would leave nothing to buy.
 
 Writes sources/misumi-1..N.json in the Shopify shape build.py reads.
@@ -25,7 +25,7 @@ from html import escape
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
-THB_TO_EUR = 0.026
+THB_TO_SGD = 0.037   # the estate's MISUMI locale is en_SG / SGD
 BRAND = "MISUMI"
 
 # Order matters: the first rule whose keywords hit wins. Specific before broad.
@@ -176,8 +176,8 @@ def to_shopify(it, coll, sub, image):
     name = it["name"].strip()
     thb = next(iter((it.get("price") or {}).values()), 0) or 0
     orig = next(iter((it.get("original_price") or {}).values()), 0) or 0
-    price = round(float(thb) * THB_TO_EUR, 2)
-    compare = round(float(orig) * THB_TO_EUR, 2) if orig and orig > thb else 0
+    price = round(float(thb) * THB_TO_SGD, 2)
+    compare = round(float(orig) * THB_TO_SGD, 2) if orig and orig > thb else 0
     pid = int(it["item_id"])
     # The export marks everything out of stock. A demo store needs things to
     # buy, so ~8% stay out — enough for a back-in-stock beat, not so many the
