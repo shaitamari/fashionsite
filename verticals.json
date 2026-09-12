@@ -2712,5 +2712,177 @@
     "replenishment_days": {
       "_default": 90
     }
+  },
+  "canon": {
+    "vertical": "Retail",
+    "subvertical": "Cameras & Printing",
+    "brand": "Canon",
+    "locale": "en_CA",
+    "currency": "CAD",
+    "standalone_feed": true,
+    "tagline": "Cameras, lenses, printers and everything they need",
+    "hero_title": "Made for the<br>moment you see it.",
+    "hero_lede": "Mirrorless and DSLR cameras, RF and EF lenses, home and office printers — with the ink, paper and accessories that fit them.",
+    "hero_cta": "Shop cameras",
+    "hero_eyebrow": "Canon Canada",
+    "announce": "Free shipping on orders over $99 · Open-box and refurbished deals",
+    "search_placeholder": "Search cameras, lenses, printers, ink",
+    "newsletter_title": "Canon Canada updates",
+    "newsletter_lede": "New gear, firmware, workshops and offers.",
+    "tiles_title": "Shop by category",
+    "grid_title": "New arrivals",
+    "reco_title": "Works with this",
+    "theme": {
+      "bg": "#FFFFFF",
+      "alt": "#F4F4F4",
+      "ink": "#1A1A1A",
+      "muted": "#5F5F5F",
+      "rule": "#E2E2E2",
+      "accent": "#CC0000",
+      "display": "'Inter', Helvetica, sans-serif",
+      "body": "'Inter', Helvetica, sans-serif",
+      "fonts": "family=Inter:wght@400;500;600;700"
+    },
+    "template": "ecommerce",
+    "source": "sources/canon-*.json",
+    "collections": {
+      "Accessories > Bags & Straps": "Accessories",
+      "Accessories > Batteries & Power": "Accessories",
+      "Accessories > Camera Accessories": "Accessories",
+      "Accessories > Flashes": "Accessories",
+      "Accessories > Memory & Storage": "Accessories",
+      "Cameras > Cinema EOS": "Cameras",
+      "Cameras > Compact": "Cameras",
+      "Cameras > DSLR": "Cameras",
+      "Cameras > Mirrorless": "Cameras",
+      "Cameras > Video": "Cameras",
+      "Ink, Toner & Paper > Ink": "Ink, Toner & Paper",
+      "Ink, Toner & Paper > Paper": "Ink, Toner & Paper",
+      "Ink, Toner & Paper > Toner": "Ink, Toner & Paper",
+      "Lenses > Lens Accessories": "Lenses",
+      "Lenses > Macro": "Lenses",
+      "Lenses > Portrait": "Lenses",
+      "Lenses > Standard & Zoom": "Lenses",
+      "Lenses > Telephoto": "Lenses",
+      "Lenses > Wide-Angle": "Lenses",
+      "Other > Calculators": "Other",
+      "Other > Merchandise": "Other",
+      "Printers > Home & Photo": "Printers",
+      "Printers > Large Format": "Printers",
+      "Printers > Office": "Printers",
+      "Printers > Printer Accessories": "Printers",
+      "Printers > Scanners": "Printers"
+    },
+    "type_subcats": {
+      "Accessories > Bags & Straps": "Bags & Straps",
+      "Accessories > Batteries & Power": "Batteries & Power",
+      "Accessories > Camera Accessories": "Camera Accessories",
+      "Accessories > Flashes": "Flashes",
+      "Accessories > Memory & Storage": "Memory & Storage",
+      "Cameras > Cinema EOS": "Cinema EOS",
+      "Cameras > Compact": "Compact",
+      "Cameras > DSLR": "DSLR",
+      "Cameras > Mirrorless": "Mirrorless",
+      "Cameras > Video": "Video",
+      "Ink, Toner & Paper > Ink": "Ink",
+      "Ink, Toner & Paper > Paper": "Paper",
+      "Ink, Toner & Paper > Toner": "Toner",
+      "Lenses > Lens Accessories": "Lens Accessories",
+      "Lenses > Macro": "Macro",
+      "Lenses > Portrait": "Portrait",
+      "Lenses > Standard & Zoom": "Standard & Zoom",
+      "Lenses > Telephoto": "Telephoto",
+      "Lenses > Wide-Angle": "Wide-Angle",
+      "Other > Calculators": "Calculators",
+      "Other > Merchandise": "Merchandise",
+      "Printers > Home & Photo": "Home & Photo",
+      "Printers > Large Format": "Large Format",
+      "Printers > Office": "Office",
+      "Printers > Printer Accessories": "Printer Accessories",
+      "Printers > Scanners": "Scanners"
+    },
+    "order": [
+      "Cameras",
+      "Lenses",
+      "Printers",
+      "Ink, Toner & Paper",
+      "Accessories",
+      "Other"
+    ],
+    "subcats": {},
+    "defaults": {
+      "Cameras": "All",
+      "Lenses": "All",
+      "Printers": "All",
+      "Ink, Toner & Paper": "All",
+      "Accessories": "All",
+      "Other": "All"
+    },
+    "labels": {
+      "cart": "Cart",
+      "add_to_cart": "Add to cart",
+      "cart_title": "Your cart",
+      "cart_empty": "Your cart is empty",
+      "confirm_title": "Thanks — your order is confirmed.",
+      "browse_cta": "Keep shopping"
+    },
+    "profile": {
+      "tiers": [
+        "Member",
+        "Canon Plus",
+        "Canon Pro"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "I mostly shoot",
+        "options": [
+          "Photography",
+          "Video",
+          "Both",
+          "I'm here for a printer"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Register a product",
+      "lede": "Register your Canon gear for warranty, firmware alerts and CarePAK offers.",
+      "event": "product_registered",
+      "fields": [
+        {
+          "label": "Product",
+          "name": "product",
+          "options": [
+            "Camera",
+            "Lens",
+            "Printer",
+            "Other"
+          ]
+        },
+        {
+          "label": "Purchased from",
+          "name": "store",
+          "options": [
+            "shop.canon.ca",
+            "Retailer",
+            "Gift"
+          ]
+        },
+        {
+          "label": "Purchase date",
+          "name": "date",
+          "options": "date"
+        }
+      ],
+      "attribute_field": "product"
+    },
+    "hero_category": "Cameras",
+    "foryou_title": "Your kit",
+    "showcase": {
+      "search": "EOS R",
+      "product": "108935"
+    },
+    "replenishment_days": {
+      "Ink, Toner & Paper": 60
+    }
   }
 }

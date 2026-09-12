@@ -14,7 +14,7 @@ Feed format notes, learned from a failed validation and encoded here:
   - the title tag must be g:title, not title
   - g:sale_price goes on EVERY item, because Insider marks price.USD required
 """
-import json, os, re, sys, glob, collections
+import json, os, re, sys, glob, collections, datetime, hashlib
 from xml.sax.saxutils import escape
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -56,7 +56,13 @@ def money(v):
         return 0.0
 
 
-def subcategory(title, collection, cfg):
+def subcategory(title, collection, cfg, ptype=""):
+    # A vertical can name the subcategory straight from the product type
+    # ("Women's Tops" -> "Tops") and only fall back to title keywords when the
+    # type is too coarse to say. The salesdemo import relies on this.
+    direct = cfg.get("type_subcats", {}).get(ptype)
+    if direct:
+        return direct
     t = title.lower()
     for name, keys in cfg.get("subcats", {}).get(collection, []):
         if any(k in t for k in keys):
@@ -191,6 +197,118 @@ def load_sources(cfg):
     return products, paths, dupes
 
 
+# --------------------------------------------------------------------------
+# Enrichment: rating, margin, activation date, season, gender, material.
+#
+# The salesdemo catalog carries these for its own products (the search team
+# tuned on them). Every other product in the estate gets a value too, chosen
+# deterministically from the product id so a rebuild never reshuffles them.
+# A merchandiser can then boost by margin, sort by rating, facet on gender or
+# material, and "new in" means something — on every vertical, not one.
+#
+# Activation dates are ALWAYS regenerated, even where the source has one: the
+# source dates are all the day the catalog was imported, which says nothing.
+# They spread past / recent / future relative to the build date, so a rebuild
+# is what moves a product from "coming soon" to "new in".
+
+GENDER_VERTICALS = {"fashion", "luxury"}
+MATERIAL_VERTICALS = {"fashion", "luxury", "home"}
+SEASON_VERTICALS = {"fashion", "luxury"}
+
+MATERIALS = [
+    # (keywords in subcategory or title, choices)
+    (("knit", "sweater", "cardigan", "jumper", "cashmere", "wool"), ["Wool", "Cashmere", "Merino Wool", "Cotton"]),
+    (("jean", "denim"), ["Denim"]),
+    (("coat", "jacket", "blazer", "trench", "parka"), ["Wool", "Cotton", "Polyester", "Leather", "Nylon"]),
+    (("dress", "blouse", "skirt", "slip", "gown"), ["Viscose", "Silk", "Cotton", "Linen", "Polyester"]),
+    (("shirt", "tee", "t-shirt", "top", "tunic", "trouser", "pant", "short", "chino"), ["Cotton", "Linen", "Cotton, Elastane", "Polyester"]),
+    (("sneaker", "trainer", "runner"), ["Leather", "Canvas", "Mesh", "Suede"]),
+    (("boot", "loafer", "heel", "sandal", "flat", "shoe", "pump"), ["Leather", "Suede", "Patent Leather"]),
+    (("bag", "belt", "wallet", "clutch", "tote", "purse"), ["Leather", "Canvas", "Suede", "Nylon"]),
+    (("ring", "necklace", "bracelet", "earring", "jewel", "cuff", "pendant"), ["Sterling Silver", "Gold-plated Brass", "18k Gold", "Stainless Steel"]),
+    (("sock", "scarf", "hat", "beanie", "glove", "mitten"), ["Cotton", "Wool", "Cashmere"]),
+    (("sunglass", "glasses"), ["Acetate", "Metal"]),
+    (("sofa", "seating", "sectional", "chair", "armchair", "ottoman", "bench", "stool"), ["Velvet", "Linen", "Leather", "Boucle", "Performance Fabric"]),
+    (("table", "shelv", "desk", "console", "drawer", "cabinet", "bed", "frame"), ["Oak", "Walnut", "Ash", "Powder-coated Steel", "Marble"]),
+    (("pillow", "throw", "cushion", "blanket", "sheet", "duvet"), ["Linen", "Cotton", "Wool", "Velvet"]),
+    (("outdoor", "patio", "garden"), ["Teak", "Powder-coated Aluminium", "Rattan"]),
+    (("lamp", "light"), ["Brass", "Steel", "Glass"]),
+]
+
+
+def _h(seed, mod):
+    return int(hashlib.md5(str(seed).encode()).hexdigest(), 16) % mod
+
+
+def _pick(seed, choices):
+    return choices[_h(seed, len(choices))]
+
+
+def enrich(rec, key, extra, today):
+    seed = rec["groupcode"]
+    words = (rec["subcategory"] + " " + rec["collection"] + " " + rec["name"]).lower()
+
+    # rating: 1 dp, skewed to the good end like a real store
+    if extra.get("rating") is not None:
+        rec["rating"] = round(float(extra["rating"]), 1)
+    else:
+        rec["rating"] = round(3.4 + _h(seed + "r", 16) / 10, 1)        # 3.4 .. 4.9
+
+    # margin: percent, in steps of 5
+    if extra.get("margin") is not None:
+        rec["margin"] = int(extra["margin"])
+    else:
+        rec["margin"] = 20 + 5 * _h(seed + "m", 10)                    # 20 .. 65
+
+    # activation date: 60% older, 25% last month, 15% still to come
+    bucket = _h(seed + "d", 100)
+    if bucket < 60:
+        days = -(31 + _h(seed + "d1", 510))                            # -31 .. -540
+    elif bucket < 85:
+        days = -_h(seed + "d2", 31)                                    # -30 .. 0
+    else:
+        days = 1 + _h(seed + "d3", 60)                                 # +1 .. +60
+    d = today + datetime.timedelta(days=days)
+    rec["activation_date"] = d.isoformat()
+    rec["is_new"] = -30 <= days <= 0
+    rec["is_upcoming"] = days > 0
+
+    # season, only where a vertical has seasons
+    if key in SEASON_VERTICALS:
+        src = extra.get("season")
+        if src:
+            rec["season"] = src
+        else:
+            half = "Spring/Summer" if 3 <= d.month <= 8 else "Fall/Winter"
+            rec["season"] = f"{half} {str(d.year)[2:]}"
+
+    # gender, only where it means something
+    if key in GENDER_VERTICALS:
+        g = extra.get("gender")
+        if not g:
+            col = rec["collection"].lower()
+            if col in ("women", "womens", "womenswear") or "women" in words or "wmns" in words:
+                g = "Women"
+            elif col in ("men", "mens", "menswear") or " men" in words:
+                g = "Men"
+            else:
+                g = "Unisex"
+        rec["gender"] = g
+    elif key == "beauty" and rec["collection"] == "Fragrance":
+        rec["gender"] = extra.get("gender") or ("Women" if "women" in words else "Men" if " men" in words else "Unisex")
+
+    # material, only where a product is made of something
+    if key in MATERIAL_VERTICALS:
+        m = extra.get("material")
+        if not m:
+            for keys, choices in MATERIALS:
+                if any(k in words for k in keys):
+                    m = _pick(seed + "t", choices)
+                    break
+        if m:
+            rec["material"] = m
+
+
 def build_catalog(key, cfg):
     products, paths, dupes = load_sources(cfg)
     site = site_for(key)
@@ -211,7 +329,7 @@ def build_catalog(key, cfg):
             continue
 
         collection = colmap[ptype]
-        subcat = subcategory(p["title"], collection, cfg)
+        subcat = subcategory(p["title"], collection, cfg, ptype)
         option_name = p["options"][0]["name"] if p.get("options") else "Title"
 
         for v in p["variants"]:
@@ -242,8 +360,8 @@ def build_catalog(key, cfg):
                 "vertical_label": cfg.get("subvertical", collection),
                 "unit_price": unit_price,
                 "unit_sale_price": price,
-                "currency": CURRENCY,
-                "locale": LOCALE,
+                "currency": cfg.get("currency", CURRENCY),
+                "locale": cfg.get("locale", LOCALE),
                 "color": opts["color"],
                 "size": opts["size"],
                 # The dimension names, so a chip row can be labelled with the
@@ -257,7 +375,8 @@ def build_catalog(key, cfg):
                 # Every option in source order, tagged with the slot it landed
                 # in. The PDP reads this to label its variant buttons.
                 "variant_parts": opts["parts"],
-                "stock": 250 if v.get("available") else 0,
+                "stock": (v.get("inventory_quantity") if v.get("inventory_quantity") is not None
+                          else (250 if v.get("available") else 0)),
                 "in_stock": 1 if v.get("available") else 0,
                 "sku": v.get("sku") or str(v["id"]),
                 "vendor": cfg["brand"],
@@ -269,6 +388,41 @@ def build_catalog(key, cfg):
                 "url": f"{site}/product.html?id={v['id']}",
                 "tags": p.get("tags", [])[:8],
             })
+
+    today = datetime.date.today()
+    for rec in records:
+        prod = next((p for p in products if str(p.get("id")) == rec["groupcode"]), {})
+        prod_extra = prod.get("salesdemo") or prod.get("canon") or {}
+        enrich(rec, key, prod_extra, today)
+        # Importer-supplied attributes that are not part of the shared
+        # enrichment (Canon: condition, compatible_with, megapixels, sensor,
+        # weight, connectivity, lens_mount…). Carried on the record and, in
+        # feed_item, emitted as plainly named tags for the mapping.
+        for k, v in (prod.get("canon") or {}).items():
+            if k not in rec and v:
+                rec[k] = v
+
+    # Size gaps. The salesdemo source carries stock per product, not per size,
+    # so nothing is ever "gone in your size" — and act six of the guide, the
+    # Agent One back-in-stock capture, needs exactly that. Where a vertical
+    # asks for it, one size on roughly a quarter of the multi-size styles is
+    # marked out of stock, chosen from the id so it is the same size every
+    # build. Real per-size stock from a source is never overridden.
+    if cfg.get("size_gaps"):
+        by_group = collections.defaultdict(list)
+        for rec in records:
+            by_group[rec["groupcode"]].append(rec)
+        for gid, recs in by_group.items():
+            sized = [r for r in recs if r.get("size") and r["in_stock"]]
+            sizes = sorted({r["size"] for r in sized})
+            if len(sizes) < 3 or len(sizes) != len({r["size"] for r in recs}):
+                continue
+            if _h(gid + "gap", 4) != 0:
+                continue
+            gone = sizes[_h(gid + "which", len(sizes))]
+            for r in recs:
+                if r["size"] == gone:
+                    r["stock"], r["in_stock"] = 0, 0
 
     if not records:
         raise ValueError(f"{key}: no products survived filtering — check `collections`")
@@ -282,7 +436,8 @@ def build_catalog(key, cfg):
         "brand", "tagline", "hero_title", "hero_lede", "hero_cta", "announce",
         "search_placeholder", "newsletter_title", "newsletter_lede", "theme",
         "vertical", "subvertical", "hero_eyebrow", "tiles_title", "grid_title",
-        "reco_title", "profile", "flow", "hero_category", "foryou_title", "showcase", "replenishment_days", "anniversary_months"
+        "reco_title", "profile", "flow", "hero_category", "foryou_title", "showcase", "replenishment_days", "anniversary_months",
+        "locale", "currency"
     ) if k in cfg}
     meta["key"] = key
     # Journey wording, so one template covers retail, travel, telco and banking.
@@ -332,7 +487,7 @@ def feed_item(p):
         f"    <g:brand>{escape(p['vendor'])}</g:brand>",
         # "Beauty > Makeup > Lip" — Google Merchant's hierarchy convention.
         f"    <g:product_type>{escape(clean(' > '.join(p['taxonomy']), 1024))}</g:product_type>",
-        "    <g:condition>new</g:condition>",
+        "    <g:condition>" + ("refurbished" if str(p.get("condition","")).lower().startswith("refurb") else "new") + "</g:condition>",
         f"    <g:custom_label_0>{escape(clean(p['subcategory'], 512))}</g:custom_label_0>",
     ]
     if p.get("color"):
@@ -354,6 +509,27 @@ def feed_item(p):
     dimension = p.get("size_label") or p.get("tier_label")
     if dimension:
         parts.append(f"    <g:custom_label_1>{escape(clean(dimension, 512))}</g:custom_label_1>")
+
+    # Enrichment. Google Merchant has fields for gender and material; the rest
+    # go out both as custom labels (auto-mapped) and as plainly named tags,
+    # so the attribute mapping in the panel reads <rating>, <margin>,
+    # <activation_date>, <season> rather than a label number.
+    if p.get("gender"):
+        parts.append(f"    <g:gender>{escape(p['gender'])}</g:gender>")
+    if p.get("material"):
+        parts.append(f"    <g:material>{escape(clean(p['material'], 512))}</g:material>")
+    if p.get("season"):
+        parts.append(f"    <g:custom_label_2>{escape(clean(p['season'], 512))}</g:custom_label_2>")
+        parts.append(f"    <season>{escape(clean(p['season'], 512))}</season>")
+    parts.append(f"    <g:custom_label_3>{p['rating']:.1f}</g:custom_label_3>")
+    parts.append(f"    <rating>{p['rating']:.1f}</rating>")
+    parts.append(f"    <g:custom_label_4>{p['margin']}</g:custom_label_4>")
+    parts.append(f"    <margin>{p['margin']}</margin>")
+    parts.append(f"    <activation_date>{p['activation_date']}</activation_date>")
+    for k in ("condition", "compatible_with", "compatibility_source", "megapixels", "sensor",
+              "iso_range", "weight", "connectivity", "lens_mount", "print_resolution", "print_speed"):
+        if p.get(k):
+            parts.append(f"    <{k}>{escape(clean(str(p[k]), 1024))}</{k}>")
 
     parts.append("  </item>")
     return "\n".join(parts)
@@ -384,7 +560,7 @@ def build(key):
 
     print(f"\n{cfg['brand']}  ({key})   {cfg.get('vertical','?')} / {cfg.get('subvertical','?')}")
     print(f"  {groups} products / {len(records)} variants · {onsale} discounted"
-          f"  [{LOCALE} · {CURRENCY}]")
+          f"  [{cfg.get('locale', LOCALE)} · {cfg.get('currency', CURRENCY)}]")
     if groups < 200:
         print(f"  note: {groups} products is thin for a search demo — "
               f"add more pages to `source` (Shopify caps at 250/page)")
@@ -396,17 +572,7 @@ def build(key):
     print(f"     store: {site_for(key)}")
 
 
-# Verticals that exist for a specific prospect rather than as part of the
-# permanent estate. They stay in the sandbox feed, where POC work belongs, and
-# are kept out of the sales feed so a demo never surfaces another prospect's
-# products.
-#
-# Add to this list when a POC is built; remove it when the POC becomes a
-# permanent vertical, or delete the catalog when it is done with.
-POC_ONLY = {"misumi"}
-
-
-def build_master(path="feeds/master.xml", exclude=(), label="All verticals"):
+def build_master():
     """One feed containing every vertical.
 
     This is the point of the design: a single XML integration in InOne that
@@ -416,24 +582,14 @@ def build_master(path="feeds/master.xml", exclude=(), label="All verticals"):
     Verticals are separated at campaign level by g:brand, which is unique per
     vertical, so each vertical's Eureka and Smart Recommender campaigns filter
     to their own products.
-
-    TWO FEEDS, ONE GENERATOR.
-
-    Sandbox reads feeds/master.xml and sales reads feeds/master-sales.xml. The
-    only difference is that POC verticals are left out of the sales one. Both
-    are built from the same catalogs in the same pass, so the twelve permanent
-    verticals cannot drift apart — a product id means the same thing on both
-    accounts, which is what lets a campaign be exported from one and imported
-    to the other unchanged.
-
-    The sandbox feed keeps its existing name deliberately: the integration on
-    that account already points at it, and repointing an integration is not
-    worth doing to gain a tidier filename.
     """
     items, per_brand, seen = [], collections.Counter(), {}
 
     for key, cfg in VERTICALS.items():
-        if key in exclude:
+        # Standalone verticals (their own locale and feed, e.g. Canon en_CA)
+        # never enter the master feed — mixing locales in one file is what
+        # a separate locale exists to prevent.
+        if cfg.get("standalone_feed"):
             continue
         cat = f"catalogs/{key}.js"
         if not os.path.exists(cat):
@@ -455,16 +611,55 @@ def build_master(path="feeds/master.xml", exclude=(), label="All verticals"):
             per_brand[p["vendor"]] += 1
             items.append(feed_item(p))
 
+    # Retired products. The XML sync adds and updates but never removes, so a
+    # product dropped from the feed stays in Insider's catalog, in stock and
+    # searchable, until someone retires it by hand — 5,600 variants at fifteen
+    # per page after the fashion swap. The only lever the sync does pull is
+    # UPDATE, so retired ids are kept in the feed as out-of-stock, zero-
+    # quantity stubs: the next sync flips them, and any campaign that excludes
+    # out-of-stock products drops them. Needs the integration set to send all
+    # products with stock status (the only-in-stock toggle OFF), otherwise the
+    # stubs are skipped as out of stock and never applied.
+    #
+    # retired.json is a list of {id, groupcode, name}; append to it whenever a
+    # catalog is replaced. Never remove entries — they cost nothing and keep
+    # the product retired if it ever reappears.
+    retired = json.load(open("retired.json")) if os.path.exists("retired.json") else []
+    n_ret = 0
+    for r in retired:
+        if str(r["id"]) in seen:
+            continue
+        items.append("\n".join([
+            "  <item>",
+            f"    <g:id>{escape(str(r['id']))}</g:id>",
+            f"    <g:item_group_id>{escape(str(r.get('groupcode', r['id'])))}</g:item_group_id>",
+            f"    <g:title>{escape(clean(r.get('name', 'Retired product'), 512))}</g:title>",
+            "    <description>Retired</description>",
+            f"    <link>https://{APEX}/</link>",
+            f"    <g:image_link>https://{APEX}/assets/img/retired.svg</g:image_link>",
+            "    <g:price>1.00</g:price>",
+            "    <g:sale_price>1.00</g:sale_price>",
+            "    <g:availability>out of stock</g:availability>",
+            "    <g:quantity>0</g:quantity>",
+            "    <g:brand>Retired</g:brand>",
+            "    <g:product_type>Retired</g:product_type>",
+            "    <g:condition>new</g:condition>",
+            "  </item>",
+        ]))
+        n_ret += 1
+    if n_ret:
+        print(f"  retired stubs: {n_ret} (out of stock, brand Retired)")
+
     os.makedirs("feeds", exist_ok=True)
-    with open(path, "w") as f:
+    with open("feeds/master.xml", "w") as f:
         f.write('<?xml version="1.0" encoding="UTF-8"?>\n'
                 '<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">\n<channel>\n'
                 f'  <title>Insider demo catalog</title>\n'
                 f'  <link>https://{APEX}</link>\n'
-                f'  <description>{label}. Separated by brand at campaign level.</description>\n'
+                '  <description>All verticals. Separated by brand at campaign level.</description>\n'
                 + "\n".join(items) + "\n</channel>\n</rss>\n")
 
-    print(f"\n{label}  ->  {path}   (https://{APEX}/{path})")
+    print(f"\nMaster feed  ->  feeds/master.xml   (https://{APEX}/feeds/master.xml)")
     print(f"  {len(items)} records across {len(per_brand)} brand(s)")
     for brand, n in per_brand.most_common():
         print(f"    {n:6d}  {brand}")
@@ -535,8 +730,6 @@ if __name__ == "__main__":
             failed.append(k)
 
     build_master()
-    build_master(path="feeds/master-sales.xml", exclude=POC_ONLY,
-                 label="Permanent verticals only")
     m = write_manifest()
     print(f"\n{len(m)} vertical(s) available: {', '.join(m)}")
     if failed:

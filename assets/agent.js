@@ -90,6 +90,7 @@
     insurance:   null,     // Fairhaven
     nutrition:   null,     // Verdant
     misumi:      { sandbox: '6aa41e6b1e38ba0119dfc942', demo: null },   // MISUMI
+    canon:       null,     // Canon Canada (en_CA locale)
     fintech:     null      // Loop
   };
 

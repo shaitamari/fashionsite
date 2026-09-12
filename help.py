@@ -151,6 +151,7 @@ ABOUT = {
     "fintech": "Loop is a money app for people who move: spend abroad without fees, split bills with friends, save automatically and invest from a euro.|Free to start. Plus and Premium add travel insurance, higher limits and priority support. Metal is for people who want the card to match.",
     "telco": "Vantis is a mobile network with three plans and no small print: Vantis 5, Vantis 20 and Vantis Unlimited. EU roaming included on all of them, and a Business plan for teams.|We own our network, which is why coverage is 99% and support is answered by people who can actually fix things.",
     "nutrition": "Verdant makes supplements, superfoods and snacks for people who want a routine that sticks: protein, greens, vitamins and the occasional very good bar.|Everything is third-party tested, every subscription can be paused from the app, and our coaches will build you a routine around a goal, not a product.",
+    "canon": "Canon Canada is the Canadian arm of Canon, selling cameras, lenses, printers and the ink, paper and accessories that fit them, direct from shop.canon.ca and through retailers across Canada.|Every product sold on shop.canon.ca is covered by Canon Canada's warranty and supported by Canon Canada's Product Experts, available Monday to Friday, 9:00 to 16:30 Eastern. Extended coverage is available through CarePAK, and ink can be delivered automatically with the Auto Replenishment Service.",
     "misumi": "MISUMI supplies industrial components, tools and equipment to manufacturers across Southeast Asia — cutting tools, automation, fasteners, motion, workshop equipment and consumables, from stock.|Account customers get volume pricing, named representatives and priority allocation. Application engineers are available every working day.",
 }
 
@@ -170,6 +171,7 @@ STORES = {
     "fintech": ("Contact", ["Chat: in the app, 24 hours", "Premium and Metal: priority line, weekdays 7am–11pm", "Card issues: freeze in the app first, then chat"]),
     "telco": ("Stores", ["Westfield London — Mon–Sat 10–9, Sun 12–6", "Trafford Centre, Manchester — Mon–Sat 10–9, Sun 12–6", "Support: 24 hours by chat, 8am–10pm by phone"]),
     "nutrition": ("Contact", ["Coaches: chat, weekdays 8am–8pm", "Subscriptions: pause, skip or change any time in the app", "Post: Verdant, Unit 4, Bermondsey, London SE16"]),
+    "canon": ("Support & contact", ["Product Experts — Mon–Fri 9:00–16:30 Eastern, by chat", "Repairs & maintenance — canada-canon.my.site.com/customersupport", "Extended warranty (CarePAK) — shop.canon.ca/en_ca/extended-warranties", "Ink Auto Replenishment — shop.canon.ca, Auto Replenishment Service"]),
     "misumi": ("Distribution & support", ["Singapore — Tuas distribution centre, ships same day before 3pm", "Johor — Senai warehouse, next-day to Klang Valley", "Bangkok and Ho Chi Minh City — regional stock, 2–3 day delivery", "Application engineers: weekdays 9am–6pm SGT"]),
 }
 

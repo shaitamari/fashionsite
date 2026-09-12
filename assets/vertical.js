@@ -130,6 +130,8 @@
 
   window.VERTICAL_KEY = vertical;
   window.ENVIRONMENT = resolved.env;
+
+
   window.ENVIRONMENT_KEY = resolved.key;
 
   /* --- favicon ------------------------------------------------------------
@@ -645,6 +647,21 @@
   /* --- theme + copy, applied once the catalog has parsed ----------------- */
   window.applyVertical = function () {
     var v = window.VERTICAL;
+    if (v) {
+    /* A vertical can carry its own locale and currency — Canon is en_CA / CAD
+       in its own catalog locale on the same account, so the SDK's product
+       object, the money formatting and the Eureka language all have to say
+       en_CA on that storefront, whatever the account's default locale is.
+       Done here, once the catalog file has set window.VERTICAL, and before
+       anything reads ENVIRONMENT for a locale. */
+      if (v.locale || v.currency) {
+      var envCopy = {};
+      for (var ek in window.ENVIRONMENT) envCopy[ek] = window.ENVIRONMENT[ek];
+        if (v.locale) envCopy.locale = v.locale;
+      if (v.currency) envCopy.currency = v.currency;
+      window.ENVIRONMENT = envCopy;
+    }
+    }
     if (!v) {
       // Unknown vertical in the URL — fall back rather than render an empty store.
       if (vertical !== DEFAULT && !fromSubdomain()) {
