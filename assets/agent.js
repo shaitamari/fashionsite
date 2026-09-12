@@ -73,24 +73,23 @@
 
   var CHANNELS = {
     beauty:      { sandbox: '6aa411991e38ba0119dfc911', demo: null },   // Lumen
-    /* Ashford Lane. The only vertical with a live channel, and deliberately
-       not DEFAULT: the assistant is trained on one catalogue, so pointing it
+    /* Ashford Lane. Deliberately not DEFAULT: the assistant is trained on one catalogue, so pointing it
        at Wayfarer or Northbank would produce confident answers about the wrong
        shop. Worse than no agent. Each vertical gets its own id when it gets
        its own assistant. */
     fashion:     { sandbox: '6a99de97f901f0237d1ec0ab', demo: null },   // Ashford Lane
     electronics: null,     // Kestrel
-    home:        null,     // Aldgate
+    home:        { sandbox: '6aa51f0f1e38ba0119dfca6d', demo: null },   // Aldgate
     luxury:      null,     // Beaumont Vale
-    supermarket: null,     // Harvest Row
-    telco:       null,     // Vantis
-    hotels:      null,     // Wayfarer
-    airlines:    null,     // Meridian Air
-    banking:     null,     // Northbank
+    supermarket: { sandbox: '6aa51e421e38ba0119dfca65', demo: null },   // Harvest Row
+    telco:       { sandbox: '6aa51ea61e38ba0119dfca6a', demo: null },   // Vantis
+    hotels:      { sandbox: '6aa51cc71e38ba0119dfca60', demo: null },   // Wayfarer
+    airlines:    { sandbox: '6aa51e7e1e38ba0119dfca68', demo: null },   // Meridian Air
+    banking:     { sandbox: '6aa51db31e38ba0119dfca62', demo: null },   // Northbank
     insurance:   null,     // Fairhaven
     nutrition:   null,     // Verdant
     misumi:      { sandbox: '6aa41e6b1e38ba0119dfc942', demo: null },   // MISUMI
-    canon:       null,     // Canon Canada (en_CA locale)
+    canon:       { sandbox: '6aa51e051e38ba0119dfca63', demo: null },   // Canon Canada (en_CA locale)
     fintech:     null      // Loop
   };
 
