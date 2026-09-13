@@ -48,6 +48,7 @@
 <script>
   var PID = new URLSearchParams(location.search).get('id');
   var PRODUCT = Store.byId(PID) || Store.catalog[0];
+  window.PRODUCT = PRODUCT;
 
   Store.noteCategoryView(PRODUCT.collection);
   Store.noteProductView();   // session counter, read by the low-intent rule
@@ -588,6 +589,119 @@
     window.Recs.mount('#reco-productVisual');
     window.Recs.mount('#reco-productComplement');
   }
+</script>
+
+<script>
+/* --- travel product page -----------------------------------------------------
+   A route or a stay is not a dress. On hotels and airlines (direct_checkout)
+   the buy box is reshaped after the standard render: the route becomes the
+   headline with a departure line, date and passengers sit above the fare,
+   cabins or rooms are a fare table rather than chips, and the button selects
+   rather than adds. Everything the platform receives is unchanged — same
+   product object, same add_to_cart, same variant ids. Retail never runs this. */
+(function () {
+  var V = window.VERTICAL || {};
+  if (!V.direct_checkout || !window.PRODUCT) return;
+  var isAir = V.key === 'airlines';
+  var P = window.PRODUCT;
+  var money = function (n) { return Store.money ? Store.money(n) : n; };
+
+  // Deterministic "schedule" from the id, so the same route always says the same thing.
+  function h(seed, mod) { var x = 0, s = String(seed); for (var i = 0; i < s.length; i++) x = (x * 31 + s.charCodeAt(i)) >>> 0; return x % mod; }
+  var dur = isAir ? (2 + h(P.groupcode, 12)) : null;
+  var mins = isAir ? [0, 10, 25, 40, 55][h(P.groupcode + 'm', 5)] : null;
+  var dep = isAir ? [6, 7, 9, 11, 14, 16, 19, 21][h(P.groupcode + 'd', 8)] : null;
+  var stars = (P.tags || []).filter(function (t) { return /star/.test(t); })[0] || '';
+
+  // Headline
+  var name = document.getElementById('p-name');
+  var crumb = document.getElementById('p-crumb');
+  if (isAir) {
+    var parts = P.name.split(' to ');
+    if (parts.length === 2) name.innerHTML = parts[0] + ' <span class="route__arrow">→</span> ' + parts[1];
+    crumb.textContent = 'Direct · ' + dur + 'h ' + (mins < 10 ? '0' : '') + mins + 'm · departs ' + (dep < 10 ? '0' : '') + dep + ':20';
+  } else {
+    crumb.textContent = (stars ? stars.replace(' star', '-star') + ' · ' : '') + (P.subcategory || '') + (P.collection ? ' · ' + P.collection : '');
+  }
+  document.getElementById('p-vendor').textContent = V.brand || '';
+
+  // When and who — date and passengers/guests above the fare
+  var qtyrow = document.querySelector('.qtyrow');
+  var when = document.createElement('div');
+  when.className = 'travel-when';
+  var today = new Date(Date.now() + 14 * 86400000).toISOString().slice(0, 10);
+  var saved = sessionStorage.getItem('lmn.travel_date') || today;
+  when.innerHTML =
+    '<div class="field"><label>' + (isAir ? 'Travel date' : 'Check-in') + '</label><input type="date" id="t-date" value="' + saved + '"></div>' +
+    (isAir ? '' : '<div class="field"><label>Nights</label><input type="number" id="t-nights" min="1" value="' + (sessionStorage.getItem('lmn.nights') || 2) + '"></div>');
+  var vbEl = document.getElementById('variant-block');
+  (vbEl && vbEl.parentNode ? vbEl.parentNode : qtyrow.parentNode).insertBefore(when, vbEl || qtyrow);
+  document.getElementById('t-date').addEventListener('change', function (e) { sessionStorage.setItem('lmn.travel_date', e.target.value); });
+  var nightsEl = document.getElementById('t-nights');
+  if (nightsEl) nightsEl.addEventListener('change', function (e) { sessionStorage.setItem('lmn.nights', e.target.value); });
+  sessionStorage.setItem('lmn.travel_date', saved);
+  var qlabel = document.createElement('span');
+  qlabel.className = 'travel-qty-label'; qlabel.textContent = isAir ? 'Passengers' : 'Rooms';
+  qtyrow.insertBefore(qlabel, qtyrow.firstChild);
+  var stock = document.getElementById('p-stockline');
+  if (stock) stock.textContent = P.in_stock ? (isAir ? 'Seats available' : 'Rooms available') : (isAir ? 'Sold out on this date' : 'No rooms on these dates');
+
+  // Fare table instead of chips
+  var siblings = Store.catalog.filter(function (x) { return x.groupcode === P.groupcode && x.variant_label; });
+  var INCL = isAir ? {
+    'Economy': 'Cabin bag · seat assigned at check-in',
+    'Premium Economy': 'Cabin + checked bag · seat choice · priority boarding',
+    'Business': 'Lie-flat seat · lounge access · two checked bags',
+    'First': 'Private suite · chauffeur · lounge and spa'
+  } : {
+    'Classic Double': 'Queen bed · city view · breakfast included',
+    'Superior Double': 'Queen bed · larger room · breakfast included',
+    'Deluxe King': 'King bed · balcony · breakfast and late checkout',
+    'Junior Suite': 'Separate sitting area · breakfast · lounge access',
+    'Terrace Suite': 'Private terrace · breakfast · lounge and spa'
+  };
+  var vb = document.getElementById('variant-block');
+  if (siblings.length > 1 && vb) {
+    vb.hidden = false;
+    document.getElementById('variant-label').textContent = isAir ? 'Choose your cabin' : 'Choose your room';
+    var host = document.getElementById('p-variants');
+    host.innerHTML = ''; host.className = 'fares';
+    siblings.forEach(function (sib) {
+      var a = document.createElement('a');
+      a.className = 'fare' + (sib.id === P.id ? ' fare--current' : '') + (sib.in_stock ? '' : ' fare--out');
+      a.href = 'product.html?id=' + sib.id;
+      var was = sib.unit_price > sib.unit_sale_price ? '<s>' + money(sib.unit_price) + '</s> ' : '';
+      a.innerHTML = '<span class="fare__name">' + sib.variant_label + '</span>' +
+        '<span class="fare__incl">' + (INCL[sib.variant_label] || '') + '</span>' +
+        '<span class="fare__price">' + was + money(sib.unit_sale_price) + (isAir ? '' : ' <small>/ night</small>') + '</span>';
+      if (!sib.in_stock) a.setAttribute('aria-label', sib.variant_label + ', sold out');
+      host.appendChild(a);
+    });
+  }
+  var price = document.getElementById('p-price');
+  if (price) price.textContent = money(P.unit_sale_price) + (isAir ? ' · ' + P.variant_label : ' / night · ' + P.variant_label);
+
+  // Buttons and links
+  var add = document.getElementById('add-btn');
+  if (add) add.textContent = isAir ? 'Select this fare' : 'Book this room';
+  var wish = document.getElementById('wish-btn');
+  if (wish) { wish.textContent = isAir ? 'Watch this fare' : 'Watch this rate'; wish.dataset.travel = '1'; }
+  var sizeBtn = document.getElementById('size-btn');
+  if (sizeBtn) sizeBtn.textContent = isAir ? 'Fare rules' : 'Rate rules';
+
+  // Details
+  var dts = document.querySelectorAll('.spec dt');
+  var L = isAir ? ['Fare ID', 'Route', 'Cabin', 'Destination', 'Region'] : ['Rate ID', 'Property', 'Room', 'City', 'Region'];
+  dts.forEach(function (dt, i) { if (L[i]) dt.textContent = L[i]; });
+
+  // Recommendation titles
+  var titles = isAir ? ['Other routes you may like', 'Similar destinations', 'Complete your trip'] : ['Other places to stay', 'Similar in feel', 'Add to your trip'];
+  ['reco-product', 'reco-productVisual', 'reco-productComplement'].forEach(function (id, i) {
+    var el = document.getElementById(id); if (!el) return;
+    var sec = el.closest('.section'); var h2 = sec && sec.querySelector('h2');
+    if (h2) h2.textContent = titles[i];
+  });
+})();
 </script>
 </body>
 </html>

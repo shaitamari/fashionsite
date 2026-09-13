@@ -440,3 +440,21 @@ main { padding-bottom: 5rem; }
 .persona .btn { padding: .5rem .9rem; font-size: .85rem; }
 
 .group__lede { max-width: 62ch; color: var(--muted); margin: .5rem 0 0; line-height: 1.55; }
+
+/* Travel product page */
+.route__arrow { color: var(--accent); font-weight: 300; margin: 0 .25em; }
+.travel-when { display: flex; gap: 1rem; margin: 0 0 1rem; }
+.travel-when .field { margin: 0; min-width: 160px; }
+.travel-when input { width: 100%; }
+.travel-qty-label { font-size: .8125rem; color: var(--muted); margin-right: .5rem; letter-spacing: .08em; text-transform: uppercase; }
+.fares { display: flex; flex-direction: column; gap: .5rem; margin-bottom: 1.25rem; }
+.fare { display: grid; grid-template-columns: 1fr auto; grid-template-areas: "name price" "incl price"; gap: .15rem 1rem; align-items: center;
+        padding: .8rem 1rem; border: 1px solid var(--rule); border-radius: 10px; text-decoration: none; color: inherit; background: #fff; }
+.fare:hover { border-color: var(--ink); }
+.fare--current { border-color: var(--ink); background: var(--alt); box-shadow: inset 0 0 0 1px var(--ink); }
+.fare--out { opacity: .5; text-decoration: line-through; }
+.fare__name { grid-area: name; font-weight: 600; }
+.fare__incl { grid-area: incl; font-size: .8125rem; color: var(--muted); }
+.fare__price { grid-area: price; font-weight: 600; white-space: nowrap; text-align: right; }
+.fare__price s { color: var(--muted); font-weight: 400; margin-right: .35rem; }
+.fare__price small { font-weight: 400; color: var(--muted); }

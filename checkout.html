@@ -106,6 +106,7 @@
             <div class="field"><label for="c-city">City</label><input id="c-city"></div>
           </div>
           <div class="field"><label for="c-country">Country (ISO alpha-2)</label><input id="c-country" value="US" maxlength="2"></div>
+          <div class="field" id="c-travel-wrap" hidden><label for="c-travel">Travel date</label><input type="date" id="c-travel"></div>
 
           <p class="eyebrow" style="margin:1.75rem 0 .75rem">Contact preferences</p>
           <label class="check"><input type="checkbox" id="c-email-optin" checked> Email me about orders and restocks</label>
@@ -187,11 +188,23 @@
       order_id: 'LMN' + Date.now().toString().slice(-8),
       total: Math.round((total + ship) * 100) / 100,
       shipping_cost: ship,
-      items: lines
+      items: lines,
+      travel_date: (document.getElementById('c-travel') || {}).value || undefined
     }));
 
     location.href = 'confirmation.html';
   });
+
+  /* Travel checkouts ask for a travel date; it becomes next_trip_date on the
+     profile at confirmation. Default is two weeks out so the ancillary
+     campaign has something to count down to even if nobody changes it. */
+  (function () {
+    var wrap = document.getElementById('c-travel-wrap');
+    if (!wrap || !(window.VERTICAL || {}).banner_slot) return;
+    wrap.hidden = false;
+    var d = new Date(Date.now() + 14 * 86400000);
+    document.getElementById('c-travel').value = sessionStorage.getItem('lmn.travel_date') || d.toISOString().slice(0, 10);
+  })();
 </script>
 </body>
 </html>
