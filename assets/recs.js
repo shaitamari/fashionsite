@@ -322,8 +322,17 @@
     }
     var want = key(name);
     var kept = items.filter(function (p) {
+      /* Category may arrive as a path array or as one "A > B > C" string;
+         take the top level either way. */
       var top = (p.taxonomy && p.taxonomy[0]) || '';
-      return !top || key(top) === want;
+      top = String(top).split('>')[0].trim();
+      if (top) return key(top) === want;
+      /* No category on the payload: the product is kept only if THIS
+         storefront's catalogue knows it. A product the local catalogue has
+         never heard of is another brand's, whatever the payload omits. The
+         previous rule let unknown categories through, which is how airline
+         fares reached the hotels homepage. */
+      return !!(window.Store && window.Store.byId && window.Store.byId(p.id));
     });
 
     if (kept.length !== items.length) {
