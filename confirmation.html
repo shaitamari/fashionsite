@@ -48,11 +48,17 @@
 <script>
   var ORDER = null;
   try { ORDER = JSON.parse(localStorage.getItem('lmn.order') || 'null'); } catch (e) {}
+  /* The order stays in storage so a reload still shows the confirmation (a
+     page that says "no order found" after one refresh reads as broken in a
+     demo). What must not repeat is the side effects — the purchase event,
+     the history write, the loyalty points — so those run only while the
+     order is FRESH, and the first render marks it sent. */
+  var FRESH = !!(ORDER && !ORDER.sent);
 
   window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });
   window.InsiderQueue.push({ type: 'currency', value: Store.currency() });
 
-  if (ORDER) {
+  if (FRESH) {
     // --- page type: purchase --------------------------------------------
     // Sends the Purchase (confirmation_page_view) event — the single most
     // important push for revenue attribution and conversion measurement.
@@ -87,7 +93,7 @@
      cart carried a date) and trip_status "On time" — which the ancillary
      campaign and the disruption banner read. The bookings array is the
      record; these three are the trigger. See the note on next_due_date. */
-  if (ORDER && (window.VERTICAL || {}).banner_slot && Store.currentUser() && ORDER.items && ORDER.items.length) {
+  if (FRESH && (window.VERTICAL || {}).banner_slot && Store.currentUser() && ORDER.items && ORDER.items.length) {
     var when = ORDER.travel_date ? new Date(ORDER.travel_date) : new Date(Date.now() + 14 * 86400000);
     Store.noteBooking(ORDER, { travel_date: ORDER.travel_date, nights: sessionStorage.getItem('lmn.nights') || 0 });
     Store.syncBookings();
@@ -118,7 +124,7 @@
     if (window.insDebugNote) window.insDebugNote('loyalty: +' + Math.round(ORDER.total) + ' pts → ' + pts + ' · ' + tier, 'ok');
   }
 
-  if (ORDER && Store.notePurchase) {
+  if (FRESH && Store.notePurchase) {
     var hist = Store.notePurchase(ORDER.items);
     /* CUSTOM ATTRIBUTES GO INSIDE `custom`. At the top level of the payload,
        alongside uuid and language, the platform does not recognise the array
@@ -154,7 +160,7 @@
   }
 
   // The purchase payload is queued, so the cart can be emptied safely.
-  if (ORDER) Store.clearCart();
+  if (FRESH) Store.clearCart();
 </script>
 </head>
 
@@ -270,8 +276,8 @@
         (ORDER.shipping_cost ? Store.money(ORDER.shipping_cost) : 'Free') + '</span></div>' +
       '<div class="grand"><span>Order total</span><span>' + Store.money(ORDER.total) + '</span></div>';
 
-    // Stop a refresh from firing a duplicate purchase event.
-    localStorage.removeItem('lmn.order');
+    // Mark the order sent so a refresh repeats the page, not the events.
+    if (FRESH) { ORDER.sent = true; try { localStorage.setItem('lmn.order', JSON.stringify(ORDER)); } catch (e) {} }
   }
 
   (function () {
