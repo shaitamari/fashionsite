@@ -1216,7 +1216,10 @@
       }
       meta.insertBefore(row, priceNode);
 
-    } else if (facets.chips.length > 1) {
+    /* Travel storefronts (direct checkout): cabins and rooms are fare options,
+       not sizes, and a row of "Junior Suite / Deluxe King" chips reads like a
+       size picker. Say "5 rooms" and price from the cheapest instead. */
+    } else if (facets.chips.length > 1 && !((window.VERTICAL || {}).direct_checkout)) {
       var crow = document.createElement('div');
       crow.className = 'card__chips';
       facets.chips.slice(0, MAX_CH).forEach(function (label) {

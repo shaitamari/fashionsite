@@ -522,7 +522,8 @@
       "place_order": "Confirm booking",
       "order": "booking",
       "confirm_title": "Your booking is confirmed.",
-      "browse_cta": "Find a room"
+      "browse_cta": "Find a room",
+      "variants": "room types"
     },
     "hero_eyebrow": "Stay",
     "tiles_title": "Where to stay",
@@ -707,7 +708,8 @@
       "place_order": "Confirm booking",
       "order": "booking",
       "confirm_title": "Your trip is booked.",
-      "browse_cta": "Search flights"
+      "browse_cta": "Search flights",
+      "variants": "cabins"
     },
     "hero_eyebrow": "Fly",
     "tiles_title": "Where to next",
