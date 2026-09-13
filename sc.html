@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SC notes</title>
+
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+<meta name="robots" content="noindex">
+
+<link rel="stylesheet" href="assets/styles.css">
+
+<style>
+.doc { max-width: 44rem }
+.doc p, .doc li { font-size: .9375rem; line-height: 1.7 }
+.lede { font-size: 1.0625rem; line-height: 1.65 }
+
+.group { margin: 3rem 0 0 }
+.group__h {
+  margin: 0 0 .4rem;
+  font-family: 'Fraunces', Georgia, serif; font-weight: 400;
+  font-size: 1.375rem; line-height: 1.2; color: var(--ink);
+}
+.group__lede { margin: 0; font-size: .9375rem; line-height: 1.6; color: var(--muted) }
+.group + .act { border-top: 0; padding-top: 1.25rem }
+
+.act { margin: 2.25rem 0 0; padding-top: 1.75rem; border-top: 1px solid var(--rule) }
+.act:first-of-type { border-top: 0; padding-top: 0 }
+.act__no {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: .6875rem; letter-spacing: .1em; color: var(--accent);
+  text-transform: uppercase; margin: 0 0 .35rem;
+}
+.act h2 { margin: 0 0 .5rem; font-size: 1.25rem }
+.act__time { color: var(--muted); font-weight: 400; font-size: .8125rem }
+
+.do { border-left: 2px solid var(--ink); padding: .1rem 0 .1rem 1rem; margin: 1.1rem 0 }
+.do p { margin: 0 }
+.do p + p { margin-top: .5rem }
+
+.hint { margin: .9rem 0 0; color: var(--muted); font-style: italic }
+.go { margin: .7rem 0 0; font-size: .875rem }
+.go a { border-bottom: 1px solid var(--rule) }
+.how { margin: .9rem 0 0 }
+.how summary {
+  cursor: pointer; font-size: .8125rem; color: var(--accent);
+  letter-spacing: .02em;
+}
+.how p { margin: .7rem 0 0; font-size: .875rem; line-height: 1.6; color: var(--muted) }
+
+.doc code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: .8125rem; background: var(--alt); padding: .1rem .35rem; border-radius: 3px;
+}
+.ends { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--rule) }
+.ends h2 { font-size: 1.0625rem; margin: 1.75rem 0 .5rem }
+.ends h2:first-child { margin-top: 0 }
+</style>
+
+<script>window.InsiderQueue = window.InsiderQueue || [];</script>
+<script src="assets/config.js"></script>
+<script src="assets/insider-debug.js"></script>
+<script src="assets/vertical.js"></script>
+<script src="assets/store.js"></script>
+<script src="assets/explain.js"></script>
+<script src="assets/agent.js"></script>
+<script>
+  window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });
+  window.InsiderQueue.push({ type: 'currency', value: Store.currency() });
+  window.InsiderQueue.push({
+    type: 'other', value: { name: 'sc notes', custom: { signed_in: !!Store.currentUser() } }
+  });
+  window.InsiderQueue.push({ type: 'init' });
+</script>
+</head>
+
+<body>
+
+<p class="announce" data-announce>Free shipping over $50</p>
+
+<header class="masthead">
+  <div class="masthead__in">
+    <a class="brand" href="index.html" data-brand>Lumen</a>
+    <form class="searchbox" data-search role="search" autocomplete="off">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" id="search-input" name="q" placeholder="Search products" data-search-placeholder aria-label="Search products">
+    </form>
+    <nav class="utils">
+      <span class="loy" data-loyalty-strip hidden></span>
+      <a href="flow.html" data-flow-link>Services</a>
+      <a href="account.html" data-account-label>Log in</a>
+      <a class="cartlink" href="cart.html"><span data-label="cart">Cart</span><span data-cart-count hidden>0</span></a>
+    </nav>
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="mainnav__in" data-collection-nav></div>
+</nav>
+
+<main class="wrap doc" style="padding-top:2.5rem;padding-bottom:4rem">
+
+  <p class="eyebrow">SC notes <span class="pagetype">page type: other · sc</span></p>
+  <h1 class="h1" style="margin-bottom:.9rem">How to run this storefront</h1>
+  <p class="lede" id="intro"></p>
+
+  <div class="panel" style="margin:1.5rem 0 2.5rem;padding:1rem 1.25rem">
+    <p style="margin:0;font-size:.875rem"><b>Before you start.</b> Open the SDK console (bottom right) so the room sees what the site sends. Use this storefront's own persona from <a href="account.html">Sign in as…</a> — one profile per storefront, never hop between stores on one profile. Panel: <a id="panel-link" target="_blank" rel="noopener">partnersandbox.inone.useinsider.com</a>.</p>
+  </div>
+
+  <div id="acts"></div>
+
+  <section class="ends">
+    <h2>If something is missing</h2>
+    <p>A recommendation row that does not appear returned nothing — the console says which campaign and why. A campaign that ignores an edit has not been generated since. Everything the estate owns is prefixed <code>[DND]</code> in the panel.</p>
+    <h2>Read more</h2>
+    <p><a href="https://insider-portal.atlassian.net/wiki/x/coB0cwE" target="_blank" rel="noopener">What every vertical demonstrates</a> · <a href="https://insider-portal.atlassian.net/wiki/x/pYBxcwE" target="_blank" rel="noopener">How the estate was built</a></p>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <span><span data-brand>Lumen</span> — Insider One demo storefront</span>
+    <span></span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var V = window.VERTICAL || {};
+  var fam = V.vertical || 'Retail';
+  var brand = V.brand || 'the store';
+  var acct = (window.ENVIRONMENT || {}).account || 'partnersandbox';
+  var panel = 'https://' + acct + '.inone.useinsider.com';
+  document.getElementById('panel-link').href = panel;
+  document.getElementById('panel-link').textContent = acct + '.inone.useinsider.com';
+  var sr = function (id) { return panel + '/web-smart-recommender/' + id + '/design'; };
+
+  document.getElementById('intro').textContent =
+    'The beats in the order to show them on ' + brand + '. For each: what to click, what to say, where it lives in the panel. Fifteen minutes end to end; the first four alone make the point.';
+
+  /* Each beat: [group?, title, do, say, panel, console] */
+  var retail = [
+    ['The unknown visitor'],
+    ['Arrive from an ad', 'Open the ad (footer link) and click through. Compare with the plain homepage.',
+     'Paid traffic tells you something at the door. One campaign reads which storefront it is on — every brand, one campaign.',
+     'Onsite Experiment "[DND] Paid social arrival — all verticals".', 'page type home, utm_source=meta on the URL.'],
+    ['Every product row is the platform', 'Point at the three homepage rows and the strip above each. Open "Why this strategy" on one.',
+     'Nothing here is a static list. The strip names the algorithm and what it reads; the row that says "on sale" is the platform ranking markdowns, not merchandising.',
+     'Smart Recommender: New arrivals (4239), Highest discounted (4414), Complementary to last add-to-cart (4416). Brand filter on each.', 'campaign id and product count for every row.'],
+    ['Search for a description, not a product', 'Search a colour plus a category. Use the facets.',
+     'Facets are real fields, not configured by hand. Colour, size and material are separate attributes in the feed, which is why the swatches are honest.',
+     'Eureka campaign 4233 (search) and 4235 (category pages), filtered on this store\u2019s category path.', 'the Eureka request and the campaign it hit.'],
+    ['Find a variant that is gone', 'Open a product where a size is struck through. Try to pick it.',
+     'Each variant is its own record with its own id. Most sites keep one id for all sizes, so the platform never learns which one was wanted. Here it does.',
+     'Catalog: one record per variant, stock at variant level.', 'product_detail_page_view with the variant id.'],
+    ['Similar, visually similar, complementary', 'Scroll the product page. Three rows, three answers.',
+     'Similar reads the copy; Visually similar reads the picture; Complementary reasons about what goes with it. You would normally pick one of the first two — both are here so you can see the difference.',
+     'Smart Recommender 4236, 4237, 4238.', 'three campaign events on one page.'],
+    ['Becoming known'],
+    ['Ask the agent', 'Open the assistant. Ask about returns, then ask it to book what this store offers (a consultation, a fitting).',
+     'The chat writes to the profile, not to a transcript. The request lands as an event a journey can act on. And it knows which store it is in from the product on the page — one agent, every storefront.',
+     'Agent One → AI Agents → "Insider One Agent"; the event agent_request on the profile.', 'the assistant loads with the product id.'],
+    ['Sign in as a persona', 'Account → Sign in as… → the persona with history.',
+     'Personas are known profiles anyone can step into on any browser. The uuid is the customer number, so this is the same person on your laptop and mine.',
+     'Unified Customer Profile for the persona.', 'the user push with uuid, email, tier, points.'],
+    ['Tier progress', 'Add something and open the cart.',
+     'It works out the gap to the next tier and decides whether it is close enough to mention. The programme lives in a lookup table: changing it is one row, not a campaign per store.',
+     'Web template "[DND] Points to next tier" (Liquid); lookup table bound to membership tier.', 'cart page type, basket contents.'],
+    ['Two of the same thing', 'Set quantity to two on one item.',
+     'Two of one item is a return in progress. Service before the sale costs less than the return does — and the rule reads the basket, not the page.',
+     'Onsite campaign on basket contents.', 'the basket push with quantity 2.'],
+    ['Goes with what you bought', 'Check out. On the confirmation, and again on the homepage foot, show the row.',
+     'Complementary rather than similar, anchored on what this person just added — shoes for the dress, not another dress. The ask every apparel prospect puts in writing.',
+     'Smart Recommender 4416, Recommend Based On = user\u2019s last added to cart.', 'purchase event, then 4416 with products.'],
+    ['What happens after they leave'],
+    ['Browse abandonment', 'Look at three products, add none, close the tab. Then open the journey.',
+     'The site reported page views; the platform decided which one mattered and reached the person on the channel they answer.',
+     'Architect journey 2822 "[DND] Browse abandonment" — open the email element to show the product and image tokens.', 'product_detail_page_view events only, no add-to-cart.'],
+    ['The request that outlives the visit', 'Back on the sold-out size: ask the agent to tell you when it is back.',
+     'The agent captured the exact variant; variant-level stock makes the notification specific enough to act on months later. Most sites can do neither half.',
+     'Action notify_back_in_stock → event back_in_stock_requested → journey "[DND] Back in stock".', 'the event with product_id and size.']
+  ];
+
+  var travel = [
+    ['The unknown visitor'],
+    ['Arrive from an ad', 'Open the ad (footer link) and click through.',
+     'Paid traffic tells you something at the door. One campaign reads which storefront it is on.',
+     'Onsite Experiment "[DND] Paid social arrival — all verticals".', 'page type home, utm_source=meta.'],
+    ['Every product row is the platform', 'Point at the homepage rows and their strips.',
+     'New routes and discounted fares are the platform ranking the catalogue, with a brand filter so this airline never shows another brand.',
+     'Smart Recommender 4239, 4414, 4416.', 'campaign id and product count per row.'],
+    ['Search a destination', 'Search a city. Open a route: cabins as a fare table.',
+     'Every cabin is its own record, so the platform knows which cabin was looked at and which was booked.',
+     'Eureka 4233 / 4235 filtered on this store\u2019s category path.', 'the Eureka request.'],
+    ['Becoming known'],
+    ['Sign in as the traveller', 'Account → Sign in as… → the traveller persona.',
+     'A known profile with trips behind it. The uuid is the customer number; same person on any browser.',
+     'Unified Customer Profile → the bookings array on the Array tab.', 'user push with tier and points.'],
+    ['Book, then see the trip on the profile', 'Book a fare. On the confirmation: the booking, the points, the link across to the hotel brand for that city.',
+     'The booking becomes a record — route, dates, cabin, fare, extras — not a line item. The homepage now reads the trip.',
+     'Profile: next_trip, next_trip_date, trip_status; bookings array.', 'purchase event, then the trip attributes.'],
+    ['Disruption', 'On the confirmation click "Mark this flight as delayed", then go to the homepage.',
+     'Telling someone their flight is delayed is a notification; telling them what to do next is service. One campaign reads trip_status and speaks for both travel brands.',
+     'Web template "[DND] Trip status banner — travel" (Liquid on trip_status).', 'trip_status = Delayed on the user push.'],
+    ['The next thing they will need', 'Homepage foot row and confirmation row after booking.',
+     'Ancillary revenue is where the margin lives. Extras are real products, so the recommender pairs a fare with a bag or a lounge pass.',
+     'Smart Recommender 4416; Extras category in the catalogue.', '4416 event with products — if zero, the pairing has not rebuilt yet; say so and move on.'],
+    ['Ask the agent', 'Open the assistant. Ask about baggage, then ask to change the trip.',
+     'The chat writes the request to the profile; a journey listens. Travel support is where a bad moment keeps or loses a customer.',
+     'Agent One "Insider One Agent"; event agent_request.', 'assistant loads with the product id.'],
+    ['What happens after they leave'],
+    ['Funnel abandonment', 'Add a fare, leave without paying.',
+     'Abandonment in travel is a research session, not a basket. The follow-up names the route, the dates and the fare they saw.',
+     'Architect journey "[DND] Funnel abandonment — all stores" (to build).', 'cart push, no purchase.']
+  ];
+
+  var banking = [
+    ['The unknown visitor'],
+    ['Arrive from an ad', 'Open the ad and click through.', 'One campaign reads the storefront and dresses the page.', 'Onsite Experiment "[DND] Paid social arrival — all verticals".', 'page type home.'],
+    ['Search a product', 'Search for an account or a policy. Open one.', 'Products, not a basket — the catalogue is the product range and the conversion is a form.', 'Eureka 4233 / 4235.', 'the Eureka request.'],
+    ['Becoming known'],
+    ['Sign in as a persona', 'Account → Sign in as…', 'A known profile; the same person on any browser.', 'Unified Customer Profile.', 'user push.'],
+    ['Ask the agent', 'Ask an account question, then ask to start an application.', 'Service, not sales. The request lands on the profile as an event; in a regulated industry the safety comes from what the agent is allowed to do.', 'Agent One "Insider One Agent"; event agent_request.', 'assistant loads.'],
+    ['What happens after they leave'],
+    ['Abandoned application', 'Start the flow and leave.', 'Abandonment here is a form, and most are lost in the middle. To build.', 'Funnel abandonment journey (to build).', 'flow events.']
+  ];
+
+  var telco = retail.slice(0, 6).concat([
+    ['Becoming known'],
+    retail[7], retail[8],
+    ['Ask the agent', 'Ask a billing or coverage question, then ask to change plan.', 'Most telco contact is service, not sales. The agent that handles it well reduces calls.', 'Agent One "Insider One Agent"; event agent_request.', 'assistant loads.'],
+    ['What happens after they leave'],
+    retail[13]
+  ]);
+
+  var beats = fam === 'Travel' ? travel : fam === 'Banking' ? banking : fam === 'Telco' ? telco : retail;
+
+  var host = document.getElementById('acts'), n = 0;
+  var words = ['One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Eleven','Twelve','Thirteen','Fourteen'];
+  beats.forEach(function (b) {
+    if (b.length === 1) {
+      var g = document.createElement('section'); g.className = 'group';
+      g.innerHTML = '<h2 class="group__h"></h2>'; g.querySelector('h2').textContent = b[0];
+      host.appendChild(g); return;
+    }
+    var s = document.createElement('section'); s.className = 'act';
+    s.innerHTML = '<p class="act__no"></p><h2></h2>' +
+      '<div class="do"><p><b>Do.</b> <span data-do></span></p><p><b>Say.</b> <span data-say></span></p></div>' +
+      '<p class="go"><b>Panel.</b> <span data-panel></span></p>' +
+      '<p class="hint">Console: <span data-console></span></p>';
+    s.querySelector('.act__no').textContent = words[n++] || String(n);
+    s.querySelector('h2').textContent = b[0];
+    s.querySelector('[data-do]').textContent = b[1];
+    s.querySelector('[data-say]').textContent = b[2];
+    s.querySelector('[data-panel]').textContent = b[3];
+    s.querySelector('[data-console]').textContent = b[4];
+    host.appendChild(s);
+  });
+})();
+</script>
+</body>
+</html>

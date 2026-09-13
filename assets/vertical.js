@@ -79,10 +79,22 @@
        Locale is en_GB/EUR here too, NOT en_US. An XML integration is per
        locale and salesdemo's own catalogue is en_US, so sharing the locale
        would merge 17,092 records into it and neither would be trustworthy. */
-    'default': {
-      suffix: null, account: 'salesdemo', partnerId: '10002548',
-      locale: 'en_GB', currency: 'EUR'
-    },
+    /* SALESDEMO SWITCH. salesdemo has no working catalogue or Eureka index
+       for this build yet, so the bare hostnames run on partnersandbox for
+       now: the same account as -sandbox, so every campaign, journey and agent
+       just works there. The page still knows it is the bare hostname
+       (ENVIRONMENT_KEY stays 'default'), so SC-only pages and links behave
+       as on sales demo. To restore the split: flip SALESDEMO_READY to true
+       and deploy. Nothing else changes.
+
+       The bare hostnames must be in partnersandbox's multiDomains for the
+       tag to load on them while the switch is off. */
+    'default': (function () {
+      var SALESDEMO_READY = false;
+      return SALESDEMO_READY
+        ? { suffix: null, account: 'salesdemo',      partnerId: '10002548', locale: 'en_GB', currency: 'EUR' }
+        : { suffix: null, account: 'partnersandbox', partnerId: '10006846', locale: 'en_GB', currency: 'EUR' };
+    })(),
     'sandbox': {
       suffix: '-sandbox', account: 'partnersandbox', partnerId: '10006846',
       locale: 'en_GB', currency: 'EUR'
@@ -846,7 +858,7 @@
       var links = sandbox
         ? [['about.html', 'Start here'], ['ask.html', 'Ask a question'],
            ['feedback.html', 'Feedback']]
-        : [['ask.html', 'Ask a question'], ['feedback.html', 'Feedback']];
+        : [['sc.html', 'SC notes'], ['ask.html', 'Ask a question'], ['feedback.html', 'Feedback']];
 
       var wrap = document.createElement('span');
       wrap.setAttribute('data-demo-links', '');
