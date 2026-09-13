@@ -90,6 +90,10 @@ window.SITE_CONFIG = {
        Set showStrategy false to hide the strip without removing the config. */
     showStrategy: true,
 
+    /* Cards per row. The grid fits five across at desktop width; anything
+       beyond wraps as an orphan line, so recs.js trims to this many. */
+    maxItems: 5,
+
     /* The algorithms, grouped as Academy groups them. `needs` is the honest
        part — several of these are cold on a fresh account, and it is better to
        say so on screen than to show an empty row and hope nobody asks. */
@@ -282,7 +286,7 @@ window.SITE_CONFIG = {
        tag does not report the algorithm back. */
     campaigns: {
       home:         null,   // #reco-home         on index.html
-      homeTrending: null,   // #reco-homeTrending on index.html
+      homeSale:     null,   // #reco-homeSale     on index.html
       homeFoot:     null,   // #reco-homeFoot     on index.html
       product:      null,   // #reco-product      on product.html
       cart:         null,   // #reco-cart         on cart.html
@@ -351,13 +355,22 @@ window.SITE_CONFIG = {
              campaign with the strategy swapped, which carries the template
              across. See friction log #25. */
           homeFoot: { campaignId: 4241, variationId: null, strategy: 'user_based' },
-          /* Trending, between the two rows above. One campaign for every
-             storefront — recs.js scopes the result to the current vertical —
-             so the id goes here once and index.html mounts the row only when
-             it is set. Thin traffic may make this row sparse; if it stays
-             empty, drop it rather than back-fill it. */
-          homeTrending: { campaignId: null, variationId: null, strategy: 'trending' },
-          cart:         { campaignId: null, variationId: null, strategy: 'complementary' },
+          /* Sale row, between the two rows above. Clone of 4239 with the
+             strategy swapped to Highest Discounted — catalogue-only, so it
+             works on every storefront with no traffic, and it brings the
+             on-sale row back as platform output. One campaign for all
+             verticals; recs.js scopes the result to the current one. The
+             campaign may be scoped to All Pages in the panel — harmless,
+             because every other mount waits for its own id before claiming.
+             Variation id still to come from the row's information icon;
+             until then the row claims by campaignId alone. */
+          homeSale: { campaignId: 4414, variationId: null, strategy: 'highest_discounted' },
+          /* Same campaign as the third PDP row. 4238 is scoped to All Pages,
+             and on a cart page the engine anchors Complementary on the basket
+             instead of a viewed product — so one campaign serves both
+             placements. The only cost is that its report mixes PDP and cart
+             clicks; split it into two campaigns if that ever matters. */
+          cart:         { campaignId: 4238, variationId: null, strategy: 'complementary' },
           /* Confirmation deliberately is NOT another Complementary row: PDP,
              cart and confirmation all running cross-sell would be the same
              answer three times, and after the money is taken the question is

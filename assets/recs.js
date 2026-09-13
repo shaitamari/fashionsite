@@ -403,6 +403,16 @@
       } catch (e) { shown = normalized; }
     }
 
+    /* One tidy row. The grid fits five cards across at desktop width, and a
+       campaign that returns six leaves one orphan on a second line. Cap the
+       row at `maxItems` (config, default 5); the full count still reaches
+       the console so the campaign's real return is visible. */
+    var cap = Number(RECO.maxItems) || 5;
+    if (shown.length > cap) {
+      note('Showing ' + cap + ' of ' + shown.length + ' recommended products', 'ok');
+      shown = shown.slice(0, cap);
+    }
+
     shown.forEach(function (raw, i) {
       var p = raw;
 
