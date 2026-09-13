@@ -81,7 +81,9 @@ exports.handler = async function (event) {
     var uuid = ids.uuid || attrs.uuid || (Array.isArray(ids.uuid) ? ids.uuid[0] : null);
     if (Array.isArray(uuid)) uuid = uuid[0];
     if (!res.ok || !uuid) {
-      return { statusCode: 200, headers: cors, body: JSON.stringify({ found: false, status: res.status }) };
+      // Not found, or a shape we do not read yet: return the body (trimmed) so
+      // the shape can be seen from the browser without exposing the token.
+      return { statusCode: 200, headers: cors, body: JSON.stringify({ found: false, status: res.status, raw: text.slice(0, 1500) }) };
     }
     return {
       statusCode: 200, headers: cors,
