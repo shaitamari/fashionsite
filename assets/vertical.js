@@ -749,7 +749,11 @@
     set('[data-hero-eyebrow]', d.hero_eyebrow);
     set('[data-tiles-title]', d.tiles_title);
     set('[data-grid-title]', d.grid_title);
-    set('[data-reco-title]', d.reco_title);
+    // The top recommendation row is New Arrivals, so it takes the vertical's
+    // "new in" wording (New routes, New models…) rather than the cross-sell
+    // phrasing reco_title carried for the old static layout.
+    set('[data-reco-title]', d.grid_title || d.reco_title);
+    set('[data-reco-sale-title]', d.sale_title);
     set('[data-newsletter-title]', d.newsletter_title);
     set('[data-newsletter-lede]', d.newsletter_lede);
 

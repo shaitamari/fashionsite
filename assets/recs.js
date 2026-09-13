@@ -451,9 +451,37 @@
       box.querySelector('.card__vendor').textContent = vendorText;
       box.querySelector('.card__name').textContent = p.name;
 
+      /* Price and variant count from OUR catalogue, not from what the
+         campaign happened to return. A route with four cabins can come back
+         as a single Business fare, which then advertised the Business price
+         with no "from"; the local group has every cabin, so the card shows
+         the cheapest and counts them all. */
+      var group = [];
+      try { group = (window.Store && window.Store.variantsOf) ? window.Store.variantsOf(p) : []; } catch (e) {}
+      if (group.length > 1) {
+        p._variants = Math.max(p._variants || 1, group.length);
+        var cheapest = group.reduce(function (a, b) {
+          return (b.unit_sale_price || b.unit_price) < (a.unit_sale_price || a.unit_price) ? b : a;
+        });
+        p.unit_price = cheapest.unit_price;
+        p.unit_sale_price = cheapest.unit_sale_price;
+        sale = p.unit_sale_price < p.unit_price;
+        var badge = box.querySelector('.badge');
+        if (sale && !badge) {
+          badge = document.createElement('span'); badge.className = 'badge'; badge.textContent = 'Sale';
+          box.querySelector('.card__media').insertBefore(badge, box.querySelector('.card__media img'));
+        } else if (!sale && badge) { badge.remove(); }
+      }
+
+      /* Travel storefronts (direct checkout) sell a route or a stay, and its
+         cabins or rooms are fare options, not sizes — a row of Economy /
+         Business chips reads like a size selector. Skip the chip row there;
+         "from" plus the cheapest fare says it. */
+      var isTravel = !!((window.VERTICAL || {}).direct_checkout);
+
       // Same variant preview as the site's own cards — swatches where the
       // tokens are colours, chips where they are sizes, cabins or tiers.
-      if (p._variants > 1 && window.Store && window.Store.variantFacets) {
+      if (!isTravel && p._variants > 1 && window.Store && window.Store.variantFacets) {
         var f = { swatches: [], chips: [] };
         try { f = window.Store.variantFacets(p); } catch (e) {}
         var meta = box.querySelector('.card__meta');

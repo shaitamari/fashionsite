@@ -47,8 +47,21 @@ QUERIES = {
         "oslo-edinburgh": "edinburgh castle", "lisbon-sao-paulo": "sao paulo brazil",
         "copenhagen-bangkok": "bangkok thailand temple", "milan-casablanca": "casablanca morocco",
         "manchester-dubai": "dubai skyline",
+        # Extras — the ancillary products. Object photography, not places.
+        "extra-checked-bag": "suitcase airport luggage",
+        "extra-seat-selection": "airplane seat window cabin",
+        "extra-lounge-access": "airport lounge",
+        "extra-airport-transfer": "black car chauffeur airport",
+        "extra-travel-insurance": "passport travel documents",
     },
 }
+QUERIES["hotels"].update({
+    "extra-breakfast": "hotel breakfast table",
+    "extra-late-checkout": "hotel room morning light",
+    "extra-spa-day-pass": "spa pool hotel",
+    "extra-hotel-airport-transfer": "black car chauffeur airport",
+    "extra-room-upgrade": "hotel suite luxury room",
+})
 
 
 def load_key():
