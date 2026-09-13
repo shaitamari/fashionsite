@@ -657,8 +657,13 @@
         slot.id = 'trip-banner';
         slot.className = 'trip-banner';
         slot.setAttribute('data-trip-banner', '');
-        var hdr = document.querySelector('header');
-        if (hdr && hdr.parentNode) hdr.parentNode.insertBefore(slot, hdr.nextSibling);
+        /* Below the fold, not under the header: the campaign arrives a beat
+           after first paint, and a banner landing above the hero would push
+           the whole page down as it appears. After the hero, the shift is
+           where nobody is looking yet. Pages without a hero fall back to
+           just under the header. */
+        var anchor = document.querySelector('.hero') || document.querySelector('header');
+        if (anchor && anchor.parentNode) anchor.parentNode.insertBefore(slot, anchor.nextSibling);
       };
       // applyVertical runs from the catalog script in <head>, before the
       // header exists, so the slot is placed once the body has parsed.
