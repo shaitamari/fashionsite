@@ -162,7 +162,7 @@ body { opacity: 0; transition: opacity .18s ease-out }
     <div class="tiles" id="tiles"></div>
   </section>
 
-  <section class="section wrap">
+  <section hidden class="section wrap">
     <div class="section__head">
       <h2 class="h2" data-reco-title>Recommended for you</h2>
       <span class="source" id="reco-home-note">Smart Recommender · waiting for campaign</span>
@@ -176,18 +176,18 @@ body { opacity: 0; transition: opacity .18s ease-out }
        produce, next to rows it did, is indistinguishable to a prospect and
        unexplainable to the SC. A slot whose campaign returns nothing stays
        hidden rather than being back-filled. -->
-  <section class="section wrap">
+  <section hidden class="section wrap">
     <div class="section__head">
-      <h2 class="h2" data-reco-trend-title>Trending now</h2>
-      <span class="source" id="reco-homeTrending-note">Smart Recommender · waiting for campaign</span>
+      <h2 class="h2" data-reco-sale-title>On sale now</h2>
+      <span class="source" id="reco-homeSale-note">Smart Recommender · waiting for campaign</span>
     </div>
-    <div id="reco-homeTrending" hidden></div>
+    <div id="reco-homeSale" hidden></div>
   </section>
 
   <!-- Second recommendation row. User based sits at the foot of the page by
        convention, and that placement also means an empty row is survivable
        rather than the first thing a visitor sees. -->
-  <section class="section wrap">
+  <section hidden class="section wrap">
     <div class="section__head">
       <h2 class="h2" data-reco-foot-title>Picked for you</h2>
       <span class="source" id="reco-homeFoot-note">Smart Recommender · waiting for campaign</span>
@@ -275,7 +275,7 @@ body { opacity: 0; transition: opacity .18s ease-out }
   });
 
   watchReco('home');
-  watchReco('homeTrending');
+  watchReco('homeSale');
   watchReco('homeFoot');
 
   // Smart Recommender. The slot is inferred from the host id, and the
@@ -285,14 +285,14 @@ body { opacity: 0; transition: opacity .18s ease-out }
     // The slot name is taken from the host id, so this reads
     // config.reco.perAccount[account].slots.homeFoot.
     window.Recs.mount('#reco-homeFoot');
-    // Trending is only mounted once its campaign id is configured. A mount
-    // with no id claims the first unclaimed payload on the page, which on a
-    // three-campaign homepage could be another row's — so it waits for the
-    // id rather than guessing.
+    // The sale row is only mounted once its campaign id is configured. A
+    // mount with no id claims the first unclaimed payload on the page, which
+    // on a three-campaign homepage could be another row's — so it waits for
+    // the id rather than guessing.
     var acct = (window.ENVIRONMENT && window.ENVIRONMENT.account) || '';
     var per  = ((window.SITE_CONFIG.reco.perAccount || {})[acct] || {}).slots || {};
-    if (per.homeTrending && per.homeTrending.campaignId) {
-      window.Recs.mount('#reco-homeTrending');
+    if (per.homeSale && per.homeSale.campaignId) {
+      window.Recs.mount('#reco-homeSale');
     }
   }
 </script>
