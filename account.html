@@ -337,10 +337,12 @@
     }, function () { prompt('Copy this JSON:', txt); });
   });
 
-  document.getElementById('profile-form').addEventListener('submit', function (ev) {
+  document.getElementById('profile-form').addEventListener('submit', async function (ev) {
     ev.preventDefault();
     var birthday = document.getElementById('f-birthday').value;
 
+    var known = await Store.adoptKnown(document.getElementById('f-email').value);
+    if (known && window.insDebugNote) window.insDebugNote('known profile · adopted uuid ' + known.uuid, 'ok');
     Store.signIn(Object.assign({
       name: document.getElementById('f-name').value.trim(),
       surname: document.getElementById('f-surname').value.trim() || undefined,

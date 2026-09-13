@@ -499,16 +499,53 @@
   /* --- sign-in ------------------------------------------------------------ */
   function currentUser() { return read(KEY.user, null); }
 
+  /* --- identity: the uuid is the customer number ----------------------------
+     Before sign-in the visitor is the browser's random id. At sign-in the
+     uuid becomes a STABLE id derived from the email — the same person is the
+     same uuid on every browser and every machine, by construction. That is
+     what a real site does (the uuid is the customer number), and on this
+     platform it is what makes a second browser resolve to the same profile:
+     identity resolution here is uuid-first with a limit of one uuid per
+     profile, so a known email arriving on a *new* random uuid becomes a
+     second profile with the email refused. Sending the same uuid everywhere
+     means there is never a second profile to merge.
+
+     Insider's own storage is cleared when the uuid changes so the tag
+     re-initialises as the new identity rather than carrying the old spUID.
+     Log out goes the other way: a fresh random visitor, so the next person
+     on this browser does not inherit the account. */
+  function clearInsiderIdentity() {
+    try {
+      Object.keys(localStorage).filter(function (k) { return k.indexOf('ins-') === 0; })
+        .forEach(function (k) { localStorage.removeItem(k); });
+      document.cookie.split(';').forEach(function (c) {
+        var n = c.split('=')[0].trim();
+        if (n.indexOf('ins-') === 0) document.cookie = n + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
+      });
+    } catch (e) {}
+  }
+  function stableId(email) { return 'LMN-' + hash(String(email || '').trim().toLowerCase()); }
+
   function signIn(profile) {
     var merged = Object.assign({}, currentUser() || {}, profile);
-    if (!merged.uuid) merged.uuid = 'LMN-' + hash(merged.email);
+    if (profile && profile.email && (!merged.uuid || merged.uuid.indexOf('LMN-') === 0)) merged.uuid = stableId(profile.email);
+    if (!merged.uuid) merged.uuid = stableId(merged.email);
     if (!merged.signup_date) merged.signup_date = new Date().toISOString().replace(/\.\d+Z$/, 'Z');
     write(KEY.user, merged);
+    if (read(KEY.visitor, null) !== merged.uuid) {
+      clearInsiderIdentity();
+      write(KEY.visitor, merged.uuid);
+    }
     paintChrome();
     return merged;
   }
 
-  function signOut() { localStorage.removeItem(KEY.user); paintChrome(); }
+  function signOut() {
+    localStorage.removeItem(KEY.user);
+    localStorage.removeItem(KEY.visitor);   // next visitor gets a fresh id
+    clearInsiderIdentity();
+    paintChrome();
+  }
 
   /* --- personas -----------------------------------------------------------
      A persona is a known profile on the platform: a uuid the account already
@@ -524,20 +561,35 @@
 
      The shared list is personas.json in the repo; personal ones live in
      localStorage under lmn.personas (see account.html). */
+  /* Ask the site's own function whether the platform already knows this
+     email; if so, adopt that profile's uuid before signing in. Resolves to
+     false when the lookup is unavailable, and sign-in then uses the stable
+     derived id. */
+  function adoptKnown(email) {
+    return fetch('/.netlify/functions/whois', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: String(email || '').trim() })
+    }).then(function (r) { return r.ok ? r.json() : null; }).then(function (k) {
+      if (!k || !k.found || !k.uuid) return false;
+      var u0 = currentUser() || {};
+      signInAs({ email: k.email, uuid: k.uuid, profile: Object.assign({}, u0, { email: k.email }) });
+      return k;
+    }).catch(function () { return false; });
+  }
+
   function signInAs(persona) {
     if (!persona || !persona.uuid) return false;
-    try {
-      Object.keys(localStorage).filter(function (k) { return k.indexOf('ins-') === 0; })
-        .forEach(function (k) { localStorage.removeItem(k); });
-      document.cookie.split(';').forEach(function (c) {
-        var n = c.split('=')[0].trim();
-        if (n.indexOf('ins-') === 0) document.cookie = n + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
-      });
-    } catch (e) {}
+    clearInsiderIdentity();
     write(KEY.visitor, persona.uuid);
-    var profile = Object.assign({}, persona.profile || {}, { email: persona.email, uuid: persona.uuid });
     localStorage.removeItem(KEY.user);
-    signIn(profile);
+    // The persona's uuid wins over the derived one: older profiles were
+    // created under browser ids, and the persona records the one the
+    // platform actually holds.
+    var profile = Object.assign({}, persona.profile || {}, { email: persona.email, uuid: persona.uuid });
+    var merged = Object.assign({}, profile);
+    if (!merged.signup_date) merged.signup_date = new Date().toISOString().replace(/\.\d+Z$/, 'Z');
+    write(KEY.user, merged);
+    paintChrome();
     return true;
   }
 
@@ -1187,7 +1239,7 @@
     catalog: catalog, oneVariantEach: oneVariantEach, byId: byId, byCollection: byCollection,
     collections: collections, subcategories: subcategories, shortName: shortName,
     localSearch: localSearch, featured: featured, onSale: onSale,
-    visitorId: visitorId, resetVisitor: resetVisitor, signInAs: signInAs,
+    visitorId: visitorId, resetVisitor: resetVisitor, signInAs: signInAs, adoptKnown: adoptKnown,
     localHref: localHref, money: money, productPayload: productPayload,
     cartLines: cartLines, cartTotal: cartTotal, cartCount: cartCount,
     addToCart: addToCart, removeFromCart: removeFromCart, setQty: setQty, clearCart: clearCart,

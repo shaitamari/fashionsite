@@ -162,10 +162,11 @@
     '<div><span>Shipping</span><span>' + (ship ? Store.money(ship) : 'Free') + '</span></div>' +
     '<div class="grand"><span>Total</span><span>' + Store.money(total + ship) + '</span></div>';
 
-  document.getElementById('checkout-form').addEventListener('submit', function (ev) {
+  document.getElementById('checkout-form').addEventListener('submit', async function (ev) {
     ev.preventDefault();
 
     // 1. Attach everything the form collected to the profile.
+    await Store.adoptKnown(document.getElementById('c-email').value);
     Store.signIn({
       name: document.getElementById('c-name').value.trim(),
       surname: document.getElementById('c-surname').value.trim(),
