@@ -577,8 +577,12 @@
     // Walk up until an ancestor holds the email field — the button is
     // type="button" and sits beside the input, not around it.
     var node = btn.parentNode, input = null;
+    var looks = function (v) { return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(String(v || '').trim()); };
     while (node && node !== document && !input) {
-      input = node.querySelector && node.querySelector('input[type="email"], input[name*="mail" i]');
+      if (node.querySelectorAll) {
+        var ins = node.querySelectorAll('input');
+        for (var i = 0; i < ins.length; i++) { if (looks(ins[i].value)) { input = ins[i]; break; } }
+      }
       node = node.parentNode;
     }
     var email = input && String(input.value || '').trim();
