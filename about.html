@@ -40,7 +40,7 @@
 
 .hint { margin: .9rem 0 0; color: var(--muted); font-style: italic }
 .go { margin: .7rem 0 0; font-size: .875rem }
-.go a { border-bottom: 1px solid var(--rule) }
+.go a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px }
 .how { margin: .9rem 0 0 }
 .how summary {
   cursor: pointer; font-size: .8125rem; color: var(--accent);
@@ -130,6 +130,7 @@
       without a release. Because it reads the URL, one campaign can carry every
       Meta ad you run at once: each ad lands on the page built for it.</p>
     </details>
+    <p class="go"><a data-panel-path="onsite-experiment" target="_blank" rel="noopener">Open the campaign in your panel →</a></p>
   </section>
 
   <section class="act">
@@ -147,6 +148,7 @@
       are separate fields in the catalogue, which is why the swatches and the
       facets know what they contain.</p>
     </details>
+    <p class="go"><a data-panel-path="" target="_blank" rel="noopener">Open your panel →</a></p>
   </section>
 
   <section class="act">
@@ -187,6 +189,7 @@
       sizes. A Web Template fires on it. The message is chosen by the platform,
       not written into the page.</p>
     </details>
+    <p class="go"><a data-panel-path="web-templates" target="_blank" rel="noopener">Open the campaign in your panel →</a></p>
   </section>
 
   <section class="act">
@@ -207,6 +210,7 @@
       same signals the platform’s own purchase-intent model reads. A rule
       thresholds them and a template does the asking.</p>
     </details>
+    <p class="go"><a data-panel-path="architect/2822/canvas" target="_blank" rel="noopener">Open the journey in your panel →</a></p>
   </section>
 
   <section class="group">
@@ -294,6 +298,7 @@
       campaign that quotes it updates, rather than someone re-editing each
       of them.</p>
     </details>
+    <p class="go"><a data-panel-path="web-templates" target="_blank" rel="noopener">Open the campaign in your panel →</a></p>
   </section>
 
   <section class="group">
@@ -343,6 +348,7 @@
       things people forget, and forgetting them is what makes an abandonment
       programme annoy customers instead of recovering them.</p>
     </details>
+    <p class="go"><a data-panel-path="architect/2822/canvas" target="_blank" rel="noopener">Open the journey in your panel →</a></p>
   </section>
 
   <div class="ends">
@@ -497,6 +503,15 @@
     if (window.console) console.warn('[about] setup failed:', e);
   }
 })();
+
+  // Panel links: the account the page resolves to, so a partner on their own
+  // sandbox lands in their own panel.
+  (function () {
+    var acct = (window.ENVIRONMENT || {}).account || 'partnersandbox';
+    document.querySelectorAll('[data-panel-path]').forEach(function (a) {
+      a.href = 'https://' + acct + '.inone.useinsider.com/' + a.getAttribute('data-panel-path');
+    });
+  })();
 </script>
 
 </body>
