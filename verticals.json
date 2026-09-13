@@ -381,7 +381,8 @@
       "Fragrance": 180,
       "Body": 45,
       "_default": 75
-    }
+    },
+    "reco_foot_title": "Goes with what you bought"
   },
   "_template": {
     "_comment": "Copy this, rename the key, fill it in. Delete nothing else.",
@@ -442,7 +443,8 @@
     "tiles_title": "Shop by category",
     "grid_title": "New in",
     "reco_title": "Recommended for you",
-    "sale_title": "On sale now"
+    "sale_title": "On sale now",
+    "reco_foot_title": "Goes with what you bought"
   },
   "_labels_default": {
     "cart": "Cart",
@@ -635,7 +637,8 @@
       "Extras > Wellness": "Wellness",
       "Extras > Transfers": "Transfers"
     },
-    "direct_checkout": true
+    "direct_checkout": true,
+    "reco_foot_title": "For your next stay"
   },
   "airlines": {
     "vertical": "Travel",
@@ -825,7 +828,8 @@
       "Extras > Transfers": "Transfers",
       "Extras > Insurance": "Insurance"
     },
-    "direct_checkout": true
+    "direct_checkout": true,
+    "reco_foot_title": "For your next trip"
   },
   "_environments": {
     "_README": [
@@ -980,7 +984,8 @@
     "showcase": {
       "search": "mortgage",
       "product": "48300000000001"
-    }
+    },
+    "reco_foot_title": "You might also need"
   },
   "insurance": {
     "vertical": "Banking",
@@ -1110,7 +1115,8 @@
       "search": "travel",
       "product": "48400000000001"
     },
-    "anniversary_months": 11
+    "anniversary_months": 11,
+    "reco_foot_title": "Often taken together"
   },
   "fintech": {
     "vertical": "Banking",
@@ -1230,7 +1236,8 @@
     "showcase": {
       "search": "business",
       "product": "48500000000001"
-    }
+    },
+    "reco_foot_title": "Works well with your account"
   },
   "fashion": {
     "vertical": "Retail",
@@ -1687,7 +1694,8 @@
       "Rings": "Jewellery",
       "Earrings": "Jewellery"
     },
-    "size_gaps": true
+    "size_gaps": true,
+    "reco_foot_title": "Goes with what you bought"
   },
   "electronics": {
     "vertical": "Retail",
@@ -1799,7 +1807,8 @@
     "showcase": {
       "search": "bookshelf",
       "product": "45033161687229"
-    }
+    },
+    "reco_foot_title": "Works with what you bought"
   },
   "telco": {
     "vertical": "Telco",
@@ -2023,7 +2032,8 @@
     "showcase": {
       "search": "case",
       "product": "45914954334344"
-    }
+    },
+    "reco_foot_title": "Add to your plan"
   },
   "home": {
     "vertical": "Retail",
@@ -2264,7 +2274,8 @@
       "Pillows & Accessories": "Pillows & Throws",
       "Living Room": "Living Room",
       "Ottomans": "Ottomans"
-    }
+    },
+    "reco_foot_title": "Completes what you bought"
   },
   "luxury": {
     "vertical": "Retail",
@@ -2389,7 +2400,8 @@
       "search": "tote",
       "product": "49508261069038"
     },
-    "anniversary_months": 11
+    "anniversary_months": 11,
+    "reco_foot_title": "To pair with your last purchase"
   },
   "supermarket": {
     "vertical": "Retail",
@@ -2511,7 +2523,8 @@
     },
     "replenishment_days": {
       "_default": 14
-    }
+    },
+    "reco_foot_title": "Goes with your last shop"
   },
   "nutrition": {
     "vertical": "Retail",
@@ -2690,7 +2703,8 @@
     },
     "replenishment_days": {
       "_default": 30
-    }
+    },
+    "reco_foot_title": "Goes with what you bought"
   },
   "misumi": {
     "vertical": "B2B",
@@ -2873,7 +2887,8 @@
     },
     "locale": "en_SG",
     "currency": "SGD",
-    "standalone_feed": true
+    "standalone_feed": true,
+    "reco_foot_title": "Often ordered with your last order"
   },
   "canon": {
     "vertical": "Retail",
@@ -3046,6 +3061,7 @@
     },
     "replenishment_days": {
       "Ink, Toner & Paper": 60
-    }
+    },
+    "reco_foot_title": "Works with what you bought"
   }
 }

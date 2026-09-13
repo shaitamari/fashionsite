@@ -754,6 +754,7 @@
     // phrasing reco_title carried for the old static layout.
     set('[data-reco-title]', d.grid_title || d.reco_title);
     set('[data-reco-sale-title]', d.sale_title);
+    set('[data-reco-foot-title]', d.reco_foot_title);
     set('[data-newsletter-title]', d.newsletter_title);
     set('[data-newsletter-lede]', d.newsletter_lede);
 

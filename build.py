@@ -436,7 +436,7 @@ def build_catalog(key, cfg):
         "brand", "tagline", "hero_title", "hero_lede", "hero_cta", "announce",
         "search_placeholder", "newsletter_title", "newsletter_lede", "theme",
         "vertical", "subvertical", "hero_eyebrow", "tiles_title", "grid_title",
-        "reco_title", "sale_title", "profile", "flow", "hero_category", "foryou_title", "showcase", "replenishment_days", "anniversary_months",
+        "reco_title", "sale_title", "reco_foot_title", "profile", "flow", "hero_category", "foryou_title", "showcase", "replenishment_days", "anniversary_months",
         "locale", "currency", "banner_slot", "direct_checkout"
     ) if k in cfg}
     meta["key"] = key

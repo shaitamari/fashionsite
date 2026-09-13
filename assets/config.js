@@ -131,6 +131,18 @@ window.SITE_CONFIG = {
         caveat: 'It reasons about categories rather than observing real baskets, so it will not find the odd pairing your customers actually make.',
         placement: 'Cart and checkout. Last-minute add-ons at the cart are among the highest-converting placements there are.'
       },
+      complementary_last_purchased: {
+        label: 'Complementary to your last purchase',
+        group: 'Personalised',
+        icon: 'complementary',
+        blurb: 'Cross-sell by AI category reasoning, anchored on what this visitor bought last.',
+        needs: 'Catalogue, plus a purchase on this profile.',
+        fallback: 'A generic list for anyone who has not bought yet.',
+        where: 'Homepage and post-purchase pages, where there is no product on screen to anchor on.',
+        pairs: 'Complementary on the product page and cart, which anchor on what is being viewed or carried.',
+        caveat: 'Only as good as the last purchase: a one-off gift skews it until the next order.',
+        placement: 'Homepage foot and the order confirmation.'
+      },
       viewed_together: {
         label: 'Viewed together',
         group: 'Behavioural',
@@ -354,7 +366,13 @@ window.SITE_CONFIG = {
              ever gained a design. 4241 is a duplicate of the working homepage
              campaign with the strategy swapped, which carries the template
              across. See friction log #25. */
-          homeFoot: { campaignId: 4241, variationId: null, strategy: 'user_based' },
+          /* Foot row: Complementary anchored on the shopper's last purchase
+             (Recommend Based On = user's last purchased, Item Count 3, brand
+             filter) — "goes with what you bought". A visitor with no purchase
+             gets the campaign's generic fallback. Replaces 4241 (User based),
+             which never rendered; 4241 stays paused, not deleted, for when
+             the account has enough history to prove User based. */
+          homeFoot: { campaignId: 4416, variationId: null, strategy: 'complementary_last_purchased' },
           /* Sale row, between the two rows above. Clone of 4239 with the
              strategy swapped to Highest Discounted — catalogue-only, so it
              works on every storefront with no traffic, and it brings the

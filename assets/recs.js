@@ -385,6 +385,22 @@
        vertical itself cannot be resolved, in which case nothing is filtered. */
     normalized = scopeToVertical(normalized);
 
+    /* Ancillaries (Airlines > Extras, Hotels > Extras) are catalogue products
+       so Complementary can pair them with a fare or a stay. They are also
+       the newest items in the feed and carry the deepest markdowns, so the
+       generic homepage rows would fill with bags and lounge passes under a
+       "New routes" heading. Generic rows skip them; anchored rows keep them. */
+    var GENERIC_SLOTS = { home: 1, homeSale: 1 };
+    if (GENERIC_SLOTS[slot]) {
+      var before = normalized.length;
+      normalized = normalized.filter(function (p) {
+        return !(p.taxonomy || []).some(function (t) { return /^extras$/i.test(String(t).trim()); });
+      });
+      if (normalized.length !== before) {
+        note('Dropped ' + (before - normalized.length) + ' Extras from the ' + slot + ' row', 'ok');
+      }
+    }
+
     // Affinity exhibit, when enabled. No-op when affinity.js is absent or off.
     if (window.Affinity && window.Affinity.rank) {
       normalized = window.Affinity.rank(normalized);
