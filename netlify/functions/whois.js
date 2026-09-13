@@ -14,9 +14,13 @@
    POST { email }  ->  { found, uuid, name, surname, tier, points, email }
    Only answers requests from insiderdemo.com (or localhost for testing). */
 
+// Tokens pasted into Netlify sometimes arrive with invisible characters
+// (a zero-width space at the start was the first one). Headers must be
+// plain ASCII, so anything outside the printable range is dropped.
+function clean(t) { return String(t || '').replace(/[^\x21-\x7E]/g, ''); }
 const ACCOUNTS = {
-  partnersandbox: process.env.INSIDER_UCD_TOKEN_PARTNERSANDBOX,
-  salesdemo: process.env.INSIDER_UCD_TOKEN_SALESDEMO
+  partnersandbox: clean(process.env.INSIDER_UCD_TOKEN_PARTNERSANDBOX),
+  salesdemo: clean(process.env.INSIDER_UCD_TOKEN_SALESDEMO)
 };
 
 function accountFor(host) {
