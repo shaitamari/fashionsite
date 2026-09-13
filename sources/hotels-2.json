@@ -1,0 +1,204 @@
+{
+ "products": [
+  {
+   "id": 8100000000901,
+   "title": "Breakfast, daily",
+   "handle": "extra-breakfast",
+   "body_html": "<p>Full breakfast each morning of your stay, served in the restaurant or delivered to the room.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Extras > Dining",
+   "tags": [
+    "Extras",
+    "Dining",
+    "Ancillary",
+    "Category:Extras",
+    "Sub:Dining"
+   ],
+   "options": [
+    {
+     "name": "Title",
+     "values": [
+      "Default Title"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/extra-breakfast.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000901,
+     "title": "Default Title",
+     "option1": "Default Title",
+     "sku": "extra-breakfast",
+     "price": "28.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000902,
+   "title": "Late checkout",
+   "handle": "extra-late-checkout",
+   "body_html": "<p>Keep the room until 4 pm on departure day.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Extras > Room extras",
+   "tags": [
+    "Extras",
+    "Room extras",
+    "Ancillary",
+    "Category:Extras",
+    "Sub:Room extras"
+   ],
+   "options": [
+    {
+     "name": "Title",
+     "values": [
+      "Default Title"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/extra-late-checkout.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000902,
+     "title": "Default Title",
+     "option1": "Default Title",
+     "sku": "extra-late-checkout",
+     "price": "35.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000903,
+   "title": "Spa day pass",
+   "handle": "extra-spa-day-pass",
+   "body_html": "<p>A day of pool, sauna, steam room and thermal suite access for one guest.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Extras > Wellness",
+   "tags": [
+    "Extras",
+    "Wellness",
+    "Ancillary",
+    "Category:Extras",
+    "Sub:Wellness"
+   ],
+   "options": [
+    {
+     "name": "Title",
+     "values": [
+      "Default Title"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/extra-spa-day-pass.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000903,
+     "title": "Default Title",
+     "option1": "Default Title",
+     "sku": "extra-spa-day-pass",
+     "price": "65.00",
+     "compare_at_price": "80.00",
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000904,
+   "title": "Airport transfer",
+   "handle": "extra-hotel-airport-transfer",
+   "body_html": "<p>Private car between the airport and the hotel, either direction, driver waiting at arrivals.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Extras > Transfers",
+   "tags": [
+    "Extras",
+    "Transfers",
+    "Ancillary",
+    "Category:Extras",
+    "Sub:Transfers"
+   ],
+   "options": [
+    {
+     "name": "Title",
+     "values": [
+      "Default Title"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/extra-hotel-airport-transfer.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000904,
+     "title": "Default Title",
+     "option1": "Default Title",
+     "sku": "extra-hotel-airport-transfer",
+     "price": "58.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8100000000905,
+   "title": "Room upgrade",
+   "handle": "extra-room-upgrade",
+   "body_html": "<p>Move up one room category on arrival, subject to availability.</p>",
+   "vendor": "Wayfarer",
+   "product_type": "Extras > Room extras",
+   "tags": [
+    "Extras",
+    "Room extras",
+    "Ancillary",
+    "Category:Extras",
+    "Sub:Room extras"
+   ],
+   "options": [
+    {
+     "name": "Title",
+     "values": [
+      "Default Title"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/hotels/extra-room-upgrade.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48100000000905,
+     "title": "Default Title",
+     "option1": "Default Title",
+     "sku": "extra-room-upgrade",
+     "price": "90.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  }
+ ]
+}

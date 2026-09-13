@@ -1,0 +1,204 @@
+{
+ "products": [
+  {
+   "id": 8200000000901,
+   "title": "Checked bag, 23 kg",
+   "handle": "extra-checked-bag",
+   "body_html": "<p>One checked bag up to 23 kg on any Meridian Air flight. Add before airport pricing applies.</p>",
+   "vendor": "Meridian Air",
+   "product_type": "Extras > Baggage",
+   "tags": [
+    "Extras",
+    "Baggage",
+    "Ancillary",
+    "Category:Extras",
+    "Sub:Baggage"
+   ],
+   "options": [
+    {
+     "name": "Title",
+     "values": [
+      "Default Title"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/airlines/extra-checked-bag.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48200000000901,
+     "title": "Default Title",
+     "option1": "Default Title",
+     "sku": "extra-checked-bag",
+     "price": "45.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8200000000902,
+   "title": "Seat selection",
+   "handle": "extra-seat-selection",
+   "body_html": "<p>Choose your seat in advance — window, aisle or extra legroom rows where available.</p>",
+   "vendor": "Meridian Air",
+   "product_type": "Extras > Seating",
+   "tags": [
+    "Extras",
+    "Seating",
+    "Ancillary",
+    "Category:Extras",
+    "Sub:Seating"
+   ],
+   "options": [
+    {
+     "name": "Title",
+     "values": [
+      "Default Title"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/airlines/extra-seat-selection.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48200000000902,
+     "title": "Default Title",
+     "option1": "Default Title",
+     "sku": "extra-seat-selection",
+     "price": "22.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8200000000903,
+   "title": "Lounge access",
+   "handle": "extra-lounge-access",
+   "body_html": "<p>Pre-flight lounge access with food, drinks, Wi-Fi and showers at the departure airport.</p>",
+   "vendor": "Meridian Air",
+   "product_type": "Extras > Lounge",
+   "tags": [
+    "Extras",
+    "Lounge",
+    "Ancillary",
+    "Category:Extras",
+    "Sub:Lounge"
+   ],
+   "options": [
+    {
+     "name": "Title",
+     "values": [
+      "Default Title"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/airlines/extra-lounge-access.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48200000000903,
+     "title": "Default Title",
+     "option1": "Default Title",
+     "sku": "extra-lounge-access",
+     "price": "39.00",
+     "compare_at_price": "49.00",
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8200000000904,
+   "title": "Airport transfer",
+   "handle": "extra-airport-transfer",
+   "body_html": "<p>Private car from the arrival airport to your hotel or address, driver waiting at arrivals.</p>",
+   "vendor": "Meridian Air",
+   "product_type": "Extras > Transfers",
+   "tags": [
+    "Extras",
+    "Transfers",
+    "Ancillary",
+    "Category:Extras",
+    "Sub:Transfers"
+   ],
+   "options": [
+    {
+     "name": "Title",
+     "values": [
+      "Default Title"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/airlines/extra-airport-transfer.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48200000000904,
+     "title": "Default Title",
+     "option1": "Default Title",
+     "sku": "extra-airport-transfer",
+     "price": "58.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  },
+  {
+   "id": 8200000000905,
+   "title": "Travel insurance",
+   "handle": "extra-travel-insurance",
+   "body_html": "<p>Trip cover for cancellation, medical costs and lost baggage for the duration of your journey.</p>",
+   "vendor": "Meridian Air",
+   "product_type": "Extras > Insurance",
+   "tags": [
+    "Extras",
+    "Insurance",
+    "Ancillary",
+    "Category:Extras",
+    "Sub:Insurance"
+   ],
+   "options": [
+    {
+     "name": "Title",
+     "values": [
+      "Default Title"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/airlines/extra-travel-insurance.svg"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48200000000905,
+     "title": "Default Title",
+     "option1": "Default Title",
+     "sku": "extra-travel-insurance",
+     "price": "31.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
+  }
+ ]
+}

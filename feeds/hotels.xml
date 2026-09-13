@@ -11044,5 +11044,110 @@
     <margin>40</margin>
     <activation_date>2026-09-11</activation_date>
   </item>
+  <item>
+    <g:id>48100000000901</g:id>
+    <g:item_group_id>8100000000901</g:item_group_id>
+    <g:title>Breakfast, daily</g:title>
+    <description>Full breakfast each morning of your stay, served in the restaurant or delivered to the room.</description>
+    <link>https://hotels.insiderdemo.com/product.html?id=48100000000901</link>
+    <g:image_link>https://insiderdemo.com/assets/img/hotels/extra-breakfast.svg</g:image_link>
+    <g:price>28.00</g:price>
+    <g:sale_price>28.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Wayfarer</g:brand>
+    <g:product_type>Hotels &gt; Extras &gt; Dining</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>Dining</g:custom_label_0>
+    <g:custom_label_3>4.3</g:custom_label_3>
+    <rating>4.3</rating>
+    <g:custom_label_4>55</g:custom_label_4>
+    <margin>55</margin>
+    <activation_date>2026-02-04</activation_date>
+  </item>
+  <item>
+    <g:id>48100000000902</g:id>
+    <g:item_group_id>8100000000902</g:item_group_id>
+    <g:title>Late checkout</g:title>
+    <description>Keep the room until 4 pm on departure day.</description>
+    <link>https://hotels.insiderdemo.com/product.html?id=48100000000902</link>
+    <g:image_link>https://insiderdemo.com/assets/img/hotels/extra-late-checkout.svg</g:image_link>
+    <g:price>35.00</g:price>
+    <g:sale_price>35.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Wayfarer</g:brand>
+    <g:product_type>Hotels &gt; Extras &gt; Room extras</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>Room extras</g:custom_label_0>
+    <g:custom_label_3>3.4</g:custom_label_3>
+    <rating>3.4</rating>
+    <g:custom_label_4>65</g:custom_label_4>
+    <margin>65</margin>
+    <activation_date>2026-04-20</activation_date>
+  </item>
+  <item>
+    <g:id>48100000000903</g:id>
+    <g:item_group_id>8100000000903</g:item_group_id>
+    <g:title>Spa day pass</g:title>
+    <description>A day of pool, sauna, steam room and thermal suite access for one guest.</description>
+    <link>https://hotels.insiderdemo.com/product.html?id=48100000000903</link>
+    <g:image_link>https://insiderdemo.com/assets/img/hotels/extra-spa-day-pass.svg</g:image_link>
+    <g:price>80.00</g:price>
+    <g:sale_price>65.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Wayfarer</g:brand>
+    <g:product_type>Hotels &gt; Extras &gt; Wellness</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>Wellness</g:custom_label_0>
+    <g:custom_label_3>4.1</g:custom_label_3>
+    <rating>4.1</rating>
+    <g:custom_label_4>20</g:custom_label_4>
+    <margin>20</margin>
+    <activation_date>2026-09-03</activation_date>
+  </item>
+  <item>
+    <g:id>48100000000904</g:id>
+    <g:item_group_id>8100000000904</g:item_group_id>
+    <g:title>Airport transfer</g:title>
+    <description>Private car between the airport and the hotel, either direction, driver waiting at arrivals.</description>
+    <link>https://hotels.insiderdemo.com/product.html?id=48100000000904</link>
+    <g:image_link>https://insiderdemo.com/assets/img/hotels/extra-hotel-airport-transfer.svg</g:image_link>
+    <g:price>58.00</g:price>
+    <g:sale_price>58.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Wayfarer</g:brand>
+    <g:product_type>Hotels &gt; Extras &gt; Transfers</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>Transfers</g:custom_label_0>
+    <g:custom_label_3>4.0</g:custom_label_3>
+    <rating>4.0</rating>
+    <g:custom_label_4>35</g:custom_label_4>
+    <margin>35</margin>
+    <activation_date>2026-11-07</activation_date>
+  </item>
+  <item>
+    <g:id>48100000000905</g:id>
+    <g:item_group_id>8100000000905</g:item_group_id>
+    <g:title>Room upgrade</g:title>
+    <description>Move up one room category on arrival, subject to availability.</description>
+    <link>https://hotels.insiderdemo.com/product.html?id=48100000000905</link>
+    <g:image_link>https://insiderdemo.com/assets/img/hotels/extra-room-upgrade.svg</g:image_link>
+    <g:price>90.00</g:price>
+    <g:sale_price>90.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Wayfarer</g:brand>
+    <g:product_type>Hotels &gt; Extras &gt; Room extras</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>Room extras</g:custom_label_0>
+    <g:custom_label_3>4.8</g:custom_label_3>
+    <rating>4.8</rating>
+    <g:custom_label_4>65</g:custom_label_4>
+    <margin>65</margin>
+    <activation_date>2026-01-24</activation_date>
+  </item>
 </channel>
 </rss>

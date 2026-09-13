@@ -206,6 +206,17 @@
       </div>
     </section>
 
+    <!-- Travel only: a plain link across to the sister storefront. This is
+         the site's own link, not platform output — the recommendation row
+         below is the platform's. Airlines points at hotels and hotels at
+         airlines, both open in a new window so the confirmation stays. -->
+    <section class="section" id="crosslink" hidden style="padding-top:0">
+      <div class="panel" style="max-width:660px">
+        <p class="eyebrow" id="crosslink-eyebrow"></p>
+        <p class="lede" style="margin:0"><a id="crosslink-a" target="_blank" rel="noopener"></a></p>
+      </div>
+    </section>
+
     <section class="section">
       <div class="section__head">
         <h2 class="h2">You may also like</h2>
@@ -283,9 +294,40 @@
 
   watchReco('confirmation');
 
+  /* Sister-storefront link for travel. The hostname swaps the vertical and
+     keeps the suffix, so airlines-sandbox links to hotels-sandbox and the
+     bare hostnames link to each other. The city comes from the purchased
+     item's subcategory; a hotels search for it lands on that city's rooms,
+     and a city the other store does not serve simply gets the homepage. */
+  (function () {
+    var key = window.VERTICAL_KEY;
+    var pair = { airlines: 'hotels', hotels: 'airlines' }[key];
+    if (!pair || !ORDER || !ORDER.items || !ORDER.items.length) return;
+    var host = location.hostname.replace(/^[a-z]+/, pair);
+    var rec  = (window.Store && Store.byId) ? Store.byId(ORDER.items[0].id) : null;
+    var city = rec && rec.subcategory && rec.taxonomy && rec.taxonomy[0] !== 'Extras' ? rec.subcategory : '';
+    var other = (window.VERTICALS && window.VERTICALS[pair] && window.VERTICALS[pair].brand) ||
+                (pair === 'hotels' ? 'Wayfarer' : 'Meridian Air');
+    var a = document.getElementById('crosslink-a');
+    a.href = 'https://' + host + (city ? '/search.html?q=' + encodeURIComponent(city) : '/');
+    a.textContent = pair === 'hotels'
+      ? 'Need somewhere to stay' + (city ? ' in ' + city : '') + '? Browse ' + other + ' hotels \u2192'
+      : 'Need a flight' + (city ? ' to ' + city : '') + '? See ' + other + ' fares \u2192';
+    document.getElementById('crosslink-eyebrow').textContent = pair === 'hotels' ? 'Your stay' : 'Getting there';
+    document.getElementById('crosslink').hidden = false;
+  })();
+
   // Smart Recommender. The slot is inferred from the host id, and the
   // strategy strip reads config.reco.perAccount[account].slots[slot].
-  if (window.Recs && window.Recs.enabled) window.Recs.mount('#reco-confirmation');
+  // Mount only once this slot has a campaign id. A mount with no id claims
+  // the first unclaimed payload that reaches the page, and a campaign scoped
+  // to All Pages (the homepage sale row, for one) would land here and render
+  // under the wrong strip. Waiting for the id is what keeps rows honest.
+  var acct = (window.ENVIRONMENT && window.ENVIRONMENT.account) || '';
+  var per  = ((window.SITE_CONFIG.reco.perAccount || {})[acct] || {}).slots || {};
+  if (window.Recs && window.Recs.enabled && per.confirmation && per.confirmation.campaignId) {
+    window.Recs.mount('#reco-confirmation');
+  }
 </script>
 </body>
 </html>

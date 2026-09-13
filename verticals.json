@@ -318,6 +318,7 @@
     "tiles_title": "Shop by category",
     "grid_title": "New in",
     "reco_title": "Recommended for you",
+    "sale_title": "On sale now",
     "profile": {
       "tiers": [
         "Member",
@@ -440,7 +441,8 @@
     "hero_eyebrow": "New season",
     "tiles_title": "Shop by category",
     "grid_title": "New in",
-    "reco_title": "Recommended for you"
+    "reco_title": "Recommended for you",
+    "sale_title": "On sale now"
   },
   "_labels_default": {
     "cart": "Cart",
@@ -482,7 +484,8 @@
       "Europe",
       "Americas",
       "Asia & Pacific",
-      "Africa & Middle East"
+      "Africa & Middle East",
+      "Extras"
     ],
     "collections": {
       "Europe > Lisbon": "Europe",
@@ -496,14 +499,19 @@
       "Europe > Amalfi": "Europe",
       "Asia & Pacific > Singapore": "Asia & Pacific",
       "Europe > Edinburgh": "Europe",
-      "Asia & Pacific > Chiang Mai": "Asia & Pacific"
+      "Asia & Pacific > Chiang Mai": "Asia & Pacific",
+      "Extras > Dining": "Extras",
+      "Extras > Room extras": "Extras",
+      "Extras > Wellness": "Extras",
+      "Extras > Transfers": "Extras"
     },
     "subcats": {},
     "defaults": {
       "Europe": "All",
       "Americas": "All",
       "Asia & Pacific": "All",
-      "Africa & Middle East": "All"
+      "Africa & Middle East": "All",
+      "Extras": "All"
     },
     "labels": {
       "add_to_cart": "Reserve",
@@ -520,6 +528,7 @@
     "tiles_title": "Where to stay",
     "grid_title": "New places",
     "reco_title": "Picked for you",
+    "sale_title": "Discounted stays",
     "profile": {
       "tiers": [
         "Member",
@@ -619,7 +628,11 @@
       "Europe > Amalfi": "Amalfi",
       "Asia & Pacific > Singapore": "Singapore",
       "Europe > Edinburgh": "Edinburgh",
-      "Asia & Pacific > Chiang Mai": "Chiang Mai"
+      "Asia & Pacific > Chiang Mai": "Chiang Mai",
+      "Extras > Dining": "Dining",
+      "Extras > Room extras": "Room extras",
+      "Extras > Wellness": "Wellness",
+      "Extras > Transfers": "Transfers"
     },
     "direct_checkout": true
   },
@@ -652,7 +665,8 @@
       "Europe",
       "Americas",
       "Asia & Pacific",
-      "Africa & Middle East"
+      "Africa & Middle East",
+      "Extras"
     ],
     "collections": {
       "Americas > New York": "Americas",
@@ -669,14 +683,20 @@
       "Americas > São Paulo": "Americas",
       "Asia & Pacific > Bangkok": "Asia & Pacific",
       "Africa & Middle East > Casablanca": "Africa & Middle East",
-      "Africa & Middle East > Dubai": "Africa & Middle East"
+      "Africa & Middle East > Dubai": "Africa & Middle East",
+      "Extras > Baggage": "Extras",
+      "Extras > Seating": "Extras",
+      "Extras > Lounge": "Extras",
+      "Extras > Transfers": "Extras",
+      "Extras > Insurance": "Extras"
     },
     "subcats": {},
     "defaults": {
       "Europe": "All",
       "Americas": "All",
       "Asia & Pacific": "All",
-      "Africa & Middle East": "All"
+      "Africa & Middle East": "All",
+      "Extras": "All"
     },
     "labels": {
       "add_to_cart": "Select flight",
@@ -693,6 +713,7 @@
     "tiles_title": "Where to next",
     "grid_title": "New routes",
     "reco_title": "Picked for you",
+    "sale_title": "Discounted fares",
     "profile": {
       "tiers": [
         "Blue",
@@ -795,7 +816,12 @@
       "Americas > São Paulo": "São Paulo",
       "Asia & Pacific > Bangkok": "Bangkok",
       "Africa & Middle East > Casablanca": "Casablanca",
-      "Africa & Middle East > Dubai": "Dubai"
+      "Africa & Middle East > Dubai": "Dubai",
+      "Extras > Baggage": "Baggage",
+      "Extras > Seating": "Seating",
+      "Extras > Lounge": "Lounge",
+      "Extras > Transfers": "Transfers",
+      "Extras > Insurance": "Insurance"
     },
     "direct_checkout": true
   },
@@ -847,6 +873,7 @@
     "tiles_title": "Browse products",
     "grid_title": "Popular",
     "reco_title": "You might also need",
+    "sale_title": "Limited-time rates",
     "theme": {
       "bg": "#FCFDFE",
       "alt": "#EDF1F6",
@@ -969,6 +996,7 @@
     "tiles_title": "Browse cover",
     "grid_title": "Popular cover",
     "reco_title": "Often taken together",
+    "sale_title": "Reduced premiums",
     "theme": {
       "bg": "#FCFDFC",
       "alt": "#EBF3EE",
@@ -1098,6 +1126,7 @@
     "tiles_title": "Browse plans",
     "grid_title": "Most popular",
     "reco_title": "Works well with",
+    "sale_title": "Introductory offers",
     "theme": {
       "bg": "#FDFCFF",
       "alt": "#F0ECFA",
@@ -1217,6 +1246,7 @@
     "tiles_title": "Shop by category",
     "grid_title": "New in",
     "reco_title": "Picked for you",
+    "sale_title": "On sale now",
     "theme": {
       "bg": "#FFFDFB",
       "alt": "#F4EFE9",
@@ -1673,6 +1703,7 @@
     "tiles_title": "Shop by category",
     "grid_title": "New models",
     "reco_title": "You might also like",
+    "sale_title": "Deals",
     "theme": {
       "bg": "#FCFCFD",
       "alt": "#EFF1F4",
@@ -1784,6 +1815,7 @@
     "tiles_title": "Shop by category",
     "grid_title": "Latest devices",
     "reco_title": "Pairs well with",
+    "sale_title": "Offers on devices",
     "theme": {
       "bg": "#FDFDFC",
       "alt": "#EEF2EF",
@@ -2007,6 +2039,7 @@
     "tiles_title": "Shop by room",
     "grid_title": "New in",
     "reco_title": "Completes the room",
+    "sale_title": "Reduced",
     "theme": {
       "bg": "#FDFCFA",
       "alt": "#F1EDE6",
@@ -2247,6 +2280,7 @@
     "tiles_title": "Browse the edit",
     "grid_title": "Just arrived",
     "reco_title": "You may also like",
+    "sale_title": "Final reductions",
     "theme": {
       "bg": "#FBFAF8",
       "alt": "#EDEAE4",
@@ -2371,6 +2405,7 @@
     "tiles_title": "Shop by aisle",
     "grid_title": "New this week",
     "reco_title": "Often bought together",
+    "sale_title": "This week's offers",
     "theme": {
       "bg": "#FDFDFA",
       "alt": "#EFF3E9",
@@ -2492,6 +2527,7 @@
     "tiles_title": "Shop by category",
     "grid_title": "New in",
     "reco_title": "Goes well with your routine",
+    "sale_title": "On offer",
     "theme": {
       "bg": "#FCFCF8",
       "alt": "#EEF3E6",
@@ -2670,6 +2706,7 @@
     "tiles_title": "Shop by category",
     "grid_title": "New in range",
     "reco_title": "Frequently ordered together",
+    "sale_title": "Reduced prices",
     "theme": {
       "bg": "#FFFFFF",
       "alt": "#F2F4F7",
@@ -2855,6 +2892,7 @@
     "tiles_title": "Shop by category",
     "grid_title": "New arrivals",
     "reco_title": "Works with this",
+    "sale_title": "Offers",
     "theme": {
       "bg": "#FFFFFF",
       "alt": "#F4F4F4",
