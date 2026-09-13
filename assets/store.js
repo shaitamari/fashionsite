@@ -550,6 +550,44 @@
     paintChrome();
   }
 
+  /* --- the platform's own popup signs the visitor in here too -------------
+     The lead-collection popup writes the email to the profile — that is the
+     "become known" beat. But the site did not know it had happened, so the
+     header still said "Log in" while the platform already knew the person.
+     This watches any Insider-rendered form: when it submits with an email,
+     the site signs in with the same address (stable uuid, same rules as the
+     account page), so both sides agree on who this is. Nothing is sent that
+     the popup did not already send. */
+  document.addEventListener('submit', function (ev) {
+    var form = ev.target;
+    if (!form || !form.closest) return;
+    var box = form.closest('[class*="ins-"], [id*="ins-"], [data-campaign-id]');
+    if (!box) return;
+    var input = form.querySelector('input[type="email"], input[name*="mail" i]');
+    var email = input && String(input.value || '').trim();
+    if (!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return;
+    if (currentUser() && currentUser().email === email) return;
+    signIn({ email: email, email_optin: true, gdpr_optin: true });
+    if (window.insDebugNote) window.insDebugNote('popup sign-in · ' + email, 'ok');
+  }, true);
+  // Some templates submit with a click handler rather than a form submit.
+  document.addEventListener('click', function (ev) {
+    var btn = ev.target && ev.target.closest && ev.target.closest('[data-form-submit], [data-element-type="submit"], [id^="ins-submit"], button.ins-btn');
+    if (!btn) return;
+    // Walk up until an ancestor holds the email field — the button is
+    // type="button" and sits beside the input, not around it.
+    var node = btn.parentNode, input = null;
+    while (node && node !== document && !input) {
+      input = node.querySelector && node.querySelector('input[type="email"], input[name*="mail" i]');
+      node = node.parentNode;
+    }
+    var email = input && String(input.value || '').trim();
+    if (!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return;
+    if (currentUser() && currentUser().email === email) return;
+    signIn({ email: email, email_optin: true, gdpr_optin: true });
+    if (window.insDebugNote) window.insDebugNote('popup sign-in · ' + email, 'ok');
+  }, true);
+
   /* --- personas -----------------------------------------------------------
      A persona is a known profile on the platform: a uuid the account already
      holds, plus the email and profile fields to sign in with. Signing in as
@@ -746,6 +784,80 @@
   }
 
   function purchaseHistory() { return read('lmn.purchases', []); }
+
+  /* --- bookings, as an Array of Objects -------------------------------------
+     Travel's record. A purchase is a line item; a booking is a trip — route
+     or property, when, how long, which cabin or room, what was paid, and the
+     ancillaries added. One object per booking on the profile, under the
+     `bookings` Array of Objects attribute. The flat trip fields (next_trip,
+     next_trip_date, trip_status) are derived from the latest one for onsite
+     campaigns to read, since web Liquid cannot reach into an array.
+     Ancillaries are a comma-separated string, not a nested array — object
+     fields are scalars on the platform. */
+  function bookingHistory() { return read('lmn.bookings', []); }
+  function noteBooking(order, extra) {
+    if (!order || !order.items || !order.items.length) return bookingHistory();
+    var hist = bookingHistory();
+    var line = order.items[0];
+    var p = byId(line.id) || {};
+    var when = extra && extra.travel_date ? new Date(extra.travel_date) : new Date(Date.now() + 14 * 86400000);
+    hist.push({
+      booking_id: order.order_id,
+      route: p.name || line.name,
+      destination: p.subcategory || '',
+      region: p.collection || '',
+      cabin: p.variant_label || line.variant || '',
+      travel_date: when.toISOString().slice(0, 10) + 'T00:00:00Z',
+      nights: extra && extra.nights ? Number(extra.nights) : 0,
+      fare: Math.round((Number(order.total) || 0) * 100) / 100,
+      booked_at: new Date().toISOString().replace(/\.\d+Z$/, 'Z'),
+      status: 'On time',
+      ancillaries: (extra && extra.ancillaries) || ''
+    });
+    write('lmn.bookings', hist.slice(-40));
+    return hist;
+  }
+  /* Array-of-Objects attributes cannot travel in the tag's user object; they
+     go through the site's sync function to the Upsert API. Fire-and-forget;
+     the console gets a note either way. */
+  function syncArray(attribute, items, mode) {
+    return fetch('/.netlify/functions/sync', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ uuid: visitorId(), attribute: attribute, items: items, mode: mode || 'add' })
+    }).then(function (r) { return r.json(); }).then(function (out) {
+      if (window.insDebugNote) window.insDebugNote(attribute + ' → Upsert: ' + (out.ok ? 'ok' : 'failed ' + (out.status || out.reason || out.error || '')), out.ok ? 'ok' : 'warn');
+      return out;
+    }).catch(function (e) {
+      if (window.insDebugNote) window.insDebugNote(attribute + ' → Upsert: unreachable', 'warn');
+      return { ok: false };
+    });
+  }
+
+  /* Sync the bookings that have not been sent yet; mark them on success.
+     "add" appends on the platform, so sending the same booking twice would
+     duplicate it — the synced flag is what stops that. */
+  function syncBookings() {
+    var hist = bookingHistory();
+    var pending = hist.filter(function (b) { return !b.synced; });
+    if (!pending.length) return Promise.resolve({ ok: true, skipped: true });
+    return syncArray('bookings', bookingsPayload(pending), 'add').then(function (out) {
+      if (out && out.ok) {
+        hist.forEach(function (b) { if (!b.synced) b.synced = true; });
+        write('lmn.bookings', hist);
+      }
+      return out;
+    });
+  }
+
+  function bookingsPayload(hist) {
+    return (hist || bookingHistory()).map(function (b) {
+      return {
+        booking_id: String(b.booking_id), route: b.route, destination: b.destination, region: b.region,
+        cabin: b.cabin, travel_date: b.travel_date, nights: b.nights || 0, fare: b.fare || 0,
+        booked_at: b.booked_at, status: b.status || 'On time', ancillaries: b.ancillaries || ''
+      };
+    });
+  }
 
   function notePurchase(items) {
     if (!items || !items.length) return purchaseHistory();
@@ -1245,6 +1357,7 @@
     localHref: localHref, money: money, productPayload: productPayload,
     cartLines: cartLines, cartTotal: cartTotal, cartCount: cartCount,
     addToCart: addToCart, removeFromCart: removeFromCart, setQty: setQty, clearCart: clearCart,
+    bookingHistory: bookingHistory, noteBooking: noteBooking, bookingsPayload: bookingsPayload, syncArray: syncArray, syncBookings: syncBookings,
     currentUser: currentUser, signIn: signIn, signOut: signOut, userPayload: userPayload,
     noteCategoryView: noteCategoryView, preferredCategory: preferredCategory,
     noteProductView: noteProductView, sessionStats: sessionStats,
