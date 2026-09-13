@@ -273,6 +273,31 @@
 
   var beats = fam === 'Travel' ? travel : fam === 'Banking' ? banking : fam === 'Telco' ? telco : retail;
 
+  /* Where each beat is seen on this storefront. The SC opens this tab
+     first, talks over it, and only then opens the panel behind it. Built
+     from the vertical's own showcase product and search so the link lands
+     on something that makes the point. */
+  var show = (window.VERTICAL || {}).showcase || {};
+  var pdp = show.product ? 'product.html?id=' + show.product : 'index.html';
+  var q = show.search ? 'search.html?q=' + encodeURIComponent(show.search) : 'search.html';
+  function siteLink(title) {
+    var t = title.toLowerCase();
+    if (t.indexOf('traffic source') > -1) return ['ad.html', 'Open the Facebook ad'];
+    if (t.indexOf('personalized recommendations') > -1) return ['index.html', 'Homepage rows'];
+    if (t.indexOf('search') > -1) return [q, 'Run the search'];
+    if (t.indexOf('back-in-stock') > -1) return [pdp, 'Open the product and the assistant'];
+    if (t.indexOf('product page recommendations') > -1) return [pdp, 'Open the product page'];
+    if (t.indexOf('tier progress') > -1 || t.indexOf('free-returns') > -1) return ['cart.html', 'Open the cart'];
+    if (t.indexOf('recognised') > -1) return ['account.html', 'Account \u2014 sign in as a persona'];
+    if (t.indexOf('purchase history') > -1 || t.indexOf('bookings on the profile') > -1) return ['history.html', 'Give the profile a past'];
+    if (t.indexOf('personalized page') > -1) return ['foryou.html', 'Open Just for you'];
+    if (t.indexOf('cross-sell') > -1 || t.indexOf('ancillaries') > -1) return ['cart.html', 'Cart, then confirmation'];
+    if (t.indexOf('flight delay') > -1) return [pdp, 'Book, then mark it delayed on the confirmation'];
+    if (t.indexOf('assistant') > -1) return [pdp, 'Open a product and the assistant'];
+    if (t.indexOf('abandon') > -1) return [pdp, 'Browse a product, then leave'];
+    return null;
+  }
+
   var host = document.getElementById('acts'), n = 0;
   beats.forEach(function (b) {
     if (b.length === 1) {
@@ -291,6 +316,14 @@
     var a = s.querySelector('.go a');
     if (b[2]) { a.href = b[2]; a.textContent = 'Open in the panel \u2192'; }
     else { a.parentNode.remove(); }
+    // The experience first — the tab the SC brings up before the panel.
+    var site = siteLink(b[0]);
+    if (site) {
+      var sp = document.createElement('p'); sp.className = 'go';
+      var sa = document.createElement('a'); sa.href = site[0]; sa.target = '_blank'; sa.rel = 'noopener';
+      sa.textContent = site[1] + ' \u2192'; sp.appendChild(sa);
+      s.insertBefore(sp, s.querySelector('.go') || s.querySelector('.do'));
+    }
     s.querySelector('[data-do]').textContent = b[3];
     s.querySelector('[data-say]').textContent = b[4];
     s.querySelector('[data-console]').textContent = b[5];
