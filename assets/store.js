@@ -553,11 +553,18 @@
     var base = { uuid: visitorId(), language: env('locale', 'en_GB'),
 
                  gdpr_optin: true };
+    /* Which storefront this is, on every profile, signed in or not. Campaign
+       rules target `vertical equals beauty` rather than matching hostnames,
+       and templates say the shop's name with a token. Read from the vertical
+       config, so a new storefront sends the right values with no edit here.
+       (Restored 13 Sep — an older copy of this file had shipped without them.) */
+    var V = window.VERTICAL || {};
+    var where = { vertical: V.key || undefined, brand: V.brand || undefined };
     if (!u) {
-      base.custom = {
+      base.custom = Object.assign({
         membership_tier: 'Guest', loyalty_points: 0,
         preferred_category: preferredCategory(), is_vip: false
-      };
+      }, where);
       return base;
     }
     return Object.assign(base, {
@@ -630,7 +637,7 @@
         // The store's own account id. An attribute, not an identifier — the
         // uuid above is what Insider matches on, and it must stay stable.
         account_id: u.uuid || undefined
-      }, extraAttributes(u))
+      }, where, extraAttributes(u))
     });
   }
 
