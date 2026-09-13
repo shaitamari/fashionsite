@@ -1,0 +1,10 @@
+[
+  {
+    "key": "shai-gold",
+    "name": "Shai — Gold member",
+    "description": "The estate's main demo profile: Gold tier, purchase history seeded, browse-abandonment and back-in-stock events on the profile. Use for any signed-in beat.",
+    "email": "shai.tamari2017@gmail.com",
+    "uuid": "PASTE-THE-PROFILE-UUID-FROM-THE-PANEL",
+    "profile": { "name": "Shai", "surname": "Tam", "membership_tier": "Gold", "loyalty_points": 999, "country": "US", "email_optin": true, "gdpr_optin": true }
+  }
+]

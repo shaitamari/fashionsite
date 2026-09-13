@@ -427,3 +427,16 @@ main { padding-bottom: 5rem; }
 .trip-banner .tb { display: flex; gap: 1rem; align-items: center; justify-content: space-between; flex-wrap: wrap; font-size: .95rem; }
 .trip-banner .tb b { font-weight: 600; }
 .trip-banner .tb a { text-decoration: underline; margin-left: 1rem; }
+
+/* Personas (account page) */
+.personas { padding-top: 1.5rem; }
+.personas__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+.persona { border: 1px solid var(--rule); border-radius: 12px; padding: 1rem 1.1rem; background: var(--alt); display: flex; flex-direction: column; gap: .35rem; }
+.persona__name { font-weight: 600; }
+.persona__desc { color: var(--muted); font-size: .95rem; }
+.persona__meta { font-size: .8rem; color: var(--muted); font-family: ui-monospace, Menlo, monospace; }
+.persona__warn { color: #b3261e; }
+.persona__row { display: flex; gap: .5rem; margin-top: .5rem; }
+.persona .btn { padding: .5rem .9rem; font-size: .85rem; }
+
+.group__lede { max-width: 62ch; color: var(--muted); margin: .5rem 0 0; line-height: 1.55; }

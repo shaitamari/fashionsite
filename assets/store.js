@@ -510,6 +510,37 @@
 
   function signOut() { localStorage.removeItem(KEY.user); paintChrome(); }
 
+  /* --- personas -----------------------------------------------------------
+     A persona is a known profile on the platform: a uuid the account already
+     holds, plus the email and profile fields to sign in with. Signing in as
+     one sets THIS browser's visitor id to that uuid before the tag runs, so
+     the platform resolves to the existing profile on any machine — no merge,
+     no second profile. That matters because identity resolution here is
+     uuid-first with a limit of one: a known email on a new uuid creates a
+     stranger. The persona hands the platform the uuid it already knows.
+
+     Insider's own storage is cleared too, so its spUID does not keep pointing
+     at the previous visitor. The page reloads with the new identity.
+
+     The shared list is personas.json in the repo; personal ones live in
+     localStorage under lmn.personas (see account.html). */
+  function signInAs(persona) {
+    if (!persona || !persona.uuid) return false;
+    try {
+      Object.keys(localStorage).filter(function (k) { return k.indexOf('ins-') === 0; })
+        .forEach(function (k) { localStorage.removeItem(k); });
+      document.cookie.split(';').forEach(function (c) {
+        var n = c.split('=')[0].trim();
+        if (n.indexOf('ins-') === 0) document.cookie = n + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
+      });
+    } catch (e) {}
+    write(KEY.visitor, persona.uuid);
+    var profile = Object.assign({}, persona.profile || {}, { email: persona.email, uuid: persona.uuid });
+    localStorage.removeItem(KEY.user);
+    signIn(profile);
+    return true;
+  }
+
   function hash(s) {
     var h = 0, str = String(s || '');
     for (var i = 0; i < str.length; i++) h = ((h << 5) - h + str.charCodeAt(i)) | 0;
@@ -1149,7 +1180,7 @@
     catalog: catalog, oneVariantEach: oneVariantEach, byId: byId, byCollection: byCollection,
     collections: collections, subcategories: subcategories, shortName: shortName,
     localSearch: localSearch, featured: featured, onSale: onSale,
-    visitorId: visitorId, resetVisitor: resetVisitor,
+    visitorId: visitorId, resetVisitor: resetVisitor, signInAs: signInAs,
     localHref: localHref, money: money, productPayload: productPayload,
     cartLines: cartLines, cartTotal: cartTotal, cartCount: cartCount,
     addToCart: addToCart, removeFromCart: removeFromCart, setQty: setQty, clearCart: clearCart,

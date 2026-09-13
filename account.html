@@ -90,6 +90,23 @@
       <p class="lede" id="acct-lede">Logging in swaps the anonymous visitor id for the account id and writes every field below to the profile.</p>
     </section>
 
+    <!-- Personas: known profiles on the platform, signed into by uuid so the
+         same person resolves on any machine. Shared list from personas.json;
+         personal additions kept in this browser. -->
+    <section class="wrap personas" id="personas" hidden>
+      <p class="eyebrow">Sign in as a demo persona</p>
+      <p class="source" style="margin:0 0 1rem">Each is an existing profile on the platform, chosen for what it has already done. Signing in hands the platform that profile's uuid, so you get the same person on any browser.</p>
+      <div class="personas__grid" id="personas-shared"></div>
+      <div id="personas-mine-wrap" hidden>
+        <p class="eyebrow" style="margin-top:1.25rem">Yours (this browser only)</p>
+        <div class="personas__grid" id="personas-mine"></div>
+      </div>
+      <p class="source" style="margin:1rem 0 0" id="personas-actions">
+        <button class="btn btn--ghost" type="button" id="persona-save" hidden>Save current profile as a persona</button>
+        <button class="btn btn--ghost" type="button" id="persona-copy" hidden>Copy my personas as JSON</button>
+      </p>
+    </section>
+
     <div class="cartgrid" style="padding-top:2rem">
       <div class="panel">
         <form id="profile-form">
@@ -239,6 +256,83 @@
     return out;
   }
   hydrate();
+
+  /* --- personas ---------------------------------------------------------- */
+  var MINE_KEY = 'lmn.personas';
+  function minePersonas() { try { return JSON.parse(localStorage.getItem(MINE_KEY) || '[]'); } catch (e) { return []; } }
+  function saveMine(list) { localStorage.setItem(MINE_KEY, JSON.stringify(list)); }
+
+  function personaCard(p, mine) {
+    var card = document.createElement('div');
+    card.className = 'persona';
+    var ok = p.uuid && p.uuid.indexOf('PASTE') === -1;
+    card.innerHTML =
+      '<div class="persona__name">' + esc(p.name) + '</div>' +
+      '<div class="persona__desc">' + esc(p.description || '') + '</div>' +
+      '<div class="persona__meta">' + esc(p.email) + (ok ? '' : ' · <span class="persona__warn">needs uuid</span>') + '</div>';
+    var row = document.createElement('div'); row.className = 'persona__row';
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'btn'; b.textContent = 'Sign in as';
+    b.disabled = !ok;
+    b.addEventListener('click', function () {
+      if (Store.signInAs(p)) { location.href = 'index.html'; }
+    });
+    row.appendChild(b);
+    if (mine) {
+      var del = document.createElement('button'); del.type = 'button'; del.className = 'btn btn--ghost'; del.textContent = 'Remove';
+      del.addEventListener('click', function () {
+        saveMine(minePersonas().filter(function (x) { return x.key !== p.key; }));
+        renderPersonas();
+      });
+      row.appendChild(del);
+    }
+    card.appendChild(row);
+    return card;
+  }
+  function esc(s) { return String(s || '').replace(/[&<>"]/g, function (c) { return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]; }); }
+
+  var SHARED = [];
+  function renderPersonas() {
+    var sec = document.getElementById('personas');
+    var shared = document.getElementById('personas-shared');
+    var mineWrap = document.getElementById('personas-mine-wrap');
+    var mineHost = document.getElementById('personas-mine');
+    shared.innerHTML = ''; mineHost.innerHTML = '';
+    SHARED.forEach(function (p) { shared.appendChild(personaCard(p, false)); });
+    var mine = minePersonas();
+    mine.forEach(function (p) { mineHost.appendChild(personaCard(p, true)); });
+    mineWrap.hidden = !mine.length;
+    sec.hidden = !(SHARED.length || mine.length);
+    var u = Store.currentUser();
+    document.getElementById('persona-save').hidden = !u;
+    document.getElementById('persona-copy').hidden = !mine.length;
+  }
+
+  fetch('personas.json', { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : []; })
+    .then(function (list) { SHARED = Array.isArray(list) ? list : []; renderPersonas(); })
+    .catch(function () { renderPersonas(); });
+
+  /* Save the profile you are signed in as, with this browser's visitor id —
+     which is the uuid the platform now holds for it. Name it for what it
+     demonstrates, not who you are. */
+  document.getElementById('persona-save').addEventListener('click', function () {
+    var u = Store.currentUser(); if (!u) return;
+    var name = prompt('Name this persona for what it demonstrates (e.g. "Gold traveller, delayed flight"):');
+    if (!name) return;
+    var description = prompt('One line on what is on this profile:') || '';
+    var profile = {};
+    ['name','surname','membership_tier','loyalty_points','country','gender','city','email_optin','sms_optin','whatsapp_optin','gdpr_optin','preferred_category','service_preference','trip_status','next_trip','next_trip_date']
+      .forEach(function (k) { if (u[k] !== undefined && u[k] !== '') profile[k] = u[k]; });
+    var mine = minePersonas();
+    mine.push({ key: 'mine-' + Date.now(), name: name, description: description, email: u.email, uuid: Store.visitorId(), profile: profile });
+    saveMine(mine);
+    renderPersonas();
+  });
+  document.getElementById('persona-copy').addEventListener('click', function () {
+    var txt = JSON.stringify(minePersonas(), null, 2);
+    (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(function () {
+      alert('Copied. Paste into personas.json in the repo to share it.');
+    }, function () { prompt('Copy this JSON:', txt); });
+  });
 
   document.getElementById('profile-form').addEventListener('submit', function (ev) {
     ev.preventDefault();
