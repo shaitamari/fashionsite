@@ -295,7 +295,25 @@
     var hist = Store.purchaseHistory();
     var payload = Store.userPayload();
     payload.custom = payload.custom || {};
-    payload.custom.c_purchases = purchasesPayload(hist);
+    payload.custom.purchases = purchasesPayload(hist);
+    if (d.banner_slot) payload.custom.bookings = Store.bookingsPayload();
+
+    /* A flat copy of the anniversary date alongside the array. Segments read
+       the array itself unreliably today (a one-user segment on an object key
+       estimates and computes to 0), and a plain Date attribute segments the
+       way every other attribute does — so the "Purchased this time last year"
+       segment is built on this, and the array stays the record the email
+       personalises from. The entry chosen is the one closest to the vertical's
+       anniversary offset; verticals with no anniversary rhythm send nothing. */
+    if (d.anniversary_months && hist.length) {
+      var target = Date.now() - d.anniversary_months * 30 * DAY;
+      var pick = hist.reduce(function (best, h) {
+        return (!best || Math.abs(h.purchased_at - target) <
+                          Math.abs(best.purchased_at - target)) ? h : best;
+      }, null);
+      payload.custom.anniversary_purchased_at =
+        new Date(pick.purchased_at).toISOString().replace(/\.\d+Z$/, 'Z');
+    }
     window.InsiderQueue.push({ type: 'user', value: payload });
     if (window.insDebugNote) {
       window.insDebugNote('purchase history seeded: ' + hist.length + ' lines', 'ok');
@@ -310,6 +328,53 @@
     var seasonal = inCollection(d.hero_category) .length
       ? inCollection(d.hero_category) : pool();
     var out = [];
+
+    /* Travel: a year of trips as a bookings array — the record the profile
+       shows and the platform can compute over. Five bookings across the
+       regions, mixed cabins, ancillaries on some, so "usual cabin" and
+       "buys the bag" mean something. Also seeds purchases so the retail
+       journeys have their dates. */
+    if (d.banner_slot) {
+      out.push({
+        title: 'A year of travel',
+        note: 'Five ' + (d.key === 'airlines' ? 'flights' : 'stays') + ' over twelve months, ' +
+              'different regions and cabins, a bag or lounge added on some. Builds the ' +
+              'bookings array the profile shows — the record everything else is derived from.',
+        run: function () {
+          var picks = cols.map(function (c) { return inCollection(c); }).filter(function (a) { return a.length; });
+          var trips = [];
+          var plan = [
+            { ago: 330, cab: 1, anc: 'checked bag' },
+            { ago: 250, cab: 0, anc: '' },
+            { ago: 170, cab: 2, anc: 'lounge access, seat selection' },
+            { ago: 95,  cab: 1, anc: 'checked bag' },
+            { ago: 30,  cab: 1, anc: 'checked bag, seat selection' }
+          ];
+          plan.forEach(function (t, i) {
+            var group = picks[i % picks.length];
+            var base = group[i % group.length];
+            var sibs = Store.catalog.filter(function (x) { return x.groupcode === base.groupcode && x.variant_label; });
+            var v = sibs[Math.min(t.cab, sibs.length - 1)] || base;
+            var when = Date.now() - t.ago * DAY;
+            trips.push({
+              booking_id: 'LMN' + String(when).slice(-8),
+              route: v.name, destination: v.subcategory || '', region: v.collection || '',
+              cabin: v.variant_label || '', travel_date: new Date(when).toISOString().slice(0, 10) + 'T00:00:00Z',
+              nights: d.key === 'hotels' ? 2 + (i % 3) : 0,
+              fare: Math.round(Number(v.unit_sale_price || 0) * (d.key === 'hotels' ? 2 + (i % 3) : 1)),
+              booked_at: new Date(when - 21 * DAY).toISOString().replace(/\.\d+Z$/, 'Z'),
+              status: 'Completed', ancillaries: t.anc
+            });
+            addEntries(v, t.ago, 1);
+          });
+          var hist = Store.bookingHistory().concat(trips);
+          localStorage.setItem('lmn.bookings', JSON.stringify(hist.slice(-40)));
+        }
+      });
+    }
+
+    // Travel has its own preset above; the retail shapes do not apply.
+    if (d.banner_slot) return out;
 
     var anniv = d.anniversary_months;
     if (anniv) {
@@ -391,6 +456,7 @@
         try { p.run(); } catch (e) {
           if (window.console) console.warn('[history] preset failed:', e);
         }
+        render();   // presets may write bookings after their last addEntries
         b.textContent = 'Added \u2713';
         var res = document.getElementById('result');
         if (res && res.scrollIntoView) {
@@ -447,6 +513,21 @@
         return '<tr>' + cells + '</tr>';
       }).join('');
 
+    if (d.banner_slot) {
+      var trips = Store.bookingHistory().slice().sort(function (a, b) { return new Date(b.travel_date) - new Date(a.travel_date); });
+      var trows = trips.map(function (b) {
+        return '<tr><td>' + b.route + '</td><td>' + (b.cabin || '') + '</td>' +
+               '<td class="due">' + new Date(b.travel_date).toDateString() + '</td>' +
+               '<td>' + Store.money(b.fare || 0) + '</td><td>' + (b.ancillaries || '\u2014') + '</td><td>' + (b.status || '') + '</td></tr>';
+      }).join('');
+      host.innerHTML =
+        '<h2 style="font-size:1.0625rem;margin:0">Your trips \u2014 ' + trips.length + '</h2>' +
+        '<table class="hist"><thead><tr><th>' + (d.key === 'airlines' ? 'Route' : 'Property') + '</th><th>' +
+        (d.key === 'airlines' ? 'Cabin' : 'Room') + '</th><th>Travelled</th><th>Fare</th><th>Added</th><th>Status</th></tr></thead><tbody>' +
+        trows + '</tbody></table>';
+      document.getElementById('whatnext').hidden = !trips.length;
+      return;
+    }
     host.innerHTML =
       '<h2 style="font-size:1.0625rem;margin:0">Your history \u2014 ' +
       hist.length + (hist.length === 1 ? ' purchase' : ' purchases') + '</h2>' +
@@ -463,8 +544,20 @@
     if (!p) return;
     btn.disabled = true;
     var was = btn.textContent;
-    addEntries(p, parseInt(document.getElementById('c-when').value, 10),
-               parseInt(document.getElementById('c-times').value, 10));
+    var agoDays = parseInt(document.getElementById('c-when').value, 10);
+    var timesN = parseInt(document.getElementById('c-times').value, 10);
+    addEntries(p, agoDays, timesN);
+    if (d.banner_slot) {
+      var bh = Store.bookingHistory();
+      for (var t = 0; t < timesN; t++) {
+        var w = Date.now() - (agoDays + t * 90) * DAY;
+        bh.push({ booking_id: 'LMN' + String(w).slice(-8), route: p.name, destination: p.subcategory || '', region: p.collection || '',
+                  cabin: p.variant_label || '', travel_date: new Date(w).toISOString().slice(0, 10) + 'T00:00:00Z',
+                  nights: d.key === 'hotels' ? 2 : 0, fare: Math.round(Number(p.unit_sale_price || 0)),
+                  booked_at: new Date(w - 21 * DAY).toISOString().replace(/\.\d+Z$/, 'Z'), status: 'Completed', ancillaries: '' });
+      }
+      localStorage.setItem('lmn.bookings', JSON.stringify(bh.slice(-40)));
+    }
     btn.textContent = 'Added \u2713';
     var res = document.getElementById('result');
     if (res && res.scrollIntoView) {
@@ -475,10 +568,32 @@
 
   document.getElementById('clear').addEventListener('click', function () {
     localStorage.removeItem('lmn.purchases');
+    localStorage.removeItem('lmn.bookings');
     send();
     render();
   });
 
+  /* Travel wording. The page was written for retail (swimsuits, serums,
+     "purchases"); on hotels and airlines it is about trips and the bookings
+     array, so the copy and the table say so. Same mechanics underneath. */
+  if (d.banner_slot) {
+    var isAir = d.key === 'airlines';
+    document.querySelector('h1.h1').textContent = 'Give yourself a travel history';
+    document.querySelector('p.lede').textContent = 'The interesting travel journeys need a past — ' +
+      (isAir ? 'the flight you took last spring, the cabin you usually choose, whether you ever add a bag.' :
+               'the stay you took last spring, the room you usually choose, whether you ever add breakfast.') +
+      ' A profile created ten minutes ago has none of that, so this page writes some.';
+    document.querySelector('p.note').textContent = 'It writes real bookings with real dates onto your profile, exactly as a confirmed booking would — into the bookings array the platform keeps for this traveller. Nothing is faked at the point of use.';
+    var lbl = document.querySelector('label[for="c-product"]'); if (lbl) lbl.textContent = isAir ? 'Route' : 'Property';
+    var lw = document.querySelector('label[for="c-when"]'); if (lw) lw.textContent = 'When you travelled';
+    var lt = document.querySelector('label[for="c-times"]'); if (lt) lt.textContent = 'How many times';
+    var addBtn = document.getElementById('c-add'); if (addBtn) addBtn.textContent = 'Add this trip';
+    var wn = document.getElementById('whatnext');
+    if (wn) wn.innerHTML = '<b>Now go and look.</b> Open your profile in User Profiles → Array of Objects → Bookings: every trip with its cabin, fare and ancillaries. That array is what "usual cabin", "buys the bag" and "trips this year" are computed from.';
+    var clr = document.getElementById('clear'); if (clr) clr.textContent = 'Clear my trips';
+    var ownH = [].slice.call(document.querySelectorAll('h2')).filter(function (h) { return h.textContent.trim() === 'Or build your own'; })[0];
+    var own = ownH && ownH.nextElementSibling; if (own) own.textContent = (isAir ? 'Any route' : 'Any property') + ', any point in the past. Add a trip you want the profile to remember.';
+  }
   renderPresets();
   renderProducts();
   render();

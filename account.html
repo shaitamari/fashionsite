@@ -102,6 +102,7 @@
         <p class="eyebrow" style="margin-top:1.25rem">Yours (this browser only)</p>
         <div class="personas__grid" id="personas-mine"></div>
       </div>
+      <p class="source" style="margin:1rem 0 0" id="history-link" hidden>Signed in and want a past to demo against? <a href="history.html">Give this profile a history</a> — purchases on retail storefronts, a year of trips on travel.</p>
       <p class="source" style="margin:1rem 0 0" id="personas-actions">
         <button class="btn btn--ghost" type="button" id="persona-save" hidden>Save current profile as a persona</button>
         <button class="btn btn--ghost" type="button" id="persona-copy" hidden>Copy my personas as JSON</button>
@@ -251,7 +252,12 @@
       var el = document.getElementById('f-x-' + f.name);
       if (!el) return;
       var val = el.value;
-      if (f.type === 'date' && val) val = val + 'T00:00:00Z';
+      if (f.type === 'date' && val) {
+        // Keep the wording copy in step with the date when it is edited here.
+        var dd = new Date(val + 'T00:00:00Z');
+        out.next_trip_when = dd.getUTCDate() + ' ' + dd.toLocaleString('en-GB', { month: 'long', timeZone: 'UTC' });
+        val = val + 'T00:00:00Z';
+      }
       // A blank field leaves the stored value alone; only a typed value
       // replaces it. (Merging undefined would erase what the booking wrote.)
       if (val) out[f.name] = val;
@@ -311,6 +317,7 @@
     document.getElementById('personas-empty').hidden = !!(shared.children.length || mine.length);
     var u = Store.currentUser();
     document.getElementById('persona-save').hidden = !u;
+    var hl = document.getElementById('history-link'); if (hl) hl.hidden = !(u && window.ENVIRONMENT_KEY === 'sandbox');
     document.getElementById('persona-copy').hidden = !mine.length;
   }
 

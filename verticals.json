@@ -558,6 +558,12 @@
           "name": "next_trip_date",
           "label": "next_trip_date",
           "type": "date"
+        },
+        {
+          "name": "next_trip_when",
+          "label": "next_trip_when",
+          "type": "text",
+          "placeholder": "e.g. 27 September (set automatically from the date)"
         }
       ]
     },
@@ -725,6 +731,12 @@
           "name": "next_trip_date",
           "label": "next_trip_date",
           "type": "date"
+        },
+        {
+          "name": "next_trip_when",
+          "label": "next_trip_when",
+          "type": "text",
+          "placeholder": "e.g. 27 September (set automatically from the date)"
         }
       ]
     },

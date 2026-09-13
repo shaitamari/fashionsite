@@ -747,6 +747,48 @@
 
   function purchaseHistory() { return read('lmn.purchases', []); }
 
+  /* --- bookings, as an Array of Objects -------------------------------------
+     Travel's record. A purchase is a line item; a booking is a trip — route
+     or property, when, how long, which cabin or room, what was paid, and the
+     ancillaries added. One object per booking on the profile, under the
+     `bookings` Array of Objects attribute. The flat trip fields (next_trip,
+     next_trip_date, trip_status) are derived from the latest one for onsite
+     campaigns to read, since web Liquid cannot reach into an array.
+     Ancillaries are a comma-separated string, not a nested array — object
+     fields are scalars on the platform. */
+  function bookingHistory() { return read('lmn.bookings', []); }
+  function noteBooking(order, extra) {
+    if (!order || !order.items || !order.items.length) return bookingHistory();
+    var hist = bookingHistory();
+    var line = order.items[0];
+    var p = byId(line.id) || {};
+    var when = extra && extra.travel_date ? new Date(extra.travel_date) : new Date(Date.now() + 14 * 86400000);
+    hist.push({
+      booking_id: order.order_id,
+      route: p.name || line.name,
+      destination: p.subcategory || '',
+      region: p.collection || '',
+      cabin: p.variant_label || line.variant || '',
+      travel_date: when.toISOString().slice(0, 10) + 'T00:00:00Z',
+      nights: extra && extra.nights ? Number(extra.nights) : 0,
+      fare: Math.round((Number(order.total) || 0) * 100) / 100,
+      booked_at: new Date().toISOString().replace(/\.\d+Z$/, 'Z'),
+      status: 'On time',
+      ancillaries: (extra && extra.ancillaries) || ''
+    });
+    write('lmn.bookings', hist.slice(-40));
+    return hist;
+  }
+  function bookingsPayload(hist) {
+    return (hist || bookingHistory()).map(function (b) {
+      return {
+        booking_id: String(b.booking_id), route: b.route, destination: b.destination, region: b.region,
+        cabin: b.cabin, travel_date: b.travel_date, nights: b.nights || 0, fare: b.fare || 0,
+        booked_at: b.booked_at, status: b.status || 'On time', ancillaries: b.ancillaries || ''
+      };
+    });
+  }
+
   function notePurchase(items) {
     if (!items || !items.length) return purchaseHistory();
     var hist = purchaseHistory();
@@ -1245,6 +1287,7 @@
     localHref: localHref, money: money, productPayload: productPayload,
     cartLines: cartLines, cartTotal: cartTotal, cartCount: cartCount,
     addToCart: addToCart, removeFromCart: removeFromCart, setQty: setQty, clearCart: clearCart,
+    bookingHistory: bookingHistory, noteBooking: noteBooking, bookingsPayload: bookingsPayload,
     currentUser: currentUser, signIn: signIn, signOut: signOut, userPayload: userPayload,
     noteCategoryView: noteCategoryView, preferredCategory: preferredCategory,
     noteProductView: noteProductView, sessionStats: sessionStats,
