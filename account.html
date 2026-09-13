@@ -297,11 +297,12 @@
     var mineWrap = document.getElementById('personas-mine-wrap');
     var mineHost = document.getElementById('personas-mine');
     shared.innerHTML = ''; mineHost.innerHTML = '';
-    SHARED.forEach(function (p) { shared.appendChild(personaCard(p, false)); });
+    SHARED.filter(function (p) { return p && p.email && p.uuid && p.uuid.indexOf('PASTE') === -1; })
+      .forEach(function (p) { shared.appendChild(personaCard(p, false)); });
     var mine = minePersonas();
     mine.forEach(function (p) { mineHost.appendChild(personaCard(p, true)); });
     mineWrap.hidden = !mine.length;
-    sec.hidden = !(SHARED.length || mine.length);
+    sec.hidden = !(shared.children.length || mine.length);
     var u = Store.currentUser();
     document.getElementById('persona-save').hidden = !u;
     document.getElementById('persona-copy').hidden = !mine.length;

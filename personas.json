@@ -1,10 +1,28 @@
 [
   {
+    "_readme": [
+      "PERSONAS — known profiles on the platform that anyone can sign in as, on any browser.",
+      "To add one: 1) sign in on any storefront with the persona's email and build its history (buy, browse, set a trip);",
+      "2) open the profile in the panel (User Profiles → search the email) and copy the UUID identifier — the value next to 'UUID Identifier', not the profile id in the URL;",
+      "3) add an entry below: key (slug), name (what it demonstrates), description (one line), email, uuid, profile (fields to sign in with);",
+      "4) commit and push. Entries whose uuid is missing or still says PASTE are hidden from visitors.",
+      "Or: on the account page, 'Save current profile as a persona' then 'Copy my personas as JSON' and paste the entry here."
+    ]
+  },
+  {
     "key": "shai-gold",
     "name": "Shai — Gold member",
     "description": "The estate's main demo profile: Gold tier, purchase history seeded, browse-abandonment and back-in-stock events on the profile. Use for any signed-in beat.",
     "email": "shai.tamari2017@gmail.com",
     "uuid": "PASTE-THE-PROFILE-UUID-FROM-THE-PANEL",
-    "profile": { "name": "Shai", "surname": "Tam", "membership_tier": "Gold", "loyalty_points": 999, "country": "US", "email_optin": true, "gdpr_optin": true }
+    "profile": {
+      "name": "Shai",
+      "surname": "Tam",
+      "membership_tier": "Gold",
+      "loyalty_points": 999,
+      "country": "US",
+      "email_optin": true,
+      "gdpr_optin": true
+    }
   }
 ]
