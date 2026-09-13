@@ -91,6 +91,7 @@
   if (ORDER && (window.VERTICAL || {}).banner_slot && Store.currentUser() && ORDER.items && ORDER.items.length) {
     var when = ORDER.travel_date ? new Date(ORDER.travel_date) : new Date(Date.now() + 14 * 86400000);
     Store.noteBooking(ORDER, { travel_date: ORDER.travel_date, nights: sessionStorage.getItem('lmn.nights') || 0 });
+    Store.syncBookings();
     Store.signIn({
       next_trip: ORDER.items[0].name,
       next_trip_date: when.toISOString().slice(0, 10) + 'T00:00:00Z',

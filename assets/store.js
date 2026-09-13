@@ -779,6 +779,38 @@
     write('lmn.bookings', hist.slice(-40));
     return hist;
   }
+  /* Array-of-Objects attributes cannot travel in the tag's user object; they
+     go through the site's sync function to the Upsert API. Fire-and-forget;
+     the console gets a note either way. */
+  function syncArray(attribute, items, mode) {
+    return fetch('/.netlify/functions/sync', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ uuid: visitorId(), attribute: attribute, items: items, mode: mode || 'add' })
+    }).then(function (r) { return r.json(); }).then(function (out) {
+      if (window.insDebugNote) window.insDebugNote(attribute + ' → Upsert: ' + (out.ok ? 'ok' : 'failed ' + (out.status || out.reason || out.error || '')), out.ok ? 'ok' : 'warn');
+      return out;
+    }).catch(function (e) {
+      if (window.insDebugNote) window.insDebugNote(attribute + ' → Upsert: unreachable', 'warn');
+      return { ok: false };
+    });
+  }
+
+  /* Sync the bookings that have not been sent yet; mark them on success.
+     "add" appends on the platform, so sending the same booking twice would
+     duplicate it — the synced flag is what stops that. */
+  function syncBookings() {
+    var hist = bookingHistory();
+    var pending = hist.filter(function (b) { return !b.synced; });
+    if (!pending.length) return Promise.resolve({ ok: true, skipped: true });
+    return syncArray('bookings', bookingsPayload(pending), 'add').then(function (out) {
+      if (out && out.ok) {
+        hist.forEach(function (b) { if (!b.synced) b.synced = true; });
+        write('lmn.bookings', hist);
+      }
+      return out;
+    });
+  }
+
   function bookingsPayload(hist) {
     return (hist || bookingHistory()).map(function (b) {
       return {
@@ -1287,7 +1319,7 @@
     localHref: localHref, money: money, productPayload: productPayload,
     cartLines: cartLines, cartTotal: cartTotal, cartCount: cartCount,
     addToCart: addToCart, removeFromCart: removeFromCart, setQty: setQty, clearCart: clearCart,
-    bookingHistory: bookingHistory, noteBooking: noteBooking, bookingsPayload: bookingsPayload,
+    bookingHistory: bookingHistory, noteBooking: noteBooking, bookingsPayload: bookingsPayload, syncArray: syncArray, syncBookings: syncBookings,
     currentUser: currentUser, signIn: signIn, signOut: signOut, userPayload: userPayload,
     noteCategoryView: noteCategoryView, preferredCategory: preferredCategory,
     noteProductView: noteProductView, sessionStats: sessionStats,

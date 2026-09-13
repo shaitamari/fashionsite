@@ -296,7 +296,7 @@
     var payload = Store.userPayload();
     payload.custom = payload.custom || {};
     payload.custom.purchases = purchasesPayload(hist);
-    if (d.banner_slot) payload.custom.bookings = Store.bookingsPayload();
+    if (d.banner_slot) Store.syncBookings();
 
     /* A flat copy of the anniversary date alongside the array. Segments read
        the array itself unreliably today (a one-user segment on an object key
