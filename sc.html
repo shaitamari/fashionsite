@@ -132,11 +132,7 @@
   var fam = V.vertical || 'Retail';
   var brand = V.brand || 'the store';
   var acct = (window.ENVIRONMENT || {}).account || 'partnersandbox';
-  /* Campaigns, agents and profiles live on the account the storefront is
-     actually running on. While the bare hostnames run on partnersandbox, the
-     links go there; when salesdemo is ready this follows the account. */
-  var panelAcct = ((window.ENVIRONMENT || {}).account) || acct;
-  var panel = 'https://' + panelAcct + '.inone.useinsider.com';
+  var panel = 'https://' + acct + '.inone.useinsider.com';
   document.getElementById('panel-link').href = panel;
   document.getElementById('panel-link').textContent = acct + '.inone.useinsider.com';
   var sr = function (id) { return panel + '/web-smart-recommender/' + id + '/design'; };
@@ -153,20 +149,12 @@
     webTemplates: panel + '/web-templates',
     experiments: panel + '/onsite-experiment',
     recommenders: panel + '/web-smart-recommender-all',
-    // Known campaigns, by id. Onsite Experiments live under /custom, web
-    // templates under /design-agent, agents under /agent-one.
-    heroSwap: panel + '/custom/4243/segmentation',
-    tier: panel + '/design-agent/4397/design',
-    tripBanner: panel + '/design-agent/4412/design',
-    popup: panel + '/design-agent/4256/design',
-    agent: panel + '/agent-one/ai-agents/shopping-ai-agent/48NR5SAY6D/personality',
-    profiles: panel + '/user-profiles',
     panel: panel
   };
 
   var retail = [
     ['The unknown visitor'],
-    ['Personalizing by traffic source', 'Onsite Experiment', L.heroSwap,
+    ['Personalizing by traffic source', 'Onsite Experiment', L.experiments,
      'Open the ad (footer link) and click through. Compare with the plain homepage.',
      'A visitor who arrives from an ad about coats and lands on a page about coats knows they are in the right place. Personalizing the site from the first second is one of the fastest conversion lifts there is, and it takes a rule, not a developer.',
      'page type home, utm_source=meta on the URL.', ['https://useinsider.com/case-studies/united-colors-of-benetton/', 'Benetton: 7X conversion uplift with personalized journeys']],
@@ -178,30 +166,30 @@
      'Search a colour plus a category. Use the facets.',
      'Shoppers search the way they talk — \u201cblue dress\u201d — and the results show the blue variant of each style, not whichever colour happens to be first. Matching the image to the intent in the search box lifts conversion, and the filters are real fields the merchandiser tunes without a developer.',
      'the Eureka request and the campaign it hit.'],
-    ['Back-in-stock request taken in conversation', 'Agent One, Architect', L.agent,
-     'Open a product where a size is struck through. Pick it, open the assistant and ask to be told when it is back.',
-     'The shopper asks once, in their own words, and the assistant records exactly what they asked for — this product, this size — and which channel to say so on. Three things happened in that one exchange: a visitor who was unknown is now known, without a form; the customer set the terms of the next contact — what, when, how; and months from now the journey keeps the promise. The recovered sale is the smallest of the three. What the brand gained is a customer who said how to be reached — the future of engagement, and only possible when the assistant, the profile and every channel are one system rather than integrations.',
+    ['Back-in-stock request taken in conversation', 'Agent One, Architect', L.panel,
+     'Open a product where a size or option is struck through. Pick it, open the assistant and ask to be told when it is back.',
+     'The shopper is not sent away: they ask once, in their own words, and the assistant remembers exactly what they asked for — this product, this variant. When it is back the journey tells them, months later if need be. A sale the brand would have lost, recovered without a form or a ticket, and demand the brand would otherwise never see.',
      'back_in_stock_requested on the profile with product_id and size.'],
     ['Product page recommendations', 'Smart Recommender', L.sr(4238),
      'Scroll the product page. Three rows, three answers.',
      'Three rows, three jobs. Similar products match on the attributes that matter to this brand — the merchandiser chooses up to five, material, fit, occasion — and works from titles and descriptions even where tagging is thin. Visually similar matches on the image itself, so it works from day one for a brand with little data or a fast-turning catalogue. Complementary suggests what goes with the item, which is how basket size and AOV grow on the product page.',
      'three campaign events on one page.', ['https://insiderone.com/case-studies/chow-sang-sang/', 'Chow Sang Sang: +23.5% conversion with Smart Recommender']],
     ['Becoming known'],
-    ['Shopping assistant that takes real requests', 'Agent One', L.agent,
-     'Open the assistant. Ask about returns, then book what this store offers (a consultation, a fitting).',
+    ['Shopping assistant that takes real requests', 'Agent One', L.panel,
+     'Open the assistant. Ask about returns, then book what this store offers (a consultation, a fitting, a design visit).',
      'A shopper asks in plain language and gets an answer from the brand\u2019s own catalogue and policies. When they book something it becomes a real request the brand acts on — no form, no queue — and the assistant remembers what they said next time. Service that closes the sale instead of deflecting it.',
      'the assistant loads with the product id; agent_request on the profile.'],
-    ['Recognised on every device', 'Unified Customer Database, personas', L.profiles,
+    ['Recognised on every device', 'Unified Customer Database, personas', L.panel,
      'Account → Sign in as… → the persona with history.',
      'The same customer is recognised on any device the moment they sign in, and everything the site shows from here on reads their history. One customer, one record, every channel.',
      'the user push with uuid, email, tier, points.'],
-    ['Loyalty tier progress from a lookup table', 'Web template, Lookup Tables', L.tier,
+    ['Loyalty tier progress from a lookup table', 'Web template, Lookup Tables', L.webTemplates,
      'Add something and open the cart. Then open the persona\u2019s profile in the panel and scroll to the lookup table section.',
      'A shopper close to the next tier is told exactly how close, and what they gain — the nudge that lifts basket size in loyalty programmes. The programme itself lives in one table the marketer edits, so changing a benefit is one cell, not a campaign rebuild. On the profile you can see the tier and what it is worth, resolved live.',
      'cart page type, basket contents.'],
-    ['Full purchase history on the profile', 'Unified Customer Database, Array of Objects', L.profiles,
+    ['Full purchase history on the profile', 'Unified Customer Database, Array of Objects', L.panel,
      'Open history.html, seed a year of purchases for the persona, then open the profile\u2019s Array of Objects tab.',
-     'Every purchase sits on the customer record with product, price, size and date, so the brand can act on the pattern — an anniversary, a replenishment, a size that keeps coming back. Most platforms keep only the last order.',
+     'Every purchase sits on the customer record with product, price, variant and date, so the brand can act on the pattern — an anniversary, a replenishment, the option that keeps coming back. Most platforms keep only the last order.',
      'the seeding calls; arrays travel by API, not the tag.'],
     ['Free-returns reassurance before checkout', 'Web template', L.webTemplates,
      'Set quantity to two on one item.',
@@ -212,8 +200,8 @@
      'A page ranked by what this visitor actually looked at, with every row saying why. Personalization the shopper can trust because it shows its working.',
      'the product views the ranking was built from.'],
     ['Cross-sell after the purchase', 'Smart Recommender', L.sr(4416),
-     'Check out. On the confirmation, and again on the homepage foot, show the row.',
-     'After the dress, the shoes — not another dress. Cross-sell anchored on what the shopper just chose is the highest-converting recommendation a retailer can show, and it follows them from the confirmation to their next visit.',
+     'Check out. On the confirmation, and again at the foot of the homepage, show the row.',
+     'What goes with what they just chose — the accessory, the second piece, the refill — rather than more of the same. Cross-sell anchored on the item the shopper just added is the highest-converting recommendation a retailer can show, and it follows them from the confirmation to their next visit.',
      'purchase event, then 4416 with products.', ['https://insiderone.com/case-studies/chow-sang-sang/', 'Chow Sang Sang: +23.5% conversion with Smart Recommender']],
     ['What happens after they leave'],
     ['Browse abandonment email', 'Architect, email', L.journey(2822),
@@ -224,7 +212,7 @@
 
   var travel = [
     ['The unknown visitor'],
-    ['Personalizing by traffic source', 'Onsite Experiment', L.heroSwap,
+    ['Personalizing by traffic source', 'Onsite Experiment', L.experiments,
      'Open the ad (footer link) and click through.',
      'A traveller who clicked an ad for Lisbon and lands on Lisbon fares does not have to search again. Personalizing from the first second lifts conversion, and it is a rule, not a build.',
      'page type home, utm_source=meta.', ['https://useinsider.com/case-studies/united-colors-of-benetton/', 'Benetton: 7X conversion uplift with personalized journeys']],
@@ -237,15 +225,15 @@
      'A traveller searches a city and gets the routes, with every cabin priced. Because each cabin is its own record, the brand knows which cabin was considered and which was booked — the basis for every upgrade offer later.',
      'the Eureka request.'],
     ['Becoming known'],
-    ['Recognised on every device', 'Unified Customer Database, personas', L.profiles,
+    ['Recognised on every device', 'Unified Customer Database, personas', L.panel,
      'Account → Sign in as… → the traveller persona.',
      'The traveller is recognised on any device, and every page reads their trips from here on.',
      'user push with tier and points.'],
-    ['Bookings on the profile', 'Unified Customer Database, Array of Objects', L.profiles,
+    ['Bookings on the profile', 'Unified Customer Database, Array of Objects', L.panel,
      'Book a fare. On the confirmation: the booking, the points, the link across to the hotel brand for that city. Then the profile: next trip, trip status, the bookings array.',
      'A booking becomes part of the customer, not a line in an order table: route, dates, cabin, fare, extras. The homepage now speaks to the trip, and the platform can act before, during and after it.',
      'purchase event, then the trip attributes.'],
-    ['Flight delay message with next steps', 'Web template (Liquid)', L.tripBanner,
+    ['Flight delay message with next steps', 'Web template (Liquid)', L.webTemplates,
      'On the confirmation click "Mark this flight as delayed", then go to the homepage.',
      'Telling someone their flight is delayed is a notification; telling them what to do next is service. Disruption is where loyalty is won or lost, and here the message with options appears on the site the moment the status changes.',
      'trip_status = Delayed on the user push.'],
@@ -253,7 +241,7 @@
      'Homepage foot row and confirmation row after booking.',
      'The bag, the seat, the lounge — offered right after the booking, when the traveller is most likely to add them. Ancillaries are where airline margin lives, and the recommender pairs them with the fare automatically.',
      '4416 with products — if zero, the pairing has not rebuilt yet; say so and move on.'],
-    ['Travel support assistant', 'Agent One', L.agent,
+    ['Travel support assistant', 'Agent One', L.panel,
      'Open the assistant. Ask about baggage, then ask to change the trip.',
      'A traveller asks about baggage or a change of plans and gets an answer from the airline\u2019s own rules; the change request becomes real, and the assistant remembers the trip and what was asked. Support that resolves instead of deflecting is what keeps a customer after a bad day.',
      'assistant loads with the product id; agent_request on the profile.'],
@@ -266,11 +254,11 @@
 
   var banking = [
     ['The unknown visitor'],
-    ['Personalizing by traffic source', 'Onsite Experiment', L.heroSwap, 'Open the ad and click through.', 'A visitor who arrives from an ad about a savings rate lands on that rate. Personalizing from the first second lifts conversion and takes a rule, not a developer.', 'page type home.'],
+    ['Personalizing by traffic source', 'Onsite Experiment', L.experiments, 'Open the ad and click through.', 'A visitor who arrives from an ad about a savings rate lands on that rate. Personalizing from the first second lifts conversion and takes a rule, not a developer.', 'page type home.'],
     ['Product search', 'Eureka', L.panel, 'Search for an account or a policy. Open one.', 'Customers find the account or policy they mean in their own words. The conversion here is a form, and search that understands the question gets people to it faster.', 'the Eureka request.'],
     ['Becoming known'],
-    ['Recognised on every device', 'Unified Customer Database, personas', L.profiles, 'Account → Sign in as…', 'The customer is recognised on any device, and every page reads their relationship from here on.', 'user push.'],
-    ['Account support assistant', 'Agent One', L.agent, 'Ask an account question, then ask to start an application.', 'A customer asks an account question and gets a safe answer; starting an application becomes a real request the bank acts on. In a regulated industry the assistant is only ever allowed to do what it is allowed to do.', 'assistant loads; agent_request on the profile.'],
+    ['Recognised on every device', 'Unified Customer Database, personas', L.panel, 'Account → Sign in as…', 'The customer is recognised on any device, and every page reads their relationship from here on.', 'user push.'],
+    ['Account support assistant', 'Agent One', L.panel, 'Ask an account question, then ask to start an application.', 'A customer asks an account question and gets a safe answer; starting an application becomes a real request the bank acts on. In a regulated industry the assistant is only ever allowed to do what it is allowed to do.', 'assistant loads; agent_request on the profile.'],
     ['What happens after they leave'],
     ['Abandoned application', 'Architect', null, 'Start the flow and leave.', 'Someone who started an application and stopped is reminded where they left it. Most applications are lost in the middle, and most of those are recoverable. Journey to build.', 'flow events.']
   ];
@@ -278,37 +266,18 @@
   var telco = retail.slice(0, 6).concat([
     ['Becoming known'],
     retail[7], retail[8],
-    ['Billing and coverage assistant', 'Agent One', L.agent, 'Ask a billing or coverage question, then ask to change plan.', 'A subscriber asks about a bill or coverage and gets a real answer; a plan change becomes a real request. Every question answered here is a call that never reaches the contact centre.', 'assistant loads; agent_request on the profile.'],
+    ['Billing and coverage assistant', 'Agent One', L.panel, 'Ask a billing or coverage question, then ask to change plan.', 'A subscriber asks about a bill or coverage and gets a real answer; a plan change becomes a real request. Every question answered here is a call that never reaches the contact centre.', 'assistant loads; agent_request on the profile.'],
     ['What happens after they leave'],
     retail[retail.length - 1]
   ]);
 
-  var beats = fam === 'Travel' ? travel : fam === 'Banking' ? banking : fam === 'Telco' ? telco : retail;
-
-  /* Where each beat is seen on this storefront. The SC opens this tab
-     first, talks over it, and only then opens the panel behind it. Built
-     from the vertical's own showcase product and search so the link lands
-     on something that makes the point. */
-  var show = (window.VERTICAL || {}).showcase || {};
-  var pdp = show.product ? 'product.html?id=' + show.product : 'index.html';
-  var q = show.search ? 'search.html?q=' + encodeURIComponent(show.search) : 'search.html';
-  function siteLink(title) {
-    var t = title.toLowerCase();
-    if (t.indexOf('traffic source') > -1) return ['ad.html', 'Open the Facebook ad'];
-    if (t.indexOf('personalized recommendations') > -1) return ['index.html', 'Homepage rows'];
-    if (t.indexOf('search') > -1) return [q, 'Run the search'];
-    if (t.indexOf('back-in-stock') > -1) return [pdp, 'Open the product and the assistant'];
-    if (t.indexOf('product page recommendations') > -1) return [pdp, 'Open the product page'];
-    if (t.indexOf('tier progress') > -1 || t.indexOf('free-returns') > -1) return ['cart.html', 'Open the cart'];
-    if (t.indexOf('recognised') > -1) return ['account.html', 'Account \u2014 sign in as a persona'];
-    if (t.indexOf('purchase history') > -1 || t.indexOf('bookings on the profile') > -1) return ['history.html', 'Give the profile a past'];
-    if (t.indexOf('personalized page') > -1) return ['foryou.html', 'Open Just for you'];
-    if (t.indexOf('cross-sell') > -1 || t.indexOf('ancillaries') > -1) return ['cart.html', 'Cart, then confirmation'];
-    if (t.indexOf('flight delay') > -1) return [pdp, 'Book, then mark it delayed on the confirmation'];
-    if (t.indexOf('assistant') > -1) return [pdp, 'Open a product and the assistant'];
-    if (t.indexOf('abandon') > -1) return [pdp, 'Browse a product, then leave'];
-    return null;
-  }
+  // Grocery: the retail run without the loyalty tier and free-returns beats,
+  // which do not apply to a supermarket.
+  var grocery = retail.filter(function (b) {
+    return b.length === 1 || (b[0] !== 'Loyalty tier progress from a lookup table' && b[0] !== 'Free-returns reassurance before checkout');
+  });
+  var key = window.VERTICAL_KEY || '';
+  var beats = fam === 'Travel' ? travel : fam === 'Banking' ? banking : fam === 'Telco' ? telco : key === 'supermarket' ? grocery : retail;
 
   var host = document.getElementById('acts'), n = 0;
   beats.forEach(function (b) {
@@ -328,14 +297,6 @@
     var a = s.querySelector('.go a');
     if (b[2]) { a.href = b[2]; a.textContent = 'Open in the panel \u2192'; }
     else { a.parentNode.remove(); }
-    // The experience first — the tab the SC brings up before the panel.
-    var site = siteLink(b[0]);
-    if (site) {
-      var sp = document.createElement('p'); sp.className = 'go';
-      var sa = document.createElement('a'); sa.href = site[0]; sa.target = '_blank'; sa.rel = 'noopener';
-      sa.textContent = site[1] + ' \u2192'; sp.appendChild(sa);
-      s.insertBefore(sp, s.querySelector('.go') || s.querySelector('.do'));
-    }
     s.querySelector('[data-do]').textContent = b[3];
     s.querySelector('[data-say]').textContent = b[4];
     s.querySelector('[data-console]').textContent = b[5];
