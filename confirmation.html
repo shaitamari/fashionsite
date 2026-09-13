@@ -81,6 +81,39 @@
 
      Pushed as a user update afterwards so the array and the two flat fields
      reach the profile in the same visit rather than on the next page load. */
+  /* Travel: a booking is a future event, and the platform only knows when
+     someone is travelling if the site says so. So on Wayfarer and Meridian
+     Air a confirmed booking also writes the flat trip fields — next_trip
+     (the route or the stay), next_trip_date (fourteen days out unless the
+     cart carried a date) and trip_status "On time" — which the ancillary
+     campaign and the disruption banner read. The bookings array is the
+     record; these three are the trigger. See the note on next_due_date. */
+  if (ORDER && (window.VERTICAL || {}).banner_slot && Store.currentUser() && ORDER.items && ORDER.items.length) {
+    var when = ORDER.travel_date ? new Date(ORDER.travel_date) : new Date(Date.now() + 14 * 86400000);
+    Store.signIn({
+      next_trip: ORDER.items[0].name,
+      next_trip_date: when.toISOString().slice(0, 10) + 'T00:00:00Z',
+      trip_status: 'On time'
+    });
+    if (window.insDebugNote) window.insDebugNote('trip on profile: ' + ORDER.items[0].name + ' on ' + when.toDateString(), 'ok');
+  }
+
+  /* Loyalty: a purchase earns points — one per unit of currency, rounded —
+     and the tier steps up when a threshold is crossed. The thresholds come
+     from the vertical's tier list (three tiers: base, mid, top) so hotels,
+     airlines and retail each name their own. This is the number the tier
+     strip and the "N from Gold" line move on, so a booking has to move it. */
+  if (ORDER && Store.currentUser() && ORDER.total > 0) {
+    var cu = Store.currentUser();
+    var tiers = ((window.VERTICAL || {}).profile || {}).tiers || ['Bronze', 'Silver', 'Gold'];
+    var pts = (Number(cu.loyalty_points) || 0) + Math.round(Number(ORDER.total) || 0);
+    var tier = pts >= 1500 ? tiers[2] : pts >= 500 ? tiers[1] : tiers[0];
+    var idx = tiers.indexOf(cu.membership_tier);
+    if (idx > tiers.indexOf(tier)) tier = cu.membership_tier;   // never demote on a purchase
+    Store.signIn({ loyalty_points: pts, membership_tier: tier });
+    if (window.insDebugNote) window.insDebugNote('loyalty: +' + Math.round(ORDER.total) + ' pts → ' + pts + ' · ' + tier, 'ok');
+  }
+
   if (ORDER && Store.notePurchase) {
     var hist = Store.notePurchase(ORDER.items);
     /* CUSTOM ATTRIBUTES GO INSIDE `custom`. At the top level of the payload,
@@ -93,7 +126,7 @@
        way a value disappears without complaint. */
     var payload = Store.userPayload();
     payload.custom = payload.custom || {};
-    payload.custom.c_purchases = hist.map(function (h) {
+    payload.custom.purchases = hist.map(function (h) {
       var o = {
         product_id: h.product_id,
         name: h.name,
@@ -151,6 +184,13 @@
       <p class="eyebrow">Confirmed <span class="pagetype">page type: purchase</span></p>
       <h1 class="h1" data-label="confirm_title">Thank you for your order.</h1>
       <p class="lede" id="conf-line"></p>
+      <!-- Travel only. The demo's hand, not the platform's: sets trip_status
+           on the profile so the trip-status campaign has something to react
+           to. Same rule as the search dare — the site shows where to look;
+           what appears next is the campaign. -->
+      <p class="source" id="trip-sim" hidden style="margin-top:1rem">
+        Something changed at the airline's end? <a href="#" id="trip-sim-delay">Mark this trip as delayed</a> and go back to the homepage to see what the platform does with it.
+      </p>
     </section>
 
     <section class="section" style="padding-top:2rem">
@@ -198,7 +238,12 @@
     line.textContent = 'No order found in this browser. Add something to the cart and check out to see a purchase event.';
     summary.innerHTML = '<div><span>Status</span><span>no order</span></div>';
   } else {
-    line.textContent = 'Order ' + ORDER.order_id + ' is confirmed. A receipt is on its way.';
+    var lbl = ((window.VERTICAL || {}).labels || {});
+    var noun = lbl.order || 'order';
+    var cuNow = Store.currentUser();
+    var earned = ORDER.total > 0 ? Math.round(ORDER.total) : 0;
+    line.textContent = (noun.charAt(0).toUpperCase() + noun.slice(1)) + ' ' + ORDER.order_id + ' is confirmed. A receipt is on its way.' +
+      (cuNow && earned ? ' You earned ' + earned + ' points — you\u2019re ' + cuNow.membership_tier + ' with ' + cuNow.loyalty_points + '.' : '');
     summary.innerHTML =
       ORDER.items.map(function (i) {
         return '<div><span>' + i.quantity + '\u00d7 ' + i.name + ' (' + i.id + ')</span>' +
@@ -211,6 +256,23 @@
     // Stop a refresh from firing a duplicate purchase event.
     localStorage.removeItem('lmn.order');
   }
+
+  (function () {
+    var V = window.VERTICAL || {};
+    var sim = document.getElementById('trip-sim');
+    if (!sim || !V.banner_slot || !ORDER || !Store.currentUser()) return;
+    var isAir = V.key === 'airlines';
+    sim.firstChild.textContent = isAir ? "Something changed at the airline's end? " : "Something changed at the hotel's end? ";
+    document.getElementById('trip-sim-delay').textContent = isAir ? 'Mark this flight as delayed' : "Mark this room as not ready";
+    sim.hidden = false;
+    document.getElementById('trip-sim-delay').addEventListener('click', function (e) {
+      e.preventDefault();
+      Store.signIn({ trip_status: 'Delayed' });
+      window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });
+      window.InsiderQueue.push({ type: 'init' });
+      sim.innerHTML = 'trip_status is now <b>Delayed</b> on the profile. <a href="index.html">Go to the homepage</a> — the trip-status campaign reads it there.';
+    });
+  })();
 
   watchReco('confirmation');
 
