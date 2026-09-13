@@ -32,6 +32,7 @@
   text-transform: uppercase; margin: 0 0 .35rem;
 }
 .act h2 { margin: 0 0 .5rem; font-size: 1.25rem }
+.act__num { color: var(--accent); font-weight: 400; margin-right: .25rem }
 .act__time { color: var(--muted); font-weight: 400; font-size: .8125rem }
 
 .do { border-left: 2px solid var(--ink); padding: .1rem 0 .1rem 1rem; margin: 1.1rem 0 }
@@ -159,24 +160,24 @@
      'page type home, utm_source=meta on the URL.', ['https://useinsider.com/case-studies/united-colors-of-benetton/', 'Benetton: 7X conversion uplift with personalized journeys']],
     ['Personalized recommendations', 'Smart Recommender', L.sr(4239),
      'Point at the three homepage rows and the strip above each. Open "Why this strategy" on one.',
-     'Every product row is chosen for the visitor by the platform, not hand-merchandised — and the strip says which algorithm and why, so the team can defend every row. Recommendations are the single biggest onsite conversion and basket-size lever most retailers have.',
+     'Every product row is chosen for the visitor by the platform and changes with the context — what is new, what is marked down, what goes with what they just picked. No hand-merchandising, and each row is a strategy the team chooses, not code. Recommendations are the biggest onsite conversion and basket-size lever most retailers have.',
      'campaign id and product count for every row.', ['https://insiderone.com/case-studies/chow-sang-sang/', 'Chow Sang Sang: +23.5% conversion with Smart Recommender']],
     ['Search and filters', 'Eureka', L.panel,
      'Search a colour plus a category. Use the facets.',
-     'Shoppers search the way they talk — a colour and a style — and get the right things with real filters. Search that understands a description keeps people on the site instead of leaving for a marketplace, and the merchandiser tunes it without a developer.',
+     'Shoppers search the way they talk — \u201cblue dress\u201d — and the results show the blue variant of each style, not whichever colour happens to be first. Matching the image to the intent in the search box lifts conversion, and the filters are real fields the merchandiser tunes without a developer.',
      'the Eureka request and the campaign it hit.'],
-    ['Sold-out sizes still selectable', 'Catalogue, variant-level records', L.panel,
-     'Open a product where a size is struck through. Try to pick it.',
-     'When the size is gone the shopper is not sent away: they can still choose it and ask to be told. The brand learns exactly which size was wanted, which is demand it would otherwise never see, and a sale it can still make.',
-     'product_detail_page_view with the variant id.'],
+    ['Back-in-stock request taken in conversation', 'Agent One, Architect', L.panel,
+     'Open a product where a size is struck through. Pick it, open the assistant and ask to be told when it is back.',
+     'The shopper is not sent away: they ask once, in their own words, and the assistant remembers exactly what they asked for — this product, this size. When it is back the journey tells them, months later if need be. A sale the brand would have lost, recovered without a form or a ticket, and demand the brand would otherwise never see.',
+     'back_in_stock_requested on the profile with product_id and size.'],
     ['Product page recommendations', 'Smart Recommender', L.sr(4238),
      'Scroll the product page. Three rows, three answers.',
-     'Three ways to keep a shopper moving: alternatives like this one, alternatives that look like this one, and what goes with it. Cross-sell on the product page is where basket size grows, and each row is a strategy the team picks, not code.',
+     'Three rows, three jobs. Similar products match on the attributes that matter to this brand — the merchandiser chooses up to five, material, fit, occasion — and works from titles and descriptions even where tagging is thin. Visually similar matches on the image itself, so it works from day one for a brand with little data or a fast-turning catalogue. Complementary suggests what goes with the item, which is how basket size and AOV grow on the product page.',
      'three campaign events on one page.', ['https://insiderone.com/case-studies/chow-sang-sang/', 'Chow Sang Sang: +23.5% conversion with Smart Recommender']],
     ['Becoming known'],
     ['Shopping assistant that takes real requests', 'Agent One', L.panel,
      'Open the assistant. Ask about returns, then book what this store offers (a consultation, a fitting).',
-     'A shopper asks a question in plain language and gets an answer from the brand\u2019s own catalogue and policies, and when they book something it becomes a real request the brand acts on — no form, no queue. Service that closes the sale instead of deflecting it.',
+     'A shopper asks in plain language and gets an answer from the brand\u2019s own catalogue and policies. When they book something it becomes a real request the brand acts on — no form, no queue — and the assistant remembers what they said next time. Service that closes the sale instead of deflecting it.',
      'the assistant loads with the product id; agent_request on the profile.'],
     ['Recognised on every device', 'Unified Customer Database, personas', L.panel,
      'Account → Sign in as… → the persona with history.',
@@ -207,10 +208,6 @@
      'Look at three products, add none, close the tab. Then open the journey.',
      'A shopper who looked hard at one product and left gets a message about that product, on the channel they answer. Abandonment recovery is the largest recoverable revenue most sites have, and the platform decides which product mattered.',
      'product_detail_page_view events only, no add-to-cart.', ['https://insiderone.com/case-studies/marks-and-spencer/', 'Marks & Spencer: 15.1% cart recovery rate']],
-    ['Back-in-stock alert for the exact size', 'Agent One, Architect', L.panel,
-     'Back on the sold-out size: ask the agent to tell you when it is back.',
-     'The shopper asks once, in conversation, and months later is told the exact size is back. A sale the brand would have lost, recovered without anyone chasing it.',
-     'the event with product_id and size.']
   ];
 
   var travel = [
@@ -246,7 +243,7 @@
      '4416 with products — if zero, the pairing has not rebuilt yet; say so and move on.'],
     ['Travel support assistant', 'Agent One', L.panel,
      'Open the assistant. Ask about baggage, then ask to change the trip.',
-     'A traveller asks about baggage or a change of plans and gets an answer from the airline\u2019s own rules, and the change request becomes real. Support that resolves instead of deflecting is what keeps a customer after a bad day.',
+     'A traveller asks about baggage or a change of plans and gets an answer from the airline\u2019s own rules; the change request becomes real, and the assistant remembers the trip and what was asked. Support that resolves instead of deflecting is what keeps a customer after a bad day.',
      'assistant loads with the product id; agent_request on the profile.'],
     ['What happens after they leave'],
     ['Funnel abandonment', 'Architect, email', null,
@@ -271,7 +268,7 @@
     retail[7], retail[8],
     ['Billing and coverage assistant', 'Agent One', L.panel, 'Ask a billing or coverage question, then ask to change plan.', 'A subscriber asks about a bill or coverage and gets a real answer; a plan change becomes a real request. Every question answered here is a call that never reaches the contact centre.', 'assistant loads; agent_request on the profile.'],
     ['What happens after they leave'],
-    retail[14]
+    retail[retail.length - 1]
   ]);
 
   var beats = fam === 'Travel' ? travel : fam === 'Banking' ? banking : fam === 'Telco' ? telco : retail;
@@ -285,12 +282,12 @@
     }
     n++;
     var s = document.createElement('section'); s.className = 'act';
-    s.innerHTML = '<p class="act__no"></p><h2></h2>' +
+    s.innerHTML = '<h2><span class="act__num"></span> <span class="act__title"></span></h2>' +
       '<p class="go"><a target="_blank" rel="noopener"></a></p>' +
       '<div class="do"><p><b>Do.</b> <span data-do></span></p><p><b>Say.</b> <span data-say></span></p></div>' +
       '<p class="hint">Console: <span data-console></span></p>';
-    s.querySelector('.act__no').textContent = n + ' \u00b7 ' + b[1];
-    s.querySelector('h2').textContent = b[0] + ' \u2014 ' + b[1];
+    s.querySelector('.act__num').textContent = n + '.';
+    s.querySelector('.act__title').textContent = b[0] + ' \u2014 ' + b[1];
     var a = s.querySelector('.go a');
     if (b[2]) { a.href = b[2]; a.textContent = 'Open in the panel \u2192'; }
     else { a.parentNode.remove(); }
