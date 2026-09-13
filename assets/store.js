@@ -547,7 +547,7 @@
          to be true. */
       country: u.country || undefined,
       gdpr_optin: u.gdpr_optin !== false,
-      custom: {
+      custom: Object.assign({
         membership_tier: u.membership_tier || 'Bronze',
         loyalty_points: typeof u.loyalty_points === 'number' ? u.loyalty_points : 0,
         preferred_category: u.preferred_category || preferredCategory(),
@@ -599,8 +599,22 @@
         // The store's own account id. An attribute, not an identifier — the
         // uuid above is what Insider matches on, and it must stay stable.
         account_id: u.uuid || undefined
-      }
+      }, extraAttributes(u))
     });
+  }
+
+  /* Vertical-specific profile attributes, declared as profile.extra in
+     verticals.json and edited on the account page. Travel: trip_status,
+     next_trip, next_trip_date — the disruption beat reads them from an
+     onsite campaign. Only set values are sent, so a blank never overwrites
+     what the platform holds. */
+  function extraAttributes(u) {
+    var out = {};
+    (((window.VERTICAL || {}).profile || {}).extra || []).forEach(function (f) {
+      var val = u[f.name];
+      if (val !== undefined && val !== null && val !== '') out[f.name] = val;
+    });
+    return out;
   }
 
   function preferredCategory() {

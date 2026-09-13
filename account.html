@@ -127,6 +127,7 @@
             <div class="field"><label for="f-points">loyalty_points</label><input type="number" id="f-points" value="0" min="0"></div>
           </div>
           <div class="field"><label for="f-pref">preferred_category</label><select id="f-pref"></select></div>
+          <div id="f-extra"></div>
           <p class="source" style="margin:0 0 1.25rem">is_vip is derived — it sends true when the tier is Gold. signup_date is stamped on first sign-in.</p>
 
           <button class="btn btn--wide" type="submit" id="save-btn">Log in</button>
@@ -194,7 +195,48 @@
     set('f-tier', u.membership_tier || 'Bronze');
     set('f-points', typeof u.loyalty_points === 'number' ? u.loyalty_points : 0);
     set('f-pref', u.preferred_category || Store.preferredCategory());
+    renderExtra(u);
     preview();
+  }
+  renderExtra(Store.currentUser() || {});
+
+  /* Vertical-specific profile fields, declared as profile.extra in
+     verticals.json. Travel uses them for the disruption beat: trip_status,
+     next_trip and next_trip_date are set here, sent on the profile, and an
+     onsite campaign reads them — the site never decides what the banner
+     says. Flip trip_status to Delayed during a demo and the platform reacts. */
+  function extraFields() { return ((window.VERTICAL || {}).profile || {}).extra || []; }
+  function renderExtra(u) {
+    var host = document.getElementById('f-extra');
+    if (!host) return;
+    host.innerHTML = '';
+    extraFields().forEach(function (f) {
+      var wrap = document.createElement('div'); wrap.className = 'field';
+      var lab = document.createElement('label'); lab.htmlFor = 'f-x-' + f.name; lab.textContent = f.label || f.name;
+      var el;
+      if (f.options) {
+        el = document.createElement('select');
+        f.options.forEach(function (o) { var op = document.createElement('option'); op.value = o; op.textContent = o || '—'; el.appendChild(op); });
+      } else {
+        el = document.createElement('input'); el.type = f.type || 'text';
+        if (f.placeholder) el.placeholder = f.placeholder;
+      }
+      el.id = 'f-x-' + f.name;
+      var cur = u[f.name];
+      if (cur !== undefined && cur !== null) el.value = f.type === 'date' ? String(cur).slice(0, 10) : cur;
+      wrap.appendChild(lab); wrap.appendChild(el); host.appendChild(wrap);
+    });
+  }
+  function readExtra() {
+    var out = {};
+    extraFields().forEach(function (f) {
+      var el = document.getElementById('f-x-' + f.name);
+      if (!el) return;
+      var val = el.value;
+      if (f.type === 'date' && val) val = val + 'T00:00:00Z';
+      out[f.name] = val || undefined;
+    });
+    return out;
   }
   hydrate();
 
@@ -202,7 +244,7 @@
     ev.preventDefault();
     var birthday = document.getElementById('f-birthday').value;
 
-    Store.signIn({
+    Store.signIn(Object.assign({
       name: document.getElementById('f-name').value.trim(),
       surname: document.getElementById('f-surname').value.trim() || undefined,
       email: document.getElementById('f-email').value.trim(),
@@ -219,7 +261,7 @@
       membership_tier: document.getElementById('f-tier').value,
       loyalty_points: Number(document.getElementById('f-points').value) || 0,
       preferred_category: document.getElementById('f-pref').value
-    });
+    }, readExtra()));
 
     // A type: 'user' push only reaches Insider when an init follows it.
     window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });

@@ -418,3 +418,12 @@ main { padding-bottom: 5rem; }
 .shade--out .shade__dot { filter: grayscale(1); opacity: .5; }
 .shade--out::after { content: " · out"; font-size: .7em; letter-spacing: .08em; text-transform: uppercase; opacity: .8; }
 .shade--out:hover { opacity: .6 }
+
+/* Disruption banner slot (travel). Empty until an onsite campaign fills it;
+   the campaign's own markup goes inside, so this only sizes the container. */
+.trip-banner:empty { display: none; }
+.trip-banner { background: var(--alt); border-bottom: 1px solid var(--rule); }
+.trip-banner > * { max-width: 1200px; margin: 0 auto; padding: .9rem 1.25rem; }
+.trip-banner .tb { display: flex; gap: 1rem; align-items: center; justify-content: space-between; flex-wrap: wrap; font-size: .95rem; }
+.trip-banner .tb b { font-weight: 600; }
+.trip-banner .tb a { text-decoration: underline; margin-left: 1rem; }

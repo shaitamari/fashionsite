@@ -527,7 +527,31 @@
           "Near lift",
           "Accessible"
         ]
-      }
+      },
+      "extra": [
+        {
+          "name": "trip_status",
+          "label": "trip_status",
+          "options": [
+            "",
+            "On time",
+            "Delayed",
+            "Cancelled",
+            "Gate change"
+          ]
+        },
+        {
+          "name": "next_trip",
+          "label": "next_trip",
+          "type": "text",
+          "placeholder": "e.g. LHR–JFK 14:20 or The Grand Lisbon"
+        },
+        {
+          "name": "next_trip_date",
+          "label": "next_trip_date",
+          "type": "date"
+        }
+      ]
     },
     "flow": {
       "title": "Manage a booking",
@@ -567,7 +591,8 @@
       "search": "kyoto",
       "product": "48100000000001"
     },
-    "anniversary_months": 11
+    "anniversary_months": 11,
+    "banner_slot": true
   },
   "airlines": {
     "vertical": "Travel",
@@ -637,7 +662,31 @@
           "Extra legroom",
           "No preference"
         ]
-      }
+      },
+      "extra": [
+        {
+          "name": "trip_status",
+          "label": "trip_status",
+          "options": [
+            "",
+            "On time",
+            "Delayed",
+            "Cancelled",
+            "Gate change"
+          ]
+        },
+        {
+          "name": "next_trip",
+          "label": "next_trip",
+          "type": "text",
+          "placeholder": "e.g. LHR–JFK 14:20 or The Grand Lisbon"
+        },
+        {
+          "name": "next_trip_date",
+          "label": "next_trip_date",
+          "type": "date"
+        }
+      ]
     },
     "flow": {
       "title": "Manage a trip",
@@ -677,7 +726,8 @@
       "search": "tokyo",
       "product": "48200000000001"
     },
-    "anniversary_months": 11
+    "anniversary_months": 11,
+    "banner_slot": true
   },
   "_environments": {
     "_README": [

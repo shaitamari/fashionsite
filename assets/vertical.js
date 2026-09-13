@@ -647,6 +647,24 @@
   /* --- theme + copy, applied once the catalog has parsed ----------------- */
   window.applyVertical = function () {
     var v = window.VERTICAL;
+    if (v && v.banner_slot && !document.getElementById('trip-banner')) {
+      /* A slot for the disruption beat. The onsite campaign fills it from
+         the profile (trip_status, next_trip); the site itself puts nothing
+         in it. Sits directly under the header on every page. */
+      var placeSlot = function () {
+        if (document.getElementById('trip-banner')) return;
+        var slot = document.createElement('div');
+        slot.id = 'trip-banner';
+        slot.className = 'trip-banner';
+        slot.setAttribute('data-trip-banner', '');
+        var hdr = document.querySelector('header');
+        if (hdr && hdr.parentNode) hdr.parentNode.insertBefore(slot, hdr.nextSibling);
+      };
+      // applyVertical runs from the catalog script in <head>, before the
+      // header exists, so the slot is placed once the body has parsed.
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', placeSlot);
+      else placeSlot();
+    }
     if (v) {
     /* A vertical can carry its own locale and currency — Canon is en_CA / CAD
        in its own catalog locale on the same account, so the SDK's product
