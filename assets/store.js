@@ -532,10 +532,13 @@
     if (!merged.uuid) merged.uuid = stableId(merged.email);
     if (!merged.signup_date) merged.signup_date = new Date().toISOString().replace(/\.\d+Z$/, 'Z');
     write(KEY.user, merged);
-    if (read(KEY.visitor, null) !== merged.uuid) {
-      clearInsiderIdentity();
-      write(KEY.visitor, merged.uuid);
-    }
+    /* Switching to a known uuid does NOT wipe the tag's storage: the next
+       user push carries the uuid and the platform moves this browser's
+       session onto that profile (identity resolution by uuid). Wiping here
+       gave the tag a fresh anonymous session whose campaign values were
+       fetched before it had re-identified — the banner vanished on the
+       first page. Only Log out and New visitor wipe. */
+    if (read(KEY.visitor, null) !== merged.uuid) write(KEY.visitor, merged.uuid);
     paintChrome();
     return merged;
   }
@@ -579,7 +582,6 @@
 
   function signInAs(persona) {
     if (!persona || !persona.uuid) return false;
-    clearInsiderIdentity();
     write(KEY.visitor, persona.uuid);
     localStorage.removeItem(KEY.user);
     // The persona's uuid wins over the derived one: older profiles were
