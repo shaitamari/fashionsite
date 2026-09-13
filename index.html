@@ -170,19 +170,18 @@ body { opacity: 0; transition: opacity .18s ease-out }
     <div id="reco-home" hidden></div>
   </section>
 
+  <!-- Every product row on this page is served by Smart Recommender. The
+       static "New in" and "On sale" grids the build used to draw from the
+       local catalogue were removed on purpose: a row Insider One did not
+       produce, next to rows it did, is indistinguishable to a prospect and
+       unexplainable to the SC. A slot whose campaign returns nothing stays
+       hidden rather than being back-filled. -->
   <section class="section wrap">
     <div class="section__head">
-      <h2 class="h2" data-grid-title>New in</h2>
-      <a href="category.html?c=Makeup">View all</a>
+      <h2 class="h2" data-reco-trend-title>Trending now</h2>
+      <span class="source" id="reco-homeTrending-note">Smart Recommender · waiting for campaign</span>
     </div>
-    <div class="grid" id="featured"></div>
-  </section>
-
-  <section class="section--alt">
-    <div class="wrap">
-      <div class="section__head"><h2 class="h2">On sale</h2></div>
-      <div class="grid" id="sale"></div>
-    </div>
+    <div id="reco-homeTrending" hidden></div>
   </section>
 
   <!-- Second recommendation row. User based sits at the foot of the page by
@@ -229,12 +228,14 @@ body { opacity: 0; transition: opacity .18s ease-out }
     new MutationObserver(function () {
       if (!box.hidden && box.children.length) {
         note.className = 'source is-live';
-        note.textContent = 'Smart Recommender · live from salesdemo';
+        note.textContent = 'Smart Recommender · live from ' +
+          ((window.ENVIRONMENT && window.ENVIRONMENT.account) || 'this account');
       }
     }).observe(box, { childList: true, attributes: true });
   }
 
   // Hero and collection tiles borrow real product imagery from the catalog.
+  // (Imagery only — the product rows themselves come from Smart Recommender.)
   var picks = Store.featured(24);
   document.getElementById('hero-img').src = picks[0] ? picks[0].image : '';
 
@@ -249,9 +250,6 @@ body { opacity: 0; transition: opacity .18s ease-out }
     a.querySelector('.tile__label').textContent = Store.shortName(c);
     tiles.appendChild(a);
   });
-
-  Store.grid('#featured', picks.slice(0, 12));
-  Store.grid('#sale', Store.onSale().slice(0, 6));
 
   document.getElementById('news-form').addEventListener('submit', function (ev) {
     ev.preventDefault();
@@ -277,6 +275,8 @@ body { opacity: 0; transition: opacity .18s ease-out }
   });
 
   watchReco('home');
+  watchReco('homeTrending');
+  watchReco('homeFoot');
 
   // Smart Recommender. The slot is inferred from the host id, and the
   // strategy strip reads config.reco.perAccount[account].slots[slot].
@@ -285,6 +285,15 @@ body { opacity: 0; transition: opacity .18s ease-out }
     // The slot name is taken from the host id, so this reads
     // config.reco.perAccount[account].slots.homeFoot.
     window.Recs.mount('#reco-homeFoot');
+    // Trending is only mounted once its campaign id is configured. A mount
+    // with no id claims the first unclaimed payload on the page, which on a
+    // three-campaign homepage could be another row's — so it waits for the
+    // id rather than guessing.
+    var acct = (window.ENVIRONMENT && window.ENVIRONMENT.account) || '';
+    var per  = ((window.SITE_CONFIG.reco.perAccount || {})[acct] || {}).slots || {};
+    if (per.homeTrending && per.homeTrending.campaignId) {
+      window.Recs.mount('#reco-homeTrending');
+    }
   }
 </script>
 </body>

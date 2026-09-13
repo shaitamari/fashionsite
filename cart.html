@@ -142,7 +142,8 @@
     new MutationObserver(function () {
       if (!box.hidden && box.children.length) {
         note.className = 'source is-live';
-        note.textContent = 'Smart Recommender · live from salesdemo';
+        note.textContent = 'Smart Recommender · live from ' +
+          ((window.ENVIRONMENT && window.ENVIRONMENT.account) || 'this account');
       }
     }).observe(box, { childList: true, attributes: true });
   }

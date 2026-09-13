@@ -282,6 +282,8 @@ window.SITE_CONFIG = {
        tag does not report the algorithm back. */
     campaigns: {
       home:         null,   // #reco-home         on index.html
+      homeTrending: null,   // #reco-homeTrending on index.html
+      homeFoot:     null,   // #reco-homeFoot     on index.html
       product:      null,   // #reco-product      on product.html
       cart:         null,   // #reco-cart         on cart.html
       confirmation: null    // #reco-confirmation on confirmation.html
@@ -349,6 +351,12 @@ window.SITE_CONFIG = {
              campaign with the strategy swapped, which carries the template
              across. See friction log #25. */
           homeFoot: { campaignId: 4241, variationId: null, strategy: 'user_based' },
+          /* Trending, between the two rows above. One campaign for every
+             storefront — recs.js scopes the result to the current vertical —
+             so the id goes here once and index.html mounts the row only when
+             it is set. Thin traffic may make this row sparse; if it stays
+             empty, drop it rather than back-fill it. */
+          homeTrending: { campaignId: null, variationId: null, strategy: 'trending' },
           cart:         { campaignId: null, variationId: null, strategy: 'complementary' },
           /* Confirmation deliberately is NOT another Complementary row: PDP,
              cart and confirmation all running cross-sell would be the same
