@@ -858,7 +858,7 @@
       var links = sandbox
         ? [['about.html', 'Start here'], ['ask.html', 'Ask a question'],
            ['feedback.html', 'Feedback']]
-        : [['sc.html', 'SC notes'], ['ask.html', 'Ask a question'], ['feedback.html', 'Feedback']];
+        : [['sc.html', 'SC notes'], ['feedback.html', 'Feedback']];
 
       var wrap = document.createElement('span');
       wrap.setAttribute('data-demo-links', '');

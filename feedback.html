@@ -231,10 +231,12 @@
       'like to know what that was like \u2014 what made sense, what did not, and ' +
       'anything you expected to find and could not.';
   } else {
+    document.getElementById('fb-title').textContent = 'Internal feedback';
     document.getElementById('fb-intro').textContent =
-      'This goes straight to the people who build these storefronts. Especially ' +
-      'useful: something that looked wrong, or a use case you needed for a ' +
-      'conversation and could not show here.';
+      'For SCs and AEs. This goes to Shai and the GTM Strategy team, who build ' +
+      'and maintain these storefronts. Most useful: something that looked wrong ' +
+      'in a demo, a use case a prospect asked for that you could not show, or a ' +
+      'beat that needs a better line.';
   }
 
   if (sandbox) {
@@ -278,8 +280,8 @@
      email should say where it goes. */
   document.getElementById('fb-purpose').textContent =
     document.getElementById('fb-source').value === 'demo'
-      ? 'This goes to the two people who build these demo storefronts, and is ' +
-        'used to improve them. Nothing here is added to a marketing list.'
+      ? 'Internal only \u2014 read by Shai and the GTM Strategy team, used to ' +
+        'improve the storefronts.'
       : '';
 
   if (/[?&]sent=1/.test(location.search)) {
