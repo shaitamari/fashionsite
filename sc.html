@@ -204,8 +204,8 @@
      'What goes with what they just chose — the accessory, the second piece, the refill — rather than more of the same. Cross-sell anchored on the item the shopper just added is the highest-converting recommendation a retailer can show, and it follows them from the confirmation to their next visit.',
      'purchase event, then 4416 with products.', ['https://insiderone.com/case-studies/chow-sang-sang/', 'Chow Sang Sang: +23.5% conversion with Smart Recommender']],
     ['What happens after they leave'],
-    ['Browse abandonment email', 'Architect, email', L.journey(2822),
-     'Look at three products, add none, close the tab. Then open the journey.',
+    ['Browse abandonment email', 'Architect, email', panel + '/architect/2822/65507/email/66032?focus=6',
+     'Look at three products, add none. Open the console (bottom right) and click Copy profile ID. Open the email in the journey; top right it says Previewing as Anonymous \u2014 change the user, choose Profile ID, paste yours in and reload. The email now shows the product you were just looking at.',
      'A shopper who looked hard at one product and left gets a message about that product, on the channel they answer. Abandonment recovery is the largest recoverable revenue most sites have, and the platform decides which product mattered.',
      'product_detail_page_view events only, no add-to-cart.', ['https://insiderone.com/case-studies/marks-and-spencer/', 'Marks & Spencer: 15.1% cart recovery rate']],
   ];
@@ -277,6 +277,27 @@
     return b.length === 1 || (b[0] !== 'Loyalty tier progress from a lookup table' && b[0] !== 'Free-returns reassurance before checkout');
   });
   var key = window.VERTICAL_KEY || '';
+  if (fam === 'Travel' && key === 'hotels') {
+    var hswaps = [
+      ['Lisbon fares', 'Lisbon stays'], ['The routes on the homepage', 'The stays on the homepage'], ['the moment a fare goes in the basket', 'the moment a stay goes in the basket'],
+      ['on a travel site', 'on a hotel site'], ['Destination search with fares by cabin', 'Destination search with rates by room type'],
+      ['Search a city. Open a route: cabins as a fare table.', 'Search a city. Open a property: room types as a rate table.'],
+      ['gets the routes, with every cabin priced', 'gets the properties, with every room type priced'], ['each cabin is its own record', 'each room type is its own record'],
+      ['which cabin was considered and which was booked', 'which room type was considered and which was booked'], ['the traveller persona', 'the guest persona'],
+      ['A booking becomes a record', 'A booking becomes a record'], ['Book a fare.', 'Book a stay.'], ['the link across to the hotel brand for that city', 'the link across to the airline for that city'],
+      ['route, dates, cabin, fare, extras', 'property, dates, room type, rate, extras'], ['Flight delay message with next steps', 'Room-not-ready message with next steps'],
+      ['Mark this flight as delayed', 'Mark this room as not ready'], ['Telling someone their flight is delayed', 'Telling someone their room is not ready'],
+      ['speaks for both travel brands', 'speaks for both travel brands'], ['The bag, the seat, the lounge', 'Breakfast, late checkout, the spa'],
+      ['where airline margin lives', 'where hotel margin lives'], ['pairs them with the fare', 'pairs them with the stay'], ['pairs a fare with a bag or a lounge pass', 'pairs a stay with breakfast or a spa pass'],
+      ['Ask about baggage, then ask to change the trip', 'Ask about check-in times, then ask to change the dates'], ['asks about baggage or a change of plans', 'asks about check-in or a change of dates'],
+      ["the airline\u2019s own rules", "the hotel\u2019s own policies"], ['Add a fare, leave without paying', 'Pick a room, leave without paying'], ['who priced a fare and left', 'who priced a stay and left'],
+      ['naming the route, the dates and the price', 'naming the property, the dates and the rate']
+    ];
+    travel = travel.map(function (b) {
+      if (b.length === 1) return b;
+      return b.map(function (v) { if (typeof v !== 'string') return v; hswaps.forEach(function (sw) { v = v.split(sw[0]).join(sw[1]); }); return v; });
+    });
+  }
   var beats = fam === 'Travel' ? travel : fam === 'Banking' ? banking : fam === 'Telco' ? telco : key === 'supermarket' ? grocery : retail;
 
   var host = document.getElementById('acts'), n = 0;

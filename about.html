@@ -167,7 +167,7 @@
     </div>
   </section>
 
-  <section class="act">
+  <section class="act" data-family="retail">
     <h2><span class="act__num">4.</span> Free-returns reassurance before checkout — Web template</h2>
 
     <div class="do">
@@ -187,7 +187,7 @@
   </section>
 
   <section class="act">
-    <h2><span class="act__num">5.</span> Browse abandonment email — Architect, email</h2>
+    <h2><span class="act__num">5.</span> Email capture before they leave — Web template</h2>
 
     <div class="do">
       <p>Three or four products, take your time, leave the basket empty.</p>
@@ -202,15 +202,15 @@
       same signals the platform’s own purchase-intent model reads. A rule
       thresholds them and a template does the asking.</p>
     </div>
-    <p class="go"><a data-panel-path="architect/2822/canvas" target="_blank" rel="noopener">Open the journey in your panel →</a></p>
+    <p class="go"><a data-panel-path="web-templates" target="_blank" rel="noopener">Open the campaign in your panel →</a></p>
   </section>
 
   <section class="group">
     <h2 class="group__h">Increasing your known users</h2>
-    <p class="group__lede">Everything from here on works better when the platform knows who you are. You can log in as yourself — or skip ahead and <b>become someone with a history</b>: the <a href="account.html">account page</a> lets you sign in as a demo persona, an existing profile chosen for what it has already done. Pick the Gold member to see what the site looks like to someone who has bought before, been told about a size, and left a basket. Pick a new sign-up to see the first-purchase nudge. Same site, different person. Log in with any email you like — the same email is the same person on every browser — but pick an email you have not used here before; older ones are tied to the browser that first used them.</p>
+    <p class="group__lede">Everything from here on works better when the platform knows who you are. You can log in as yourself — or skip ahead and <b>become someone with a history</b>: the <a href="account.html">account page</a> lets you sign in as a demo persona, an existing profile chosen for what it has already done. Pick the persona with history to see what the site looks like to someone who has bought before and left a basket. Pick a new sign-up to see the first-purchase nudge. Same site, different person. Log in with any email you like — the same email is the same person on every browser — but pick an email you have not used here before; older ones are tied to the browser that first used them.</p>
   </section>
 
-  <section class="act">
+  <section class="act" data-family="retail">
     <h2><span class="act__num">6.</span> Back-in-stock request taken in conversation — Agent One, Architect</h2>
 
     <div class="do">
@@ -237,7 +237,7 @@
     </div>
   </section>
 
-  <section class="act">
+  <section class="act" data-family="retail">
     <h2><span class="act__num">7.</span> Identifying the visitor, history attached — Unified Customer Database</h2>
     <div class="do">
       <p>Use <a href="flow.html" id="flow-name">the services link</a> in the
@@ -256,7 +256,7 @@
     </div>
   </section>
 
-  <section class="act">
+  <section class="act" data-family="retail">
     <h2><span class="act__num">8.</span> Loyalty tier progress from a lookup table — Web template, Lookup Tables</h2>
 
     <div class="do">
@@ -280,12 +280,64 @@
     <p class="go"><a data-panel-path="web-templates" target="_blank" rel="noopener">Open the campaign in your panel →</a></p>
   </section>
 
-  <section class="group">
+
+  <section class="act" data-family="travel" hidden>
+    <h2><span class="act__num"></span> Recognised on every device — Unified Customer Database, personas</h2>
+    <div class="do">
+      <p>Open the <a href="account.html">account page</a> and sign in as the traveller persona.</p>
+    </div>
+    <p class="hint">A known profile with trips behind it. The same person on your laptop and on your phone.</p>
+    <div class="how">
+      <p><b>Why.</b> Everything from here on reads the traveller's history — status, the next trip, what they usually add. Recognition is what makes the rest possible.</p>
+      <p><b>How.</b> The customer number is the identifier, so signing in on any browser resolves to the same record, and every page reads from it immediately.</p>
+    </div>
+  </section>
+
+  <section class="act" data-family="travel" hidden>
+    <h2><span class="act__num"></span> Bookings on the profile — Unified Customer Database, Array of Objects</h2>
+    <div class="do">
+      <p>Book a fare. On the confirmation, see the booking, the points and the link across to a hotel for the same city. Then open your profile in the panel.</p>
+    </div>
+    <p class="hint">The booking is a record — route, dates, cabin, fare, extras — not a line in an order table. The homepage now speaks to the trip.</p>
+    <div class="how">
+      <p><b>Why.</b> An airline that keeps every trip as a record can act before, during and after it: the seat and the bag before departure, the disruption message on the day, the return visit afterwards. Most platforms keep only the last order.</p>
+      <p><b>How.</b> Each booking is written to the profile as a structured record; the current trip's date and status are on the profile as plain fields for the site and the campaigns to read.</p>
+    </div>
+    <p class="go"><a data-panel-path="" target="_blank" rel="noopener">Open your panel →</a></p>
+  </section>
+
+  <section class="act" data-family="travel" hidden>
+    <h2><span class="act__num"></span> Flight delay message with next steps — Web template (Liquid)</h2>
+    <div class="do">
+      <p>On the confirmation click <b>Mark this flight as delayed</b>, then go to the homepage.</p>
+    </div>
+    <p class="hint">Telling someone their flight is delayed is a notification; telling them what to do next is service.</p>
+    <div class="how">
+      <p><b>Why.</b> Disruption is where travel loyalty is won or lost, and where contact volume spikes past anything a team can staff for. A message with options on the site, the moment the status changes, answers the question before it becomes a call.</p>
+      <p><b>How.</b> A web template reads the trip status on the profile and shows the branch that matches — delayed, cancelled, on time — with the traveller's own route and date in the copy.</p>
+    </div>
+    <p class="go"><a data-panel-path="web-templates" target="_blank" rel="noopener">Open the campaign in your panel →</a></p>
+  </section>
+
+  <section class="act" data-family="travel" hidden>
+    <h2><span class="act__num"></span> Ancillaries after the booking — Smart Recommender</h2>
+    <div class="do">
+      <p>After booking, look at the row on the confirmation and at the foot of the homepage.</p>
+    </div>
+    <p class="hint">The bag, the seat, the lounge — offered when the traveller is most likely to add them.</p>
+    <div class="how">
+      <p><b>Why.</b> Ancillaries are where airline margin lives, and the moment after a booking is when they convert. Extras are real products, so the recommender pairs them with the fare without anyone maintaining the row.</p>
+      <p><b>How.</b> A Smart Recommender campaign anchored on what the traveller just added, with the airline's extras in the catalogue as products.</p>
+    </div>
+    <p class="go"><a data-panel-path="web-smart-recommender/4416/design" target="_blank" rel="noopener">Open the campaign in your panel →</a></p>
+  </section>
+
+  <section class="group" data-family="retail">
     <h2 class="group__h">Cross-channel journey orchestration</h2>
   </section>
 
-  <section class="act">
-    <h2><span class="act__num">9.</span> The email you would have been sent — Architect <span class="act__time">· the one worth the login</span></h2>
+  <section class="act" data-family="retail">
+    <h2><span class="act__num">9.</span> Browse abandonment email — Architect, email <span class="act__time">· the one worth the login</span></h2>
 
     <div class="do">
       <p><b>1.</b> Open three or four products here. Do not buy anything.</p>
@@ -325,7 +377,7 @@
       things people forget, and forgetting them is what makes an abandonment
       programme annoy customers instead of recovering them.</p>
     </div>
-    <p class="go"><a data-panel-path="architect/2822/canvas" target="_blank" rel="noopener">Open the journey in your panel →</a></p>
+    <p class="go"><a data-panel-path="architect/2822/65507/email/66032?focus=6" target="_blank" rel="noopener">Open the email in your panel →</a></p>
   </section>
 
   <div class="ends">
@@ -488,6 +540,45 @@
     document.querySelectorAll('[data-panel-path]').forEach(function (a) {
       a.href = 'https://' + acct + '.inone.useinsider.com/' + a.getAttribute('data-panel-path');
     });
+  })();
+
+  // Family-specific acts: retail-only acts hide on travel storefronts and
+  // the travel acts appear; numbers follow whatever is visible.
+  (function () {
+    var fam = (window.VERTICAL || {}).vertical || 'Retail';
+    var travel = fam === 'Travel';
+    document.querySelectorAll('section[data-family]').forEach(function (sec) {
+      var f = sec.getAttribute('data-family');
+      sec.hidden = travel ? (f !== 'travel') : (f !== 'retail');
+    });
+    var n = 0;
+    document.querySelectorAll('section.act').forEach(function (sec) {
+      if (sec.hidden) return;
+      n++;
+      var num = sec.querySelector('.act__num');
+      if (num) num.textContent = n + '.';
+    });
+    if (travel && (window.VERTICAL_KEY || '') === 'hotels') {
+      var swaps = [
+        ['Book a fare', 'Book a stay'], ['the link across to a hotel for the same city', 'the link across to a flight for the same city'],
+        ['An airline that keeps every trip', 'A hotel that keeps every stay'], ['the seat and the bag before departure', 'the breakfast and the late checkout before arrival'],
+        ['route, dates, cabin, fare, extras', 'property, dates, room type, rate, extras'],
+        ['Flight delay message with next steps', 'Room-not-ready message with next steps'],
+        ['Mark this flight as delayed', 'Mark this room as not ready'],
+        ['Telling someone their flight is delayed', 'Telling someone their room is not ready'],
+        ['delayed, cancelled, on time', 'not ready, changed, confirmed'], ["the traveller's own route and date", "the guest's own property and dates"],
+        ['The bag, the seat, the lounge', 'Breakfast, late checkout, the spa'], ['where airline margin lives', 'where hotel margin lives'],
+        ['pairs them with the fare', 'pairs them with the stay'], ["the airline's extras", "the hotel's extras"],
+        ['the traveller persona', 'the guest persona'], ['status, the next trip, what they usually add', 'status, the next stay, what they usually add']
+      ];
+      document.querySelectorAll('section[data-family="travel"]').forEach(function (sec) {
+        sec.querySelectorAll('h2, p').forEach(function (el) {
+          swaps.forEach(function (sw) { if (el.innerHTML.indexOf(sw[0]) > -1) el.innerHTML = el.innerHTML.split(sw[0]).join(sw[1]); });
+        });
+      });
+    }
+    var intro = document.getElementById('intro');
+    if (intro) intro.textContent = intro.textContent.replace('Nine things', ['','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten'][n] + ' things');
   })();
 </script>
 
