@@ -101,7 +101,7 @@
 <main class="wrap doc" style="padding-top:2.5rem;padding-bottom:4rem">
 
   <p class="eyebrow">SC notes <span class="pagetype">page type: other · sc</span></p>
-  <h1 class="h1" style="margin-bottom:.9rem">How to run this storefront</h1>
+  <h1 class="h1" style="margin-bottom:.9rem">What this storefront demonstrates</h1>
   <p class="lede" id="intro"></p>
 
   <div class="panel" style="margin:1.5rem 0 2.5rem;padding:1rem 1.25rem">
@@ -139,128 +139,164 @@
   document.getElementById('intro').textContent =
     'The beats in the order to show them on ' + brand + '. For each: what to click, what to say, where it lives in the panel. Fifteen minutes end to end; the first four alone make the point.';
 
-  /* Each beat: [group?, title, do, say, panel, console] */
+  /* Each beat: [group] or [title, product, link, do, say, console].
+     Titles are [value] — [product]; the link goes to the campaign where the
+     panel URL is certain, to the product's list in the panel where it is not. */
+  var L = {
+    sr: function (id) { return panel + '/web-smart-recommender/' + id + '/design'; },
+    journey: function (id) { return panel + '/architect/' + id + '/canvas'; },
+    webTemplates: panel + '/web-templates',
+    experiments: panel + '/onsite-experiment',
+    recommenders: panel + '/web-smart-recommender-all',
+    panel: panel
+  };
+
   var retail = [
     ['The unknown visitor'],
-    ['Arrive from an ad', 'Open the ad (footer link) and click through. Compare with the plain homepage.',
+    ['Personalizing by traffic source', 'Onsite Experiment', L.experiments,
+     'Open the ad (footer link) and click through. Compare with the plain homepage.',
      'Paid traffic tells you something at the door. One campaign reads which storefront it is on — every brand, one campaign.',
-     'Onsite Experiment "[DND] Paid social arrival — all verticals".', 'page type home, utm_source=meta on the URL.'],
-    ['Every product row is the platform', 'Point at the three homepage rows and the strip above each. Open "Why this strategy" on one.',
-     'Nothing here is a static list. The strip names the algorithm and what it reads; the row that says "on sale" is the platform ranking markdowns, not merchandising.',
-     'Smart Recommender: New arrivals (4239), Highest discounted (4414), Complementary to last add-to-cart (4416). Brand filter on each.', 'campaign id and product count for every row.'],
-    ['Search for a description, not a product', 'Search a colour plus a category. Use the facets.',
-     'Facets are real fields, not configured by hand. Colour, size and material are separate attributes in the feed, which is why the swatches are honest.',
-     'Eureka campaign 4233 (search) and 4235 (category pages), filtered on this store\u2019s category path.', 'the Eureka request and the campaign it hit.'],
-    ['Find a variant that is gone', 'Open a product where a size is struck through. Try to pick it.',
+     'page type home, utm_source=meta on the URL.'],
+    ['Recommendations that say where they came from', 'Smart Recommender', L.sr(4239),
+     'Point at the three homepage rows and the strip above each. Open "Why this strategy" on one.',
+     'Nothing here is a static list. The strip names the algorithm and what it reads; the on-sale row is the platform ranking markdowns, not merchandising. Campaigns 4239, 4414, 4416, brand-filtered.',
+     'campaign id and product count for every row.'],
+    ['Search by description, with real facets', 'Eureka', L.panel,
+     'Search a colour plus a category. Use the facets.',
+     'Facets are real fields, not configured by hand. Colour, size and material are separate attributes in the feed, which is why the swatches are honest. Campaigns 4233 (search) and 4235 (category pages).',
+     'the Eureka request and the campaign it hit.'],
+    ['Knowing which size was wanted', 'Catalogue, variant-level records', L.panel,
+     'Open a product where a size is struck through. Try to pick it.',
      'Each variant is its own record with its own id. Most sites keep one id for all sizes, so the platform never learns which one was wanted. Here it does.',
-     'Catalog: one record per variant, stock at variant level.', 'product_detail_page_view with the variant id.'],
-    ['Similar, visually similar, complementary', 'Scroll the product page. Three rows, three answers.',
-     'Similar reads the copy; Visually similar reads the picture; Complementary reasons about what goes with it. You would normally pick one of the first two — both are here so you can see the difference.',
-     'Smart Recommender 4236, 4237, 4238.', 'three campaign events on one page.'],
+     'product_detail_page_view with the variant id.'],
+    ['Similar, visually similar, complementary', 'Smart Recommender', L.sr(4238),
+     'Scroll the product page. Three rows, three answers.',
+     'Similar reads the copy; Visually similar reads the picture; Complementary reasons about what goes with it. Campaigns 4236, 4237, 4238.',
+     'three campaign events on one page.'],
     ['Becoming known'],
-    ['Ask the agent', 'Open the assistant. Ask about returns, then ask it to book what this store offers (a consultation, a fitting).',
-     'The chat writes to the profile, not to a transcript. The request lands as an event a journey can act on. And it knows which store it is in from the product on the page — one agent, every storefront.',
-     'Agent One → AI Agents → "Insider One Agent"; the event agent_request on the profile.', 'the assistant loads with the product id.'],
-    ['Sign in as a persona', 'Account → Sign in as… → the persona with history.',
+    ['A conversation that writes to the profile', 'Agent One', L.panel,
+     'Open the assistant. Ask about returns, then book what this store offers (a consultation, a fitting).',
+     'The chat writes to the profile, not a transcript: the request lands as an event a journey can act on. It knows which store it is in from the product on the page — one agent, every storefront.',
+     'the assistant loads with the product id; agent_request on the profile.'],
+    ['One customer, every browser', 'Unified Customer Database, personas', L.panel,
+     'Account → Sign in as… → the persona with history.',
      'Personas are known profiles anyone can step into on any browser. The uuid is the customer number, so this is the same person on your laptop and mine.',
-     'Unified Customer Profile for the persona.', 'the user push with uuid, email, tier, points.'],
-    ['Tier progress', 'Add something and open the cart. Then open the persona\u2019s profile in the panel and scroll to the lookup table section.',
-     'It works out the gap to the next tier and decides whether it is close enough to mention. The programme lives in a lookup table: changing it is one row, not a campaign per store. On the profile you can see the join \u2014 the tier on the record, and what that tier is worth resolved live from the table, not copied onto the customer.',
-     'Web template "[DND] Points to next tier" (Liquid); lookup table bound to membership tier; the profile\u2019s lookup section.', 'cart page type, basket contents.'],
-    ['The record, not the line item', 'Open history.html, seed a year of purchases for the persona, then open the profile\u2019s Array of Objects tab.',
-     'A purchase is not a line item here; it is a record with product, price, size and date, held as an array on the profile. That is what a date-driven journey anchors on (an anniversary, a replenishment) and what a segment can filter. Most platforms flatten this into a handful of fields.',
-     'Unified Customer Profile \u2192 Array of Objects tab \u2192 purchases; written through the Upsert API.', 'the seeding calls; nothing on the tag \u2014 arrays travel by API.'],
-    ['Two of the same thing', 'Set quantity to two on one item.',
-     'Two of one item is a return in progress. Service before the sale costs less than the return does — and the rule reads the basket, not the page.',
-     'Onsite campaign on basket contents.', 'the basket push with quantity 2.'],
-    ['Just for you', 'Open the Just for you page (sales demo only) after browsing a few products.',
-     'A page ranked by what this visitor actually looked at, and every row says where its ranking came from. Personalization that shows its working \u2014 the question a prospect always asks is \u201chow did it know\u201d, and this answers it on screen. In a live account affinity builds across sessions, not just this one.',
-     'foryou.html \u2014 a site exhibit, gated to the sales demo hostname; not a panel campaign.', 'the product views the ranking was built from.'],
-    ['Goes with what you bought', 'Check out. On the confirmation, and again on the homepage foot, show the row.',
-     'Complementary rather than similar, anchored on what this person just added — shoes for the dress, not another dress. The ask every apparel prospect puts in writing.',
-     'Smart Recommender 4416, Recommend Based On = user\u2019s last added to cart.', 'purchase event, then 4416 with products.'],
+     'the user push with uuid, email, tier, points.'],
+    ['Loyalty tier progress from a lookup table', 'Web template, Lookup Tables', L.webTemplates,
+     'Add something and open the cart. Then open the persona\u2019s profile in the panel and scroll to the lookup table section.',
+     'It works out the gap to the next tier and decides whether it is close enough to mention. The programme lives in a lookup table: one row to change, not a campaign per store. On the profile you see the join — the tier on the record, and what it is worth resolved live from the table.',
+     'cart page type, basket contents.'],
+    ['Purchases as records, not line items', 'Unified Customer Database, Array of Objects', L.panel,
+     'Open history.html, seed a year of purchases for the persona, then open the profile\u2019s Array of Objects tab.',
+     'A purchase is a record with product, price, size and date, held as an array on the profile. That is what a date-driven journey anchors on and what a segment can filter. Most platforms flatten this into a handful of fields.',
+     'the seeding calls; arrays travel by API, not the tag.'],
+    ['Service before the sale', 'Web template', L.webTemplates,
+     'Set quantity to two on one item.',
+     'Two of one item is a return in progress. A message about free returns before checkout costs less than the return does — and the rule reads the basket, not the page.',
+     'the basket push with quantity 2.'],
+    ['Personalization that shows its working', 'Site exhibit (sales demo only)', null,
+     'Open the Just for you page after browsing a few products.',
+     'A page ranked by what this visitor looked at, every row saying where its ranking came from. "How did it know" answered on screen. In a live account affinity builds across sessions.',
+     'the product views the ranking was built from.'],
+    ['Complementary to what they just added', 'Smart Recommender', L.sr(4416),
+     'Check out. On the confirmation, and again on the homepage foot, show the row.',
+     'Complementary rather than similar, anchored on what this person just added — shoes for the dress, not another dress. Recommend Based On = last added to cart.',
+     'purchase event, then 4416 with products.'],
     ['What happens after they leave'],
-    ['Browse abandonment', 'Look at three products, add none, close the tab. Then open the journey.',
-     'The site reported page views; the platform decided which one mattered and reached the person on the channel they answer.',
-     'Architect journey 2822 "[DND] Browse abandonment" — open the email element to show the product and image tokens.', 'product_detail_page_view events only, no add-to-cart.'],
-    ['The request that outlives the visit', 'Back on the sold-out size: ask the agent to tell you when it is back.',
-     'The agent captured the exact variant; variant-level stock makes the notification specific enough to act on months later. Most sites can do neither half.',
-     'Action notify_back_in_stock → event back_in_stock_requested → journey "[DND] Back in stock".', 'the event with product_id and size.']
+    ['Browse abandonment on the product that mattered', 'Architect, email', L.journey(2822),
+     'Look at three products, add none, close the tab. Then open the journey.',
+     'The site reported page views; the platform decided which one mattered and reached the person on the channel they answer. Open the email element to show the product and image tokens.',
+     'product_detail_page_view events only, no add-to-cart.'],
+    ['A request that outlives the visit', 'Agent One, Architect', L.panel,
+     'Back on the sold-out size: ask the agent to tell you when it is back.',
+     'The agent captured the exact variant; variant-level stock makes the notification specific enough to act on months later. Action notify_back_in_stock → event back_in_stock_requested → the Back in stock journey.',
+     'the event with product_id and size.']
   ];
 
   var travel = [
     ['The unknown visitor'],
-    ['Arrive from an ad', 'Open the ad (footer link) and click through.',
+    ['Personalizing by traffic source', 'Onsite Experiment', L.experiments,
+     'Open the ad (footer link) and click through.',
      'Paid traffic tells you something at the door. One campaign reads which storefront it is on.',
-     'Onsite Experiment "[DND] Paid social arrival — all verticals".', 'page type home, utm_source=meta.'],
-    ['Every product row is the platform', 'Point at the homepage rows and their strips.',
-     'New routes and discounted fares are the platform ranking the catalogue, with a brand filter so this airline never shows another brand.',
-     'Smart Recommender 4239, 4414, 4416.', 'campaign id and product count per row.'],
-    ['Search a destination', 'Search a city. Open a route: cabins as a fare table.',
-     'Every cabin is its own record, so the platform knows which cabin was looked at and which was booked.',
-     'Eureka 4233 / 4235 filtered on this store\u2019s category path.', 'the Eureka request.'],
+     'page type home, utm_source=meta.'],
+    ['Recommendations that say where they came from', 'Smart Recommender', L.sr(4239),
+     'Point at the homepage rows and their strips.',
+     'New routes and discounted fares are the platform ranking the catalogue, with a brand filter so this airline never shows another brand. Campaigns 4239, 4414, 4416.',
+     'campaign id and product count per row.'],
+    ['Search a destination; every cabin a record', 'Eureka, catalogue', L.panel,
+     'Search a city. Open a route: cabins as a fare table.',
+     'Every cabin is its own record, so the platform knows which cabin was looked at and which was booked. Campaigns 4233 / 4235.',
+     'the Eureka request.'],
     ['Becoming known'],
-    ['Sign in as the traveller', 'Account → Sign in as… → the traveller persona.',
+    ['One traveller, every browser', 'Unified Customer Database, personas', L.panel,
+     'Account → Sign in as… → the traveller persona.',
      'A known profile with trips behind it. The uuid is the customer number; same person on any browser.',
-     'Unified Customer Profile → the bookings array on the Array tab.', 'user push with tier and points.'],
-    ['Book, then see the trip on the profile', 'Book a fare. On the confirmation: the booking, the points, the link across to the hotel brand for that city.',
-     'The booking becomes a record — route, dates, cabin, fare, extras — not a line item. The homepage now reads the trip.',
-     'Profile: next_trip, next_trip_date, trip_status; bookings array.', 'purchase event, then the trip attributes.'],
-    ['Disruption', 'On the confirmation click "Mark this flight as delayed", then go to the homepage.',
+     'user push with tier and points.'],
+    ['A booking becomes a record', 'Unified Customer Database, Array of Objects', L.panel,
+     'Book a fare. On the confirmation: the booking, the points, the link across to the hotel brand for that city. Then the profile: next trip, trip status, the bookings array.',
+     'The booking is a record — route, dates, cabin, fare, extras — not a line item. The homepage now reads the trip.',
+     'purchase event, then the trip attributes.'],
+    ['Disruption handled, not announced', 'Web template (Liquid)', L.webTemplates,
+     'On the confirmation click "Mark this flight as delayed", then go to the homepage.',
      'Telling someone their flight is delayed is a notification; telling them what to do next is service. One campaign reads trip_status and speaks for both travel brands.',
-     'Web template "[DND] Trip status banner — travel" (Liquid on trip_status).', 'trip_status = Delayed on the user push.'],
-    ['The next thing they will need', 'Homepage foot row and confirmation row after booking.',
+     'trip_status = Delayed on the user push.'],
+    ['Ancillaries the traveller will actually need', 'Smart Recommender', L.sr(4416),
+     'Homepage foot row and confirmation row after booking.',
      'Ancillary revenue is where the margin lives. Extras are real products, so the recommender pairs a fare with a bag or a lounge pass.',
-     'Smart Recommender 4416; Extras category in the catalogue.', '4416 event with products — if zero, the pairing has not rebuilt yet; say so and move on.'],
-    ['Ask the agent', 'Open the assistant. Ask about baggage, then ask to change the trip.',
+     '4416 with products — if zero, the pairing has not rebuilt yet; say so and move on.'],
+    ['Support that writes to the profile', 'Agent One', L.panel,
+     'Open the assistant. Ask about baggage, then ask to change the trip.',
      'The chat writes the request to the profile; a journey listens. Travel support is where a bad moment keeps or loses a customer.',
-     'Agent One "Insider One Agent"; event agent_request.', 'assistant loads with the product id.'],
+     'assistant loads with the product id; agent_request on the profile.'],
     ['What happens after they leave'],
-    ['Funnel abandonment', 'Add a fare, leave without paying.',
-     'Abandonment in travel is a research session, not a basket. The follow-up names the route, the dates and the fare they saw.',
-     'Architect journey "[DND] Funnel abandonment — all stores" (to build).', 'cart push, no purchase.']
+    ['Funnel abandonment', 'Architect, email', null,
+     'Add a fare, leave without paying.',
+     'Abandonment in travel is a research session, not a basket. The follow-up names the route, the dates and the fare they saw. Journey to build.',
+     'cart push, no purchase.']
   ];
 
   var banking = [
     ['The unknown visitor'],
-    ['Arrive from an ad', 'Open the ad and click through.', 'One campaign reads the storefront and dresses the page.', 'Onsite Experiment "[DND] Paid social arrival — all verticals".', 'page type home.'],
-    ['Search a product', 'Search for an account or a policy. Open one.', 'Products, not a basket — the catalogue is the product range and the conversion is a form.', 'Eureka 4233 / 4235.', 'the Eureka request.'],
+    ['Personalizing by traffic source', 'Onsite Experiment', L.experiments, 'Open the ad and click through.', 'One campaign reads the storefront and dresses the page.', 'page type home.'],
+    ['Products, not a basket', 'Eureka', L.panel, 'Search for an account or a policy. Open one.', 'The catalogue is the product range and the conversion is a form. Campaigns 4233 / 4235.', 'the Eureka request.'],
     ['Becoming known'],
-    ['Sign in as a persona', 'Account → Sign in as…', 'A known profile; the same person on any browser.', 'Unified Customer Profile.', 'user push.'],
-    ['Ask the agent', 'Ask an account question, then ask to start an application.', 'Service, not sales. The request lands on the profile as an event; in a regulated industry the safety comes from what the agent is allowed to do.', 'Agent One "Insider One Agent"; event agent_request.', 'assistant loads.'],
+    ['One customer, every browser', 'Unified Customer Database, personas', L.panel, 'Account → Sign in as…', 'A known profile; the same person on any browser.', 'user push.'],
+    ['Service, not sales', 'Agent One', L.panel, 'Ask an account question, then ask to start an application.', 'The request lands on the profile as an event; in a regulated industry the safety comes from what the agent is allowed to do.', 'assistant loads; agent_request on the profile.'],
     ['What happens after they leave'],
-    ['Abandoned application', 'Start the flow and leave.', 'Abandonment here is a form, and most are lost in the middle. To build.', 'Funnel abandonment journey (to build).', 'flow events.']
+    ['Abandoned application', 'Architect', null, 'Start the flow and leave.', 'Abandonment here is a form, and most are lost in the middle. Journey to build.', 'flow events.']
   ];
 
   var telco = retail.slice(0, 6).concat([
     ['Becoming known'],
     retail[7], retail[8],
-    ['Ask the agent', 'Ask a billing or coverage question, then ask to change plan.', 'Most telco contact is service, not sales. The agent that handles it well reduces calls.', 'Agent One "Insider One Agent"; event agent_request.', 'assistant loads.'],
+    ['Billing and coverage answered, then acted on', 'Agent One', L.panel, 'Ask a billing or coverage question, then ask to change plan.', 'Most telco contact is service, not sales. The agent that handles it well reduces calls; the plan change lands on the profile.', 'assistant loads; agent_request on the profile.'],
     ['What happens after they leave'],
-    retail[13]
+    retail[14]
   ]);
 
   var beats = fam === 'Travel' ? travel : fam === 'Banking' ? banking : fam === 'Telco' ? telco : retail;
 
   var host = document.getElementById('acts'), n = 0;
-  var words = ['One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Eleven','Twelve','Thirteen','Fourteen'];
   beats.forEach(function (b) {
     if (b.length === 1) {
       var g = document.createElement('section'); g.className = 'group';
       g.innerHTML = '<h2 class="group__h"></h2>'; g.querySelector('h2').textContent = b[0];
       host.appendChild(g); return;
     }
+    n++;
     var s = document.createElement('section'); s.className = 'act';
     s.innerHTML = '<p class="act__no"></p><h2></h2>' +
+      '<p class="go"><a target="_blank" rel="noopener"></a></p>' +
       '<div class="do"><p><b>Do.</b> <span data-do></span></p><p><b>Say.</b> <span data-say></span></p></div>' +
-      '<p class="go"><b>Panel.</b> <span data-panel></span></p>' +
       '<p class="hint">Console: <span data-console></span></p>';
-    s.querySelector('.act__no').textContent = words[n++] || String(n);
-    s.querySelector('h2').textContent = b[0];
-    s.querySelector('[data-do]').textContent = b[1];
-    s.querySelector('[data-say]').textContent = b[2];
-    s.querySelector('[data-panel]').textContent = b[3];
-    s.querySelector('[data-console]').textContent = b[4];
+    s.querySelector('.act__no').textContent = n + ' \u00b7 ' + b[1];
+    s.querySelector('h2').textContent = b[0] + ' \u2014 ' + b[1];
+    var a = s.querySelector('.go a');
+    if (b[2]) { a.href = b[2]; a.textContent = 'Open in the panel \u2192'; }
+    else { a.parentNode.remove(); }
+    s.querySelector('[data-do]').textContent = b[3];
+    s.querySelector('[data-say]').textContent = b[4];
+    s.querySelector('[data-console]').textContent = b[5];
     host.appendChild(s);
   });
 })();
