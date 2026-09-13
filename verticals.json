@@ -614,7 +614,8 @@
       "Asia & Pacific > Singapore": "Singapore",
       "Europe > Edinburgh": "Edinburgh",
       "Asia & Pacific > Chiang Mai": "Chiang Mai"
-    }
+    },
+    "direct_checkout": true
   },
   "airlines": {
     "vertical": "Travel",
@@ -783,7 +784,8 @@
       "Asia & Pacific > Bangkok": "Bangkok",
       "Africa & Middle East > Casablanca": "Casablanca",
       "Africa & Middle East > Dubai": "Dubai"
-    }
+    },
+    "direct_checkout": true
   },
   "_environments": {
     "_README": [

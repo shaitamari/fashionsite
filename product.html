@@ -443,6 +443,17 @@
   }
 
   document.getElementById('add-btn').addEventListener('click', function () {
+    /* Travel: a flight or a stay is selected, not collected. The trip holds
+       one thing, and choosing it moves you on — so the basket is replaced
+       with this item and the page goes straight to the trip. Retail keeps
+       the basket and the dare. Declared as direct_checkout in verticals.json. */
+    if ((window.VERTICAL || {}).direct_checkout) {
+      Store.clearCart();
+      var payload1 = Store.addToCart(PRODUCT.id, qty);
+      window.InsiderQueue.push({ type: 'add_to_cart', value: payload1 });
+      location.href = 'cart.html';
+      return;
+    }
     var payload = Store.addToCart(PRODUCT.id, qty);
     // add_to_cart does NOT need an init afterwards.
     window.InsiderQueue.push({ type: 'add_to_cart', value: payload });
