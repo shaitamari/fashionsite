@@ -251,7 +251,9 @@
       if (!el) return;
       var val = el.value;
       if (f.type === 'date' && val) val = val + 'T00:00:00Z';
-      out[f.name] = val || undefined;
+      // A blank field leaves the stored value alone; only a typed value
+      // replaces it. (Merging undefined would erase what the booking wrote.)
+      if (val) out[f.name] = val;
     });
     return out;
   }
