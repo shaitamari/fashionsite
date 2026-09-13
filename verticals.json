@@ -479,23 +479,31 @@
       "fonts": "family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Jost:wght@300;400;500"
     },
     "order": [
-      "Hotels",
-      "Boutique",
-      "Lodges",
-      "Apartments"
+      "Europe",
+      "Americas",
+      "Asia & Pacific",
+      "Africa & Middle East"
     ],
     "collections": {
-      "Hotels": "Hotels",
-      "Boutique": "Boutique",
-      "Lodges": "Lodges",
-      "Apartments": "Apartments"
+      "Europe > Lisbon": "Europe",
+      "Asia & Pacific > Kyoto": "Asia & Pacific",
+      "Europe > Reykjavik": "Europe",
+      "Africa & Middle East > Marrakesh": "Africa & Middle East",
+      "Europe > Copenhagen": "Europe",
+      "Africa & Middle East > Cape Town": "Africa & Middle East",
+      "Americas > Mexico City": "Americas",
+      "Asia & Pacific > Queenstown": "Asia & Pacific",
+      "Europe > Amalfi": "Europe",
+      "Asia & Pacific > Singapore": "Asia & Pacific",
+      "Europe > Edinburgh": "Europe",
+      "Asia & Pacific > Chiang Mai": "Asia & Pacific"
     },
     "subcats": {},
     "defaults": {
-      "Hotels": "City",
-      "Boutique": "Boutique",
-      "Lodges": "Countryside",
-      "Apartments": "Self-catering"
+      "Europe": "All",
+      "Americas": "All",
+      "Asia & Pacific": "All",
+      "Africa & Middle East": "All"
     },
     "labels": {
       "add_to_cart": "Reserve",
@@ -509,8 +517,8 @@
       "browse_cta": "Find a room"
     },
     "hero_eyebrow": "Stay",
-    "tiles_title": "Browse by type",
-    "grid_title": "Recently added",
+    "tiles_title": "Where to stay",
+    "grid_title": "New places",
     "reco_title": "Picked for you",
     "profile": {
       "tiers": [
@@ -585,14 +593,28 @@
       ],
       "attribute_field": "store"
     },
-    "hero_category": "Hotels",
+    "hero_category": "Europe",
     "foryou_title": "Trips for you",
     "showcase": {
       "search": "kyoto",
       "product": "48100000000001"
     },
     "anniversary_months": 11,
-    "banner_slot": true
+    "banner_slot": true,
+    "type_subcats": {
+      "Europe > Lisbon": "Lisbon",
+      "Asia & Pacific > Kyoto": "Kyoto",
+      "Europe > Reykjavik": "Reykjavik",
+      "Africa & Middle East > Marrakesh": "Marrakesh",
+      "Europe > Copenhagen": "Copenhagen",
+      "Africa & Middle East > Cape Town": "Cape Town",
+      "Americas > Mexico City": "Mexico City",
+      "Asia & Pacific > Queenstown": "Queenstown",
+      "Europe > Amalfi": "Amalfi",
+      "Asia & Pacific > Singapore": "Singapore",
+      "Europe > Edinburgh": "Edinburgh",
+      "Asia & Pacific > Chiang Mai": "Chiang Mai"
+    }
   },
   "airlines": {
     "vertical": "Travel",
@@ -620,17 +642,34 @@
       "fonts": "family=Jost:wght@300;400;500;600"
     },
     "order": [
-      "Long Haul",
-      "Short Haul"
+      "Europe",
+      "Americas",
+      "Asia & Pacific",
+      "Africa & Middle East"
     ],
     "collections": {
-      "Long Haul": "Long Haul",
-      "Short Haul": "Short Haul"
+      "Americas > New York": "Americas",
+      "Europe > Lisbon": "Europe",
+      "Asia & Pacific > Tokyo": "Asia & Pacific",
+      "Africa & Middle East > Cape Town": "Africa & Middle East",
+      "Americas > Mexico City": "Americas",
+      "Europe > Reykjavik": "Europe",
+      "Americas > Chicago": "Americas",
+      "Asia & Pacific > Singapore": "Asia & Pacific",
+      "Africa & Middle East > Marrakesh": "Africa & Middle East",
+      "Europe > Athens": "Europe",
+      "Europe > Edinburgh": "Europe",
+      "Americas > São Paulo": "Americas",
+      "Asia & Pacific > Bangkok": "Asia & Pacific",
+      "Africa & Middle East > Casablanca": "Africa & Middle East",
+      "Africa & Middle East > Dubai": "Africa & Middle East"
     },
     "subcats": {},
     "defaults": {
-      "Long Haul": "Intercontinental",
-      "Short Haul": "Regional"
+      "Europe": "All",
+      "Americas": "All",
+      "Asia & Pacific": "All",
+      "Africa & Middle East": "All"
     },
     "labels": {
       "add_to_cart": "Select flight",
@@ -644,7 +683,7 @@
       "browse_cta": "Search flights"
     },
     "hero_eyebrow": "Fly",
-    "tiles_title": "Browse by route",
+    "tiles_title": "Where to next",
     "grid_title": "New routes",
     "reco_title": "Picked for you",
     "profile": {
@@ -720,14 +759,31 @@
       ],
       "attribute_field": "route"
     },
-    "hero_category": "Long Haul",
+    "hero_category": "Europe",
     "foryou_title": "Where to next",
     "showcase": {
       "search": "tokyo",
       "product": "48200000000001"
     },
     "anniversary_months": 11,
-    "banner_slot": true
+    "banner_slot": true,
+    "type_subcats": {
+      "Americas > New York": "New York",
+      "Europe > Lisbon": "Lisbon",
+      "Asia & Pacific > Tokyo": "Tokyo",
+      "Africa & Middle East > Cape Town": "Cape Town",
+      "Americas > Mexico City": "Mexico City",
+      "Europe > Reykjavik": "Reykjavik",
+      "Americas > Chicago": "Chicago",
+      "Asia & Pacific > Singapore": "Singapore",
+      "Africa & Middle East > Marrakesh": "Marrakesh",
+      "Europe > Athens": "Athens",
+      "Europe > Edinburgh": "Edinburgh",
+      "Americas > São Paulo": "São Paulo",
+      "Asia & Pacific > Bangkok": "Bangkok",
+      "Africa & Middle East > Casablanca": "Casablanca",
+      "Africa & Middle East > Dubai": "Dubai"
+    }
   },
   "_environments": {
     "_README": [
