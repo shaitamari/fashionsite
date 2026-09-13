@@ -398,7 +398,12 @@ window.SITE_CONFIG = {
 
              Currently a placeholder — the algorithm is unchecked in Gachapon.
              See monday.md. */
-          confirmation: { campaignId: null, variationId: null, strategy: 'user_engagement' }
+          /* Same campaign as the foot row: Complementary anchored on the
+             last purchase, All Pages, so it answers here too. After the
+             money is taken and the basket is empty, the purchase is the only
+             product in context — a fare pairs with a bag or a lounge pass,
+             a dress with shoes. One campaign, two placements. */
+          confirmation: { campaignId: 4416, variationId: null, strategy: 'complementary_last_purchased' }
         },
 
         /* Per-vertical overrides.
@@ -424,19 +429,13 @@ window.SITE_CONFIG = {
            answer and will return nothing today. Left here as intent, with the
            ids null so nothing renders half-working. */
         perVertical: {
-          banking:   { cart:    { campaignId: null, variationId: null, strategy: 'complementary' },
-                       product: { campaignId: null, variationId: null, strategy: 'complementary' } },
-          insurance: { product: { campaignId: null, variationId: null, strategy: 'complementary' } },
-          fintech:   { product: { campaignId: null, variationId: null, strategy: 'complementary' } },
-
-          // Right answer, needs traffic. Ids stay null until the account is warm.
-          hotels:    { product: { campaignId: null, variationId: null, strategy: 'viewed_together' } },
-          airlines:  { product: { campaignId: null, variationId: null, strategy: 'viewed_together' } },
-
-          // Visual verticals: the look is the decision.
-          fashion:   { confirmation: { campaignId: null, variationId: null, strategy: 'visually_similar' } },
-          luxury:    { product:      { campaignId: null, variationId: null, strategy: 'visually_similar' } },
-          home:      { product:      { campaignId: null, variationId: null, strategy: 'visually_similar' } }
+          /* Overrides go here only with a live campaign id. A placeholder with
+             a null id is not harmless: slotConfig() returns the override as
+             soon as the vertical is listed, so a null-id entry blocks the
+             shared slot for that storefront. The earlier intent list (banking
+             and fintech on Complementary for the PDP, travel on Viewed
+             together, visual verticals on Visually similar) lives in the
+             architecture doc until each has a campaign. */
         }
       }
       // salesdemo: { campaignId: null, variationId: null },
