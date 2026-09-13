@@ -747,80 +747,6 @@
 
   function purchaseHistory() { return read('lmn.purchases', []); }
 
-  /* --- bookings, as an Array of Objects -------------------------------------
-     Travel's record. A purchase is a line item; a booking is a trip — route
-     or property, when, how long, which cabin or room, what was paid, and the
-     ancillaries added. One object per booking on the profile, under the
-     `bookings` Array of Objects attribute. The flat trip fields (next_trip,
-     next_trip_date, trip_status) are derived from the latest one for onsite
-     campaigns to read, since web Liquid cannot reach into an array.
-     Ancillaries are a comma-separated string, not a nested array — object
-     fields are scalars on the platform. */
-  function bookingHistory() { return read('lmn.bookings', []); }
-  function noteBooking(order, extra) {
-    if (!order || !order.items || !order.items.length) return bookingHistory();
-    var hist = bookingHistory();
-    var line = order.items[0];
-    var p = byId(line.id) || {};
-    var when = extra && extra.travel_date ? new Date(extra.travel_date) : new Date(Date.now() + 14 * 86400000);
-    hist.push({
-      booking_id: order.order_id,
-      route: p.name || line.name,
-      destination: p.subcategory || '',
-      region: p.collection || '',
-      cabin: p.variant_label || line.variant || '',
-      travel_date: when.toISOString().slice(0, 10) + 'T00:00:00Z',
-      nights: extra && extra.nights ? Number(extra.nights) : 0,
-      fare: Math.round((Number(order.total) || 0) * 100) / 100,
-      booked_at: new Date().toISOString().replace(/\.\d+Z$/, 'Z'),
-      status: 'On time',
-      ancillaries: (extra && extra.ancillaries) || ''
-    });
-    write('lmn.bookings', hist.slice(-40));
-    return hist;
-  }
-  /* Array-of-Objects attributes cannot travel in the tag's user object; they
-     go through the site's sync function to the Upsert API. Fire-and-forget;
-     the console gets a note either way. */
-  function syncArray(attribute, items, mode) {
-    return fetch('/.netlify/functions/sync', {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ uuid: visitorId(), attribute: attribute, items: items, mode: mode || 'add' })
-    }).then(function (r) { return r.json(); }).then(function (out) {
-      if (window.insDebugNote) window.insDebugNote(attribute + ' → Upsert: ' + (out.ok ? 'ok' : 'failed ' + (out.status || out.reason || out.error || '')), out.ok ? 'ok' : 'warn');
-      return out;
-    }).catch(function (e) {
-      if (window.insDebugNote) window.insDebugNote(attribute + ' → Upsert: unreachable', 'warn');
-      return { ok: false };
-    });
-  }
-
-  /* Sync the bookings that have not been sent yet; mark them on success.
-     "add" appends on the platform, so sending the same booking twice would
-     duplicate it — the synced flag is what stops that. */
-  function syncBookings() {
-    var hist = bookingHistory();
-    var pending = hist.filter(function (b) { return !b.synced; });
-    if (!pending.length) return Promise.resolve({ ok: true, skipped: true });
-    return syncArray('bookings', bookingsPayload(pending), 'add').then(function (out) {
-      if (out && out.ok) {
-        hist.forEach(function (b) { if (!b.synced) b.synced = true; });
-        write('lmn.bookings', hist);
-      }
-      return out;
-    });
-  }
-
-  function bookingsPayload(hist) {
-    return (hist || bookingHistory()).map(function (b) {
-      return {
-        booking_id: String(b.booking_id), route: b.route, destination: b.destination, region: b.region,
-        cabin: b.cabin, travel_date: b.travel_date, nights: b.nights || 0, fare: b.fare || 0,
-        booked_at: b.booked_at, status: b.status || 'On time', ancillaries: b.ancillaries || ''
-      };
-    });
-  }
-
   function notePurchase(items) {
     if (!items || !items.length) return purchaseHistory();
     var hist = purchaseHistory();
@@ -1216,10 +1142,7 @@
       }
       meta.insertBefore(row, priceNode);
 
-    /* Travel storefronts (direct checkout): cabins and rooms are fare options,
-       not sizes, and a row of "Junior Suite / Deluxe King" chips reads like a
-       size picker. Say "5 rooms" and price from the cheapest instead. */
-    } else if (facets.chips.length > 1 && !((window.VERTICAL || {}).direct_checkout)) {
+    } else if (facets.chips.length > 1) {
       var crow = document.createElement('div');
       crow.className = 'card__chips';
       facets.chips.slice(0, MAX_CH).forEach(function (label) {
@@ -1322,7 +1245,6 @@
     localHref: localHref, money: money, productPayload: productPayload,
     cartLines: cartLines, cartTotal: cartTotal, cartCount: cartCount,
     addToCart: addToCart, removeFromCart: removeFromCart, setQty: setQty, clearCart: clearCart,
-    bookingHistory: bookingHistory, noteBooking: noteBooking, bookingsPayload: bookingsPayload, syncArray: syncArray, syncBookings: syncBookings,
     currentUser: currentUser, signIn: signIn, signOut: signOut, userPayload: userPayload,
     noteCategoryView: noteCategoryView, preferredCategory: preferredCategory,
     noteProductView: noteProductView, sessionStats: sessionStats,
