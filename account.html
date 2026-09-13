@@ -97,6 +97,7 @@
       <p class="eyebrow">Sign in as a demo persona</p>
       <p class="source" style="margin:0 0 1rem">Each is an existing profile on the platform, chosen for what it has already done. Signing in hands the platform that profile's uuid, so you get the same person on any browser.</p>
       <div class="personas__grid" id="personas-shared"></div>
+      <p class="source" id="personas-empty" hidden style="margin:.25rem 0 0">No shared personas yet. Sign in, give the profile a history, then save it below.</p>
       <div id="personas-mine-wrap" hidden>
         <p class="eyebrow" style="margin-top:1.25rem">Yours (this browser only)</p>
         <div class="personas__grid" id="personas-mine"></div>
@@ -304,7 +305,10 @@
     var mine = minePersonas();
     mine.forEach(function (p) { mineHost.appendChild(personaCard(p, true)); });
     mineWrap.hidden = !mine.length;
-    sec.hidden = !(shared.children.length || mine.length);
+    // Visible when there is anything to pick from, or when signed in (so the
+    // Save button is reachable before the first persona exists).
+    sec.hidden = !(shared.children.length || mine.length || Store.currentUser());
+    document.getElementById('personas-empty').hidden = !!(shared.children.length || mine.length);
     var u = Store.currentUser();
     document.getElementById('persona-save').hidden = !u;
     document.getElementById('persona-copy').hidden = !mine.length;
