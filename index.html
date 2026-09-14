@@ -269,8 +269,11 @@ body { opacity: 0; transition: opacity .18s ease-out }
     var msg = document.getElementById('news-msg');
     msg.hidden = false;
     msg.className = 'source is-live';
-    msg.textContent = 'Subscribed. email + email_optin written to the profile.';
+    msg.textContent = 'Subscribed. Updating your profile\u2026';
     ev.target.reset();
+    /* Email and opt-in were just written; re-identify so anything keyed on
+       them renders from the profile. */
+    setTimeout(function () { Store.refreshIdentity('index.html'); }, 4000);
   });
 
   watchReco('home');

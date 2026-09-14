@@ -113,7 +113,7 @@
      from the vertical's tier list (three tiers: base, mid, top) so hotels,
      airlines and retail each name their own. This is the number the tier
      strip and the "N from Gold" line move on, so a booking has to move it. */
-  if (ORDER && Store.currentUser() && ORDER.total > 0) {
+  if (FRESH && ORDER && Store.currentUser() && ORDER.total > 0) {
     var cu = Store.currentUser();
     var tiers = ((window.VERTICAL || {}).profile || {}).tiers || ['Bronze', 'Silver', 'Gold'];
     var pts = (Number(cu.loyalty_points) || 0) + Math.round(Number(ORDER.total) || 0);
@@ -122,6 +122,10 @@
     if (idx > tiers.indexOf(tier)) tier = cu.membership_tier;   // never demote on a purchase
     Store.signIn({ loyalty_points: pts, membership_tier: tier });
     if (window.insDebugNote) window.insDebugNote('loyalty: +' + Math.round(ORDER.total) + ' pts → ' + pts + ' · ' + tier, 'ok');
+    /* Points, tier, trip and purchase history were just written. Re-identify
+       so the next page renders from the profile, not the session's snapshot.
+       Runs once: the reload marks the order as sent, so FRESH is false. */
+    setTimeout(function () { Store.refreshIdentity('confirmation.html'); }, 4000);
   }
 
   if (FRESH && Store.notePurchase) {
