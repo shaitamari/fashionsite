@@ -52,7 +52,11 @@
     [KEY.visitor, KEY.user, KEY.cart, KEY.wish, 'lmn.views', 'lmn.order'].forEach(function (k) {
       localStorage.removeItem(k);
     });
-    location.reload();
+    /* End the tag's session too. Otherwise the tag keeps its profile and the
+       site pushes a fresh random uuid into it; a saved visitor picked next
+       then cannot attach its own uuid to that profile. */
+    clearInsiderIdentity();
+    location.href = location.pathname + '#reid';
   }
 
   /* --- catalog ------------------------------------------------------------ */
