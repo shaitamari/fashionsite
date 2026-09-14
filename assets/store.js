@@ -56,7 +56,8 @@
        site pushes a fresh random uuid into it; a saved visitor picked next
        then cannot attach its own uuid to that profile. */
     clearInsiderIdentity();
-    location.href = location.pathname + '#reid';
+    location.hash = 'reid';
+    location.reload();
   }
 
   /* --- catalog ------------------------------------------------------------ */
@@ -555,7 +556,16 @@
      before calling this. The #reid marker drives the second load. */
   function refreshIdentity(next) {
     clearInsiderIdentity();
-    location.href = (next || location.pathname) + '#reid';
+    var target = next || location.pathname;
+    var here = location.pathname.split('/').pop() || 'index.html';
+    var there = target.split('/').pop() || 'index.html';
+    // A hash-only change does not reload the page; same page needs reload().
+    if (here === there || (here === '' && there === 'index.html')) {
+      location.hash = 'reid';
+      location.reload();
+    } else {
+      location.href = target + '#reid';
+    }
   }
   /* Second load: hold the page under a small veil while the tag
      re-identifies, then load once more so campaigns render from the fresh
