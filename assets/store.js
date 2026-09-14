@@ -64,6 +64,19 @@
     });
     localStorage.removeItem(KEY.visitor);
   }
+  /* Runs once per page: if this store still remembers a user whose uuid is
+     not the estate-wide visitor id, that user was set on another store or
+     replaced since. Drop the local copy; the platform session is the
+     cookie's person, and the header should say so. */
+  (function reconcileLocalUser() {
+    try {
+      var cookieId = readVisitorCookie();
+      var u = read(KEY.user, null);
+      if (cookieId && u && u.uuid && u.uuid !== cookieId) {
+        localStorage.removeItem(KEY.user);
+      }
+    } catch (e) {}
+  })();
   function visitorId() {
     var id = readVisitorCookie() || read(KEY.visitor, null);
     if (!id) {
