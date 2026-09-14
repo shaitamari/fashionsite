@@ -105,6 +105,8 @@
       next_trip_when: when.getDate() + ' ' + when.toLocaleString('en-GB', { month: 'long' }),
       trip_status: 'On time'
     });
+    var cuT = Store.currentUser() || {};
+    Store.syncAttributes({ next_trip: cuT.next_trip, next_trip_date: cuT.next_trip_date, next_trip_when: cuT.next_trip_when, trip_status: 'On time' });
     if (window.insDebugNote) window.insDebugNote('trip on profile: ' + ORDER.items[0].name + ' on ' + when.toDateString(), 'ok');
   }
 
@@ -301,6 +303,7 @@
       Store.signIn({ trip_status: 'Delayed' });
       window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });
       window.InsiderQueue.push({ type: 'init' });
+      Store.syncAttributes({ trip_status: 'Delayed' });
       sim.innerHTML = 'Updating your trip\u2026 taking you to the homepage.';
       /* Give the write a moment to land, then re-identify so the homepage
          renders from the profile rather than the session's old snapshot. */

@@ -902,6 +902,23 @@
     });
   }
 
+  /* Write flat custom attributes straight to the profile through the same
+     function. Used for the writes a campaign reads in the same session
+     (trip status, next trip, loyalty), so they land regardless of what the
+     tag does with its queue when the session is reset. */
+  function syncAttributes(custom) {
+    return fetch('/.netlify/functions/sync', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ uuid: visitorId(), custom: custom || {} })
+    }).then(function (r) { return r.json(); }).then(function (out) {
+      if (window.insDebugNote) window.insDebugNote('attributes → Upsert: ' + (out.ok ? 'ok' : 'failed ' + (out.status || out.reason || out.error || '')), out.ok ? 'ok' : 'warn');
+      return out;
+    }).catch(function () {
+      if (window.insDebugNote) window.insDebugNote('attributes → Upsert: unreachable', 'warn');
+      return { ok: false };
+    });
+  }
+
   /* Sync the bookings that have not been sent yet; mark them on success.
      "add" appends on the platform, so sending the same booking twice would
      duplicate it — the synced flag is what stops that. */
@@ -1427,7 +1444,7 @@
     cartLines: cartLines, cartTotal: cartTotal, cartCount: cartCount,
     addToCart: addToCart, removeFromCart: removeFromCart, setQty: setQty, clearCart: clearCart,
     bookingHistory: bookingHistory, noteBooking: noteBooking, bookingsPayload: bookingsPayload, syncArray: syncArray, syncBookings: syncBookings,
-    currentUser: currentUser, signIn: signIn, signOut: signOut, refreshIdentity: refreshIdentity, userPayload: userPayload,
+    currentUser: currentUser, signIn: signIn, signOut: signOut, refreshIdentity: refreshIdentity, syncAttributes: syncAttributes, userPayload: userPayload,
     noteCategoryView: noteCategoryView, preferredCategory: preferredCategory,
     noteProductView: noteProductView, sessionStats: sessionStats,
     notePurchase: notePurchase, purchaseHistory: purchaseHistory, nextDue: nextDue,
