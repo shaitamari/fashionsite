@@ -553,11 +553,21 @@
     clearInsiderIdentity();
     location.href = (next || location.pathname) + '#reid';
   }
+  /* Second load: hold the page under a small veil while the tag
+     re-identifies, then load once more so campaigns render from the fresh
+     profile. Six seconds is long enough for the user push to be processed;
+     two and a half was not always. */
   (function () {
     if (location.hash !== '#reid') return;
+    document.addEventListener('DOMContentLoaded', function () {
+      var v = document.createElement('div');
+      v.style.cssText = 'position:fixed;inset:0;background:rgba(255,255,255,.85);z-index:99999;display:flex;align-items:center;justify-content:center;font:500 1rem/1.4 system-ui,sans-serif;color:#333';
+      v.textContent = 'Updating your profile\u2026';
+      document.body.appendChild(v);
+    });
     setTimeout(function () {
       location.replace(location.pathname + location.search);
-    }, 2500);
+    }, 6000);
   })();
   function stableId(email) { return 'LMN-' + hash(String(email || '').trim().toLowerCase()); }
 
