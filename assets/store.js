@@ -594,7 +594,14 @@
      browser (user push with the uuid), the second renders with the values
      fetched for that identity. Callers give the write a moment to land
      before calling this. The #reid marker drives the second load. */
+  /* A profile write that a campaign reads marks a refresh as owed. The
+     writing page normally pays it a few seconds later; if the visitor leaves
+     first, the next page loads, sees the debt, and pays it instead. Cleared
+     only when the two-load refresh has completed. */
+  var OWED = 'lmn.reid_owed';
+  function oweRefresh() { try { localStorage.setItem(OWED, '1'); } catch (e) {} }
   function refreshIdentity(next) {
+    oweRefresh();
     clearInsiderIdentity();
     var target = next || location.pathname;
     var here = location.pathname.split('/').pop() || 'index.html';
@@ -612,7 +619,14 @@
      profile. Six seconds is long enough for the user push to be processed;
      two and a half was not always. */
   (function () {
-    if (location.hash !== '#reid') return;
+    if (location.hash !== '#reid') {
+      // Debt from a page that was left early: pay it now.
+      try {
+        if (localStorage.getItem(OWED) === '1') { setTimeout(function () { refreshIdentity(location.pathname); }, 300); }
+      } catch (e) {}
+      return;
+    }
+    try { localStorage.removeItem(OWED); } catch (e) {}
     document.addEventListener('DOMContentLoaded', function () {
       var v = document.createElement('div');
       v.style.cssText = 'position:fixed;inset:0;background:rgba(255,255,255,.85);z-index:99999;display:flex;align-items:center;justify-content:center;font:500 1rem/1.4 system-ui,sans-serif;color:#333';
@@ -957,6 +971,7 @@
      (trip status, next trip, loyalty), so they land regardless of what the
      tag does with its queue when the session is reset. */
   function syncAttributes(custom) {
+    oweRefresh();
     return fetch('/.netlify/functions/sync', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ uuid: visitorId(), custom: custom || {} })
