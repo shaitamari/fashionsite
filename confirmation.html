@@ -122,6 +122,10 @@
     if (idx > tiers.indexOf(tier)) tier = cu.membership_tier;   // never demote on a purchase
     Store.signIn({ loyalty_points: pts, membership_tier: tier });
     if (window.insDebugNote) window.insDebugNote('loyalty: +' + Math.round(ORDER.total) + ' pts → ' + pts + ' · ' + tier, 'ok');
+    /* Points, tier, trip and history were just written. Re-identify so the
+       next page renders from the profile. Runs once: the reload marks the
+       order as sent, so FRESH is false afterwards. */
+    setTimeout(function () { Store.refreshIdentity('confirmation.html'); }, 4000);
     /* Points, tier, trip and purchase history were just written. Re-identify
        so the next page renders from the profile, not the session's snapshot.
        Runs once: the reload marks the order as sent, so FRESH is false. */
