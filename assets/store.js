@@ -573,8 +573,11 @@
 
   function signIn(profile) {
     var merged = Object.assign({}, currentUser() || {}, profile);
-    if (profile && profile.email && (!merged.uuid || merged.uuid.indexOf('LMN-') === 0)) merged.uuid = stableId(profile.email);
-    if (!merged.uuid) merged.uuid = stableId(merged.email);
+    /* The uuid is the browser's visitor id, for life. It is never replaced
+       by an email-derived one: the platform keeps one uuid per profile, and
+       switching at sign-in split every new booking onto a second record.
+       Only a saved visitor (signInAs) or New visitor changes the id. */
+    if (!merged.uuid) merged.uuid = visitorId();
     if (!merged.signup_date) merged.signup_date = new Date().toISOString().replace(/\.\d+Z$/, 'Z');
     write(KEY.user, merged);
     /* Switching to a known uuid does NOT wipe the tag's storage: the next
@@ -656,6 +659,11 @@
      false when the lookup is unavailable, and sign-in then uses the stable
      derived id. */
   function adoptKnown(email) {
+    /* Disabled: adopting a known profile's uuid for a typed email switched
+       the browser's identity mid-session, which is the split we are
+       removing. A typed email attaches to THIS profile; to become an
+       existing person, pick a saved visitor. */
+    return Promise.resolve(false);
     return fetch('/.netlify/functions/whois', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: String(email || '').trim() })
@@ -697,8 +705,7 @@
        platform could not attach a second uuid, and the attributes went to a
        record the session never rendered. Anonymous profiles are keyed on the
        tag's own id; the first uuid the platform sees is the one to keep. */
-    var base = { language: env('locale', 'en_GB'), gdpr_optin: true };
-    if (u && u.uuid) base.uuid = u.uuid;
+    var base = { uuid: visitorId(), language: env('locale', 'en_GB'), gdpr_optin: true };
     /* Which storefront this is, on every profile, signed in or not. Campaign
        rules target `vertical equals beauty` rather than matching hostnames,
        and templates say the shop's name with a token. Read from the vertical
