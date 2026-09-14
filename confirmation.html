@@ -293,7 +293,10 @@
       Store.signIn({ trip_status: 'Delayed' });
       window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });
       window.InsiderQueue.push({ type: 'init' });
-      sim.innerHTML = 'trip_status is now <b>Delayed</b> on the profile. <a href="index.html">Go to the homepage</a> — the trip-status campaign reads it there.';
+      sim.innerHTML = 'Updating your trip\u2026 taking you to the homepage.';
+      /* Give the write a moment to land, then re-identify so the homepage
+         renders from the profile rather than the session's old snapshot. */
+      setTimeout(function () { Store.refreshIdentity('index.html'); }, 2000);
     });
   })();
 

@@ -518,12 +518,47 @@
     try {
       Object.keys(localStorage).filter(function (k) { return k.indexOf('ins-') === 0; })
         .forEach(function (k) { localStorage.removeItem(k); });
+      Object.keys(sessionStorage).filter(function (k) { return k.indexOf('ins-') === 0; })
+        .forEach(function (k) { sessionStorage.removeItem(k); });
+      /* The tag sets its cookies on the parent domain (.insiderdemo.com), so
+         every storefront shares them: a session started on Ashford Lane is
+         the session Meridian Air renders with. Expire each ins-* cookie on
+         the hostname AND on every parent domain, or the wipe does nothing. */
+      var host = location.hostname, parts = host.split('.'), domains = [''];
+      for (var i = 0; i < parts.length - 1; i++) {
+        var d = parts.slice(i).join('.');
+        domains.push(d); domains.push('.' + d);
+      }
       document.cookie.split(';').forEach(function (c) {
         var n = c.split('=')[0].trim();
-        if (n.indexOf('ins-') === 0) document.cookie = n + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
+        if (n.indexOf('ins-') !== 0 && n.indexOf('spUID') !== 0) return;
+        domains.forEach(function (d) {
+          document.cookie = n + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/' + (d ? '; domain=' + d : '');
+        });
       });
     } catch (e) {}
   }
+
+  /* --- re-identify from the profile --------------------------------------
+     The tag fetches the profile's attribute values once, when its session
+     starts, and renders every campaign from that copy until the session
+     ends. An attribute written mid-session (trip_status after "Mark this
+     flight as delayed", loyalty after a booking) lands on the profile but
+     the page keeps rendering the old snapshot. refreshIdentity() ends the
+     tag's session and loads `next` twice: the first load re-identifies the
+     browser (user push with the uuid), the second renders with the values
+     fetched for that identity. Callers give the write a moment to land
+     before calling this. The #reid marker drives the second load. */
+  function refreshIdentity(next) {
+    clearInsiderIdentity();
+    location.href = (next || location.pathname) + '#reid';
+  }
+  (function () {
+    if (location.hash !== '#reid') return;
+    setTimeout(function () {
+      location.replace(location.pathname + location.search);
+    }, 2500);
+  })();
   function stableId(email) { return 'LMN-' + hash(String(email || '').trim().toLowerCase()); }
 
   function signIn(profile) {
@@ -1362,7 +1397,7 @@
     cartLines: cartLines, cartTotal: cartTotal, cartCount: cartCount,
     addToCart: addToCart, removeFromCart: removeFromCart, setQty: setQty, clearCart: clearCart,
     bookingHistory: bookingHistory, noteBooking: noteBooking, bookingsPayload: bookingsPayload, syncArray: syncArray, syncBookings: syncBookings,
-    currentUser: currentUser, signIn: signIn, signOut: signOut, userPayload: userPayload,
+    currentUser: currentUser, signIn: signIn, signOut: signOut, refreshIdentity: refreshIdentity, userPayload: userPayload,
     noteCategoryView: noteCategoryView, preferredCategory: preferredCategory,
     noteProductView: noteProductView, sessionStats: sessionStats,
     notePurchase: notePurchase, purchaseHistory: purchaseHistory, nextDue: nextDue,
