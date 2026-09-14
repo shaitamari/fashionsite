@@ -308,7 +308,7 @@
       window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });
       window.InsiderQueue.push({ type: 'init' });
       Store.syncAttributes({ trip_status: 'Delayed' });
-      sim.innerHTML = 'Updating your trip\u2026 taking you to the homepage.';
+      sim.innerHTML = 'Simulating the operations update\u2026 fast-forwarding to your next visit.';
       /* Give the write a moment to land, then re-identify so the homepage
          renders from the profile rather than the session's old snapshot. */
       setTimeout(function () { Store.refreshIdentity('index.html'); }, 4000);

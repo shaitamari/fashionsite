@@ -630,7 +630,12 @@
     document.addEventListener('DOMContentLoaded', function () {
       var v = document.createElement('div');
       v.style.cssText = 'position:fixed;inset:0;background:rgba(255,255,255,.85);z-index:99999;display:flex;align-items:center;justify-content:center;font:500 1rem/1.4 system-ui,sans-serif;color:#333';
-      v.textContent = 'Updating your profile\u2026';
+      var V = window.VERTICAL || {};
+      var travel = V.vertical === 'Travel';
+      var op = V.key === 'hotels' ? "the hotel's" : "the airline's";
+      v.textContent = travel
+        ? 'Simulating ' + op + ' operations update\u2026 fast-forwarding to your next visit'
+        : 'Fast-forwarding to your next visit\u2026';
       document.body.appendChild(v);
     });
     setTimeout(function () {
