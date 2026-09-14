@@ -38,13 +38,39 @@
      The account id is still sent, as a custom attribute, so it is visible on
      the profile without participating in matching.
      ---------------------------------------------------------------------- */
+  /* The visitor id lives in a cookie on the parent domain (insiderdemo.com),
+     the same scope as the tag's own cookies, so every storefront in this
+     browser pushes the same uuid. localStorage is per hostname; keeping the
+     id there gave each store its own uuid while the tag session was shared,
+     and the platform refused the second uuid. */
+  var VISITOR_COOKIE = 'lmn_visitor';
+  function cookieDomain() {
+    var parts = location.hostname.split('.');
+    return parts.length > 2 ? '.' + parts.slice(-2).join('.') : location.hostname;
+  }
+  function readVisitorCookie() {
+    var m = document.cookie.match(new RegExp('(?:^|; )' + VISITOR_COOKIE + '=([^;]*)'));
+    return m ? decodeURIComponent(m[1]) : null;
+  }
+  function writeVisitorCookie(id) {
+    var base = VISITOR_COOKIE + '=' + encodeURIComponent(id) + '; path=/; max-age=31536000; SameSite=Lax';
+    document.cookie = base + '; domain=' + cookieDomain();
+    document.cookie = base;  // localhost and single-label hosts
+    write(KEY.visitor, id);  // mirror for the pages that read it directly
+  }
+  function clearVisitorCookie() {
+    ['; domain=' + cookieDomain(), ''].forEach(function (d) {
+      document.cookie = VISITOR_COOKIE + '=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT' + d;
+    });
+    localStorage.removeItem(KEY.visitor);
+  }
   function visitorId() {
-    var id = read(KEY.visitor, null);
+    var id = readVisitorCookie() || read(KEY.visitor, null);
     if (!id) {
       id = (crypto.randomUUID ? crypto.randomUUID()
                               : 'anon-' + Math.random().toString(36).slice(2) + Date.now());
-      write(KEY.visitor, id);
     }
+    if (readVisitorCookie() !== id) writeVisitorCookie(id);
     return id;
   }
 
@@ -52,6 +78,7 @@
     [KEY.visitor, KEY.user, KEY.cart, KEY.wish, 'lmn.views', 'lmn.order'].forEach(function (k) {
       localStorage.removeItem(k);
     });
+    clearVisitorCookie();
     /* End the tag's session too. Otherwise the tag keeps its profile and the
        site pushes a fresh random uuid into it; a saved visitor picked next
        then cannot attach its own uuid to that profile. */
@@ -600,14 +627,14 @@
        gave the tag a fresh anonymous session whose campaign values were
        fetched before it had re-identified — the banner vanished on the
        first page. Only Log out and New visitor wipe. */
-    if (read(KEY.visitor, null) !== merged.uuid) write(KEY.visitor, merged.uuid);
+    if (visitorId() !== merged.uuid) writeVisitorCookie(merged.uuid);
     paintChrome();
     return merged;
   }
 
   function signOut() {
     localStorage.removeItem(KEY.user);
-    localStorage.removeItem(KEY.visitor);   // next visitor gets a fresh id
+    clearVisitorCookie();   // next visitor gets a fresh id
     clearInsiderIdentity();
     paintChrome();
   }
@@ -691,7 +718,7 @@
 
   function signInAs(persona) {
     if (!persona || !persona.uuid) return false;
-    write(KEY.visitor, persona.uuid);
+    writeVisitorCookie(persona.uuid);
     localStorage.removeItem(KEY.user);
     /* End the tag's current session: it may already be an anonymous profile
        with its own uuid, and the platform will not attach a second uuid to
