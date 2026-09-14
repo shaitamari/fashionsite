@@ -679,6 +679,10 @@
     if (!persona || !persona.uuid) return false;
     write(KEY.visitor, persona.uuid);
     localStorage.removeItem(KEY.user);
+    /* End the tag's current session: it may already be an anonymous profile
+       with its own uuid, and the platform will not attach a second uuid to
+       it. A fresh session identifies as the persona from the first push. */
+    clearInsiderIdentity();
     // The persona's uuid wins over the derived one: older profiles were
     // created under browser ids, and the persona records the one the
     // platform actually holds.

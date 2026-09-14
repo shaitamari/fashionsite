@@ -283,7 +283,7 @@
     var b = document.createElement('button'); b.type = 'button'; b.className = 'btn'; b.textContent = 'Sign in as';
     b.disabled = !ok;
     b.addEventListener('click', function () {
-      if (Store.signInAs(p)) { location.href = 'index.html'; }
+      if (Store.signInAs(p)) { Store.refreshIdentity('index.html'); }
     });
     row.appendChild(b);
     if (mine) {
