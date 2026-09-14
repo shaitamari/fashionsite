@@ -691,9 +691,14 @@
   function userPayload() {
     var u = currentUser();
     // language must match the catalog locale or Eureka returns nothing.
-    var base = { uuid: visitorId(), language: env('locale', 'en_GB'),
-
-                 gdpr_optin: true };
+    /* No uuid until someone signs in. An anonymous browser used to push its
+       random visitor id as uuid, so the profile got a uuid before the email
+       arrived; at sign-in the site switched to the email-derived id, the
+       platform could not attach a second uuid, and the attributes went to a
+       record the session never rendered. Anonymous profiles are keyed on the
+       tag's own id; the first uuid the platform sees is the one to keep. */
+    var base = { language: env('locale', 'en_GB'), gdpr_optin: true };
+    if (u && u.uuid) base.uuid = u.uuid;
     /* Which storefront this is, on every profile, signed in or not. Campaign
        rules target `vertical equals beauty` rather than matching hostnames,
        and templates say the shop's name with a token. Read from the vertical
