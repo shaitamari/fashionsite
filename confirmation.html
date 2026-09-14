@@ -123,6 +123,7 @@
     var idx = tiers.indexOf(cu.membership_tier);
     if (idx > tiers.indexOf(tier)) tier = cu.membership_tier;   // never demote on a purchase
     Store.signIn({ loyalty_points: pts, membership_tier: tier });
+    Store.syncAttributes({ loyalty_points: pts, membership_tier: tier, is_vip: tier === 'Gold' });
     if (window.insDebugNote) window.insDebugNote('loyalty: +' + Math.round(ORDER.total) + ' pts → ' + pts + ' · ' + tier, 'ok');
     /* Points, tier, trip and history were just written. Re-identify so the
        next page renders from the profile. Runs once: the reload marks the
