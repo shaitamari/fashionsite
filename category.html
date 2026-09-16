@@ -49,6 +49,11 @@
   var params = new URLSearchParams(location.search);
   var COLLECTION = params.get('c') || (window.VERTICAL && window.VERTICAL.content && window.VERTICAL.content.phones_default) || (Store.collections() && Store.collections()[0]) || 'Makeup';
   var SUBCAT = params.get('sub') || null;
+  // Plans are content-home cards, not a catalogue grid. If someone lands
+  // on the Plans category, send them to the content homepage's plans.
+  if (COLLECTION === 'Plans' && window.VERTICAL && window.VERTICAL.template === 'content') {
+    location.replace('content-index.html#plans');
+  }
 
   Store.noteCategoryView(COLLECTION);
 
