@@ -198,6 +198,14 @@ body { opacity: 0; transition: opacity .18s ease-out }
 <script>
   var V = window.VERTICAL || {};
 
+  /* Top nav: from the vertical config. Telco has Phones (the existing
+     product PLP); banking will not. */
+  (function renderNav(){
+    var host=document.querySelector("[data-content-nav]"); if(!host) return;
+    var nav=(V.content && V.content.nav)||[];
+    nav.forEach(function(n){ var a=document.createElement("a"); a.href=n.href; a.textContent=n.label; host.appendChild(a); });
+  })();
+
   /* ---- Arrival-aware hero -------------------------------------------------
      ?utm_campaign=<line> or ?line=<line> selects the product line; the hero
      copy comes from HERO_BY_LINE, default is the first entry. */
@@ -241,7 +249,9 @@ body { opacity: 0; transition: opacity .18s ease-out }
     if (V.content && V.content.popular) { /* mark popular by name */ }
     wrap.innerHTML = '';
     cards.forEach(function (p) {
-      var feats = featuresFrom(p.description);
+      var cardmeta = ((V.content && V.content.plan_cards) || {})[p.name] || {};
+      var feats = cardmeta.features || featuresFrom(p.description);
+      var blurb = cardmeta.blurb || blurbFrom(p.description);
       var el = document.createElement('div'); el.className = 'linecard';
       var pop = (V.content && V.content.popular && p.name === V.content.popular) ? '<span class="linecard__flag">Most popular</span>' : '';
       el.innerHTML =
@@ -253,9 +263,9 @@ body { opacity: 0; transition: opacity .18s ease-out }
         '<a class="btn btn--wide linecard__cta" href="#">' + ((V.content && V.content.line_cta) || 'Choose') + '</a>';
       el.querySelector('.linecard__name').textContent = p.name;
       el.querySelector('.linecard__amt').textContent = money(p.unit_price, p.currency);
-      el.querySelector('.linecard__blurb').textContent = blurbFrom(p.description);
+      el.querySelector('.linecard__blurb').textContent = blurb;
       var ul = el.querySelector('.linecard__feats');
-      feats.forEach(function (f) { var li=document.createElement('li'); li.textContent=f; ul.appendChild(li); });
+      (feats||[]).forEach(function (f) { if(!f) return; var li=document.createElement('li'); li.textContent=f; ul.appendChild(li); });
       // CTA -> the funnel, carrying the chosen line
       el.querySelector('.linecard__cta').href = 'flow.html?line=' + encodeURIComponent(p.name);
       wrap.appendChild(el);
