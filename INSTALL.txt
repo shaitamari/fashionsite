@@ -1,6 +1,6 @@
-Phones = a real all-devices page (was landing on one model / empty).
-- Phones nav -> category.html?c=Phones
-- category.html renders the whole device catalogue (minus Plans) with search + facets, clean "<n> devices" label.
-1) unzip -o ~/Downloads/telco-phones.zip -d /tmp/x && cp -r /tmp/x/telco-content/* .
-2) posh "Telco Phones: real all-devices page"
-(no build needed — html/json only; but a build won't hurt)
+SUBSCRIBE FUNNEL — multi-step: plan -> number -> details -> confirm.
+Overwrites 4 files. From ~/Desktop/posh:
+  unzip -o ~/Downloads/telco-subscribe.zip -d /tmp/x && cp -r /tmp/x/telco-subscribe/* . && posh "Telco subscribe funnel"
+No build needed (static pages + css).
+PANEL: declare custom attributes plan, plan_price, subscription_status in
+Attributes & Events, or Upsert will drop them (they still show on the page from signIn).

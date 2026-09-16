@@ -271,6 +271,19 @@
   if (!ORDER) {
     line.textContent = 'No order found in this browser. Add something to the cart and check out to see a purchase event.';
     summary.innerHTML = '<div><span>Status</span><span>no order</span></div>';
+  } else if (ORDER.subscription) {
+    // Telco subscription confirmation.
+    var sym = (window.VERTICAL && window.VERTICAL.currency === 'EUR') ? '\u20ac' : '';
+    line.textContent = 'You\u2019re subscribed to ' + ORDER.plan + '. ' +
+      (ORDER.ported ? 'We\u2019re porting your number ' + ORDER.number + ' within one working day.'
+                    : 'Your new number is ' + ORDER.number + '.') +
+      ' Your SIM is on its way, and your eSIM QR is in your email.';
+    summary.innerHTML =
+      '<div><span>Plan</span><span>' + ORDER.plan + '</span></div>' +
+      '<div><span>Monthly price</span><span>' + sym + ORDER.plan_price + '/mo</span></div>' +
+      '<div><span>Number</span><span>' + ORDER.number + (ORDER.ported ? ' (porting)' : '') + '</span></div>' +
+      '<div class="grand"><span>Contract</span><span>None — leave any time</span></div>';
+    if (FRESH) { ORDER.sent = true; try { localStorage.setItem('lmn.order', JSON.stringify(ORDER)); } catch (e) {} }
   } else {
     var lbl = ((window.VERTICAL || {}).labels || {});
     var noun = lbl.order || 'order';

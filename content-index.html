@@ -267,7 +267,7 @@ body { opacity: 0; transition: opacity .18s ease-out }
       var ul = el.querySelector('.linecard__feats');
       (feats||[]).forEach(function (f) { if(!f) return; var li=document.createElement('li'); li.textContent=f; ul.appendChild(li); });
       // CTA -> the funnel, carrying the chosen line
-      el.querySelector('.linecard__cta').href = 'flow.html?line=' + encodeURIComponent(p.name);
+      el.querySelector('.linecard__cta').href = 'subscribe.html?line=' + encodeURIComponent(p.name);
       wrap.appendChild(el);
     });
   })();

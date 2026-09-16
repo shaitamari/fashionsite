@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Subscribe — Checkout — Lumen</title>
+
+<!-- Browsers largely ignore these; the real protection is the Cache-Control
+     headers in _headers / netlify.toml / vercel.json. Kept as a second line. -->
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<link rel="preconnect" href="https://cdn.shopify.com">
+<link rel="stylesheet" href="assets/styles.css">
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     INSIDER WEB SDK
+     Order is load-bearing:
+       1. InsiderQueue array
+       2. site scripts (telemetry wrapper must precede the first push)
+       3. Insider Tag (ins.js)
+       4. user data -> page data -> init
+     ═══════════════════════════════════════════════════════════════════════ -->
+
+<!-- 1. The queue. Must exist before the tag loads. -->
+<script>window.InsiderQueue = window.InsiderQueue || [];</script>
+
+<!-- 2. Site scripts. insider-debug.js wraps InsiderQueue.push to mirror every
+        payload into the on-page console, so it loads before anything is sent. -->
+<script src="assets/config.js"></script>
+<script src="assets/insider-debug.js"></script>
+<script src="assets/vertical.js"></script>
+<script src="assets/store.js"></script>
+<script src="assets/explain.js"></script>
+<script src="assets/affinity.js"></script>
+<script src="assets/agent.js"></script>
+
+<!-- 3. Insider Tag — written by assets/vertical.js, because which
+        account it points at depends on the hostname:
+          beauty.insiderdemo.com          -> salesdemo
+          beauty-sandbox.insiderdemo.com  -> partnersandbox
+        Account and partner id are listed in vertical.js and shown
+        live in the SDK console. -->
+
+<!-- 4. Data pushes for this page. -->
+<script>
+  window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });
+  window.InsiderQueue.push({ type: 'currency', value: Store.currency() });
+
+  // --- page type: other -------------------------------------------------
+  // Checkout is a labelled "other" page. The name shows on the profile as an
+  // Other Page View, which is what abandonment journeys key off.
+  window.InsiderQueue.push({
+    type: 'other',
+    value: { name: 'checkout',
+             custom: { basket_value: Store.cartTotal(), basket_lines: Store.cartCount() } }
+  });
+
+  window.InsiderQueue.push({ type: 'init' });
+</script>
+</head>
+
+<body>
+
+<p class="announce" data-announce>Free shipping over $50</p>
+
+<header class="masthead">
+  <div class="masthead__in">
+    <a class="brand" href="index.html" data-brand>Lumen</a>
+    <form class="searchbox" data-search role="search" autocomplete="off">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" id="search-input" name="q" placeholder="Search products" data-search-placeholder aria-label="Search products">
+    </form>
+    <nav class="utils">
+      <span class="loy" data-loyalty-strip hidden></span>
+      <a href="flow.html" data-flow-link>Services</a>
+      <a href="account.html" data-account-label>Log in</a>
+      <a class="cartlink" href="cart.html"><span data-label="cart">Cart</span><span data-cart-count hidden>0</span></a>
+    </nav>
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="mainnav__in" data-collection-nav></div>
+</nav>
+
+<main>
+  <section class="wrap" style="padding-top:2.5rem;padding-bottom:4rem;max-width:60rem">
+
+    <!-- Step indicator -->
+    <ol class="substeps" id="substeps">
+      <li data-step="1">Your plan</li>
+      <li data-step="2">Your number</li>
+      <li data-step="3">Your details</li>
+    </ol>
+
+    <!-- STEP 1 — plan -->
+    <section class="substep" data-panel="1">
+      <h1 class="h1" style="font-size:clamp(1.5rem,3vw,2rem)">Confirm your plan</h1>
+      <div class="subplan" id="subplan"></div>
+      <div class="substep__actions">
+        <a class="btn btn--ghost" href="content-index.html#plans">Change plan</a>
+        <button class="btn" type="button" data-next="2">Continue</button>
+      </div>
+    </section>
+
+    <!-- STEP 2 — number -->
+    <section class="substep" data-panel="2" hidden>
+      <h1 class="h1" style="font-size:clamp(1.5rem,3vw,2rem)">Your number</h1>
+      <div class="numtabs">
+        <button type="button" class="numtab is-active" data-mode="new">Get a new number</button>
+        <button type="button" class="numtab" data-mode="keep">Keep my number</button>
+      </div>
+
+      <div class="numpane" data-mode-pane="new">
+        <p class="lede" style="margin:.5rem 0 1rem">Pick your new number.</p>
+        <div class="numgrid" id="numgrid"></div>
+      </div>
+
+      <div class="numpane" data-mode-pane="keep" hidden>
+        <p class="lede" style="margin:.5rem 0 1rem">Enter the number you want to bring to Vantis. We'll port it within one working day.</p>
+        <div class="field" style="max-width:22rem">
+          <label for="keep-number">Your current number</label>
+          <input type="tel" id="keep-number" placeholder="07123 456789">
+        </div>
+      </div>
+
+      <div class="substep__actions">
+        <button class="btn btn--ghost" type="button" data-back="1">Back</button>
+        <button class="btn" type="button" data-next="3" id="num-continue">Continue</button>
+      </div>
+    </section>
+
+    <!-- STEP 3 — details -->
+    <section class="substep" data-panel="3" hidden>
+      <h1 class="h1" style="font-size:clamp(1.5rem,3vw,2rem)">Your details</h1>
+      <form id="sub-form" class="panel" style="max-width:34rem">
+        <div class="field"><label for="s-name">First name</label><input id="s-name" required></div>
+        <div class="field"><label for="s-surname">Last name</label><input id="s-surname" required></div>
+        <div class="field"><label for="s-email">Email</label><input type="email" id="s-email" required placeholder="you@example.com"></div>
+        <label class="check"><input type="checkbox" id="s-optin" checked> Email me about my plan and offers</label>
+        <div class="substep__actions" style="margin-top:1.5rem">
+          <button class="btn btn--ghost" type="button" data-back="2">Back</button>
+          <button class="btn" type="submit" id="sub-submit">Confirm subscription</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- order summary rail -->
+    <aside class="subsummary" id="subsummary"></aside>
+
+  </section>
+</main>
+<footer class="foot">
+  <div class="wrap foot__in">
+    <span><span data-brand>Vantis</span> — Insider One demo storefront</span>
+    <span></span>
+  </div>
+</footer>
+
+<script>
+  var V = window.VERTICAL || {};
+  var params = new URLSearchParams(location.search);
+  var lineName = params.get('line') || '';
+
+  function money(n, cur) {
+    var sym = cur === 'EUR' ? '\u20ac' : cur === 'GBP' ? '\u00a3' : cur === 'USD' ? '$' : '';
+    return sym + (Math.round(n*100)/100).toString().replace(/\.00$/,'');
+  }
+
+  // --- resolve the chosen plan from the catalog -------------------------
+  function findPlan(name) {
+    var lineCol = (V.content && V.content.lines_collection) || 'Plans';
+    var items = Store.byCollection(lineCol) || [];
+    var byName = items.filter(function (p) { return p.name === name; });
+    return byName[0] || items[0] || null;
+  }
+  var plan = findPlan(lineName);
+  var cardmeta = plan ? (((V.content && V.content.plan_cards) || {})[plan.name] || {}) : {};
+
+  // --- step 1: plan panel ----------------------------------------------
+  (function renderPlan() {
+    var host = document.getElementById('subplan'); if (!host || !plan) return;
+    var feats = cardmeta.features || [];
+    host.innerHTML =
+      '<div class="subplan__card">' +
+      '<div class="subplan__head"><h2 class="subplan__name"></h2>' +
+      '<p class="subplan__price"><span class="subplan__amt"></span><span class="subplan__per"> /mo, no contract</span></p></div>' +
+      '<p class="subplan__blurb"></p><ul class="subplan__feats"></ul></div>';
+    host.querySelector('.subplan__name').textContent = plan.name;
+    host.querySelector('.subplan__amt').textContent = money(plan.unit_price, plan.currency);
+    host.querySelector('.subplan__blurb').textContent = cardmeta.blurb || '';
+    var ul = host.querySelector('.subplan__feats');
+    feats.forEach(function (f){ var li=document.createElement('li'); li.textContent=f; ul.appendChild(li); });
+  })();
+
+  // --- step 2: number picker -------------------------------------------
+  var NUMBERS = ['07700 900321','07700 900457','07700 900682','07700 900915','07700 900744','07700 900208'];
+  var chosenNumber = null, keepMode = false;
+  (function renderNumbers() {
+    var grid = document.getElementById('numgrid'); if (!grid) return;
+    NUMBERS.forEach(function (n) {
+      var b = document.createElement('button'); b.type='button'; b.className='numchip'; b.textContent=n;
+      b.addEventListener('click', function () {
+        grid.querySelectorAll('.numchip').forEach(function(x){x.classList.remove('is-active');});
+        b.classList.add('is-active'); chosenNumber = n; updateSummary();
+      });
+      grid.appendChild(b);
+    });
+  })();
+  // number tabs
+  document.querySelectorAll('.numtab').forEach(function (t) {
+    t.addEventListener('click', function () {
+      document.querySelectorAll('.numtab').forEach(function(x){x.classList.remove('is-active');});
+      t.classList.add('is-active');
+      keepMode = t.getAttribute('data-mode') === 'keep';
+      document.querySelectorAll('[data-mode-pane]').forEach(function(p){ p.hidden = p.getAttribute('data-mode-pane') !== t.getAttribute('data-mode'); });
+      updateSummary();
+    });
+  });
+
+  // --- step nav ---------------------------------------------------------
+  function show(step) {
+    document.querySelectorAll('.substep').forEach(function (s) { s.hidden = s.getAttribute('data-panel') !== String(step); });
+    document.querySelectorAll('#substeps li').forEach(function (li) {
+      var n = +li.getAttribute('data-step');
+      li.classList.toggle('is-active', n === step);
+      li.classList.toggle('is-done', n < step);
+    });
+    window.scrollTo(0,0);
+  }
+  document.querySelectorAll('[data-next]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var to = +b.getAttribute('data-next');
+      if (to === 3) {
+        // require a number choice
+        if (!keepMode && !chosenNumber) { alert('Pick a number to continue.'); return; }
+        if (keepMode && !document.getElementById('keep-number').value.trim()) { alert('Enter the number you want to keep.'); return; }
+      }
+      show(to);
+    });
+  });
+  document.querySelectorAll('[data-back]').forEach(function (b) {
+    b.addEventListener('click', function () { show(+b.getAttribute('data-back')); });
+  });
+
+  // --- summary rail -----------------------------------------------------
+  function numberLabel() {
+    if (keepMode) { var k=document.getElementById('keep-number').value.trim(); return k ? k + ' (porting)' : 'Keeping your number'; }
+    return chosenNumber || 'Not chosen yet';
+  }
+  function updateSummary() {
+    var host = document.getElementById('subsummary'); if (!host || !plan) return;
+    host.innerHTML =
+      '<h3>Your subscription</h3>' +
+      '<div class="subsummary__row"><span>Plan</span><span>' + plan.name + '</span></div>' +
+      '<div class="subsummary__row"><span>Price</span><span>' + money(plan.unit_price, plan.currency) + '/mo</span></div>' +
+      '<div class="subsummary__row"><span>Number</span><span>' + numberLabel() + '</span></div>' +
+      '<div class="subsummary__row"><span>Contract</span><span>None — leave any time</span></div>';
+  }
+  updateSummary();
+
+  // --- confirm ----------------------------------------------------------
+  document.getElementById('sub-form').addEventListener('submit', async function (ev) {
+    ev.preventDefault();
+    var num = keepMode ? document.getElementById('keep-number').value.trim() : chosenNumber;
+    await Store.adoptKnown(document.getElementById('s-email').value);
+    Store.signIn({
+      name: document.getElementById('s-name').value.trim(),
+      surname: document.getElementById('s-surname').value.trim(),
+      email: document.getElementById('s-email').value.trim(),
+      email_optin: document.getElementById('s-optin').checked,
+      gdpr_optin: true,
+      plan: plan ? plan.name : undefined,
+      plan_price: plan ? plan.unit_price : undefined,
+      phone_number: num || undefined,
+      subscription_status: 'Active'
+    });
+    window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });
+    window.InsiderQueue.push({ type: 'init' });
+
+    localStorage.setItem('lmn.order', JSON.stringify({
+      order_id: 'VAN' + Date.now().toString().slice(-8),
+      subscription: true,
+      plan: plan ? plan.name : '',
+      plan_price: plan ? plan.unit_price : 0,
+      number: num || '',
+      ported: keepMode
+    }));
+    location.href = 'confirmation.html';
+  });
+</script>
+</body>
+</html>
