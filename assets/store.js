@@ -45,17 +45,27 @@
      and the platform refused the second uuid. */
   var VISITOR_COOKIE = 'lmn_visitor';
   function cookieDomain() {
-    var parts = location.hostname.split('.');
-    return parts.length > 2 ? '.' + parts.slice(-2).join('.') : location.hostname;
+    // Host-only scope: each storefront owns its own lmn_visitor cookie, so a
+    // visitor on telco-sandbox is NOT the same anonymous visitor on
+    // fashion-sandbox. Cross-property unification happens through email
+    // identity resolution at the platform, not a shared cookie. Returning ''
+    // means "no domain attribute" = the exact host.
+    return '';
   }
   function readVisitorCookie() {
     var m = document.cookie.match(new RegExp('(?:^|; )' + VISITOR_COOKIE + '=([^;]*)'));
     return m ? decodeURIComponent(m[1]) : null;
   }
   function writeVisitorCookie(id) {
+    // Clear any existing copies FIRST (on every scope) so we never end up with
+    // two lmn_visitor cookies holding different values — the stale one could be
+    // read back and resurrect an old identity. Then write exactly one, scoped
+    // to the parent domain so it is shared across storefronts. Fall back to a
+    // no-domain cookie only on single-label hosts (localhost) where a leading-
+    // dot parent domain is invalid.
+    clearVisitorCookie();
     var base = VISITOR_COOKIE + '=' + encodeURIComponent(id) + '; path=/; max-age=31536000; SameSite=Lax';
-    document.cookie = base + '; domain=' + cookieDomain();
-    document.cookie = base;  // localhost and single-label hosts
+    document.cookie = base;  // no domain attribute = host-only
     write(KEY.visitor, id);  // mirror for the pages that read it directly
   }
   function clearVisitorCookie() {
