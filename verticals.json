@@ -1440,6 +1440,9 @@
     },
     {
      "name": "subscription_status"
+    },
+    {
+     "name": "assigned_number"
     }
    ]
   },

@@ -265,7 +265,11 @@
   document.getElementById('sub-form').addEventListener('submit', async function (ev) {
     ev.preventDefault();
     var num = keepMode ? document.getElementById('keep-number').value.trim() : chosenNumber;
-    await Store.adoptKnown(document.getElementById('s-email').value);
+    // Do NOT adopt-by-email and do NOT write the chosen mobile number as a
+    // phone_number identifier: the picked number is the PRODUCT they subscribed
+    // to (shared across demo runs), not their contact number. Writing it as an
+    // identifier merged every subscriber onto one profile. Store it as a plain
+    // attribute, and keep the browser's own uuid as the identity.
     Store.signIn({
       name: document.getElementById('s-name').value.trim(),
       surname: document.getElementById('s-surname').value.trim(),
@@ -274,7 +278,7 @@
       gdpr_optin: true,
       plan: plan ? plan.name : undefined,
       plan_price: plan ? plan.unit_price : undefined,
-      phone_number: num || undefined,
+      assigned_number: num || undefined,
       subscription_status: 'Active'
     });
     window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });
