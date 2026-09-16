@@ -59,8 +59,19 @@
     write(KEY.visitor, id);  // mirror for the pages that read it directly
   }
   function clearVisitorCookie() {
-    ['; domain=' + cookieDomain(), ''].forEach(function (d) {
-      document.cookie = VISITOR_COOKIE + '=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT' + d;
+    // Expire on EVERY domain scope the cookie could have been written on:
+    // the bare host, '.'+host, the parent domain, '.'+parent, and no-domain.
+    // writeVisitorCookie set it on cookieDomain() AND with no domain, which on
+    // a multi-label host produces two cookies; clearing only one left the
+    // other alive, so New visitor kept the old uuid. Match how ins-* is wiped.
+    var host = location.hostname, parts = host.split('.'), domains = [''];
+    for (var i = 0; i < parts.length - 1; i++) {
+      var d = parts.slice(i).join('.');
+      domains.push(d); domains.push('.' + d);
+    }
+    domains.push(host); domains.push('.' + host);
+    domains.forEach(function (d) {
+      document.cookie = VISITOR_COOKIE + '=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT' + (d ? '; domain=' + d : '');
     });
     localStorage.removeItem(KEY.visitor);
   }
