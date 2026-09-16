@@ -304,14 +304,14 @@
     sim.hidden = false;
     document.getElementById('trip-sim-delay').addEventListener('click', function (e) {
       e.preventDefault();
+      // Set the status and go. The homepage banner is site-rendered from the
+      // profile, so there is no round-trip to wait for. syncAttributes still
+      // writes it server-side for the platform; the campaign updates on its
+      // own next render. The user never waits.
       Store.signIn({ trip_status: 'Delayed' });
       window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });
-      window.InsiderQueue.push({ type: 'init' });
       Store.syncAttributes({ trip_status: 'Delayed' });
-      sim.innerHTML = 'Simulating the operations update\u2026 fast-forwarding to your next visit.';
-      /* Give the write a moment to land, then re-identify so the homepage
-         renders from the profile rather than the session's old snapshot. */
-      setTimeout(function () { Store.refreshIdentity('index.html'); }, 4000);
+      window.location.href = 'index.html';
     });
   })();
 
