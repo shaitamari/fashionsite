@@ -682,32 +682,56 @@
     }
     return '';
   }
+  // Recognise a trip-status line so we only ever touch the disruption banner,
+  // never the loyalty/tier campaign that shares the ins-tier-message class.
+  function looksLikeTripLine(txt) {
+    if (!txt) return false;
+    return /change to your .* booking|running late|not ready|cancelled|holding it for you/i.test(txt);
+  }
   function fillBannerFallback(slot) {
     try {
-      if (!slot || !window.Store || !Store.currentUser) return;
+      if (!window.Store || !Store.currentUser) return;
       var v = window.VERTICAL || {};
       var paint = function () {
-        // Read the profile FRESH each paint — never a value frozen at first
-        // render — so the banner always shows the current trip and status,
-        // even if the page loaded a beat before the write settled. The site
-        // is the last word: fill our slot whenever it is empty and the
-        // profile says Delayed/Cancelled; a campaign's real text is left.
         var u = Store.currentUser() || {};
         var msg = tripBannerText(u.trip_status, u.next_trip, v.key);
-        if (!msg) return;
-        if (!slot.textContent.trim() || slot.getAttribute('data-fallback') === '1') {
-          if (slot.textContent !== msg) slot.textContent = msg;
-          slot.setAttribute('data-fallback', '1');
+        // The campaign renders the disruption line from its own lagging
+        // snapshot, so it can show the PREVIOUS trip or nothing. Correct any
+        // campaign banner element in place: if the profile has a message,
+        // set it there when it differs; if the profile has no disruption,
+        // clear a stale campaign line. .ins-element-content is the campaign's
+        // text node; we only touch ones that look like a trip line (or are
+        // empty children of a tier-message), never the loyalty campaign.
+        var camp = document.querySelectorAll('.ins-tier-message .ins-element-content, .ins-element-content');
+        for (var i = 0; i < camp.length; i++) {
+          var el = camp[i];
+          var cur = (el.textContent || '').replace(/[\u00a0\u200b]/g, '').trim();
+          var inTier = el.closest && el.closest('.ins-tier-message');
+          if (msg) {
+            if (looksLikeTripLine(cur) && cur !== msg) el.textContent = msg;
+            else if (!cur && inTier) el.textContent = msg;
+          } else {
+            if (looksLikeTripLine(cur)) el.textContent = '';
+          }
+        }
+        // Hide the site's own duplicate slot: the campaign bar is the one on
+        // screen. Keep the slot in the DOM as a fallback only if no campaign
+        // element exists at all.
+        if (slot) {
+          var anyCamp = document.querySelector('.ins-tier-message .ins-element-content, .ins-element-content');
+          if (anyCamp) { slot.style.display = 'none'; }
+          else {
+            slot.style.display = '';
+            if (msg) { if (slot.textContent !== msg) slot.textContent = msg; slot.setAttribute('data-fallback','1'); }
+            else slot.textContent = '';
+          }
         }
       };
       paint();
-      // Repaint if the profile changes or the campaign clears the slot.
       var mo = new MutationObserver(paint);
-      mo.observe(slot, { childList: true, characterData: true, subtree: true });
-      // Also re-read shortly after load, in case the write settled just after
-      // first paint (delay set on the previous page, this page loading).
-      var t = 0, iv = setInterval(function () { paint(); if (++t >= 6) clearInterval(iv); }, 500);
-      setTimeout(function () { mo.disconnect(); }, 8000);
+      mo.observe(document.body, { childList: true, characterData: true, subtree: true });
+      var t = 0, iv = setInterval(function () { paint(); if (++t >= 8) clearInterval(iv); }, 500);
+      setTimeout(function () { mo.disconnect(); }, 10000);
     } catch (e) {}
   }
 
