@@ -738,6 +738,20 @@
   /* --- theme + copy, applied once the catalog has parsed ----------------- */
   window.applyVertical = function () {
     var v = window.VERTICAL;
+    /* Content-led verticals (banking, telco, insurance) have their own
+       homepage. Every storefront boots through index.html; if this
+       vertical is a content one and we are on the product homepage,
+       hand off to content-index.html before it paints. Guarded so it
+       only fires on the home page and never on the content page itself. */
+    try {
+      if (v && v.template === "content") {
+        var f = (location.pathname.split("/").pop() || "index.html");
+        if (f === "" || f === "index.html") {
+          location.replace("content-index.html" + location.search + location.hash);
+          return;
+        }
+      }
+    } catch (e) {}
     if (v && v.banner_slot && !document.getElementById('trip-banner')) {
       /* A slot for the disruption beat. The onsite campaign fills it from
          the profile (trip_status, next_trip); the site itself puts nothing

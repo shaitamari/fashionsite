@@ -1,0 +1,8 @@
+TELCO CONTENT HOMEPAGE — install
+1) unzip -o ~/Downloads/telco-content.zip -d /tmp/x && cp -r /tmp/x/telco-content/* .
+2) cat content-styles.css >> assets/styles.css     # add the content-component CSS once
+   rm content-styles.css
+3) python3 build.py telco                            # recompiles catalogs/telco.js (plans + content)
+4) posh "Telco content homepage: plan cards, content search, arrival hero"
+Then open telco-sandbox.insiderdemo.com — it redirects to the content homepage.
+Phones stay reachable via the existing category page.

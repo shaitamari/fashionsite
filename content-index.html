@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lumen — Makeup, Skincare and Fragrance</title>
+
+<!-- Browsers largely ignore these; the real protection is the Cache-Control
+     headers in _headers / netlify.toml / vercel.json. Kept as a second line. -->
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<link rel="preconnect" href="https://cdn.shopify.com">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+/* ANTI-FLICKER — the whole page, not just the hero.
+
+   Three flashes were happening, and all three are the kind of thing held
+   against client-side personalization generally. Worth eliminating rather
+   than shortening.
+
+   1. The copy in the markup below is beauty's, because the template was
+      written against Lumen. Eleven storefronts flashed "Skin first. Makeup
+      second." before their own headline — another brand's words.
+   2. On a campaign arrival the default hero painted first and the campaign
+      overwrote it a frame later: wrong headline, wrong photograph, then right.
+   3. The rest of the page painted immediately while the hero arrived late, so
+      the page assembled in two stages even when the hero was correct.
+
+   The third is the one that matters most for the argument. A page that
+   arrives complete is indistinguishable from server-side rendering, and the
+   standard objection to client-side personalization — "it flickers" — has
+   nothing to point at.
+
+   So the whole body is held at opacity 0 and revealed once, when whatever is
+   going to write the hero has finished AND the hero image has decoded.
+   Opacity rather than visibility or display: no layout shift, and it can be
+   faded, which reads as deliberate rather than as a stall.
+
+   Who reveals:
+     - vertical.js, after painting the vertical's copy, IF no campaign is
+       expected on this page load.
+     - the onsite campaign, after applying, if one is.
+     - the timer below, unconditionally. A broken script must never leave a
+       blank page.
+
+   The cost is honest: first paint is delayed by however long the slower of
+   those two takes. On a demo estate that is the right trade. On a real site
+   it is the same trade every anti-flicker snippet makes, and the failsafe is
+   what keeps it safe. */
+body { opacity: 0; transition: opacity .18s ease-out }
+.hero-ready body { opacity: 1 }
+</style>
+<script>
+/* Failsafe. Longer when a campaign might act — waiting a beat for the right
+   page beats showing the wrong one — and short otherwise, so ordinary
+   browsing is not held up by machinery it will never use. */
+(function () {
+  var expects = /[?&]utm_/.test(location.search);
+  setTimeout(function () {
+    document.documentElement.classList.add('hero-ready');
+  }, expects ? 1400 : 700);
+})();
+</script>
+
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     INSIDER WEB SDK
+     Order is load-bearing:
+       1. InsiderQueue array
+       2. site scripts (telemetry wrapper must precede the first push)
+       3. Insider Tag (ins.js)
+       4. user data -> page data -> init
+     ═══════════════════════════════════════════════════════════════════════ -->
+
+<!-- 1. The queue. Must exist before the tag loads. -->
+<script>window.InsiderQueue = window.InsiderQueue || [];</script>
+
+<!-- 2. Site scripts. insider-debug.js wraps InsiderQueue.push to mirror every
+        payload into the on-page console, so it loads before anything is sent. -->
+<script src="assets/config.js"></script>
+<script src="assets/insider-debug.js"></script>
+<script src="assets/vertical.js"></script>
+<script src="assets/store.js"></script>
+<script src="assets/explain.js"></script>
+<script src="assets/affinity.js"></script>
+<script src="assets/agent.js"></script>
+<script src="assets/recs.js"></script>
+
+<!-- 3. Insider Tag — written by assets/vertical.js, because which
+        account it points at depends on the hostname:
+          beauty.insiderdemo.com          -> salesdemo
+          beauty-sandbox.insiderdemo.com  -> partnersandbox
+        Account and partner id are listed in vertical.js and shown
+        live in the SDK console. -->
+
+<!-- 4. Data pushes for this page. -->
+<script>
+  // --- user attributes: defaults plus the custom set --------------------
+  window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });
+
+  // --- currency ---------------------------------------------------------
+  window.InsiderQueue.push({ type: 'currency', value: Store.currency() });
+
+  // --- page type: home --------------------------------------------------
+  // Default Home Page View parameters are sent automatically, so only custom
+  // parameters belong here.
+  window.InsiderQueue.push({
+    type: 'home',
+    value: { custom: { home_version: 'lumen-demo-v1', cart_size: Store.cartCount() } }
+  });
+
+  // --- init: the trigger that actually sends everything above -----------
+  window.InsiderQueue.push({ type: 'init' });
+</script>
+</head>
+
+<body>
+
+<p class="announce" data-announce>Free shipping over $50</p>
+
+<header class="masthead">
+  <div class="masthead__in">
+    <a class="brand" href="index.html" data-brand>Lumen</a>
+    <form class="searchbox" data-search role="search" autocomplete="off">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" id="search-input" name="q" placeholder="Search products" data-search-placeholder aria-label="Search products">
+    </form>
+    <nav class="utils">
+      <span class="loy" data-loyalty-strip hidden></span>
+      <a href="flow.html" data-flow-link>Services</a>
+      <a href="account.html" data-account-label>Log in</a>
+      <a class="cartlink" href="cart.html"><span data-label="cart">Cart</span><span data-cart-count hidden>0</span></a>
+    </nav>
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="mainnav__in" data-content-nav></div>
+</nav>
+
+<main>
+
+  <!-- Arrival-aware hero. utm_campaign (or ?line=) picks the product line the
+       ad was about; default is the lead line. Photo fills from photos.py; a
+       brand block shows until it does. -->
+  <section class="hero hero--content">
+    <div class="hero__media"><img id="hero-img" alt=""></div>
+    <div class="hero__panel">
+      <div class="hero__inner">
+        <div class="hero__copy">
+          <p class="eyebrow"><span data-hero-eyebrow>Vantis</span> <span class="pagetype">page type: home</span></p>
+          <h1 class="h1" id="hero-title" data-hero-title>Plans that flex with you.</h1>
+          <p class="lede" id="hero-lede" data-hero-lede>Unlimited calls, 5G data, no lock-in. Pick a plan and keep your number.</p>
+          <p style="margin-top:2rem"><a class="btn" id="hero-cta" href="#plans">See plans</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product-line cards: typographic, drawn from the catalog. No images. -->
+  <section class="section wrap" id="plans">
+    <div class="section__head"><h2 class="h2" id="lines-title">Choose your plan</h2></div>
+    <div class="linecards" id="linecards"></div>
+  </section>
+
+  <!-- Content search: over help/plan articles, not products. Site-backed. -->
+  <section class="section wrap">
+    <div class="panel panel--search">
+      <p class="eyebrow">Help</p>
+      <h2 class="h2" style="margin-bottom:.75rem" id="csearch-title">How can we help?</h2>
+      <form id="csearch-form" role="search" autocomplete="off">
+        <div class="field">
+          <input type="search" id="csearch-input" placeholder="Search help — roaming, keep my number, eSIM…" aria-label="Search help">
+        </div>
+      </form>
+      <div id="csearch-results" class="csearch-results" hidden></div>
+      <p class="source" id="csearch-note" hidden>Content search · site index</p>
+    </div>
+  </section>
+
+  <!-- Education / content tiles. Photos via photos.py; brand block fallback. -->
+  <section class="section wrap">
+    <div class="section__head"><h2 class="h2" id="learn-title">Guides &amp; help</h2></div>
+    <div class="tiles tiles--content" id="content-tiles"></div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <span><span data-brand>Lumen</span> — Insider One demo storefront</span>
+    <span>onesandbox · 10014057</span>
+  </div>
+</footer>
+
+<script>
+  var V = window.VERTICAL || {};
+
+  /* ---- Arrival-aware hero -------------------------------------------------
+     ?utm_campaign=<line> or ?line=<line> selects the product line; the hero
+     copy comes from HERO_BY_LINE, default is the first entry. */
+  var HERO = (V.content && V.content.hero) || {};
+  var params = new URLSearchParams(location.search);
+  var line = (params.get('line') || params.get('utm_campaign') || '').toLowerCase();
+  function setHero(key) {
+    var h = HERO[key] || HERO._default;
+    if (!h) return;
+    var t=document.getElementById('hero-title'), l=document.getElementById('hero-lede'),
+        c=document.getElementById('hero-cta'), e=document.querySelector('[data-hero-eyebrow]');
+    if (t) t.textContent = h.title;
+    if (l) l.textContent = h.lede;
+    if (c && h.cta) { c.textContent = h.cta; if (h.href) c.href = h.href; }
+    if (e && h.eyebrow) e.textContent = h.eyebrow;
+    var img=document.getElementById('hero-img');
+    if (img) { if (h.image) { img.src = h.image; } else { img.removeAttribute('src'); img.parentNode.classList.add('hero__media--block'); } }
+  }
+  setHero(HERO[line] ? line : '_default');
+
+  /* ---- Product-line cards (typographic, from the catalog) ---------------- */
+  function featuresFrom(desc) {
+    var m = (desc||'').match(/<li>(.*?)<\/li>/g) || [];
+    return m.map(function (x) { return x.replace(/<\/?li>/g,'').replace(/&amp;/g,'&'); }).slice(0,5);
+  }
+  function blurbFrom(desc) {
+    var first = (desc||'').replace(/<ul[\s\S]*$/,'').replace(/<[^>]+>/g,'').trim();
+    return first;
+  }
+  function money(n, cur) {
+    var sym = cur === 'EUR' ? '\u20ac' : cur === 'GBP' ? '\u00a3' : cur === 'USD' ? '$' : '';
+    return sym + (Math.round(n*100)/100).toString().replace(/\.00$/,'');
+  }
+  (function renderLines() {
+    var wrap = document.getElementById('linecards'); if (!wrap) return;
+    var lineCol = (V.content && V.content.lines_collection) || (Store.collections()[0]);
+    var items = Store.byCollection(lineCol) || [];
+    // one card per product (group), dedup by name
+    var seen = {}, cards = [];
+    items.forEach(function (p) { if (!seen[p.name]) { seen[p.name]=1; cards.push(p); } });
+    if (V.content && V.content.popular) { /* mark popular by name */ }
+    wrap.innerHTML = '';
+    cards.forEach(function (p) {
+      var feats = featuresFrom(p.description);
+      var el = document.createElement('div'); el.className = 'linecard';
+      var pop = (V.content && V.content.popular && p.name === V.content.popular) ? '<span class="linecard__flag">Most popular</span>' : '';
+      el.innerHTML =
+        pop +
+        '<h3 class="linecard__name"></h3>' +
+        '<p class="linecard__price"><span class="linecard__amt"></span><span class="linecard__per"> /mo</span></p>' +
+        '<p class="linecard__blurb"></p>' +
+        '<ul class="linecard__feats"></ul>' +
+        '<a class="btn btn--wide linecard__cta" href="#">' + ((V.content && V.content.line_cta) || 'Choose') + '</a>';
+      el.querySelector('.linecard__name').textContent = p.name;
+      el.querySelector('.linecard__amt').textContent = money(p.unit_price, p.currency);
+      el.querySelector('.linecard__blurb').textContent = blurbFrom(p.description);
+      var ul = el.querySelector('.linecard__feats');
+      feats.forEach(function (f) { var li=document.createElement('li'); li.textContent=f; ul.appendChild(li); });
+      // CTA -> the funnel, carrying the chosen line
+      el.querySelector('.linecard__cta').href = 'flow.html?line=' + encodeURIComponent(p.name);
+      wrap.appendChild(el);
+    });
+  })();
+
+  /* ---- Content search (site-backed over help articles) ------------------- */
+  var ARTICLES = (V.content && V.content.articles) || [];
+  (function contentSearch() {
+    var form=document.getElementById('csearch-form'), input=document.getElementById('csearch-input'),
+        out=document.getElementById('csearch-results'), note=document.getElementById('csearch-note');
+    if (!form) return;
+    function run() {
+      var q = input.value.trim().toLowerCase();
+      if (!q) { out.hidden=true; note.hidden=true; out.innerHTML=''; return; }
+      var hits = ARTICLES.map(function (a) {
+        var hay = (a.title+' '+a.body+' '+(a.category||'')).toLowerCase();
+        var score = 0; q.split(/\s+/).forEach(function (w){ if(hay.indexOf(w)>-1) score++; });
+        return {a:a, score:score};
+      }).filter(function (r){ return r.score>0; })
+        .sort(function (x,y){ return y.score-x.score; }).slice(0,6);
+      out.innerHTML='';
+      hits.forEach(function (r) {
+        var a=document.createElement('a'); a.className='csearch-hit'; a.href=r.a.href||'#';
+        a.innerHTML='<span class="csearch-hit__cat"></span><span class="csearch-hit__title"></span><span class="csearch-hit__snip"></span>';
+        a.querySelector('.csearch-hit__cat').textContent=r.a.category||'Help';
+        a.querySelector('.csearch-hit__title').textContent=r.a.title;
+        a.querySelector('.csearch-hit__snip').textContent=(r.a.body||'').slice(0,120);
+        out.appendChild(a);
+      });
+      out.hidden = hits.length===0 ? false : false;
+      if (!hits.length) out.innerHTML='<p class="csearch-empty">No help articles matched. Try “roaming” or “keep my number”.</p>';
+      note.hidden=false; out.hidden=false;
+    }
+    form.addEventListener('submit', function(e){ e.preventDefault(); run(); });
+    input.addEventListener('input', run);
+  })();
+
+  /* ---- Content tiles (guides) ------------------------------------------- */
+  (function renderTiles() {
+    var wrap=document.getElementById('content-tiles'); if(!wrap) return;
+    var tiles=(V.content && V.content.tiles) || [];
+    tiles.forEach(function (t) {
+      var a=document.createElement('a'); a.className='tile tile--content'; a.href=t.href||'#';
+      a.innerHTML='<div class="tile__media'+(t.image?'':' tile__media--block')+'">'+(t.image?'<img loading="lazy" alt="" src="'+t.image+'">':'')+'</div><span class="tile__label"></span><span class="tile__sub"></span>';
+      a.querySelector('.tile__label').textContent=t.title;
+      var sub=a.querySelector('.tile__sub'); if(sub) sub.textContent=t.sub||'';
+      wrap.appendChild(a);
+    });
+  })();
+</script>
+</body>
+</html>

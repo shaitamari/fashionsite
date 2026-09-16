@@ -26,7 +26,7 @@ window.VERTICALS = {
   },
   "fashion": {
     "brand": "Ashford Lane",
-    "tagline": "Womenswear, menswear, shoes and accessories"
+    "tagline": "Womenswear, menswear and footwear"
   },
   "electronics": {
     "brand": "Kestrel",
@@ -47,17 +47,5 @@ window.VERTICALS = {
   "supermarket": {
     "brand": "Harvest Row",
     "tagline": "Food, drink and household"
-  },
-  "nutrition": {
-    "brand": "Verdant",
-    "tagline": "Supplements, superfoods and snacks"
-  },
-  "misumi": {
-    "brand": "MISUMI",
-    "tagline": "Industrial components, tools and equipment"
-  },
-  "canon": {
-    "brand": "Canon",
-    "tagline": "Cameras, lenses, printers and everything they need"
   }
 };
