@@ -719,6 +719,9 @@
          in it. Sits directly under the header on every page. */
       var placeSlot = function () {
         if (document.getElementById('trip-banner')) return;
+        // Homepage only, to match the disruption campaign's page rule. The
+        // homepage is the one page with a hero; other pages get no banner.
+        if (!document.querySelector('.hero')) return;
         var slot = document.createElement('div');
         slot.id = 'trip-banner';
         slot.className = 'trip-banner';
@@ -728,7 +731,7 @@
            the whole page down as it appears. After the hero, the shift is
            where nobody is looking yet. Pages without a hero fall back to
            just under the header. */
-        var anchor = document.querySelector('.hero') || document.querySelector('header');
+        var anchor = document.querySelector('.hero');
         if (anchor && anchor.parentNode) anchor.parentNode.insertBefore(slot, anchor.nextSibling);
         fillBannerFallback(slot);
       };
