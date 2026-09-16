@@ -976,7 +976,9 @@
      (trip status, next trip, loyalty), so they land regardless of what the
      tag does with its queue when the session is reset. */
   function syncAttributes(custom) {
-    oweRefresh();
+    // No oweRefresh: the site renders the banner from the profile, so there is
+    // nothing to re-identify for. The Upsert write below still reaches the
+    // platform; the campaign updates on its own next render.
     return fetch('/.netlify/functions/sync', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ uuid: visitorId(), custom: custom || {} })
