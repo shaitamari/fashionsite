@@ -109,8 +109,13 @@
   }
 
   function resetVisitor() {
-    [KEY.visitor, KEY.user, KEY.cart, KEY.wish, 'lmn.views', 'lmn.order'].forEach(function (k) {
-      localStorage.removeItem(k);
+    // Clear EVERY per-visitor lmn.* key, not a hand-picked few. Leaving
+    // lmn.bookings / lmn.purchases behind meant a new visitor inherited the
+    // last person's travel booking, re-sent as a purchase event onto the fresh
+    // profile (the "Manchester to Dubai" leak). Keep only lmn.personas — the
+    // shared saved-visitor list, which is not this visitor's own state.
+    Object.keys(localStorage).forEach(function (k) {
+      if (k.indexOf('lmn.') === 0 && k !== 'lmn.personas') localStorage.removeItem(k);
     });
     clearVisitorCookie();
     /* End the tag's session too. Otherwise the tag keeps its profile and the
@@ -686,7 +691,12 @@
   }
 
   function signOut() {
-    localStorage.removeItem(KEY.user);
+    // Clear all per-visitor state, not just the user record — otherwise a
+    // prior booking/purchase in lmn.bookings / lmn.purchases survives log out
+    // and is re-sent onto the next profile. Keep lmn.personas (shared list).
+    Object.keys(localStorage).forEach(function (k) {
+      if (k.indexOf('lmn.') === 0 && k !== 'lmn.personas') localStorage.removeItem(k);
+    });
     clearVisitorCookie();   // next visitor gets a fresh id
     clearInsiderIdentity();
     paintChrome();
