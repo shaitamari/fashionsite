@@ -690,9 +690,23 @@
       var msg = tripBannerText(u.trip_status, u.next_trip, v.key);
       if (!msg) return;
       // Only fill if the campaign hasn't already put something here.
-      if (slot.textContent.trim()) return;
-      slot.textContent = msg;
-      slot.setAttribute('data-fallback', '1');
+      var paint = function () {
+        // The site is the last word: whenever the slot is empty and the
+        // profile says Delayed/Cancelled, the message is present. If the
+        // campaign renders real text, it stays (we only fill when empty).
+        if (!slot.textContent.trim()) {
+          slot.textContent = msg;
+          slot.setAttribute('data-fallback', '1');
+        }
+      };
+      paint();
+      // The onsite campaign paints a beat after first render and can clear the
+      // slot with an empty result; watch for that and refill.
+      var mo = new MutationObserver(paint);
+      mo.observe(slot, { childList: true, characterData: true, subtree: true });
+      // Stop watching after a few seconds: by then the campaign has run, and
+      // a later real status change reloads the page anyway.
+      setTimeout(function () { mo.disconnect(); }, 8000);
     } catch (e) {}
   }
 
