@@ -656,6 +656,46 @@
     '<script>window.applyVertical();<\/script>'
   );
 
+  /* --- trip-banner local fallback --------------------------------------
+     The disruption message is an Insider One onsite campaign reading
+     trip_status / next_trip from the profile. In a live account that is the
+     whole story. In a demo the campaign can render a beat late, or the
+     profile write may not have propagated to the onsite renderer yet, and an
+     empty navy bar is worse than no bar. So the site writes the SAME sentence
+     into the slot from what it already knows about the signed-in profile; if
+     the campaign then renders, it overwrites with identical text. One copy
+     source (tripBannerText) keeps them from drifting. Only fires when the
+     profile actually says Delayed/Cancelled, so it can never show a wrong or
+     stale message. */
+  function tripBannerText(status, trip, vkey) {
+    var t = trip || 'your trip';
+    var hotel = vkey === 'hotels';
+    if (status === 'Delayed') {
+      return hotel
+        ? "There's a change to your " + t + " booking: your room isn't ready yet. We're holding it and the first drink's on us."
+        : "There's a change to your " + t + " booking: it's running late at our end. We're holding it for you and will text the new time \u2014 and your first drink's on us.";
+    }
+    if (status === 'Cancelled') {
+      return hotel
+        ? "Your " + t + " booking was cancelled at our end. We've held the same room nearby \u2014 details are in your email."
+        : "Your " + t + " booking was cancelled at our end. You're on the next departure at no charge \u2014 details are in your email.";
+    }
+    return '';
+  }
+  function fillBannerFallback(slot) {
+    try {
+      if (!slot || !window.Store || !Store.currentUser) return;
+      var u = Store.currentUser() || {};
+      var v = window.VERTICAL || {};
+      var msg = tripBannerText(u.trip_status, u.next_trip, v.key);
+      if (!msg) return;
+      // Only fill if the campaign hasn't already put something here.
+      if (slot.textContent.trim()) return;
+      slot.textContent = msg;
+      slot.setAttribute('data-fallback', '1');
+    } catch (e) {}
+  }
+
   /* --- theme + copy, applied once the catalog has parsed ----------------- */
   window.applyVertical = function () {
     var v = window.VERTICAL;
@@ -676,6 +716,7 @@
            just under the header. */
         var anchor = document.querySelector('.hero') || document.querySelector('header');
         if (anchor && anchor.parentNode) anchor.parentNode.insertBefore(slot, anchor.nextSibling);
+        fillBannerFallback(slot);
       };
       // applyVertical runs from the catalog script in <head>, before the
       // header exists, so the slot is placed once the body has parsed.
