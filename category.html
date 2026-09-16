@@ -161,7 +161,7 @@
 
 <script>
 
-  document.getElementById('cat-title').textContent = SUBCAT || Store.shortName(COLLECTION);
+  document.getElementById('cat-title').textContent = IS_ALL ? 'Phones' : (SUBCAT || Store.shortName(COLLECTION));
   document.title = Store.shortName(COLLECTION) + ' — Lumen';
 
   var chips = document.getElementById('subcats');
@@ -360,8 +360,15 @@
     countEl.textContent = (opts.total != null ? opts.total : products.length) + ' products';
   }
 
+  function allDevices() {
+    // Umbrella "Phones" page: every product that is not a Plan.
+    return Store.oneVariantEach(Store.catalog.filter(function (p) {
+      return p.collection !== 'Plans';
+    }));
+  }
+  var IS_ALL = (COLLECTION === 'Phones' || COLLECTION === 'All');
   function renderFallback() {
-    var local = Store.byCollection(COLLECTION, SUBCAT);
+    var local = IS_ALL ? allDevices() : Store.byCollection(COLLECTION, SUBCAT);
     sourceEl.className = 'source is-fallback';
     sourceEl.textContent = 'Local catalogue · Eureka not serving this page';
     paint(local, { live: false });
@@ -392,7 +399,15 @@
     }
   }
 
-  if (window.Eureka && window.Eureka.enabled) {
+  if (IS_ALL) {
+    // Umbrella all-devices view: render the full device catalogue directly,
+    // with a neutral label (this page is deliberately the whole catalogue,
+    // not a Eureka-served category).
+    var all = allDevices();
+    sourceEl.className = 'source';
+    sourceEl.textContent = all.length + ' devices';
+    paint(all, { live: false, total: all.length });
+  } else if (window.Eureka && window.Eureka.enabled) {
     paintSkeleton(8);
 
     listing = window.Eureka.listing({

@@ -1584,13 +1584,42 @@
     },
     {
      "label": "Phones",
-     "href": "category.html?c=Iphone%2017%20Pro%20Max"
+     "href": "category.html?c=Phones"
     },
     {
      "label": "Help",
      "href": "#"
     }
-   ]
+   ],
+   "plan_cards": {
+    "Vantis 5": {
+     "blurb": "Best for light users — messaging, maps and the occasional stream.",
+     "features": [
+      "5 GB 5G data",
+      "Unlimited calls & texts",
+      "No lock-in contract",
+      "EU roaming included"
+     ]
+    },
+    "Vantis 20": {
+     "blurb": "Our most popular plan — daily streaming, video calls and hotspot.",
+     "features": [
+      "20 GB 5G data",
+      "Unlimited calls & texts",
+      "No lock-in contract",
+      "EU roaming included"
+     ]
+    },
+    "Vantis Unlimited": {
+     "blurb": "For heavy users — gaming, tethering and 4K with nothing to count.",
+     "features": [
+      "Unlimited 5G data",
+      "Unlimited calls & texts",
+      "No lock-in contract",
+      "EU roaming included"
+     ]
+    }
+   }
   }
  },
  "home": {

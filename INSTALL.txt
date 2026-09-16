@@ -1,5 +1,6 @@
-FIX: Phones nav link now lands on a populated device page (was going nowhere).
-Also fixed category.html's dead "Makeup" default so a bare category.html can't break.
-1) unzip -o ~/Downloads/telco-phones-fix.zip -d /tmp/x && cp -r /tmp/x/telco-content/* .
-2) python3 build.py telco
-3) posh "Telco Phones nav lands on the device grid; category default fixed"
+Phones = a real all-devices page (was landing on one model / empty).
+- Phones nav -> category.html?c=Phones
+- category.html renders the whole device catalogue (minus Plans) with search + facets, clean "<n> devices" label.
+1) unzip -o ~/Downloads/telco-phones.zip -d /tmp/x && cp -r /tmp/x/telco-content/* .
+2) posh "Telco Phones: real all-devices page"
+(no build needed — html/json only; but a build won't hurt)
