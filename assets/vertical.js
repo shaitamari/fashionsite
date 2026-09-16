@@ -853,11 +853,16 @@
     var d = window.VERTICAL || {};
     set('[data-brand]', d.brand);
     set('[data-announce]', d.announce);
-    set('[data-hero-lede]', d.hero_lede);
-    set('[data-hero-cta]', d.hero_cta);
-    set('[data-hero-eyebrow]', d.hero_eyebrow);
-    set('[data-tiles-title]', d.tiles_title);
-    set('[data-grid-title]', d.grid_title);
+    /* Content verticals own their hero and tiles (content-index.html sets them
+       from d.content); do not overwrite with the product-home copy. */
+    var isContent = d.template === 'content';
+    if (!isContent) {
+      set('[data-hero-lede]', d.hero_lede);
+      set('[data-hero-cta]', d.hero_cta);
+      set('[data-hero-eyebrow]', d.hero_eyebrow);
+      set('[data-tiles-title]', d.tiles_title);
+      set('[data-grid-title]', d.grid_title);
+    }
     // The top recommendation row is New Arrivals, so it takes the vertical's
     // "new in" wording (New routes, New models…) rather than the cross-sell
     // phrasing reco_title carried for the old static layout.
@@ -979,7 +984,7 @@
       bar.style.position = 'relative';
       bar.appendChild(wrap);
     })();
-    setHTML('[data-hero-title]', d.hero_title);
+    if (d.template !== 'content') setHTML('[data-hero-title]', d.hero_title);
 
 
     /* Reveal the page once the hero image has actually decoded, not merely once

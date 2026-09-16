@@ -1,8 +1,5 @@
-TELCO CONTENT HOMEPAGE — install
-1) unzip -o ~/Downloads/telco-content.zip -d /tmp/x && cp -r /tmp/x/telco-content/* .
-2) cat content-styles.css >> assets/styles.css     # add the content-component CSS once
-   rm content-styles.css
-3) python3 build.py telco                            # recompiles catalogs/telco.js (plans + content)
-4) posh "Telco content homepage: plan cards, content search, arrival hero"
-Then open telco-sandbox.insiderdemo.com — it redirects to the content homepage.
-Phones stay reachable via the existing category page.
+FIX: applyVertical was overwriting the content hero with the old product-home copy.
+Guarded now — on content verticals it no longer sets hero title/lede/cta/tiles.
+1) unzip -o ~/Downloads/telco-hero-fix.zip -d /tmp/x && cp -r /tmp/x/telco-content/* .
+2) posh "Content verticals: applyVertical no longer overwrites the content hero"
+No build needed (JS only). Hard-reload telco-sandbox after deploy.
