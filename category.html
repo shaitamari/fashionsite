@@ -47,7 +47,7 @@
 <script src="assets/eureka.js"></script>
 <script>
   var params = new URLSearchParams(location.search);
-  var COLLECTION = params.get('c') || 'Makeup';
+  var COLLECTION = params.get('c') || (window.VERTICAL && window.VERTICAL.content && window.VERTICAL.content.phones_default) || (Store.collections() && Store.collections()[0]) || 'Makeup';
   var SUBCAT = params.get('sub') || null;
 
   Store.noteCategoryView(COLLECTION);

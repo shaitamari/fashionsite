@@ -1,5 +1,5 @@
-FIX: applyVertical was overwriting the content hero with the old product-home copy.
-Guarded now — on content verticals it no longer sets hero title/lede/cta/tiles.
-1) unzip -o ~/Downloads/telco-hero-fix.zip -d /tmp/x && cp -r /tmp/x/telco-content/* .
-2) posh "Content verticals: applyVertical no longer overwrites the content hero"
-No build needed (JS only). Hard-reload telco-sandbox after deploy.
+FIX: Phones nav link now lands on a populated device page (was going nowhere).
+Also fixed category.html's dead "Makeup" default so a bare category.html can't break.
+1) unzip -o ~/Downloads/telco-phones-fix.zip -d /tmp/x && cp -r /tmp/x/telco-content/* .
+2) python3 build.py telco
+3) posh "Telco Phones nav lands on the device grid; category default fixed"

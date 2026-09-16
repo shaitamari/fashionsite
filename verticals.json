@@ -1576,6 +1576,20 @@
      "href": "help/telco/coverage.html",
      "image": ""
     }
+   ],
+   "nav": [
+    {
+     "label": "Plans",
+     "href": "#plans"
+    },
+    {
+     "label": "Phones",
+     "href": "category.html?c=Iphone%2017%20Pro%20Max"
+    },
+    {
+     "label": "Help",
+     "href": "#"
+    }
    ]
   }
  },
