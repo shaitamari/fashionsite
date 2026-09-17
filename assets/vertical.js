@@ -714,6 +714,57 @@
     if (!txt) return false;
     return /points from (Silver|Gold)|You're Gold/i.test(txt);
   }
+  /* --- signed-in relationship banner (telco, finance) --------------------
+     Travel and retail close the loop after a flow: book -> the delay banner,
+     buy -> the tier strip. Telco and finance need the same payoff. After
+     subscribing / opening an account, the content homepage greets the
+     customer with what they now have. Reads live currentUser(), so it appears
+     the moment the flow writes the profile. Content verticals only. */
+  function relationshipBannerText(u, vkey) {
+    if (!u) return '';
+    if (u.plan) {
+      // telco subscriber
+      if (u.data_used && u.data_allowance) {
+        var used = Number(u.data_used), allow = Number(u.data_allowance);
+        if (allow && used / allow >= 0.85) return "You're on " + u.plan + " and you've used " + used + " of " + allow + " GB \u2014 Unlimited would keep you connected.";
+        return "Welcome back \u2014 you're on " + u.plan + ", " + used + " of " + allow + " GB used this month.";
+      }
+      return "Welcome back \u2014 you're on " + u.plan + (u.assigned_number ? ", number " + u.assigned_number : "") + ".";
+    }
+    if (u.product) {
+      // finance customer
+      if (u.customer_status === 'Referred to banker') return "Your " + u.product + " application is with one of our bankers \u2014 they'll call you shortly.";
+      if (u.customer_status === 'Quote') return "Your " + (u.quote_cover || '') + " cover quote is saved \u2014 \u00a3" + (u.quote_premium || '') + "/mo. Pick up where you left off.";
+      return "Welcome back, " + (u.name || '') + " \u2014 your " + u.product + " is open and ready.";
+    }
+    return '';
+  }
+  function fillRelationshipBanner() {
+    try {
+      if (!window.Store || !Store.currentUser) return;
+      var v = window.VERTICAL || {};
+      if (v.template !== 'content') return;   // content verticals only
+      var paint = function () {
+        var u = Store.currentUser();
+        var msg = relationshipBannerText(u, v.key);
+        var slot = document.getElementById('relationship-banner');
+        if (!slot) {
+          if (!msg) return;
+          slot = document.createElement('div');
+          slot.id = 'relationship-banner';
+          slot.className = 'relationship-banner';
+          var anchor = document.querySelector('.hero');
+          if (anchor && anchor.parentNode) anchor.parentNode.insertBefore(slot, anchor.nextSibling);
+          else document.querySelector('main') && document.querySelector('main').insertBefore(slot, document.querySelector('main').firstChild);
+        }
+        if (msg) { slot.textContent = msg; slot.hidden = false; }
+        else { slot.hidden = true; slot.textContent = ''; }
+      };
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', paint);
+      else paint();
+      setTimeout(paint, 600);
+    } catch (e) {}
+  }
   function fillTierFallback() {
     try {
       if (!window.Store || !Store.currentUser) return;
@@ -839,6 +890,7 @@
        line from the live profile. Self-gates and only touches tier lines. */
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fillTierFallback);
     else fillTierFallback();
+    fillRelationshipBanner();
     if (v) {
     /* A vertical can carry its own locale and currency — Canon is en_CA / CAD
        in its own catalog locale on the same account, so the SDK's product

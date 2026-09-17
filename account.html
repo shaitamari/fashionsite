@@ -90,6 +90,24 @@
       <p class="lede" id="acct-lede">Logging in swaps the anonymous visitor id for the account id and writes every field below to the profile.</p>
     </section>
 
+    <!-- Account dashboard: telco usage / finance balance at a glance, with
+         demo controls that mutate the state so the dashboard updates live.
+         Shown only when signed in on a telco or finance storefront. -->
+    <section class="section" id="dashboard" hidden>
+      <div class="dash">
+        <div class="dash__head">
+          <p class="eyebrow" id="dash-eyebrow">Your account</p>
+          <h2 class="h2" id="dash-title">At a glance</h2>
+        </div>
+        <div class="dash__glance" id="dash-glance"></div>
+        <div class="dash__actions" id="dash-actions"></div>
+        <div class="dash__activity">
+          <p class="eyebrow" style="margin:1.25rem 0 .5rem">Recent activity</p>
+          <ul class="dash__log" id="dash-log"></ul>
+        </div>
+      </div>
+    </section>
+
     <!-- Personas: known profiles on the platform, signed into by uuid so the
          same person resolves on any machine. Shared list from personas.json;
          personal additions kept in this browser. -->
@@ -389,6 +407,75 @@
   });
 
   document.getElementById('reset-btn').addEventListener('click', function () { Store.resetVisitor(); });
+</script>
+<script>
+(function () {
+  function fmtGBP(n){ return '\u00a3' + Number(n).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2}); }
+  function fmtDate(ts){ var d=new Date(ts); return d.toLocaleDateString(undefined,{day:'numeric',month:'short'}); }
+  function render(){
+    if(!window.Store||!Store.currentUser) return;
+    var u=Store.currentUser(); var v=window.VERTICAL||{};
+    var dash=document.getElementById('dashboard');
+    var glance=document.getElementById('dash-glance');
+    var actions=document.getElementById('dash-actions');
+    var log=document.getElementById('dash-log');
+    var eye=document.getElementById('dash-eyebrow'), title=document.getElementById('dash-title');
+    if(!dash||!u){ if(dash) dash.hidden=true; return; }
+
+    // ---- TELCO ----
+    if(u.plan){
+      dash.hidden=false; eye.textContent='Your plan'; title.textContent=u.plan;
+      var st=Store.usageState() || Store.seedUsage(Number(u.data_allowance)||20);
+      var pct=Math.min(100, Math.round(st.used/st.allowance*100));
+      var near=pct>=85;
+      glance.innerHTML=
+        '<div class="dash__metric">'+
+          '<div class="dash__metric-top"><span>Data used</span><span>'+st.used+' / '+st.allowance+' GB</span></div>'+
+          '<div class="dash__bar"><span style="width:'+pct+'%;'+(near?'background:#c0392b':'')+'"></span></div>'+
+          (near?'<p class="dash__nudge">You\u2019re close to your limit \u2014 top up or move to Unlimited.</p>':'')+
+        '</div>'+
+        '<div class="dash__metric"><div class="dash__metric-top"><span>Number</span><span>'+(u.assigned_number||'\u2014')+'</span></div>'+
+          '<div class="dash__metric-top"><span>Status</span><span>'+(u.subscription_status||'Active')+'</span></div></div>';
+      actions.innerHTML=
+        '<button class="btn btn--ghost" data-act="use">Use 2 GB</button>'+
+        '<button class="btn btn--ghost" data-act="topup">Top up 5 GB</button>'+
+        '<a class="btn" href="content-index.html#plans">Change plan</a>';
+      log.innerHTML=(st.events||[]).map(function(e){return '<li><span>'+fmtDate(e.when)+'</span><span>'+e.label+'</span></li>';}).join('') || '<li><span>\u2014</span><span>No activity yet</span></li>';
+      actions.querySelectorAll('[data-act]').forEach(function(b){ b.onclick=function(){
+        if(b.getAttribute('data-act')==='use') Store.addUsage(2,'Used 2 GB \u2014 streaming');
+        else Store.topUp(5,'Topped up 5 GB');
+        render();
+      };});
+      return;
+    }
+
+    // ---- FINANCE ----
+    if(u.product){
+      dash.hidden=false; eye.textContent='Your account'; title.textContent=u.product;
+      var st=Store.financeState() || Store.seedFinance();
+      glance.innerHTML=
+        '<div class="dash__metric dash__metric--big"><div class="dash__metric-top"><span>Balance</span></div>'+
+          '<div class="dash__balance">'+fmtGBP(st.balance)+'</div></div>'+
+        '<div class="dash__metric"><div class="dash__metric-top"><span>Status</span><span>'+(u.customer_status||'Active')+'</span></div>'+
+          (u.lead_band?'<div class="dash__metric-top"><span>Eligibility</span><span>Band '+u.lead_band+'</span></div>':'')+'</div>';
+      actions.innerHTML=
+        '<button class="btn btn--ghost" data-act="pay">Make a £50 payment</button>'+
+        '<button class="btn btn--ghost" data-act="in">Add £200</button>'+
+        '<a class="btn" href="content-index.html">Explore products</a>';
+      log.innerHTML=(st.transactions||[]).map(function(t){var neg=t.amount<0;return '<li><span>'+fmtDate(t.when)+'</span><span>'+t.label+'</span><span style="color:'+(neg?'#c0392b':'#136B4B')+'">'+(neg?'':'+')+fmtGBP(t.amount)+'</span></li>';}).join('') || '<li><span>\u2014</span><span>No transactions</span></li>';
+      actions.querySelectorAll('[data-act]').forEach(function(b){ b.onclick=function(){
+        if(b.getAttribute('data-act')==='pay') Store.addTransaction(-50,'Card payment');
+        else Store.addTransaction(200,'Transfer in');
+        render();
+      };});
+      return;
+    }
+
+    dash.hidden=true;
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',render); else render();
+  setTimeout(render,500);
+})();
 </script>
 </body>
 </html>

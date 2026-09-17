@@ -1,17 +1,27 @@
-CONSOLIDATED — all of today's config/site fixes in one. Deploy this and you have everything:
-  - Tier banner site-side backup (name-agnostic, guest-guarded) + build.py tier_banner allowlist
-  - Travel (airlines/hotels): collections + order -> regions (fixes build AND the "Makeup/0" category break)
-  - Fashion: collections -> Women / Men / Shoes / Accessories (fixes "Tops" nav)
-  - Per-uuid history + Makeup fallback fix (from earlier today) are in this vertical.js too
+ACCOUNT DASHBOARD (telco + finance) — the post-login "manage your account" beat, with a live loop.
+This is the CONSOLIDATED zip: it contains the finance site, the loop-closing header/banner, AND the dashboard.
+Deploy this one and you have everything from 17 Sep.
 
-From the posh folder (rebuild ALL so every catalog is current):
-  unzip -o ~/Downloads/posh-2026-09-17-final.zip -d /tmp/x && cp -r /tmp/x/posh-2026-09-17-final/* . && python3 build.py --all && posh "All 17 Sep fixes: tier banner, travel regions, fashion nav"
+What's here:
+- Account dashboard on account.html, shown when signed in on telco or finance:
+    TELCO: data-used bar (used/allowance), number, status; buttons "Use 2 GB" / "Top up 5 GB" that
+           mutate usage and re-render live; recent activity log; ">=85% shows an Unlimited nudge.
+    FINANCE: balance at a glance, status/eligibility; buttons "Make £50 payment" / "Add £200" that
+           move the balance and add a transaction line, live; recent transactions log.
+  The loop: do something -> the dashboard updates, same satisfaction as the trip banner.
+- Per-uuid activity models in store.js: usageState/addUsage/topUp (telco), financeState/addTransaction (finance).
+  Seeded on first view; a fresh visitor starts clean.
+- Also includes: finance site (content home, open.html open-account funnel w/ eligibility+lead-scoring,
+  quote.html), loop-closing header strip + relationship banner, accounts array, telco usage attrs.
 
-Paste into campaign "points to next tier" (then Generate) if not already done:
-  {% if c_membership_tier == "" or c_membership_tier == "Guest" %}{% elsif c_membership_tier == "Gold" %}You're Gold — our best benefits.{% elsif c_membership_tier == "Silver" %}You're {{ 1500 | minus: c_loyalty_points }} points from Gold and its best benefits.{% else %}You're {{ 500 | minus: c_loyalty_points }} points from Silver.{% endif %}
+From the posh folder:
+  unzip -o ~/Downloads/posh-2026-09-17-dashboard.zip -d /tmp/x && cp -r /tmp/x/posh-2026-09-17-dashboard/* . && python3 build.py --all && posh "Account dashboard (telco usage / finance balance) with live demo controls; finance site; loop-closing"
 
-After deploy, verify:
-  grep -c tier_banner catalogs/fashion.js     # 1
-  grep -c tier_banner catalogs/airlines.js    # 1
-Then reload: fashion nav = Women/Men/Shoes/Accessories; airlines category shows a region, not Makeup.
-NOTE: airlines/hotels SEARCH runs on local fallback until Çakıl reindexes Eureka for the region collections.
+PANEL (when you have time, for end-to-end): declare custom attrs
+  telco: data_used, data_allowance (numbers)
+  finance: product, account_type, customer_status, lead_band, lead_score, balance, quote_cover, quote_level, quote_premium
+  arrays: accounts
+The SITE experience works without these (reads live currentUser + per-uuid state); the panel side is for persistence/campaigns.
+
+TEST: sign in (or subscribe/open an account) on telco or banking, go to Account -> see the dashboard ->
+      click Use 2 GB / Make a payment -> watch it update.

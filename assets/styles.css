@@ -555,3 +555,24 @@ html[data-vertical] .mainnav__in[data-content-nav] { gap: 2rem; }
 .subsummary h3 { margin:0 0 1rem; font-size:1rem; }
 .subsummary__row { display:flex; justify-content:space-between; padding:.5rem 0; border-top:1px solid var(--rule); font-size:.95rem; }
 .subsummary__row:first-of-type { border-top:none; }
+
+/* signed-in relationship banner (telco/finance content homes) */
+.relationship-banner{background:var(--accent,#136B4B);color:#fff;padding:.9rem 1.25rem;border-radius:12px;margin:1.25rem auto;max-width:var(--max);font-size:.95rem;font-weight:500;text-align:center}
+
+/* account dashboard (telco usage / finance balance, with live demo controls) */
+.dash { border:1px solid var(--rule); border-radius:16px; padding:1.75rem; margin-top:1rem; }
+.dash__head { margin-bottom:1.25rem; }
+.dash__glance { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.25rem; }
+.dash__metric { border:1px solid var(--rule); border-radius:12px; padding:1.25rem; }
+.dash__metric--big { display:flex; flex-direction:column; justify-content:center; }
+.dash__metric-top { display:flex; justify-content:space-between; font-size:.9rem; padding:.35rem 0; }
+.dash__metric-top span:first-child { color:var(--muted); }
+.dash__bar { height:10px; border-radius:100px; background:var(--alt); overflow:hidden; margin:.6rem 0; }
+.dash__bar span { display:block; height:100%; background:var(--accent,#136B4B); border-radius:100px; transition:width .4s ease; }
+.dash__nudge { font-size:.85rem; color:#c0392b; margin:.4rem 0 0; }
+.dash__balance { font-size:2.5rem; font-weight:700; line-height:1; margin-top:.25rem; }
+.dash__actions { display:flex; gap:.75rem; flex-wrap:wrap; margin-top:1.5rem; }
+.dash__log { list-style:none; padding:0; margin:0; }
+.dash__log li { display:flex; justify-content:space-between; gap:1rem; padding:.6rem 0; border-top:1px solid var(--rule); font-size:.9rem; }
+.dash__log li span:nth-child(2) { flex:1; }
+.dash__log li:first-child { border-top:none; }

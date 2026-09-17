@@ -1004,6 +1004,95 @@
      campaigns to read, since web Liquid cannot reach into an array.
      Ancillaries are a comma-separated string, not a nested array — object
      fields are scalars on the platform. */
+  // --- accounts, as an Array of Objects (finance) --------------------------
+  //  The customer's opened products (checking, saver, card, loan). One object
+  //  per account; flat latest fields (product, account_type, customer_status)
+  //  are set at sign-in for onsite reading. Per-uuid, like bookings/purchases.
+  /* --- account activity: usage (telco) + transactions (finance) ----------
+     The ongoing relationship. Telco keeps a usage record (data used vs
+     allowance, plus a log of usage/top-up events); finance keeps a balance
+     and a transaction log. Per-uuid like everything else, so a fresh visitor
+     starts clean. The dashboard reads these live; demo controls mutate them
+     and the dashboard reflects the change on next paint — the trip-banner
+     loop, for an account. */
+  function usageState() {
+    // { allowance, used, events:[{when,label,gb}] } for telco.
+    var st = readHist('lmn.usage');
+    if (st && !Array.isArray(st)) return st;
+    return null;
+  }
+  function seedUsage(allowance) {
+    var st = { allowance: allowance || 20, used: 0, events: [] };
+    writeHist('lmn.usage', st);
+    return st;
+  }
+  function addUsage(gb, label) {
+    var st = usageState() || seedUsage((currentUser() && Number(currentUser().data_allowance)) || 20);
+    st.used = Math.round((st.used + gb) * 10) / 10;
+    st.events.unshift({ when: Date.now(), label: label || (gb + ' GB used'), gb: gb });
+    st.events = st.events.slice(0, 20);
+    writeHist('lmn.usage', st);
+    // mirror to flat attributes so the header/banner and campaigns can read them
+    signIn({ data_used: st.used, data_allowance: st.allowance });
+    return st;
+  }
+  function topUp(gb, label) {
+    var st = usageState() || seedUsage((currentUser() && Number(currentUser().data_allowance)) || 20);
+    st.allowance = Math.round((st.allowance + gb) * 10) / 10;
+    st.events.unshift({ when: Date.now(), label: label || ('Topped up ' + gb + ' GB'), gb: -gb });
+    st.events = st.events.slice(0, 20);
+    writeHist('lmn.usage', st);
+    signIn({ data_allowance: st.allowance });
+    return st;
+  }
+
+  function financeState() {
+    // { balance, transactions:[{when,label,amount}] } for finance.
+    var st = readHist('lmn.finance');
+    if (st && !Array.isArray(st)) return st;
+    return null;
+  }
+  function seedFinance(balance) {
+    var st = { balance: (typeof balance === 'number') ? balance : 2340,
+      transactions: [
+        { when: Date.now() - 2*86400000, label: 'Salary', amount: 2100 },
+        { when: Date.now() - 1*86400000, label: 'Tesco', amount: -54.20 },
+        { when: Date.now() - 6*3600000, label: 'Coffee', amount: -3.40 }
+      ] };
+    writeHist('lmn.finance', st);
+    signIn({ balance: st.balance });
+    return st;
+  }
+  function addTransaction(amount, label) {
+    var st = financeState() || seedFinance();
+    st.balance = Math.round((st.balance + amount) * 100) / 100;
+    st.transactions.unshift({ when: Date.now(), label: label || (amount < 0 ? 'Payment' : 'Deposit'), amount: amount });
+    st.transactions = st.transactions.slice(0, 20);
+    writeHist('lmn.finance', st);
+    signIn({ balance: st.balance });
+    return st;
+  }
+
+  function accountHistory() {
+    var all = readHist('lmn.accounts');
+    var vk = (window.VERTICAL || {}).key;
+    if (!vk) return all;
+    return all.filter(function (a) { return !a.vertical || a.vertical === vk; });
+  }
+  function noteAccount(acct) {
+    if (!acct) return accountHistory();
+    var hist = accountHistory();
+    acct.vertical = (window.VERTICAL || {}).key || undefined;
+    hist.push(acct);
+    writeHist('lmn.accounts', hist.slice(-40));
+    return hist;
+  }
+  function accountsPayload(hist) {
+    return (hist || accountHistory()).map(function (a) {
+      return { account_id: String(a.account_id), product: a.product, type: a.type,
+               rate: a.rate || '', opened_at: a.opened_at, status: a.status };
+    });
+  }
   function bookingHistory() {
     var all = readHist('lmn.bookings');
     var vk = (window.VERTICAL || {}).key;
@@ -1321,11 +1410,25 @@
       var u = currentUser();
       if (!u) { host.hidden = true; host.innerHTML = ''; return; }
       var bits = [];
-      if (u.membership_tier) bits.push(u.membership_tier);
-      if (typeof u.loyalty_points === 'number') {
-        bits.push(u.loyalty_points.toLocaleString() + ' pts');
+      var vk = (window.VERTICAL || {}).key;
+      // Vertical-aware signed-in strip: the flow's payoff shown in the header.
+      // Telco -> plan (+ usage); Finance -> product (+ status); else -> tier/points.
+      if (u.plan) {
+        // telco subscriber
+        bits.push(u.plan);
+        if (u.data_used && u.data_allowance) bits.push(u.data_used + '/' + u.data_allowance + ' GB');
+        else if (u.assigned_number) bits.push(u.assigned_number);
+      } else if (u.product) {
+        // finance customer
+        bits.push(u.product);
+        if (u.customer_status && u.customer_status !== 'Active') bits.push(u.customer_status);
+      } else {
+        if (u.membership_tier) bits.push(u.membership_tier);
+        if (typeof u.loyalty_points === 'number') {
+          bits.push(u.loyalty_points.toLocaleString() + ' pts');
+        }
+        if (u.preferred_store) bits.push(u.preferred_store);
       }
-      if (u.preferred_store) bits.push(u.preferred_store);
       if (!bits.length) { host.hidden = true; host.innerHTML = ''; return; }
       host.innerHTML = bits.map(function (b, i) {
         return '<span' + (i === 0 ? ' class="loy__tier"' : '') + '>' + b + '</span>';
@@ -1594,7 +1697,10 @@
     localHref: localHref, money: money, productPayload: productPayload,
     cartLines: cartLines, cartTotal: cartTotal, cartCount: cartCount,
     addToCart: addToCart, removeFromCart: removeFromCart, setQty: setQty, clearCart: clearCart,
-    bookingHistory: bookingHistory, noteBooking: noteBooking, bookingsPayload: bookingsPayload, syncArray: syncArray, syncBookings: syncBookings,
+    bookingHistory: bookingHistory, noteBooking: noteBooking, bookingsPayload: bookingsPayload,
+    accountHistory: accountHistory, noteAccount: noteAccount, accountsPayload: accountsPayload,
+    usageState: usageState, seedUsage: seedUsage, addUsage: addUsage, topUp: topUp,
+    financeState: financeState, seedFinance: seedFinance, addTransaction: addTransaction, syncArray: syncArray, syncBookings: syncBookings,
     currentUser: currentUser, signIn: signIn, signOut: signOut, refreshIdentity: refreshIdentity, syncAttributes: syncAttributes, userPayload: userPayload,
     noteCategoryView: noteCategoryView, preferredCategory: preferredCategory,
     noteProductView: noteProductView, sessionStats: sessionStats,

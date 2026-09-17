@@ -241,34 +241,48 @@ body { opacity: 0; transition: opacity .18s ease-out }
   (function renderLines() {
     var wrap = document.getElementById('linecards'); if (!wrap) return;
     var lineCol = (V.content && V.content.lines_collection) || (Store.collections()[0]);
-    var items = Store.byCollection(lineCol) || [];
+    var items = (lineCol === '__all__')
+      ? Store.oneVariantEach(Store.catalog.slice())   // all families on the homepage
+      : (Store.byCollection(lineCol) || []);
     // one card per product (group), dedup by name
     var seen = {}, cards = [];
     items.forEach(function (p) { if (!seen[p.name]) { seen[p.name]=1; cards.push(p); } });
     if (V.content && V.content.popular) { /* mark popular by name */ }
     wrap.innerHTML = '';
+    var cardCfg = (V.content && (V.content.product_cards || V.content.plan_cards)) || {};
+    var funnel = (V.content && V.content.funnel) || 'subscribe.html';   // telco->subscribe, banking->open.html
+    var perUnit = (V.content && V.content.price_suffix);                 // "/mo" for telco; banking omits
     cards.forEach(function (p) {
-      var cardmeta = ((V.content && V.content.plan_cards) || {})[p.name] || {};
+      var cardmeta = cardCfg[p.name] || {};
       var feats = cardmeta.features || featuresFrom(p.description);
       var blurb = cardmeta.blurb || blurbFrom(p.description);
+      // A finance product shows a rate/fee line ("No monthly fee", "From 6.9% APR")
+      // instead of a price. Telco shows the price. rate_line wins when present.
+      var rateLine = cardmeta.rate_line || p.rate_line || '';
       var el = document.createElement('div'); el.className = 'linecard';
       var pop = (V.content && V.content.popular && p.name === V.content.popular) ? '<span class="linecard__flag">Most popular</span>' : '';
+      var priceHtml = rateLine
+        ? '<p class="linecard__price"><span class="linecard__rate"></span></p>'
+        : '<p class="linecard__price"><span class="linecard__amt"></span><span class="linecard__per"> ' + (perUnit || '/mo') + '</span></p>';
       el.innerHTML =
         pop +
         '<h3 class="linecard__name"></h3>' +
-        '<p class="linecard__price"><span class="linecard__amt"></span><span class="linecard__per"> /mo</span></p>' +
+        priceHtml +
         '<p class="linecard__blurb"></p>' +
         '<ul class="linecard__feats"></ul>' +
         '<a class="btn btn--wide linecard__cta" href="#">' + ((V.content && V.content.line_cta) || 'Choose') + '</a>';
       el.querySelector('.linecard__name').textContent = p.name;
-      el.querySelector('.linecard__amt').textContent = money(p.unit_price, p.currency);
+      if (rateLine) el.querySelector('.linecard__rate').textContent = rateLine;
+      else el.querySelector('.linecard__amt').textContent = money(p.unit_price, p.currency);
       el.querySelector('.linecard__blurb').textContent = blurb;
       var ul = el.querySelector('.linecard__feats');
       (feats||[]).forEach(function (f) { if(!f) return; var li=document.createElement('li'); li.textContent=f; ul.appendChild(li); });
-      // CTA -> the funnel, carrying the chosen line
-      el.querySelector('.linecard__cta').href = 'subscribe.html?line=' + encodeURIComponent(p.name);
+      el.querySelector('.linecard__cta').href = funnel + '?line=' + encodeURIComponent(p.name);
       wrap.appendChild(el);
     });
+    // Section heading + hero CTA target from config
+    var lt = document.getElementById('lines-title');
+    if (lt && V.content && V.content.lines_title) lt.textContent = V.content.lines_title;
   })();
 
   /* ---- Content search (site-backed over help articles) ------------------- */

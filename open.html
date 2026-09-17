@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Subscribe — Checkout — Lumen</title>
+
+<!-- Browsers largely ignore these; the real protection is the Cache-Control
+     headers in _headers / netlify.toml / vercel.json. Kept as a second line. -->
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<link rel="preconnect" href="https://cdn.shopify.com">
+<link rel="stylesheet" href="assets/styles.css">
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     INSIDER WEB SDK
+     Order is load-bearing:
+       1. InsiderQueue array
+       2. site scripts (telemetry wrapper must precede the first push)
+       3. Insider Tag (ins.js)
+       4. user data -> page data -> init
+     ═══════════════════════════════════════════════════════════════════════ -->
+
+<!-- 1. The queue. Must exist before the tag loads. -->
+<script>window.InsiderQueue = window.InsiderQueue || [];</script>
+
+<!-- 2. Site scripts. insider-debug.js wraps InsiderQueue.push to mirror every
+        payload into the on-page console, so it loads before anything is sent. -->
+<script src="assets/config.js"></script>
+<script src="assets/insider-debug.js"></script>
+<script src="assets/vertical.js"></script>
+<script src="assets/store.js"></script>
+<script src="assets/explain.js"></script>
+<script src="assets/affinity.js"></script>
+<script src="assets/agent.js"></script>
+
+<!-- 3. Insider Tag — written by assets/vertical.js, because which
+        account it points at depends on the hostname:
+          beauty.insiderdemo.com          -> salesdemo
+          beauty-sandbox.insiderdemo.com  -> partnersandbox
+        Account and partner id are listed in vertical.js and shown
+        live in the SDK console. -->
+
+<!-- 4. Data pushes for this page. -->
+<script>
+  window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });
+  window.InsiderQueue.push({ type: 'currency', value: Store.currency() });
+
+  // --- page type: other -------------------------------------------------
+  // Checkout is a labelled "other" page. The name shows on the profile as an
+  // Other Page View, which is what abandonment journeys key off.
+  window.InsiderQueue.push({
+    type: 'other',
+    value: { name: 'checkout',
+             custom: { basket_value: Store.cartTotal(), basket_lines: Store.cartCount() } }
+  });
+
+  window.InsiderQueue.push({ type: 'init' });
+</script>
+</head>
+
+<body>
+
+<p class="announce" data-announce>Free shipping over $50</p>
+
+<header class="masthead">
+  <div class="masthead__in">
+    <a class="brand" href="index.html" data-brand>Lumen</a>
+    <form class="searchbox" data-search role="search" autocomplete="off">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" id="search-input" name="q" placeholder="Search products" data-search-placeholder aria-label="Search products">
+    </form>
+    <nav class="utils">
+      <span class="loy" data-loyalty-strip hidden></span>
+      <a href="flow.html" data-flow-link>Services</a>
+      <a href="account.html" data-account-label>Log in</a>
+      <a class="cartlink" href="cart.html"><span data-label="cart">Cart</span><span data-cart-count hidden>0</span></a>
+    </nav>
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="mainnav__in" data-collection-nav></div>
+</nav>
+
+<main>
+  <section class="wrap" style="padding-top:2.5rem;padding-bottom:4rem;max-width:60rem">
+
+    <ol class="substeps" id="substeps">
+      <li data-step="1">Choose account</li>
+      <li data-step="2" id="step-elig" hidden>Check eligibility</li>
+      <li data-step="3">Your details</li>
+    </ol>
+
+    <!-- STEP 1 — product -->
+    <section class="substep" data-panel="1">
+      <h1 class="h1" style="font-size:clamp(1.5rem,3vw,2rem)">Confirm your account</h1>
+      <div class="subplan" id="subproduct"></div>
+      <div class="substep__actions">
+        <a class="btn btn--ghost" href="content-index.html#plans">Change</a>
+        <button class="btn" type="button" data-next="next1">Continue</button>
+      </div>
+    </section>
+
+    <!-- STEP 2 — eligibility (credit products only) -->
+    <section class="substep" data-panel="2" hidden>
+      <h1 class="h1" style="font-size:clamp(1.5rem,3vw,2rem)">Check your eligibility</h1>
+      <p class="lede" style="margin:.5rem 0 1.25rem">A soft search — it won't affect your credit score.</p>
+      <form id="elig-form" class="panel" style="max-width:34rem">
+        <div class="field"><label for="e-income">Annual income</label>
+          <select id="e-income"><option value="">Select…</option><option>Under £20,000</option><option>£20,000–£40,000</option><option>£40,000–£70,000</option><option>£70,000+</option></select></div>
+        <div class="field"><label for="e-employment">Employment</label>
+          <select id="e-employment"><option value="">Select…</option><option>Employed</option><option>Self-employed</option><option>Retired</option><option>Student</option></select></div>
+        <div class="field"><label for="e-borrow">Existing monthly credit commitments</label>
+          <select id="e-borrow"><option value="">Select…</option><option>None</option><option>Under £250</option><option>£250–£750</option><option>Over £750</option></select></div>
+        <div class="substep__actions" style="margin-top:1.5rem">
+          <button class="btn btn--ghost" type="button" data-back="1">Back</button>
+          <button class="btn" type="button" data-next="3" id="elig-continue">See my rate</button>
+        </div>
+      </form>
+      <div id="elig-result" class="subsummary" hidden></div>
+    </section>
+
+    <!-- STEP 3 — details -->
+    <section class="substep" data-panel="3" hidden>
+      <h1 class="h1" style="font-size:clamp(1.5rem,3vw,2rem)">Your details</h1>
+      <form id="open-form" class="panel" style="max-width:34rem">
+        <div class="field"><label for="o-name">First name</label><input id="o-name" required></div>
+        <div class="field"><label for="o-surname">Last name</label><input id="o-surname" required></div>
+        <div class="field"><label for="o-email">Email</label><input type="email" id="o-email" required placeholder="you@example.com"></div>
+        <label class="check"><input type="checkbox" id="o-optin" checked> Keep me posted about my account and offers</label>
+        <div class="substep__actions" style="margin-top:1.5rem">
+          <button class="btn btn--ghost" type="button" data-back="back3">Back</button>
+          <button class="btn" type="submit" id="open-submit">Open account</button>
+        </div>
+      </form>
+    </section>
+
+    <aside class="subsummary" id="opensummary"></aside>
+  </section>
+</main>
+<footer class="foot">
+  <div class="wrap foot__in"><span><span data-brand>Northbank</span> — Insider One demo storefront</span><span></span></div>
+</footer>
+
+<script>
+  var V = window.VERTICAL || {};
+  var params = new URLSearchParams(location.search);
+  var lineName = params.get('line') || '';
+
+  function findProduct(name) {
+    var items = (Store.catalog || []);
+    var byName = items.filter(function (p){ return p.name === name; });
+    return byName[0] || items[0] || null;
+  }
+  var product = findProduct(lineName);
+  var cardCfg = ((V.content && V.content.product_cards) || {})[product ? product.name : ''] || {};
+  // credit products need the eligibility step
+  var CREDIT = product && (product.collection === 'Credit Cards' || product.collection === 'Loans');
+
+  (function renderProduct(){
+    var host=document.getElementById('subproduct'); if(!host||!product) return;
+    host.innerHTML='<div class="subplan__card"><div class="subplan__head">'+
+      '<h2 class="subplan__name"></h2><p class="subplan__price"><span class="subplan__rate"></span></p></div>'+
+      '<p class="subplan__blurb"></p><ul class="subplan__feats"></ul></div>';
+    host.querySelector('.subplan__name').textContent=product.name;
+    host.querySelector('.subplan__rate').textContent=cardCfg.rate_line||'';
+    host.querySelector('.subplan__blurb').textContent=cardCfg.blurb||'';
+    var ul=host.querySelector('.subplan__feats');
+    (cardCfg.features||[]).forEach(function(f){var li=document.createElement('li');li.textContent=f;ul.appendChild(li);});
+  })();
+
+  // show the eligibility step only for credit products
+  if (CREDIT) { var se=document.getElementById('step-elig'); if(se) se.hidden=false; }
+
+  var leadScore=null, leadBand=null;
+  function scoreEligibility(){
+    var inc=document.getElementById('e-income').value, emp=document.getElementById('e-employment').value, bor=document.getElementById('e-borrow').value;
+    if(!inc||!emp||!bor){ alert('Please complete all three to see your rate.'); return false; }
+    var s=0;
+    s += inc==='£70,000+'?40:inc==='£40,000–£70,000'?30:inc==='£20,000–£40,000'?20:5;
+    s += emp==='Employed'?25:emp==='Self-employed'?18:emp==='Retired'?15:5;
+    s += bor==='None'?25:bor==='Under £250'?18:bor==='£250–£750'?8:0;
+    leadScore=s; leadBand = s>=70?'A':s>=45?'B':'C';
+    var res=document.getElementById('elig-result');
+    res.hidden=false;
+    res.innerHTML='<h3>Your indicative rate</h3>'+
+      '<div class="subsummary__row"><span>Eligibility</span><span>'+(leadBand==='A'?'Excellent':leadBand==='B'?'Good':'Refer to a banker')+'</span></div>'+
+      '<div class="subsummary__row"><span>Indicative APR</span><span>'+(leadBand==='A'?'6.9%':leadBand==='B'?'12.9%':'By appointment')+'</span></div>'+
+      (leadBand==='C'?'<div class="subsummary__row"><span>Next step</span><span>A banker will call to discuss options</span></div>':'');
+    return true;
+  }
+
+  function show(step){
+    document.querySelectorAll('.substep').forEach(function(s){s.hidden=s.getAttribute('data-panel')!==String(step);});
+    document.querySelectorAll('#substeps li').forEach(function(li){var n=+li.getAttribute('data-step');li.classList.toggle('is-active',n===step);li.classList.toggle('is-done',n<step);});
+    window.scrollTo(0,0);
+  }
+  document.querySelectorAll('[data-next]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var to=b.getAttribute('data-next');
+      if(to==='next1'){ show(CREDIT?2:3); return; }           // skip eligibility for deposit products
+      if(to==='3'){ if(CREDIT && !scoreEligibility()) return; show(3); return; }
+      show(+to);
+    });
+  });
+  document.querySelectorAll('[data-back]').forEach(function(b){
+    b.addEventListener('click',function(){ var to=b.getAttribute('data-back'); if(to==='back3'){ show(CREDIT?2:1); } else show(+to); });
+  });
+
+  function updateSummary(){
+    var host=document.getElementById('opensummary'); if(!host||!product) return;
+    host.innerHTML='<h3>Your application</h3>'+
+      '<div class="subsummary__row"><span>Product</span><span>'+product.name+'</span></div>'+
+      '<div class="subsummary__row"><span>Type</span><span>'+product.collection+'</span></div>'+
+      (cardCfg.rate_line?'<div class="subsummary__row"><span>Rate</span><span>'+cardCfg.rate_line+'</span></div>':'')+
+      (leadBand?'<div class="subsummary__row"><span>Eligibility</span><span>Band '+leadBand+'</span></div>':'');
+  }
+  updateSummary();
+
+  document.getElementById('open-form').addEventListener('submit', async function(ev){
+    ev.preventDefault();
+    var status = (leadBand==='C') ? 'Referred to banker' : 'Active';
+    Store.signIn({
+      name:document.getElementById('o-name').value.trim(),
+      surname:document.getElementById('o-surname').value.trim(),
+      email:document.getElementById('o-email').value.trim(),
+      email_optin:document.getElementById('o-optin').checked, gdpr_optin:true,
+      product: product?product.name:undefined,
+      account_type: product?product.collection:undefined,
+      customer_status: status,
+      lead_band: leadBand||undefined, lead_score: leadScore||undefined
+    });
+    // add to the accounts array (Array of Objects) via the same event->journey->Upsert path
+    var acct={ account_id:'NB'+Date.now().toString().slice(-8), product:product?product.name:'', type:product?product.collection:'', rate:cardCfg.rate_line||'', opened_at:new Date().toISOString().replace(/\.\d+Z$/,'Z'), status:status };
+    if (Store.noteAccount) Store.noteAccount(acct);
+    window.InsiderQueue.push({ type:'user', value: Store.userPayload() });
+    window.InsiderQueue.push({ type:'init' });
+    localStorage.setItem('lmn.order', JSON.stringify({ order_id:acct.account_id, account:true, product:acct.product, type:acct.type, status:status, lead_band:leadBand }));
+    location.href='confirmation.html';
+  });
+</script>
+</body>
+</html>

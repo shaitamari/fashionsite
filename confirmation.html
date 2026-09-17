@@ -162,6 +162,7 @@
       return o;
     });
     if ((window.VERTICAL || {}).banner_slot) payload.custom.bookings = Store.bookingsPayload();
+    if (Store.accountHistory && Store.accountHistory().length) payload.custom.accounts = Store.accountsPayload();
     window.InsiderQueue.push({ type: 'user', value: payload });
     if (window.insDebugNote) {
       var d = Store.nextDue();
@@ -271,6 +272,18 @@
   if (!ORDER) {
     line.textContent = 'No order found in this browser. Add something to the cart and check out to see a purchase event.';
     summary.innerHTML = '<div><span>Status</span><span>no order</span></div>';
+  } else if (ORDER.account) {
+    // Finance: account opened.
+    var opened = ORDER.status === 'Referred to banker';
+    line.textContent = opened
+      ? "Thanks — your " + ORDER.product + " application is with one of our bankers, who'll call you shortly to finish it."
+      : "You're all set — your " + ORDER.product + " is open. Your welcome pack and card details are on their way.";
+    summary.innerHTML =
+      '<div><span>Product</span><span>' + ORDER.product + '</span></div>' +
+      '<div><span>Type</span><span>' + ORDER.type + '</span></div>' +
+      '<div class="grand"><span>Status</span><span>' + ORDER.status + '</span></div>' +
+      (ORDER.lead_band ? '<div><span>Eligibility</span><span>Band ' + ORDER.lead_band + '</span></div>' : '');
+    if (FRESH) { ORDER.sent = true; try { localStorage.setItem('lmn.order', JSON.stringify(ORDER)); } catch (e) {} }
   } else if (ORDER.subscription) {
     // Telco subscription confirmation.
     var sym = (window.VERTICAL && window.VERTICAL.currency === 'EUR') ? '\u20ac' : '';

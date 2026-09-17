@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Subscribe — Checkout — Lumen</title>
+
+<!-- Browsers largely ignore these; the real protection is the Cache-Control
+     headers in _headers / netlify.toml / vercel.json. Kept as a second line. -->
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<link rel="preconnect" href="https://cdn.shopify.com">
+<link rel="stylesheet" href="assets/styles.css">
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     INSIDER WEB SDK
+     Order is load-bearing:
+       1. InsiderQueue array
+       2. site scripts (telemetry wrapper must precede the first push)
+       3. Insider Tag (ins.js)
+       4. user data -> page data -> init
+     ═══════════════════════════════════════════════════════════════════════ -->
+
+<!-- 1. The queue. Must exist before the tag loads. -->
+<script>window.InsiderQueue = window.InsiderQueue || [];</script>
+
+<!-- 2. Site scripts. insider-debug.js wraps InsiderQueue.push to mirror every
+        payload into the on-page console, so it loads before anything is sent. -->
+<script src="assets/config.js"></script>
+<script src="assets/insider-debug.js"></script>
+<script src="assets/vertical.js"></script>
+<script src="assets/store.js"></script>
+<script src="assets/explain.js"></script>
+<script src="assets/affinity.js"></script>
+<script src="assets/agent.js"></script>
+
+<!-- 3. Insider Tag — written by assets/vertical.js, because which
+        account it points at depends on the hostname:
+          beauty.insiderdemo.com          -> salesdemo
+          beauty-sandbox.insiderdemo.com  -> partnersandbox
+        Account and partner id are listed in vertical.js and shown
+        live in the SDK console. -->
+
+<!-- 4. Data pushes for this page. -->
+<script>
+  window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });
+  window.InsiderQueue.push({ type: 'currency', value: Store.currency() });
+
+  // --- page type: other -------------------------------------------------
+  // Checkout is a labelled "other" page. The name shows on the profile as an
+  // Other Page View, which is what abandonment journeys key off.
+  window.InsiderQueue.push({
+    type: 'other',
+    value: { name: 'checkout',
+             custom: { basket_value: Store.cartTotal(), basket_lines: Store.cartCount() } }
+  });
+
+  window.InsiderQueue.push({ type: 'init' });
+</script>
+</head>
+
+<body>
+
+<p class="announce" data-announce>Free shipping over $50</p>
+
+<header class="masthead">
+  <div class="masthead__in">
+    <a class="brand" href="index.html" data-brand>Lumen</a>
+    <form class="searchbox" data-search role="search" autocomplete="off">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" id="search-input" name="q" placeholder="Search products" data-search-placeholder aria-label="Search products">
+    </form>
+    <nav class="utils">
+      <span class="loy" data-loyalty-strip hidden></span>
+      <a href="flow.html" data-flow-link>Services</a>
+      <a href="account.html" data-account-label>Log in</a>
+      <a class="cartlink" href="cart.html"><span data-label="cart">Cart</span><span data-cart-count hidden>0</span></a>
+    </nav>
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="mainnav__in" data-collection-nav></div>
+</nav>
+
+<main>
+  <section class="wrap" style="padding-top:2.5rem;padding-bottom:4rem;max-width:60rem">
+    <ol class="substeps" id="substeps">
+      <li data-step="1">What to cover</li>
+      <li data-step="2">Your details</li>
+      <li data-step="3">Your quote</li>
+    </ol>
+
+    <section class="substep" data-panel="1">
+      <h1 class="h1" style="font-size:clamp(1.5rem,3vw,2rem)">What would you like to cover?</h1>
+      <div class="numtabs" id="cover-tabs"></div>
+      <div class="field" style="max-width:22rem;margin-top:1rem"><label for="q-level">Level of cover</label>
+        <select id="q-level"></select></div>
+      <div class="field" style="max-width:22rem"><label for="q-excess">Voluntary excess</label>
+        <select id="q-excess"></select></div>
+      <div class="substep__actions"><button class="btn" type="button" data-next="2">Continue</button></div>
+    </section>
+
+    <section class="substep" data-panel="2" hidden>
+      <h1 class="h1" style="font-size:clamp(1.5rem,3vw,2rem)">Your details</h1>
+      <form id="q-form" class="panel" style="max-width:34rem">
+        <div class="field"><label for="q-name">First name</label><input id="q-name" required></div>
+        <div class="field"><label for="q-surname">Last name</label><input id="q-surname" required></div>
+        <div class="field"><label for="q-email">Email</label><input type="email" id="q-email" required placeholder="you@example.com"></div>
+        <div class="substep__actions"><button class="btn btn--ghost" type="button" data-back="1">Back</button>
+          <button class="btn" type="submit">Get my quote</button></div>
+      </form>
+    </section>
+
+    <section class="substep" data-panel="3" hidden>
+      <h1 class="h1" style="font-size:clamp(1.5rem,3vw,2rem)">Your quote</h1>
+      <div class="subsummary" id="quote-result"></div>
+      <div class="substep__actions"><a class="btn" href="content-index.html">Done</a></div>
+    </section>
+    <aside class="subsummary" id="quotesummary"></aside>
+  </section>
+</main>
+<footer class="foot"><div class="wrap foot__in"><span><span data-brand>Northbank</span> — Insider One demo storefront</span><span></span></div></footer>
+<script>
+  var V=window.VERTICAL||{}; var Q=(V.quote)||{cover:['Home','Car','Travel','Life'],level:['Essential','Standard','Premier'],excess:['£100','£250','£500']};
+  var cover=Q.cover[0];
+  (function(){ var t=document.getElementById('cover-tabs');
+    Q.cover.forEach(function(c,i){ var b=document.createElement('button'); b.type='button'; b.className='numtab'+(i===0?' is-active':''); b.textContent=c;
+      b.addEventListener('click',function(){ t.querySelectorAll('.numtab').forEach(function(x){x.classList.remove('is-active');}); b.classList.add('is-active'); cover=c; upd(); }); t.appendChild(b); });
+    var lv=document.getElementById('q-level'); Q.level.forEach(function(l){var o=document.createElement('option');o.textContent=l;lv.appendChild(o);});
+    var ex=document.getElementById('q-excess'); Q.excess.forEach(function(x){var o=document.createElement('option');o.textContent=x;ex.appendChild(o);});
+  })();
+  function show(step){document.querySelectorAll('.substep').forEach(function(s){s.hidden=s.getAttribute('data-panel')!==String(step);});
+    document.querySelectorAll('#substeps li').forEach(function(li){var n=+li.getAttribute('data-step');li.classList.toggle('is-active',n===step);li.classList.toggle('is-done',n<step);});window.scrollTo(0,0);}
+  document.querySelectorAll('[data-next]').forEach(function(b){b.addEventListener('click',function(){show(+b.getAttribute('data-next'));});});
+  document.querySelectorAll('[data-back]').forEach(function(b){b.addEventListener('click',function(){show(+b.getAttribute('data-back'));});});
+  function priceFor(){ var base={Home:18,Car:32,Travel:9,Life:14}[cover]||20; var lvl=document.getElementById('q-level').selectedIndex; var exc=document.getElementById('q-excess').selectedIndex;
+    return Math.round((base*(1+lvl*0.4))*(1-exc*0.12)); }
+  function upd(){ var h=document.getElementById('quotesummary'); h.innerHTML='<h3>Your cover</h3>'+
+    '<div class="subsummary__row"><span>Type</span><span>'+cover+'</span></div>'+
+    '<div class="subsummary__row"><span>Level</span><span>'+document.getElementById('q-level').value+'</span></div>'+
+    '<div class="subsummary__row"><span>Excess</span><span>'+document.getElementById('q-excess').value+'</span></div>'; }
+  document.getElementById('q-level').addEventListener('change',upd); document.getElementById('q-excess').addEventListener('change',upd); upd();
+  document.getElementById('q-form').addEventListener('submit',function(ev){ ev.preventDefault();
+    var monthly=priceFor();
+    Store.signIn({ name:document.getElementById('q-name').value.trim(), surname:document.getElementById('q-surname').value.trim(),
+      email:document.getElementById('q-email').value.trim(), gdpr_optin:true,
+      quote_cover:cover, quote_level:document.getElementById('q-level').value, quote_premium:monthly, customer_status:'Quote' });
+    window.InsiderQueue.push({type:'user',value:Store.userPayload()}); window.InsiderQueue.push({type:'init'});
+    document.getElementById('quote-result').innerHTML='<h3>'+cover+' cover — £'+monthly+'/mo</h3>'+
+      '<div class="subsummary__row"><span>Level</span><span>'+document.getElementById('q-level').value+'</span></div>'+
+      '<div class="subsummary__row"><span>Excess</span><span>'+document.getElementById('q-excess').value+'</span></div>'+
+      '<div class="subsummary__row"><span>Next step</span><span>We\'ve saved this quote to your profile and emailed it</span></div>';
+    show(3);
+  });
+</script>
+</body></html>
