@@ -306,7 +306,11 @@ def enrich(rec, key, extra, today):
                     m = _pick(seed + "t", choices)
                     break
         if m:
-            rec["material"] = m
+            rec["material_full"] = m                 # the full "Cotton, Denim, Lycra" for the PDP
+            # The FACET reads `material`, so collapse to the PRIMARY material
+            # (first before the comma). Otherwise every combination becomes its
+            # own filter value and the Material facet explodes to 150+ entries.
+            rec["material"] = m.split(",")[0].strip()
 
 
 def build_catalog(key, cfg):

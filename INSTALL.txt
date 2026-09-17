@@ -1,15 +1,14 @@
-Out-of-stock products on fashion, VISIBLE ON THE PLP — for the Agent One back-in-stock demo.
+Fix the fashion Material facet exploding into 150+ combined values.
 
-- fashion size_gaps=True (one size marked out on ~a quarter of multi-size styles) + full_oos=8
-  (8 whole styles marked sold out, spread across Women/Men/Shoes/Accessories, deterministic by id).
-- PLP card now shows a badge: "Sold out" (whole product gone, image dimmed) or "Low stock" (a size is out).
-  oneVariantEach aggregates stock across variants so the card is truthful even though it shows one variant.
-- Result on a fashion category page: some cards show "Sold out" / "Low stock" -> click in -> the PDP has the
-  gone size -> Agent One captures the back-in-stock request. The capability now reads from the grid.
+CAUSE: material was comma-joined ("Cotton, Denim, Lycra"), so every combination became its own facet value.
+FIX (build.py): the facet field `material` is now the PRIMARY material only (first before the comma) ->
+158 values collapse to ~35 clean ones (Cotton, Leather, Silk, Wool, Linen...). The full string is kept as
+`material_full` for the PDP if needed.
 
 From the posh folder:
-  unzip -o ~/Downloads/posh-2026-09-17-oos-plp.zip -d /tmp/x && cp -r /tmp/x/posh-2026-09-17-oos-plp/* . && python3 build.py fashion && posh "OOS products on fashion PLP for the back-in-stock demo"
+  unzip -o ~/Downloads/posh-2026-09-17-material-facet.zip -d /tmp/x && cp -r /tmp/x/posh-2026-09-17-material-facet/* . && python3 build.py --all && posh "Material facet: primary material only (no combination explosion)"
 
-After deploy, a fashion category (Women/Men/Shoes) shows Sold out / Low stock cards. 8 fully-OOS styles incl.:
-Garrison Belt, Babydoll Tank in White, Two Button Henley, and several Vans/shoes.
+NOTE — the LIVE facet is served by EUREKA off the feed, so the clean values appear once the feed re-syncs
+and Eureka reindexes (the local-catalogue fallback facet is clean immediately). If material is a searchable
+attribute/facet configured on the en_GB locale, a reindex is needed for the facet values to refresh.
 Same-name-download trap: if 'nothing to commit', unzip the newest per ls -lt.
