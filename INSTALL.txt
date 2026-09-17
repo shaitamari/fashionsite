@@ -1,4 +1,10 @@
-Per-uuid history fix (+ Makeup fallback + vertical-scoped purchases/bookings).
-Files: assets/store.js, history.html
-From the posh folder:
-  unzip -o ~/Downloads/posh-2026-09-17-a.zip -d /tmp/x && cp -r /tmp/x/posh-2026-09-17-a/* . && posh "History per uuid; new identities never inherit prior trips/purchases"
+Tier banner site-side backup (cart + everywhere) for retail sub-verticals + travel.
+- fills/corrects the stale or blank .ins-tier-message from the LIVE profile
+  (currentUser membership_tier + loyalty_points), same pattern as the trip banner.
+- tier_banner:true on fashion/beauty/home/luxury/electronics/airlines/hotels;
+  OFF for grocery/telco/banking/insurance (they get their own loyalty beats).
+- build.py now allowlists tier_banner into the catalog meta.
+
+Files: assets/vertical.js, verticals.json, build.py
+From the posh folder (REBUILD is required so tier_banner reaches every catalog):
+  unzip -o ~/Downloads/posh-2026-09-17-b.zip -d /tmp/x && cp -r /tmp/x/posh-2026-09-17-b/* . && python3 build.py && posh "Tier banner site-side backup (retail + travel); live currentUser, never stale/blank"

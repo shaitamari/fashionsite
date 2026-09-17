@@ -688,6 +688,56 @@
     if (!txt) return false;
     return /change to your .* booking|running late|not ready|cancelled|holding it for you/i.test(txt);
   }
+
+  /* --- tier / loyalty progress banner ------------------------------------
+     Same problem, same fix as the trip banner. The tier campaign reads
+     membership_tier / loyalty_points from the tag's per-session snapshot, so
+     after a purchase (points changed) it can show the PREVIOUS tier/points
+     until the next session. The site knows the live values from currentUser(),
+     so it writes the correct sentence into the same .ins-tier-message element.
+     One copy source (tierBannerText) keeps primary and backup identical.
+     Scoped to storefronts that actually have an aspirational tier model
+     (retail sub-verticals + travel); grocery/telco/banking have their own
+     loyalty beats and are excluded via tier_banner in the vertical config. */
+  function tierBannerText(tier, points) {
+    var p = (typeof points === 'number') ? points : 0;
+    if (tier === 'Gold') return "You're Gold \u2014 our best benefits.";
+    if (tier === 'Silver') return "You're " + Math.max(1500 - p, 0) + " points from Gold and its best benefits.";
+    if (tier === 'Bronze' || tier === 'Blue') return "You're " + Math.max(500 - p, 0) + " points from Silver.";
+    return '';  // Guest / unknown / no tier: show nothing rather than a guess.
+  }
+  function looksLikeTierLine(txt) {
+    if (!txt) return false;
+    return /points from (Silver|Gold)|You're Gold/i.test(txt);
+  }
+  function fillTierFallback() {
+    try {
+      if (!window.Store || !Store.currentUser) return;
+      var v = window.VERTICAL || {};
+      if (!v.tier_banner) return;  // only where the tier model applies
+      var paint = function () {
+        var u = Store.currentUser() || {};
+        var msg = tierBannerText(u.membership_tier, u.loyalty_points);
+        var els = document.querySelectorAll('.ins-tier-message .ins-element-content, .ins-element-content');
+        for (var i = 0; i < els.length; i++) {
+          var el = els[i];
+          var cur = (el.textContent || '').replace(/[\u00a0\u200b]/g, '').trim();
+          var inTier = el.closest && el.closest('.ins-tier-message');
+          if (msg) {
+            // Overwrite a stale tier line, or fill an empty tier-message slot.
+            if (looksLikeTierLine(cur) && cur !== msg) el.textContent = msg;
+            else if (!cur && inTier) el.textContent = msg;
+          } else {
+            // Profile has no tier (Guest): clear a stale tier line.
+            if (looksLikeTierLine(cur)) el.textContent = '';
+          }
+        }
+      };
+      paint();
+      // Repaint a couple of times in case the campaign renders after us.
+      setTimeout(paint, 400); setTimeout(paint, 1500);
+    } catch (e) {}
+  }
   function fillBannerFallback(slot) {
     try {
       if (!window.Store || !Store.currentUser) return;
@@ -779,6 +829,12 @@
       if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', placeSlot);
       else placeSlot();
     }
+
+    /* Tier progress banner backup: runs on every page for tier-model
+       storefronts (v.tier_banner), correcting a stale/blank tier campaign
+       line from the live profile. Self-gates and only touches tier lines. */
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fillTierFallback);
+    else fillTierFallback();
     if (v) {
     /* A vertical can carry its own locale and currency — Canon is en_CA / CAD
        in its own catalog locale on the same account, so the SDK's product
@@ -1072,7 +1128,7 @@
       var v = labels[n.getAttribute('data-label')];
       if (v) n.textContent = v;
     });
-    document.querySelectorAll('[data-search-placeholder]').forEach(function (n) {
+    if (d.template !== 'content') document.querySelectorAll('[data-search-placeholder]').forEach(function (n) {
       if (d.search_placeholder) n.setAttribute('placeholder', d.search_placeholder);
     });
     if (d.brand) {

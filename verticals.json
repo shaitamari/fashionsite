@@ -287,7 +287,8 @@
   "showcase": {
    "search": "balm",
    "product": "48440263049461"
-  }
+  },
+  "tier_banner": true
  },
  "_template": {
   "_comment": "Copy this, rename the key, fill it in. Delete nothing else.",
@@ -473,7 +474,8 @@
   "showcase": {
    "search": "kyoto",
    "product": "48100000000001"
-  }
+  },
+  "tier_banner": true
  },
  "airlines": {
   "vertical": "Travel",
@@ -582,7 +584,8 @@
   "showcase": {
    "search": "tokyo",
    "product": "48200000000001"
-  }
+  },
+  "tier_banner": true
  },
  "_environments": {
   "_README": [
@@ -1138,7 +1141,8 @@
   "showcase": {
    "search": "burgundy",
    "product": "55693210845352"
-  }
+  },
+  "tier_banner": true
  },
  "electronics": {
   "vertical": "Retail",
@@ -1249,7 +1253,8 @@
   "showcase": {
    "search": "bookshelf",
    "product": "45033161687229"
-  }
+  },
+  "tier_banner": true
  },
  "telco": {
   "vertical": "Telco",
@@ -1774,7 +1779,8 @@
   "showcase": {
    "search": "velvet",
    "product": "50013105553710"
-  }
+  },
+  "tier_banner": true
  },
  "luxury": {
   "vertical": "Retail",
@@ -1897,7 +1903,8 @@
   "showcase": {
    "search": "tote",
    "product": "49508261069038"
-  }
+  },
+  "tier_banner": true
  },
  "supermarket": {
   "vertical": "Retail",
