@@ -990,7 +990,13 @@
    ],
    "lines_title": "Accounts, cards & loans",
    "funnel": "open.html",
-   "price_suffix": ""
+   "price_suffix": "",
+   "homepage_products": [
+    "Everyday",
+    "Northbank Saver",
+    "Northbank Rewards Card",
+    "Personal Loan"
+   ]
   },
   "open_account": {
    "steps": [

@@ -96,3 +96,13 @@ Same-name-download trap: if 'nothing to commit', unzip the newest per ls -lt.
     help/support page exists, so it's removed — telco nav is now Plans / Phones / Top up. (Build a real Help
     page later if wanted.) The "Phones has no menu" issue is the content-nav fix in #2 — not yet deployed on
     the sandbox; deploying this zip fixes it (inner pages get the same masthead nav as the home).
+
+15. BANKING HOMEPAGE — CURATED + WIDER CARDS + RIGHT CTAs (verticals.json + content-index.html + styles.css):
+    - The homepage showed ALL 11 products (too much). Now it shows a curated 4 — Everyday, Northbank Saver,
+      Rewards Card, Personal Loan — one representative per family (content.homepage_products). No plan clutter.
+    - The homepage cards used a single generic "Open account" CTA (the linecard renderer, separate from the
+      category card--finance). Now per-collection: Credit Cards -> "Apply for a card", Loans -> "Apply for a
+      loan", Checking/Savings -> "Open an account". (This is why the Credit Card card said "Open account" on
+      the HOME page even after the category-card fix — two different renderers.)
+    - Cards widened (minmax 340px) so a curated set of 4 spreads across the page; Checking, Savings and the
+      homepage cards are now the same, wider size.

@@ -479,9 +479,15 @@ html[data-vertical] .mainnav__in[data-content-nav] { gap: 2rem; }
 
 .linecards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
   align-items: stretch;
+}
+/* Finance homepage/category cards read better a bit wider — cap so a curated
+   set of 4 spreads across the page rather than clustering narrow. */
+html[data-vertical="banking"] .linecards,
+html[data-vertical="banking"] .listing__main .grid {
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
 }
 .linecard {
   position: relative;

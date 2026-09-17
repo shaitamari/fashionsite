@@ -244,6 +244,14 @@ body { opacity: 0; transition: opacity .18s ease-out }
     var items = (lineCol === '__all__')
       ? Store.oneVariantEach(Store.catalog.slice())   // all families on the homepage
       : (Store.byCollection(lineCol) || []);
+    // Curated homepage set: if the vertical names homepage_products, show only
+    // those (a clean "what we offer" lineup) instead of every product.
+    var pick = (V.content && V.content.homepage_products) || null;
+    if (pick && pick.length) {
+      var order = {}; pick.forEach(function (n, i) { order[n] = i; });
+      items = items.filter(function (p) { return p.name in order; })
+                   .sort(function (a, b) { return order[a.name] - order[b.name]; });
+    }
     // one card per product (group), dedup by name
     var seen = {}, cards = [];
     items.forEach(function (p) { if (!seen[p.name]) { seen[p.name]=1; cards.push(p); } });
@@ -272,6 +280,12 @@ body { opacity: 0; transition: opacity .18s ease-out }
         '<ul class="linecard__feats"></ul>' +
         '<a class="btn btn--wide linecard__cta" href="#">' + ((V.content && V.content.line_cta) || 'Choose') + '</a>';
       el.querySelector('.linecard__name').textContent = p.name;
+      // Per-collection CTA verb — a card is applied for, a loan is applied for,
+      // an account is opened. Overrides the generic line_cta for finance.
+      var ctaEl = el.querySelector('.linecard__cta');
+      if (p.collection === 'Credit Cards') ctaEl.textContent = 'Apply for a card';
+      else if (p.collection === 'Loans') ctaEl.textContent = 'Apply for a loan';
+      else if (p.collection === 'Checking' || p.collection === 'Savings') ctaEl.textContent = 'Open an account';
       if (rateLine) el.querySelector('.linecard__rate').textContent = rateLine;
       else el.querySelector('.linecard__amt').textContent = money(p.unit_price, p.currency);
       el.querySelector('.linecard__blurb').textContent = blurb;
