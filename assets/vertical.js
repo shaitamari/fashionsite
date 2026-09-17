@@ -700,11 +700,15 @@
      (retail sub-verticals + travel); grocery/telco/banking have their own
      loyalty beats and are excluded via tier_banner in the vertical config. */
   function tierBannerText(tier, points) {
+    // Must match the campaign Liquid ("points to next tier") exactly so the
+    // site backup and the platform campaign never show different copy:
+    //   guest/empty -> nothing; Gold -> top; Silver -> to Gold; anything
+    //   else (Member, Blue, Bronze, any vertical's entry tier) -> to Silver.
+    if (!tier || tier === 'Guest') return '';
     var p = (typeof points === 'number') ? points : 0;
     if (tier === 'Gold') return "You're Gold \u2014 our best benefits.";
     if (tier === 'Silver') return "You're " + Math.max(1500 - p, 0) + " points from Gold and its best benefits.";
-    if (tier === 'Bronze' || tier === 'Blue') return "You're " + Math.max(500 - p, 0) + " points from Silver.";
-    return '';  // Guest / unknown / no tier: show nothing rather than a guess.
+    return "You're " + Math.max(500 - p, 0) + " points from Silver.";
   }
   function looksLikeTierLine(txt) {
     if (!txt) return false;
