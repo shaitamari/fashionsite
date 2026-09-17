@@ -1,6 +1,4 @@
-SUBSCRIBE FUNNEL — multi-step: plan -> number -> details -> confirm.
-Overwrites 4 files. From ~/Desktop/posh:
-  unzip -o ~/Downloads/telco-subscribe.zip -d /tmp/x && cp -r /tmp/x/telco-subscribe/* . && posh "Telco subscribe funnel"
-No build needed (static pages + css).
-PANEL: declare custom attributes plan, plan_price, subscription_status in
-Attributes & Events, or Upsert will drop them (they still show on the page from signIn).
+Per-uuid history fix (+ Makeup fallback + vertical-scoped purchases/bookings).
+Files: assets/store.js, history.html
+From the posh folder:
+  unzip -o ~/Downloads/posh-2026-09-17-a.zip -d /tmp/x && cp -r /tmp/x/posh-2026-09-17-a/* . && posh "History per uuid; new identities never inherit prior trips/purchases"

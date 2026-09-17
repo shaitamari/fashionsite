@@ -255,7 +255,7 @@
       hist.push(entry);
     });
     hist.sort(function (a, b) { return a.purchased_at - b.purchased_at; });
-    localStorage.setItem('lmn.purchases', JSON.stringify(hist.slice(-60)));
+    Store.setPurchaseHistory(hist);
     send();
     render();
   }
@@ -357,6 +357,7 @@
             var v = sibs[Math.min(t.cab, sibs.length - 1)] || base;
             var when = Date.now() - t.ago * DAY;
             trips.push({
+              vertical: (window.VERTICAL||{}).key || undefined,
               booking_id: 'LMN' + String(when).slice(-8),
               route: v.name, destination: v.subcategory || '', region: v.collection || '',
               cabin: v.variant_label || '', travel_date: new Date(when).toISOString().slice(0, 10) + 'T00:00:00Z',
@@ -368,7 +369,7 @@
             addEntries(v, t.ago, 1);
           });
           var hist = Store.bookingHistory().concat(trips);
-          localStorage.setItem('lmn.bookings', JSON.stringify(hist.slice(-40)));
+          Store.setBookingHistory(hist);
         }
       });
     }
@@ -551,12 +552,12 @@
       var bh = Store.bookingHistory();
       for (var t = 0; t < timesN; t++) {
         var w = Date.now() - (agoDays + t * 90) * DAY;
-        bh.push({ booking_id: 'LMN' + String(w).slice(-8), route: p.name, destination: p.subcategory || '', region: p.collection || '',
+        bh.push({ vertical: (window.VERTICAL||{}).key || undefined, booking_id: 'LMN' + String(w).slice(-8), route: p.name, destination: p.subcategory || '', region: p.collection || '',
                   cabin: p.variant_label || '', travel_date: new Date(w).toISOString().slice(0, 10) + 'T00:00:00Z',
                   nights: d.key === 'hotels' ? 2 : 0, fare: Math.round(Number(p.unit_sale_price || 0)),
                   booked_at: new Date(w - 21 * DAY).toISOString().replace(/\.\d+Z$/, 'Z'), status: 'Completed', ancillaries: '' });
       }
-      localStorage.setItem('lmn.bookings', JSON.stringify(bh.slice(-40)));
+      Store.setBookingHistory(bh);
     }
     btn.textContent = 'Added \u2713';
     var res = document.getElementById('result');
@@ -567,8 +568,7 @@
   });
 
   document.getElementById('clear').addEventListener('click', function () {
-    localStorage.removeItem('lmn.purchases');
-    localStorage.removeItem('lmn.bookings');
+    Store.clearHistory();
     send();
     render();
   });

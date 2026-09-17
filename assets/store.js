@@ -960,7 +960,40 @@
     return map[product.collection] || map._default || 0;
   }
 
-  function purchaseHistory() { return read('lmn.purchases', []); }
+  /* --- history is per identity, not per browser ----------------------------
+     Purchase and booking history is stored under a key that includes the
+     current visitor uuid: lmn.purchases.<uuid> / lmn.bookings.<uuid>. A brand
+     new visitor (new uuid from New visitor, Log out, or a persona sign-in) has
+     no history at all, so a previous profile's trips or purchases can never
+     surface on it — the stale-trip banner and the cross-profile "last
+     purchased" both came from a single browser-wide bin being re-read under a
+     new identity. History now belongs to the identity that created it.
+     A one-time migration moves any legacy browser-wide bin onto the current
+     uuid the first time we look, so existing sessions are not lost. */
+  function histKey(base) { return base + '.' + visitorId(); }
+  function readHist(base) {
+    var keyed = read(histKey(base), null);
+    if (keyed !== null) return keyed;
+    // migrate a legacy browser-wide bin to the current uuid, once.
+    var legacy = read(base, null);
+    if (legacy && legacy.length) { write(histKey(base), legacy); }
+    try { localStorage.removeItem(base); } catch (e) {}
+    return legacy || [];
+  }
+  function writeHist(base, val) { write(histKey(base), val); }
+  function setPurchaseHistory(h) { writeHist('lmn.purchases', (h||[]).slice(-60)); }
+  function setBookingHistory(h) { writeHist('lmn.bookings', (h||[]).slice(-40)); }
+  function clearHistory() { try { localStorage.removeItem(histKey('lmn.purchases')); localStorage.removeItem(histKey('lmn.bookings')); } catch (e) {} }
+
+  function purchaseHistory() {
+    var all = readHist('lmn.purchases');
+    var vk = (window.VERTICAL || {}).key;
+    // Only this storefront's purchases belong on this storefront's profile.
+    // A Manchester flight bought on travel must not ride onto a telco profile.
+    // Untagged legacy entries are dropped once a vertical is known.
+    if (!vk) return all;
+    return all.filter(function (h) { return h.vertical === vk; });
+  }
 
   /* --- bookings, as an Array of Objects -------------------------------------
      Travel's record. A purchase is a line item; a booking is a trip — route
@@ -971,7 +1004,13 @@
      campaigns to read, since web Liquid cannot reach into an array.
      Ancillaries are a comma-separated string, not a nested array — object
      fields are scalars on the platform. */
-  function bookingHistory() { return read('lmn.bookings', []); }
+  function bookingHistory() {
+    var all = readHist('lmn.bookings');
+    var vk = (window.VERTICAL || {}).key;
+    if (!vk) return all;
+    // Bookings only belong to the travel storefront that made them.
+    return all.filter(function (b) { return !b.vertical || b.vertical === vk; });
+  }
   function noteBooking(order, extra) {
     if (!order || !order.items || !order.items.length) return bookingHistory();
     var hist = bookingHistory();
@@ -979,6 +1018,7 @@
     var p = byId(line.id) || {};
     var when = extra && extra.travel_date ? new Date(extra.travel_date) : new Date(Date.now() + 14 * 86400000);
     hist.push({
+      vertical: (window.VERTICAL || {}).key || undefined,
       booking_id: order.order_id,
       route: p.name || line.name,
       destination: p.subcategory || '',
@@ -991,7 +1031,7 @@
       status: 'On time',
       ancillaries: (extra && extra.ancillaries) || ''
     });
-    write('lmn.bookings', hist.slice(-40));
+    writeHist('lmn.bookings', hist.slice(-40));
     return hist;
   }
   /* Array-of-Objects attributes cannot travel in the tag's user object; they
@@ -1040,7 +1080,7 @@
     return syncArray('bookings', bookingsPayload(pending), 'add').then(function (out) {
       if (out && out.ok) {
         hist.forEach(function (b) { if (!b.synced) b.synced = true; });
-        write('lmn.bookings', hist);
+        writeHist('lmn.bookings', hist);
       }
       return out;
     });
@@ -1116,7 +1156,7 @@
        weekly grocery shopping would breach it; the recent history is what the
        intervals are computed from anyway. */
     hist = hist.slice(-60);
-    write('lmn.purchases', hist);
+    writeHist('lmn.purchases', hist);
     return hist;
   }
 
@@ -1558,7 +1598,7 @@
     currentUser: currentUser, signIn: signIn, signOut: signOut, refreshIdentity: refreshIdentity, syncAttributes: syncAttributes, userPayload: userPayload,
     noteCategoryView: noteCategoryView, preferredCategory: preferredCategory,
     noteProductView: noteProductView, sessionStats: sessionStats,
-    notePurchase: notePurchase, purchaseHistory: purchaseHistory, nextDue: nextDue,
+    notePurchase: notePurchase, purchaseHistory: purchaseHistory, setPurchaseHistory: setPurchaseHistory, setBookingHistory: setBookingHistory, clearHistory: clearHistory, nextDue: nextDue,
     anniversaryPick: anniversaryPick,
     toggleWish: toggleWish, isWished: isWished, wishlist: wishlist,
     card: card, grid: grid, paintChrome: paintChrome,
