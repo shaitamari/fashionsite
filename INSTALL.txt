@@ -1,8 +1,17 @@
-Fix fashion (Ashford Lane) category nav — was collapsing to "Tops".
-Cause: the Çakıl search-team catalog swap changed product_types to Women's/Men's/Shoes/
-Accessories, but verticals.json still had the OLD Posh collections map (Tops/Maxi Dresses/…),
-so almost nothing matched and everything fell into Tops.
-Fix: fashion `collections` remapped to the real product_types -> Women / Men / Shoes / Accessories.
+CONSOLIDATED — all of today's config/site fixes in one. Deploy this and you have everything:
+  - Tier banner site-side backup (name-agnostic, guest-guarded) + build.py tier_banner allowlist
+  - Travel (airlines/hotels): collections + order -> regions (fixes build AND the "Makeup/0" category break)
+  - Fashion: collections -> Women / Men / Shoes / Accessories (fixes "Tops" nav)
+  - Per-uuid history + Makeup fallback fix (from earlier today) are in this vertical.js too
 
-From the posh folder:
-  unzip -o ~/Downloads/posh-2026-09-17-e.zip -d /tmp/x && cp -r /tmp/x/posh-2026-09-17-e/* . && python3 build.py fashion && posh "Fix fashion nav: collections -> Women/Men/Shoes/Accessories"
+From the posh folder (rebuild ALL so every catalog is current):
+  unzip -o ~/Downloads/posh-2026-09-17-final.zip -d /tmp/x && cp -r /tmp/x/posh-2026-09-17-final/* . && python3 build.py --all && posh "All 17 Sep fixes: tier banner, travel regions, fashion nav"
+
+Paste into campaign "points to next tier" (then Generate) if not already done:
+  {% if c_membership_tier == "" or c_membership_tier == "Guest" %}{% elsif c_membership_tier == "Gold" %}You're Gold — our best benefits.{% elsif c_membership_tier == "Silver" %}You're {{ 1500 | minus: c_loyalty_points }} points from Gold and its best benefits.{% else %}You're {{ 500 | minus: c_loyalty_points }} points from Silver.{% endif %}
+
+After deploy, verify:
+  grep -c tier_banner catalogs/fashion.js     # 1
+  grep -c tier_banner catalogs/airlines.js    # 1
+Then reload: fashion nav = Women/Men/Shoes/Accessories; airlines category shows a region, not Makeup.
+NOTE: airlines/hotels SEARCH runs on local fallback until Çakıl reindexes Eureka for the region collections.

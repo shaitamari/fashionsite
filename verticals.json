@@ -387,10 +387,11 @@
    "fonts": "family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Jost:wght@300;400;500"
   },
   "order": [
-   "Hotels",
-   "Boutique",
-   "Lodges",
-   "Apartments"
+   "Europe",
+   "Americas",
+   "Asia & Pacific",
+   "Africa & Middle East",
+   "Extras"
   ],
   "collections": {
    "Europe > Lisbon": "Europe",
@@ -515,8 +516,11 @@
    "fonts": "family=Jost:wght@300;400;500;600"
   },
   "order": [
-   "Long Haul",
-   "Short Haul"
+   "Europe",
+   "Americas",
+   "Asia & Pacific",
+   "Africa & Middle East",
+   "Extras"
   ],
   "collections": {
    "Americas > New York": "Americas",
