@@ -47,5 +47,9 @@ window.VERTICALS = {
   "supermarket": {
     "brand": "Harvest Row",
     "tagline": "Food, drink and household"
+  },
+  "canon": {
+    "brand": "Canon",
+    "tagline": "Cameras, lenses, printers and everything they need"
   }
 };

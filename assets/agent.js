@@ -98,7 +98,7 @@
     fintech:     SHARED,   // Loop
     nutrition:   SHARED,   // Verdant
     misumi:      { sandbox: '6aa41e6b1e38ba0119dfc942', demo: null },   // MISUMI — own agent
-    canon:       { sandbox: '6aa51e051e38ba0119dfca63', demo: null }    // Canon Canada — own agent, en_CA
+    canon:       SHARED   // Canon — the shared agent, like every other storefront
   };
 
   /* Layout flags, applied to `window` before the SDK loads because that is

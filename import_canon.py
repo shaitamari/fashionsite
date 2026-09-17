@@ -40,6 +40,11 @@ csv.field_size_limit(10 ** 8)
 
 BRAND = "Canon"
 
+# Canon's file is priced in Canadian dollars. Canon lives in the shared
+# catalogue alongside every other vertical (one locale, EUR), so prices are
+# converted on the way in. One constant, so the rate is visible.
+CAD_TO_EUR = 0.64
+
 # ---------------------------------------------------------------- taxonomy
 # (collection, subcategory, keywords matched against category + title, lowercase, whole words/phrases)
 RULES = [
@@ -218,7 +223,8 @@ def main():
         title = norm(r["title"])
         if not title:
             skipped["no title"] += 1; continue
-        price = float(r["price"] or 0); sale = float(r["sales_price"] or 0) or price
+        price = float(r["price"] or 0) * CAD_TO_EUR
+        sale = (float(r["sales_price"] or 0) * CAD_TO_EUR) or price
         if price <= 0:
             skipped["no price"] += 1; continue
         coll, sub = classify(r.get("category") or "", title)
