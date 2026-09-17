@@ -1,14 +1,53 @@
-Fix the fashion Material facet exploding into 150+ combined values.
+CONSOLIDATED — every fashion + telco fix from the 17 Sep evening session, in one deploy.
+Deploy THIS instead of the individual zips (fix-fashion-collections, oos-plp, hide-material-facet,
+plan-cards, drop-flow-link). Everything is already merged in these files.
 
-CAUSE: material was comma-joined ("Cotton, Denim, Lycra"), so every combination became its own facet value.
-FIX (build.py): the facet field `material` is now the PRIMARY material only (first before the comma) ->
-158 values collapse to ~35 clean ones (Cotton, Leather, Silk, Wool, Linen...). The full string is kept as
-`material_full` for the PDP if needed.
+WHAT'S IN IT:
+1. FASHION COLLECTIONS (critical): verticals.json fashion `order` -> Women/Men/Shoes/Accessories, so
+   window.COLLECTIONS populates. Fixes the "all sites broken / Eureka not serving" (empty COLLECTIONS ->
+   Makeup fallback -> cf=Makeup -> 0 results). category.html/cart/search/index Makeup landmines removed.
+2. CONTENT NAV CONSISTENCY (store.js): telco/finance render V.content.nav into the masthead on EVERY page
+   (same font, same items) instead of raw catalogue collections. This fixes topup.html showing a different
+   nav / different Phones target / different font — topup uses data-collection-nav like the rest.
+3. DROP FLOW LINK (vertical.js): the retired "Top up or change plan" -> flow.html link is removed on telco
+   (nav already has Top up -> topup.html); repointed to topup.html on any other content vertical.
+   flow.html itself is kept (retail/travel still use it).
+4. OOS ON PLP (store.js + build.py + verticals.json): fashion size_gaps=True + full_oos=8. PLP cards show
+   "Sold out" / "Low stock" badges for the Agent One back-in-stock demo.
+5. TELCO PLAN CARDS + FINANCE PRODUCT CARDS (store.js + styles.css):
+   - Telco Plans: simple tariff card (name, data allowance, price/mo, "Choose plan").
+   - Finance products (Accounts, Savings, Credit Cards, Loans): a CITIZENS-STYLE card — an image
+     (placeholder pixel now, personalizable later), name, rate-line headline (AER/APR/fee), a short blurb,
+     up to 3 key detail rows (from product_cards features), and a button that starts the funnel
+     (open.html?line=<product>). Button reads "Open an account" for accounts/savings/cards, "Apply now" for loans.
+   - LOANS show cards like the others (a few products, each with an Apply button into the loan flow) — NOT a
+     redirect and NOT a bare grid. Image/telco-style styling can be swapped in later.
+6. NO FACETS/SORT ON CONTENT VERTICALS (category.html): telco (Vantis) and finance (Northbank) are a
+   company's OWN self-service app — like Citi or Bank of America. You don't filter/sort your own accounts or
+   plans. So on content-template verticals the facet sidebar, the sort toolbar and the product count are all
+   HIDDEN entirely (drawFacets bails for template==='content'; CSS hides .toolbar/#facets on telco/banking).
+   Fashion keeps its facets but hides the exploded Material facet (HIDDEN_FACETS). This supersedes the earlier
+   "hide junk telco facets" approach — the right answer is no commerce chrome at all on a bank/telco app.
+7. BANKING TYPOGRAPHIC CARDS (styles.css): finance product cards render as text cards, no pixel image.
 
 From the posh folder:
-  unzip -o ~/Downloads/posh-2026-09-17-material-facet.zip -d /tmp/x && cp -r /tmp/x/posh-2026-09-17-material-facet/* . && python3 build.py --all && posh "Material facet: primary material only (no combination explosion)"
+  unzip -o ~/Downloads/posh-2026-09-17-CONSOLIDATED.zip -d /tmp/x && cp -r /tmp/x/posh-2026-09-17-CONSOLIDATED/* . && python3 build.py --all && posh "Consolidated 17 Sep: fashion collections, content nav on all pages, drop flow link, OOS PLP, plan cards, hide material facet, banking cards"
 
-NOTE — the LIVE facet is served by EUREKA off the feed, so the clean values appear once the feed re-syncs
-and Eureka reindexes (the local-catalogue fallback facet is clean immediately). If material is a searchable
-attribute/facet configured on the en_GB locale, a reindex is needed for the facet values to refresh.
+STILL OPEN (not in this zip, separate follow-ups):
+- Telco product imagery is wrong (generic phone+laptop+giftwrap stock in assets/img/telco/). Plans are now
+  imageless so plan search looks fine; telco PHONE cards still show the bad stock. Fix = regenerate telco
+  images (add a telco block to photos.py + Unsplash key) OR give telco the same no-image card treatment.
+- Telco Phones one-column: the telco image files 404 (assets/img/telco/ empty in the build) -> broken images
+  collapse the grid. Same root as the imagery issue above.
+- search.html still has beauty leftovers ("makeup collection" link, "Lumen" title/footer) on non-beauty verticals.
+- material-facet.zip (clean the data + reindex) is the ALTERNATIVE to hiding it — not included; hiding wins for now.
 Same-name-download trap: if 'nothing to commit', unzip the newest per ls -lt.
+
+8. QUOTE = CAPTURE-AND-FOLLOW-UP, NOT INSTANT PRICE (quote.html): a real insurance quote request usually
+   captures your details and hands off to underwriting/an adviser — it doesn't hand back a final price on the
+   spot. quote.html now stores the request (quote_status:'Requested', customer_status:'Quote requested') and
+   fires a `quote_requested` event, then confirms "your quote request is in — a specialist will send your
+   personalised quote by email shortly" (an indicative estimate is shown, marked subject to the final quote).
+   THAT submission is the trigger: an Architect journey listens for `quote_requested` to email the quote or
+   book an adviser callback — the demo point (a form submit kicks off orchestration on the customer's side),
+   mirroring the loan flow's eligibility -> decision -> banker handoff.

@@ -633,3 +633,35 @@ html[data-vertical="banking"] .card__link { display: block; }
 .badge--oos { background:#1a1a1a; color:#fff; }
 .badge--low { background:#c0392b; color:#fff; }
 .card__media--oos img { opacity:.55; filter:grayscale(.3); }
+
+/* Plan / tariff cards in search + grid — clean typographic tariff, no image.
+   So a "plan" search on telco reads as tiers, not blank catalogue cards. */
+.card--plan { border:1px solid var(--rule); border-radius:14px; background:var(--bg); }
+.card--plan .card__link { display:block; height:100%; }
+.card__plan { padding:1.75rem 1.5rem; display:flex; flex-direction:column; gap:.4rem; height:100%; }
+.card__plan-name { font-size:1.35rem; font-weight:600; margin:0; }
+.card__plan-allowance { color:var(--muted); margin:0; font-size:.95rem; }
+.card__plan-price { font-size:1.6rem; font-weight:600; margin:.5rem 0 1rem; }
+.card__plan-price span { font-size:.9rem; font-weight:400; color:var(--muted); }
+.card__plan-cta { margin-top:auto; align-self:flex-start; border:1px solid var(--ink);
+  border-radius:999px; padding:.5rem 1.1rem; font-size:.85rem; }
+.card--plan:hover .card__plan-cta { background:var(--ink); color:var(--bg); }
+
+/* Finance rate-card blurb (the account/product description under the rate line) */
+.card__plan-blurb { color:var(--muted); font-size:.9rem; line-height:1.4; margin:.4rem 0 1rem; }
+
+/* Finance product cards — Citizens-style: image, name, rate headline, blurb,
+   key detail rows, and an Open/Apply button that starts the funnel. */
+.card--finance { border:1px solid var(--rule); border-radius:14px; overflow:hidden;
+  background:var(--bg); display:flex; flex-direction:column; }
+.card__fin { display:flex; flex-direction:column; height:100%; }
+.card__fin-media { aspect-ratio:16/9; background:var(--alt); }
+.card__fin-media img { width:100%; height:100%; object-fit:cover; display:block; }
+.card__fin-body { padding:1.5rem; display:flex; flex-direction:column; gap:.5rem; flex:1; }
+.card__fin-name { font-size:1.25rem; font-weight:600; margin:0; }
+.card__fin-rate { font-size:1rem; font-weight:600; color:var(--accent, #1B4F8A); margin:0; }
+.card__fin-blurb { color:var(--muted); font-size:.9rem; line-height:1.45; margin:.25rem 0; }
+.card__fin-feats { list-style:none; padding:0; margin:.25rem 0 1rem; display:flex; flex-direction:column; gap:.35rem; }
+.card__fin-feat { font-size:.875rem; padding-left:1.25rem; position:relative; }
+.card__fin-feat::before { content:"✓"; position:absolute; left:0; color:var(--accent, #1B4F8A); font-weight:700; }
+.card__fin-cta { margin-top:auto; align-self:flex-start; }

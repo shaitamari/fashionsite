@@ -90,7 +90,7 @@
     <ol class="substeps" id="substeps">
       <li data-step="1">What to cover</li>
       <li data-step="2">Your details</li>
-      <li data-step="3">Your quote</li>
+      <li data-step="3">Request received</li>
     </ol>
 
     <section class="substep" data-panel="1">
@@ -144,15 +144,23 @@
     '<div class="subsummary__row"><span>Excess</span><span>'+document.getElementById('q-excess').value+'</span></div>'; }
   document.getElementById('q-level').addEventListener('change',upd); document.getElementById('q-excess').addEventListener('change',upd); upd();
   document.getElementById('q-form').addEventListener('submit',function(ev){ ev.preventDefault();
+    /* A quote request is NOT an instant answer — it captures the customer's
+       details and hands off to underwriting/an adviser, and THAT is the trigger:
+       the submission writes the request to the profile, which an Architect
+       journey listens for (email the personalised quote, adviser callback). We
+       still compute an indicative estimate and store it for that follow-up, but
+       present it as "we'll be in touch", not a final price. */
     var monthly=priceFor();
+    var level=document.getElementById('q-level').value;
     Store.signIn({ name:document.getElementById('q-name').value.trim(), surname:document.getElementById('q-surname').value.trim(),
       email:document.getElementById('q-email').value.trim(), gdpr_optin:true,
-      quote_cover:cover, quote_level:document.getElementById('q-level').value, quote_premium:monthly, customer_status:'Quote' });
-    window.InsiderQueue.push({type:'user',value:Store.userPayload()}); window.InsiderQueue.push({type:'init'});
-    document.getElementById('quote-result').innerHTML='<h3>'+cover+' cover — £'+monthly+'/mo</h3>'+
-      '<div class="subsummary__row"><span>Level</span><span>'+document.getElementById('q-level').value+'</span></div>'+
-      '<div class="subsummary__row"><span>Excess</span><span>'+document.getElementById('q-excess').value+'</span></div>'+
-      '<div class="subsummary__row"><span>Next step</span><span>We\'ve saved this quote to your profile and emailed it</span></div>';
+      quote_cover:cover, quote_level:level, quote_excess:document.getElementById('q-excess').value,
+      quote_premium:monthly, quote_status:'Requested', customer_status:'Quote requested' });
+    window.InsiderQueue.push({type:'user',value:Store.userPayload()});
+    window.InsiderQueue.push({type:'event',eventName:'quote_requested',
+      value:{ event_parameters:{ custom:{ quote_cover:cover, quote_level:level, quote_premium:monthly } } }});
+    window.InsiderQueue.push({type:'init'});
+    document.getElementById('quote-result').innerHTML='<h3>Thanks \u2014 your quote request is in</h3>'+'<p style="color:var(--muted);margin:.5rem 0 1rem">A '+cover.toLowerCase()+' insurance specialist will review your details and send your personalised quote by email shortly. No need to do anything else.</p>'+'<div class="subsummary__row"><span>Cover</span><span>'+cover+'</span></div>'+'<div class="subsummary__row"><span>Level</span><span>'+level+'</span></div>'+'<div class="subsummary__row"><span>Excess</span><span>'+document.getElementById('q-excess').value+'</span></div>'+'<div class="subsummary__row"><span>Indicative estimate</span><span>around \u00a3'+monthly+'/mo (subject to your final quote)</span></div>'+'<div class="subsummary__row"><span>Next step</span><span>We\'ll email your personalised quote \u2014 and can call you if you\'d prefer</span></div>';
     show(3);
   });
 </script>

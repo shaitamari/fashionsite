@@ -1584,6 +1584,73 @@
     opts = opts || {};
     var el = document.createElement('article');
     el.className = 'card';
+
+    /* Content-template verticals (telco, finance) are a company's own app, not
+       a shop. Their products are tariffs/accounts, not catalogue items — an
+       image card (blank photo, vendor label) looks broken. Render a clean rate
+       card instead: name, a rate line, a short blurb. Telco plans add the data
+       allowance + price/mo; finance products show the rate line (AER/APR/fee)
+       from product_cards config. */
+    var V = window.VERTICAL || {};
+    var isPlan = (p.collection === 'Plans');
+    var financeKeys = ['banking', 'finance'];
+    var isFinanceProduct = (V.template === 'content' &&
+                            financeKeys.indexOf((V.key || '').toLowerCase()) > -1);
+
+    /* Telco plans: simple tariff card (name, allowance, price/mo). */
+    if (isPlan) {
+      el.className = 'card card--plan';
+      var ladder = ((V.rate_card || {}).plan_ladder) || [];
+      var prow = null;
+      for (var li = 0; li < ladder.length; li++) {
+        if (ladder[li].name === p.name) { prow = ladder[li]; break; }
+      }
+      var gb = prow ? prow.gb : null;
+      var allowance = gb == null ? '' : (gb >= 1000 ? 'Unlimited data' : gb + ' GB data');
+      var pcur = (p.currency === 'EUR' ? '\u20ac' : (p.currency || ''));
+      el.innerHTML =
+        '<a class="card__link" href="' + (opts.href || localHref(p)) + '">' +
+          '<div class="card__plan">' +
+            '<h3 class="card__plan-name">' + p.name + '</h3>' +
+            (allowance ? '<p class="card__plan-allowance">' + allowance + '</p>' : '') +
+            '<p class="card__plan-price">' + pcur + (p.unit_price != null ? p.unit_price : '') + '<span>/mo</span></p>' +
+            '<span class="card__plan-cta">Choose plan</span>' +
+          '</div>' +
+        '</a>';
+      if (opts.onClick) el.querySelector('.card__link').addEventListener('click', opts.onClick);
+      return el;
+    }
+
+    /* Finance products: a Citizens-style product card — image (placeholder,
+       personalizable later), name, rate-line headline, a short blurb, a few
+       key detail rows (from features), and a button that starts the funnel
+       (open.html). This is the "browse-and-pick" pattern for accounts/savings/
+       cards; loans use the same card but the button starts the loan flow. */
+    if (isFinanceProduct) {
+      el.className = 'card card--finance';
+      var fcfg = ((V.content && V.content.product_cards) || {})[p.name] || {};
+      var rateLine = fcfg.rate_line || '';
+      var fblurb = fcfg.blurb || p.description || '';
+      var feats = (fcfg.features || []).slice(0, 3);
+      var funnel = (V.content && V.content.funnel) || 'open.html';
+      var cta = (p.collection === 'Loans') ? 'Apply now' : 'Open an account';
+      var featRows = feats.map(function (f) {
+        return '<li class="card__fin-feat">' + f + '</li>';
+      }).join('');
+      el.innerHTML =
+        '<div class="card__fin">' +
+          '<div class="card__fin-media"><img loading="lazy" alt="" src="' + (p.image || '') + '"></div>' +
+          '<div class="card__fin-body">' +
+            '<h3 class="card__fin-name">' + p.name + '</h3>' +
+            (rateLine ? '<p class="card__fin-rate">' + rateLine + '</p>' : '') +
+            (fblurb ? '<p class="card__fin-blurb">' + fblurb + '</p>' : '') +
+            (featRows ? '<ul class="card__fin-feats">' + featRows + '</ul>' : '') +
+            '<a class="btn card__fin-cta" href="' + funnel + '?line=' + encodeURIComponent(p.name) + '">' + cta + '</a>' +
+          '</div>' +
+        '</div>';
+      return el;
+    }
+
     var sale = p.unit_sale_price < p.unit_price;
 
     /* Stock badge on the PLP card. in_stock === 0 (or stock 0) means the whole

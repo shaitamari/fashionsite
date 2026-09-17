@@ -994,6 +994,20 @@
        masthead now; this gives it the right words. */
     var flow = d.flow || {};
     if (flow.title) set('[data-flow-link]', flow.title);
+    /* Content verticals (telco, finance) retired the generic flow.html funnel
+       for a purpose-built one (topup.html). Repoint the flow link there so it
+       never lands on the dead page — and hide it outright when the content nav
+       already carries the same action (telco's "Top up" -> topup.html), so it
+       isn't a duplicate. */
+    if (d.template === 'content') {
+      var navHasTopup = ((d.content && d.content.nav) || []).some(function (n) {
+        return n.href === 'topup.html';
+      });
+      document.querySelectorAll('[data-flow-link]').forEach(function (a) {
+        if (navHasTopup) { a.remove(); return; }      // already in the nav — drop the dupe
+        a.setAttribute('href', 'topup.html');          // else point at the real funnel
+      });
+    }
 
     /* --- the sandbox orientation link --------------------------------------
        -sandbox hostnames only. These are the copies colleagues and prospects
