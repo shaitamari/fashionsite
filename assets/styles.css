@@ -576,3 +576,12 @@ html[data-vertical] .mainnav__in[data-content-nav] { gap: 2rem; }
 .dash__log li { display:flex; justify-content:space-between; gap:1rem; padding:.6rem 0; border-top:1px solid var(--rule); font-size:.9rem; }
 .dash__log li span:nth-child(2) { flex:1; }
 .dash__log li:first-child { border-top:none; }
+
+/* demo controls strip on the account dashboard — clearly backstage, SC-only */
+.dash__demo { margin-top:1rem; }
+.demo-controls { border:1px dashed var(--rule); border-radius:10px; padding:.5rem .9rem; background:var(--alt); }
+.demo-controls summary { cursor:pointer; font-size:.8rem; color:var(--muted); letter-spacing:.04em; text-transform:uppercase; }
+.demo-controls__row { display:flex; gap:.6rem; flex-wrap:wrap; margin-top:.75rem; }
+.demo-controls__row .btn { font-size:.85rem; }
+
+.demo-controls__note{font-size:.8rem;color:var(--muted);margin:.6rem 0 0}

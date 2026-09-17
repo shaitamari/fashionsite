@@ -1825,6 +1825,10 @@
     {
      "label": "Help",
      "href": "#"
+    },
+    {
+     "label": "Top up",
+     "href": "topup.html"
     }
    ],
    "plan_cards": {

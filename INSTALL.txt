@@ -1,10 +1,15 @@
-Fix the last "Preferred Category: Makeup" leak on fresh telco/finance profiles.
-Cause: lmn.views (category-view counts that drive preferred_category) was browser-wide,
-so beauty/fashion browsing left "Makeup" in it, and it bled onto a fresh telco profile.
-Fix: lmn.views is now PER-UUID (like purchases/bookings) and legacy browser-wide views are
-dropped, not migrated. Plus telco default_category=Plans, banking=Accounts as a belt-and-braces fallback.
+Account restructure (telco + finance): real top-up funnel, clean customer view, "Mimic usage" SC control.
+
+- topup.html: REAL top-up/change-plan funnel (Add data boost / Change plan / Top up credit) -> pick -> confirm.
+  Replaces the retired flow.html services form. Telco nav gains "Top up".
+- account.html: fake "Use 2 GB"/"Make £50" customer buttons GONE. Clean usage/balance view + a real
+  "Top up or change plan" button -> the funnel.
+- The usage bar reflects the SITE'S USAGE HISTORY (per-uuid). An SC-only collapsed panel labelled
+  "Mimic plan usage" builds a realistic month (A light day +1GB / A typical week +6GB / A heavy month to 90% / Reset),
+  so the bar + activity fill in and crossing 85% fires the upgrade nudge. Finance: "Mimic account activity".
 
 From the posh folder:
-  unzip -o ~/Downloads/posh-2026-09-17-views.zip -d /tmp/x && cp -r /tmp/x/posh-2026-09-17-views/* . && python3 build.py --all && posh "Per-uuid category views; telco/banking default_category — kill the Makeup leak"
+  unzip -o ~/Downloads/posh-2026-09-17-accounts.zip -d /tmp/x && cp -r /tmp/x/posh-2026-09-17-accounts/* . && python3 build.py --all && posh "Account restructure: real top-up funnel, clean dashboard, Mimic-usage SC control"
 
-Test: New visitor on telco -> subscribe -> profile Preferred Category should be Plans (or empty), never Makeup.
+TEST: telco account (signed-in subscriber) -> clean usage view + Top up button (-> funnel).
+      Expand "Mimic plan usage" -> click "A heavy month" -> bar fills, nudge appears, activity logs.

@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Subscribe — Checkout — Lumen</title>
+
+<!-- Browsers largely ignore these; the real protection is the Cache-Control
+     headers in _headers / netlify.toml / vercel.json. Kept as a second line. -->
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<link rel="preconnect" href="https://cdn.shopify.com">
+<link rel="stylesheet" href="assets/styles.css">
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     INSIDER WEB SDK
+     Order is load-bearing:
+       1. InsiderQueue array
+       2. site scripts (telemetry wrapper must precede the first push)
+       3. Insider Tag (ins.js)
+       4. user data -> page data -> init
+     ═══════════════════════════════════════════════════════════════════════ -->
+
+<!-- 1. The queue. Must exist before the tag loads. -->
+<script>window.InsiderQueue = window.InsiderQueue || [];</script>
+
+<!-- 2. Site scripts. insider-debug.js wraps InsiderQueue.push to mirror every
+        payload into the on-page console, so it loads before anything is sent. -->
+<script src="assets/config.js"></script>
+<script src="assets/insider-debug.js"></script>
+<script src="assets/vertical.js"></script>
+<script src="assets/store.js"></script>
+<script src="assets/explain.js"></script>
+<script src="assets/affinity.js"></script>
+<script src="assets/agent.js"></script>
+
+<!-- 3. Insider Tag — written by assets/vertical.js, because which
+        account it points at depends on the hostname:
+          beauty.insiderdemo.com          -> salesdemo
+          beauty-sandbox.insiderdemo.com  -> partnersandbox
+        Account and partner id are listed in vertical.js and shown
+        live in the SDK console. -->
+
+<!-- 4. Data pushes for this page. -->
+<script>
+  window.InsiderQueue.push({ type: 'user', value: Store.userPayload() });
+  window.InsiderQueue.push({ type: 'currency', value: Store.currency() });
+
+  // --- page type: other -------------------------------------------------
+  // Checkout is a labelled "other" page. The name shows on the profile as an
+  // Other Page View, which is what abandonment journeys key off.
+  window.InsiderQueue.push({
+    type: 'other',
+    value: { name: 'checkout',
+             custom: { basket_value: Store.cartTotal(), basket_lines: Store.cartCount() } }
+  });
+
+  window.InsiderQueue.push({ type: 'init' });
+</script>
+</head>
+
+<body>
+
+<p class="announce" data-announce>Free shipping over $50</p>
+
+<header class="masthead">
+  <div class="masthead__in">
+    <a class="brand" href="index.html" data-brand>Lumen</a>
+    <form class="searchbox" data-search role="search" autocomplete="off">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" id="search-input" name="q" placeholder="Search products" data-search-placeholder aria-label="Search products">
+    </form>
+    <nav class="utils">
+      <span class="loy" data-loyalty-strip hidden></span>
+      <a href="flow.html" data-flow-link>Services</a>
+      <a href="account.html" data-account-label>Log in</a>
+      <a class="cartlink" href="cart.html"><span data-label="cart">Cart</span><span data-cart-count hidden>0</span></a>
+    </nav>
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="mainnav__in" data-collection-nav></div>
+</nav>
+
+<main>
+  <section class="wrap" style="padding-top:2.5rem;padding-bottom:4rem;max-width:60rem">
+    <ol class="substeps" id="substeps">
+      <li data-step="1">What would you like to do?</li>
+      <li data-step="2">Choose</li>
+      <li data-step="3">Confirm</li>
+    </ol>
+
+    <!-- STEP 1 — action -->
+    <section class="substep" data-panel="1">
+      <h1 class="h1" style="font-size:clamp(1.5rem,3vw,2rem)">Top up or change plan</h1>
+      <p class="lede" id="tu-current" style="margin:.5rem 0 1.25rem"></p>
+      <div class="numtabs" id="action-tabs">
+        <button type="button" class="numtab is-active" data-action="boost">Add a data boost</button>
+        <button type="button" class="numtab" data-action="plan">Change my plan</button>
+        <button type="button" class="numtab" data-action="credit">Top up credit</button>
+      </div>
+      <div class="substep__actions"><button class="btn" type="button" data-next="2">Continue</button></div>
+    </section>
+
+    <!-- STEP 2 — choose -->
+    <section class="substep" data-panel="2" hidden>
+      <h1 class="h1" style="font-size:clamp(1.5rem,3vw,2rem)" id="choose-title">Choose</h1>
+      <div class="linecards" id="choose-cards"></div>
+      <div class="substep__actions">
+        <button class="btn btn--ghost" type="button" data-back="1">Back</button>
+      </div>
+    </section>
+
+    <!-- STEP 3 — confirm -->
+    <section class="substep" data-panel="3" hidden>
+      <h1 class="h1" style="font-size:clamp(1.5rem,3vw,2rem)">Confirm</h1>
+      <div class="subsummary" id="tu-summary" style="max-width:34rem"></div>
+      <div class="substep__actions">
+        <button class="btn btn--ghost" type="button" data-back="2">Back</button>
+        <button class="btn" type="button" id="tu-confirm">Confirm</button>
+      </div>
+    </section>
+  </section>
+</main>
+<footer class="foot"><div class="wrap foot__in"><span><span data-brand>Vantis</span> — Insider One demo storefront</span><span></span></div></footer>
+<script>
+  var V=window.VERTICAL||{};
+  var action='boost', choice=null;
+  function money(n){ return '\u20ac'+(Math.round(n*100)/100).toString().replace(/\.00$/,''); }
+  function u(){ return (window.Store&&Store.currentUser&&Store.currentUser())||{}; }
+
+  (function(){
+    var cur=u();
+    document.getElementById('tu-current').textContent = cur.plan ? ('You\u2019re currently on '+cur.plan+'.') : 'Manage your plan and add-ons.';
+    document.querySelectorAll('#action-tabs .numtab').forEach(function(t){
+      t.addEventListener('click',function(){ document.querySelectorAll('#action-tabs .numtab').forEach(function(x){x.classList.remove('is-active');}); t.classList.add('is-active'); action=t.getAttribute('data-action'); });
+    });
+  })();
+
+  var BOOSTS=[{name:'1 GB boost',gb:1,price:3},{name:'5 GB boost',gb:5,price:8},{name:'20 GB boost',gb:20,price:14}];
+  var CREDITS=[{name:'\u20ac10 credit',amt:10},{name:'\u20ac20 credit',amt:20},{name:'\u20ac30 credit',amt:30}];
+  function planItems(){ var col=(V.content&&V.content.lines_collection)||'Plans'; return (Store.byCollection(col)||[]); }
+
+  function renderChoices(){
+    var wrap=document.getElementById('choose-cards'); var title=document.getElementById('choose-title'); wrap.innerHTML='';
+    var items=[];
+    if(action==='boost'){ title.textContent='Add a data boost'; items=BOOSTS.map(function(b){return {name:b.name,sub:'One-off, valid 30 days',price:b.price,kind:'boost',gb:b.gb};}); }
+    else if(action==='credit'){ title.textContent='Top up credit'; items=CREDITS.map(function(c){return {name:c.name,sub:'Added to your balance',amt:c.amt,kind:'credit'};}); }
+    else { title.textContent='Change your plan'; items=planItems().map(function(p){var m=((V.content&&V.content.plan_cards)||{})[p.name]||{};return {name:p.name,sub:m.blurb||'',price:p.unit_price,kind:'plan'};}); }
+    items.forEach(function(it){
+      var el=document.createElement('div'); el.className='linecard';
+      el.innerHTML='<h3 class="linecard__name">'+it.name+'</h3>'+
+        (it.price!=null?'<p class="linecard__price"><span class="linecard__amt">'+money(it.price)+'</span><span class="linecard__per"> '+(it.kind==='plan'?'/mo':'')+'</span></p>':'')+
+        '<p class="linecard__blurb">'+(it.sub||'')+'</p>'+
+        '<button class="btn btn--wide linecard__cta" type="button">Select</button>';
+      el.querySelector('button').addEventListener('click',function(){ choice=it; showConfirm(); });
+      wrap.appendChild(el);
+    });
+  }
+  function show(step){ document.querySelectorAll('.substep').forEach(function(s){s.hidden=s.getAttribute('data-panel')!==String(step);}); document.querySelectorAll('#substeps li').forEach(function(li){var n=+li.getAttribute('data-step');li.classList.toggle('is-active',n===step);li.classList.toggle('is-done',n<step);}); window.scrollTo(0,0); }
+  document.querySelectorAll('[data-next]').forEach(function(b){b.addEventListener('click',function(){ if(b.getAttribute('data-next')==='2'){ renderChoices(); } show(+b.getAttribute('data-next')); });});
+  document.querySelectorAll('[data-back]').forEach(function(b){b.addEventListener('click',function(){ show(+b.getAttribute('data-back')); });});
+  function showConfirm(){
+    var s=document.getElementById('tu-summary');
+    var line = choice.kind==='boost' ? ('Add '+choice.name+' ('+money(choice.price)+')')
+             : choice.kind==='credit' ? ('Top up '+choice.name)
+             : ('Move to '+choice.name+' ('+money(choice.price)+'/mo)');
+    s.innerHTML='<h3>Confirm</h3><div class="subsummary__row"><span>Action</span><span>'+line+'</span></div>';
+    show(3);
+  }
+  document.getElementById('tu-confirm').addEventListener('click',function(){
+    if(!choice) return;
+    if(choice.kind==='boost'){ if(Store.topUp) Store.topUp(choice.gb,'Added '+choice.name); }
+    else if(choice.kind==='plan'){ Store.signIn({plan:choice.name, plan_price:choice.price}); if(Store.noteAccount){} }
+    else if(choice.kind==='credit'){ /* credit: a flat attr for demo */ Store.signIn({credit_balance:(Number(u().credit_balance)||0)+choice.amt}); }
+    window.InsiderQueue.push({type:'user',value:Store.userPayload()}); window.InsiderQueue.push({type:'init'});
+    var s=document.getElementById('tu-summary');
+    s.innerHTML='<h3>Done \u2713</h3><div class="subsummary__row"><span>'+(choice.kind==='plan'?'Now on':'Added')+'</span><span>'+choice.name+'</span></div>'+
+      '<div class="subsummary__row"><span>Next</span><span>Updated on your account</span></div>';
+    document.getElementById('tu-confirm').textContent='Done';
+    document.getElementById('tu-confirm').disabled=true;
+  });
+</script>
+</body></html>

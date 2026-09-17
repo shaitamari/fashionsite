@@ -101,6 +101,7 @@
         </div>
         <div class="dash__glance" id="dash-glance"></div>
         <div class="dash__actions" id="dash-actions"></div>
+        <div class="dash__demo" id="dash-demo" hidden></div>
         <div class="dash__activity">
           <p class="eyebrow" style="margin:1.25rem 0 .5rem">Recent activity</p>
           <ul class="dash__log" id="dash-log"></ul>
@@ -411,6 +412,39 @@
 <script>
 (function () {
   function fmtGBP(n){ return '\u00a3' + Number(n).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2}); }
+  function renderDemoStrip(kind){
+    var host=document.getElementById('dash-demo'); if(!host) return;
+    host.hidden=false;
+    if(kind==='telco'){
+      host.innerHTML='<details class="demo-controls"><summary>Mimic plan usage (SC only)</summary>'+
+        '<p class="demo-controls__note">Build a realistic month of usage \u2014 the bar and activity below fill in, and crossing 85% fires the upgrade nudge.</p>'+
+        '<div class="demo-controls__row">'+
+          '<button class="btn btn--ghost" data-demo="light">A light day (+1 GB)</button>'+
+          '<button class="btn btn--ghost" data-demo="typical">A typical week (+6 GB)</button>'+
+          '<button class="btn btn--ghost" data-demo="heavy">A heavy month (fill to 90%)</button>'+
+          '<button class="btn btn--ghost" data-demo="reset">Reset usage</button>'+
+        '</div></details>';
+    } else {
+      host.innerHTML='<details class="demo-controls"><summary>Mimic account activity (SC only)</summary>'+
+        '<p class="demo-controls__note">Add transactions \u2014 the balance and activity below update live.</p>'+
+        '<div class="demo-controls__row">'+
+          '<button class="btn btn--ghost" data-demo="pay">A purchase (\u2212\u00a350)</button>'+
+          '<button class="btn btn--ghost" data-demo="bills">Pay a bill (\u2212\u00a3120)</button>'+
+          '<button class="btn btn--ghost" data-demo="in">Money in (+\u00a3200)</button>'+
+        '</div></details>';
+    }
+    host.querySelectorAll('[data-demo]').forEach(function(b){ b.onclick=function(){
+      var k=b.getAttribute('data-demo');
+      if(k==='light') Store.addUsage(1,'A light day \u2014 messaging & maps');
+      else if(k==='typical') Store.addUsage(6,'A typical week \u2014 streaming & calls');
+      else if(k==='heavy'){ var st=Store.usageState()||Store.seedUsage(20); var target=Math.round(st.allowance*0.9*10)/10; var add=Math.max(0,target-st.used); if(add>0) Store.addUsage(add,'A heavy month \u2014 gaming & tethering'); }
+      else if(k==='reset'){ if(Store.seedUsage){ var a=(Store.usageState()&&Store.usageState().allowance)||20; Store.seedUsage(a);} }
+      else if(k==='pay') Store.addTransaction(-50,'Card payment');
+      else if(k==='bills') Store.addTransaction(-120,'Direct debit \u2014 bill');
+      else if(k==='in') Store.addTransaction(200,'Transfer in');
+      render();
+    };});
+  }
   function fmtDate(ts){ var d=new Date(ts); return d.toLocaleDateString(undefined,{day:'numeric',month:'short'}); }
   function render(){
     if(!window.Store||!Store.currentUser) return;
@@ -436,16 +470,9 @@
         '</div>'+
         '<div class="dash__metric"><div class="dash__metric-top"><span>Number</span><span>'+(u.assigned_number||'\u2014')+'</span></div>'+
           '<div class="dash__metric-top"><span>Status</span><span>'+(u.subscription_status||'Active')+'</span></div></div>';
-      actions.innerHTML=
-        '<button class="btn btn--ghost" data-act="use">Use 2 GB</button>'+
-        '<button class="btn btn--ghost" data-act="topup">Top up 5 GB</button>'+
-        '<a class="btn" href="content-index.html#plans">Change plan</a>';
+      actions.innerHTML='<a class="btn" href="topup.html">Top up or change plan</a>';
       log.innerHTML=(st.events||[]).map(function(e){return '<li><span>'+fmtDate(e.when)+'</span><span>'+e.label+'</span></li>';}).join('') || '<li><span>\u2014</span><span>No activity yet</span></li>';
-      actions.querySelectorAll('[data-act]').forEach(function(b){ b.onclick=function(){
-        if(b.getAttribute('data-act')==='use') Store.addUsage(2,'Used 2 GB \u2014 streaming');
-        else Store.topUp(5,'Topped up 5 GB');
-        render();
-      };});
+      renderDemoStrip('telco');
       return;
     }
 
@@ -458,16 +485,9 @@
           '<div class="dash__balance">'+fmtGBP(st.balance)+'</div></div>'+
         '<div class="dash__metric"><div class="dash__metric-top"><span>Status</span><span>'+(u.customer_status||'Active')+'</span></div>'+
           (u.lead_band?'<div class="dash__metric-top"><span>Eligibility</span><span>Band '+u.lead_band+'</span></div>':'')+'</div>';
-      actions.innerHTML=
-        '<button class="btn btn--ghost" data-act="pay">Make a £50 payment</button>'+
-        '<button class="btn btn--ghost" data-act="in">Add £200</button>'+
-        '<a class="btn" href="content-index.html">Explore products</a>';
+      actions.innerHTML='<a class="btn" href="content-index.html">Explore products</a>';
       log.innerHTML=(st.transactions||[]).map(function(t){var neg=t.amount<0;return '<li><span>'+fmtDate(t.when)+'</span><span>'+t.label+'</span><span style="color:'+(neg?'#c0392b':'#136B4B')+'">'+(neg?'':'+')+fmtGBP(t.amount)+'</span></li>';}).join('') || '<li><span>\u2014</span><span>No transactions</span></li>';
-      actions.querySelectorAll('[data-act]').forEach(function(b){ b.onclick=function(){
-        if(b.getAttribute('data-act')==='pay') Store.addTransaction(-50,'Card payment');
-        else Store.addTransaction(200,'Transfer in');
-        render();
-      };});
+      renderDemoStrip('finance');
       return;
     }
 
