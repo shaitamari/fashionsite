@@ -47,7 +47,12 @@
 <script src="assets/eureka.js"></script>
 <script>
   var params = new URLSearchParams(location.search);
-  var COLLECTION = params.get('c') || (window.VERTICAL && window.VERTICAL.content && window.VERTICAL.content.phones_default) || (Store.collections() && Store.collections()[0]) || 'Makeup';
+  var COLLECTION = params.get('c')
+    || (window.VERTICAL && window.VERTICAL.content && window.VERTICAL.content.phones_default)
+    || (window.VERTICAL && window.VERTICAL.default_category)
+    || (Store.collections() && Store.collections()[0])
+    || (window.COLLECTIONS && Object.keys(window.COLLECTIONS)[0])
+    || 'All';
   var SUBCAT = params.get('sub') || null;
   // Plans are content-home cards, not a catalogue grid. If someone lands
   // on the Plans category, send them to the content homepage's plans.

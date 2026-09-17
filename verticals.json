@@ -1310,12 +1310,10 @@
    "Rings": "Accessories"
   },
   "order": [
-   "Tops",
-   "Maxi Dresses",
-   "Mini Dresses",
-   "Dresses",
-   "Pants",
-   "Outerwear"
+   "Women",
+   "Men",
+   "Shoes",
+   "Accessories"
   ],
   "subcats": {},
   "defaults": {
