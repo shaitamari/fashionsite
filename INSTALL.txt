@@ -1,21 +1,18 @@
-"My relationship" account section (past + future) + delivery/pickup fulfilment.
+Telco/finance nav consistency + finance typographic cards.
 
-THE ACCOUNT PAGE, PER VERTICAL — a reusable "your relationship, back and ahead" section:
-- Grocery: "Your usual" (purchase history = reorderable staples) + "Your next delivery"
-- Commerce (fashion/electronics/home): "Your purchases" + "On its way / To collect"
-- Travel: "Past trips" + "Upcoming trips" (bookings array, split by travel_date)
-- Telco: "Your plans & add-ons"  ·  Finance: "Your accounts"
-Reads the per-uuid arrays site-side (a first-party read, exactly as a real account page reads the
-company's own system of record). The SAME arrays sit on the profile for the CDP to segment/message on.
+NAV (telco + finance): the high-level content nav (Plans/Phones/Help/Top up · Accounts/Savings/... etc.)
+now shows on EVERY page in the masthead, same font everywhere — not the homepage nav on the home and the
+raw catalogue collections (Modern Folio iPhone, iPhone 17 Pro Max...) in a different font elsewhere.
+- Content-template verticals render V.content.nav into the masthead nav on all pages (store.js).
+- Dead links (Help = '#') are skipped; anchor links (#plans) resolve to the content home from any page.
+- Phones and every inner page now carry the same nav.
 
-FULFILMENT AT CHECKOUT (config-gated per vertical, verticals.json <v>.fulfilment):
-- "Deliver to me" (slot) OR "Collect in store" (store). Grocery = delivery slots; commerce = BOPIS.
-- The choice rides on every purchase line (fulfilment/where/eta); the "On its way / To collect" list reads it.
-- The forward/delivery status is also the data behind the transactional "your order is on the way" beat.
+FINANCE CARDS: the family pages (Accounts/Savings/Credit Cards/Loans) no longer show the pixel/placeholder
+image — banking product cards now read as clean TYPOGRAPHIC cards like the telco plan cards (name + rate line),
+scoped to banking only (html[data-vertical="banking"]). No other vertical changes.
+NOTE: this is the "make it look like my plans" option. If you'd rather have REAL images later, that's a
+separate step (source real account/card imagery + drop the pixel placeholders).
 
 From the posh folder:
-  unzip -o ~/Downloads/posh-2026-09-17-my-relationship.zip -d /tmp/x && cp -r /tmp/x/posh-2026-09-17-my-relationship/* . && python3 build.py --all && posh "My relationship account section (past+future) + delivery/pickup fulfilment"
-
-TEST: buy something on fashion or grocery -> choose delivery or collect -> Account -> see it under "On its way /
-      To collect", and past buys under "Your purchases / Your usual". Travel: sign in as the traveller persona -> upcoming vs past trips.
+  unzip -o ~/Downloads/posh-2026-09-17-nav-cards.zip -d /tmp/x && cp -r /tmp/x/posh-2026-09-17-nav-cards/* . && python3 build.py --all && posh "Telco/finance nav consistent across pages; finance typographic cards"
 Same-name-download trap: if 'nothing to commit', unzip the newest per ls -lt.

@@ -1517,6 +1517,26 @@
       var current = host.getAttribute('data-current');
       host.innerHTML = '';
 
+      /* Content-template verticals (telco, finance) have a curated high-level
+         nav in their config — Plans / Phones / Help / Top up — not the raw
+         catalogue collections. Render THAT on every page so the nav is the
+         same everywhere, not the homepage's content nav on the home and the
+         raw collection list elsewhere. */
+      var V = window.VERTICAL || {};
+      if (V.template === 'content' && V.content && V.content.nav) {
+        host.setAttribute('data-content-nav', '');       // same styling as the homepage nav
+        V.content.nav.forEach(function (n) {
+          if (!n.href || n.href === '#') return;         // skip dead links (e.g. an unbuilt Help)
+          // Anchors like #plans only resolve on the content home — send them there.
+          var href = n.href.charAt(0) === '#' ? ('content-index.html' + n.href) : n.href;
+          var a = document.createElement('a');
+          a.href = href; a.textContent = n.label;
+          host.appendChild(a);
+        });
+        return;
+      }
+
+
       /* "Just for you" leads the nav, because it is the only entry that is
          about the visitor rather than about the catalogue. Its wording comes
          from the vertical — "Your usuals" on a supermarket, "Where to next"

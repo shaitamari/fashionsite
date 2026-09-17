@@ -615,3 +615,15 @@ html[data-vertical] .mainnav__in[data-content-nav] { gap: 2rem; }
 .myrel__item-title { font-weight:500; }
 .myrel__item-sub { font-size:.85rem; color:var(--muted); }
 .myrel__item-tag { font-size:.7rem; letter-spacing:.05em; text-transform:uppercase; color:var(--accent,#136B4B); font-weight:600; white-space:nowrap; }
+
+/* Finance product cards: no fake product photo — read as typographic cards
+   like the telco plan cards. Scoped to banking so no other vertical changes. */
+html[data-vertical="banking"] .card__media { display: none; }
+html[data-vertical="banking"] .card {
+  border: 1px solid var(--rule); border-radius: 14px; padding: 1.5rem;
+  background: var(--bg);
+}
+html[data-vertical="banking"] .card__body { padding: 0; }
+html[data-vertical="banking"] .card__name { font-size: 1.25rem; font-weight: 500; margin: 0 0 .6rem; }
+html[data-vertical="banking"] .card__price { font-size: 1rem; color: var(--muted); }
+html[data-vertical="banking"] .card__link { display: block; }
