@@ -23,7 +23,7 @@
     <rating>4.9</rating>
     <g:custom_label_4>50</g:custom_label_4>
     <margin>50</margin>
-    <activation_date>2026-06-18</activation_date>
+    <activation_date>2026-06-19</activation_date>
   </item>
   <item>
     <g:id>8400000000201</g:id>
@@ -44,7 +44,7 @@
     <rating>4.2</rating>
     <g:custom_label_4>45</g:custom_label_4>
     <margin>45</margin>
-    <activation_date>2025-05-04</activation_date>
+    <activation_date>2025-05-05</activation_date>
   </item>
   <item>
     <g:id>8400000000202</g:id>
@@ -65,7 +65,7 @@
     <rating>3.4</rating>
     <g:custom_label_4>35</g:custom_label_4>
     <margin>35</margin>
-    <activation_date>2026-10-09</activation_date>
+    <activation_date>2026-10-10</activation_date>
   </item>
   <item>
     <g:id>8400000000301</g:id>
@@ -86,7 +86,7 @@
     <rating>3.8</rating>
     <g:custom_label_4>20</g:custom_label_4>
     <margin>20</margin>
-    <activation_date>2025-11-12</activation_date>
+    <activation_date>2025-11-13</activation_date>
   </item>
   <item>
     <g:id>8400000000401</g:id>
@@ -107,7 +107,7 @@
     <rating>4.9</rating>
     <g:custom_label_4>65</g:custom_label_4>
     <margin>65</margin>
-    <activation_date>2026-05-09</activation_date>
+    <activation_date>2026-05-10</activation_date>
   </item>
   <item>
     <g:id>8400000000110</g:id>
@@ -128,7 +128,7 @@
     <rating>4.0</rating>
     <g:custom_label_4>55</g:custom_label_4>
     <margin>55</margin>
-    <activation_date>2026-04-19</activation_date>
+    <activation_date>2026-04-20</activation_date>
   </item>
   <item>
     <g:id>8400000000111</g:id>
@@ -149,7 +149,7 @@
     <rating>4.5</rating>
     <g:custom_label_4>20</g:custom_label_4>
     <margin>20</margin>
-    <activation_date>2025-09-21</activation_date>
+    <activation_date>2025-09-22</activation_date>
   </item>
   <item>
     <g:id>8400000000112</g:id>
@@ -170,7 +170,7 @@
     <rating>3.4</rating>
     <g:custom_label_4>40</g:custom_label_4>
     <margin>40</margin>
-    <activation_date>2025-10-26</activation_date>
+    <activation_date>2025-10-27</activation_date>
   </item>
   <item>
     <g:id>8400000000302</g:id>
@@ -191,7 +191,7 @@
     <rating>3.5</rating>
     <g:custom_label_4>55</g:custom_label_4>
     <margin>55</margin>
-    <activation_date>2025-09-02</activation_date>
+    <activation_date>2025-09-03</activation_date>
   </item>
   <item>
     <g:id>8400000000303</g:id>
@@ -212,7 +212,7 @@
     <rating>3.4</rating>
     <g:custom_label_4>35</g:custom_label_4>
     <margin>35</margin>
-    <activation_date>2025-07-26</activation_date>
+    <activation_date>2025-07-27</activation_date>
   </item>
   <item>
     <g:id>8400000000402</g:id>
@@ -233,7 +233,7 @@
     <rating>3.9</rating>
     <g:custom_label_4>40</g:custom_label_4>
     <margin>40</margin>
-    <activation_date>2025-10-11</activation_date>
+    <activation_date>2025-10-12</activation_date>
   </item>
   <item>
     <g:id>8400000000403</g:id>
@@ -254,7 +254,7 @@
     <rating>3.4</rating>
     <g:custom_label_4>40</g:custom_label_4>
     <margin>40</margin>
-    <activation_date>2026-09-12</activation_date>
+    <activation_date>2026-09-13</activation_date>
   </item>
   <item>
     <g:id>8400000000204</g:id>
@@ -275,7 +275,7 @@
     <rating>4.6</rating>
     <g:custom_label_4>45</g:custom_label_4>
     <margin>45</margin>
-    <activation_date>2026-06-21</activation_date>
+    <activation_date>2026-06-22</activation_date>
   </item>
   <item>
     <g:id>8400000000203</g:id>
@@ -296,7 +296,7 @@
     <rating>4.2</rating>
     <g:custom_label_4>20</g:custom_label_4>
     <margin>20</margin>
-    <activation_date>2026-06-20</activation_date>
+    <activation_date>2026-06-21</activation_date>
   </item>
   <item>
     <g:id>8400000000205</g:id>
@@ -317,7 +317,7 @@
     <rating>3.9</rating>
     <g:custom_label_4>25</g:custom_label_4>
     <margin>25</margin>
-    <activation_date>2025-11-19</activation_date>
+    <activation_date>2025-11-20</activation_date>
   </item>
 </channel>
 </rss>
