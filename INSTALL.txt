@@ -1,23 +1,15 @@
-URGENT FIX — "all sites broken / Eureka not serving" was FASHION's empty COLLECTIONS + the Makeup fallback.
+Out-of-stock products on fashion, VISIBLE ON THE PLP — for the Agent One back-in-stock demo.
 
-ROOT CAUSE: fashion's `order` in verticals.json was still the old Posh categories (Tops/Maxi Dresses/...),
-while its `collections` map was updated (this morning) to Women/Men/Shoes/Accessories. window.COLLECTIONS is
-built from `order` intersected with actual collections -> NONE matched -> COLLECTIONS = {} (empty). With no
-collections, category.html fell through to the hardcoded 'Makeup' default and sent cf=Makeup to Eureka ->
-Eureka returned Success + 0 items ("not serving this page"). Looked estate-wide because fashion is the
-reference build. Eureka was HEALTHY the whole time (en_GB, Success) — the site was sending it a dead category.
-
-FIXES:
-- verticals.json: fashion `order` -> Women/Men/Shoes/Accessories (COLLECTIONS now populates).
-- category.html: removed the hardcoded 'Makeup' final fallback -> vertical's default_category / first collection / 'All'.
-- cart.html, search.html, index.html: hardcoded category.html?c=Makeup links -> category.html (resolves per vertical).
-  (index.html/cart/search are SHARED templates; the Makeup href was a beauty leftover firing on every vertical.)
+- fashion size_gaps=True (one size marked out on ~a quarter of multi-size styles) + full_oos=8
+  (8 whole styles marked sold out, spread across Women/Men/Shoes/Accessories, deterministic by id).
+- PLP card now shows a badge: "Sold out" (whole product gone, image dimmed) or "Low stock" (a size is out).
+  oneVariantEach aggregates stock across variants so the card is truthful even though it shows one variant.
+- Result on a fashion category page: some cards show "Sold out" / "Low stock" -> click in -> the PDP has the
+  gone size -> Agent One captures the back-in-stock request. The capability now reads from the grid.
 
 From the posh folder:
-  unzip -o ~/Downloads/posh-2026-09-17-fix-fashion-collections.zip -d /tmp/x && cp -r /tmp/x/posh-2026-09-17-fix-fashion-collections/* . && python3 build.py --all && posh "Fix fashion empty COLLECTIONS (stale order) + kill Makeup fallback landmines"
+  unzip -o ~/Downloads/posh-2026-09-17-oos-plp.zip -d /tmp/x && cp -r /tmp/x/posh-2026-09-17-oos-plp/* . && python3 build.py fashion && posh "OOS products on fashion PLP for the back-in-stock demo"
 
-VERIFY after deploy: grep -c '"Women"' catalogs/fashion.js  (>=1); fashion category page serves products from Eureka again.
+After deploy, a fashion category (Women/Men/Shoes) shows Sold out / Low stock cards. 8 fully-OOS styles incl.:
+Garrison Belt, Babydoll Tank in White, Two Button Henley, and several Vans/shoes.
 Same-name-download trap: if 'nothing to commit', unzip the newest per ls -lt.
-
-FRICTION NOTE: `order` and `collections` must stay in sync — COLLECTIONS builds from `order`. When collections
-are remapped, update `order` too, or COLLECTIONS goes empty and the whole vertical breaks. (Bit fashion twice today.)

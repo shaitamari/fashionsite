@@ -423,6 +423,27 @@ def build_catalog(key, cfg):
             for r in recs:
                 if r["size"] == gone:
                     r["stock"], r["in_stock"] = 0, 0
+                # Flag the whole group so the PLP card can show "Low stock" —
+                # the size gap is visible from the grid, not only the PDP.
+                r["some_size_out"] = 1
+
+    # Fully out-of-stock styles for the back-in-stock demo: a handful of whole
+    # products marked gone so the PLP shows clear "Sold out" cards. Chosen by id
+    # so the same styles are OOS every build. Only where the vertical asks
+    # (full_oos = N).
+    n_oos = cfg.get("full_oos")
+    if n_oos:
+        by_group = collections.defaultdict(list)
+        for rec in records:
+            by_group[rec["groupcode"]].append(rec)
+        gids = sorted(by_group.keys())
+        # deterministic pick: every k-th group so they're spread across the catalogue
+        step = max(1, len(gids)//max(1, n_oos))
+        picked = gids[::step][:n_oos]
+        for gid in picked:
+            for r in by_group[gid]:
+                r["stock"], r["in_stock"] = 0, 0
+                r["some_size_out"] = 0
 
     if not records:
         raise ValueError(f"{key}: no products survived filtering — check `collections`")

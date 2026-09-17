@@ -419,6 +419,19 @@
       // Copy, so annotations never leak back into the catalog itself.
       var out = Object.assign({}, best);
       out._variants = vs.length;
+      // Aggregate stock across the group so the PLP card is truthful:
+      //  - any variant in stock  -> the card is in stock (best is cheapest,
+      //    which may itself be the sold-out size)
+      //  - any variant out of stock -> flag some_size_out ("Low stock")
+      //  - every variant out       -> in_stock 0 ("Sold out")
+      var anyIn = false, anyOut = false;
+      for (var j = 0; j < vs.length; j++) {
+        if (vs[j].in_stock) anyIn = true; else anyOut = true;
+        if (vs[j].some_size_out) out.some_size_out = 1;
+      }
+      out.in_stock = anyIn ? 1 : 0;
+      out.stock = anyIn ? (out.stock || 1) : 0;
+      if (anyOut && anyIn) out.some_size_out = 1;
       return out;
     });
     function price(p) {
@@ -1573,14 +1586,23 @@
     el.className = 'card';
     var sale = p.unit_sale_price < p.unit_price;
 
+    /* Stock badge on the PLP card. in_stock === 0 (or stock 0) means the whole
+       product is gone -> "Sold out". A product that is in stock but has a size
+       marked out (size_gaps, the back-in-stock demo) shows "Low stock" so the
+       gap is visible from the grid, not only on the PDP. */
+    var oos = (p.in_stock === 0) || (p.stock === 0);
+    var lowStock = !oos && p.some_size_out;      // set by the size_gaps pass below
+    var stockBadge = oos ? '<span class="badge badge--oos">Sold out</span>'
+                    : lowStock ? '<span class="badge badge--low">Low stock</span>' : '';
+
     el.innerHTML =
       /* Always a relative link. The catalogue's `url` is the canonical
          product URL on the bare domain — right for the feed and the SDK's
          product object, wrong for navigation: from a -sandbox storefront it
          would carry the visitor to the salesdemo site mid-demo. */
       '<a class="card__link" href="' + (opts.href || localHref(p)) + '">' +
-        '<div class="card__media">' +
-          (sale ? '<span class="badge">Sale</span>' : '') +
+        '<div class="card__media' + (oos ? ' card__media--oos' : '') + '">' +
+          (stockBadge || (sale ? '<span class="badge">Sale</span>' : '')) +
           '<img loading="lazy" alt="" src="' + (p.image || '') + '">' +
         '</div>' +
         '<div class="card__meta">' +

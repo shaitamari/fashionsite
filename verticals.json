@@ -1386,7 +1386,9 @@
     "Westfield Stratford",
     "Canary Wharf"
    ]
-  }
+  },
+  "size_gaps": true,
+  "full_oos": 8
  },
  "electronics": {
   "vertical": "Retail",

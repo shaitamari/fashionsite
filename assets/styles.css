@@ -627,3 +627,9 @@ html[data-vertical="banking"] .card__body { padding: 0; }
 html[data-vertical="banking"] .card__name { font-size: 1.25rem; font-weight: 500; margin: 0 0 .6rem; }
 html[data-vertical="banking"] .card__price { font-size: 1rem; color: var(--muted); }
 html[data-vertical="banking"] .card__link { display: block; }
+
+/* PLP stock badges — surfaces sold-out / low-stock on the category grid so the
+   Agent One back-in-stock capture reads from the PLP, not only the PDP. */
+.badge--oos { background:#1a1a1a; color:#fff; }
+.badge--low { background:#c0392b; color:#fff; }
+.card__media--oos img { opacity:.55; filter:grayscale(.3); }
