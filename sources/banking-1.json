@@ -351,6 +351,178 @@
    "banking": {
     "rate_line": "€8/mo · joint & kids"
    }
+  },
+  {
+   "id": 8400000000302,
+   "title": "Balance Transfer Card",
+   "handle": "balance-transfer-card",
+   "body_html": "<p>Move existing balances and pay no interest for up to 24 months.</p>",
+   "vendor": "Northbank",
+   "product_type": "Credit Cards",
+   "tags": [
+    "Credit Cards",
+    "Category:Credit Cards"
+   ],
+   "options": [
+    {
+     "name": "Title",
+     "values": [
+      "Default Title"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/pixel.png"
+    }
+   ],
+   "variants": [
+    {
+     "id": 8400000000302,
+     "product_id": 8400000000302,
+     "title": "Default Title",
+     "option1": "Default Title",
+     "sku": "NB-CARD-BAL",
+     "price": "1.00",
+     "available": true,
+     "featured_image": {
+      "src": "assets/img/pixel.png"
+     },
+     "position": 1
+    }
+   ],
+   "banking": {
+    "rate_line": "0% balance transfer 24mo"
+   }
+  },
+  {
+   "id": 8400000000303,
+   "title": "Travel Credit Card",
+   "handle": "travel-credit-card",
+   "body_html": "<p>No foreign transaction fees and travel perks, built for spending abroad.</p>",
+   "vendor": "Northbank",
+   "product_type": "Credit Cards",
+   "tags": [
+    "Credit Cards",
+    "Category:Credit Cards"
+   ],
+   "options": [
+    {
+     "name": "Title",
+     "values": [
+      "Default Title"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/pixel.png"
+    }
+   ],
+   "variants": [
+    {
+     "id": 8400000000303,
+     "product_id": 8400000000303,
+     "title": "Default Title",
+     "option1": "Default Title",
+     "sku": "NB-CARD-TRV",
+     "price": "1.00",
+     "available": true,
+     "featured_image": {
+      "src": "assets/img/pixel.png"
+     },
+     "position": 1
+    }
+   ],
+   "banking": {
+    "rate_line": "No FX fees · 22.9% APR rep."
+   }
+  },
+  {
+   "id": 8400000000402,
+   "title": "Car Finance",
+   "handle": "car-finance",
+   "body_html": "<p>Finance your next car with a fixed rate and flexible terms.</p>",
+   "vendor": "Northbank",
+   "product_type": "Loans",
+   "tags": [
+    "Loans",
+    "Category:Loans"
+   ],
+   "options": [
+    {
+     "name": "Title",
+     "values": [
+      "Default Title"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/pixel.png"
+    }
+   ],
+   "variants": [
+    {
+     "id": 8400000000402,
+     "product_id": 8400000000402,
+     "title": "Default Title",
+     "option1": "Default Title",
+     "sku": "NB-LOAN-CAR",
+     "price": "1.00",
+     "available": true,
+     "featured_image": {
+      "src": "assets/img/pixel.png"
+     },
+     "position": 1
+    }
+   ],
+   "banking": {
+    "rate_line": "From 5.9% APR rep."
+   }
+  },
+  {
+   "id": 8400000000403,
+   "title": "Home Improvement Loan",
+   "handle": "home-improvement-loan",
+   "body_html": "<p>Borrow for renovations with clear fixed monthly payments.</p>",
+   "vendor": "Northbank",
+   "product_type": "Loans",
+   "tags": [
+    "Loans",
+    "Category:Loans"
+   ],
+   "options": [
+    {
+     "name": "Title",
+     "values": [
+      "Default Title"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/pixel.png"
+    }
+   ],
+   "variants": [
+    {
+     "id": 8400000000403,
+     "product_id": 8400000000403,
+     "title": "Default Title",
+     "option1": "Default Title",
+     "sku": "NB-LOAN-HOME",
+     "price": "1.00",
+     "available": true,
+     "featured_image": {
+      "src": "assets/img/pixel.png"
+     },
+     "position": 1
+    }
+   ],
+   "banking": {
+    "rate_line": "From 6.4% APR rep."
+   }
   }
  ]
 }

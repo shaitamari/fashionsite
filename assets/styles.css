@@ -488,12 +488,12 @@ html[data-vertical] .mainnav__in[data-content-nav] { gap: 2rem; }
    columns leaving a capped card floating in a half-page gap. */
 html[data-vertical="banking"] .linecards,
 html[data-vertical="banking"] .listing__main .grid {
-  grid-template-columns: repeat(auto-fill, 320px);
+  grid-template-columns: repeat(auto-fill, 300px);
   justify-content: start;
   gap: 1.5rem;
 }
 html[data-vertical="banking"] .card--finance,
-html[data-vertical="banking"] .linecard { max-width: none; width: 320px; }
+html[data-vertical="banking"] .linecard { max-width: none; width: 300px; }
 .linecard {
   position: relative;
   border: 1px solid var(--rule);

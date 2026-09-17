@@ -172,5 +172,89 @@
     <margin>40</margin>
     <activation_date>2025-10-26</activation_date>
   </item>
+  <item>
+    <g:id>8400000000302</g:id>
+    <g:item_group_id>8400000000302</g:item_group_id>
+    <g:title>Balance Transfer Card</g:title>
+    <description>Move existing balances and pay no interest for up to 24 months.</description>
+    <link>https://banking.insiderdemo.com/product.html?id=8400000000302</link>
+    <g:image_link>https://insiderdemo.com/assets/img/pixel.png</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Credit Cards &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:custom_label_3>3.5</g:custom_label_3>
+    <rating>3.5</rating>
+    <g:custom_label_4>55</g:custom_label_4>
+    <margin>55</margin>
+    <activation_date>2025-09-02</activation_date>
+  </item>
+  <item>
+    <g:id>8400000000303</g:id>
+    <g:item_group_id>8400000000303</g:item_group_id>
+    <g:title>Travel Credit Card</g:title>
+    <description>No foreign transaction fees and travel perks, built for spending abroad.</description>
+    <link>https://banking.insiderdemo.com/product.html?id=8400000000303</link>
+    <g:image_link>https://insiderdemo.com/assets/img/pixel.png</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Credit Cards &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:custom_label_3>3.4</g:custom_label_3>
+    <rating>3.4</rating>
+    <g:custom_label_4>35</g:custom_label_4>
+    <margin>35</margin>
+    <activation_date>2025-07-26</activation_date>
+  </item>
+  <item>
+    <g:id>8400000000402</g:id>
+    <g:item_group_id>8400000000402</g:item_group_id>
+    <g:title>Car Finance</g:title>
+    <description>Finance your next car with a fixed rate and flexible terms.</description>
+    <link>https://banking.insiderdemo.com/product.html?id=8400000000402</link>
+    <g:image_link>https://insiderdemo.com/assets/img/pixel.png</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Loans &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:custom_label_3>3.9</g:custom_label_3>
+    <rating>3.9</rating>
+    <g:custom_label_4>40</g:custom_label_4>
+    <margin>40</margin>
+    <activation_date>2025-10-11</activation_date>
+  </item>
+  <item>
+    <g:id>8400000000403</g:id>
+    <g:item_group_id>8400000000403</g:item_group_id>
+    <g:title>Home Improvement Loan</g:title>
+    <description>Borrow for renovations with clear fixed monthly payments.</description>
+    <link>https://banking.insiderdemo.com/product.html?id=8400000000403</link>
+    <g:image_link>https://insiderdemo.com/assets/img/pixel.png</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Loans &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:custom_label_3>3.4</g:custom_label_3>
+    <rating>3.4</rating>
+    <g:custom_label_4>40</g:custom_label_4>
+    <margin>40</margin>
+    <activation_date>2026-09-12</activation_date>
+  </item>
 </channel>
 </rss>

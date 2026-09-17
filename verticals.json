@@ -916,6 +916,54 @@
       "Family spending dashboard",
       "FSCS protected up to £85,000"
      ]
+    },
+    "Balance Transfer Card": {
+     "blurb": "Move balances from other cards and pay no interest for up to 24 months — clear what you owe faster without the interest piling up.",
+     "rate_line": "0% balance transfer 24mo",
+     "features": [
+      "0% on balance transfers for 24 months",
+      "No annual fee",
+      "One simple monthly payment",
+      "3% transfer fee",
+      "Manage in-app",
+      "Representative 24.9% APR variable"
+     ]
+    },
+    "Travel Credit Card": {
+     "blurb": "Built for spending abroad — no foreign transaction fees, travel perks, and worldwide acceptance. Freeze it instantly in the app if you misplace it.",
+     "rate_line": "No FX fees · 22.9% APR rep.",
+     "features": [
+      "No foreign transaction fees",
+      "Travel accident cover",
+      "Worldwide acceptance",
+      "Instant freeze in-app",
+      "No annual fee",
+      "Representative 22.9% APR variable"
+     ]
+    },
+    "Car Finance": {
+     "blurb": "Finance your next car with a competitive fixed rate and terms that fit your budget. Check your rate with a soft search that won't affect your score.",
+     "rate_line": "From 5.9% APR rep.",
+     "features": [
+      "Fixed monthly payments",
+      "Borrow £5,000–£50,000",
+      "Terms from 1 to 5 years",
+      "Soft-search rate check",
+      "No early-repayment fee",
+      "Representative 5.9% APR"
+     ]
+    },
+    "Home Improvement Loan": {
+     "blurb": "Borrow for renovations, extensions or a new kitchen with clear fixed monthly payments and no early-repayment fees. Get a decision in minutes.",
+     "rate_line": "From 6.4% APR rep.",
+     "features": [
+      "Fixed monthly payments",
+      "Borrow £1,000–£25,000",
+      "Terms from 1 to 7 years",
+      "No early-repayment fee",
+      "Decision in minutes",
+      "Representative 6.4% APR"
+     ]
     }
    },
    "articles": [
@@ -994,7 +1042,8 @@
    "homepage_products": [
     "Everyday",
     "Northbank Saver",
-    "Northbank Rewards Card"
+    "Northbank Rewards Card",
+    "Personal Loan"
    ]
   },
   "open_account": {

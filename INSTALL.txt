@@ -188,3 +188,10 @@ Same-name-download trap: if 'nothing to commit', unzip the newest per ls -lt.
     and insurance; dareFor() returns null there and the chip is skipped gracefully. Retail verticals (fashion,
     hotels, beauty, airlines...) keep their dares, where search IS the demonstrated capability. Pairs with the
     banking-local-only change: content verticals simply don't push search.
+
+25. FULLER FINANCE LINEUP (sources/banking-1.json + verticals.json + styles.css):
+    - Credit Cards: added Balance Transfer Card (0% 24mo) and Travel Credit Card (no FX fees) -> 3 cards.
+    - Loans: added Car Finance (from 5.9%) and Home Improvement Loan (from 6.4%) -> 3 loans.
+    - All with rich blurb + rate line + 6 feature rows, matching the others; images placeholder (personalize later).
+    - Homepage now shows 4 cards (Everyday, Saver, Rewards Card, Personal Loan) — one per family.
+    - Card width 320 -> 300px so 4 fit one row cleanly on the 1360px container (4x300 + gaps < usable width).
