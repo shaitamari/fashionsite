@@ -779,6 +779,30 @@
     }).catch(function () { return false; });
   }
 
+  /* Deliberate login by email. Unlike signIn (which keeps the browser uuid),
+     this adopts the email's DETERMINISTIC uuid, stableId(email) =
+     LMN-hash(email). So a new browser + a known email becomes the SAME
+     profile that email always maps to — the marry-up. This switch is safe
+     because it is an explicit login (the user saying "I am this person"),
+     not the accidental mid-session flip we removed. Emails first used under
+     this scheme match on any machine forever; older random-uuid profiles do
+     not retro-match (use a fresh email, or a saved persona, for those). */
+  function signInByEmail(profile) {
+    var email = (profile && profile.email || '').trim();
+    if (!email) return signIn(profile);
+    var uuid = stableId(email);
+    var switching = (visitorId() !== uuid);
+    if (switching) {
+      // Adopt the email's canonical identity: point this browser at that uuid
+      // and let the tag re-initialise onto that profile.
+      clearInsiderIdentity();
+      writeVisitorCookie(uuid);
+      localStorage.removeItem(KEY.user);
+    }
+    var merged = signIn(Object.assign({}, profile, { uuid: uuid }));
+    return { merged: merged, uuid: uuid, switched: switching };
+  }
+
   function signInAs(persona) {
     if (!persona || !persona.uuid) return false;
     writeVisitorCookie(persona.uuid);
@@ -917,7 +941,7 @@
   }
 
   function preferredCategory() {
-    var views = read('lmn.views', {});
+    var views = readHist('lmn.views') || {};
     var best = null, top = 0;
     Object.keys(views).forEach(function (k) { if (views[k] > top) { top = views[k]; best = k; } });
     // Fall back to the vertical's own default category, not a hardcoded
@@ -974,11 +998,16 @@
   function readHist(base) {
     var keyed = read(histKey(base), null);
     if (keyed !== null) return keyed;
-    // migrate a legacy browser-wide bin to the current uuid, once.
+    // Migrate a legacy browser-wide ARRAY bin (purchases/bookings) to the
+    // current uuid once. Do NOT migrate lmn.views: category views are
+    // per-uuid from now on, and carrying the old browser-wide views forward
+    // is exactly the cross-vertical bleed (a beauty "Makeup" view showing up
+    // on a fresh telco profile). Just drop the legacy views.
     var legacy = read(base, null);
-    if (legacy && legacy.length) { write(histKey(base), legacy); }
+    if (base !== 'lmn.views' && legacy && legacy.length) { write(histKey(base), legacy); }
     try { localStorage.removeItem(base); } catch (e) {}
-    return legacy || [];
+    if (base === 'lmn.views') return null;               // views: no migration, object caller uses || {}
+    return (legacy && legacy.length) ? legacy : [];      // arrays: always an array
   }
   function writeHist(base, val) { write(histKey(base), val); }
   function setPurchaseHistory(h) { writeHist('lmn.purchases', (h||[]).slice(-60)); }
@@ -1364,9 +1393,9 @@
 
   function noteCategoryView(c) {
     if (!c) return;
-    var views = read('lmn.views', {});
+    var views = readHist('lmn.views') || {};
     views[c] = (views[c] || 0) + 1;
-    write('lmn.views', views);
+    writeHist('lmn.views', views);
   }
 
   /* --- wishlist ----------------------------------------------------------- */
@@ -1704,6 +1733,7 @@
     currentUser: currentUser, signIn: signIn, signOut: signOut, refreshIdentity: refreshIdentity, syncAttributes: syncAttributes, userPayload: userPayload,
     noteCategoryView: noteCategoryView, preferredCategory: preferredCategory,
     noteProductView: noteProductView, sessionStats: sessionStats,
+    signInByEmail: signInByEmail, stableId: stableId,
     notePurchase: notePurchase, purchaseHistory: purchaseHistory, setPurchaseHistory: setPurchaseHistory, setBookingHistory: setBookingHistory, clearHistory: clearHistory, nextDue: nextDue,
     anniversaryPick: anniversaryPick,
     toggleWish: toggleWish, isWished: isWished, wishlist: wishlist,

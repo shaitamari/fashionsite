@@ -1,27 +1,10 @@
-ACCOUNT DASHBOARD (telco + finance) — the post-login "manage your account" beat, with a live loop.
-This is the CONSOLIDATED zip: it contains the finance site, the loop-closing header/banner, AND the dashboard.
-Deploy this one and you have everything from 17 Sep.
-
-What's here:
-- Account dashboard on account.html, shown when signed in on telco or finance:
-    TELCO: data-used bar (used/allowance), number, status; buttons "Use 2 GB" / "Top up 5 GB" that
-           mutate usage and re-render live; recent activity log; ">=85% shows an Unlimited nudge.
-    FINANCE: balance at a glance, status/eligibility; buttons "Make £50 payment" / "Add £200" that
-           move the balance and add a transaction line, live; recent transactions log.
-  The loop: do something -> the dashboard updates, same satisfaction as the trip banner.
-- Per-uuid activity models in store.js: usageState/addUsage/topUp (telco), financeState/addTransaction (finance).
-  Seeded on first view; a fresh visitor starts clean.
-- Also includes: finance site (content home, open.html open-account funnel w/ eligibility+lead-scoring,
-  quote.html), loop-closing header strip + relationship banner, accounts array, telco usage attrs.
+Fix the last "Preferred Category: Makeup" leak on fresh telco/finance profiles.
+Cause: lmn.views (category-view counts that drive preferred_category) was browser-wide,
+so beauty/fashion browsing left "Makeup" in it, and it bled onto a fresh telco profile.
+Fix: lmn.views is now PER-UUID (like purchases/bookings) and legacy browser-wide views are
+dropped, not migrated. Plus telco default_category=Plans, banking=Accounts as a belt-and-braces fallback.
 
 From the posh folder:
-  unzip -o ~/Downloads/posh-2026-09-17-dashboard.zip -d /tmp/x && cp -r /tmp/x/posh-2026-09-17-dashboard/* . && python3 build.py --all && posh "Account dashboard (telco usage / finance balance) with live demo controls; finance site; loop-closing"
+  unzip -o ~/Downloads/posh-2026-09-17-views.zip -d /tmp/x && cp -r /tmp/x/posh-2026-09-17-views/* . && python3 build.py --all && posh "Per-uuid category views; telco/banking default_category — kill the Makeup leak"
 
-PANEL (when you have time, for end-to-end): declare custom attrs
-  telco: data_used, data_allowance (numbers)
-  finance: product, account_type, customer_status, lead_band, lead_score, balance, quote_cover, quote_level, quote_premium
-  arrays: accounts
-The SITE experience works without these (reads live currentUser + per-uuid state); the panel side is for persistence/campaigns.
-
-TEST: sign in (or subscribe/open an account) on telco or banking, go to Account -> see the dashboard ->
-      click Use 2 GB / Make a payment -> watch it update.
+Test: New visitor on telco -> subscribe -> profile Preferred Category should be Plans (or empty), never Makeup.

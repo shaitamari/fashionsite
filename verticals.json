@@ -976,7 +976,8 @@
     "£250",
     "£500"
    ]
-  }
+  },
+  "default_category": "Accounts"
  },
  "insurance": {
   "vertical": "Banking",
@@ -1855,7 +1856,8 @@
      ]
     }
    }
-  }
+  },
+  "default_category": "Plans"
  },
  "home": {
   "vertical": "Retail",
