@@ -630,7 +630,9 @@ html[data-vertical="banking"] .linecard { max-width: none; width: 320px; }
 /* (obsolete banking .card overrides removed — finance uses .card--finance now) */
 /* Belt-and-braces: never show the catalogue product image (SVG/pixel) on a
    banking product that renders through the standard image-card path. */
-html[data-vertical="banking"] .card:not(.card--finance) .card__media { display:none; }
+html[data-vertical="banking"] .card:not(.card--finance) .card__media,
+html[data-vertical="banking"] .ins-web-smart-recommender-box-item .card__media,
+html[data-vertical="banking"] .ins-web-smart-recommender-box-item img { display:none !important; }
 
 
 /* PLP stock badges — surfaces sold-out / low-stock on the category grid so the

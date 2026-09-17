@@ -151,3 +151,13 @@ Same-name-download trap: if 'nothing to commit', unzip the newest per ls -lt.
     STILL A BIGGER FOLLOW-UP: fully splitting the account page into a clean customer view + a separate SC/demo
     page (personas, mimic controls, save-as-persona) is a larger restructure — deferred; this pass removes the
     worst of the clutter. The offer/outreach "ideas" cards are left as placeholders per your call.
+
+21. LOANS/CREDIT CARDS SVGs — BROADER CSS BACKSTOP (styles.css): confirmed the deploy is live (Northbank shows)
+    but Loans still showed SVGs — so it's a real render-path difference, NOT stale code. The main card() finance
+    branch is verified correct and fires for all banking products, so the SVGs come from a DIFFERENT renderer
+    (most likely the Smart Recommender "You might also need" widget, which builds its own image cards). Broadened
+    the banking SVG-hide CSS to cover .ins-web-smart-recommender-box-item images too, so stray product images are
+    hidden anywhere on banking except the intentional finance-card media.
+    HONEST NOTE: this is a blind fix (couldn't see the rendered DOM). If Loans STILL shows SVGs after this,
+    inspect ONE svg in the browser: what's its parent element's class? That names the exact renderer and I can
+    target it precisely. The main product card is correct; this is about a secondary widget showing images.
