@@ -45,6 +45,11 @@
 (function () {
   'use strict';
 
+  // A bank isn't a Smart Recommender customer — no "you might also need" rows on
+  // a banking site. Skip the whole widget there (also avoids stray product-image
+  // cards on finance pages).
+  if ((window.VERTICAL_KEY || '').toLowerCase() === 'banking') return;
+
   var CFG = (window.SITE_CONFIG || {});
   var RECO = CFG.reco || {};
 

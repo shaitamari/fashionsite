@@ -161,3 +161,30 @@ Same-name-download trap: if 'nothing to commit', unzip the newest per ls -lt.
     HONEST NOTE: this is a blind fix (couldn't see the rendered DOM). If Loans STILL shows SVGs after this,
     inspect ONE svg in the browser: what's its parent element's class? That names the exact renderer and I can
     target it precisely. The main product card is correct; this is about a secondary widget showing images.
+
+22. THE REAL CAUSE — EUREKA-SERVED FINANCE CARDS SHOWED THEIR IMAGE (styles.css): Eureka serves Loans & Credit
+    Cards but NOT Checking/Savings (those fall to local). All go through card()'s finance branch, BUT the finance
+    card renders its own <img> from p.image — for LOCAL items that's a blank pixel; for EUREKA items it's the
+    indexed image URL (a stray SVG). So Loans/Cards (Eureka) showed SVGs while Checking/Savings (local) didn't.
+    FIX: hide .card__fin-media on banking entirely — we have no real finance imagery anyway, so the card reads as
+    a clean typographic card whether served by Eureka or local. This makes all four collections consistent.
+    DESCRIPTION: the card looks up rate_line/blurb/features from product_cards by name; the feed carries matching
+    names (Personal Loan, Northbank Rewards Card), so the lookup should populate them for Eureka items too. If a
+    description is still missing on an Eureka card, it's a name-match edge — inspect the card's product name vs the
+    config key.
+
+23. BANKING = LOCAL DATA ONLY, NO EUREKA / NO SMART RECO (category.html + recs.js): a bank isn't a search or
+    recommender customer — no product search, no "you might also need" rows on a banking site. So banking now
+    renders ALL product pages from the LOCAL catalogue (category.html skips Eureka when key==banking), and Smart
+    Recommender is skipped entirely on banking (recs.js returns early when VERTICAL_KEY==banking). This is the
+    clean root fix for the Loans/Credit Cards inconsistency: those were the Eureka-served collections carrying a
+    stray product image + inconsistent data; served locally they render identical to Checking/Savings. Bonus:
+    it's also more truthful to the buyer (a bank wouldn't have bought Eureka/Smart Reco). Telco is untouched
+    (its Phones shop legitimately uses search).
+
+24. NO SEARCH TEASER ON CONTENT VERTICALS (explain.js): the explain overlay dared users to "Search 'plan'.
+    Look at the data tiers" on telco (and "Search 'current account'" on banking, etc.) — but these aren't
+    search products, and the search gives poor results. Removed the search dares for telco, banking, fintech
+    and insurance; dareFor() returns null there and the chip is skipped gracefully. Retail verticals (fashion,
+    hotels, beauty, airlines...) keep their dares, where search IS the demonstrated capability. Pairs with the
+    banking-local-only change: content verticals simply don't push search.

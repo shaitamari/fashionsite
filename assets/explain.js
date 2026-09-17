@@ -79,29 +79,6 @@
       chip: 'Search \u201cbiscuits\u201d. Look at the pack sizes.',
       payoff: 'Pack sizes group together, so you get brands to choose between rather than ' +
               'the same brand eight times.'
-    },
-    banking: {
-      q: 'current account',
-      chip: 'Search \u201ccurrent account\u201d. Check the tiers.',
-      payoff: 'Tiers group under the product, so the choice on screen is which account ' +
-              '\u2014 not which of five versions of one.'
-    },
-    insurance: {
-      q: 'travel',
-      chip: 'Search \u201ctravel\u201d. Look at the cover levels.',
-      payoff: 'Cover levels group under the policy, keeping the comparison at the level ' +
-              'someone is actually deciding at.'
-    },
-    fintech: {
-      q: 'account',
-      chip: 'Search \u201caccount\u201d. Check the plan tiers.',
-      payoff: 'Plans group under the product rather than filling the grid with variants.'
-    },
-    telco: {
-      q: 'plan',
-      chip: 'Search \u201cplan\u201d. Look at the data tiers.',
-      payoff: 'Data tiers and handset colours group under the plan, so the grid shows ' +
-              'plans to choose between rather than every combination of the two.'
     }
   };
 

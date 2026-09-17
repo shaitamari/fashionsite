@@ -663,6 +663,9 @@ html[data-vertical="banking"] .ins-web-smart-recommender-box-item img { display:
   background:var(--bg); display:flex; flex-direction:column; }
 .card__fin { display:flex; flex-direction:column; height:100%; }
 .card__fin-media { aspect-ratio:16/9; background:var(--alt); }
+/* No product image on finance cards — placeholder locally, stray SVG from Eureka. */
+html[data-vertical="banking"] .card__fin-media { display:none !important; }
+
 .card__fin-media img { width:100%; height:100%; object-fit:cover; display:block; }
 .card__fin-body { padding:1.5rem; display:flex; flex-direction:column; gap:.5rem; flex:1; }
 .card__fin-name { font-size:1.25rem; font-weight:600; margin:0; }

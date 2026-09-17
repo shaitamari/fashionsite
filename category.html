@@ -507,7 +507,12 @@
     }
     paint(all, { live: false, total: all.length });
     drawPhoneFacets();
-  } else if (window.Eureka && window.Eureka.enabled) {
+  } else if (window.Eureka && window.Eureka.enabled &&
+             ((window.VERTICAL || {}).key || '').toLowerCase() !== 'banking') {
+    /* Banking renders from the local catalogue, never Eureka: a bank isn't a
+       search/recommender customer, so its product pages are a fixed set shown
+       directly — which also keeps every finance card consistent (Eureka-served
+       items carried a stray product image and inconsistent data). */
     paintSkeleton(8);
 
     listing = window.Eureka.listing({
