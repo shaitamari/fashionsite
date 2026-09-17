@@ -1,10 +1,18 @@
-Tier banner site-side backup (cart + everywhere) for retail sub-verticals + travel.
-- fills/corrects the stale or blank .ins-tier-message from the LIVE profile
-  (currentUser membership_tier + loyalty_points), same pattern as the trip banner.
-- tier_banner:true on fashion/beauty/home/luxury/electronics/airlines/hotels;
-  OFF for grocery/telco/banking/insurance (they get their own loyalty beats).
-- build.py now allowlists tier_banner into the catalog meta.
+Tier banner site-side backup + TRAVEL BUILD FIX.
+Files: assets/vertical.js, verticals.json, build.py  (catalogs are rebuilt by build.py on YOUR machine, which has the full product sources)
 
-Files: assets/vertical.js, verticals.json, build.py
-From the posh folder (REBUILD is required so tier_banner reaches every catalog):
-  unzip -o ~/Downloads/posh-2026-09-17-b.zip -d /tmp/x && cp -r /tmp/x/posh-2026-09-17-b/* . && python3 build.py && posh "Tier banner site-side backup (retail + travel); live currentUser, never stale/blank"
+- vertical.js: tier banner fallback — reads live currentUser (membership_tier + loyalty_points),
+  corrects a stale/blank .ins-tier-message in place. Same pattern as the trip banner.
+  Guarded (looksLikeTierLine) so it never touches the trip banner that shares the class.
+- verticals.json: tier_banner:true on fashion/beauty/home/luxury/electronics/airlines/hotels (off elsewhere).
+  ALSO fixes airlines/hotels `collections`: products were recategorized by region on 13 Sep, but the
+  map still said Long Haul/Short Haul, so travel silently FAILED every build since. Now the map keys
+  are the full product_types mapped to their region — travel builds again.
+- build.py: tier_banner allowlisted into the catalog meta.
+
+From the posh folder (build --all is REQUIRED so the flag + travel fix reach every catalog):
+  unzip -o ~/Downloads/posh-2026-09-17-c.zip -d /tmp/x && cp -r /tmp/x/posh-2026-09-17-c/* . && python3 build.py --all && posh "Tier banner backup; fix travel collections to region; rebuild all"
+
+Verify after:
+  grep -c tier_banner catalogs/airlines.js        # -> 1
+  curl -s https://airlines-sandbox.insiderdemo.com/catalogs/airlines.js | grep -c tier_banner   # -> 1 after deploy

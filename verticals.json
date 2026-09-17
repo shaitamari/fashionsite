@@ -393,10 +393,22 @@
    "Apartments"
   ],
   "collections": {
-   "Hotels": "Hotels",
-   "Boutique": "Boutique",
-   "Lodges": "Lodges",
-   "Apartments": "Apartments"
+   "Europe > Lisbon": "Europe",
+   "Asia & Pacific > Kyoto": "Asia & Pacific",
+   "Europe > Reykjavik": "Europe",
+   "Africa & Middle East > Marrakesh": "Africa & Middle East",
+   "Europe > Copenhagen": "Europe",
+   "Africa & Middle East > Cape Town": "Africa & Middle East",
+   "Americas > Mexico City": "Americas",
+   "Asia & Pacific > Queenstown": "Asia & Pacific",
+   "Europe > Amalfi": "Europe",
+   "Asia & Pacific > Singapore": "Asia & Pacific",
+   "Europe > Edinburgh": "Europe",
+   "Asia & Pacific > Chiang Mai": "Asia & Pacific",
+   "Extras > Dining": "Extras",
+   "Extras > Room extras": "Extras",
+   "Extras > Wellness": "Extras",
+   "Extras > Transfers": "Extras"
   },
   "subcats": {},
   "defaults": {
@@ -507,8 +519,26 @@
    "Short Haul"
   ],
   "collections": {
-   "Long Haul": "Long Haul",
-   "Short Haul": "Short Haul"
+   "Americas > New York": "Americas",
+   "Europe > Lisbon": "Europe",
+   "Asia & Pacific > Tokyo": "Asia & Pacific",
+   "Africa & Middle East > Cape Town": "Africa & Middle East",
+   "Americas > Mexico City": "Americas",
+   "Europe > Reykjavik": "Europe",
+   "Americas > Chicago": "Americas",
+   "Asia & Pacific > Singapore": "Asia & Pacific",
+   "Africa & Middle East > Marrakesh": "Africa & Middle East",
+   "Europe > Athens": "Europe",
+   "Europe > Edinburgh": "Europe",
+   "Americas > São Paulo": "Americas",
+   "Asia & Pacific > Bangkok": "Asia & Pacific",
+   "Africa & Middle East > Casablanca": "Africa & Middle East",
+   "Africa & Middle East > Dubai": "Africa & Middle East",
+   "Extras > Baggage": "Extras",
+   "Extras > Seating": "Extras",
+   "Extras > Lounge": "Extras",
+   "Extras > Transfers": "Extras",
+   "Extras > Insurance": "Extras"
   },
   "subcats": {},
   "defaults": {
