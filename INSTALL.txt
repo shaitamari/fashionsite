@@ -1,11 +1,8 @@
-Tier banner — name-agnostic + guest-guarded (matches the campaign "points to next tier" Liquid).
-Also carries the travel collections fix (airlines/hotels build) from -c in case not yet deployed.
-
-tierBannerText now: guest/empty -> nothing; Gold -> top; Silver -> to Gold; any other tier
-(Member/Blue/Bronze/etc.) -> to Silver. Clamped so it never shows a negative.
-
-Campaign Liquid to match (paste into "points to next tier", then Generate):
-{% if c_membership_tier == "" or c_membership_tier == "Guest" %}{% elsif c_membership_tier == "Gold" %}You're Gold — our best benefits.{% elsif c_membership_tier == "Silver" %}You're {{ 1500 | minus: c_loyalty_points }} points from Gold and its best benefits.{% else %}You're {{ 500 | minus: c_loyalty_points }} points from Silver.{% endif %}
+Fix fashion (Ashford Lane) category nav — was collapsing to "Tops".
+Cause: the Çakıl search-team catalog swap changed product_types to Women's/Men's/Shoes/
+Accessories, but verticals.json still had the OLD Posh collections map (Tops/Maxi Dresses/…),
+so almost nothing matched and everything fell into Tops.
+Fix: fashion `collections` remapped to the real product_types -> Women / Men / Shoes / Accessories.
 
 From the posh folder:
-  unzip -o ~/Downloads/posh-2026-09-17-d.zip -d /tmp/x && cp -r /tmp/x/posh-2026-09-17-d/* . && python3 build.py --all && posh "Tier banner name-agnostic + guest-guarded; travel collections fix; rebuild all"
+  unzip -o ~/Downloads/posh-2026-09-17-e.zip -d /tmp/x && cp -r /tmp/x/posh-2026-09-17-e/* . && python3 build.py fashion && posh "Fix fashion nav: collections -> Women/Men/Shoes/Accessories"
