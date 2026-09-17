@@ -91,3 +91,8 @@ Same-name-download trap: if 'nothing to commit', unzip the newest per ls -lt.
 13. NO CART ON TELCO/FINANCE (vertical.js): a self-service telco/bank app has no shopping cart — you apply
     for a plan/account, you don't add it to a basket. The masthead Cart link (which led to an empty, weird
     cart.html) is now REMOVED entirely on content-template verticals. Retail/travel keep their cart.
+
+14. TELCO NAV — DROP DEAD HELP (verticals.json): the telco "Help" nav link had href='#' (led nowhere). No
+    help/support page exists, so it's removed — telco nav is now Plans / Phones / Top up. (Build a real Help
+    page later if wanted.) The "Phones has no menu" issue is the content-nav fix in #2 — not yet deployed on
+    the sandbox; deploying this zip fixes it (inner pages get the same masthead nav as the home).
