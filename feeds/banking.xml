@@ -256,5 +256,68 @@
     <margin>40</margin>
     <activation_date>2026-09-12</activation_date>
   </item>
+  <item>
+    <g:id>8400000000204</g:id>
+    <g:item_group_id>8400000000204</g:item_group_id>
+    <g:title>Cash ISA</g:title>
+    <description>Tax-free savings up to your annual ISA allowance, with easy access.</description>
+    <link>https://banking.insiderdemo.com/product.html?id=8400000000204</link>
+    <g:image_link>https://insiderdemo.com/assets/img/pixel.png</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Savings &gt; Savings</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>Savings</g:custom_label_0>
+    <g:custom_label_3>4.6</g:custom_label_3>
+    <rating>4.6</rating>
+    <g:custom_label_4>45</g:custom_label_4>
+    <margin>45</margin>
+    <activation_date>2026-06-21</activation_date>
+  </item>
+  <item>
+    <g:id>8400000000203</g:id>
+    <g:item_group_id>8400000000203</g:item_group_id>
+    <g:title>Regular Saver</g:title>
+    <description>Save a set amount each month and earn our highest rate.</description>
+    <link>https://banking.insiderdemo.com/product.html?id=8400000000203</link>
+    <g:image_link>https://insiderdemo.com/assets/img/pixel.png</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Savings &gt; Savings</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>Savings</g:custom_label_0>
+    <g:custom_label_3>4.2</g:custom_label_3>
+    <rating>4.2</rating>
+    <g:custom_label_4>20</g:custom_label_4>
+    <margin>20</margin>
+    <activation_date>2026-06-20</activation_date>
+  </item>
+  <item>
+    <g:id>8400000000205</g:id>
+    <g:item_group_id>8400000000205</g:item_group_id>
+    <g:title>Notice Saver</g:title>
+    <description>A higher rate in exchange for giving 90 days' notice before you withdraw.</description>
+    <link>https://banking.insiderdemo.com/product.html?id=8400000000205</link>
+    <g:image_link>https://insiderdemo.com/assets/img/pixel.png</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Savings &gt; Savings</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>Savings</g:custom_label_0>
+    <g:custom_label_3>3.9</g:custom_label_3>
+    <rating>3.9</rating>
+    <g:custom_label_4>25</g:custom_label_4>
+    <margin>25</margin>
+    <activation_date>2025-11-19</activation_date>
+  </item>
 </channel>
 </rss>

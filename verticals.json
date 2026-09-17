@@ -964,6 +964,42 @@
       "Decision in minutes",
       "Representative 6.4% APR"
      ]
+    },
+    "Cash ISA": {
+     "blurb": "Save tax-free up to your annual ISA allowance with easy access to your money. A simple way to keep more of the interest you earn.",
+     "rate_line": "4.1% AER tax-free",
+     "features": [
+      "4.1% AER variable, tax-free",
+      "Use your annual ISA allowance",
+      "Easy access, no penalties",
+      "Transfer in from other ISAs",
+      "Open from £1",
+      "FSCS protected up to £85,000"
+     ]
+    },
+    "Regular Saver": {
+     "blurb": "Put a set amount aside each month and earn our highest savings rate. Perfect for building a habit and reaching a goal.",
+     "rate_line": "5.0% AER · monthly",
+     "features": [
+      "5.0% AER fixed for 12 months",
+      "Save £25–£250 a month",
+      "Highest Northbank savings rate",
+      "Interest paid at maturity",
+      "Miss a month, no penalty",
+      "FSCS protected up to £85,000"
+     ]
+    },
+    "Notice Saver": {
+     "blurb": "Earn a higher rate in exchange for giving 90 days' notice before you withdraw. Good for savings you can plan ahead for.",
+     "rate_line": "4.4% AER · 90-day notice",
+     "features": [
+      "4.4% AER variable",
+      "90 days' notice to withdraw",
+      "Higher than easy-access",
+      "Interest paid monthly",
+      "Open from £500",
+      "FSCS protected up to £85,000"
+     ]
     }
    },
    "articles": [

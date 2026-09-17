@@ -1490,7 +1490,10 @@
         // uncluttered by default; flip show_credit_in_nav to surface it).
         if (V.show_credit_in_nav && Number(u.credit_balance)) bits.push('\u20ac' + u.credit_balance);
       } else if (u.product) {
-        // finance customer
+        // finance customer. (The product name will link to an account-DETAIL
+        // page — the customer's own balance/activity/usage — once that page
+        // exists. Plain text until then; linking to the product marketing page
+        // is the wrong destination.)
         bits.push(u.product);
         if (u.customer_status && u.customer_status !== 'Active') bits.push(u.customer_status);
       } else {

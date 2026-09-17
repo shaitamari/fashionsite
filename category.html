@@ -208,6 +208,12 @@
   if (chips.children.length < 2) chips.hidden = true;
 
   var sourceEl = document.getElementById('listing-source');
+  // The source line is an SC diagnostic (Eureka campaign / local fallback). On
+  // content verticals it reads as broken ("Eureka not serving") when local IS
+  // the intended behaviour — hide it there (except the Phones shop).
+  if (sourceEl && (window.VERTICAL || {}).template === 'content') {
+    sourceEl.style.display = 'none';
+  }
   var countEl = document.getElementById('result-count');
   var listing = null;
 
@@ -457,6 +463,7 @@
     // with a neutral label (this page is deliberately the whole catalogue,
     // not a Eureka-served category).
     var all = allDevices();
+    sourceEl.style.display = '';   // Phones shop shows its device count
     sourceEl.className = 'source';
     sourceEl.textContent = all.length + ' devices';
 

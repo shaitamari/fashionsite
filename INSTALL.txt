@@ -195,3 +195,20 @@ Same-name-download trap: if 'nothing to commit', unzip the newest per ls -lt.
     - All with rich blurb + rate line + 6 feature rows, matching the others; images placeholder (personalize later).
     - Homepage now shows 4 cards (Everyday, Saver, Rewards Card, Personal Loan) — one per family.
     - Card width 320 -> 300px so 4 fit one row cleanly on the 1360px container (4x300 + gaps < usable width).
+
+26. MORE SAVINGS (sources/banking-1.json + verticals.json): added Cash ISA (4.1% tax-free) and Regular Saver
+    (5.0% monthly) -> Savings now has 4 (Northbank Saver, Fixed Saver, Cash ISA, Regular Saver), rich detail
+    each. (Note: caught an id collision — Cash ISA had reused Fixed Saver's id and was silently dropped by the
+    build's dedup; fixed to a unique id. Watch for that when hand-adding products: unique id per product.)
+
+27. ACCOUNT NAME LINKS TO DETAIL + NO EUREKA MESSAGE + 5TH SAVINGS:
+    - The finance product name in the header strip is now a LINK to that product's detail page (product.html),
+      looked up by name in the catalogue. This is the split you wanted: account page stays identity/dashboard,
+      and per-product detail lives on the product's own page — reachable by clicking the account name.
+    - Hidden the SC "Eureka not serving this page" / "Local catalogue" diagnostic line on content verticals
+      (banking is local-only BY DESIGN, so the message read as broken to a client). The Phones shop keeps its
+      "N devices" count.
+    - Added a 5th savings account: Notice Saver (4.4% AER, 90-day notice).
+    STILL A FOLLOW-UP: the full account-page redesign (clean customer identity view vs a separate SC/demo page)
+    is a bigger task — this pass adds the product-detail link as the entry point and trims the Eureka noise, but
+    the persona sign-in cards (a real SC tool) still sit on the page. Proper split = next session.
