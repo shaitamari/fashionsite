@@ -148,12 +148,14 @@
   .listing .grid { grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr)) }
   @media (max-width: 860px) { .listing { grid-template-columns:1fr } .facets { order:-1 } }
   /* Content-template verticals (telco, finance) are a bank/telco self-service
-     app, not a shop: no facets, no sort, no product count. Full-width list. */
-  html[data-vertical="telco"] .toolbar,
+     app, not a shop: no facets, no sort, no product count on plans/account
+     pages. EXCEPTION: the telco Phones page IS a real product catalogue, so it
+     keeps facets + a full grid (marked with data-phones on <html>). */
+  html[data-vertical="telco"]:not([data-phones]) .toolbar,
   html[data-vertical="banking"] .toolbar,
-  html[data-vertical="telco"] #facets,
+  html[data-vertical="telco"]:not([data-phones]) #facets,
   html[data-vertical="banking"] #facets { display:none !important; }
-  html[data-vertical="telco"] .listing,
+  html[data-vertical="telco"]:not([data-phones]) .listing,
   html[data-vertical="banking"] .listing { grid-template-columns:1fr; }
   .facets__group { margin-bottom:2rem }
   .facets__title { font-size:.75rem; letter-spacing:.08em; text-transform:uppercase;
@@ -415,6 +417,9 @@
     }));
   }
   var IS_ALL = (COLLECTION === 'Phones' || COLLECTION === 'All');
+  // Mark the Phones page so it keeps facets + grid (the one shopping catalogue
+  // on an otherwise facet-free content vertical).
+  if (IS_ALL) document.documentElement.setAttribute('data-phones', '');
   function renderFallback() {
     var local = IS_ALL ? allDevices() : Store.byCollection(COLLECTION, SUBCAT);
     sourceEl.className = 'source is-fallback';
@@ -454,7 +459,54 @@
     var all = allDevices();
     sourceEl.className = 'source';
     sourceEl.textContent = all.length + ' devices';
+
+    /* The Phones page IS a real product catalogue (unlike plans/accounts), so
+       it gets facets — but clean ones. Eureka's phone facets are junk (marketing
+       colour names, model-specific product types, all count-1), so we build
+       Brand + Price locally from the catalogue and filter client-side. */
+    var phoneFilter = { brand: null, priceMax: null };
+    function brandOf(p) { return (p.name || '').split(' ')[0] || 'Other'; }
+    function applyPhoneFilter() {
+      var out = all.filter(function (p) {
+        if (phoneFilter.brand && brandOf(p) !== phoneFilter.brand) return false;
+        if (phoneFilter.priceMax != null && (p.unit_price || 0) > phoneFilter.priceMax) return false;
+        return true;
+      });
+      sourceEl.textContent = out.length + ' devices';
+      paint(out, { live: false, total: out.length });
+    }
+    function drawPhoneFacets() {
+      var host = document.getElementById('facets'); if (!host) return;
+      host.hidden = false;
+      // Brand counts
+      var counts = {};
+      all.forEach(function (p) { var b = brandOf(p); counts[b] = (counts[b] || 0) + 1; });
+      var brands = Object.keys(counts).sort(function (a, b) { return counts[b] - counts[a]; }).slice(0, 8);
+      // Price bands
+      var bands = [{ label: 'Under €50', max: 50 }, { label: 'Under €100', max: 100 },
+                   { label: 'Under €200', max: 200 }, { label: 'Any price', max: null }];
+      var h = '<div class="facets__group"><p class="facets__title">Brand</p>';
+      brands.forEach(function (b) {
+        h += '<label class="facets__row"><input type="radio" name="ph-brand" value="' + b + '">' +
+             '<span>' + b + '</span><span class="facets__count">' + counts[b] + '</span></label>';
+      });
+      h += '<label class="facets__row"><input type="radio" name="ph-brand" value="" checked><span>All brands</span></label></div>';
+      h += '<div class="facets__group"><p class="facets__title">Price</p>';
+      bands.forEach(function (bd, i) {
+        h += '<label class="facets__row"><input type="radio" name="ph-price" value="' + (bd.max == null ? '' : bd.max) + '"' +
+             (bd.max == null ? ' checked' : '') + '><span>' + bd.label + '</span></label>';
+      });
+      h += '</div>';
+      host.innerHTML = h;
+      host.querySelectorAll('input[name="ph-brand"]').forEach(function (r) {
+        r.addEventListener('change', function () { phoneFilter.brand = this.value || null; applyPhoneFilter(); });
+      });
+      host.querySelectorAll('input[name="ph-price"]').forEach(function (r) {
+        r.addEventListener('change', function () { phoneFilter.priceMax = this.value ? +this.value : null; applyPhoneFilter(); });
+      });
+    }
     paint(all, { live: false, total: all.length });
+    drawPhoneFacets();
   } else if (window.Eureka && window.Eureka.enabled) {
     paintSkeleton(8);
 

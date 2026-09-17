@@ -9,11 +9,13 @@ WHAT'S IN IT:
 2. CONTENT NAV CONSISTENCY (store.js): telco/finance render V.content.nav into the masthead on EVERY page
    (same font, same items) instead of raw catalogue collections. This fixes topup.html showing a different
    nav / different Phones target / different font — topup uses data-collection-nav like the rest.
-3. FLOW LINK -> EACH VERTICAL'S OWN FUNNEL (vertical.js): the masthead flow link (telco "Top up or change
-   plan", finance "Start an application") now points at THIS vertical's funnel (content.funnel) — open.html on
-   finance, topup.html on telco — not a hardcoded topup.html. Previously finance's "Start an application" wrongly
-   led to topup.html (telco's funnel). Where the funnel is already in the nav, the duplicate link is removed.
-   flow.html itself is kept (retail/travel still use it).
+3. REMOVE THE REDUNDANT "START AN APPLICATION" / "TOP UP OR CHANGE PLAN" MASTHEAD LINK (vertical.js): on
+   content verticals the funnel is ALWAYS entered from a specific product card (Open an account / Apply for a
+   card / Apply for a loan / Choose plan), which carries the chosen product into the flow. The generic masthead
+   flow link is redundant and led to an awkward "Choose account" step with the account pre-selected and the
+   picker disabled — so it's removed entirely on telco + finance. Telco keeps its real "Top up" NAV item (a
+   separate thing); banking nav is Checking/Savings/Credit Cards/Loans/Get a quote. flow.html is untouched
+   (retail/travel still use it).
 4. OOS ON PLP (store.js + build.py + verticals.json): fashion size_gaps=True + full_oos=8. PLP cards show
    "Sold out" / "Low stock" badges for the Agent One back-in-stock demo.
 5. TELCO PLAN CARDS + FINANCE PRODUCT CARDS (store.js + styles.css):
@@ -106,3 +108,21 @@ Same-name-download trap: if 'nothing to commit', unzip the newest per ls -lt.
       the HOME page even after the category-card fix — two different renderers.)
     - Cards widened (minmax 340px) so a curated set of 4 spreads across the page; Checking, Savings and the
       homepage cards are now the same, wider size.
+
+16. BANKING CARD POLISH (verticals.json + styles.css):
+    - Homepage: dropped the loan from the curated set -> 3 cards (Everyday, Saver, Rewards Card) that fit one
+      row cleanly, no wrap to a second row.
+    - Removed OBSOLETE banking .card overrides that predated card--finance and were double-styling the cards
+      (likely why Credit Cards / Loans looked different from Checking/Savings — the conflicting rule is gone).
+    - Card widths: min 240px (so 3-4 fit one row without wrapping) + a 360px MAX cap and left-align, so a page
+      with only 2 cards (Savings) doesn't stretch them absurdly wide. Checking/Savings now consistent, sensible width.
+    NOTE: Credit Cards & Loans use the SAME card--finance renderer as Checking/Savings, keyed on the banking
+    vertical (collection-agnostic), and their names match the product_cards config (blurb+features present). If
+    they STILL look different after deploy, it's a render detail to inspect live — the data and renderer are correct.
+
+17. TELCO PHONES GETS FACETS BACK — CLEAN ONES (category.html): the "no facets on content verticals" rule was
+    too broad. Phones IS a real product catalogue (a phone shop), unlike plans/accounts. So the Phones page now
+    shows facets again — but CLEAN ones built locally, not Eureka's junk (marketing colour names / model
+    product_types were all count-1): a BRAND facet (Cobalt / Northpoint / Ridgeway / Aether / Vantis, from the
+    name) and a PRICE facet (Under €50/€100/€200/Any), with client-side filtering. Plans / account / finance
+    pages stay facet-free (bank-app model). Scoped via data-phones on <html> so only the Phones page shows them.

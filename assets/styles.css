@@ -487,8 +487,15 @@ html[data-vertical] .mainnav__in[data-content-nav] { gap: 2rem; }
    set of 4 spreads across the page rather than clustering narrow. */
 html[data-vertical="banking"] .linecards,
 html[data-vertical="banking"] .listing__main .grid {
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
 }
+/* Cap individual finance cards so a page with only 2 (Savings) doesn't stretch
+   them absurdly wide — they sit at a comfortable width and left-align. */
+html[data-vertical="banking"] .card--finance,
+html[data-vertical="banking"] .linecard { max-width: 360px; }
+html[data-vertical="banking"] .listing__main .grid,
+html[data-vertical="banking"] .linecards { justify-content: start; }
 .linecard {
   position: relative;
   border: 1px solid var(--rule);
@@ -622,17 +629,7 @@ html[data-vertical="banking"] .listing__main .grid {
 .myrel__item-sub { font-size:.85rem; color:var(--muted); }
 .myrel__item-tag { font-size:.7rem; letter-spacing:.05em; text-transform:uppercase; color:var(--accent,#136B4B); font-weight:600; white-space:nowrap; }
 
-/* Finance product cards: no fake product photo — read as typographic cards
-   like the telco plan cards. Scoped to banking so no other vertical changes. */
-html[data-vertical="banking"] .card__media { display: none; }
-html[data-vertical="banking"] .card {
-  border: 1px solid var(--rule); border-radius: 14px; padding: 1.5rem;
-  background: var(--bg);
-}
-html[data-vertical="banking"] .card__body { padding: 0; }
-html[data-vertical="banking"] .card__name { font-size: 1.25rem; font-weight: 500; margin: 0 0 .6rem; }
-html[data-vertical="banking"] .card__price { font-size: 1rem; color: var(--muted); }
-html[data-vertical="banking"] .card__link { display: block; }
+/* (obsolete banking .card overrides removed — finance uses .card--finance now) */
 
 /* PLP stock badges — surfaces sold-out / low-stock on the category grid so the
    Agent One back-in-stock capture reads from the PLP, not only the PDP. */

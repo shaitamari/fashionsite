@@ -1000,14 +1000,12 @@
        already carries the same action (telco's "Top up" -> topup.html), so it
        isn't a duplicate. */
     if (d.template === 'content') {
-      var funnel = (d.content && d.content.funnel) || 'topup.html';
-      var navHasFunnel = ((d.content && d.content.nav) || []).some(function (n) {
-        return n.href === funnel;
-      });
-      document.querySelectorAll('[data-flow-link]').forEach(function (a) {
-        if (navHasFunnel) { a.remove(); return; }      // already in the nav — drop the dupe
-        a.setAttribute('href', funnel);                // else point at THIS vertical's funnel
-      });
+      /* Content verticals (telco, finance) always enter their funnel from a
+         specific product card ("Open an account", "Apply for a card", "Choose
+         plan") — which carries the chosen product into the flow. A generic
+         "Start an application" / "Top up" masthead link is redundant and lands
+         you on an awkward no-product-selected state, so remove it entirely. */
+      document.querySelectorAll('[data-flow-link]').forEach(function (a) { a.remove(); });
 
       /* A telco/bank self-service app has no shopping cart — you don't add a
          plan or an account to a basket, you apply for it. Remove the cart link
