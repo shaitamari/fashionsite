@@ -977,7 +977,35 @@
     "£500"
    ]
   },
-  "default_category": "Accounts"
+  "default_category": "Accounts",
+  "rate_card": {
+   "bundles": [
+    {
+     "add": "Northbank Saver",
+     "benefit": "+0.5% AER on savings",
+     "term": "keep salary paid in",
+     "note": "growing balance, no savings product"
+    },
+    {
+     "add": "Home Insurance",
+     "benefit": "10% multi-product discount",
+     "term": "annual",
+     "note": "has a mortgage/loan"
+    },
+    {
+     "add": "Rewards Card",
+     "benefit": "fee waived with checking",
+     "term": "12 months",
+     "note": "active spender, no card"
+    }
+   ],
+   "market": {
+    "savings_rate_trend": "up",
+    "loan_rate_environment": "low",
+    "savings_rate_new": "4.1",
+    "mmf_yield": "5.2"
+   }
+  }
  },
  "insurance": {
   "vertical": "Banking",
@@ -1353,7 +1381,14 @@
    "search": "burgundy",
    "product": "55693210845352"
   },
-  "tier_banner": true
+  "tier_banner": true,
+  "fulfilment": {
+   "stores": [
+    "Oxford Street",
+    "Westfield Stratford",
+    "Canary Wharf"
+   ]
+  }
  },
  "electronics": {
   "vertical": "Retail",
@@ -1465,7 +1500,14 @@
    "search": "bookshelf",
    "product": "45033161687229"
   },
-  "tier_banner": true
+  "tier_banner": true,
+  "fulfilment": {
+   "stores": [
+    "Oxford Street",
+    "Westfield Stratford",
+    "Canary Wharf"
+   ]
+  }
  },
  "telco": {
   "vertical": "Telco",
@@ -1914,7 +1956,61 @@
      "minutes": "Unlimited UK",
      "texts": "Unlimited"
     }
-   }
+   },
+   "plan_ladder": [
+    {
+     "name": "Vantis 5",
+     "gb": 5,
+     "price": 8
+    },
+    {
+     "name": "Vantis 20",
+     "gb": 20,
+     "price": 14
+    },
+    {
+     "name": "Vantis Unlimited",
+     "gb": 10000,
+     "price": 24
+    }
+   ],
+   "bundles": [
+    {
+     "add": "Home Broadband",
+     "standalone": 30,
+     "bundled": 22,
+     "term": "18 months",
+     "note": "heavy home data users"
+    },
+    {
+     "add": "Second line",
+     "standalone": 14,
+     "bundled": 9,
+     "term": "12 months",
+     "note": "family / multi-line"
+    },
+    {
+     "add": "Device insurance",
+     "standalone": 8,
+     "bundled": 5,
+     "term": "12 months",
+     "note": "new device"
+    }
+   ],
+   "addons": [
+    {
+     "name": "Roaming pass",
+     "price": 6,
+     "trigger": "travel",
+     "note": "unlimited data in 50 destinations for 14 days"
+    },
+    {
+     "name": "Accessory bundle",
+     "price": 4,
+     "trigger": "device",
+     "note": "case + charger for your new phone"
+    }
+   ]
   }
  },
  "home": {
@@ -2056,7 +2152,14 @@
    "search": "velvet",
    "product": "50013105553710"
   },
-  "tier_banner": true
+  "tier_banner": true,
+  "fulfilment": {
+   "stores": [
+    "Oxford Street",
+    "Westfield Stratford",
+    "Canary Wharf"
+   ]
+  }
  },
  "luxury": {
   "vertical": "Retail",
@@ -2298,6 +2401,19 @@
   "showcase": {
    "search": "olive",
    "product": "40954224476218"
+  },
+  "fulfilment": {
+   "slots": [
+    "Today, 6–8pm",
+    "Tomorrow, 9–11am",
+    "Tomorrow, 5–7pm",
+    "Sat, 10am–12pm"
+   ],
+   "stores": [
+    "Angel",
+    "King's Cross",
+    "Islington"
+   ]
   }
  }
 }

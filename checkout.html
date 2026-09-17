@@ -108,6 +108,16 @@
           <div class="field"><label for="c-country">Country (ISO alpha-2)</label><input id="c-country" value="US" maxlength="2"></div>
           <div class="field" id="c-travel-wrap" hidden><label for="c-travel">Travel date</label><input type="date" id="c-travel"></div>
 
+          <div id="fulfil-wrap" hidden>
+            <p class="eyebrow" style="margin:1.75rem 0 .75rem">How would you like it?</p>
+            <div class="numtabs" id="fulfil-tabs">
+              <button type="button" class="numtab is-active" data-fulfil="delivery">Deliver to me</button>
+              <button type="button" class="numtab" data-fulfil="pickup">Collect in store</button>
+            </div>
+            <div class="field" id="fulfil-slot-wrap" style="max-width:24rem;margin-top:1rem"><label for="fulfil-slot" id="fulfil-slot-label">Delivery slot</label>
+              <select id="fulfil-slot"></select></div>
+          </div>
+
           <p class="eyebrow" style="margin:1.75rem 0 .75rem">Contact preferences</p>
           <label class="check"><input type="checkbox" id="c-email-optin" checked> Email me about orders and restocks</label>
           <label class="check"><input type="checkbox" id="c-sms-optin"> Text me delivery updates</label>
@@ -162,6 +172,34 @@
     '<div><span>Shipping</span><span>' + (ship ? Store.money(ship) : 'Free') + '</span></div>' +
     '<div class="grand"><span>Total</span><span>' + Store.money(total + ship) + '</span></div>';
 
+  // Fulfilment: delivery vs in-store pickup, for commerce verticals that offer it.
+  var FULFIL = { method: 'delivery', where: '' };
+  (function () {
+    var v = window.VERTICAL || {};
+    var cfg = v.fulfilment; if (!cfg) return;             // opt-in per vertical
+    var wrap = document.getElementById('fulfil-wrap'); if (!wrap) return;
+    wrap.hidden = false;
+    var slot = document.getElementById('fulfil-slot');
+    var label = document.getElementById('fulfil-slot-label');
+    var slots = cfg.slots || ['Tomorrow, 9am\u201312pm','Tomorrow, 5\u20138pm','Sat, 9am\u201312pm','Sat, 12\u20133pm'];
+    var stores = cfg.stores || ['Oxford Street','Westfield Stratford','Canary Wharf'];
+    function fill(method) {
+      slot.innerHTML = '';
+      var opts = method === 'pickup' ? stores : slots;
+      label.textContent = method === 'pickup' ? 'Pick a store' : 'Delivery slot';
+      opts.forEach(function (o) { var el = document.createElement('option'); el.textContent = o; slot.appendChild(el); });
+      FULFIL.method = method; FULFIL.where = opts[0];
+    }
+    fill('delivery');
+    wrap.querySelectorAll('#fulfil-tabs .numtab').forEach(function (t) {
+      t.addEventListener('click', function () {
+        wrap.querySelectorAll('#fulfil-tabs .numtab').forEach(function (x) { x.classList.remove('is-active'); });
+        t.classList.add('is-active'); fill(t.getAttribute('data-fulfil'));
+      });
+    });
+    slot.addEventListener('change', function () { FULFIL.where = slot.value; });
+  })();
+
   document.getElementById('checkout-form').addEventListener('submit', async function (ev) {
     ev.preventDefault();
 
@@ -190,7 +228,10 @@
       total: Math.round((total + ship) * 100) / 100,
       shipping_cost: ship,
       items: lines,
-      travel_date: (document.getElementById('c-travel') || {}).value || undefined
+      travel_date: (document.getElementById('c-travel') || {}).value || undefined,
+      fulfilment: FULFIL.method,
+      fulfil_where: FULFIL.where,
+      fulfil_eta_at: (FULFIL.method === 'pickup') ? (Date.now() + 6*3600000) : (Date.now() + 2*86400000)
     }));
 
     location.href = 'confirmation.html';

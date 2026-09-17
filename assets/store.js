@@ -1065,6 +1065,15 @@
     signIn({ data_used: st.used, data_allowance: st.allowance });
     return st;
   }
+  function setAllowance(gb, label) {
+    var st = usageState() || seedUsage(gb || 20);
+    st.allowance = gb;
+    st.events.unshift({ when: Date.now(), label: label || ('Allowance now ' + gb + ' GB'), gb: 0 });
+    st.events = st.events.slice(0, 20);
+    writeHist('lmn.usage', st);
+    signIn({ data_allowance: gb });
+    return st;
+  }
   function topUp(gb, label) {
     var st = usageState() || seedUsage((currentUser() && Number(currentUser().data_allowance)) || 20);
     st.allowance = Math.round((st.allowance + gb) * 10) / 10;
@@ -1214,10 +1223,13 @@
     });
   }
 
-  function notePurchase(items) {
+  function notePurchase(items, fulfil) {
     if (!items || !items.length) return purchaseHistory();
     var hist = purchaseHistory();
     var now = Date.now();
+    // Fulfilment (delivery or in-store pickup) rides on every line of this
+    // order so the account page's "arriving / to collect" list is real data.
+    fulfil = fulfil || {};
 
     items.forEach(function (line) {
       var p = line.product || line;
@@ -1260,7 +1272,11 @@
         image: absoluteImage(p.image),
         url: p.url || localHref(p),
         category: p.collection,
-        purchased_at: now
+        purchased_at: now,
+        fulfilment: fulfil.method || 'delivery',           // 'delivery' | 'pickup'
+        fulfil_where: fulfil.where || '',                   // slot or store name
+        eta_at: fulfil.eta_at || (now + 3*86400000),        // when it arrives / is ready
+        fulfil_status: 'in_transit'                          // in_transit -> completed (demo)
       };
       if (days) {
         entry.due_at = now + days * 86400000;
@@ -1276,6 +1292,16 @@
     hist = hist.slice(-60);
     writeHist('lmn.purchases', hist);
     return hist;
+  }
+
+  /* Orders on their way or waiting to be collected — the FORWARD half of the
+     account page. A purchase is "upcoming" until its eta passes; after that it
+     is just history. Reads the same per-uuid purchases array. */
+  function upcomingDeliveries() {
+    var now = Date.now();
+    return purchaseHistory()
+      .filter(function (h) { return h.eta_at && h.eta_at > now && h.fulfil_status !== 'completed'; })
+      .sort(function (a, b) { return a.eta_at - b.eta_at; });
   }
 
   /* The soonest thing due, as flat values. The array anchors the journey and
@@ -1731,13 +1757,13 @@
     addToCart: addToCart, removeFromCart: removeFromCart, setQty: setQty, clearCart: clearCart,
     bookingHistory: bookingHistory, noteBooking: noteBooking, bookingsPayload: bookingsPayload,
     accountHistory: accountHistory, noteAccount: noteAccount, accountsPayload: accountsPayload,
-    usageState: usageState, seedUsage: seedUsage, addUsage: addUsage, topUp: topUp,
+    usageState: usageState, seedUsage: seedUsage, addUsage: addUsage, topUp: topUp, setAllowance: setAllowance,
     financeState: financeState, seedFinance: seedFinance, addTransaction: addTransaction, syncArray: syncArray, syncBookings: syncBookings,
     currentUser: currentUser, signIn: signIn, signOut: signOut, refreshIdentity: refreshIdentity, syncAttributes: syncAttributes, userPayload: userPayload,
     noteCategoryView: noteCategoryView, preferredCategory: preferredCategory,
     noteProductView: noteProductView, sessionStats: sessionStats,
     signInByEmail: signInByEmail, stableId: stableId,
-    notePurchase: notePurchase, purchaseHistory: purchaseHistory, setPurchaseHistory: setPurchaseHistory, setBookingHistory: setBookingHistory, clearHistory: clearHistory, nextDue: nextDue,
+    notePurchase: notePurchase, purchaseHistory: purchaseHistory, upcomingDeliveries: upcomingDeliveries, setPurchaseHistory: setPurchaseHistory, setBookingHistory: setBookingHistory, clearHistory: clearHistory, nextDue: nextDue,
     anniversaryPick: anniversaryPick,
     toggleWish: toggleWish, isWished: isWished, wishlist: wishlist,
     card: card, grid: grid, paintChrome: paintChrome,

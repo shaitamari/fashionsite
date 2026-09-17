@@ -1,9 +1,21 @@
-Top-up page: data-focused + realistic one-off boost framing.
-- Vantis plans have unlimited minutes -> no credit/minutes (removed).
-- "Add a one-off data boost": clearly one-off, kicks in when your allowance runs out, valid this billing month.
-  (Matches how real UK contract data add-ons work: one-time, expiring, not PAYG-only.)
-- "Change my plan": clearly a permanent bigger monthly allowance — the distinct alternative.
-- Context leads with data usage + GB left + red nudge at 85%.
+"My relationship" account section (past + future) + delivery/pickup fulfilment.
 
-Single file. From the posh folder:
-  unzip -o ~/Downloads/posh-2026-09-17-topup-data.zip -d /tmp/x && cp -r /tmp/x/posh-2026-09-17-topup-data/* . && posh "Top-up: data-focused, one-off boost vs permanent plan change"
+THE ACCOUNT PAGE, PER VERTICAL — a reusable "your relationship, back and ahead" section:
+- Grocery: "Your usual" (purchase history = reorderable staples) + "Your next delivery"
+- Commerce (fashion/electronics/home): "Your purchases" + "On its way / To collect"
+- Travel: "Past trips" + "Upcoming trips" (bookings array, split by travel_date)
+- Telco: "Your plans & add-ons"  ·  Finance: "Your accounts"
+Reads the per-uuid arrays site-side (a first-party read, exactly as a real account page reads the
+company's own system of record). The SAME arrays sit on the profile for the CDP to segment/message on.
+
+FULFILMENT AT CHECKOUT (config-gated per vertical, verticals.json <v>.fulfilment):
+- "Deliver to me" (slot) OR "Collect in store" (store). Grocery = delivery slots; commerce = BOPIS.
+- The choice rides on every purchase line (fulfilment/where/eta); the "On its way / To collect" list reads it.
+- The forward/delivery status is also the data behind the transactional "your order is on the way" beat.
+
+From the posh folder:
+  unzip -o ~/Downloads/posh-2026-09-17-my-relationship.zip -d /tmp/x && cp -r /tmp/x/posh-2026-09-17-my-relationship/* . && python3 build.py --all && posh "My relationship account section (past+future) + delivery/pickup fulfilment"
+
+TEST: buy something on fashion or grocery -> choose delivery or collect -> Account -> see it under "On its way /
+      To collect", and past buys under "Your purchases / Your usual". Travel: sign in as the traveller persona -> upcoming vs past trips.
+Same-name-download trap: if 'nothing to commit', unzip the newest per ls -lt.

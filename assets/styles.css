@@ -595,3 +595,23 @@ html[data-vertical] .mainnav__in[data-content-nav] { gap: 2rem; }
 .tu-usage__bar span { display:block; height:100%; background:var(--accent,#136B4B); border-radius:100px; }
 .tu-credit { font-size:.95rem; margin:0 0 .5rem; }
 .tu-ratecard { font-size:.85rem; color:var(--muted); margin:0; }
+
+/* personalization offers on the account dashboard */
+.dash__offers { }
+.offer { border:1px solid var(--rule); border-left:3px solid var(--accent,#136B4B); border-radius:12px; padding:1.25rem 1.5rem; margin-bottom:1rem; }
+.offer__tag { display:inline-block; font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:var(--accent,#136B4B); font-weight:600; margin-bottom:.4rem; }
+.offer__title { font-size:1.15rem; margin:0 0 .4rem; }
+.offer__body { color:var(--muted); font-size:.95rem; margin:0 0 1rem; line-height:1.5; }
+.offer__cta { }
+
+/* my relationship: past + future account section (all verticals) */
+.myrel { display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
+@media (max-width:720px){ .myrel { grid-template-columns:1fr; } }
+.myrel__col { }
+.myrel__list { margin-top:.75rem; }
+.myrel__item { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.85rem 0; border-top:1px solid var(--rule); }
+.myrel__item:first-child { border-top:none; }
+.myrel__item-main { display:flex; flex-direction:column; gap:.15rem; min-width:0; }
+.myrel__item-title { font-weight:500; }
+.myrel__item-sub { font-size:.85rem; color:var(--muted); }
+.myrel__item-tag { font-size:.7rem; letter-spacing:.05em; text-transform:uppercase; color:var(--accent,#136B4B); font-weight:600; white-space:nowrap; }

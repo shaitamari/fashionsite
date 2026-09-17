@@ -136,7 +136,11 @@
   }
 
   if (FRESH && Store.notePurchase) {
-    var hist = Store.notePurchase(ORDER.items);
+    var hist = Store.notePurchase(ORDER.items, {
+      method: ORDER.fulfilment,
+      where: ORDER.fulfil_where,
+      eta_at: ORDER.fulfil_eta_at
+    });
     /* CUSTOM ATTRIBUTES GO INSIDE `custom`. At the top level of the payload,
        alongside uuid and language, the platform does not recognise the array
        as an attribute and drops it silently on a 200. Only default attributes
