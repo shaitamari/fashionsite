@@ -7,8 +7,8 @@
   <item>
     <g:id>8400000000101</g:id>
     <g:item_group_id>8400000000101</g:item_group_id>
-    <g:title>Everyday Current Account</g:title>
-    <description>Your day-to-day account — no monthly fee, instant spend alerts, and fee-free spending abroad. No monthly fee Fee-free abroad Instant spend alerts Apple Pay &amp; Google Pay</description>
+    <g:title>Everyday</g:title>
+    <description>Our standard day-to-day account — no monthly fee, instant spend alerts, and fee-free spending abroad. No monthly fee Fee-free abroad Instant spend alerts Apple Pay &amp; Google Pay</description>
     <link>https://banking.insiderdemo.com/product.html?id=8400000000101</link>
     <g:image_link>https://insiderdemo.com/assets/img/pixel.png</g:image_link>
     <g:price>1.00</g:price>
@@ -16,7 +16,7 @@
     <g:availability>in stock</g:availability>
     <g:quantity>250</g:quantity>
     <g:brand>Northbank</g:brand>
-    <g:product_type>Banking &gt; Accounts &gt; All</g:product_type>
+    <g:product_type>Banking &gt; Checking &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:custom_label_3>4.9</g:custom_label_3>
@@ -108,6 +108,69 @@
     <g:custom_label_4>65</g:custom_label_4>
     <margin>65</margin>
     <activation_date>2026-05-09</activation_date>
+  </item>
+  <item>
+    <g:id>8400000000110</g:id>
+    <g:item_group_id>8400000000110</g:item_group_id>
+    <g:title>Basic</g:title>
+    <description>A simple account to get started — no fees, no overdraft, no fuss. Ideal for a first account. No monthly fee No overdraft Contactless debit card Mobile &amp; online banking</description>
+    <link>https://banking.insiderdemo.com/product.html?id=8400000000110</link>
+    <g:image_link>https://insiderdemo.com/assets/img/pixel.png</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Checking &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:custom_label_3>4.0</g:custom_label_3>
+    <rating>4.0</rating>
+    <g:custom_label_4>55</g:custom_label_4>
+    <margin>55</margin>
+    <activation_date>2026-04-19</activation_date>
+  </item>
+  <item>
+    <g:id>8400000000111</g:id>
+    <g:item_group_id>8400000000111</g:item_group_id>
+    <g:title>Premium</g:title>
+    <description>More from your everyday banking — travel insurance, cashback on bills, and higher limits, for a small monthly fee. €12/mo Worldwide travel insurance Cashback on household bills Priority support</description>
+    <link>https://banking.insiderdemo.com/product.html?id=8400000000111</link>
+    <g:image_link>https://insiderdemo.com/assets/img/pixel.png</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Checking &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:custom_label_3>4.5</g:custom_label_3>
+    <rating>4.5</rating>
+    <g:custom_label_4>20</g:custom_label_4>
+    <margin>20</margin>
+    <activation_date>2025-09-21</activation_date>
+  </item>
+  <item>
+    <g:id>8400000000112</g:id>
+    <g:item_group_id>8400000000112</g:item_group_id>
+    <g:title>Family</g:title>
+    <description>Built for households — joint access, spending pots for the family, and tools to teach kids about money. €8/mo Joint &amp; child accounts Shared saving pots Spending controls for kids</description>
+    <link>https://banking.insiderdemo.com/product.html?id=8400000000112</link>
+    <g:image_link>https://insiderdemo.com/assets/img/pixel.png</g:image_link>
+    <g:price>1.00</g:price>
+    <g:sale_price>1.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Northbank</g:brand>
+    <g:product_type>Banking &gt; Checking &gt; All</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>All</g:custom_label_0>
+    <g:custom_label_3>3.4</g:custom_label_3>
+    <rating>3.4</rating>
+    <g:custom_label_4>40</g:custom_label_4>
+    <margin>40</margin>
+    <activation_date>2025-10-26</activation_date>
   </item>
 </channel>
 </rss>

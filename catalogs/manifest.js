@@ -17,7 +17,7 @@ window.VERTICALS = {
     "tagline": "Everyday banking, cards and lending"
   },
   "insurance": {
-    "brand": "Fairhaven",
+    "brand": "Northbank",
     "tagline": "Cover for the things that matter"
   },
   "fintech": {

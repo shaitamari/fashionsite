@@ -683,23 +683,23 @@
   "template": "content",
   "source": "sources/banking-*.json",
   "collections": {
-   "Accounts": "Accounts",
    "Savings": "Savings",
    "Credit Cards": "Credit Cards",
-   "Loans": "Loans"
+   "Loans": "Loans",
+   "Checking": "Checking"
   },
   "order": [
-   "Accounts",
+   "Checking",
    "Savings",
    "Credit Cards",
    "Loans"
   ],
   "subcats": {},
   "defaults": {
-   "Accounts": "All",
    "Mortgages": "All",
    "Credit Cards": "All",
-   "Loans": "All"
+   "Loans": "All",
+   "Checking": "All"
   },
   "labels": {
    "add_to_cart": "Start application",
@@ -779,7 +779,7 @@
    ],
    "attribute_field": "product"
   },
-  "hero_category": "Accounts",
+  "hero_category": "Checking",
   "foryou_title": "Right for you",
   "showcase": {
    "search": "mortgage",
@@ -787,7 +787,7 @@
   },
   "content": {
    "lines_collection": "__all__",
-   "popular": "Everyday Current Account",
+   "popular": "Everyday",
    "line_cta": "Open account",
    "hero": {
     "_default": {
@@ -816,54 +816,105 @@
     }
    },
    "product_cards": {
-    "Everyday Current Account": {
-     "blurb": "Your day-to-day account — no monthly fee, instant spend alerts, fee-free abroad.",
-     "rate_line": "No monthly fee",
-     "features": [
-      "No monthly fee",
-      "Fee-free abroad",
-      "Instant spend alerts",
-      "Apple Pay & Google Pay"
-     ]
-    },
     "Northbank Saver": {
-     "blurb": "Easy-access savings with a competitive rate and no withdrawal penalties.",
+     "blurb": "Easy-access savings with a competitive rate and no withdrawal penalties — put money aside and take it out whenever you need it. Set goals in the app and watch your balance grow.",
      "rate_line": "3.5% AER easy-access",
      "features": [
-      "Competitive rate",
-      "No withdrawal penalties",
-      "Savings goals",
-      "FSCS protected"
+      "3.5% AER variable",
+      "Unlimited fee-free withdrawals",
+      "Savings goals & round-ups",
+      "Interest paid monthly",
+      "Open from £1",
+      "FSCS protected up to £85,000"
      ]
     },
     "Fixed Saver (1 year)": {
-     "blurb": "Lock in a higher rate for twelve months.",
+     "blurb": "Lock your money away for twelve months for a higher, guaranteed rate. Ideal for savings you won't need in the short term — your rate is fixed the day you open.",
      "rate_line": "4.6% AER fixed 1yr",
      "features": [
-      "Higher fixed rate",
-      "12-month term",
-      "FSCS protected",
-      "From £500"
+      "4.6% AER fixed for 12 months",
+      "Rate guaranteed at opening",
+      "Interest paid at maturity",
+      "From £500 to £250,000",
+      "No access during the term",
+      "FSCS protected up to £85,000"
      ]
     },
     "Northbank Rewards Card": {
-     "blurb": "A credit card that pays you back — cashback on everyday spend, no annual fee.",
-     "rate_line": "24.9% APR rep.",
+     "blurb": "A credit card that pays you back — earn cashback on everyday spending with no annual fee, plus 0% on purchases for the first twelve months. Built-in fraud protection and instant freeze in the app.",
+     "rate_line": "24.9% APR rep. · variable",
      "features": [
-      "Cashback on spend",
+      "Cashback on everyday spend",
       "No annual fee",
-      "0% purchases 12mo",
-      "Fraud protection"
+      "0% on purchases for 12 months",
+      "Instant card freeze in-app",
+      "Real-time fraud alerts",
+      "Manage limits & repayments in-app",
+      "Representative 24.9% APR variable"
      ]
     },
     "Personal Loan": {
-     "blurb": "Borrow £1,000–£25,000 with a clear fixed rate and no early-repayment fees.",
-     "rate_line": "From 6.9% APR",
+     "blurb": "Borrow from £1,000 to £25,000 with a clear fixed rate and fixed monthly payments, so you know exactly what you'll pay from day one. Check your rate with a soft search that won't affect your credit score, and get a decision in minutes.",
+     "rate_line": "From 6.9% APR rep.",
      "features": [
       "Fixed monthly payments",
       "No early-repayment fee",
+      "Soft-search rate check",
       "Decision in minutes",
-      "£1k–£25k"
+      "Borrow £1,000–£25,000",
+      "Terms from 1 to 7 years",
+      "Representative 6.9% APR"
+     ]
+    },
+    "Everyday": {
+     "blurb": "Our standard day-to-day account for everyday spending, bills and getting paid. Fee-free abroad and instant alerts keep you in control, and you can switch to us in seven days without lifting a finger.",
+     "rate_line": "No monthly fee",
+     "features": [
+      "No monthly fee",
+      "Fee-free spending abroad",
+      "Instant spend & bill alerts",
+      "Apple Pay & Google Pay",
+      "Arranged overdraft available",
+      "7-day Current Account Switch",
+      "FSCS protected up to £85,000"
+     ]
+    },
+    "Basic": {
+     "blurb": "A simple account to get started, with everything you need for day-to-day money and nothing you don't. No monthly fee and no overdraft, so you always know where you stand.",
+     "rate_line": "No monthly fee",
+     "features": [
+      "No monthly fee",
+      "No overdraft — spend only what you have",
+      "Contactless debit card",
+      "Mobile & online banking",
+      "Instant balance & spend alerts",
+      "FSCS protected up to £85,000"
+     ]
+    },
+    "Premium": {
+     "blurb": "More from your everyday banking for a small monthly fee — worldwide travel insurance for the family, cashback on household bills, and higher limits with priority support when you need it.",
+     "rate_line": "£12/mo · perks included",
+     "features": [
+      "Worldwide family travel insurance",
+      "Cashback on household bills",
+      "Priority 24/7 support",
+      "Higher payment & withdrawal limits",
+      "Airport lounge passes",
+      "Fee-free spending abroad",
+      "FSCS protected up to £85,000"
+     ]
+    },
+    "Family": {
+     "blurb": "Built for households — a joint account with shared saving pots and simple tools to teach children about money. Set allowances, track spending, and give everyone their own view.",
+     "rate_line": "£8/mo · joint & kids",
+     "features": [
+      "Joint account for two adults",
+      "Child accounts (age 6+)",
+      "Shared saving pots & goals",
+      "Spending controls for kids",
+      "Pocket money & chores",
+      "Family spending dashboard",
+      "FSCS protected up to £85,000"
      ]
     }
    },
@@ -917,8 +968,8 @@
    ],
    "nav": [
     {
-     "label": "Accounts",
-     "href": "category.html?c=Accounts"
+     "label": "Checking",
+     "href": "category.html?c=Checking"
     },
     {
      "label": "Savings",
@@ -948,7 +999,7 @@
     "Confirm"
    ],
    "types": [
-    "Everyday Current Account",
+    "Everyday",
     "Northbank Saver",
     "Northbank Rewards Card",
     "Personal Loan"
@@ -977,7 +1028,7 @@
     "£500"
    ]
   },
-  "default_category": "Accounts",
+  "default_category": "Checking",
   "rate_card": {
    "bundles": [
     {
@@ -1010,7 +1061,7 @@
  "insurance": {
   "vertical": "Banking",
   "subvertical": "Insurance",
-  "brand": "Fairhaven",
+  "brand": "Northbank",
   "tagline": "Cover for the things that matter",
   "hero_title": "Cover you can<br>actually read.",
   "hero_cta": "Compare cover",

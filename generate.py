@@ -279,7 +279,7 @@ MORTGAGES = [
     ("First Time Buyer", "5% deposit accepted"),
     ("Buy to Let", "For landlords, rental cover assessed"),
 ]
-BANK_BRANDS = ["Northbank", "Ardent", "Wexford Financial", "Calder"]
+BANK_BRANDS = ["Northbank"]
 
 
 def gen_banking():
@@ -332,7 +332,7 @@ COVER = [
     ("Van Insurance", "Motor", ["Third Party", "Comprehensive"], 390),
     ("Gadget Insurance", "Gadget", ["Single Item", "Family Cover"], 70),
 ]
-INS_BRANDS = ["Fairhaven", "Ardent Cover", "Northbank Insure", "Calder Protect"]
+INS_BRANDS = ["Northbank"]
 
 
 def gen_insurance():

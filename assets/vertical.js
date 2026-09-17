@@ -1000,13 +1000,19 @@
        already carries the same action (telco's "Top up" -> topup.html), so it
        isn't a duplicate. */
     if (d.template === 'content') {
-      var navHasTopup = ((d.content && d.content.nav) || []).some(function (n) {
-        return n.href === 'topup.html';
+      var funnel = (d.content && d.content.funnel) || 'topup.html';
+      var navHasFunnel = ((d.content && d.content.nav) || []).some(function (n) {
+        return n.href === funnel;
       });
       document.querySelectorAll('[data-flow-link]').forEach(function (a) {
-        if (navHasTopup) { a.remove(); return; }      // already in the nav — drop the dupe
-        a.setAttribute('href', 'topup.html');          // else point at the real funnel
+        if (navHasFunnel) { a.remove(); return; }      // already in the nav — drop the dupe
+        a.setAttribute('href', funnel);                // else point at THIS vertical's funnel
       });
+
+      /* A telco/bank self-service app has no shopping cart — you don't add a
+         plan or an account to a basket, you apply for it. Remove the cart link
+         from the masthead entirely on content verticals. */
+      document.querySelectorAll('.cartlink').forEach(function (a) { a.remove(); });
     }
 
     /* --- the sandbox orientation link --------------------------------------

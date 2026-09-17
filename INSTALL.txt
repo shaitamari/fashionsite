@@ -9,8 +9,10 @@ WHAT'S IN IT:
 2. CONTENT NAV CONSISTENCY (store.js): telco/finance render V.content.nav into the masthead on EVERY page
    (same font, same items) instead of raw catalogue collections. This fixes topup.html showing a different
    nav / different Phones target / different font — topup uses data-collection-nav like the rest.
-3. DROP FLOW LINK (vertical.js): the retired "Top up or change plan" -> flow.html link is removed on telco
-   (nav already has Top up -> topup.html); repointed to topup.html on any other content vertical.
+3. FLOW LINK -> EACH VERTICAL'S OWN FUNNEL (vertical.js): the masthead flow link (telco "Top up or change
+   plan", finance "Start an application") now points at THIS vertical's funnel (content.funnel) — open.html on
+   finance, topup.html on telco — not a hardcoded topup.html. Previously finance's "Start an application" wrongly
+   led to topup.html (telco's funnel). Where the funnel is already in the nav, the duplicate link is removed.
    flow.html itself is kept (retail/travel still use it).
 4. OOS ON PLP (store.js + build.py + verticals.json): fashion size_gaps=True + full_oos=8. PLP cards show
    "Sold out" / "Low stock" badges for the Agent One back-in-stock demo.
@@ -51,3 +53,41 @@ Same-name-download trap: if 'nothing to commit', unzip the newest per ls -lt.
    THAT submission is the trigger: an Architect journey listens for `quote_requested` to email the quote or
    book an adviser callback — the demo point (a form submit kicks off orchestration on the customer's side),
    mirroring the loan flow's eligibility -> decision -> banker handoff.
+
+9. NORTHBANK ACCOUNT TIER (sources/banking-1.json + verticals.json): the Accounts page had a single lonely
+   "Everyday Current Account". Now it's a proper tier of four, with plain names (no odd product names):
+   - Basic — no fees, no overdraft, getting-started account.
+   - Everyday — the standard day-to-day account (renamed from "Everyday Current Account").
+   - Premium — €12/mo, travel insurance, cashback on bills, higher limits.
+   - Family — €8/mo, joint & child accounts, shared pots, kid spending controls.
+   Each renders as a Citizens-style card (rate line + features + "Open an account" -> funnel). Savings keeps
+   its easy-access + fixed pair. Stale "Everyday Current Account" references (popular card, open-funnel types
+   list) were repointed to "Everyday".
+   NOTE: rebuild banking after unzip (already included the rebuilt catalog, but build.py --all is in the deploy
+   command so it regenerates cleanly).
+
+10. SINGLE INSURANCE BRAND — NO MORE CALDER/ARDENT/FAIRHAVEN (sources/insurance-1.json + verticals.json +
+    generate.py): insurance was a multi-brand comparison (Northbank Insure, Fairhaven, Ardent Cover, Calder
+    Protect) which put odd invented brand names on the cards. Collapsed to a SINGLE clean brand: Northbank.
+    Every product is now "Northbank <Cover> Insurance" with its cover tiers intact (Third Party / TPFT /
+    Comprehensive, Buildings / Contents / Both, etc.). Exact brand-merge duplicates removed (20 -> 10 products).
+    verticals.json insurance.brand: Fairhaven -> Northbank (build.py stamps vendor from this). generate.py
+    BANK_BRANDS/INS_BRANDS collapsed to ["Northbank"] so the odd names can't regenerate.
+    The structure you liked (loans/cards with cover tiers) is unchanged — just one brand now.
+
+11. CHECKING vs SAVINGS (sources/banking-1.json + verticals.json): "Accounts" and "Savings" were redundant
+    (both are accounts). Renamed the Accounts collection to CHECKING — so the finance nav is now
+    Checking / Savings / Credit Cards / Loans, matching how real banks label it. The four current accounts
+    (Everyday/Basic/Premium/Family) live under Checking; Savings keeps easy-access + fixed. Nav, order,
+    collections map, hero_category and subcats updated; generic prose ("open an account in minutes") left as-is.
+
+12. RICHER FINANCE PRODUCT CONTENT (verticals.json + store.js): every finance product now has a fuller
+    2-sentence description and 6-7 detailed feature rows (rates, terms, eligibility, FSCS protection) — the
+    savings-page level of detail applied across Checking, Savings, Credit Cards and Loans. The finance card
+    shows up to 6 features (was 3) so the detail surfaces. e.g. Personal Loan spells out soft-search rate
+    check, fixed payments, £1k-£25k, 1-7yr terms, rep 6.9% APR; Rewards Card spells out cashback, no annual
+    fee, 0% 12mo, fraud tools, rep 24.9% APR variable.
+
+13. NO CART ON TELCO/FINANCE (vertical.js): a self-service telco/bank app has no shopping cart — you apply
+    for a plan/account, you don't add it to a basket. The masthead Cart link (which led to an empty, weird
+    cart.html) is now REMOVED entirely on content-template verticals. Retail/travel keep their cart.

@@ -2,14 +2,14 @@
  "products": [
   {
    "id": 8400000000101,
-   "title": "Everyday Current Account",
-   "handle": "everyday-current-account",
-   "body_html": "<p>Your day-to-day account — no monthly fee, instant spend alerts, and fee-free spending abroad.</p><ul><li>No monthly fee</li><li>Fee-free abroad</li><li>Instant spend alerts</li><li>Apple Pay &amp; Google Pay</li></ul>",
+   "title": "Everyday",
+   "handle": "everyday-account",
+   "body_html": "<p>Our standard day-to-day account — no monthly fee, instant spend alerts, and fee-free spending abroad.</p><ul><li>No monthly fee</li><li>Fee-free abroad</li><li>Instant spend alerts</li><li>Apple Pay &amp; Google Pay</li></ul>",
    "vendor": "Northbank",
-   "product_type": "Accounts",
+   "product_type": "Checking",
    "tags": [
-    "Accounts",
-    "Category:Accounts",
+    "Checking",
+    "Category:Checking",
     "Sub:Current"
    ],
    "options": [
@@ -218,6 +218,138 @@
    ],
    "banking": {
     "rate_line": "From 6.9% APR"
+   }
+  },
+  {
+   "id": 8400000000110,
+   "title": "Basic",
+   "handle": "basic-account",
+   "body_html": "<p>A simple account to get started — no fees, no overdraft, no fuss. Ideal for a first account.</p><ul><li>No monthly fee</li><li>No overdraft</li><li>Contactless debit card</li><li>Mobile & online banking</li></ul>",
+   "vendor": "Northbank",
+   "product_type": "Checking",
+   "tags": [
+    "Checking",
+    "Category:Checking",
+    "Sub:Current"
+   ],
+   "options": [
+    {
+     "name": "Title",
+     "values": [
+      "Default Title"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/pixel.png"
+    }
+   ],
+   "variants": [
+    {
+     "id": 8400000000110,
+     "product_id": 8400000000110,
+     "title": "Default Title",
+     "option1": "Default Title",
+     "sku": "NB-BAS",
+     "price": "1.00",
+     "available": true,
+     "featured_image": {
+      "src": "assets/img/pixel.png"
+     },
+     "position": 1
+    }
+   ],
+   "banking": {
+    "rate_line": "No monthly fee"
+   }
+  },
+  {
+   "id": 8400000000111,
+   "title": "Premium",
+   "handle": "premium-account",
+   "body_html": "<p>More from your everyday banking — travel insurance, cashback on bills, and higher limits, for a small monthly fee.</p><ul><li>€12/mo</li><li>Worldwide travel insurance</li><li>Cashback on household bills</li><li>Priority support</li></ul>",
+   "vendor": "Northbank",
+   "product_type": "Checking",
+   "tags": [
+    "Checking",
+    "Category:Checking",
+    "Sub:Current"
+   ],
+   "options": [
+    {
+     "name": "Title",
+     "values": [
+      "Default Title"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/pixel.png"
+    }
+   ],
+   "variants": [
+    {
+     "id": 8400000000111,
+     "product_id": 8400000000111,
+     "title": "Default Title",
+     "option1": "Default Title",
+     "sku": "NB-PRE",
+     "price": "1.00",
+     "available": true,
+     "featured_image": {
+      "src": "assets/img/pixel.png"
+     },
+     "position": 1
+    }
+   ],
+   "banking": {
+    "rate_line": "€12/mo · perks included"
+   }
+  },
+  {
+   "id": 8400000000112,
+   "title": "Family",
+   "handle": "family-account",
+   "body_html": "<p>Built for households — joint access, spending pots for the family, and tools to teach kids about money.</p><ul><li>€8/mo</li><li>Joint & child accounts</li><li>Shared saving pots</li><li>Spending controls for kids</li></ul>",
+   "vendor": "Northbank",
+   "product_type": "Checking",
+   "tags": [
+    "Checking",
+    "Category:Checking",
+    "Sub:Current"
+   ],
+   "options": [
+    {
+     "name": "Title",
+     "values": [
+      "Default Title"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/pixel.png"
+    }
+   ],
+   "variants": [
+    {
+     "id": 8400000000112,
+     "product_id": 8400000000112,
+     "title": "Default Title",
+     "option1": "Default Title",
+     "sku": "NB-FAM",
+     "price": "1.00",
+     "available": true,
+     "featured_image": {
+      "src": "assets/img/pixel.png"
+     },
+     "position": 1
+    }
+   ],
+   "banking": {
+    "rate_line": "€8/mo · joint & kids"
    }
   }
  ]
