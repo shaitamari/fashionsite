@@ -585,3 +585,13 @@ html[data-vertical] .mainnav__in[data-content-nav] { gap: 2rem; }
 .demo-controls__row .btn { font-size:.85rem; }
 
 .demo-controls__note{font-size:.8rem;color:var(--muted);margin:.6rem 0 0}
+
+/* top-up page: read-only usage + rate-card context */
+.tu-context { margin:.5rem 0 1.5rem; }
+.tu-usage { border:1px solid var(--rule); border-radius:12px; padding:1rem 1.25rem; margin:0 0 1rem; max-width:36rem; }
+.tu-usage__top { display:flex; justify-content:space-between; font-size:.9rem; }
+.tu-usage__top span:first-child { color:var(--muted); }
+.tu-usage__bar { height:10px; border-radius:100px; background:var(--alt); overflow:hidden; margin-top:.6rem; }
+.tu-usage__bar span { display:block; height:100%; background:var(--accent,#136B4B); border-radius:100px; }
+.tu-credit { font-size:.95rem; margin:0 0 .5rem; }
+.tu-ratecard { font-size:.85rem; color:var(--muted); margin:0; }

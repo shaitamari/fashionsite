@@ -1861,7 +1861,61 @@
     }
    }
   },
-  "default_category": "Plans"
+  "default_category": "Plans",
+  "rate_card": {
+   "credit_to_minutes": 20,
+   "credit_tiers": [
+    {
+     "amount": 10,
+     "minutes": 200,
+     "note": "200 mins or 2 GB"
+    },
+    {
+     "amount": 20,
+     "minutes": 450,
+     "note": "450 mins or 5 GB"
+    },
+    {
+     "amount": 30,
+     "minutes": 700,
+     "note": "700 mins or 8 GB"
+    }
+   ],
+   "boosts": [
+    {
+     "name": "1 GB boost",
+     "gb": 1,
+     "price": 3
+    },
+    {
+     "name": "5 GB boost",
+     "gb": 5,
+     "price": 8
+    },
+    {
+     "name": "20 GB boost",
+     "gb": 20,
+     "price": 14
+    }
+   ],
+   "plan_inclusions": {
+    "Vantis 5": {
+     "data": "5 GB",
+     "minutes": "Unlimited UK",
+     "texts": "Unlimited"
+    },
+    "Vantis 20": {
+     "data": "20 GB",
+     "minutes": "Unlimited UK",
+     "texts": "Unlimited"
+    },
+    "Vantis Unlimited": {
+     "data": "Unlimited",
+     "minutes": "Unlimited UK",
+     "texts": "Unlimited"
+    }
+   }
+  }
  },
  "home": {
   "vertical": "Retail",

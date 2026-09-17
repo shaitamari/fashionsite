@@ -469,7 +469,11 @@
           (near?'<p class="dash__nudge">You\u2019re close to your limit \u2014 top up or move to Unlimited.</p>':'')+
         '</div>'+
         '<div class="dash__metric"><div class="dash__metric-top"><span>Number</span><span>'+(u.assigned_number||'\u2014')+'</span></div>'+
-          '<div class="dash__metric-top"><span>Status</span><span>'+(u.subscription_status||'Active')+'</span></div></div>';
+          '<div class="dash__metric-top"><span>Status</span><span>'+(u.subscription_status||'Active')+'</span></div>'+
+          (function(){ var c=Number(u.credit_balance); if(!c) return '';
+            var rc=(window.VERTICAL&&window.VERTICAL.rate_card)||{}; var mins=rc.credit_to_minutes?Math.round(c*rc.credit_to_minutes):null;
+            return '<div class="dash__metric-top"><span>Credit</span><span>\u20ac'+c+(mins!=null?' \u2248 '+mins+' mins':'')+'</span></div>'; })()+
+          '</div>';
       actions.innerHTML='<a class="btn" href="topup.html">Top up or change plan</a>';
       log.innerHTML=(st.events||[]).map(function(e){return '<li><span>'+fmtDate(e.when)+'</span><span>'+e.label+'</span></li>';}).join('') || '<li><span>\u2014</span><span>No activity yet</span></li>';
       renderDemoStrip('telco');

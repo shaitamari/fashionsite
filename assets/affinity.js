@@ -39,8 +39,18 @@
 (function () {
   'use strict';
 
-  var KEY   = 'lmn.affinity';        // the event log
-  var FLAG  = 'lmn.affinity.on';     // whether the exhibit is enabled
+  var FLAG  = 'lmn.affinity.on';     // whether the exhibit is enabled (browser-wide toggle)
+  // The event log is PER-UUID: a fresh visitor has no affinity history, so a
+  // beauty session never bleeds its category affinity onto a fresh telco/other
+  // profile. Read the visitor id the same way store.js does.
+  function visitorId() {
+    try {
+      var m = document.cookie.match(/(?:^|;\s*)lmn_visitor=([^;]+)/);
+      if (m) return decodeURIComponent(m[1]);
+      return localStorage.getItem('lmn.visitor') || 'anon';
+    } catch (e) { return 'anon'; }
+  }
+  function KEYF() { return 'lmn.affinity.' + visitorId(); }
   var TAU   = 8 * 60 * 1000;         // decay constant: ~8 minutes
   var MAX   = 60;                    // events kept
 
@@ -49,7 +59,7 @@
     var q = new URLSearchParams(location.search).get('affinity');
     if (q === '1') { try { localStorage.setItem(FLAG, '1'); } catch (e) {} return true; }
     if (q === '0') {
-      try { localStorage.removeItem(FLAG); localStorage.removeItem(KEY); } catch (e) {}
+      try { localStorage.removeItem(FLAG); localStorage.removeItem(KEYF()); } catch (e) {}
       return false;
     }
     try { return localStorage.getItem(FLAG) === '1'; } catch (e) { return false; }
@@ -59,10 +69,10 @@
 
   /* --- the event log ------------------------------------------------------ */
   function read() {
-    try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (e) { return []; }
+    try { return JSON.parse(localStorage.getItem(KEYF()) || '[]'); } catch (e) { return []; }
   }
   function write(list) {
-    try { localStorage.setItem(KEY, JSON.stringify(list.slice(-MAX))); } catch (e) {}
+    try { localStorage.setItem(KEYF(), JSON.stringify(list.slice(-MAX))); } catch (e) {}
   }
 
   /* Record one signal. `dim` is the dimension (category, colour, discount),
@@ -451,7 +461,7 @@
     /* Forget everything clears the event log but leaves the exhibit ON, which
        is right when you want to restart a demo from a clean profile. */
     body.querySelector('.afx__reset').addEventListener('click', function () {
-      try { localStorage.removeItem(KEY); } catch (e) {}
+      try { localStorage.removeItem(KEYF()); } catch (e) {}
       location.reload();
     });
 
@@ -467,7 +477,7 @@
     body.querySelector('.afx__off').addEventListener('click', function () {
       try {
         localStorage.removeItem(FLAG);
-        localStorage.removeItem(KEY);
+        localStorage.removeItem(KEYF());
       } catch (e) {}
       var clean = location.origin + location.pathname +
         location.search.replace(/([?&])affinity=[^&]*/g, '$1').replace(/[?&]$/, '');

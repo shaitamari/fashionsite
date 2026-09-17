@@ -1447,6 +1447,9 @@
         bits.push(u.plan);
         if (u.data_used && u.data_allowance) bits.push(u.data_used + '/' + u.data_allowance + ' GB');
         else if (u.assigned_number) bits.push(u.assigned_number);
+        // Credit in the top bar only if the vertical opts in (keeps the bar
+        // uncluttered by default; flip show_credit_in_nav to surface it).
+        if (V.show_credit_in_nav && Number(u.credit_balance)) bits.push('\u20ac' + u.credit_balance);
       } else if (u.product) {
         // finance customer
         bits.push(u.product);

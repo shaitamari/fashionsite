@@ -437,7 +437,7 @@ def build_catalog(key, cfg):
         "search_placeholder", "newsletter_title", "newsletter_lede", "theme",
         "vertical", "subvertical", "hero_eyebrow", "tiles_title", "grid_title",
         "reco_title", "sale_title", "reco_foot_title", "profile", "flow", "hero_category", "foryou_title", "showcase", "replenishment_days", "anniversary_months",
-        "locale", "currency", "banner_slot", "direct_checkout", "template", "content", "tier_banner"
+        "locale", "currency", "banner_slot", "direct_checkout", "template", "content", "tier_banner", "rate_card", "default_category", "show_credit_in_nav"
     ) if k in cfg}
     meta["key"] = key
     # Journey wording, so one template covers retail, travel, telco and banking.

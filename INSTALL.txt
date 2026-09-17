@@ -1,15 +1,14 @@
-Account restructure (telco + finance): real top-up funnel, clean customer view, "Mimic usage" SC control.
+Telco/finance account experience — complete, loop closed, no dead buttons.
 
-- topup.html: REAL top-up/change-plan funnel (Add data boost / Change plan / Top up credit) -> pick -> confirm.
-  Replaces the retired flow.html services form. Telco nav gains "Top up".
-- account.html: fake "Use 2 GB"/"Make £50" customer buttons GONE. Clean usage/balance view + a real
-  "Top up or change plan" button -> the funnel.
-- The usage bar reflects the SITE'S USAGE HISTORY (per-uuid). An SC-only collapsed panel labelled
-  "Mimic plan usage" builds a realistic month (A light day +1GB / A typical week +6GB / A heavy month to 90% / Reset),
-  so the bar + activity fill in and crossing 85% fires the upgrade nudge. Finance: "Mimic account activity".
+- Top-up confirm: no disabled button anymore. Writes the change, shows "Taking you to your account…",
+  navigates to account.html where the new plan / credit / allowance is visible. Double-submit guarded by a flag.
+- Dashboard shows credit (€X ≈ Y mins from the rate card).
+- topup.html: real funnel + read-only usage/rate-card context (static).
+- account.html: clean dashboard, "Top up or change plan" -> funnel, SC-only "Mimic plan usage" strip.
+- Top-nav credit optional (telco.show_credit_in_nav, off by default). Rate card -> platform lookup table later.
+- No ghosts: all per-visitor state per-uuid.
 
 From the posh folder:
-  unzip -o ~/Downloads/posh-2026-09-17-accounts.zip -d /tmp/x && cp -r /tmp/x/posh-2026-09-17-accounts/* . && python3 build.py --all && posh "Account restructure: real top-up funnel, clean dashboard, Mimic-usage SC control"
+  unzip -o ~/Downloads/posh-2026-09-17-accounts.zip -d /tmp/x && cp -r /tmp/x/posh-2026-09-17-accounts/* . && python3 build.py --all && posh "Top-up: no disabled button, navigates to account; credit on dashboard; per-uuid"
 
-TEST: telco account (signed-in subscriber) -> clean usage view + Top up button (-> funnel).
-      Expand "Mimic plan usage" -> click "A heavy month" -> bar fills, nudge appears, activity logs.
+TEST: top up credit -> button says "Taking you to your account…" -> lands on account -> credit shows.

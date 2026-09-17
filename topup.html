@@ -96,7 +96,7 @@
     <!-- STEP 1 — action -->
     <section class="substep" data-panel="1">
       <h1 class="h1" style="font-size:clamp(1.5rem,3vw,2rem)">Top up or change plan</h1>
-      <p class="lede" id="tu-current" style="margin:.5rem 0 1.25rem"></p>
+      <div id="tu-context" class="tu-context"></div>
       <div class="numtabs" id="action-tabs">
         <button type="button" class="numtab is-active" data-action="boost">Add a data boost</button>
         <button type="button" class="numtab" data-action="plan">Change my plan</button>
@@ -132,16 +132,38 @@
   function money(n){ return '\u20ac'+(Math.round(n*100)/100).toString().replace(/\.00$/,''); }
   function u(){ return (window.Store&&Store.currentUser&&Store.currentUser())||{}; }
 
+  var RATE=(V.rate_card)||{};
   (function(){
     var cur=u();
-    document.getElementById('tu-current').textContent = cur.plan ? ('You\u2019re currently on '+cur.plan+'.') : 'Manage your plan and add-ons.';
+    var host=document.getElementById('tu-context'); if(!host) return;
+    if(!cur.plan){ host.innerHTML='<p class="lede">Manage your plan and add-ons.</p>'; return; }
+    // Usage at a glance (static context, read from the profile's usage state).
+    var used=null, allow=null;
+    try { var st=Store.usageState && Store.usageState(); if(st){ used=st.used; allow=st.allowance; } } catch(e){}
+    if(used==null && cur.data_used!=null){ used=Number(cur.data_used); allow=Number(cur.data_allowance)||null; }
+    var incl=((RATE.plan_inclusions)||{})[cur.plan]||{};
+    var creditMins = (typeof cur.credit_balance==='number' && RATE.credit_to_minutes)
+      ? Math.round(cur.credit_balance*RATE.credit_to_minutes) : null;
+    var barPct = (used!=null && allow) ? Math.min(100, Math.round(used/allow*100)) : null;
+    host.innerHTML=
+      '<p class="lede" style="margin:0 0 1rem">You\u2019re on <strong>'+cur.plan+'</strong>'+
+        (incl.data?' \u2014 '+incl.data+' data, '+(incl.minutes||'')+' minutes':'')+'.</p>'+
+      (barPct!=null?
+        '<div class="tu-usage"><div class="tu-usage__top"><span>Data used this month</span><span>'+used+' / '+allow+' GB</span></div>'+
+        '<div class="tu-usage__bar"><span style="width:'+barPct+'%"></span></div></div>':'')+
+      (creditMins!=null?
+        '<p class="tu-credit">Your credit balance of \u20ac'+cur.credit_balance+' is worth about <strong>'+creditMins+' minutes</strong>.</p>':'')+
+      '<p class="tu-ratecard">'+
+        (RATE.credit_tiers||[]).map(function(t){return '\u20ac'+t.amount+' \u2192 '+t.note;}).join(' \u00b7 ')+
+      '</p>';
     document.querySelectorAll('#action-tabs .numtab').forEach(function(t){
       t.addEventListener('click',function(){ document.querySelectorAll('#action-tabs .numtab').forEach(function(x){x.classList.remove('is-active');}); t.classList.add('is-active'); action=t.getAttribute('data-action'); });
     });
   })();
 
-  var BOOSTS=[{name:'1 GB boost',gb:1,price:3},{name:'5 GB boost',gb:5,price:8},{name:'20 GB boost',gb:20,price:14}];
-  var CREDITS=[{name:'\u20ac10 credit',amt:10},{name:'\u20ac20 credit',amt:20},{name:'\u20ac30 credit',amt:30}];
+  var BOOSTS=(RATE.boosts)||[{name:'1 GB boost',gb:1,price:3},{name:'5 GB boost',gb:5,price:8},{name:'20 GB boost',gb:20,price:14}];
+  var CREDITS=((RATE.credit_tiers)||[]).map(function(t){return {name:'\u20ac'+t.amount+' credit',amt:t.amount,mins:t.minutes};});
+  if(!CREDITS.length) CREDITS=[{name:'\u20ac10 credit',amt:10},{name:'\u20ac20 credit',amt:20},{name:'\u20ac30 credit',amt:30}];
   function planItems(){ var col=(V.content&&V.content.lines_collection)||'Plans'; return (Store.byCollection(col)||[]); }
 
   function renderChoices(){
@@ -171,17 +193,23 @@
     s.innerHTML='<h3>Confirm</h3><div class="subsummary__row"><span>Action</span><span>'+line+'</span></div>';
     show(3);
   }
+  var tuSubmitting=false;
   document.getElementById('tu-confirm').addEventListener('click',function(){
-    if(!choice) return;
+    if(!choice || tuSubmitting) return;
+    tuSubmitting=true;
     if(choice.kind==='boost'){ if(Store.topUp) Store.topUp(choice.gb,'Added '+choice.name); }
     else if(choice.kind==='plan'){ Store.signIn({plan:choice.name, plan_price:choice.price}); if(Store.noteAccount){} }
     else if(choice.kind==='credit'){ /* credit: a flat attr for demo */ Store.signIn({credit_balance:(Number(u().credit_balance)||0)+choice.amt}); }
     window.InsiderQueue.push({type:'user',value:Store.userPayload()}); window.InsiderQueue.push({type:'init'});
     var s=document.getElementById('tu-summary');
     s.innerHTML='<h3>Done \u2713</h3><div class="subsummary__row"><span>'+(choice.kind==='plan'?'Now on':'Added')+'</span><span>'+choice.name+'</span></div>'+
-      '<div class="subsummary__row"><span>Next</span><span>Updated on your account</span></div>';
-    document.getElementById('tu-confirm').textContent='Done';
-    document.getElementById('tu-confirm').disabled=true;
+      '<div class="subsummary__row"><span>Next</span><span>Taking you to your account\u2026</span></div>';
+    // Close the loop: go straight to the account dashboard so the change
+    // (new plan / credit balance / boosted allowance) is visible where the
+    // customer manages it. No disabled button left on screen.
+    var btn=document.getElementById('tu-confirm');
+    btn.textContent='Taking you to your account\u2026';
+    setTimeout(function(){ location.href='account.html'; }, 900);
   });
 </script>
 </body></html>
