@@ -920,7 +920,15 @@
     var views = read('lmn.views', {});
     var best = null, top = 0;
     Object.keys(views).forEach(function (k) { if (views[k] > top) { top = views[k]; best = k; } });
-    return best || 'Makeup';
+    // Fall back to the vertical's own default category, not a hardcoded
+    // 'Makeup' (a beauty-first leftover that showed up on fresh telco/other
+    // profiles). Verticals may declare `default_category`; else use the first
+    // collection; else leave it unset rather than guess.
+    if (best) return best;
+    var V = window.VERTICAL || {};
+    if (V.default_category) return V.default_category;
+    var cols = V.collections ? Object.keys(V.collections) : [];
+    return cols[0] || undefined;
   }
   /* --- purchase history, as an Array of Objects ----------------------------
      One object per line item, appended at checkout. This is the data behind
