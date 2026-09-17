@@ -100,7 +100,6 @@
       <div class="numtabs" id="action-tabs">
         <button type="button" class="numtab is-active" data-action="boost">Add a data boost</button>
         <button type="button" class="numtab" data-action="plan">Change my plan</button>
-        <button type="button" class="numtab" data-action="credit">Top up credit</button>
       </div>
       <div class="substep__actions"><button class="btn" type="button" data-next="2">Continue</button></div>
     </section>
@@ -142,36 +141,32 @@
     try { var st=Store.usageState && Store.usageState(); if(st){ used=st.used; allow=st.allowance; } } catch(e){}
     if(used==null && cur.data_used!=null){ used=Number(cur.data_used); allow=Number(cur.data_allowance)||null; }
     var incl=((RATE.plan_inclusions)||{})[cur.plan]||{};
-    var creditMins = (typeof cur.credit_balance==='number' && RATE.credit_to_minutes)
-      ? Math.round(cur.credit_balance*RATE.credit_to_minutes) : null;
     var barPct = (used!=null && allow) ? Math.min(100, Math.round(used/allow*100)) : null;
+    var near = barPct!=null && barPct>=85;
+    var left = (used!=null && allow) ? Math.max(0, Math.round((allow-used)*10)/10) : null;
     host.innerHTML=
       '<p class="lede" style="margin:0 0 1rem">You\u2019re on <strong>'+cur.plan+'</strong>'+
-        (incl.data?' \u2014 '+incl.data+' data, '+(incl.minutes||'')+' minutes':'')+'.</p>'+
+        (incl.minutes?' \u2014 unlimited UK minutes and texts':'')+'. Running low on data? Add a boost or move to a bigger plan.</p>'+
       (barPct!=null?
-        '<div class="tu-usage"><div class="tu-usage__top"><span>Data used this month</span><span>'+used+' / '+allow+' GB</span></div>'+
-        '<div class="tu-usage__bar"><span style="width:'+barPct+'%"></span></div></div>':'')+
-      (creditMins!=null?
-        '<p class="tu-credit">Your credit balance of \u20ac'+cur.credit_balance+' is worth about <strong>'+creditMins+' minutes</strong>.</p>':'')+
-      '<p class="tu-ratecard">'+
-        (RATE.credit_tiers||[]).map(function(t){return '\u20ac'+t.amount+' \u2192 '+t.note;}).join(' \u00b7 ')+
-      '</p>';
+        '<div class="tu-usage"><div class="tu-usage__top"><span>Data used this month</span><span>'+used+' / '+allow+' GB'+(left!=null?' \u00b7 '+left+' GB left':'')+'</span></div>'+
+        '<div class="tu-usage__bar"><span style="width:'+barPct+'%;'+(near?'background:#c0392b':'')+'"></span></div>'+
+        (near?'<p class="tu-note" style="color:#c0392b;font-size:.85rem;margin:.5rem 0 0">You\u2019re close to your limit \u2014 a boost keeps you connected this month.</p>':'')+
+        '</div>':'');
     document.querySelectorAll('#action-tabs .numtab').forEach(function(t){
       t.addEventListener('click',function(){ document.querySelectorAll('#action-tabs .numtab').forEach(function(x){x.classList.remove('is-active');}); t.classList.add('is-active'); action=t.getAttribute('data-action'); });
     });
   })();
 
   var BOOSTS=(RATE.boosts)||[{name:'1 GB boost',gb:1,price:3},{name:'5 GB boost',gb:5,price:8},{name:'20 GB boost',gb:20,price:14}];
-  var CREDITS=((RATE.credit_tiers)||[]).map(function(t){return {name:'\u20ac'+t.amount+' credit',amt:t.amount,mins:t.minutes};});
-  if(!CREDITS.length) CREDITS=[{name:'\u20ac10 credit',amt:10},{name:'\u20ac20 credit',amt:20},{name:'\u20ac30 credit',amt:30}];
   function planItems(){ var col=(V.content&&V.content.lines_collection)||'Plans'; return (Store.byCollection(col)||[]); }
 
   function renderChoices(){
     var wrap=document.getElementById('choose-cards'); var title=document.getElementById('choose-title'); wrap.innerHTML='';
     var items=[];
-    if(action==='boost'){ title.textContent='Add a data boost'; items=BOOSTS.map(function(b){return {name:b.name,sub:'One-off, valid 30 days',price:b.price,kind:'boost',gb:b.gb};}); }
-    else if(action==='credit'){ title.textContent='Top up credit'; items=CREDITS.map(function(c){return {name:c.name,sub:'Added to your balance',amt:c.amt,kind:'credit'};}); }
-    else { title.textContent='Change your plan'; items=planItems().map(function(p){var m=((V.content&&V.content.plan_cards)||{})[p.name]||{};return {name:p.name,sub:m.blurb||'',price:p.unit_price,kind:'plan'};}); }
+    if(action==='boost'){ title.textContent='Add a one-off data boost';
+      wrap.insertAdjacentHTML('beforebegin','');
+      items=BOOSTS.map(function(b){return {name:b.name,sub:'One-off \u2014 kicks in when your allowance runs out, valid this billing month',price:b.price,kind:'boost',gb:b.gb};}); }
+    else { title.textContent='Change your plan'; items=planItems().map(function(p){var m=((V.content&&V.content.plan_cards)||{})[p.name]||{};return {name:p.name,sub:(m.blurb||'')+' \u2014 a permanent, bigger monthly allowance',price:p.unit_price,kind:'plan'};}); }
     items.forEach(function(it){
       var el=document.createElement('div'); el.className='linecard';
       el.innerHTML='<h3 class="linecard__name">'+it.name+'</h3>'+
@@ -187,8 +182,7 @@
   document.querySelectorAll('[data-back]').forEach(function(b){b.addEventListener('click',function(){ show(+b.getAttribute('data-back')); });});
   function showConfirm(){
     var s=document.getElementById('tu-summary');
-    var line = choice.kind==='boost' ? ('Add '+choice.name+' ('+money(choice.price)+')')
-             : choice.kind==='credit' ? ('Top up '+choice.name)
+    var line = choice.kind==='boost' ? ('Add '+choice.name+' ('+money(choice.price)+', one-off this month)')
              : ('Move to '+choice.name+' ('+money(choice.price)+'/mo)');
     s.innerHTML='<h3>Confirm</h3><div class="subsummary__row"><span>Action</span><span>'+line+'</span></div>';
     show(3);
@@ -199,7 +193,6 @@
     tuSubmitting=true;
     if(choice.kind==='boost'){ if(Store.topUp) Store.topUp(choice.gb,'Added '+choice.name); }
     else if(choice.kind==='plan'){ Store.signIn({plan:choice.name, plan_price:choice.price}); if(Store.noteAccount){} }
-    else if(choice.kind==='credit'){ /* credit: a flat attr for demo */ Store.signIn({credit_balance:(Number(u().credit_balance)||0)+choice.amt}); }
     window.InsiderQueue.push({type:'user',value:Store.userPayload()}); window.InsiderQueue.push({type:'init'});
     var s=document.getElementById('tu-summary');
     s.innerHTML='<h3>Done \u2713</h3><div class="subsummary__row"><span>'+(choice.kind==='plan'?'Now on':'Added')+'</span><span>'+choice.name+'</span></div>'+

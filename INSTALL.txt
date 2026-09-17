@@ -1,14 +1,9 @@
-Telco/finance account experience — complete, loop closed, no dead buttons.
+Top-up page: data-focused + realistic one-off boost framing.
+- Vantis plans have unlimited minutes -> no credit/minutes (removed).
+- "Add a one-off data boost": clearly one-off, kicks in when your allowance runs out, valid this billing month.
+  (Matches how real UK contract data add-ons work: one-time, expiring, not PAYG-only.)
+- "Change my plan": clearly a permanent bigger monthly allowance — the distinct alternative.
+- Context leads with data usage + GB left + red nudge at 85%.
 
-- Top-up confirm: no disabled button anymore. Writes the change, shows "Taking you to your account…",
-  navigates to account.html where the new plan / credit / allowance is visible. Double-submit guarded by a flag.
-- Dashboard shows credit (€X ≈ Y mins from the rate card).
-- topup.html: real funnel + read-only usage/rate-card context (static).
-- account.html: clean dashboard, "Top up or change plan" -> funnel, SC-only "Mimic plan usage" strip.
-- Top-nav credit optional (telco.show_credit_in_nav, off by default). Rate card -> platform lookup table later.
-- No ghosts: all per-visitor state per-uuid.
-
-From the posh folder:
-  unzip -o ~/Downloads/posh-2026-09-17-accounts.zip -d /tmp/x && cp -r /tmp/x/posh-2026-09-17-accounts/* . && python3 build.py --all && posh "Top-up: no disabled button, navigates to account; credit on dashboard; per-uuid"
-
-TEST: top up credit -> button says "Taking you to your account…" -> lands on account -> credit shows.
+Single file. From the posh folder:
+  unzip -o ~/Downloads/posh-2026-09-17-topup-data.zip -d /tmp/x && cp -r /tmp/x/posh-2026-09-17-topup-data/* . && posh "Top-up: data-focused, one-off boost vs permanent plan change"
