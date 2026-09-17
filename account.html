@@ -139,11 +139,14 @@
         <p class="eyebrow" style="margin-top:1.25rem">Yours (this browser only)</p>
         <div class="personas__grid" id="personas-mine"></div>
       </div>
-      <p class="source" style="margin:1rem 0 0" id="history-link" hidden>Signed in and want a past to demo against? <a href="history.html">Give this profile a history</a> — purchases on retail storefronts, a year of trips on travel.</p>
-      <p class="source" style="margin:1rem 0 0" id="personas-actions">
-        <button class="btn btn--ghost" type="button" id="persona-save" hidden>Save current profile as a persona</button>
-        <button class="btn btn--ghost" type="button" id="persona-copy" hidden>Copy my personas as JSON</button>
-      </p>
+      <details class="sc-tools" style="margin:1.25rem 0 0">
+        <summary style="cursor:pointer;font-size:.8125rem;color:var(--muted)">Demo tools (SC only)</summary>
+        <p class="source" style="margin:1rem 0 0" id="history-link" hidden>Signed in and want a past to demo against? <a href="history.html">Give this profile a history</a> — purchases on retail storefronts, a year of trips on travel.</p>
+        <p class="source" style="margin:1rem 0 0" id="personas-actions">
+          <button class="btn btn--ghost" type="button" id="persona-save" hidden>Save current profile as a persona</button>
+          <button class="btn btn--ghost" type="button" id="persona-copy" hidden>Copy my personas as JSON</button>
+        </p>
+      </details>
     </section>
 
     <div class="cartgrid" style="padding-top:2rem">
@@ -687,7 +690,7 @@
           '<div class="dash__balance">'+fmtGBP(st.balance)+'</div></div>'+
         '<div class="dash__metric"><div class="dash__metric-top"><span>Status</span><span>'+(u.customer_status||'Active')+'</span></div>'+
           (u.lead_band?'<div class="dash__metric-top"><span>Eligibility</span><span>Band '+u.lead_band+'</span></div>':'')+'</div>';
-      actions.innerHTML='<a class="btn" href="content-index.html">Explore products</a>';
+      actions.innerHTML='';   // customer account view has no 'explore' button — you're already a customer
       log.innerHTML=(st.transactions||[]).map(function(t){var neg=t.amount<0;return '<li><span>'+fmtDate(t.when)+'</span><span>'+t.label+'</span><span style="color:'+(neg?'#c0392b':'#136B4B')+'">'+(neg?'':'+')+fmtGBP(t.amount)+'</span></li>';}).join('') || '<li><span>\u2014</span><span>No transactions</span></li>';
       renderOffers(u);
       renderDemoStrip('finance');

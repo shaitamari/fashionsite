@@ -126,3 +126,28 @@ Same-name-download trap: if 'nothing to commit', unzip the newest per ls -lt.
     product_types were all count-1): a BRAND facet (Cobalt / Northpoint / Ridgeway / Aether / Vantis, from the
     name) and a PRICE facet (Under €50/€100/€200/Any), with client-side filtering. Plans / account / finance
     pages stay facet-free (bank-app model). Scoped via data-phones on <html> so only the Phones page shows them.
+
+18. FINANCE CARD WIDTH — FIXED, NOT STRETCHY (styles.css): the auto-fit grid stretched columns to fill the
+    page while the card capped at 360px, so 2 Savings cards floated as capped cards inside half-page-wide
+    columns (looked off). Switched to FIXED 320px columns that pack from the left — 2 cards now look the same
+    as 4, neatly side by side, no floating-in-a-gap. Applies to homepage linecards and category card--finance.
+
+19. FINANCE CARD DATA TRAVELS WITH THE PRODUCT (build.py + store.js): finance card rate-line/blurb/features
+    were looked up from content.product_cards by NAME at render time — if that lookup missed (e.g. Eureka
+    returns a slightly different product name), the card lost its rate line + features and rendered bare and
+    different from the others. This was almost certainly why Credit Cards looked different / had no descriptive
+    text. FIX: build.py now stamps rate_line/blurb/features onto each content-vertical product record from the
+    config, and the card reads p.rate_line/p.blurb/p.features as a fallback — so the card is fully populated
+    regardless of the name-match or whether Eureka or local served it. Rebuild banking (in the deploy command).
+
+20. ACCOUNT PAGE DE-CLUTTER (account.html):
+    - Removed the weird standalone "Explore products" button from the finance account view — a logged-in
+      customer isn't "exploring products" from their own account. (Telco keeps "Top up or change plan", which
+      IS a natural account action.)
+    - Moved the persona AUTHORING tools (Save current profile as a persona, Copy my personas as JSON, the
+      "give this profile a history" link) into a collapsed <details> "Demo tools (SC only)" disclosure, so the
+      customer-facing view (balance, recent activity, offers, relationship) isn't cluttered with SC machinery.
+      Persona sign-in cards stay visible (that's the SC's way to switch profiles).
+    STILL A BIGGER FOLLOW-UP: fully splitting the account page into a clean customer view + a separate SC/demo
+    page (personas, mimic controls, save-as-persona) is a larger restructure — deferred; this pass removes the
+    worst of the clutter. The offer/outreach "ideas" cards are left as placeholders per your call.

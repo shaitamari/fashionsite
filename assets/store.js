@@ -1629,9 +1629,12 @@
     if (isFinanceProduct) {
       el.className = 'card card--finance';
       var fcfg = ((V.content && V.content.product_cards) || {})[p.name] || {};
-      var rateLine = fcfg.rate_line || '';
-      var fblurb = fcfg.blurb || p.description || '';
-      var feats = (fcfg.features || []).slice(0, 6);
+      // Prefer config, but fall back to fields stamped on the product itself at
+      // build time — so the card is fully populated even if the config lookup
+      // misses (e.g. Eureka returns a slightly different name).
+      var rateLine = fcfg.rate_line || p.rate_line || '';
+      var fblurb = fcfg.blurb || p.blurb || p.description || '';
+      var feats = (fcfg.features || p.features || []).slice(0, 6);
       var funnel = (V.content && V.content.funnel) || 'open.html';
       var cta = (p.collection === 'Loans') ? 'Apply for a loan'
               : (p.collection === 'Credit Cards') ? 'Apply for a card'

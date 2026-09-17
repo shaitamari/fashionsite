@@ -394,6 +394,20 @@ def build_catalog(key, cfg):
             })
 
     today = datetime.date.today()
+    # For content verticals (telco, finance), the card's rate line and feature
+    # rows live in content.product_cards, keyed by name. Stamp them onto the
+    # product record itself so the card never depends on a runtime name-match
+    # lookup that can miss (e.g. when Eureka returns a slightly different name) —
+    # which is what made some finance cards render bare.
+    pcards = (cfg.get("content") or {}).get("product_cards") or {}
+    if pcards:
+        for rec in records:
+            pc = pcards.get(rec["name"])
+            if pc:
+                if pc.get("rate_line"): rec["rate_line"] = pc["rate_line"]
+                if pc.get("blurb"):     rec["blurb"] = pc["blurb"]
+                if pc.get("features"):  rec["features"] = pc["features"]
+
     for rec in records:
         prod = next((p for p in products if str(p.get("id")) == rec["groupcode"]), {})
         prod_extra = prod.get("salesdemo") or prod.get("canon") or {}
