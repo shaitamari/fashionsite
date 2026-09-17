@@ -15,11 +15,12 @@ the repo is overwritten:
 
   1. verticals.json — adds the canon block if missing, and drops locale,
      currency and standalone_feed if present.
-  2. sources/canon-*.json — converts prices from CAD to EUR, once. The
-     canon block records that it has been done, so running this twice is
-     safe.
-  3. import_canon.py — the same conversion for a future re-import.
-  4. assets/agent.js — canon points at the shared agent instead of its own.
+  2. assets/agent.js — canon points at the shared agent instead of its own.
+
+Prices are left alone: the source files are already in EUR. Pass
+--convert-prices only if you have re-imported from Canon's CSV, which is
+priced in Canadian dollars; import_canon.py is patched to convert on the way
+in either way.
 
 Then: python3 build.py --all && push. In the panel: a Eureka campaign and
 recommendation campaigns filtered on category starting "Cameras & Printing",
@@ -218,14 +219,17 @@ def main():
         sys.exit("Run this from the repo root (no verticals.json here).")
     print("Canon → shared catalogue")
     already = patch_verticals()
-    converted = patch_sources(already)
-    if converted:
-        cfg = json.load(open("verticals.json"))
-        cfg["canon"]["_prices_eur"] = True
-        json.dump(cfg, open("verticals.json", "w"), indent=2, ensure_ascii=False)
+    if "--convert-prices" in sys.argv:
+        if patch_sources(already):
+            cfg = json.load(open("verticals.json"))
+            cfg["canon"]["_prices_eur"] = True
+            json.dump(cfg, open("verticals.json", "w"), indent=2, ensure_ascii=False)
+    else:
+        step("sources: left as they are (already in EUR) — pass --convert-prices to convert")
     patch_importer()
     patch_agent()
-    print("\nNext: python3 build.py --all   then push.")
+    print("\nNext: python3 build.py canon   then push. That rebuilds canon and the")
+    print("master feed, which is what puts Canon products into the shared catalogue.")
     print("In the panel: Eureka + recommendation campaigns filtered on category")
     print("starting \"Cameras & Printing\", scoped to the canon hostname; the")
     print("en_CA locale and its XML integration can be retired.")
