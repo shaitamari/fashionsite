@@ -19,6 +19,8 @@
     <g:product_type>Beauty &gt; Makeup &gt; Sets</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sets</g:custom_label_0>
+    <discount_pct>38</discount_pct>
+    <g:multipack>35</g:multipack>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
     <g:custom_label_4>35</g:custom_label_4>
@@ -40,6 +42,8 @@
     <g:product_type>Beauty &gt; Skincare &gt; Sets</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sets</g:custom_label_0>
+    <discount_pct>12</discount_pct>
+    <g:multipack>65</g:multipack>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -61,6 +65,8 @@
     <g:product_type>Beauty &gt; Skincare &gt; Sets</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sets</g:custom_label_0>
+    <discount_pct>20</discount_pct>
+    <g:multipack>35</g:multipack>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>35</g:custom_label_4>
@@ -82,6 +88,8 @@
     <g:product_type>Beauty &gt; Makeup &gt; Sets</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sets</g:custom_label_0>
+    <discount_pct>20</discount_pct>
+    <g:multipack>25</g:multipack>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
     <g:custom_label_4>25</g:custom_label_4>
@@ -103,6 +111,8 @@
     <g:product_type>Beauty &gt; Makeup &gt; Sets</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sets</g:custom_label_0>
+    <discount_pct>17</discount_pct>
+    <g:multipack>60</g:multipack>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
     <g:custom_label_4>60</g:custom_label_4>
@@ -124,6 +134,8 @@
     <g:product_type>Beauty &gt; Makeup &gt; Sets</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sets</g:custom_label_0>
+    <discount_pct>16</discount_pct>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -145,6 +157,8 @@
     <g:product_type>Beauty &gt; Makeup &gt; Sets</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sets</g:custom_label_0>
+    <discount_pct>16</discount_pct>
+    <g:multipack>30</g:multipack>
     <g:custom_label_3>3.5</g:custom_label_3>
     <rating>3.5</rating>
     <g:custom_label_4>30</g:custom_label_4>
@@ -166,6 +180,8 @@
     <g:product_type>Beauty &gt; Makeup &gt; Sets</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sets</g:custom_label_0>
+    <discount_pct>10</discount_pct>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -187,6 +203,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Sets</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sets</g:custom_label_0>
+    <g:multipack>35</g:multipack>
     <g:gender>Unisex</g:gender>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -209,6 +226,8 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <discount_pct>15</discount_pct>
+    <g:multipack>60</g:multipack>
     <g:gender>Unisex</g:gender>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -231,6 +250,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:size>50 ml</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -255,6 +275,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:size>8 ml</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -279,6 +300,8 @@
     <g:product_type>Beauty &gt; Makeup &gt; Sets</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sets</g:custom_label_0>
+    <discount_pct>11</discount_pct>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -300,6 +323,8 @@
     <g:product_type>Beauty &gt; Body &gt; Body Care</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Body Care</g:custom_label_0>
+    <discount_pct>11</discount_pct>
+    <g:multipack>60</g:multipack>
     <g:custom_label_3>3.5</g:custom_label_3>
     <rating>3.5</rating>
     <g:custom_label_4>60</g:custom_label_4>
@@ -321,6 +346,8 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <discount_pct>28</discount_pct>
+    <g:multipack>50</g:multipack>
     <g:gender>Unisex</g:gender>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -343,6 +370,7 @@
     <g:product_type>Beauty &gt; Body &gt; Hand</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Hand</g:custom_label_0>
+    <g:multipack>50</g:multipack>
     <option_group>Glossier You</option_group>
     <g:custom_label_1>scent</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
@@ -366,6 +394,7 @@
     <g:product_type>Beauty &gt; Body &gt; Hand</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Hand</g:custom_label_0>
+    <g:multipack>50</g:multipack>
     <option_group>Orange Blossom Neroli</option_group>
     <g:custom_label_1>scent</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
@@ -389,6 +418,7 @@
     <g:product_type>Beauty &gt; Body &gt; Hand</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Hand</g:custom_label_0>
+    <g:multipack>50</g:multipack>
     <option_group>Sandstone</option_group>
     <g:custom_label_1>scent</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
@@ -412,6 +442,7 @@
     <g:product_type>Beauty &gt; Body &gt; Hand</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Hand</g:custom_label_0>
+    <g:multipack>50</g:multipack>
     <option_group>Lilyhaze</option_group>
     <g:custom_label_1>scent</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
@@ -435,6 +466,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
+    <g:multipack>35</g:multipack>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
     <g:custom_label_4>35</g:custom_label_4>
@@ -456,6 +488,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -478,6 +511,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
     <g:color>Grey</g:color>
+    <g:multipack>65</g:multipack>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -499,6 +533,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -520,6 +555,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -541,6 +577,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -562,6 +599,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -583,6 +621,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -604,6 +643,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -625,6 +665,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -647,6 +688,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
     <g:color>Purple</g:color>
+    <g:multipack>65</g:multipack>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -668,6 +710,8 @@
     <g:product_type>Beauty &gt; Makeup &gt; Sets</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sets</g:custom_label_0>
+    <discount_pct>21</discount_pct>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>3.5</g:custom_label_3>
     <rating>3.5</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -690,6 +734,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Makeup</g:custom_label_0>
     <g:color>Multi</g:color>
+    <g:multipack>65</g:multipack>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -712,6 +757,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Makeup</g:custom_label_0>
     <g:color>Multi</g:color>
+    <g:multipack>65</g:multipack>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -733,6 +779,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Makeup</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Makeup</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -755,6 +802,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Makeup</g:custom_label_0>
     <g:color>Multi</g:color>
+    <g:multipack>65</g:multipack>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -776,6 +824,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Makeup</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Makeup</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -797,6 +846,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Moisturiser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
+    <g:multipack>60</g:multipack>
     <option_group>I Love NY</option_group>
     <g:custom_label_1>Flavor</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
@@ -820,6 +870,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Moisturiser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
+    <g:multipack>60</g:multipack>
     <option_group>Black Cherry</option_group>
     <g:custom_label_1>Flavor</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
@@ -843,6 +894,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Moisturiser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
+    <g:multipack>60</g:multipack>
     <option_group>Birthday</option_group>
     <g:custom_label_1>Flavor</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
@@ -866,6 +918,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Moisturiser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
+    <g:multipack>60</g:multipack>
     <option_group>Strawberry</option_group>
     <g:custom_label_1>Flavor</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
@@ -889,6 +942,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Moisturiser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
+    <g:multipack>60</g:multipack>
     <option_group>Original</option_group>
     <g:custom_label_1>Flavor</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
@@ -912,6 +966,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Moisturiser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
+    <g:multipack>60</g:multipack>
     <option_group>Mint</option_group>
     <g:custom_label_1>Flavor</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
@@ -935,6 +990,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Moisturiser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
+    <g:multipack>60</g:multipack>
     <option_group>Mango</option_group>
     <g:custom_label_1>Flavor</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
@@ -958,6 +1014,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Moisturiser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
+    <g:multipack>60</g:multipack>
     <option_group>Rose</option_group>
     <g:custom_label_1>Flavor</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
@@ -981,6 +1038,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Moisturiser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
+    <g:multipack>60</g:multipack>
     <option_group>Coconut</option_group>
     <g:custom_label_1>Flavor</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
@@ -1004,6 +1062,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Moisturiser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
+    <g:multipack>60</g:multipack>
     <option_group>Wild Fig</option_group>
     <g:custom_label_1>Flavor</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
@@ -1027,6 +1086,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Moisturiser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
+    <g:multipack>60</g:multipack>
     <option_group>Lavender</option_group>
     <g:custom_label_1>Flavor</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
@@ -1050,6 +1110,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Moisturiser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
+    <g:multipack>60</g:multipack>
     <option_group>Espresso</option_group>
     <g:custom_label_1>Flavor</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
@@ -1073,6 +1134,8 @@
     <g:product_type>Beauty &gt; Makeup &gt; Sets</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sets</g:custom_label_0>
+    <discount_pct>20</discount_pct>
+    <g:multipack>65</g:multipack>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -1094,6 +1157,8 @@
     <g:product_type>Beauty &gt; Body &gt; Body Care</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Body Care</g:custom_label_0>
+    <discount_pct>20</discount_pct>
+    <g:multipack>60</g:multipack>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
     <g:custom_label_4>60</g:custom_label_4>
@@ -1115,6 +1180,7 @@
     <g:product_type>Beauty &gt; Body &gt; Body Care</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Body Care</g:custom_label_0>
+    <g:multipack>35</g:multipack>
     <option_group>Sandstone</option_group>
     <g:custom_label_1>scent</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
@@ -1138,6 +1204,7 @@
     <g:product_type>Beauty &gt; Body &gt; Body Care</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Body Care</g:custom_label_0>
+    <g:multipack>35</g:multipack>
     <option_group>Orange Blossom Neroli</option_group>
     <g:custom_label_1>scent</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
@@ -1161,6 +1228,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Body Mist</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Body Mist</g:custom_label_0>
+    <g:multipack>35</g:multipack>
     <option_group>Orange Blossom Neroli</option_group>
     <g:custom_label_1>Scent</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -1185,6 +1253,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Body Mist</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Body Mist</g:custom_label_0>
+    <g:multipack>35</g:multipack>
     <option_group>Sandstone</option_group>
     <g:custom_label_1>Scent</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -1209,6 +1278,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Body Mist</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Body Mist</g:custom_label_0>
+    <g:multipack>35</g:multipack>
     <option_group>Lilyhaze</option_group>
     <g:custom_label_1>Scent</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -1233,6 +1303,7 @@
     <g:product_type>Beauty &gt; Body &gt; Cleanser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cleanser</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <option_group>Orange Blossom Neroli</option_group>
     <g:custom_label_1>scent</g:custom_label_1>
     <g:custom_label_3>4.3</g:custom_label_3>
@@ -1256,6 +1327,7 @@
     <g:product_type>Beauty &gt; Body &gt; Cleanser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cleanser</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <option_group>Sandstone</option_group>
     <g:custom_label_1>scent</g:custom_label_1>
     <g:custom_label_3>4.3</g:custom_label_3>
@@ -1279,6 +1351,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>60</g:multipack>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>60</g:custom_label_4>
@@ -1300,6 +1373,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>60</g:multipack>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>60</g:custom_label_4>
@@ -1321,6 +1395,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>60</g:multipack>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>60</g:custom_label_4>
@@ -1342,6 +1417,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>60</g:multipack>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>60</g:custom_label_4>
@@ -1363,6 +1439,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>60</g:multipack>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>60</g:custom_label_4>
@@ -1384,6 +1461,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>60</g:multipack>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>60</g:custom_label_4>
@@ -1405,6 +1483,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>60</g:multipack>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>60</g:custom_label_4>
@@ -1426,6 +1505,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>60</g:multipack>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>60</g:custom_label_4>
@@ -1447,6 +1527,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>60</g:multipack>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>60</g:custom_label_4>
@@ -1468,6 +1549,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>60</g:multipack>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>60</g:custom_label_4>
@@ -1489,6 +1571,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>60</g:multipack>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>60</g:custom_label_4>
@@ -1510,6 +1593,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>60</g:multipack>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>60</g:custom_label_4>
@@ -1532,6 +1616,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
     <g:color>Brown</g:color>
+    <g:multipack>30</g:multipack>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
     <g:custom_label_4>30</g:custom_label_4>
@@ -1554,6 +1639,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
     <g:color>Black</g:color>
+    <g:multipack>30</g:multipack>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
     <g:custom_label_4>30</g:custom_label_4>
@@ -1576,6 +1662,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
     <g:color>Orange</g:color>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -1597,6 +1684,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -1618,6 +1706,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -1640,6 +1729,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
     <g:color>Black</g:color>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -1661,6 +1751,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -1682,6 +1773,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -1703,6 +1795,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -1724,6 +1817,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -1745,6 +1839,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -1766,6 +1861,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -1787,6 +1883,7 @@
     <g:product_type>Beauty &gt; Body &gt; Deodorant</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Deodorant</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -1808,6 +1905,7 @@
     <g:product_type>Beauty &gt; Body &gt; Deodorant</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Deodorant</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -1829,6 +1927,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -1850,6 +1949,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -1871,6 +1971,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -1892,6 +1993,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -1913,6 +2015,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -1934,6 +2037,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -1955,6 +2059,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -1976,6 +2081,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -1997,6 +2103,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2018,6 +2125,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2039,6 +2147,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2060,6 +2169,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2081,6 +2191,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2103,6 +2214,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
     <g:color>Brown</g:color>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2125,6 +2237,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
     <g:color>Brown</g:color>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2147,6 +2260,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
     <g:color>Brown</g:color>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2169,6 +2283,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
     <g:color>Brown</g:color>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2191,6 +2306,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
     <g:color>Brown</g:color>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2212,6 +2328,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2233,6 +2350,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2254,6 +2372,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2275,6 +2394,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2296,6 +2416,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2317,6 +2438,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2338,6 +2460,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2359,6 +2482,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2380,6 +2504,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2401,6 +2526,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2422,6 +2548,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2443,6 +2570,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2464,6 +2592,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2485,6 +2614,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2506,6 +2636,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2527,6 +2658,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2548,6 +2680,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2569,6 +2702,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2590,6 +2724,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2611,6 +2746,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2632,6 +2768,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2653,6 +2790,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2674,6 +2812,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2695,6 +2834,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2716,6 +2856,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2737,6 +2878,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2758,6 +2900,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2780,6 +2923,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
     <g:color>Brown</g:color>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2802,6 +2946,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
     <g:color>Brown</g:color>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2824,6 +2969,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
     <g:color>Brown</g:color>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2846,6 +2992,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
     <g:color>Brown</g:color>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2868,6 +3015,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
     <g:color>Brown</g:color>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2889,6 +3037,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2910,6 +3059,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2931,6 +3081,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2952,6 +3103,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2973,6 +3125,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2994,6 +3147,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -3015,6 +3169,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -3036,6 +3191,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -3057,6 +3213,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -3078,6 +3235,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -3099,6 +3257,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -3120,6 +3279,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -3141,6 +3301,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -3162,6 +3323,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -3183,6 +3345,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>25</g:multipack>
     <g:gender>Unisex</g:gender>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -3205,6 +3368,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Candles</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Candles</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <option_group>Glossier You</option_group>
     <g:custom_label_1>Scent</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -3229,6 +3393,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Candles</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Candles</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <option_group>Orange Blossom Neroli</option_group>
     <g:custom_label_1>Scent</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -3253,6 +3418,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Candles</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Candles</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <option_group>Sandstone</option_group>
     <g:custom_label_1>Scent</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -3277,6 +3443,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Candles</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Candles</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <option_group>Lilyhaze</option_group>
     <g:custom_label_1>Scent</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -3301,6 +3468,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Sunscreen</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sunscreen</g:custom_label_0>
+    <g:multipack>30</g:multipack>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
     <g:custom_label_4>30</g:custom_label_4>
@@ -3322,6 +3490,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -3344,6 +3513,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
     <g:color>Grey</g:color>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -3365,6 +3535,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -3386,6 +3557,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -3407,6 +3579,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -3428,6 +3601,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -3449,6 +3623,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -3470,6 +3645,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -3491,6 +3667,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -3512,6 +3689,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -3533,6 +3711,8 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
+    <discount_pct>33</discount_pct>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -3554,6 +3734,8 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
+    <discount_pct>33</discount_pct>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -3575,6 +3757,8 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
+    <discount_pct>33</discount_pct>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -3596,6 +3780,8 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
+    <discount_pct>33</discount_pct>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -3617,6 +3803,8 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
+    <discount_pct>33</discount_pct>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -3638,6 +3826,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
+    <g:multipack>50</g:multipack>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>50</g:custom_label_4>
@@ -3660,6 +3849,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
     <g:color>White</g:color>
+    <g:multipack>50</g:multipack>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>50</g:custom_label_4>
@@ -3682,6 +3872,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
     <g:color>Brown</g:color>
+    <g:multipack>50</g:multipack>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>50</g:custom_label_4>
@@ -3703,6 +3894,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
+    <g:multipack>50</g:multipack>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>50</g:custom_label_4>
@@ -3724,6 +3916,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
+    <g:multipack>50</g:multipack>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>50</g:custom_label_4>
@@ -3745,6 +3938,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
+    <g:multipack>50</g:multipack>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>50</g:custom_label_4>
@@ -3767,6 +3961,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
     <g:color>Black</g:color>
+    <g:multipack>25</g:multipack>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
     <g:custom_label_4>25</g:custom_label_4>
@@ -3789,6 +3984,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
     <g:color>Brown</g:color>
+    <g:multipack>25</g:multipack>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
     <g:custom_label_4>25</g:custom_label_4>
@@ -3811,6 +4007,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
     <g:color>Brown</g:color>
+    <g:multipack>25</g:multipack>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
     <g:custom_label_4>25</g:custom_label_4>
@@ -3833,6 +4030,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
     <g:color>Brown</g:color>
+    <g:multipack>25</g:multipack>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
     <g:custom_label_4>25</g:custom_label_4>
@@ -3855,6 +4053,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
     <g:color>Brown</g:color>
+    <g:multipack>25</g:multipack>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
     <g:custom_label_4>25</g:custom_label_4>
@@ -3876,6 +4075,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
+    <g:multipack>25</g:multipack>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
     <g:custom_label_4>25</g:custom_label_4>
@@ -3897,6 +4097,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
+    <g:multipack>25</g:multipack>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
     <g:custom_label_4>25</g:custom_label_4>
@@ -3918,6 +4119,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
+    <g:multipack>25</g:multipack>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
     <g:custom_label_4>25</g:custom_label_4>
@@ -3940,6 +4142,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
     <g:color>Grey</g:color>
+    <g:multipack>25</g:multipack>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
     <g:custom_label_4>25</g:custom_label_4>
@@ -3962,6 +4165,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
     <g:color>Brown</g:color>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -3984,6 +4188,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
     <g:color>Brown</g:color>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -4005,6 +4210,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -4026,6 +4232,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -4048,6 +4255,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
     <g:color>Grey</g:color>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -4070,6 +4278,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
     <g:color>Grey</g:color>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -4092,6 +4301,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
     <g:color>Black</g:color>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -4113,6 +4323,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:size>50 ml</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -4137,6 +4348,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:size>8 ml</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -4161,6 +4373,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Cleanser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cleanser</g:custom_label_0>
+    <g:multipack>30</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>30</g:custom_label_4>
@@ -4182,6 +4395,8 @@
     <g:product_type>Beauty &gt; Makeup &gt; Sets</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sets</g:custom_label_0>
+    <discount_pct>19</discount_pct>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -4203,6 +4418,8 @@
     <g:product_type>Beauty &gt; Makeup &gt; Sets</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sets</g:custom_label_0>
+    <discount_pct>11</discount_pct>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -4224,6 +4441,8 @@
     <g:product_type>Beauty &gt; Makeup &gt; Sets</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sets</g:custom_label_0>
+    <discount_pct>15</discount_pct>
+    <g:multipack>25</g:multipack>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
     <g:custom_label_4>25</g:custom_label_4>
@@ -4245,6 +4464,8 @@
     <g:product_type>Beauty &gt; Makeup &gt; Sets</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sets</g:custom_label_0>
+    <discount_pct>10</discount_pct>
+    <g:multipack>25</g:multipack>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
     <g:custom_label_4>25</g:custom_label_4>
@@ -4266,6 +4487,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:custom_label_3>3.5</g:custom_label_3>
     <rating>3.5</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -4287,6 +4509,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -4308,6 +4531,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -4329,6 +4553,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -4350,6 +4575,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -4371,6 +4597,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -4392,6 +4619,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -4413,6 +4641,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -4434,6 +4663,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -4455,6 +4685,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -4477,6 +4708,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
     <g:color>Black</g:color>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -4498,6 +4730,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -4519,6 +4752,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -4540,6 +4774,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -4561,6 +4796,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -4582,6 +4818,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -4603,6 +4840,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -4624,6 +4862,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -4645,6 +4884,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -4666,6 +4906,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:size>50 ml</g:size>
     <g:custom_label_1>size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -4690,6 +4931,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:size>8 ml</g:size>
     <g:custom_label_1>size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -4714,6 +4956,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:size>100 ml</g:size>
     <g:custom_label_1>size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -4738,6 +4981,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:size>50 ml</g:size>
     <g:custom_label_1>size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -4762,6 +5006,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:size>8 ml</g:size>
     <g:custom_label_1>size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -4786,6 +5031,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -4807,6 +5053,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -4828,6 +5075,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -4849,6 +5097,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -4870,6 +5119,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -4891,6 +5141,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -4912,6 +5163,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -4933,6 +5185,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Candles</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Candles</g:custom_label_0>
+    <g:multipack>60</g:multipack>
     <g:gender>Unisex</g:gender>
     <g:custom_label_3>3.5</g:custom_label_3>
     <rating>3.5</rating>
@@ -4956,6 +5209,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
     <g:color>Pink</g:color>
+    <g:multipack>55</g:multipack>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -4978,6 +5232,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
     <g:color>Brown</g:color>
+    <g:multipack>55</g:multipack>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -5000,6 +5255,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
     <g:color>Metallic</g:color>
+    <g:multipack>55</g:multipack>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -5022,6 +5278,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
     <g:color>Grey</g:color>
+    <g:multipack>55</g:multipack>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -5043,6 +5300,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -5065,6 +5323,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
     <g:color>Red</g:color>
+    <g:multipack>55</g:multipack>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -5086,6 +5345,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Makeup</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Makeup</g:custom_label_0>
+    <g:multipack>35</g:multipack>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
     <g:custom_label_4>35</g:custom_label_4>
@@ -5107,6 +5367,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -5128,6 +5389,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Cleanser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cleanser</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:size>177 mL</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
@@ -5151,6 +5413,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Cleanser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cleanser</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:size>60 mL</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
@@ -5174,6 +5437,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Cleanser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cleanser</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:size>300 mL</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
@@ -5197,6 +5461,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Cleanser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cleanser</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:size>15 mL</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
@@ -5220,6 +5485,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>35</g:multipack>
     <g:size>50 mL</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
@@ -5243,6 +5509,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>35</g:multipack>
     <g:size>125 mL</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
@@ -5266,6 +5533,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>35</g:multipack>
     <g:size>15 mL</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
@@ -5289,6 +5557,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>60</g:multipack>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
     <g:custom_label_4>60</g:custom_label_4>
@@ -5310,6 +5579,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -5331,6 +5601,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>50</g:multipack>
     <g:size>100 ml</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -5355,6 +5626,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>50</g:multipack>
     <g:size>50 ml</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -5379,6 +5651,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>50</g:multipack>
     <g:size>8 ml</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -5403,6 +5676,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>60</g:multipack>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
     <g:custom_label_4>60</g:custom_label_4>
@@ -5424,6 +5698,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:gender>Unisex</g:gender>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -5446,6 +5721,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>60</g:multipack>
     <g:gender>Unisex</g:gender>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -5469,6 +5745,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
     <g:color>White</g:color>
+    <g:multipack>65</g:multipack>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -5490,6 +5767,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -5511,6 +5789,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -5532,6 +5811,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -5553,6 +5833,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -5574,6 +5855,7 @@
     <g:product_type>Beauty &gt; Body &gt; Body Care</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Body Care</g:custom_label_0>
+    <g:multipack>35</g:multipack>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
     <g:custom_label_4>35</g:custom_label_4>
@@ -5595,6 +5877,7 @@
     <g:product_type>Beauty &gt; Body &gt; Cleanser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cleanser</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -5616,6 +5899,7 @@
     <g:product_type>Beauty &gt; Body &gt; Deodorant</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Deodorant</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <option_group>Orange Blossom Neroli</option_group>
     <g:custom_label_1>Scent</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
@@ -5639,6 +5923,7 @@
     <g:product_type>Beauty &gt; Body &gt; Deodorant</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Deodorant</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <option_group>Glossier You</option_group>
     <g:custom_label_1>Scent</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
@@ -5662,6 +5947,7 @@
     <g:product_type>Beauty &gt; Body &gt; Deodorant</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Deodorant</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <option_group>Sandstone</option_group>
     <g:custom_label_1>Scent</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
@@ -5685,6 +5971,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Serum</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Serum</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -5706,6 +5993,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Serum</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Serum</g:custom_label_0>
+    <g:multipack>35</g:multipack>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
     <g:custom_label_4>35</g:custom_label_4>
@@ -5727,6 +6015,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Moisturiser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
+    <g:multipack>25</g:multipack>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
     <g:custom_label_4>25</g:custom_label_4>
@@ -5748,6 +6037,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Moisturiser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -5769,6 +6059,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Serum</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Serum</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:custom_label_3>3.5</g:custom_label_3>
     <rating>3.5</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -5790,6 +6081,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>30</g:multipack>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
     <g:custom_label_4>30</g:custom_label_4>
@@ -5811,6 +6103,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>60</g:multipack>
     <g:gender>Women</g:gender>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -5833,6 +6126,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Sets</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sets</g:custom_label_0>
+    <g:multipack>50</g:multipack>
     <g:size>4 pc</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>3.9</g:custom_label_3>
@@ -5856,6 +6150,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>50</g:multipack>
     <g:size>100 ct</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -5880,6 +6175,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Body Mist</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Body Mist</g:custom_label_0>
+    <g:multipack>35</g:multipack>
     <g:size>16 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -5904,6 +6200,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>50</g:multipack>
     <g:size>6.7 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
@@ -5919,7 +6216,7 @@
     <description>Lealuo Count Stars Weightless Mask 9.13 oz This hair mask is deeply moisturizing thanks to Coconut and Avocado oil. It is weightless with a creamy and light texture. Easily absorbed into the hair. Packed with additional vegetable proteins to further repair damaged hair. Tiger Grass and Cannabis Seed Oil helps to moisturize the scalp, while our upcycled ingredients from Peach, Pomelo, and Olives ad</description>
     <link>https://beauty.insiderdemo.com/product.html?id=46163623149842</link>
     <g:image_link>https://cdn.shopify.com/s/files/1/0804/7552/1298/products/Lealue-Count-Stars-Weightless-Mask-9-13-oz.jpg?v=1691707162</g:image_link>
-    <g:price>26988.00</g:price>
+    <g:price>22.49</g:price>
     <g:sale_price>22.49</g:sale_price>
     <g:availability>in stock</g:availability>
     <g:quantity>11</g:quantity>
@@ -5927,6 +6224,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Mask</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Mask</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:size>9.13 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.3</g:custom_label_3>
@@ -5950,6 +6248,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>35</g:multipack>
     <g:size>1.6 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -5974,10 +6273,11 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
-    <g:custom_label_4>15</g:custom_label_4>
-    <margin>15</margin>
+    <g:custom_label_4>20</g:custom_label_4>
+    <margin>20</margin>
     <activation_date>2026-09-27</activation_date>
   </item>
   <item>
@@ -5995,13 +6295,14 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:size>1.7 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Women</g:gender>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
-    <g:custom_label_4>95</g:custom_label_4>
-    <margin>95</margin>
+    <g:custom_label_4>65</g:custom_label_4>
+    <margin>65</margin>
     <activation_date>2026-06-05</activation_date>
   </item>
   <item>
@@ -6019,6 +6320,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>30</g:multipack>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>30</g:custom_label_4>
@@ -6040,6 +6342,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:size>1.35 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Men</g:gender>
@@ -6064,6 +6367,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>30</g:multipack>
     <g:size>8.5 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -6088,6 +6392,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>50</g:multipack>
     <g:size>3.4 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -6112,6 +6417,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Moisturiser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
+    <g:multipack>50</g:multipack>
     <g:size>3.4 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
@@ -6135,13 +6441,14 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:size>8.5 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
-    <g:custom_label_4>75</g:custom_label_4>
-    <margin>75</margin>
+    <g:custom_label_4>65</g:custom_label_4>
+    <margin>65</margin>
     <activation_date>2026-07-18</activation_date>
   </item>
   <item>
@@ -6159,6 +6466,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:size>4.2 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -6183,6 +6491,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Moisturiser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:size>5 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>3.9</g:custom_label_3>
@@ -6206,6 +6515,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Serum</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Serum</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:size>9.13 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
@@ -6229,6 +6539,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>25</g:multipack>
     <g:size>5 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
@@ -6252,6 +6563,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>60</g:multipack>
     <g:size>2.5 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Women</g:gender>
@@ -6276,6 +6588,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -6297,6 +6610,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -6318,12 +6632,13 @@
     <g:product_type>Beauty &gt; Skincare &gt; Moisturiser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:size>17 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
-    <g:custom_label_4>100</g:custom_label_4>
-    <margin>100</margin>
+    <g:custom_label_4>65</g:custom_label_4>
+    <margin>65</margin>
     <activation_date>2026-02-13</activation_date>
   </item>
   <item>
@@ -6341,10 +6656,11 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
-    <g:custom_label_4>70</g:custom_label_4>
-    <margin>70</margin>
+    <g:custom_label_4>65</g:custom_label_4>
+    <margin>65</margin>
     <activation_date>2025-04-12</activation_date>
   </item>
   <item>
@@ -6362,6 +6678,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Cleanser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cleanser</g:custom_label_0>
+    <g:multipack>35</g:multipack>
     <g:size>10 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>3.5</g:custom_label_3>
@@ -6385,6 +6702,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>3.2</g:custom_label_3>
     <rating>3.2</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -6406,6 +6724,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Sets</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sets</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:size>2 pc</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -6430,6 +6749,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>35</g:multipack>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
     <g:custom_label_4>35</g:custom_label_4>
@@ -6451,6 +6771,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>30</g:multipack>
     <g:size>18 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
@@ -6474,6 +6795,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:size>3.4 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -6498,6 +6820,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>35</g:multipack>
     <g:size>25 pc</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -6522,6 +6845,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>2.8</g:custom_label_3>
     <rating>2.8</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -6543,6 +6867,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Moisturiser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
+    <g:multipack>35</g:multipack>
     <g:size>1.7 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
@@ -6566,6 +6891,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>35</g:multipack>
     <g:size>6.5 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>2.7</g:custom_label_3>
@@ -6589,11 +6915,12 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:gender>Unisex</g:gender>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
-    <g:custom_label_4>75</g:custom_label_4>
-    <margin>75</margin>
+    <g:custom_label_4>65</g:custom_label_4>
+    <margin>65</margin>
     <activation_date>2026-11-13</activation_date>
   </item>
   <item>
@@ -6611,6 +6938,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Sets</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sets</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -6632,6 +6960,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:size>5.1 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.3</g:custom_label_3>
@@ -6655,6 +6984,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:gender>Unisex</g:gender>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -6677,6 +7007,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>35</g:multipack>
     <g:gender>Unisex</g:gender>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -6699,6 +7030,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Cleanser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cleanser</g:custom_label_0>
+    <g:multipack>25</g:multipack>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
     <g:custom_label_4>25</g:custom_label_4>
@@ -6712,7 +7044,7 @@
     <description>Hugo Boss Just Different Men`s Eau De Toilette Spray Hugo just different cologne by hugo boss, Inspired by energetic and spontaneous men, hugo just different is a powerful scent full of masculinity combined with mysterious and creative energy. A new fragrance by hugo boss for 2011, hugo just different features ice cold mint leaves for the top composition that leads to the heart of aromatic freesia</description>
     <link>https://beauty.insiderdemo.com/product.html?id=46163874742546</link>
     <g:image_link>https://cdn.shopify.com/s/files/1/0804/7552/1298/products/Hugo-Boss-Just-Different-Men-s-Eau-De-Toilette-Spray-1-3-oz.jpg?v=1691707760</g:image_link>
-    <g:price>44148.00</g:price>
+    <g:price>36.79</g:price>
     <g:sale_price>36.79</g:sale_price>
     <g:availability>in stock</g:availability>
     <g:quantity>55</g:quantity>
@@ -6720,6 +7052,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:gender>Men</g:gender>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -6742,12 +7075,13 @@
     <g:product_type>Beauty &gt; Skincare &gt; Serum</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Serum</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:size>1 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
-    <g:custom_label_4>15</g:custom_label_4>
-    <margin>15</margin>
+    <g:custom_label_4>20</g:custom_label_4>
+    <margin>20</margin>
     <activation_date>2026-08-23</activation_date>
   </item>
   <item>
@@ -6765,6 +7099,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:gender>Unisex</g:gender>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -6787,6 +7122,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>35</g:multipack>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>35</g:custom_label_4>
@@ -6808,6 +7144,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>60</g:multipack>
     <g:size>6 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -6832,6 +7169,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>50</g:multipack>
     <g:size>2.6 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>3.9</g:custom_label_3>
@@ -6855,6 +7193,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Cleanser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cleanser</g:custom_label_0>
+    <g:multipack>35</g:multipack>
     <g:size>6 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
@@ -6878,6 +7217,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>30</g:multipack>
     <g:gender>Women</g:gender>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
@@ -6900,6 +7240,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Sets</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sets</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:custom_label_3>3.3</g:custom_label_3>
     <rating>3.3</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -6913,7 +7254,7 @@
     <description>Juicy Couture Women's Mini Set 3pc Mini Set/Juicy Couture 3 Pc. Set (W).Juicy Couture women’s perfume combines fruity and floral notes with sweet, warm finishing notes.</description>
     <link>https://beauty.insiderdemo.com/product.html?id=46163691208978</link>
     <g:image_link>https://cdn.shopify.com/s/files/1/0804/7552/1298/products/mini-setjuicy-couture-3-pc-set-w-w3jui3.jpg?v=1691707325</g:image_link>
-    <g:price>35988.00</g:price>
+    <g:price>29.99</g:price>
     <g:sale_price>29.99</g:sale_price>
     <g:availability>in stock</g:availability>
     <g:quantity>29</g:quantity>
@@ -6921,6 +7262,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Sets</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sets</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:size>3 pc</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Women</g:gender>
@@ -6945,10 +7287,11 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>2.9</g:custom_label_3>
     <rating>2.9</rating>
-    <g:custom_label_4>15</g:custom_label_4>
-    <margin>15</margin>
+    <g:custom_label_4>20</g:custom_label_4>
+    <margin>20</margin>
     <activation_date>2026-09-08</activation_date>
   </item>
   <item>
@@ -6966,6 +7309,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Sets</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sets</g:custom_label_0>
+    <g:multipack>50</g:multipack>
     <g:size>3 pc</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Men</g:gender>
@@ -6990,6 +7334,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Cleanser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cleanser</g:custom_label_0>
+    <g:multipack>30</g:multipack>
     <g:size>20 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>3.0</g:custom_label_3>
@@ -7013,6 +7358,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>50</g:multipack>
     <g:size>8 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -7037,6 +7383,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Serum</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Serum</g:custom_label_0>
+    <g:multipack>50</g:multipack>
     <g:size>33.8 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>2.2</g:custom_label_3>
@@ -7060,6 +7407,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Mask</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Mask</g:custom_label_0>
+    <g:multipack>50</g:multipack>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
     <g:custom_label_4>50</g:custom_label_4>
@@ -7081,13 +7429,14 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:size>4.2 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Men</g:gender>
     <g:custom_label_3>3.5</g:custom_label_3>
     <rating>3.5</rating>
-    <g:custom_label_4>15</g:custom_label_4>
-    <margin>15</margin>
+    <g:custom_label_4>20</g:custom_label_4>
+    <margin>20</margin>
     <activation_date>2025-05-22</activation_date>
   </item>
   <item>
@@ -7105,6 +7454,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>30</g:multipack>
     <g:size>2.5 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Men</g:gender>
@@ -7129,6 +7479,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -7150,10 +7501,11 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
-    <g:custom_label_4>10</g:custom_label_4>
-    <margin>10</margin>
+    <g:custom_label_4>20</g:custom_label_4>
+    <margin>20</margin>
     <activation_date>2026-04-29</activation_date>
   </item>
   <item>
@@ -7171,6 +7523,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:size>2 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>2.8</g:custom_label_3>
@@ -7194,6 +7547,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Cleanser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cleanser</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:size>16 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>3.9</g:custom_label_3>
@@ -7217,6 +7571,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:size>3.4 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Men</g:gender>
@@ -7241,6 +7596,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:gender>Women</g:gender>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
@@ -7263,6 +7619,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>25</g:multipack>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
     <g:custom_label_4>25</g:custom_label_4>
@@ -7284,6 +7641,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -7305,6 +7663,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:gender>Unisex</g:gender>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -7319,7 +7678,7 @@
     <description>Prolific Nail Art Marble and Dotting Tools 5pc Set This easy to use 5 piece Marble and Dotting toolset will create hundreds of nail art designs.</description>
     <link>https://beauty.insiderdemo.com/product.html?id=46163888767250</link>
     <g:image_link>https://cdn.shopify.com/s/files/1/0804/7552/1298/products/Prolific-Nail-Art-Marble-and-Dotting-Tools-5pc-Set.jpg?v=1691707788</g:image_link>
-    <g:price>15588.00</g:price>
+    <g:price>12.99</g:price>
     <g:sale_price>12.99</g:sale_price>
     <g:availability>in stock</g:availability>
     <g:quantity>79</g:quantity>
@@ -7327,6 +7686,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Sets</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sets</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:size>5 pc</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -7351,12 +7711,13 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:size>10 pk</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>2.8</g:custom_label_3>
     <rating>2.8</rating>
-    <g:custom_label_4>15</g:custom_label_4>
-    <margin>15</margin>
+    <g:custom_label_4>20</g:custom_label_4>
+    <margin>20</margin>
     <activation_date>2026-03-26</activation_date>
   </item>
   <item>
@@ -7366,7 +7727,7 @@
     <description>Cetaphil Gentle Makeup Remover Wipes 25 ct These convenient and ultra-gentle wipes effectively lift off makeup from all over your face for a soothing cleansing experience. Suitable for all skin types, even sensitive skin. Features: Effectively lifts off makeup, dirt and oil Non-alkaline Leaves skin smooth and fresh during after use Dermatologist Tested, Ophthalmologist Tested</description>
     <link>https://beauty.insiderdemo.com/product.html?id=46163591463186</link>
     <g:image_link>https://cdn.shopify.com/s/files/1/0804/7552/1298/products/Cetaphil-Gentle-Makeup-Remover-Wipes-25-ct.jpg?v=1691706967</g:image_link>
-    <g:price>14148.00</g:price>
+    <g:price>11.79</g:price>
     <g:sale_price>11.79</g:sale_price>
     <g:availability>in stock</g:availability>
     <g:quantity>64</g:quantity>
@@ -7374,6 +7735,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>25</g:multipack>
     <g:size>25 ct</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>3.9</g:custom_label_3>
@@ -7397,6 +7759,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Serum</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Serum</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:size>1 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
@@ -7420,6 +7783,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Sets</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sets</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>3.5</g:custom_label_3>
     <rating>3.5</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -7433,7 +7797,7 @@
     <description>Authentic Beauty Concept Glow Holiday Duo What It Is: Glow Cleanser: It preserves the color moisturizes and seals the cuticle. Glow Conditioner: It preserves color and moisturizes colored hair. How To Use: Glow Cleanser: Lather into wet hair. Rinse thoroughly. Glow Conditioner: Smooth the required amount through lengths and ends of clean damp hair. Leave in for up to 2 minutes.</description>
     <link>https://beauty.insiderdemo.com/product.html?id=46163697991954</link>
     <g:image_link>https://cdn.shopify.com/s/files/1/0804/7552/1298/products/Authentic-Beauty-Concept-Glow-Holiday-Duo-1.jpg?v=1691707350</g:image_link>
-    <g:price>40308.00</g:price>
+    <g:price>33.59</g:price>
     <g:sale_price>33.59</g:sale_price>
     <g:availability>in stock</g:availability>
     <g:quantity>64</g:quantity>
@@ -7441,6 +7805,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Sets</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sets</g:custom_label_0>
+    <g:multipack>30</g:multipack>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
     <g:custom_label_4>30</g:custom_label_4>
@@ -7462,12 +7827,13 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:size>5.1 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
-    <g:custom_label_4>70</g:custom_label_4>
-    <margin>70</margin>
+    <g:custom_label_4>65</g:custom_label_4>
+    <margin>65</margin>
     <activation_date>2026-08-30</activation_date>
   </item>
   <item>
@@ -7485,6 +7851,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:size>3.4 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -7509,6 +7876,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>50</g:multipack>
     <g:gender>Men</g:gender>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -7531,6 +7899,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Mask</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Mask</g:custom_label_0>
+    <g:multipack>30</g:multipack>
     <g:size>10 ct</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>2.2</g:custom_label_3>
@@ -7554,6 +7923,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>35</g:multipack>
     <g:size>6.4 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -7578,6 +7948,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>60</g:multipack>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
     <g:custom_label_4>60</g:custom_label_4>
@@ -7599,6 +7970,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:size>2 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>2.9</g:custom_label_3>
@@ -7622,6 +7994,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Sets</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sets</g:custom_label_0>
+    <g:multipack>30</g:multipack>
     <g:size>4 pc</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -7646,6 +8019,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Serum</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Serum</g:custom_label_0>
+    <g:multipack>50</g:multipack>
     <g:size>1 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
@@ -7669,6 +8043,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>50</g:multipack>
     <g:size>5 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
@@ -7692,6 +8067,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>25</g:multipack>
     <g:size>6.8 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
@@ -7715,12 +8091,13 @@
     <g:product_type>Beauty &gt; Skincare &gt; Moisturiser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:size>16 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
-    <g:custom_label_4>100</g:custom_label_4>
-    <margin>100</margin>
+    <g:custom_label_4>65</g:custom_label_4>
+    <margin>65</margin>
     <activation_date>2026-08-20</activation_date>
   </item>
   <item>
@@ -7738,13 +8115,14 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Body Mist</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Body Mist</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:size>5 ct</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
     <g:custom_label_3>2.5</g:custom_label_3>
     <rating>2.5</rating>
-    <g:custom_label_4>100</g:custom_label_4>
-    <margin>100</margin>
+    <g:custom_label_4>65</g:custom_label_4>
+    <margin>65</margin>
     <activation_date>2025-09-19</activation_date>
   </item>
   <item>
@@ -7762,6 +8140,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:size>4 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -7786,6 +8165,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>30</g:multipack>
     <g:gender>Unisex</g:gender>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -7808,6 +8188,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>50</g:multipack>
     <g:size>3.4 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Women</g:gender>
@@ -7832,6 +8213,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>25</g:multipack>
     <g:size>7 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -7856,6 +8238,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>30</g:multipack>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
     <g:custom_label_4>30</g:custom_label_4>
@@ -7877,6 +8260,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Moisturiser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
+    <g:multipack>50</g:multipack>
     <g:size>2.7 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.5</g:custom_label_3>
@@ -7900,6 +8284,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:size>6 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
@@ -7923,6 +8308,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Sets</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sets</g:custom_label_0>
+    <g:multipack>50</g:multipack>
     <g:size>2 pc</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -7939,7 +8325,7 @@
     <description>SK-II XOXO Lunar New Year Pitera Facial Treatment Essence 7.7 oz Inspired by happy reunions of love, hugs and kisses, the new XOXO limited edition design ushers in the New Year. SK-IIs signature product, the much-loved and most awarded bestseller, Facial Treatment Essence has over 90% Pitera, the miracle ingredient discovered over 30 years ago that remains essentially unchanged till today. Its irr</description>
     <link>https://beauty.insiderdemo.com/product.html?id=46163594412306</link>
     <g:image_link>https://cdn.shopify.com/s/files/1/0804/7552/1298/products/SK-II-XOXO-Lunar-New-Year-PITERA-Facial-Treatment-Essence-7-7-oz.jpg?v=1691706993</g:image_link>
-    <g:price>253788.00</g:price>
+    <g:price>211.49</g:price>
     <g:sale_price>211.49</g:sale_price>
     <g:availability>in stock</g:availability>
     <g:quantity>73</g:quantity>
@@ -7947,6 +8333,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>30</g:multipack>
     <g:size>7.7 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
@@ -7970,6 +8357,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:size>8.5 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -7994,6 +8382,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Sets</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sets</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -8015,6 +8404,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>25</g:multipack>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
     <g:custom_label_4>25</g:custom_label_4>
@@ -8036,6 +8426,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Moisturiser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:size>3.5 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
@@ -8059,6 +8450,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Serum</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Serum</g:custom_label_0>
+    <g:multipack>35</g:multipack>
     <g:size>22 ml</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
@@ -8082,6 +8474,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>35</g:multipack>
     <g:gender>Unisex</g:gender>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
@@ -8104,6 +8497,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>60</g:multipack>
     <g:size>3.4 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -8128,6 +8522,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Body Mist</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Body Mist</g:custom_label_0>
+    <g:multipack>50</g:multipack>
     <g:size>1.75 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -8152,6 +8547,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:gender>Unisex</g:gender>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -8174,6 +8570,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Moisturiser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -8195,6 +8592,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>35</g:multipack>
     <g:gender>Unisex</g:gender>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -8209,7 +8607,7 @@
     <description>Sarah Jessica Parker Lovely Lights Women's Eau De Parfum Spray 3.4 oz Inspired by memories of her mother's perfumes, Sarah Jessica Parker developed a love for fragrance at an early age. lovely, Sarah Jessica Parker's first creation, pays homage to her mother and the art of perfumery. Classic charm comes together with modern glamour in this silky white amber fragrance.</description>
     <link>https://beauty.insiderdemo.com/product.html?id=46163577995538</link>
     <g:image_link>https://cdn.shopify.com/s/files/1/0804/7552/1298/products/SARAH-JESSICA-PARKER-Lovely-Lights-Women-s-Eau-De-Parfum-Spray-3-4-oz.jpg?v=1691706836</g:image_link>
-    <g:price>35988.00</g:price>
+    <g:price>29.99</g:price>
     <g:sale_price>29.99</g:sale_price>
     <g:availability>in stock</g:availability>
     <g:quantity>34</g:quantity>
@@ -8217,12 +8615,13 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:size>3.4 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
-    <g:custom_label_4>70</g:custom_label_4>
-    <margin>70</margin>
+    <g:custom_label_4>65</g:custom_label_4>
+    <margin>65</margin>
     <activation_date>2026-01-15</activation_date>
   </item>
   <item>
@@ -8240,6 +8639,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:gender>Unisex</g:gender>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -8262,6 +8662,8 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <discount_pct>17</discount_pct>
+    <g:multipack>45</g:multipack>
     <g:size>5 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
@@ -8277,7 +8679,7 @@
     <description>Credo Safety Corn Cutter Easy to use planer with safety blades. The safety blade is permanently secured in a clear blade clip. No need to handle the blade. Simply replace the blade clip.</description>
     <link>https://beauty.insiderdemo.com/product.html?id=46163744522514</link>
     <g:image_link>https://cdn.shopify.com/s/files/1/0804/7552/1298/products/credo-safety-corn-cutter-1.jpg?v=1691707453</g:image_link>
-    <g:price>13188.00</g:price>
+    <g:price>10.99</g:price>
     <g:sale_price>10.99</g:sale_price>
     <g:availability>in stock</g:availability>
     <g:quantity>55</g:quantity>
@@ -8285,6 +8687,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:gender>Unisex</g:gender>
     <g:custom_label_3>3.1</g:custom_label_3>
     <rating>3.1</rating>
@@ -8307,12 +8710,13 @@
     <g:product_type>Beauty &gt; Skincare &gt; Sunscreen</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sunscreen</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:size>9 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
-    <g:custom_label_4>80</g:custom_label_4>
-    <margin>80</margin>
+    <g:custom_label_4>65</g:custom_label_4>
+    <margin>65</margin>
     <activation_date>2025-10-19</activation_date>
   </item>
   <item>
@@ -8330,6 +8734,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>35</g:multipack>
     <g:custom_label_3>3.5</g:custom_label_3>
     <rating>3.5</rating>
     <g:custom_label_4>35</g:custom_label_4>
@@ -8351,12 +8756,13 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:size>6 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
-    <g:custom_label_4>70</g:custom_label_4>
-    <margin>70</margin>
+    <g:custom_label_4>65</g:custom_label_4>
+    <margin>65</margin>
     <activation_date>2026-10-09</activation_date>
   </item>
   <item>
@@ -8374,6 +8780,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Serum</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Serum</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:size>1 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
@@ -8397,6 +8804,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:size>3.5 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Women</g:gender>
@@ -8421,6 +8829,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -8442,6 +8851,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Sets</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sets</g:custom_label_0>
+    <g:multipack>50</g:multipack>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>50</g:custom_label_4>
@@ -8463,6 +8873,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>50</g:multipack>
     <g:size>10 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
@@ -8486,6 +8897,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Sets</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sets</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -8507,6 +8919,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>25</g:multipack>
     <g:size>1.7 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -8531,6 +8944,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Sunscreen</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sunscreen</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:size>6 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
@@ -8554,6 +8968,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:gender>Unisex</g:gender>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
@@ -8568,7 +8983,7 @@
     <description>Difeel Premium Natural Hair Oil Scalp Care 7.67 oz Tea tree oil is known to offer antibacterial, antiviral, antifungal, and anti-inflammatory benefits, helping with conditions like acne, athlete's foot, contact dermatitis, cradle cap, and more. Tea tree oil deeply moisturizes the hair and scalp, greatly reducing dryness, flakiness and itchiness. An age-old remedy long used in traditional medicine,</description>
     <link>https://beauty.insiderdemo.com/product.html?id=46163766935826</link>
     <g:image_link>https://cdn.shopify.com/s/files/1/0804/7552/1298/products/Difeel-Premium-Natural-Hair-Oil-Scalp-Care-7-67-oz.jpg?v=1691707506</g:image_link>
-    <g:price>9588.00</g:price>
+    <g:price>7.99</g:price>
     <g:sale_price>7.99</g:sale_price>
     <g:availability>in stock</g:availability>
     <g:quantity>82</g:quantity>
@@ -8576,12 +8991,13 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:size>7.67 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>3.0</g:custom_label_3>
     <rating>3.0</rating>
-    <g:custom_label_4>70</g:custom_label_4>
-    <margin>70</margin>
+    <g:custom_label_4>65</g:custom_label_4>
+    <margin>65</margin>
     <activation_date>2026-08-23</activation_date>
   </item>
   <item>
@@ -8599,13 +9015,14 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Body Mist</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Body Mist</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:size>10 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
-    <g:custom_label_4>80</g:custom_label_4>
-    <margin>80</margin>
+    <g:custom_label_4>65</g:custom_label_4>
+    <margin>65</margin>
     <activation_date>2026-06-15</activation_date>
   </item>
   <item>
@@ -8623,6 +9040,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:size>50 ct</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
@@ -8646,6 +9064,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:size>1 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
@@ -8669,6 +9088,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Body Mist</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Body Mist</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:size>1.75 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -8685,7 +9105,7 @@
     <description>GiGi Brazilian (Sensitive) Microwave Wax Kit + Essentials The GiGi Sensitive Formula Microwave Wax + Essentials offers all the tools needed for fast, efficient hair removal in the comfort of your own home. Benefits: Includes Brazilian Bikini Wax formula Gentle formula removes coarse hair from delicate areas Ideal for bikini and facial waxing Ready to use in minutes Results last for weeks No strips</description>
     <link>https://beauty.insiderdemo.com/product.html?id=46163554337042</link>
     <g:image_link>https://cdn.shopify.com/s/files/1/0804/7552/1298/products/GiGi-Brazilian-Sensitive-Microwave-Wax-Kit-Essentials.jpg?v=1691706701</g:image_link>
-    <g:price>14988.00</g:price>
+    <g:price>12.49</g:price>
     <g:sale_price>12.49</g:sale_price>
     <g:availability>in stock</g:availability>
     <g:quantity>8</g:quantity>
@@ -8693,10 +9113,11 @@
     <g:product_type>Beauty &gt; Skincare &gt; Sets</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sets</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
-    <g:custom_label_4>95</g:custom_label_4>
-    <margin>95</margin>
+    <g:custom_label_4>65</g:custom_label_4>
+    <margin>65</margin>
     <activation_date>2026-10-05</activation_date>
   </item>
   <item>
@@ -8714,6 +9135,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Serum</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Serum</g:custom_label_0>
+    <g:multipack>25</g:multipack>
     <g:size>1 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
@@ -8737,12 +9159,13 @@
     <g:product_type>Beauty &gt; Skincare &gt; Sunscreen</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sunscreen</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:size>3.4 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
-    <g:custom_label_4>10</g:custom_label_4>
-    <margin>10</margin>
+    <g:custom_label_4>20</g:custom_label_4>
+    <margin>20</margin>
     <activation_date>2026-03-28</activation_date>
   </item>
   <item>
@@ -8760,12 +9183,13 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:size>1.5 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
-    <g:custom_label_4>80</g:custom_label_4>
-    <margin>80</margin>
+    <g:custom_label_4>65</g:custom_label_4>
+    <margin>65</margin>
     <activation_date>2026-08-18</activation_date>
   </item>
   <item>
@@ -8783,6 +9207,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:size>1.5 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
@@ -8806,6 +9231,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>30</g:multipack>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>30</g:custom_label_4>
@@ -8827,6 +9253,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>35</g:multipack>
     <g:size>1.7 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -8851,13 +9278,14 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:size>7 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
-    <g:custom_label_4>5</g:custom_label_4>
-    <margin>5</margin>
+    <g:custom_label_4>20</g:custom_label_4>
+    <margin>20</margin>
     <activation_date>2026-07-04</activation_date>
   </item>
   <item>
@@ -8875,12 +9303,13 @@
     <g:product_type>Beauty &gt; Skincare &gt; Serum</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Serum</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:size>1 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
-    <g:custom_label_4>90</g:custom_label_4>
-    <margin>90</margin>
+    <g:custom_label_4>65</g:custom_label_4>
+    <margin>65</margin>
     <activation_date>2026-10-04</activation_date>
   </item>
   <item>
@@ -8890,7 +9319,7 @@
     <description>Goldwell Kerasilk Keratin Treatment Smoothing Lotion 25 oz This is a professional smoothing treatment</description>
     <link>https://beauty.insiderdemo.com/product.html?id=46163564855570</link>
     <g:image_link>https://cdn.shopify.com/s/files/1/0804/7552/1298/products/Goldwell-Kerasilk-Keratin-Treatment-Smoothing-Lotion-25-oz.jpg?v=1691706785</g:image_link>
-    <g:price>381468.00</g:price>
+    <g:price>317.89</g:price>
     <g:sale_price>317.89</g:sale_price>
     <g:availability>in stock</g:availability>
     <g:quantity>5</g:quantity>
@@ -8898,6 +9327,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>30</g:multipack>
     <g:size>25 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>3.4</g:custom_label_3>
@@ -8921,6 +9351,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Mask</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Mask</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:size>1.75 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
@@ -8944,6 +9375,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>35</g:multipack>
     <g:size>3.35 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
@@ -8967,6 +9399,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:gender>Unisex</g:gender>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
@@ -8981,7 +9414,7 @@
     <description>Tressa Xtremers Tattoo Enhancer Spray 4 oz XTREMERS TATTOO ENHANCER makes tattoos look their best, while taking care of your skin! Baobab, panthenol, and lemon proteins moisturize, nourish, and protects from UV. Proteins have elastic and binding properties to enhance depth, clarity, and contrast for all your body art! • Refresh, maintain, and enhance existing tattoos• Adds shine.• Helps prevents f</description>
     <link>https://beauty.insiderdemo.com/product.html?id=46163546439954</link>
     <g:image_link>https://cdn.shopify.com/s/files/1/0804/7552/1298/products/TattooEnhancer.png?v=1691706617</g:image_link>
-    <g:price>15348.00</g:price>
+    <g:price>12.79</g:price>
     <g:sale_price>12.79</g:sale_price>
     <g:availability>in stock</g:availability>
     <g:quantity>15</g:quantity>
@@ -8989,6 +9422,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:size>4 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
@@ -9012,6 +9446,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>25</g:multipack>
     <g:gender>Unisex</g:gender>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
@@ -9034,6 +9469,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:size>4 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
@@ -9057,6 +9493,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>50</g:multipack>
     <g:size>7.67 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.9</g:custom_label_3>
@@ -9080,6 +9517,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:size>8 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
@@ -9103,6 +9541,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Sets</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sets</g:custom_label_0>
+    <g:multipack>30</g:multipack>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
     <g:custom_label_4>30</g:custom_label_4>
@@ -9124,12 +9563,13 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:size>7.67 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
-    <g:custom_label_4>95</g:custom_label_4>
-    <margin>95</margin>
+    <g:custom_label_4>65</g:custom_label_4>
+    <margin>65</margin>
     <activation_date>2025-05-31</activation_date>
   </item>
   <item>
@@ -9147,6 +9587,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Sunscreen</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sunscreen</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:size>3.4 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.3</g:custom_label_3>
@@ -9170,6 +9611,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:size>6 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>3.0</g:custom_label_3>
@@ -9193,6 +9635,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:size>4 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
@@ -9216,6 +9659,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Cleanser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cleanser</g:custom_label_0>
+    <g:multipack>25</g:multipack>
     <g:size>6 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.6</g:custom_label_3>
@@ -9239,6 +9683,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Perfume</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Perfume</g:custom_label_0>
+    <g:multipack>30</g:multipack>
     <g:gender>Unisex</g:gender>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
@@ -9261,6 +9706,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Body Mist</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Body Mist</g:custom_label_0>
+    <g:multipack>25</g:multipack>
     <g:size>1.75 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:gender>Unisex</g:gender>
@@ -9285,6 +9731,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Sets</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sets</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.5</g:custom_label_3>
     <rating>3.5</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -9306,6 +9753,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Sets</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sets</g:custom_label_0>
+    <g:multipack>25</g:multipack>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>25</g:custom_label_4>
@@ -9327,10 +9775,11 @@
     <g:product_type>Beauty &gt; Skincare &gt; Sunscreen</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Sunscreen</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
-    <g:custom_label_4>100</g:custom_label_4>
-    <margin>100</margin>
+    <g:custom_label_4>65</g:custom_label_4>
+    <margin>65</margin>
     <activation_date>2026-01-07</activation_date>
   </item>
   <item>
@@ -9348,6 +9797,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:size>2 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
@@ -9371,6 +9821,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>50</g:multipack>
     <g:size>3.4 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
@@ -9386,7 +9837,7 @@
     <description>Body Toolz Pointed Tip Tweezer-Pink Two tips in one tweezer by Body Toolz. Slant tips for quick grooming. Pointed tips for fine tweezing. Made of Stainless steel, will not rust. Professional crafted. Grabs the finest hairs.</description>
     <link>https://beauty.insiderdemo.com/product.html?id=46163586122002</link>
     <g:image_link>https://cdn.shopify.com/s/files/1/0804/7552/1298/products/BODY-TOOLZ-Pointed-Tip-Tweezer-Pink.jpg?v=1691706913</g:image_link>
-    <g:price>7788.00</g:price>
+    <g:price>6.49</g:price>
     <g:sale_price>6.49</g:sale_price>
     <g:availability>in stock</g:availability>
     <g:quantity>28</g:quantity>
@@ -9394,6 +9845,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -9415,6 +9867,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>35</g:multipack>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
     <g:custom_label_4>35</g:custom_label_4>
@@ -9436,6 +9889,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>35</g:multipack>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
     <g:custom_label_4>35</g:custom_label_4>
@@ -9457,6 +9911,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>35</g:multipack>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
     <g:custom_label_4>35</g:custom_label_4>
@@ -9478,6 +9933,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:size>1.7 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
@@ -9501,12 +9957,13 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:size>8.34 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
-    <g:custom_label_4>0</g:custom_label_4>
-    <margin>0</margin>
+    <g:custom_label_4>20</g:custom_label_4>
+    <margin>20</margin>
     <activation_date>2026-09-11</activation_date>
   </item>
   <item>
@@ -9524,6 +9981,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Treatments</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Treatments</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -9545,6 +10003,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Serum</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Serum</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:size>5 oz</g:size>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.5</g:custom_label_3>

@@ -298,7 +298,9 @@ def enrich(rec, key, extra, today):
 
     # margin: percent, in steps of 5
     if extra.get("margin") is not None:
-        rec["margin"] = int(extra["margin"])
+        # Source margins arrive as 0 and 100 on a few dozen rows; neither
+        # is a margin anyone would merchandise on.
+        rec["margin"] = min(65, max(20, int(extra["margin"])))
     else:
         rec["margin"] = 20 + 5 * _h(seed + "m", 10)                    # 20 .. 65
 
@@ -396,6 +398,13 @@ def build_catalog(key, cfg):
             if price <= 0:
                 continue                              # samples and placeholders
             compare = money(v.get("compare_at_price"))
+            # A handful of source rows carry a was-price a thousand times
+            # the selling price (a 22.49 mask against 26,988.00), which
+            # renders as a 100% discount, tops the Highest discounted row
+            # and prints an absurd struck-through price. Anything implying
+            # more than 90% off is bad data, not a sale.
+            if compare > price * 10:
+                compare = 0
             unit_price = compare if compare > price else price
 
             label = v.get("title")
@@ -591,6 +600,23 @@ def feed_item(p):
     ]
     if p.get("color"):
         parts.append(f"    <g:color>{escape(clean(p['color'], 512))}</g:color>")
+
+    # --- merchandising numbers ---------------------------------------------
+    # Eureka sorts by discount already (MostDiscountedFirst ranks on the gap
+    # between price and original_price), but nothing carries the percentage as
+    # a value, so it cannot be faceted, sorted in a rule, or compared against.
+    # Emitted only where the product is actually reduced.
+    if p["unit_price"] > p["unit_sale_price"] > 0:
+        _pct = int(round((p["unit_price"] - p["unit_sale_price"]) / p["unit_price"] * 100))
+        if _pct > 0:
+            parts.append(f"    <discount_pct>{_pct}</discount_pct>")
+
+    # margin travels twice. `margin` is the honest name and a custom attribute;
+    # `multipack` is a DEFAULT numeric attribute nothing in this estate uses,
+    # carrying the same number so merchandising rules can be built on a default
+    # field. Canon is excluded: its ink and paper really are sold in packs.
+    if p.get("margin") is not None and p.get("vendor") != "Canon":
+        parts.append(f"    <g:multipack>{int(p['margin'])}</g:multipack>")
 
     if p.get("size"):
         parts.append(f"    <g:size>{escape(clean(p['size'], 512))}</g:size>")

@@ -19,6 +19,7 @@
     <g:product_type>Banking &gt; Checking &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
+    <g:multipack>50</g:multipack>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
     <g:custom_label_4>50</g:custom_label_4>
@@ -40,6 +41,7 @@
     <g:product_type>Banking &gt; Savings &gt; Savings</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Savings</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -61,6 +63,7 @@
     <g:product_type>Banking &gt; Savings &gt; Savings</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Savings</g:custom_label_0>
+    <g:multipack>35</g:multipack>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>35</g:custom_label_4>
@@ -82,6 +85,7 @@
     <g:product_type>Banking &gt; Credit Cards &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -103,6 +107,7 @@
     <g:product_type>Banking &gt; Loans &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
+    <g:multipack>65</g:multipack>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -124,6 +129,7 @@
     <g:product_type>Banking &gt; Checking &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -145,6 +151,7 @@
     <g:product_type>Banking &gt; Checking &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -166,6 +173,7 @@
     <g:product_type>Banking &gt; Checking &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -187,6 +195,7 @@
     <g:product_type>Banking &gt; Credit Cards &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
+    <g:multipack>55</g:multipack>
     <g:custom_label_3>3.5</g:custom_label_3>
     <rating>3.5</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -208,6 +217,7 @@
     <g:product_type>Banking &gt; Credit Cards &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
+    <g:multipack>35</g:multipack>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>35</g:custom_label_4>
@@ -229,6 +239,7 @@
     <g:product_type>Banking &gt; Loans &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -250,6 +261,7 @@
     <g:product_type>Banking &gt; Loans &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
+    <g:multipack>40</g:multipack>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -271,6 +283,7 @@
     <g:product_type>Banking &gt; Savings &gt; Savings</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Savings</g:custom_label_0>
+    <g:multipack>45</g:multipack>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -292,6 +305,7 @@
     <g:product_type>Banking &gt; Savings &gt; Savings</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Savings</g:custom_label_0>
+    <g:multipack>20</g:multipack>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -313,6 +327,7 @@
     <g:product_type>Banking &gt; Savings &gt; Savings</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Savings</g:custom_label_0>
+    <g:multipack>25</g:multipack>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
     <g:custom_label_4>25</g:custom_label_4>
