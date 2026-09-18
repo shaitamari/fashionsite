@@ -1,2726 +1,2726 @@
 {
- "_README": [
-  "Two levels: `vertical` is the parent (Retail, Travel, Banking, Telco),",
-  "`subvertical` is the child (Beauty, Fashion, Hotels, Insurance). A vertical",
-  "with no sub-verticals — Telco — simply repeats the name in both.",
-  "",
-  "`template` selects the page model:",
-  "  ecommerce  browse -> cart -> checkout -> purchase   (Retail)",
-  "  booking    search -> select -> book -> confirmation (Travel, Banking, Telco)",
-  "",
-  "Each entry gets its own subdomain: <key>.insiderdemo.com, so campaign rules",
-  "scope to a hostname and cannot collide.",
-  "",
-  "To add one:",
-  "  1. drop the catalog source at sources/<key>-1.json (see README for volume)",
-  "  2. copy a block below, edit brand / theme / collections",
-  "  3. python3 build.py <key>",
-  "  4. add the subdomain in Netlify and to multiDomains in InOne"
- ],
- "beauty": {
-  "brand": "Lumen",
-  "tagline": "Makeup, Skincare and Fragrance",
-  "hero_title": "Skin first.<br>Makeup second.",
-  "hero_lede": "Makeup, skincare and fragrance made to be worn every day.",
-  "hero_cta": "Shop makeup",
-  "announce": "Free shipping over $50 · Free samples with every order",
-  "search_placeholder": "Search makeup, skincare, fragrance",
-  "newsletter_title": "Join the list",
-  "newsletter_lede": "Early access to launches, restocks and offers.",
-  "source": "sources/beauty*.json",
-  "theme": {
-   "bg": "#FFFDFC",
-   "alt": "#F7F0EC",
-   "ink": "#2A2124",
-   "muted": "#7A6B70",
-   "rule": "#E9DFDA",
-   "accent": "#B4655F",
-   "display": "'Fraunces', Georgia, serif",
-   "body": "'Jost', Helvetica, sans-serif",
-   "fonts": "family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Jost:wght@300;400;500"
-  },
-  "order": [
-   "Makeup",
-   "Skincare",
-   "Body",
-   "Fragrance"
-  ],
-  "collections": {
-   "Makeup": "Makeup",
-   "Skincare": "Skincare",
-   "Balms": "Skincare",
-   "Fragrance": "Fragrance",
-   "Body": "Body"
-  },
-  "subcats": {
-   "Makeup": [
-    [
-     "Sets",
-     [
-      "set",
-      "duo",
-      "trio",
-      "quintet",
-      "icons",
-      "kit",
-      "bundle"
-     ]
-    ],
-    [
-     "Lip",
-     [
-      "balm dotcom",
-      "lip",
-      "gloss",
-      "ultralip",
-      "generation g"
-     ]
-    ],
-    [
-     "Cheek",
-     [
-      "cloud paint",
-      "blush",
-      "bronzer",
-      "solar paint",
-      "haloscope"
-     ]
-    ],
-    [
-     "Eyes",
-     [
-      "boy brow",
-      "brow",
-      "lash",
-      "lidstar",
-      "pencil",
-      "eye"
-     ]
-    ],
-    [
-     "Complexion",
-     [
-      "skin tint",
-      "concealer",
-      "perfecting",
-      "foundation",
-      "futuredew",
-      "stretch"
-     ]
-    ]
-   ],
-   "Skincare": [
-    [
-     "Sets",
-     [
-      "set",
-      "duo",
-      "trio",
-      "quintet",
-      "icons",
-      "kit"
-     ]
-    ],
-    [
-     "Cleanser",
-     [
-      "milky jelly",
-      "cleanser",
-      "wash"
-     ]
-    ],
-    [
-     "Serum",
-     [
-      "serum",
-      "super",
-      "bha",
-      "retinol"
-     ]
-    ],
-    [
-     "Sunscreen",
-     [
-      "invisible shield",
-      "spf",
-      "sunscreen"
-     ]
-    ],
-    [
-     "Mask",
-     [
-      "mask",
-      "mega greens"
-     ]
-    ],
-    [
-     "Moisturiser",
-     [
-      "priming",
-      "moisturizer",
-      "cream",
-      "balm"
-     ]
-    ]
-   ],
-   "Body": [
-    [
-     "Sets",
-     [
-      "set",
-      "duo",
-      "trio",
-      "kit"
-     ]
-    ],
-    [
-     "Cleanser",
-     [
-      "wash",
-      "cleanser",
-      "exfoliat"
-     ]
-    ],
-    [
-     "Deodorant",
-     [
-      "deodorant"
-     ]
-    ],
-    [
-     "Hand",
-     [
-      "hand"
-     ]
-    ]
-   ],
-   "Fragrance": [
-    [
-     "Sets",
-     [
-      "set",
-      "duo",
-      "discovery"
-     ]
-    ],
-    [
-     "Body Mist",
-     [
-      "mist",
-      "hair",
-      "body"
-     ]
-    ],
-    [
-     "Candles",
-     [
-      "candle"
-     ]
-    ]
-   ]
-  },
-  "defaults": {
-   "Makeup": "Makeup",
-   "Skincare": "Treatments",
-   "Body": "Body Care",
-   "Fragrance": "Perfume"
-  },
-  "vertical": "Retail",
-  "subvertical": "Beauty",
-  "template": "ecommerce",
-  "labels": {},
-  "hero_eyebrow": "New season",
-  "tiles_title": "Shop by category",
-  "grid_title": "New in",
-  "reco_title": "Recommended for you",
-  "profile": {
-   "tiers": [
-    "Member",
-    "Insider",
-    "VIP"
-   ],
-   "service_attribute": {
-    "name": "service_preference",
-    "label": "Skin type",
-    "options": [
-     "Dry",
-     "Oily",
-     "Combination",
-     "Sensitive",
-     "Normal"
-    ]
-   }
-  },
-  "flow": {
-   "title": "Book a consultation",
-   "lede": "Book time with an advisor for a colour match, a skincare consult or a lesson.",
-   "event": "consultation_booked",
-   "fields": [
-    {
-     "label": "Service",
-     "name": "service",
-     "options": [
-      "Colour match",
-      "Skincare consult",
-      "Makeup lesson"
-     ]
-    },
-    {
-     "label": "Store",
-     "name": "store",
-     "options": [
-      "Oxford Street",
-      "Shoreditch",
-      "Manchester"
-     ]
-    },
-    {
-     "label": "Date",
-     "name": "date",
-     "options": "date"
-    }
-   ],
-   "attribute_field": "store"
-  },
-  "hero_category": "Makeup",
-  "foryou_title": "Just for you",
-  "showcase": {
-   "search": "balm",
-   "product": "48440263049461"
-  },
-  "tier_banner": true
- },
- "_template": {
-  "_comment": "Copy this, rename the key, fill it in. Delete nothing else.",
-  "brand": "Brand Name",
-  "tagline": "What the store sells",
-  "hero_title": "Headline here.",
-  "hero_lede": "One supporting sentence.",
-  "hero_cta": "Shop now",
-  "announce": "Free shipping over $50 · 30-day returns",
-  "search_placeholder": "Search products",
-  "newsletter_title": "Join the list",
-  "newsletter_lede": "Offers and new arrivals, straight to your inbox.",
-  "source": [
-   "sources/<key>-1.json",
-   "sources/<key>-2.json"
-  ],
-  "theme": {
-   "bg": "#FFFFFF",
-   "alt": "#F5F5F3",
-   "ink": "#1A1A1A",
-   "muted": "#6B6B6B",
-   "rule": "#E3E3E3",
-   "accent": "#1A1A1A",
-   "display": "'Jost', Helvetica, sans-serif",
-   "body": "'Jost', Helvetica, sans-serif",
-   "fonts": "family=Jost:wght@300;400;500"
-  },
-  "order": [
-   "Collection A",
-   "Collection B"
-  ],
-  "collections": {
-   "Shopify Product Type": "Collection A"
-  },
-  "subcats": {
-   "Collection A": [
-    [
-     "Subcat",
-     [
-      "keyword"
-     ]
-    ]
-   ]
-  },
-  "defaults": {
-   "Collection A": "All",
-   "Collection B": "All"
-  },
-  "vertical": "Retail",
-  "subvertical": "Sub-vertical name",
-  "template": "ecommerce",
-  "labels": {
-   "_comment": "Override only what differs. Anything omitted falls back to _labels_default.",
-   "cart": "Cart",
-   "add_to_cart": "Add to cart"
-  },
-  "hero_eyebrow": "New season",
-  "tiles_title": "Shop by category",
-  "grid_title": "New in",
-  "reco_title": "Recommended for you"
- },
- "_labels_default": {
-  "cart": "Cart",
-  "add_to_cart": "Add to cart",
-  "checkout": "Checkout",
-  "cart_title": "Your cart",
-  "cart_empty": "Your cart is empty",
-  "place_order": "Place order",
-  "order": "order",
-  "confirm_title": "Thank you for your order.",
-  "browse_cta": "Start shopping"
- },
- "hotels": {
-  "vertical": "Travel",
-  "subvertical": "Hotels",
-  "template": "ecommerce",
-  "brand": "Wayfarer",
-  "tagline": "Places worth staying",
-  "hero_title": "Somewhere<br>worth waking up.",
-  "hero_lede": "Boutique stays, city hotels and quiet lodges in twelve countries.",
-  "hero_cta": "Find a room",
-  "announce": "Free cancellation up to 48 hours before arrival",
-  "search_placeholder": "Search a city or a hotel",
-  "newsletter_title": "Where next?",
-  "newsletter_lede": "New properties and seasonal rates, once a month.",
-  "source": "sources/hotels*.json",
-  "theme": {
-   "bg": "#FCFBF9",
-   "alt": "#F0EDE7",
-   "ink": "#23282B",
-   "muted": "#6E7478",
-   "rule": "#E2DDD4",
-   "accent": "#1F5C63",
-   "display": "'Fraunces', Georgia, serif",
-   "body": "'Jost', Helvetica, sans-serif",
-   "fonts": "family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Jost:wght@300;400;500"
-  },
-  "order": [
-   "Europe",
-   "Americas",
-   "Asia & Pacific",
-   "Africa & Middle East",
-   "Extras"
-  ],
-  "collections": {
-   "Europe > Lisbon": "Europe",
-   "Asia & Pacific > Kyoto": "Asia & Pacific",
-   "Europe > Reykjavik": "Europe",
-   "Africa & Middle East > Marrakesh": "Africa & Middle East",
-   "Europe > Copenhagen": "Europe",
-   "Africa & Middle East > Cape Town": "Africa & Middle East",
-   "Americas > Mexico City": "Americas",
-   "Asia & Pacific > Queenstown": "Asia & Pacific",
-   "Europe > Amalfi": "Europe",
-   "Asia & Pacific > Singapore": "Asia & Pacific",
-   "Europe > Edinburgh": "Europe",
-   "Asia & Pacific > Chiang Mai": "Asia & Pacific",
-   "Extras > Dining": "Extras",
-   "Extras > Room extras": "Extras",
-   "Extras > Wellness": "Extras",
-   "Extras > Transfers": "Extras"
-  },
-  "subcats": {},
-  "defaults": {
-   "Hotels": "City",
-   "Boutique": "Boutique",
-   "Lodges": "Countryside",
-   "Apartments": "Self-catering"
-  },
-  "labels": {
-   "add_to_cart": "Reserve",
-   "cart": "Your stay",
-   "cart_title": "Your stay",
-   "cart_empty": "No rooms selected yet",
-   "checkout": "Complete booking",
-   "place_order": "Confirm booking",
-   "order": "booking",
-   "confirm_title": "Your booking is confirmed.",
-   "browse_cta": "Find a room"
-  },
-  "hero_eyebrow": "Stay",
-  "tiles_title": "Browse by type",
-  "grid_title": "Recently added",
-  "reco_title": "Picked for you",
-  "profile": {
-   "tiers": [
-    "Member",
-    "Silver",
-    "Gold"
-   ],
-   "service_attribute": {
-    "name": "service_preference",
-    "label": "Room preference",
-    "options": [
-     "Quiet floor",
-     "High floor",
-     "Near lift",
-     "Accessible"
-    ]
-   }
-  },
-  "flow": {
-   "title": "Manage a booking",
-   "lede": "Add breakfast, request a late checkout, or change the dates of a stay.",
-   "event": "booking_managed",
-   "fields": [
-    {
-     "label": "Action",
-     "name": "action",
-     "options": [
-      "Add breakfast",
-      "Late checkout",
-      "Airport transfer",
-      "Change dates"
-     ]
-    },
-    {
-     "label": "Property",
-     "name": "store",
-     "options": [
-      "The Grand Lisbon",
-      "Casa Luz Kyoto",
-      "Riverside Lodge Amalfi"
-     ]
-    },
-    {
-     "label": "Date",
-     "name": "date",
-     "options": "date"
-    }
-   ],
-   "attribute_field": "store"
-  },
-  "hero_category": "Hotels",
-  "foryou_title": "Trips for you",
-  "showcase": {
-   "search": "kyoto",
-   "product": "48100000000001"
-  },
-  "tier_banner": true
- },
- "airlines": {
-  "vertical": "Travel",
-  "subvertical": "Airlines",
-  "template": "ecommerce",
-  "brand": "Meridian Air",
-  "tagline": "Direct routes, fifteen cities",
-  "hero_title": "Fewer stops.<br>More places.",
-  "hero_lede": "Direct routes across Europe, Africa, Asia and the Americas.",
-  "hero_cta": "Search flights",
-  "announce": "Two cabin bags included on every fare",
-  "search_placeholder": "Where are you going?",
-  "newsletter_title": "Fare alerts",
-  "newsletter_lede": "New routes and seat sales, straight to your inbox.",
-  "source": "sources/airlines*.json",
-  "theme": {
-   "bg": "#FBFCFD",
-   "alt": "#EDF1F5",
-   "ink": "#16202B",
-   "muted": "#63707E",
-   "rule": "#DCE3EA",
-   "accent": "#1B4F8A",
-   "display": "'Jost', Helvetica, sans-serif",
-   "body": "'Jost', Helvetica, sans-serif",
-   "fonts": "family=Jost:wght@300;400;500;600"
-  },
-  "order": [
-   "Europe",
-   "Americas",
-   "Asia & Pacific",
-   "Africa & Middle East",
-   "Extras"
-  ],
-  "collections": {
-   "Americas > New York": "Americas",
-   "Europe > Lisbon": "Europe",
-   "Asia & Pacific > Tokyo": "Asia & Pacific",
-   "Africa & Middle East > Cape Town": "Africa & Middle East",
-   "Americas > Mexico City": "Americas",
-   "Europe > Reykjavik": "Europe",
-   "Americas > Chicago": "Americas",
-   "Asia & Pacific > Singapore": "Asia & Pacific",
-   "Africa & Middle East > Marrakesh": "Africa & Middle East",
-   "Europe > Athens": "Europe",
-   "Europe > Edinburgh": "Europe",
-   "Americas > São Paulo": "Americas",
-   "Asia & Pacific > Bangkok": "Asia & Pacific",
-   "Africa & Middle East > Casablanca": "Africa & Middle East",
-   "Africa & Middle East > Dubai": "Africa & Middle East",
-   "Extras > Baggage": "Extras",
-   "Extras > Seating": "Extras",
-   "Extras > Lounge": "Extras",
-   "Extras > Transfers": "Extras",
-   "Extras > Insurance": "Extras"
-  },
-  "subcats": {},
-  "defaults": {
-   "Long Haul": "Intercontinental",
-   "Short Haul": "Regional"
-  },
-  "labels": {
-   "add_to_cart": "Select flight",
-   "cart": "Your trip",
-   "cart_title": "Your trip",
-   "cart_empty": "No flights selected yet",
-   "checkout": "Continue to payment",
-   "place_order": "Confirm booking",
-   "order": "booking",
-   "confirm_title": "Your trip is booked.",
-   "browse_cta": "Search flights"
-  },
-  "hero_eyebrow": "Fly",
-  "tiles_title": "Browse by route",
-  "grid_title": "New routes",
-  "reco_title": "Picked for you",
-  "profile": {
-   "tiers": [
-    "Blue",
-    "Silver",
-    "Gold"
-   ],
-   "service_attribute": {
-    "name": "service_preference",
-    "label": "Seat preference",
-    "options": [
-     "Window",
-     "Aisle",
-     "Extra legroom",
-     "No preference"
-    ]
-   }
-  },
-  "flow": {
-   "title": "Manage a trip",
-   "lede": "Add a bag, choose a seat, book lounge access or move a flight.",
-   "event": "trip_managed",
-   "fields": [
-    {
-     "label": "Action",
-     "name": "action",
-     "options": [
-      "Add bag",
-      "Choose seat",
-      "Add lounge",
-      "Change flight"
-     ]
-    },
-    {
-     "label": "Route",
-     "name": "route",
-     "options": [
-      "London to New York",
-      "Paris to Tokyo",
-      "Rome to Marrakesh"
-     ]
-    },
-    {
-     "label": "Date",
-     "name": "date",
-     "options": "date"
-    }
-   ],
-   "attribute_field": "route"
-  },
-  "hero_category": "Long Haul",
-  "foryou_title": "Where to next",
-  "showcase": {
-   "search": "tokyo",
-   "product": "48200000000001"
-  },
-  "tier_banner": true
- },
- "_environments": {
   "_README": [
-   "Which Insider account a site talks to is decided by its SUBDOMAIN SUFFIX,",
-   "because a page carries one tag and a tag belongs to one account:",
-   "",
-   "    beauty.insiderdemo.com           -> salesdemo",
-   "    beauty-sandbox.insiderdemo.com   -> partnersandbox",
-   "",
-   "`default` applies when a subdomain carries no recognised suffix.",
-   "",
-   "locale and currency must match the catalog these feeds load into.",
-   "en_GB keeps our products clear of the existing en_US catalog, which an",
-   "XML sync would otherwise replace. EUR because currency shows on every",
-   "product card and cart, while locale only appears in Catalog Manager."
+    "Two levels: `vertical` is the parent (Retail, Travel, Banking, Telco),",
+    "`subvertical` is the child (Beauty, Fashion, Hotels, Insurance). A vertical",
+    "with no sub-verticals — Telco — simply repeats the name in both.",
+    "",
+    "`template` selects the page model:",
+    "  ecommerce  browse -> cart -> checkout -> purchase   (Retail)",
+    "  booking    search -> select -> book -> confirmation (Travel, Banking, Telco)",
+    "",
+    "Each entry gets its own subdomain: <key>.insiderdemo.com, so campaign rules",
+    "scope to a hostname and cannot collide.",
+    "",
+    "To add one:",
+    "  1. drop the catalog source at sources/<key>-1.json (see README for volume)",
+    "  2. copy a block below, edit brand / theme / collections",
+    "  3. python3 build.py <key>",
+    "  4. add the subdomain in Netlify and to multiDomains in InOne"
   ],
-  "default": {
-   "suffix": null,
-   "account": "salesdemo",
-   "partnerId": "10002548",
-   "locale": "en_GB",
-   "currency": "EUR",
-   "feed": "https://insiderdemo.com/feeds/master.xml"
-  },
-  "sandbox": {
-   "suffix": "-sandbox",
-   "account": "partnersandbox",
-   "partnerId": "10006846",
-   "locale": "en_GB",
-   "currency": "EUR",
-   "feed": "https://insiderdemo.com/feeds/master.xml"
-  }
- },
- "banking": {
-  "vertical": "Banking",
-  "subvertical": "Banking",
-  "brand": "Northbank",
-  "tagline": "Everyday banking, cards and lending",
-  "hero_title": "Banking that<br>stays out of the way.",
-  "hero_cta": "Explore products",
-  "hero_lede": "Accounts, cards, loans and mortgages, without the branch visit.",
-  "hero_eyebrow": "Personal",
-  "announce": "FSCS protected · Open an account in minutes",
-  "search_placeholder": "Search accounts, cards, loans",
-  "newsletter_title": "Rate alerts",
-  "newsletter_lede": "Rate changes and new products.",
-  "tiles_title": "Browse products",
-  "grid_title": "Popular",
-  "reco_title": "You might also need",
-  "theme": {
-   "bg": "#FCFDFE",
-   "alt": "#EDF1F6",
-   "ink": "#131B24",
-   "muted": "#5E6A78",
-   "rule": "#DCE3EB",
-   "accent": "#1E3A57",
-   "display": "'Jost', Helvetica, sans-serif",
-   "body": "'Jost', Helvetica, sans-serif",
-   "fonts": "family=Jost:wght@300;400;500;600"
-  },
-  "template": "content",
-  "source": "sources/banking-*.json",
-  "collections": {
-   "Savings": "Savings",
-   "Credit Cards": "Credit Cards",
-   "Loans": "Loans",
-   "Checking": "Checking"
-  },
-  "order": [
-   "Checking",
-   "Savings",
-   "Credit Cards",
-   "Loans"
-  ],
-  "subcats": {},
-  "defaults": {
-   "Mortgages": "All",
-   "Credit Cards": "All",
-   "Loans": "All",
-   "Checking": "All"
-  },
-  "labels": {
-   "add_to_cart": "Start application",
-   "cart": "Your application",
-   "cart_title": "Your application",
-   "cart_empty": "Nothing selected yet",
-   "checkout": "Review application",
-   "place_order": "Submit application",
-   "order": "application",
-   "confirm_title": "Your application is submitted.",
-   "browse_cta": "Explore products"
-  },
-  "profile": {
-   "tiers": [
-    "Everyday",
-    "Plus",
-    "Premier"
-   ],
-   "service_attribute": {
-    "name": "service_preference",
-    "label": "Life stage",
-    "options": [
-     "Renting",
-     "First home",
-     "Moving",
-     "Family",
-     "Retiring"
-    ]
-   },
-   "extra": [
-    {
-     "name": "product"
+  "beauty": {
+    "brand": "Lumen",
+    "tagline": "Makeup, Skincare and Fragrance",
+    "hero_title": "Skin first.<br>Makeup second.",
+    "hero_lede": "Makeup, skincare and fragrance made to be worn every day.",
+    "hero_cta": "Shop makeup",
+    "announce": "Free shipping over $50 · Free samples with every order",
+    "search_placeholder": "Search makeup, skincare, fragrance",
+    "newsletter_title": "Join the list",
+    "newsletter_lede": "Early access to launches, restocks and offers.",
+    "source": "sources/beauty*.json",
+    "theme": {
+      "bg": "#FFFDFC",
+      "alt": "#F7F0EC",
+      "ink": "#2A2124",
+      "muted": "#7A6B70",
+      "rule": "#E9DFDA",
+      "accent": "#B4655F",
+      "display": "'Fraunces', Georgia, serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Jost:wght@300;400;500"
     },
-    {
-     "name": "customer_status"
+    "order": [
+      "Makeup",
+      "Skincare",
+      "Body",
+      "Fragrance"
+    ],
+    "collections": {
+      "Makeup": "Makeup",
+      "Skincare": "Skincare",
+      "Balms": "Skincare",
+      "Fragrance": "Fragrance",
+      "Body": "Body"
     },
-    {
-     "name": "account_type"
+    "subcats": {
+      "Makeup": [
+        [
+          "Sets",
+          [
+            "set",
+            "duo",
+            "trio",
+            "quintet",
+            "icons",
+            "kit",
+            "bundle"
+          ]
+        ],
+        [
+          "Lip",
+          [
+            "balm dotcom",
+            "lip",
+            "gloss",
+            "ultralip",
+            "generation g"
+          ]
+        ],
+        [
+          "Cheek",
+          [
+            "cloud paint",
+            "blush",
+            "bronzer",
+            "solar paint",
+            "haloscope"
+          ]
+        ],
+        [
+          "Eyes",
+          [
+            "boy brow",
+            "brow",
+            "lash",
+            "lidstar",
+            "pencil",
+            "eye"
+          ]
+        ],
+        [
+          "Complexion",
+          [
+            "skin tint",
+            "concealer",
+            "perfecting",
+            "foundation",
+            "futuredew",
+            "stretch"
+          ]
+        ]
+      ],
+      "Skincare": [
+        [
+          "Sets",
+          [
+            "set",
+            "duo",
+            "trio",
+            "quintet",
+            "icons",
+            "kit"
+          ]
+        ],
+        [
+          "Cleanser",
+          [
+            "milky jelly",
+            "cleanser",
+            "wash"
+          ]
+        ],
+        [
+          "Serum",
+          [
+            "serum",
+            "super",
+            "bha",
+            "retinol"
+          ]
+        ],
+        [
+          "Sunscreen",
+          [
+            "invisible shield",
+            "spf",
+            "sunscreen"
+          ]
+        ],
+        [
+          "Mask",
+          [
+            "mask",
+            "mega greens"
+          ]
+        ],
+        [
+          "Moisturiser",
+          [
+            "priming",
+            "moisturizer",
+            "cream",
+            "balm"
+          ]
+        ]
+      ],
+      "Body": [
+        [
+          "Sets",
+          [
+            "set",
+            "duo",
+            "trio",
+            "kit"
+          ]
+        ],
+        [
+          "Cleanser",
+          [
+            "wash",
+            "cleanser",
+            "exfoliat"
+          ]
+        ],
+        [
+          "Deodorant",
+          [
+            "deodorant"
+          ]
+        ],
+        [
+          "Hand",
+          [
+            "hand"
+          ]
+        ]
+      ],
+      "Fragrance": [
+        [
+          "Sets",
+          [
+            "set",
+            "duo",
+            "discovery"
+          ]
+        ],
+        [
+          "Body Mist",
+          [
+            "mist",
+            "hair",
+            "body"
+          ]
+        ],
+        [
+          "Candles",
+          [
+            "candle"
+          ]
+        ]
+      ]
+    },
+    "defaults": {
+      "Makeup": "Makeup",
+      "Skincare": "Treatments",
+      "Body": "Body Care",
+      "Fragrance": "Perfume"
+    },
+    "vertical": "Retail",
+    "subvertical": "Beauty",
+    "template": "ecommerce",
+    "labels": {},
+    "hero_eyebrow": "New season",
+    "tiles_title": "Shop by category",
+    "grid_title": "New in",
+    "reco_title": "Recommended for you",
+    "profile": {
+      "tiers": [
+        "Member",
+        "Insider",
+        "VIP"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "Skin type",
+        "options": [
+          "Dry",
+          "Oily",
+          "Combination",
+          "Sensitive",
+          "Normal"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Book a consultation",
+      "lede": "Book time with an advisor for a colour match, a skincare consult or a lesson.",
+      "event": "consultation_booked",
+      "fields": [
+        {
+          "label": "Service",
+          "name": "service",
+          "options": [
+            "Colour match",
+            "Skincare consult",
+            "Makeup lesson"
+          ]
+        },
+        {
+          "label": "Store",
+          "name": "store",
+          "options": [
+            "Oxford Street",
+            "Shoreditch",
+            "Manchester"
+          ]
+        },
+        {
+          "label": "Date",
+          "name": "date",
+          "options": "date"
+        }
+      ],
+      "attribute_field": "store"
+    },
+    "hero_category": "Makeup",
+    "foryou_title": "Just for you",
+    "showcase": {
+      "search": "balm",
+      "product": "48440263049461"
+    },
+    "tier_banner": true
+  },
+  "_template": {
+    "_comment": "Copy this, rename the key, fill it in. Delete nothing else.",
+    "brand": "Brand Name",
+    "tagline": "What the store sells",
+    "hero_title": "Headline here.",
+    "hero_lede": "One supporting sentence.",
+    "hero_cta": "Shop now",
+    "announce": "Free shipping over $50 · 30-day returns",
+    "search_placeholder": "Search products",
+    "newsletter_title": "Join the list",
+    "newsletter_lede": "Offers and new arrivals, straight to your inbox.",
+    "source": [
+      "sources/<key>-1.json",
+      "sources/<key>-2.json"
+    ],
+    "theme": {
+      "bg": "#FFFFFF",
+      "alt": "#F5F5F3",
+      "ink": "#1A1A1A",
+      "muted": "#6B6B6B",
+      "rule": "#E3E3E3",
+      "accent": "#1A1A1A",
+      "display": "'Jost', Helvetica, sans-serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Jost:wght@300;400;500"
+    },
+    "order": [
+      "Collection A",
+      "Collection B"
+    ],
+    "collections": {
+      "Shopify Product Type": "Collection A"
+    },
+    "subcats": {
+      "Collection A": [
+        [
+          "Subcat",
+          [
+            "keyword"
+          ]
+        ]
+      ]
+    },
+    "defaults": {
+      "Collection A": "All",
+      "Collection B": "All"
+    },
+    "vertical": "Retail",
+    "subvertical": "Sub-vertical name",
+    "template": "ecommerce",
+    "labels": {
+      "_comment": "Override only what differs. Anything omitted falls back to _labels_default.",
+      "cart": "Cart",
+      "add_to_cart": "Add to cart"
+    },
+    "hero_eyebrow": "New season",
+    "tiles_title": "Shop by category",
+    "grid_title": "New in",
+    "reco_title": "Recommended for you"
+  },
+  "_labels_default": {
+    "cart": "Cart",
+    "add_to_cart": "Add to cart",
+    "checkout": "Checkout",
+    "cart_title": "Your cart",
+    "cart_empty": "Your cart is empty",
+    "place_order": "Place order",
+    "order": "order",
+    "confirm_title": "Thank you for your order.",
+    "browse_cta": "Start shopping"
+  },
+  "hotels": {
+    "vertical": "Travel",
+    "subvertical": "Hotels",
+    "template": "ecommerce",
+    "brand": "Wayfarer",
+    "tagline": "Places worth staying",
+    "hero_title": "Somewhere<br>worth waking up.",
+    "hero_lede": "Boutique stays, city hotels and quiet lodges in twelve countries.",
+    "hero_cta": "Find a room",
+    "announce": "Free cancellation up to 48 hours before arrival",
+    "search_placeholder": "Search a city or a hotel",
+    "newsletter_title": "Where next?",
+    "newsletter_lede": "New properties and seasonal rates, once a month.",
+    "source": "sources/hotels*.json",
+    "theme": {
+      "bg": "#FCFBF9",
+      "alt": "#F0EDE7",
+      "ink": "#23282B",
+      "muted": "#6E7478",
+      "rule": "#E2DDD4",
+      "accent": "#1F5C63",
+      "display": "'Fraunces', Georgia, serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Jost:wght@300;400;500"
+    },
+    "order": [
+      "Europe",
+      "Americas",
+      "Asia & Pacific",
+      "Africa & Middle East",
+      "Extras"
+    ],
+    "collections": {
+      "Europe > Lisbon": "Europe",
+      "Asia & Pacific > Kyoto": "Asia & Pacific",
+      "Europe > Reykjavik": "Europe",
+      "Africa & Middle East > Marrakesh": "Africa & Middle East",
+      "Europe > Copenhagen": "Europe",
+      "Africa & Middle East > Cape Town": "Africa & Middle East",
+      "Americas > Mexico City": "Americas",
+      "Asia & Pacific > Queenstown": "Asia & Pacific",
+      "Europe > Amalfi": "Europe",
+      "Asia & Pacific > Singapore": "Asia & Pacific",
+      "Europe > Edinburgh": "Europe",
+      "Asia & Pacific > Chiang Mai": "Asia & Pacific",
+      "Extras > Dining": "Extras",
+      "Extras > Room extras": "Extras",
+      "Extras > Wellness": "Extras",
+      "Extras > Transfers": "Extras"
+    },
+    "subcats": {},
+    "defaults": {
+      "Hotels": "City",
+      "Boutique": "Boutique",
+      "Lodges": "Countryside",
+      "Apartments": "Self-catering"
+    },
+    "labels": {
+      "add_to_cart": "Reserve",
+      "cart": "Your stay",
+      "cart_title": "Your stay",
+      "cart_empty": "No rooms selected yet",
+      "checkout": "Complete booking",
+      "place_order": "Confirm booking",
+      "order": "booking",
+      "confirm_title": "Your booking is confirmed.",
+      "browse_cta": "Find a room"
+    },
+    "hero_eyebrow": "Stay",
+    "tiles_title": "Browse by type",
+    "grid_title": "Recently added",
+    "reco_title": "Picked for you",
+    "profile": {
+      "tiers": [
+        "Member",
+        "Silver",
+        "Gold"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "Room preference",
+        "options": [
+          "Quiet floor",
+          "High floor",
+          "Near lift",
+          "Accessible"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Manage a booking",
+      "lede": "Add breakfast, request a late checkout, or change the dates of a stay.",
+      "event": "booking_managed",
+      "fields": [
+        {
+          "label": "Action",
+          "name": "action",
+          "options": [
+            "Add breakfast",
+            "Late checkout",
+            "Airport transfer",
+            "Change dates"
+          ]
+        },
+        {
+          "label": "Property",
+          "name": "store",
+          "options": [
+            "The Grand Lisbon",
+            "Casa Luz Kyoto",
+            "Riverside Lodge Amalfi"
+          ]
+        },
+        {
+          "label": "Date",
+          "name": "date",
+          "options": "date"
+        }
+      ],
+      "attribute_field": "store"
+    },
+    "hero_category": "Hotels",
+    "foryou_title": "Trips for you",
+    "showcase": {
+      "search": "kyoto",
+      "product": "48100000000001"
+    },
+    "tier_banner": true
+  },
+  "airlines": {
+    "vertical": "Travel",
+    "subvertical": "Airlines",
+    "template": "ecommerce",
+    "brand": "Meridian Air",
+    "tagline": "Direct routes, fifteen cities",
+    "hero_title": "Fewer stops.<br>More places.",
+    "hero_lede": "Direct routes across Europe, Africa, Asia and the Americas.",
+    "hero_cta": "Search flights",
+    "announce": "Two cabin bags included on every fare",
+    "search_placeholder": "Where are you going?",
+    "newsletter_title": "Fare alerts",
+    "newsletter_lede": "New routes and seat sales, straight to your inbox.",
+    "source": "sources/airlines*.json",
+    "theme": {
+      "bg": "#FBFCFD",
+      "alt": "#EDF1F5",
+      "ink": "#16202B",
+      "muted": "#63707E",
+      "rule": "#DCE3EA",
+      "accent": "#1B4F8A",
+      "display": "'Jost', Helvetica, sans-serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Jost:wght@300;400;500;600"
+    },
+    "order": [
+      "Europe",
+      "Americas",
+      "Asia & Pacific",
+      "Africa & Middle East",
+      "Extras"
+    ],
+    "collections": {
+      "Americas > New York": "Americas",
+      "Europe > Lisbon": "Europe",
+      "Asia & Pacific > Tokyo": "Asia & Pacific",
+      "Africa & Middle East > Cape Town": "Africa & Middle East",
+      "Americas > Mexico City": "Americas",
+      "Europe > Reykjavik": "Europe",
+      "Americas > Chicago": "Americas",
+      "Asia & Pacific > Singapore": "Asia & Pacific",
+      "Africa & Middle East > Marrakesh": "Africa & Middle East",
+      "Europe > Athens": "Europe",
+      "Europe > Edinburgh": "Europe",
+      "Americas > São Paulo": "Americas",
+      "Asia & Pacific > Bangkok": "Asia & Pacific",
+      "Africa & Middle East > Casablanca": "Africa & Middle East",
+      "Africa & Middle East > Dubai": "Africa & Middle East",
+      "Extras > Baggage": "Extras",
+      "Extras > Seating": "Extras",
+      "Extras > Lounge": "Extras",
+      "Extras > Transfers": "Extras",
+      "Extras > Insurance": "Extras"
+    },
+    "subcats": {},
+    "defaults": {
+      "Long Haul": "Intercontinental",
+      "Short Haul": "Regional"
+    },
+    "labels": {
+      "add_to_cart": "Select flight",
+      "cart": "Your trip",
+      "cart_title": "Your trip",
+      "cart_empty": "No flights selected yet",
+      "checkout": "Continue to payment",
+      "place_order": "Confirm booking",
+      "order": "booking",
+      "confirm_title": "Your trip is booked.",
+      "browse_cta": "Search flights"
+    },
+    "hero_eyebrow": "Fly",
+    "tiles_title": "Browse by route",
+    "grid_title": "New routes",
+    "reco_title": "Picked for you",
+    "profile": {
+      "tiers": [
+        "Blue",
+        "Silver",
+        "Gold"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "Seat preference",
+        "options": [
+          "Window",
+          "Aisle",
+          "Extra legroom",
+          "No preference"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Manage a trip",
+      "lede": "Add a bag, choose a seat, book lounge access or move a flight.",
+      "event": "trip_managed",
+      "fields": [
+        {
+          "label": "Action",
+          "name": "action",
+          "options": [
+            "Add bag",
+            "Choose seat",
+            "Add lounge",
+            "Change flight"
+          ]
+        },
+        {
+          "label": "Route",
+          "name": "route",
+          "options": [
+            "London to New York",
+            "Paris to Tokyo",
+            "Rome to Marrakesh"
+          ]
+        },
+        {
+          "label": "Date",
+          "name": "date",
+          "options": "date"
+        }
+      ],
+      "attribute_field": "route"
+    },
+    "hero_category": "Long Haul",
+    "foryou_title": "Where to next",
+    "showcase": {
+      "search": "tokyo",
+      "product": "48200000000001"
+    },
+    "tier_banner": true
+  },
+  "_environments": {
+    "_README": [
+      "Which Insider account a site talks to is decided by its SUBDOMAIN SUFFIX,",
+      "because a page carries one tag and a tag belongs to one account:",
+      "",
+      "    beauty.insiderdemo.com           -> salesdemo",
+      "    beauty-sandbox.insiderdemo.com   -> partnersandbox",
+      "",
+      "`default` applies when a subdomain carries no recognised suffix.",
+      "",
+      "locale and currency must match the catalog these feeds load into.",
+      "en_GB keeps our products clear of the existing en_US catalog, which an",
+      "XML sync would otherwise replace. EUR because currency shows on every",
+      "product card and cart, while locale only appears in Catalog Manager."
+    ],
+    "default": {
+      "suffix": null,
+      "account": "salesdemo",
+      "partnerId": "10002548",
+      "locale": "en_GB",
+      "currency": "EUR",
+      "feed": "https://insiderdemo.com/feeds/master.xml"
+    },
+    "sandbox": {
+      "suffix": "-sandbox",
+      "account": "partnersandbox",
+      "partnerId": "10006846",
+      "locale": "en_GB",
+      "currency": "EUR",
+      "feed": "https://insiderdemo.com/feeds/master.xml"
     }
-   ]
   },
-  "flow": {
-   "title": "Start an application",
-   "lede": "Start an application. It takes a few minutes and you can save and return.",
-   "event": "application_started",
-   "fields": [
-    {
-     "label": "Product",
-     "name": "product",
-     "options": [
-      "Current account",
-      "Credit card",
-      "Personal loan",
-      "Mortgage"
-     ]
+  "banking": {
+    "vertical": "Banking",
+    "subvertical": "Banking",
+    "brand": "Northbank",
+    "tagline": "Everyday banking, cards and lending",
+    "hero_title": "Banking that<br>stays out of the way.",
+    "hero_cta": "Explore products",
+    "hero_lede": "Accounts, cards, loans and mortgages, without the branch visit.",
+    "hero_eyebrow": "Personal",
+    "announce": "FSCS protected · Open an account in minutes",
+    "search_placeholder": "Search accounts, cards, loans",
+    "newsletter_title": "Rate alerts",
+    "newsletter_lede": "Rate changes and new products.",
+    "tiles_title": "Browse products",
+    "grid_title": "Popular",
+    "reco_title": "You might also need",
+    "theme": {
+      "bg": "#FCFDFE",
+      "alt": "#EDF1F6",
+      "ink": "#131B24",
+      "muted": "#5E6A78",
+      "rule": "#DCE3EB",
+      "accent": "#1E3A57",
+      "display": "'Jost', Helvetica, sans-serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Jost:wght@300;400;500;600"
     },
-    {
-     "label": "Purpose",
-     "name": "purpose",
-     "options": [
-      "Everyday banking",
-      "Consolidate debt",
-      "Buy a home",
-      "Save"
-     ]
+    "template": "content",
+    "source": "sources/banking-*.json",
+    "collections": {
+      "Savings": "Savings",
+      "Credit Cards": "Credit Cards",
+      "Loans": "Loans",
+      "Checking": "Checking"
     },
-    {
-     "label": "Amount",
-     "name": "amount",
-     "options": [
-      "1000",
-      "5000",
-      "25000",
-      "250000"
-     ]
+    "order": [
+      "Checking",
+      "Savings",
+      "Credit Cards",
+      "Loans"
+    ],
+    "subcats": {},
+    "defaults": {
+      "Mortgages": "All",
+      "Credit Cards": "All",
+      "Loans": "All",
+      "Checking": "All"
+    },
+    "labels": {
+      "add_to_cart": "Start application",
+      "cart": "Your application",
+      "cart_title": "Your application",
+      "cart_empty": "Nothing selected yet",
+      "checkout": "Review application",
+      "place_order": "Submit application",
+      "order": "application",
+      "confirm_title": "Your application is submitted.",
+      "browse_cta": "Explore products"
+    },
+    "profile": {
+      "tiers": [
+        "Everyday",
+        "Plus",
+        "Premier"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "Life stage",
+        "options": [
+          "Renting",
+          "First home",
+          "Moving",
+          "Family",
+          "Retiring"
+        ]
+      },
+      "extra": [
+        {
+          "name": "product"
+        },
+        {
+          "name": "customer_status"
+        },
+        {
+          "name": "account_type"
+        }
+      ]
+    },
+    "flow": {
+      "title": "Start an application",
+      "lede": "Start an application. It takes a few minutes and you can save and return.",
+      "event": "application_started",
+      "fields": [
+        {
+          "label": "Product",
+          "name": "product",
+          "options": [
+            "Current account",
+            "Credit card",
+            "Personal loan",
+            "Mortgage"
+          ]
+        },
+        {
+          "label": "Purpose",
+          "name": "purpose",
+          "options": [
+            "Everyday banking",
+            "Consolidate debt",
+            "Buy a home",
+            "Save"
+          ]
+        },
+        {
+          "label": "Amount",
+          "name": "amount",
+          "options": [
+            "1000",
+            "5000",
+            "25000",
+            "250000"
+          ]
+        }
+      ],
+      "attribute_field": "product"
+    },
+    "hero_category": "Checking",
+    "foryou_title": "Right for you",
+    "showcase": {
+      "search": "mortgage",
+      "product": "48300000000001"
+    },
+    "content": {
+      "lines_collection": "__all__",
+      "popular": "Everyday",
+      "line_cta": "Open account",
+      "hero": {
+        "_default": {
+          "eyebrow": "Northbank",
+          "title": "Banking that works the way you do.",
+          "lede": "Everyday accounts, savings and cards — open one in minutes, manage it all in one place.",
+          "cta": "See accounts"
+        },
+        "savings": {
+          "eyebrow": "Northbank",
+          "title": "Save with a rate that respects you.",
+          "lede": "Grow your money with easy-access and fixed savings. No fuss, no lock-in you didn't ask for.",
+          "cta": "See savings"
+        },
+        "card": {
+          "eyebrow": "Northbank",
+          "title": "A card that gives back.",
+          "lede": "Low rates, real rewards, and no hidden fees. Apply in minutes.",
+          "cta": "See cards"
+        },
+        "loan": {
+          "eyebrow": "Northbank",
+          "title": "Borrow on your terms.",
+          "lede": "Personal loans with clear rates and no early-repayment penalties.",
+          "cta": "See loans"
+        }
+      },
+      "product_cards": {
+        "Northbank Saver": {
+          "blurb": "Easy-access savings with a competitive rate and no withdrawal penalties — put money aside and take it out whenever you need it. Set goals in the app and watch your balance grow.",
+          "rate_line": "3.5% AER easy-access",
+          "features": [
+            "3.5% AER variable",
+            "Unlimited fee-free withdrawals",
+            "Savings goals & round-ups",
+            "Interest paid monthly",
+            "Open from £1",
+            "FSCS protected up to £85,000"
+          ]
+        },
+        "Fixed Saver (1 year)": {
+          "blurb": "Lock your money away for twelve months for a higher, guaranteed rate. Ideal for savings you won't need in the short term — your rate is fixed the day you open.",
+          "rate_line": "4.6% AER fixed 1yr",
+          "features": [
+            "4.6% AER fixed for 12 months",
+            "Rate guaranteed at opening",
+            "Interest paid at maturity",
+            "From £500 to £250,000",
+            "No access during the term",
+            "FSCS protected up to £85,000"
+          ]
+        },
+        "Northbank Rewards Card": {
+          "blurb": "A credit card that pays you back — earn cashback on everyday spending with no annual fee, plus 0% on purchases for the first twelve months. Built-in fraud protection and instant freeze in the app.",
+          "rate_line": "24.9% APR rep. · variable",
+          "features": [
+            "Cashback on everyday spend",
+            "No annual fee",
+            "0% on purchases for 12 months",
+            "Instant card freeze in-app",
+            "Real-time fraud alerts",
+            "Manage limits & repayments in-app",
+            "Representative 24.9% APR variable"
+          ]
+        },
+        "Personal Loan": {
+          "blurb": "Borrow from £1,000 to £25,000 with a clear fixed rate and fixed monthly payments, so you know exactly what you'll pay from day one. Check your rate with a soft search that won't affect your credit score, and get a decision in minutes.",
+          "rate_line": "From 6.9% APR rep.",
+          "features": [
+            "Fixed monthly payments",
+            "No early-repayment fee",
+            "Soft-search rate check",
+            "Decision in minutes",
+            "Borrow £1,000–£25,000",
+            "Terms from 1 to 7 years",
+            "Representative 6.9% APR"
+          ]
+        },
+        "Everyday": {
+          "blurb": "Our standard day-to-day account for everyday spending, bills and getting paid. Fee-free abroad and instant alerts keep you in control, and you can switch to us in seven days without lifting a finger.",
+          "rate_line": "No monthly fee",
+          "features": [
+            "No monthly fee",
+            "Fee-free spending abroad",
+            "Instant spend & bill alerts",
+            "Apple Pay & Google Pay",
+            "Arranged overdraft available",
+            "7-day Current Account Switch",
+            "FSCS protected up to £85,000"
+          ]
+        },
+        "Basic": {
+          "blurb": "A simple account to get started, with everything you need for day-to-day money and nothing you don't. No monthly fee and no overdraft, so you always know where you stand.",
+          "rate_line": "No monthly fee",
+          "features": [
+            "No monthly fee",
+            "No overdraft — spend only what you have",
+            "Contactless debit card",
+            "Mobile & online banking",
+            "Instant balance & spend alerts",
+            "FSCS protected up to £85,000"
+          ]
+        },
+        "Premium": {
+          "blurb": "More from your everyday banking for a small monthly fee — worldwide travel insurance for the family, cashback on household bills, and higher limits with priority support when you need it.",
+          "rate_line": "£12/mo · perks included",
+          "features": [
+            "Worldwide family travel insurance",
+            "Cashback on household bills",
+            "Priority 24/7 support",
+            "Higher payment & withdrawal limits",
+            "Airport lounge passes",
+            "Fee-free spending abroad",
+            "FSCS protected up to £85,000"
+          ]
+        },
+        "Family": {
+          "blurb": "Built for households — a joint account with shared saving pots and simple tools to teach children about money. Set allowances, track spending, and give everyone their own view.",
+          "rate_line": "£8/mo · joint & kids",
+          "features": [
+            "Joint account for two adults",
+            "Child accounts (age 6+)",
+            "Shared saving pots & goals",
+            "Spending controls for kids",
+            "Pocket money & chores",
+            "Family spending dashboard",
+            "FSCS protected up to £85,000"
+          ]
+        },
+        "Balance Transfer Card": {
+          "blurb": "Move balances from other cards and pay no interest for up to 24 months — clear what you owe faster without the interest piling up.",
+          "rate_line": "0% balance transfer 24mo",
+          "features": [
+            "0% on balance transfers for 24 months",
+            "No annual fee",
+            "One simple monthly payment",
+            "3% transfer fee",
+            "Manage in-app",
+            "Representative 24.9% APR variable"
+          ]
+        },
+        "Travel Credit Card": {
+          "blurb": "Built for spending abroad — no foreign transaction fees, travel perks, and worldwide acceptance. Freeze it instantly in the app if you misplace it.",
+          "rate_line": "No FX fees · 22.9% APR rep.",
+          "features": [
+            "No foreign transaction fees",
+            "Travel accident cover",
+            "Worldwide acceptance",
+            "Instant freeze in-app",
+            "No annual fee",
+            "Representative 22.9% APR variable"
+          ]
+        },
+        "Car Finance": {
+          "blurb": "Finance your next car with a competitive fixed rate and terms that fit your budget. Check your rate with a soft search that won't affect your score.",
+          "rate_line": "From 5.9% APR rep.",
+          "features": [
+            "Fixed monthly payments",
+            "Borrow £5,000–£50,000",
+            "Terms from 1 to 5 years",
+            "Soft-search rate check",
+            "No early-repayment fee",
+            "Representative 5.9% APR"
+          ]
+        },
+        "Home Improvement Loan": {
+          "blurb": "Borrow for renovations, extensions or a new kitchen with clear fixed monthly payments and no early-repayment fees. Get a decision in minutes.",
+          "rate_line": "From 6.4% APR rep.",
+          "features": [
+            "Fixed monthly payments",
+            "Borrow £1,000–£25,000",
+            "Terms from 1 to 7 years",
+            "No early-repayment fee",
+            "Decision in minutes",
+            "Representative 6.4% APR"
+          ]
+        },
+        "Cash ISA": {
+          "blurb": "Save tax-free up to your annual ISA allowance with easy access to your money. A simple way to keep more of the interest you earn.",
+          "rate_line": "4.1% AER tax-free",
+          "features": [
+            "4.1% AER variable, tax-free",
+            "Use your annual ISA allowance",
+            "Easy access, no penalties",
+            "Transfer in from other ISAs",
+            "Open from £1",
+            "FSCS protected up to £85,000"
+          ]
+        },
+        "Regular Saver": {
+          "blurb": "Put a set amount aside each month and earn our highest savings rate. Perfect for building a habit and reaching a goal.",
+          "rate_line": "5.0% AER · monthly",
+          "features": [
+            "5.0% AER fixed for 12 months",
+            "Save £25–£250 a month",
+            "Highest Northbank savings rate",
+            "Interest paid at maturity",
+            "Miss a month, no penalty",
+            "FSCS protected up to £85,000"
+          ]
+        },
+        "Notice Saver": {
+          "blurb": "Earn a higher rate in exchange for giving 90 days' notice before you withdraw. Good for savings you can plan ahead for.",
+          "rate_line": "4.4% AER · 90-day notice",
+          "features": [
+            "4.4% AER variable",
+            "90 days' notice to withdraw",
+            "Higher than easy-access",
+            "Interest paid monthly",
+            "Open from £500",
+            "FSCS protected up to £85,000"
+          ]
+        }
+      },
+      "articles": [
+        {
+          "title": "How to switch your bank account",
+          "category": "Switching",
+          "body": "Switching to Northbank takes seven working days with the Current Account Switch Service. We move your balance, direct debits and standing orders — you don't have to lift a finger."
+        },
+        {
+          "title": "Keeping your money safe",
+          "category": "Security",
+          "body": "Every Northbank account is protected up to £85,000 by the FSCS. We use biometric login, instant card freeze, and real-time fraud alerts."
+        },
+        {
+          "title": "Understanding your credit score",
+          "category": "Borrowing",
+          "body": "Your credit score affects the rates you're offered. Checking your eligibility with Northbank uses a soft search and never affects your score."
+        },
+        {
+          "title": "Saving toward a goal",
+          "category": "Saving",
+          "body": "Set a target in the app and Northbank rounds up your spending to help you get there. Easy-access means your money's never locked away."
+        }
+      ],
+      "tiles": [
+        {
+          "title": "Switch in 7 days",
+          "sub": "We do the moving for you",
+          "href": "help/banking/switch.html",
+          "image": ""
+        },
+        {
+          "title": "Protected to £85,000",
+          "sub": "FSCS covered",
+          "href": "help/banking/safety.html",
+          "image": ""
+        },
+        {
+          "title": "Check your rate",
+          "sub": "Soft search, no score impact",
+          "href": "quote.html",
+          "image": ""
+        },
+        {
+          "title": "Manage in the app",
+          "sub": "Everything in one place",
+          "href": "#",
+          "image": ""
+        }
+      ],
+      "nav": [
+        {
+          "label": "Checking",
+          "href": "category.html?c=Checking"
+        },
+        {
+          "label": "Savings",
+          "href": "category.html?c=Savings"
+        },
+        {
+          "label": "Credit Cards",
+          "href": "category.html?c=Credit%20Cards"
+        },
+        {
+          "label": "Loans",
+          "href": "category.html?c=Loans"
+        },
+        {
+          "label": "Get a quote",
+          "href": "quote.html"
+        }
+      ],
+      "lines_title": "Accounts, cards & loans",
+      "funnel": "open.html",
+      "price_suffix": "",
+      "homepage_products": [
+        "Everyday",
+        "Northbank Saver",
+        "Northbank Rewards Card",
+        "Personal Loan"
+      ]
+    },
+    "open_account": {
+      "steps": [
+        "Choose account",
+        "Your details",
+        "Confirm"
+      ],
+      "types": [
+        "Everyday",
+        "Northbank Saver",
+        "Northbank Rewards Card",
+        "Personal Loan"
+      ]
+    },
+    "quote": {
+      "steps": [
+        "What to cover",
+        "Your details",
+        "Your quote"
+      ],
+      "cover": [
+        "Home",
+        "Car",
+        "Travel",
+        "Life"
+      ],
+      "level": [
+        "Essential",
+        "Standard",
+        "Premier"
+      ],
+      "excess": [
+        "£100",
+        "£250",
+        "£500"
+      ]
+    },
+    "default_category": "Checking",
+    "rate_card": {
+      "bundles": [
+        {
+          "add": "Northbank Saver",
+          "benefit": "+0.5% AER on savings",
+          "term": "keep salary paid in",
+          "note": "growing balance, no savings product"
+        },
+        {
+          "add": "Home Insurance",
+          "benefit": "10% multi-product discount",
+          "term": "annual",
+          "note": "has a mortgage/loan"
+        },
+        {
+          "add": "Rewards Card",
+          "benefit": "fee waived with checking",
+          "term": "12 months",
+          "note": "active spender, no card"
+        }
+      ],
+      "market": {
+        "savings_rate_trend": "up",
+        "loan_rate_environment": "low",
+        "savings_rate_new": "4.1",
+        "mmf_yield": "5.2"
+      }
     }
-   ],
-   "attribute_field": "product"
   },
-  "hero_category": "Checking",
-  "foryou_title": "Right for you",
-  "showcase": {
-   "search": "mortgage",
-   "product": "48300000000001"
-  },
-  "content": {
-   "lines_collection": "__all__",
-   "popular": "Everyday",
-   "line_cta": "Open account",
-   "hero": {
-    "_default": {
-     "eyebrow": "Northbank",
-     "title": "Banking that works the way you do.",
-     "lede": "Everyday accounts, savings and cards — open one in minutes, manage it all in one place.",
-     "cta": "See accounts"
+  "insurance": {
+    "vertical": "Banking",
+    "subvertical": "Insurance",
+    "brand": "Northbank",
+    "tagline": "Cover for the things that matter",
+    "hero_title": "Cover you can<br>actually read.",
+    "hero_cta": "Compare cover",
+    "hero_lede": "Motor, home, travel and life cover with no jargon and no auto-renewal.",
+    "hero_eyebrow": "Protect",
+    "announce": "Cover starts the day you buy · 14-day cooling off",
+    "search_placeholder": "Search cover types",
+    "newsletter_title": "Stay covered",
+    "newsletter_lede": "Renewal reminders and cover tips.",
+    "tiles_title": "Browse cover",
+    "grid_title": "Popular cover",
+    "reco_title": "Often taken together",
+    "theme": {
+      "bg": "#FCFDFC",
+      "alt": "#EBF3EE",
+      "ink": "#141E19",
+      "muted": "#5C6B63",
+      "rule": "#D8E5DD",
+      "accent": "#23503F",
+      "display": "'Jost', Helvetica, sans-serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Jost:wght@300;400;500;600"
     },
-    "savings": {
-     "eyebrow": "Northbank",
-     "title": "Save with a rate that respects you.",
-     "lede": "Grow your money with easy-access and fixed savings. No fuss, no lock-in you didn't ask for.",
-     "cta": "See savings"
+    "template": "ecommerce",
+    "source": "sources/insurance-*.json",
+    "collections": {
+      "Motor": "Motor",
+      "Home": "Home",
+      "Travel": "Travel",
+      "Pet": "Pet",
+      "Life": "Life",
+      "Health": "Health",
+      "Business": "Motor",
+      "Gadget": "Motor"
     },
-    "card": {
-     "eyebrow": "Northbank",
-     "title": "A card that gives back.",
-     "lede": "Low rates, real rewards, and no hidden fees. Apply in minutes.",
-     "cta": "See cards"
-    },
-    "loan": {
-     "eyebrow": "Northbank",
-     "title": "Borrow on your terms.",
-     "lede": "Personal loans with clear rates and no early-repayment penalties.",
-     "cta": "See loans"
-    }
-   },
-   "product_cards": {
-    "Northbank Saver": {
-     "blurb": "Easy-access savings with a competitive rate and no withdrawal penalties — put money aside and take it out whenever you need it. Set goals in the app and watch your balance grow.",
-     "rate_line": "3.5% AER easy-access",
-     "features": [
-      "3.5% AER variable",
-      "Unlimited fee-free withdrawals",
-      "Savings goals & round-ups",
-      "Interest paid monthly",
-      "Open from £1",
-      "FSCS protected up to £85,000"
-     ]
-    },
-    "Fixed Saver (1 year)": {
-     "blurb": "Lock your money away for twelve months for a higher, guaranteed rate. Ideal for savings you won't need in the short term — your rate is fixed the day you open.",
-     "rate_line": "4.6% AER fixed 1yr",
-     "features": [
-      "4.6% AER fixed for 12 months",
-      "Rate guaranteed at opening",
-      "Interest paid at maturity",
-      "From £500 to £250,000",
-      "No access during the term",
-      "FSCS protected up to £85,000"
-     ]
-    },
-    "Northbank Rewards Card": {
-     "blurb": "A credit card that pays you back — earn cashback on everyday spending with no annual fee, plus 0% on purchases for the first twelve months. Built-in fraud protection and instant freeze in the app.",
-     "rate_line": "24.9% APR rep. · variable",
-     "features": [
-      "Cashback on everyday spend",
-      "No annual fee",
-      "0% on purchases for 12 months",
-      "Instant card freeze in-app",
-      "Real-time fraud alerts",
-      "Manage limits & repayments in-app",
-      "Representative 24.9% APR variable"
-     ]
-    },
-    "Personal Loan": {
-     "blurb": "Borrow from £1,000 to £25,000 with a clear fixed rate and fixed monthly payments, so you know exactly what you'll pay from day one. Check your rate with a soft search that won't affect your credit score, and get a decision in minutes.",
-     "rate_line": "From 6.9% APR rep.",
-     "features": [
-      "Fixed monthly payments",
-      "No early-repayment fee",
-      "Soft-search rate check",
-      "Decision in minutes",
-      "Borrow £1,000–£25,000",
-      "Terms from 1 to 7 years",
-      "Representative 6.9% APR"
-     ]
-    },
-    "Everyday": {
-     "blurb": "Our standard day-to-day account for everyday spending, bills and getting paid. Fee-free abroad and instant alerts keep you in control, and you can switch to us in seven days without lifting a finger.",
-     "rate_line": "No monthly fee",
-     "features": [
-      "No monthly fee",
-      "Fee-free spending abroad",
-      "Instant spend & bill alerts",
-      "Apple Pay & Google Pay",
-      "Arranged overdraft available",
-      "7-day Current Account Switch",
-      "FSCS protected up to £85,000"
-     ]
-    },
-    "Basic": {
-     "blurb": "A simple account to get started, with everything you need for day-to-day money and nothing you don't. No monthly fee and no overdraft, so you always know where you stand.",
-     "rate_line": "No monthly fee",
-     "features": [
-      "No monthly fee",
-      "No overdraft — spend only what you have",
-      "Contactless debit card",
-      "Mobile & online banking",
-      "Instant balance & spend alerts",
-      "FSCS protected up to £85,000"
-     ]
-    },
-    "Premium": {
-     "blurb": "More from your everyday banking for a small monthly fee — worldwide travel insurance for the family, cashback on household bills, and higher limits with priority support when you need it.",
-     "rate_line": "£12/mo · perks included",
-     "features": [
-      "Worldwide family travel insurance",
-      "Cashback on household bills",
-      "Priority 24/7 support",
-      "Higher payment & withdrawal limits",
-      "Airport lounge passes",
-      "Fee-free spending abroad",
-      "FSCS protected up to £85,000"
-     ]
-    },
-    "Family": {
-     "blurb": "Built for households — a joint account with shared saving pots and simple tools to teach children about money. Set allowances, track spending, and give everyone their own view.",
-     "rate_line": "£8/mo · joint & kids",
-     "features": [
-      "Joint account for two adults",
-      "Child accounts (age 6+)",
-      "Shared saving pots & goals",
-      "Spending controls for kids",
-      "Pocket money & chores",
-      "Family spending dashboard",
-      "FSCS protected up to £85,000"
-     ]
-    },
-    "Balance Transfer Card": {
-     "blurb": "Move balances from other cards and pay no interest for up to 24 months — clear what you owe faster without the interest piling up.",
-     "rate_line": "0% balance transfer 24mo",
-     "features": [
-      "0% on balance transfers for 24 months",
-      "No annual fee",
-      "One simple monthly payment",
-      "3% transfer fee",
-      "Manage in-app",
-      "Representative 24.9% APR variable"
-     ]
-    },
-    "Travel Credit Card": {
-     "blurb": "Built for spending abroad — no foreign transaction fees, travel perks, and worldwide acceptance. Freeze it instantly in the app if you misplace it.",
-     "rate_line": "No FX fees · 22.9% APR rep.",
-     "features": [
-      "No foreign transaction fees",
-      "Travel accident cover",
-      "Worldwide acceptance",
-      "Instant freeze in-app",
-      "No annual fee",
-      "Representative 22.9% APR variable"
-     ]
-    },
-    "Car Finance": {
-     "blurb": "Finance your next car with a competitive fixed rate and terms that fit your budget. Check your rate with a soft search that won't affect your score.",
-     "rate_line": "From 5.9% APR rep.",
-     "features": [
-      "Fixed monthly payments",
-      "Borrow £5,000–£50,000",
-      "Terms from 1 to 5 years",
-      "Soft-search rate check",
-      "No early-repayment fee",
-      "Representative 5.9% APR"
-     ]
-    },
-    "Home Improvement Loan": {
-     "blurb": "Borrow for renovations, extensions or a new kitchen with clear fixed monthly payments and no early-repayment fees. Get a decision in minutes.",
-     "rate_line": "From 6.4% APR rep.",
-     "features": [
-      "Fixed monthly payments",
-      "Borrow £1,000–£25,000",
-      "Terms from 1 to 7 years",
-      "No early-repayment fee",
-      "Decision in minutes",
-      "Representative 6.4% APR"
-     ]
-    },
-    "Cash ISA": {
-     "blurb": "Save tax-free up to your annual ISA allowance with easy access to your money. A simple way to keep more of the interest you earn.",
-     "rate_line": "4.1% AER tax-free",
-     "features": [
-      "4.1% AER variable, tax-free",
-      "Use your annual ISA allowance",
-      "Easy access, no penalties",
-      "Transfer in from other ISAs",
-      "Open from £1",
-      "FSCS protected up to £85,000"
-     ]
-    },
-    "Regular Saver": {
-     "blurb": "Put a set amount aside each month and earn our highest savings rate. Perfect for building a habit and reaching a goal.",
-     "rate_line": "5.0% AER · monthly",
-     "features": [
-      "5.0% AER fixed for 12 months",
-      "Save £25–£250 a month",
-      "Highest Northbank savings rate",
-      "Interest paid at maturity",
-      "Miss a month, no penalty",
-      "FSCS protected up to £85,000"
-     ]
-    },
-    "Notice Saver": {
-     "blurb": "Earn a higher rate in exchange for giving 90 days' notice before you withdraw. Good for savings you can plan ahead for.",
-     "rate_line": "4.4% AER · 90-day notice",
-     "features": [
-      "4.4% AER variable",
-      "90 days' notice to withdraw",
-      "Higher than easy-access",
-      "Interest paid monthly",
-      "Open from £500",
-      "FSCS protected up to £85,000"
-     ]
-    }
-   },
-   "articles": [
-    {
-     "title": "How to switch your bank account",
-     "category": "Switching",
-     "body": "Switching to Northbank takes seven working days with the Current Account Switch Service. We move your balance, direct debits and standing orders — you don't have to lift a finger."
-    },
-    {
-     "title": "Keeping your money safe",
-     "category": "Security",
-     "body": "Every Northbank account is protected up to £85,000 by the FSCS. We use biometric login, instant card freeze, and real-time fraud alerts."
-    },
-    {
-     "title": "Understanding your credit score",
-     "category": "Borrowing",
-     "body": "Your credit score affects the rates you're offered. Checking your eligibility with Northbank uses a soft search and never affects your score."
-    },
-    {
-     "title": "Saving toward a goal",
-     "category": "Saving",
-     "body": "Set a target in the app and Northbank rounds up your spending to help you get there. Easy-access means your money's never locked away."
-    }
-   ],
-   "tiles": [
-    {
-     "title": "Switch in 7 days",
-     "sub": "We do the moving for you",
-     "href": "help/banking/switch.html",
-     "image": ""
-    },
-    {
-     "title": "Protected to £85,000",
-     "sub": "FSCS covered",
-     "href": "help/banking/safety.html",
-     "image": ""
-    },
-    {
-     "title": "Check your rate",
-     "sub": "Soft search, no score impact",
-     "href": "quote.html",
-     "image": ""
-    },
-    {
-     "title": "Manage in the app",
-     "sub": "Everything in one place",
-     "href": "#",
-     "image": ""
-    }
-   ],
-   "nav": [
-    {
-     "label": "Checking",
-     "href": "category.html?c=Checking"
-    },
-    {
-     "label": "Savings",
-     "href": "category.html?c=Savings"
-    },
-    {
-     "label": "Credit Cards",
-     "href": "category.html?c=Credit%20Cards"
-    },
-    {
-     "label": "Loans",
-     "href": "category.html?c=Loans"
-    },
-    {
-     "label": "Get a quote",
-     "href": "quote.html"
-    }
-   ],
-   "lines_title": "Accounts, cards & loans",
-   "funnel": "open.html",
-   "price_suffix": "",
-   "homepage_products": [
-    "Everyday",
-    "Northbank Saver",
-    "Northbank Rewards Card",
-    "Personal Loan"
-   ]
-  },
-  "open_account": {
-   "steps": [
-    "Choose account",
-    "Your details",
-    "Confirm"
-   ],
-   "types": [
-    "Everyday",
-    "Northbank Saver",
-    "Northbank Rewards Card",
-    "Personal Loan"
-   ]
-  },
-  "quote": {
-   "steps": [
-    "What to cover",
-    "Your details",
-    "Your quote"
-   ],
-   "cover": [
-    "Home",
-    "Car",
-    "Travel",
-    "Life"
-   ],
-   "level": [
-    "Essential",
-    "Standard",
-    "Premier"
-   ],
-   "excess": [
-    "£100",
-    "£250",
-    "£500"
-   ]
-  },
-  "default_category": "Checking",
-  "rate_card": {
-   "bundles": [
-    {
-     "add": "Northbank Saver",
-     "benefit": "+0.5% AER on savings",
-     "term": "keep salary paid in",
-     "note": "growing balance, no savings product"
-    },
-    {
-     "add": "Home Insurance",
-     "benefit": "10% multi-product discount",
-     "term": "annual",
-     "note": "has a mortgage/loan"
-    },
-    {
-     "add": "Rewards Card",
-     "benefit": "fee waived with checking",
-     "term": "12 months",
-     "note": "active spender, no card"
-    }
-   ],
-   "market": {
-    "savings_rate_trend": "up",
-    "loan_rate_environment": "low",
-    "savings_rate_new": "4.1",
-    "mmf_yield": "5.2"
-   }
-  }
- },
- "insurance": {
-  "vertical": "Banking",
-  "subvertical": "Insurance",
-  "brand": "Northbank",
-  "tagline": "Cover for the things that matter",
-  "hero_title": "Cover you can<br>actually read.",
-  "hero_cta": "Compare cover",
-  "hero_lede": "Motor, home, travel and life cover with no jargon and no auto-renewal.",
-  "hero_eyebrow": "Protect",
-  "announce": "Cover starts the day you buy · 14-day cooling off",
-  "search_placeholder": "Search cover types",
-  "newsletter_title": "Stay covered",
-  "newsletter_lede": "Renewal reminders and cover tips.",
-  "tiles_title": "Browse cover",
-  "grid_title": "Popular cover",
-  "reco_title": "Often taken together",
-  "theme": {
-   "bg": "#FCFDFC",
-   "alt": "#EBF3EE",
-   "ink": "#141E19",
-   "muted": "#5C6B63",
-   "rule": "#D8E5DD",
-   "accent": "#23503F",
-   "display": "'Jost', Helvetica, sans-serif",
-   "body": "'Jost', Helvetica, sans-serif",
-   "fonts": "family=Jost:wght@300;400;500;600"
-  },
-  "template": "ecommerce",
-  "source": "sources/insurance-*.json",
-  "collections": {
-   "Motor": "Motor",
-   "Home": "Home",
-   "Travel": "Travel",
-   "Pet": "Pet",
-   "Life": "Life",
-   "Health": "Health",
-   "Business": "Motor",
-   "Gadget": "Motor"
-  },
-  "order": [
-   "Motor",
-   "Home",
-   "Travel",
-   "Pet",
-   "Life",
-   "Health"
-  ],
-  "subcats": {},
-  "defaults": {
-   "Motor": "All",
-   "Home": "All",
-   "Travel": "All",
-   "Pet": "All",
-   "Life": "All",
-   "Health": "All"
-  },
-  "labels": {
-   "add_to_cart": "Get a quote",
-   "cart": "Your quote",
-   "cart_title": "Your quote",
-   "cart_empty": "No cover selected yet",
-   "checkout": "Review quote",
-   "place_order": "Buy cover",
-   "order": "policy",
-   "confirm_title": "You're covered.",
-   "browse_cta": "Compare cover"
-  },
-  "profile": {
-   "tiers": [
-    "Standard",
-    "Plus",
-    "Premier"
-   ],
-   "service_attribute": {
-    "name": "service_preference",
-    "label": "What matters most",
-    "options": [
-     "Lowest price",
-     "Best cover",
-     "Fast claims",
-     "Flexible excess"
-    ]
-   }
-  },
-  "flow": {
-   "title": "Get a quote",
-   "lede": "Tell us what you need covered and we will price it in a minute.",
-   "event": "quote_requested",
-   "fields": [
-    {
-     "label": "Cover",
-     "name": "product",
-     "options": [
-      "Car",
+    "order": [
+      "Motor",
       "Home",
       "Travel",
       "Pet",
-      "Life"
-     ]
+      "Life",
+      "Health"
+    ],
+    "subcats": {},
+    "defaults": {
+      "Motor": "All",
+      "Home": "All",
+      "Travel": "All",
+      "Pet": "All",
+      "Life": "All",
+      "Health": "All"
     },
-    {
-     "label": "Level",
-     "name": "level",
-     "options": [
-      "Third Party",
-      "Standard",
-      "Comprehensive"
-     ]
+    "labels": {
+      "add_to_cart": "Get a quote",
+      "cart": "Your quote",
+      "cart_title": "Your quote",
+      "cart_empty": "No cover selected yet",
+      "checkout": "Review quote",
+      "place_order": "Buy cover",
+      "order": "policy",
+      "confirm_title": "You're covered.",
+      "browse_cta": "Compare cover"
     },
-    {
-     "label": "Excess",
-     "name": "amount",
-     "options": [
-      "100",
-      "250",
-      "500"
-     ]
+    "profile": {
+      "tiers": [
+        "Standard",
+        "Plus",
+        "Premier"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "What matters most",
+        "options": [
+          "Lowest price",
+          "Best cover",
+          "Fast claims",
+          "Flexible excess"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Get a quote",
+      "lede": "Tell us what you need covered and we will price it in a minute.",
+      "event": "quote_requested",
+      "fields": [
+        {
+          "label": "Cover",
+          "name": "product",
+          "options": [
+            "Car",
+            "Home",
+            "Travel",
+            "Pet",
+            "Life"
+          ]
+        },
+        {
+          "label": "Level",
+          "name": "level",
+          "options": [
+            "Third Party",
+            "Standard",
+            "Comprehensive"
+          ]
+        },
+        {
+          "label": "Excess",
+          "name": "amount",
+          "options": [
+            "100",
+            "250",
+            "500"
+          ]
+        }
+      ],
+      "attribute_field": "product"
+    },
+    "hero_category": "Motor",
+    "foryou_title": "Cover for you",
+    "showcase": {
+      "search": "travel",
+      "product": "48400000000001"
     }
-   ],
-   "attribute_field": "product"
   },
-  "hero_category": "Motor",
-  "foryou_title": "Cover for you",
-  "showcase": {
-   "search": "travel",
-   "product": "48400000000001"
-  }
- },
- "fintech": {
-  "vertical": "Banking",
-  "subvertical": "Fintech",
-  "brand": "Loop",
-  "tagline": "Money, moved properly",
-  "hero_title": "Money that<br>keeps up.",
-  "hero_cta": "Explore plans",
-  "hero_lede": "Spend, save, invest and get paid — personal and business, one app.",
-  "hero_eyebrow": "Plans",
-  "announce": "No minimum balance · Cancel any time",
-  "search_placeholder": "Search plans and accounts",
-  "newsletter_title": "Product updates",
-  "newsletter_lede": "New features, monthly.",
-  "tiles_title": "Browse plans",
-  "grid_title": "Most popular",
-  "reco_title": "Works well with",
-  "theme": {
-   "bg": "#FDFCFF",
-   "alt": "#F0ECFA",
-   "ink": "#1A1630",
-   "muted": "#645C80",
-   "rule": "#E1DAF2",
-   "accent": "#4B3B9E",
-   "display": "'Jost', Helvetica, sans-serif",
-   "body": "'Jost', Helvetica, sans-serif",
-   "fonts": "family=Jost:wght@300;400;500;600"
-  },
-  "template": "ecommerce",
-  "source": "sources/fintech-*.json",
-  "collections": {
-   "Business": "Business",
-   "Plans": "Plans",
-   "Investing": "Investing",
-   "Accounts": "Accounts"
-  },
-  "order": [
-   "Business",
-   "Plans",
-   "Investing",
-   "Accounts"
-  ],
-  "subcats": {},
-  "defaults": {
-   "Business": "All",
-   "Plans": "All",
-   "Investing": "All",
-   "Accounts": "All"
-  },
-  "labels": {
-   "add_to_cart": "Get started",
-   "cart": "Your plan",
-   "cart_title": "Your plan",
-   "cart_empty": "Nothing selected yet",
-   "checkout": "Review",
-   "place_order": "Confirm",
-   "order": "signup",
-   "confirm_title": "You're all set.",
-   "browse_cta": "Explore plans"
-  },
-  "profile": {
-   "tiers": [
-    "Free",
-    "Plus",
-    "Premium"
-   ],
-   "service_attribute": {
-    "name": "service_preference",
-    "label": "Mainly used for",
-    "options": [
-     "Everyday spending",
-     "Travel",
-     "Investing",
-     "Business"
-    ]
-   }
-  },
-  "flow": {
-   "title": "Change your plan",
-   "lede": "Upgrade, downgrade or add an account. Changes apply from your next cycle.",
-   "event": "plan_changed",
-   "fields": [
-    {
-     "label": "Action",
-     "name": "action",
-     "options": [
-      "Upgrade",
-      "Downgrade",
-      "Add currency account",
-      "Invite a friend"
-     ]
+  "fintech": {
+    "vertical": "Banking",
+    "subvertical": "Fintech",
+    "brand": "Loop",
+    "tagline": "Money, moved properly",
+    "hero_title": "Money that<br>keeps up.",
+    "hero_cta": "Explore plans",
+    "hero_lede": "Spend, save, invest and get paid — personal and business, one app.",
+    "hero_eyebrow": "Plans",
+    "announce": "No minimum balance · Cancel any time",
+    "search_placeholder": "Search plans and accounts",
+    "newsletter_title": "Product updates",
+    "newsletter_lede": "New features, monthly.",
+    "tiles_title": "Browse plans",
+    "grid_title": "Most popular",
+    "reco_title": "Works well with",
+    "theme": {
+      "bg": "#FDFCFF",
+      "alt": "#F0ECFA",
+      "ink": "#1A1630",
+      "muted": "#645C80",
+      "rule": "#E1DAF2",
+      "accent": "#4B3B9E",
+      "display": "'Jost', Helvetica, sans-serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Jost:wght@300;400;500;600"
     },
-    {
-     "label": "Plan",
-     "name": "plan",
-     "options": [
-      "Free",
-      "Plus",
-      "Premium",
-      "Metal"
-     ]
+    "template": "ecommerce",
+    "source": "sources/fintech-*.json",
+    "collections": {
+      "Business": "Business",
+      "Plans": "Plans",
+      "Investing": "Investing",
+      "Accounts": "Accounts"
     },
-    {
-     "label": "Billing",
-     "name": "billing",
-     "options": [
-      "Monthly",
-      "Annual"
-     ]
+    "order": [
+      "Business",
+      "Plans",
+      "Investing",
+      "Accounts"
+    ],
+    "subcats": {},
+    "defaults": {
+      "Business": "All",
+      "Plans": "All",
+      "Investing": "All",
+      "Accounts": "All"
+    },
+    "labels": {
+      "add_to_cart": "Get started",
+      "cart": "Your plan",
+      "cart_title": "Your plan",
+      "cart_empty": "Nothing selected yet",
+      "checkout": "Review",
+      "place_order": "Confirm",
+      "order": "signup",
+      "confirm_title": "You're all set.",
+      "browse_cta": "Explore plans"
+    },
+    "profile": {
+      "tiers": [
+        "Free",
+        "Plus",
+        "Premium"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "Mainly used for",
+        "options": [
+          "Everyday spending",
+          "Travel",
+          "Investing",
+          "Business"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Change your plan",
+      "lede": "Upgrade, downgrade or add an account. Changes apply from your next cycle.",
+      "event": "plan_changed",
+      "fields": [
+        {
+          "label": "Action",
+          "name": "action",
+          "options": [
+            "Upgrade",
+            "Downgrade",
+            "Add currency account",
+            "Invite a friend"
+          ]
+        },
+        {
+          "label": "Plan",
+          "name": "plan",
+          "options": [
+            "Free",
+            "Plus",
+            "Premium",
+            "Metal"
+          ]
+        },
+        {
+          "label": "Billing",
+          "name": "billing",
+          "options": [
+            "Monthly",
+            "Annual"
+          ]
+        }
+      ],
+      "attribute_field": "plan"
+    },
+    "hero_category": "Business",
+    "foryou_title": "Right for you",
+    "showcase": {
+      "search": "business",
+      "product": "48500000000001"
     }
-   ],
-   "attribute_field": "plan"
   },
-  "hero_category": "Business",
-  "foryou_title": "Right for you",
-  "showcase": {
-   "search": "business",
-   "product": "48500000000001"
-  }
- },
- "fashion": {
-  "vertical": "Retail",
-  "subvertical": "Fashion",
-  "brand": "Ashford Lane",
-  "tagline": "Womenswear, menswear and footwear",
-  "hero_title": "Dress for the<br>life you have.",
-  "hero_cta": "Shop new in",
-  "hero_lede": "Everyday clothing built to last longer than the season.",
-  "hero_eyebrow": "New season",
-  "announce": "Free returns within 30 days",
-  "search_placeholder": "Search clothing, shoes, accessories",
-  "newsletter_title": "First look",
-  "newsletter_lede": "New arrivals and early access to sale.",
-  "tiles_title": "Shop by category",
-  "grid_title": "New in",
-  "reco_title": "Picked for you",
-  "theme": {
-   "bg": "#FFFDFB",
-   "alt": "#F4EFE9",
-   "ink": "#211E1C",
-   "muted": "#726A64",
-   "rule": "#E5DDD4",
-   "accent": "#8C5A3C",
-   "display": "'Fraunces', Georgia, serif",
-   "body": "'Jost', Helvetica, sans-serif",
-   "fonts": "family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Jost:wght@300;400;500"
-  },
-  "template": "ecommerce",
-  "source": "sources/fashion-*.json",
-  "collections": {
-   "Women's Collection": "Women",
-   "Women's Tops": "Women",
-   "Women's Bottoms": "Women",
-   "Women's Jackets": "Women",
-   "Women's T-Shirts": "Women",
-   "Women's Vests": "Women",
-   "Men's Collection": "Men",
-   "Men's Jackets": "Men",
-   "Men's Knitwear": "Men",
-   "Men's Shirts": "Men",
-   "Men's T-Shirts": "Men",
-   "Sneakers": "Shoes",
-   "Boots": "Shoes",
-   "Shoes Collection": "Shoes",
-   "Women's Shoes": "Shoes",
-   "Men's Shoes": "Shoes",
-   "Accessories": "Accessories",
-   "Men's Accessories": "Accessories",
-   "Women's Accessories": "Accessories",
-   "Women's Jewelry": "Accessories",
-   "Necklaces": "Accessories",
-   "Earrings": "Accessories",
-   "Bracelets": "Accessories",
-   "Rings": "Accessories"
-  },
-  "order": [
-   "Women",
-   "Men",
-   "Shoes",
-   "Accessories"
-  ],
-  "subcats": {},
-  "defaults": {
-   "Tops": "All",
-   "Maxi Dresses": "All",
-   "Mini Dresses": "All",
-   "Dresses": "All",
-   "Pants": "All",
-   "Outerwear": "All"
-  },
-  "profile": {
-   "tiers": [
-    "Member",
-    "Silver",
-    "Gold"
-   ],
-   "service_attribute": {
-    "name": "service_preference",
-    "label": "Size preference",
-    "options": [
-     "XS",
-     "S",
-     "M",
-     "L",
-     "XL"
-    ]
-   }
-  },
-  "flow": {
-   "title": "Book a fitting",
-   "lede": "Book a fitting, alterations or an hour with a personal stylist.",
-   "event": "fitting_booked",
-   "fields": [
-    {
-     "label": "Service",
-     "name": "service",
-     "options": [
-      "Personal styling",
-      "Alterations",
-      "Fitting"
-     ]
+  "fashion": {
+    "vertical": "Retail",
+    "subvertical": "Fashion",
+    "brand": "Ashford Lane",
+    "tagline": "Womenswear, menswear and footwear",
+    "hero_title": "Dress for the<br>life you have.",
+    "hero_cta": "Shop new in",
+    "hero_lede": "Everyday clothing built to last longer than the season.",
+    "hero_eyebrow": "New season",
+    "announce": "Free returns within 30 days",
+    "search_placeholder": "Search clothing, shoes, accessories",
+    "newsletter_title": "First look",
+    "newsletter_lede": "New arrivals and early access to sale.",
+    "tiles_title": "Shop by category",
+    "grid_title": "New in",
+    "reco_title": "Picked for you",
+    "theme": {
+      "bg": "#FFFDFB",
+      "alt": "#F4EFE9",
+      "ink": "#211E1C",
+      "muted": "#726A64",
+      "rule": "#E5DDD4",
+      "accent": "#8C5A3C",
+      "display": "'Fraunces', Georgia, serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Jost:wght@300;400;500"
     },
-    {
-     "label": "Store",
-     "name": "store",
-     "options": [
-      "Regent Street",
-      "Leeds",
-      "Glasgow"
-     ]
+    "template": "ecommerce",
+    "source": "sources/fashion-*.json",
+    "collections": {
+      "Women's Collection": "Women",
+      "Women's Tops": "Women",
+      "Women's Bottoms": "Women",
+      "Women's Jackets": "Women",
+      "Women's T-Shirts": "Women",
+      "Women's Vests": "Women",
+      "Men's Collection": "Men",
+      "Men's Jackets": "Men",
+      "Men's Knitwear": "Men",
+      "Men's Shirts": "Men",
+      "Men's T-Shirts": "Men",
+      "Sneakers": "Shoes",
+      "Boots": "Shoes",
+      "Shoes Collection": "Shoes",
+      "Women's Shoes": "Shoes",
+      "Men's Shoes": "Shoes",
+      "Accessories": "Accessories",
+      "Men's Accessories": "Accessories",
+      "Women's Accessories": "Accessories",
+      "Women's Jewelry": "Accessories",
+      "Necklaces": "Accessories",
+      "Earrings": "Accessories",
+      "Bracelets": "Accessories",
+      "Rings": "Accessories"
     },
-    {
-     "label": "Date",
-     "name": "date",
-     "options": "date"
+    "order": [
+      "Women",
+      "Men",
+      "Shoes",
+      "Accessories"
+    ],
+    "subcats": {},
+    "defaults": {
+      "Tops": "All",
+      "Maxi Dresses": "All",
+      "Mini Dresses": "All",
+      "Dresses": "All",
+      "Pants": "All",
+      "Outerwear": "All"
+    },
+    "profile": {
+      "tiers": [
+        "Member",
+        "Silver",
+        "Gold"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "Size preference",
+        "options": [
+          "XS",
+          "S",
+          "M",
+          "L",
+          "XL"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Book a fitting",
+      "lede": "Book a fitting, alterations or an hour with a personal stylist.",
+      "event": "fitting_booked",
+      "fields": [
+        {
+          "label": "Service",
+          "name": "service",
+          "options": [
+            "Personal styling",
+            "Alterations",
+            "Fitting"
+          ]
+        },
+        {
+          "label": "Store",
+          "name": "store",
+          "options": [
+            "Regent Street",
+            "Leeds",
+            "Glasgow"
+          ]
+        },
+        {
+          "label": "Date",
+          "name": "date",
+          "options": "date"
+        }
+      ],
+      "attribute_field": "store"
+    },
+    "hero_category": "Dresses",
+    "foryou_title": "Just for you",
+    "showcase": {
+      "search": "burgundy",
+      "product": "55693210845352"
+    },
+    "tier_banner": true,
+    "fulfilment": {
+      "stores": [
+        "Oxford Street",
+        "Westfield Stratford",
+        "Canary Wharf"
+      ]
+    },
+    "size_gaps": true,
+    "full_oos": 8
+  },
+  "electronics": {
+    "vertical": "Retail",
+    "subvertical": "Electronics",
+    "brand": "Kestrel",
+    "tagline": "Home appliances and technology",
+    "hero_title": "Built to run<br>for years.",
+    "hero_cta": "Shop appliances",
+    "hero_lede": "Appliances, audio and technology, with installation included.",
+    "hero_eyebrow": "This season",
+    "announce": "Free delivery and installation over €300",
+    "search_placeholder": "Search appliances, TVs, audio",
+    "newsletter_title": "Deals first",
+    "newsletter_lede": "Price drops and new models, monthly.",
+    "tiles_title": "Shop by category",
+    "grid_title": "New models",
+    "reco_title": "You might also like",
+    "theme": {
+      "bg": "#FCFCFD",
+      "alt": "#EFF1F4",
+      "ink": "#15181C",
+      "muted": "#616873",
+      "rule": "#DDE1E7",
+      "accent": "#1D4E89",
+      "display": "'Jost', Helvetica, sans-serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Jost:wght@300;400;500;600"
+    },
+    "template": "ecommerce",
+    "source": "sources/electronics-*.json",
+    "collections": {
+      "Speaker Outlet": "Speaker Outlet",
+      "Subwoofer Outlet": "Subwoofer Outlet",
+      "Warranty Part": "Warranty Part",
+      "Accessory": "Accessory",
+      "Subwoofer": "Subwoofer",
+      "Speaker": "Speaker",
+      "Amplifier": "Speaker Outlet",
+      "Replacement Part": "Warranty Part"
+    },
+    "order": [
+      "Speaker Outlet",
+      "Subwoofer Outlet",
+      "Warranty Part",
+      "Accessory",
+      "Subwoofer",
+      "Speaker"
+    ],
+    "subcats": {},
+    "defaults": {
+      "Speaker Outlet": "All",
+      "Subwoofer Outlet": "All",
+      "Warranty Part": "All",
+      "Accessory": "All",
+      "Subwoofer": "All",
+      "Speaker": "All"
+    },
+    "profile": {
+      "tiers": [
+        "Member",
+        "Plus",
+        "Pro"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "Home setup",
+        "options": [
+          "Flat",
+          "House",
+          "Studio",
+          "Shared"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Book installation",
+      "lede": "Arrange delivery, installation and removal of your old appliance.",
+      "event": "installation_booked",
+      "fields": [
+        {
+          "label": "Service",
+          "name": "service",
+          "options": [
+            "Delivery only",
+            "Install & remove old",
+            "Full setup"
+          ]
+        },
+        {
+          "label": "Slot",
+          "name": "slot",
+          "options": [
+            "Morning",
+            "Afternoon",
+            "Evening"
+          ]
+        },
+        {
+          "label": "Date",
+          "name": "date",
+          "options": "date"
+        }
+      ],
+      "attribute_field": "service"
+    },
+    "hero_category": "Speaker",
+    "foryou_title": "Picked for you",
+    "showcase": {
+      "search": "bookshelf",
+      "product": "45033161687229"
+    },
+    "tier_banner": true,
+    "fulfilment": {
+      "stores": [
+        "Oxford Street",
+        "Westfield Stratford",
+        "Canary Wharf"
+      ]
     }
-   ],
-   "attribute_field": "store"
   },
-  "hero_category": "Dresses",
-  "foryou_title": "Just for you",
-  "showcase": {
-   "search": "burgundy",
-   "product": "55693210845352"
-  },
-  "tier_banner": true,
-  "fulfilment": {
-   "stores": [
-    "Oxford Street",
-    "Westfield Stratford",
-    "Canary Wharf"
-   ]
-  },
-  "size_gaps": true,
-  "full_oos": 8
- },
- "electronics": {
-  "vertical": "Retail",
-  "subvertical": "Electronics",
-  "brand": "Kestrel",
-  "tagline": "Home appliances and technology",
-  "hero_title": "Built to run<br>for years.",
-  "hero_cta": "Shop appliances",
-  "hero_lede": "Appliances, audio and technology, with installation included.",
-  "hero_eyebrow": "This season",
-  "announce": "Free delivery and installation over €300",
-  "search_placeholder": "Search appliances, TVs, audio",
-  "newsletter_title": "Deals first",
-  "newsletter_lede": "Price drops and new models, monthly.",
-  "tiles_title": "Shop by category",
-  "grid_title": "New models",
-  "reco_title": "You might also like",
-  "theme": {
-   "bg": "#FCFCFD",
-   "alt": "#EFF1F4",
-   "ink": "#15181C",
-   "muted": "#616873",
-   "rule": "#DDE1E7",
-   "accent": "#1D4E89",
-   "display": "'Jost', Helvetica, sans-serif",
-   "body": "'Jost', Helvetica, sans-serif",
-   "fonts": "family=Jost:wght@300;400;500;600"
-  },
-  "template": "ecommerce",
-  "source": "sources/electronics-*.json",
-  "collections": {
-   "Speaker Outlet": "Speaker Outlet",
-   "Subwoofer Outlet": "Subwoofer Outlet",
-   "Warranty Part": "Warranty Part",
-   "Accessory": "Accessory",
-   "Subwoofer": "Subwoofer",
-   "Speaker": "Speaker",
-   "Amplifier": "Speaker Outlet",
-   "Replacement Part": "Warranty Part"
-  },
-  "order": [
-   "Speaker Outlet",
-   "Subwoofer Outlet",
-   "Warranty Part",
-   "Accessory",
-   "Subwoofer",
-   "Speaker"
-  ],
-  "subcats": {},
-  "defaults": {
-   "Speaker Outlet": "All",
-   "Subwoofer Outlet": "All",
-   "Warranty Part": "All",
-   "Accessory": "All",
-   "Subwoofer": "All",
-   "Speaker": "All"
-  },
-  "profile": {
-   "tiers": [
-    "Member",
-    "Plus",
-    "Pro"
-   ],
-   "service_attribute": {
-    "name": "service_preference",
-    "label": "Home setup",
-    "options": [
-     "Flat",
-     "House",
-     "Studio",
-     "Shared"
-    ]
-   }
-  },
-  "flow": {
-   "title": "Book installation",
-   "lede": "Arrange delivery, installation and removal of your old appliance.",
-   "event": "installation_booked",
-   "fields": [
-    {
-     "label": "Service",
-     "name": "service",
-     "options": [
-      "Delivery only",
-      "Install & remove old",
-      "Full setup"
-     ]
+  "telco": {
+    "vertical": "Telco",
+    "subvertical": "Telco",
+    "brand": "Vantis",
+    "tagline": "Phones, plans and accessories",
+    "hero_title": "Better signal.<br>Fewer surprises.",
+    "hero_cta": "Shop devices",
+    "hero_lede": "Handsets, accessories and plans with no lock-in.",
+    "hero_eyebrow": "Connect",
+    "announce": "Keep your number · No contract",
+    "search_placeholder": "Search phones and accessories",
+    "newsletter_title": "Stay posted",
+    "newsletter_lede": "New devices and plan changes.",
+    "tiles_title": "Shop by category",
+    "grid_title": "Latest devices",
+    "reco_title": "Pairs well with",
+    "theme": {
+      "bg": "#FDFDFC",
+      "alt": "#EEF2EF",
+      "ink": "#12201A",
+      "muted": "#5F6F68",
+      "rule": "#DAE3DE",
+      "accent": "#136B4B",
+      "display": "'Jost', Helvetica, sans-serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Jost:wght@300;400;500;600"
     },
-    {
-     "label": "Slot",
-     "name": "slot",
-     "options": [
-      "Morning",
-      "Afternoon",
-      "Evening"
-     ]
+    "template": "content",
+    "source": "sources/telco-*.json",
+    "collections": {
+      "Plans": "Plans",
+      "Modern Folio - iPhone": "Modern Folio Iphone",
+      "iPhone 17 Pro Max": "Iphone 17 Pro Max",
+      "iPhone 17 Pro": "Iphone 17 Pro",
+      "iPhone 17": "Iphone 17",
+      "bundles": "Bundles",
+      "iPhone 17e/ 16e": "Iphone 17e/ 16e",
+      "Wireless Charger": "Modern Folio Iphone",
+      "Galaxy S26 FE": "Modern Folio Iphone",
+      "Tote Bag": "Modern Folio Iphone",
+      "iPhone 16 Pro Max": "Iphone 17 Pro Max",
+      "Ice Pack": "Modern Folio Iphone",
+      "Pixel 11 Pro XL": "Iphone 17 Pro Max",
+      "Pixel 11 Pro": "Iphone 17 Pro Max",
+      "Pixel 11": "Modern Folio Iphone",
+      "AirTag Case": "Modern Folio Iphone",
+      "Phone Pouch": "Modern Folio Iphone",
+      "Phone Charms & Straps": "Modern Folio Iphone",
+      "MagSafe Accessories": "Modern Folio Iphone",
+      "Keychain Wallet": "Modern Folio Iphone",
+      "Adhesive Accessories": "Modern Folio Iphone",
+      "iPad (A16) / (10th gen.)": "Modern Folio Iphone",
+      "Phone Chains": "Modern Folio Iphone",
+      "Cooler Tote": "Modern Folio Iphone",
+      "Mahjong Tote Set": "Modern Folio Iphone",
+      "iPhone Air": "Modern Folio Iphone",
+      "iPhone 16": "Modern Folio Iphone",
+      "iPhone 16 Pro": "Iphone 17 Pro Max",
+      "Bag Organizer": "Modern Folio Iphone",
+      "Galaxy S26+": "Modern Folio Iphone",
+      "Galaxy S26 Ultra": "Modern Folio Iphone",
+      "Galaxy S26": "Modern Folio Iphone",
+      "Pixel 10a": "Modern Folio Iphone",
+      "iPad Pro 13\" (M5/M4)": "Iphone 17 Pro Max",
+      "iPad Pro 11\" (M5/M4)": "Iphone 17 Pro Max",
+      "iPhone 12 / iPhone 12 Pro": "Iphone 17 Pro Max",
+      "Train Case": "Modern Folio Iphone",
+      "Phone Mount": "Modern Folio Iphone",
+      "Fast Charger": "Modern Folio Iphone",
+      "AirPods Pro 3": "Iphone 17 Pro Max",
+      "Pixel 9 / 9 Pro": "Iphone 17 Pro Max",
+      "Travel Pouch": "Modern Folio Iphone",
+      "Galaxy S25 Ultra": "Modern Folio Iphone",
+      "iPhone 17 Pro / 17 Pro Max": "Iphone 17 Pro Max",
+      "Galaxy S25 FE": "Modern Folio Iphone",
+      "Series 4/5/6/SE Apple Watch 44mm": "Modern Folio Iphone",
+      "Pixel 10 Pro XL": "Iphone 17 Pro Max",
+      "Pixel 10 Pro Fold": "Iphone 17 Pro Max",
+      "Pixel 10 Pro": "Iphone 17 Pro Max",
+      "Pixel 10": "Modern Folio Iphone",
+      "Pixel 10 / 10 Pro": "Iphone 17 Pro Max",
+      "Bag Charm": "Modern Folio Iphone",
+      "Galaxy S25 Edge": "Modern Folio Iphone",
+      "AirPods Pro 1 & 2": "Iphone 17 Pro Max",
+      "AirPods 4": "Modern Folio Iphone",
+      "Pixel 9 Pro XL": "Iphone 17 Pro Max",
+      "Pixel 9a": "Modern Folio Iphone",
+      "Waterproof Case": "Modern Folio Iphone",
+      "Apple Watch 42-49mm (Large Series 1-11 / SE / Ultra 1-3)": "Modern Folio Iphone",
+      "Laptop Sleeve 14\"": "Modern Folio Iphone",
+      "Laptop Sleeve 16\"": "Modern Folio Iphone",
+      "Galaxy S25+": "Modern Folio Iphone",
+      "Galaxy S25": "Modern Folio Iphone",
+      "Traditional Case - iPhone": "Modern Folio Iphone",
+      "Apparel - Apparel": "Modern Folio Iphone",
+      "Modern Band - Apple Watch": "Modern Folio Iphone",
+      "Modern Case - iPhone": "Modern Folio Iphone",
+      "Skin - iPhone": "Modern Folio Iphone",
+      "Modern Case - Airpods": "Modern Folio Iphone",
+      "Modern Case - Pixel Buds": "Modern Folio Iphone",
+      "Rugged Case - iPhone": "Modern Folio Iphone",
+      "Sport Case - iPhone": "Modern Folio Iphone",
+      "Rugged Band - Apple Watch": "Modern Folio Iphone",
+      "Tempo Band - Apple Watch": "Modern Folio Iphone",
+      "Base & Stand - Wireless Charging (No AW)": "Modern Folio Iphone",
+      "Cable - Cable": "Modern Folio Iphone",
+      "Find My - Find My": "Modern Folio Iphone",
+      "Modern Case - Airpods - Horween Leather": "Modern Folio Iphone",
+      "Airtag Case - Airtag": "Modern Folio Iphone",
+      "Screen Protector - iPhone": "Modern Folio Iphone",
+      "Sport Band - Apple Watch": "Modern Folio Iphone",
+      "Charge Key - Cable": "Modern Folio Iphone",
+      "Wallet - Wallet": "Modern Folio Iphone",
+      "Stratos Band - Apple Watch": "Modern Folio Iphone",
+      "Wallet - Find My": "Modern Folio Iphone",
+      "Modern Case - Pixel Buds - Horween Leather": "Modern Folio Iphone",
+      "Rocky Point Band - Apple Watch": "Modern Folio Iphone",
+      "Modern Folio - iPad": "Modern Folio Iphone",
+      "Base & Stand - Wireless Charging (with AW)": "Modern Folio Iphone",
+      "Metal Band - Apple Watch": "Modern Folio Iphone",
+      "Active Band - Watch": "Modern Folio Iphone",
+      "Adapter - Power Supply": "Modern Folio Iphone",
+      "Rugged Case - iPhone - Horween Leather": "Modern Folio Iphone",
+      "Modern Case - iPhone - Horween Leather": "Modern Folio Iphone",
+      "Rugged Case - iPhone - IML": "Modern Folio Iphone",
+      "Lanyard - Miscellaneous": "Modern Folio Iphone",
+      "Modern Case - iPhone - Camino Leather": "Modern Folio Iphone",
+      "Active Band - Pixel Watch": "Modern Folio Iphone",
+      "Modern Case - Airpods - Camino Leather": "Modern Folio Iphone",
+      "Other - Keychain": "Modern Folio Iphone",
+      "Base & Stand - Power Supply": "Modern Folio Iphone",
+      "Sport Case - Airpods": "Modern Folio Iphone",
+      "Slim Case - iPhone": "Modern Folio Iphone",
+      "Rugged Case - Apple Watch - Stainless Steel": "Modern Folio Iphone",
+      "Pen - Pen": "Modern Folio Iphone",
+      "Sport Slim Band - Apple Watch": "Modern Folio Iphone",
+      "Traditional Band - Apple Watch": "Modern Folio Iphone",
+      "Active Band - Apple Watch": "Modern Folio Iphone",
+      "Modern Case - iPhone - Active Leather": "Modern Folio Iphone"
     },
-    {
-     "label": "Date",
-     "name": "date",
-     "options": "date"
+    "order": [
+      "Plans",
+      "Modern Folio Iphone",
+      "Iphone 17 Pro Max",
+      "Iphone 17 Pro",
+      "Iphone 17",
+      "Bundles",
+      "Iphone 17e/ 16e"
+    ],
+    "subcats": {},
+    "defaults": {
+      "Modern Folio Iphone": "All",
+      "Iphone 17 Pro Max": "All",
+      "Iphone 17 Pro": "All",
+      "Iphone 17": "All",
+      "Bundles": "All",
+      "Iphone 17e/ 16e": "All"
+    },
+    "labels": {
+      "add_to_cart": "Add to basket",
+      "cart": "Basket",
+      "cart_title": "Your basket",
+      "confirm_title": "Your order is confirmed."
+    },
+    "profile": {
+      "tiers": [
+        "Pay As You Go",
+        "Monthly",
+        "Business"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "Plan type",
+        "options": [
+          "SIM only",
+          "Phone on contract",
+          "Broadband",
+          "Business"
+        ]
+      },
+      "extra": [
+        {
+          "name": "plan"
+        },
+        {
+          "name": "plan_price"
+        },
+        {
+          "name": "subscription_status"
+        },
+        {
+          "name": "assigned_number"
+        },
+        {
+          "name": "data_used"
+        },
+        {
+          "name": "data_allowance"
+        }
+      ]
+    },
+    "flow": {
+      "title": "Top up or change plan",
+      "lede": "Top up, change plan, add a data boost or renew your contract.",
+      "event": "plan_changed",
+      "fields": [
+        {
+          "label": "Action",
+          "name": "action",
+          "options": [
+            "Top up credit",
+            "Upgrade plan",
+            "Add data boost",
+            "Renew contract"
+          ]
+        },
+        {
+          "label": "Plan",
+          "name": "plan",
+          "options": [
+            "Vantis 5",
+            "Vantis 20",
+            "Vantis Unlimited"
+          ]
+        },
+        {
+          "label": "Amount",
+          "name": "amount",
+          "options": [
+            "10",
+            "20",
+            "30",
+            "50"
+          ]
+        }
+      ],
+      "attribute_field": "plan"
+    },
+    "hero_category": "Iphone 17 Pro",
+    "foryou_title": "Picked for you",
+    "showcase": {
+      "search": "case",
+      "product": "45914954334344"
+    },
+    "content": {
+      "lines_collection": "Plans",
+      "popular": "Vantis 20",
+      "line_cta": "Choose this plan",
+      "hero": {
+        "_default": {
+          "eyebrow": "Vantis",
+          "title": "Plans that flex with you.",
+          "lede": "Unlimited calls, 5G data, no lock-in. Pick a plan and keep your number.",
+          "cta": "See plans",
+          "href": "#plans",
+          "image": ""
+        },
+        "unlimited": {
+          "eyebrow": "Vantis Unlimited",
+          "title": "Data with nothing to count.",
+          "lede": "Unlimited 5G, unlimited calls, no contract. Stream, tether and game freely.",
+          "cta": "Get Unlimited",
+          "href": "#plans",
+          "image": ""
+        },
+        "plans": {
+          "eyebrow": "Vantis",
+          "title": "Find your plan.",
+          "lede": "Three simple plans, unlimited calls on all, no lock-in.",
+          "cta": "Compare plans",
+          "href": "#plans",
+          "image": ""
+        },
+        "roaming": {
+          "eyebrow": "Vantis · Roaming",
+          "title": "Use your plan across Europe.",
+          "lede": "EU roaming included on every Vantis plan — same allowance, no surprises.",
+          "cta": "See plans",
+          "href": "#plans",
+          "image": ""
+        }
+      },
+      "articles": [
+        {
+          "title": "How to keep your number",
+          "category": "Switching",
+          "body": "Bring your existing number to Vantis. Request your PAC code from your current provider, enter it at checkout, and we port your number within one working day.",
+          "href": "help/telco/keep-your-number.html"
+        },
+        {
+          "title": "Using your phone abroad (roaming)",
+          "category": "Roaming",
+          "body": "EU roaming is included on every plan at no extra cost — your data, calls and texts work across Europe exactly as they do at home. Outside the EU, add a travel pass.",
+          "href": "help/telco/roaming.html"
+        },
+        {
+          "title": "Set up your eSIM",
+          "category": "SIM",
+          "body": "An eSIM is a digital SIM built into your phone. After you subscribe, scan the QR code we email you to activate — no physical SIM needed.",
+          "href": "help/telco/esim.html"
+        },
+        {
+          "title": "Check your data usage",
+          "category": "Account",
+          "body": "See how much of your data allowance you have used this cycle in the Vantis app or by signing in to your account online. Usage resets at the start of each billing cycle.",
+          "href": "help/telco/data-usage.html"
+        },
+        {
+          "title": "Changing your plan",
+          "category": "Account",
+          "body": "Move up or down a plan at any time — there is no contract. Changes take effect from your next billing cycle and are prorated.",
+          "href": "help/telco/change-plan.html"
+        },
+        {
+          "title": "What 5G coverage do I have?",
+          "category": "Coverage",
+          "body": "Vantis 5G covers most urban areas. Check your postcode on the coverage map to confirm 5G availability at home and work.",
+          "href": "help/telco/coverage.html"
+        }
+      ],
+      "tiles": [
+        {
+          "title": "Keep your number",
+          "sub": "Port in one working day",
+          "href": "help/telco/keep-your-number.html",
+          "image": ""
+        },
+        {
+          "title": "Roaming in Europe",
+          "sub": "Included on every plan",
+          "href": "help/telco/roaming.html",
+          "image": ""
+        },
+        {
+          "title": "Set up eSIM",
+          "sub": "Activate in minutes",
+          "href": "help/telco/esim.html",
+          "image": ""
+        },
+        {
+          "title": "Coverage map",
+          "sub": "Check your 5G",
+          "href": "help/telco/coverage.html",
+          "image": ""
+        }
+      ],
+      "nav": [
+        {
+          "label": "Plans",
+          "href": "#plans"
+        },
+        {
+          "label": "Phones",
+          "href": "category.html?c=Phones"
+        },
+        {
+          "label": "Top up",
+          "href": "topup.html"
+        }
+      ],
+      "plan_cards": {
+        "Vantis 5": {
+          "blurb": "Best for light users — messaging, maps and the occasional stream.",
+          "features": [
+            "5 GB 5G data",
+            "Unlimited calls & texts",
+            "No lock-in contract",
+            "EU roaming included"
+          ]
+        },
+        "Vantis 20": {
+          "blurb": "Our most popular plan — daily streaming, video calls and hotspot.",
+          "features": [
+            "20 GB 5G data",
+            "Unlimited calls & texts",
+            "No lock-in contract",
+            "EU roaming included"
+          ]
+        },
+        "Vantis Unlimited": {
+          "blurb": "For heavy users — gaming, tethering and 4K with nothing to count.",
+          "features": [
+            "Unlimited 5G data",
+            "Unlimited calls & texts",
+            "No lock-in contract",
+            "EU roaming included"
+          ]
+        }
+      }
+    },
+    "default_category": "Plans",
+    "rate_card": {
+      "credit_to_minutes": 20,
+      "credit_tiers": [
+        {
+          "amount": 10,
+          "minutes": 200,
+          "note": "200 mins or 2 GB"
+        },
+        {
+          "amount": 20,
+          "minutes": 450,
+          "note": "450 mins or 5 GB"
+        },
+        {
+          "amount": 30,
+          "minutes": 700,
+          "note": "700 mins or 8 GB"
+        }
+      ],
+      "boosts": [
+        {
+          "name": "1 GB boost",
+          "gb": 1,
+          "price": 3
+        },
+        {
+          "name": "5 GB boost",
+          "gb": 5,
+          "price": 8
+        },
+        {
+          "name": "20 GB boost",
+          "gb": 20,
+          "price": 14
+        }
+      ],
+      "plan_inclusions": {
+        "Vantis 5": {
+          "data": "5 GB",
+          "minutes": "Unlimited UK",
+          "texts": "Unlimited"
+        },
+        "Vantis 20": {
+          "data": "20 GB",
+          "minutes": "Unlimited UK",
+          "texts": "Unlimited"
+        },
+        "Vantis Unlimited": {
+          "data": "Unlimited",
+          "minutes": "Unlimited UK",
+          "texts": "Unlimited"
+        }
+      },
+      "plan_ladder": [
+        {
+          "name": "Vantis 5",
+          "gb": 5,
+          "price": 8
+        },
+        {
+          "name": "Vantis 20",
+          "gb": 20,
+          "price": 14
+        },
+        {
+          "name": "Vantis Unlimited",
+          "gb": 10000,
+          "price": 24
+        }
+      ],
+      "bundles": [
+        {
+          "add": "Home Broadband",
+          "standalone": 30,
+          "bundled": 22,
+          "term": "18 months",
+          "note": "heavy home data users"
+        },
+        {
+          "add": "Second line",
+          "standalone": 14,
+          "bundled": 9,
+          "term": "12 months",
+          "note": "family / multi-line"
+        },
+        {
+          "add": "Device insurance",
+          "standalone": 8,
+          "bundled": 5,
+          "term": "12 months",
+          "note": "new device"
+        }
+      ],
+      "addons": [
+        {
+          "name": "Roaming pass",
+          "price": 6,
+          "trigger": "travel",
+          "note": "unlimited data in 50 destinations for 14 days"
+        },
+        {
+          "name": "Accessory bundle",
+          "price": 4,
+          "trigger": "device",
+          "note": "case + charger for your new phone"
+        }
+      ]
     }
-   ],
-   "attribute_field": "service"
   },
-  "hero_category": "Speaker",
-  "foryou_title": "Picked for you",
-  "showcase": {
-   "search": "bookshelf",
-   "product": "45033161687229"
-  },
-  "tier_banner": true,
-  "fulfilment": {
-   "stores": [
-    "Oxford Street",
-    "Westfield Stratford",
-    "Canary Wharf"
-   ]
-  }
- },
- "telco": {
-  "vertical": "Telco",
-  "subvertical": "Telco",
-  "brand": "Vantis",
-  "tagline": "Phones, plans and accessories",
-  "hero_title": "Better signal.<br>Fewer surprises.",
-  "hero_cta": "Shop devices",
-  "hero_lede": "Handsets, accessories and plans with no lock-in.",
-  "hero_eyebrow": "Connect",
-  "announce": "Keep your number · No contract",
-  "search_placeholder": "Search phones and accessories",
-  "newsletter_title": "Stay posted",
-  "newsletter_lede": "New devices and plan changes.",
-  "tiles_title": "Shop by category",
-  "grid_title": "Latest devices",
-  "reco_title": "Pairs well with",
-  "theme": {
-   "bg": "#FDFDFC",
-   "alt": "#EEF2EF",
-   "ink": "#12201A",
-   "muted": "#5F6F68",
-   "rule": "#DAE3DE",
-   "accent": "#136B4B",
-   "display": "'Jost', Helvetica, sans-serif",
-   "body": "'Jost', Helvetica, sans-serif",
-   "fonts": "family=Jost:wght@300;400;500;600"
-  },
-  "template": "content",
-  "source": "sources/telco-*.json",
-  "collections": {
-   "Plans": "Plans",
-   "Modern Folio - iPhone": "Modern Folio Iphone",
-   "iPhone 17 Pro Max": "Iphone 17 Pro Max",
-   "iPhone 17 Pro": "Iphone 17 Pro",
-   "iPhone 17": "Iphone 17",
-   "bundles": "Bundles",
-   "iPhone 17e/ 16e": "Iphone 17e/ 16e",
-   "Wireless Charger": "Modern Folio Iphone",
-   "Galaxy S26 FE": "Modern Folio Iphone",
-   "Tote Bag": "Modern Folio Iphone",
-   "iPhone 16 Pro Max": "Iphone 17 Pro Max",
-   "Ice Pack": "Modern Folio Iphone",
-   "Pixel 11 Pro XL": "Iphone 17 Pro Max",
-   "Pixel 11 Pro": "Iphone 17 Pro Max",
-   "Pixel 11": "Modern Folio Iphone",
-   "AirTag Case": "Modern Folio Iphone",
-   "Phone Pouch": "Modern Folio Iphone",
-   "Phone Charms & Straps": "Modern Folio Iphone",
-   "MagSafe Accessories": "Modern Folio Iphone",
-   "Keychain Wallet": "Modern Folio Iphone",
-   "Adhesive Accessories": "Modern Folio Iphone",
-   "iPad (A16) / (10th gen.)": "Modern Folio Iphone",
-   "Phone Chains": "Modern Folio Iphone",
-   "Cooler Tote": "Modern Folio Iphone",
-   "Mahjong Tote Set": "Modern Folio Iphone",
-   "iPhone Air": "Modern Folio Iphone",
-   "iPhone 16": "Modern Folio Iphone",
-   "iPhone 16 Pro": "Iphone 17 Pro Max",
-   "Bag Organizer": "Modern Folio Iphone",
-   "Galaxy S26+": "Modern Folio Iphone",
-   "Galaxy S26 Ultra": "Modern Folio Iphone",
-   "Galaxy S26": "Modern Folio Iphone",
-   "Pixel 10a": "Modern Folio Iphone",
-   "iPad Pro 13\" (M5/M4)": "Iphone 17 Pro Max",
-   "iPad Pro 11\" (M5/M4)": "Iphone 17 Pro Max",
-   "iPhone 12 / iPhone 12 Pro": "Iphone 17 Pro Max",
-   "Train Case": "Modern Folio Iphone",
-   "Phone Mount": "Modern Folio Iphone",
-   "Fast Charger": "Modern Folio Iphone",
-   "AirPods Pro 3": "Iphone 17 Pro Max",
-   "Pixel 9 / 9 Pro": "Iphone 17 Pro Max",
-   "Travel Pouch": "Modern Folio Iphone",
-   "Galaxy S25 Ultra": "Modern Folio Iphone",
-   "iPhone 17 Pro / 17 Pro Max": "Iphone 17 Pro Max",
-   "Galaxy S25 FE": "Modern Folio Iphone",
-   "Series 4/5/6/SE Apple Watch 44mm": "Modern Folio Iphone",
-   "Pixel 10 Pro XL": "Iphone 17 Pro Max",
-   "Pixel 10 Pro Fold": "Iphone 17 Pro Max",
-   "Pixel 10 Pro": "Iphone 17 Pro Max",
-   "Pixel 10": "Modern Folio Iphone",
-   "Pixel 10 / 10 Pro": "Iphone 17 Pro Max",
-   "Bag Charm": "Modern Folio Iphone",
-   "Galaxy S25 Edge": "Modern Folio Iphone",
-   "AirPods Pro 1 & 2": "Iphone 17 Pro Max",
-   "AirPods 4": "Modern Folio Iphone",
-   "Pixel 9 Pro XL": "Iphone 17 Pro Max",
-   "Pixel 9a": "Modern Folio Iphone",
-   "Waterproof Case": "Modern Folio Iphone",
-   "Apple Watch 42-49mm (Large Series 1-11 / SE / Ultra 1-3)": "Modern Folio Iphone",
-   "Laptop Sleeve 14\"": "Modern Folio Iphone",
-   "Laptop Sleeve 16\"": "Modern Folio Iphone",
-   "Galaxy S25+": "Modern Folio Iphone",
-   "Galaxy S25": "Modern Folio Iphone",
-   "Traditional Case - iPhone": "Modern Folio Iphone",
-   "Apparel - Apparel": "Modern Folio Iphone",
-   "Modern Band - Apple Watch": "Modern Folio Iphone",
-   "Modern Case - iPhone": "Modern Folio Iphone",
-   "Skin - iPhone": "Modern Folio Iphone",
-   "Modern Case - Airpods": "Modern Folio Iphone",
-   "Modern Case - Pixel Buds": "Modern Folio Iphone",
-   "Rugged Case - iPhone": "Modern Folio Iphone",
-   "Sport Case - iPhone": "Modern Folio Iphone",
-   "Rugged Band - Apple Watch": "Modern Folio Iphone",
-   "Tempo Band - Apple Watch": "Modern Folio Iphone",
-   "Base & Stand - Wireless Charging (No AW)": "Modern Folio Iphone",
-   "Cable - Cable": "Modern Folio Iphone",
-   "Find My - Find My": "Modern Folio Iphone",
-   "Modern Case - Airpods - Horween Leather": "Modern Folio Iphone",
-   "Airtag Case - Airtag": "Modern Folio Iphone",
-   "Screen Protector - iPhone": "Modern Folio Iphone",
-   "Sport Band - Apple Watch": "Modern Folio Iphone",
-   "Charge Key - Cable": "Modern Folio Iphone",
-   "Wallet - Wallet": "Modern Folio Iphone",
-   "Stratos Band - Apple Watch": "Modern Folio Iphone",
-   "Wallet - Find My": "Modern Folio Iphone",
-   "Modern Case - Pixel Buds - Horween Leather": "Modern Folio Iphone",
-   "Rocky Point Band - Apple Watch": "Modern Folio Iphone",
-   "Modern Folio - iPad": "Modern Folio Iphone",
-   "Base & Stand - Wireless Charging (with AW)": "Modern Folio Iphone",
-   "Metal Band - Apple Watch": "Modern Folio Iphone",
-   "Active Band - Watch": "Modern Folio Iphone",
-   "Adapter - Power Supply": "Modern Folio Iphone",
-   "Rugged Case - iPhone - Horween Leather": "Modern Folio Iphone",
-   "Modern Case - iPhone - Horween Leather": "Modern Folio Iphone",
-   "Rugged Case - iPhone - IML": "Modern Folio Iphone",
-   "Lanyard - Miscellaneous": "Modern Folio Iphone",
-   "Modern Case - iPhone - Camino Leather": "Modern Folio Iphone",
-   "Active Band - Pixel Watch": "Modern Folio Iphone",
-   "Modern Case - Airpods - Camino Leather": "Modern Folio Iphone",
-   "Other - Keychain": "Modern Folio Iphone",
-   "Base & Stand - Power Supply": "Modern Folio Iphone",
-   "Sport Case - Airpods": "Modern Folio Iphone",
-   "Slim Case - iPhone": "Modern Folio Iphone",
-   "Rugged Case - Apple Watch - Stainless Steel": "Modern Folio Iphone",
-   "Pen - Pen": "Modern Folio Iphone",
-   "Sport Slim Band - Apple Watch": "Modern Folio Iphone",
-   "Traditional Band - Apple Watch": "Modern Folio Iphone",
-   "Active Band - Apple Watch": "Modern Folio Iphone",
-   "Modern Case - iPhone - Active Leather": "Modern Folio Iphone"
-  },
-  "order": [
-   "Plans",
-   "Modern Folio Iphone",
-   "Iphone 17 Pro Max",
-   "Iphone 17 Pro",
-   "Iphone 17",
-   "Bundles",
-   "Iphone 17e/ 16e"
-  ],
-  "subcats": {},
-  "defaults": {
-   "Modern Folio Iphone": "All",
-   "Iphone 17 Pro Max": "All",
-   "Iphone 17 Pro": "All",
-   "Iphone 17": "All",
-   "Bundles": "All",
-   "Iphone 17e/ 16e": "All"
-  },
-  "labels": {
-   "add_to_cart": "Add to basket",
-   "cart": "Basket",
-   "cart_title": "Your basket",
-   "confirm_title": "Your order is confirmed."
-  },
-  "profile": {
-   "tiers": [
-    "Pay As You Go",
-    "Monthly",
-    "Business"
-   ],
-   "service_attribute": {
-    "name": "service_preference",
-    "label": "Plan type",
-    "options": [
-     "SIM only",
-     "Phone on contract",
-     "Broadband",
-     "Business"
-    ]
-   },
-   "extra": [
-    {
-     "name": "plan"
+  "home": {
+    "vertical": "Retail",
+    "subvertical": "Home",
+    "brand": "Aldgate",
+    "tagline": "Furniture and homeware",
+    "hero_title": "Rooms that<br>settle in.",
+    "hero_cta": "Shop living",
+    "hero_lede": "Furniture made to be lived with, not looked after.",
+    "hero_eyebrow": "New collection",
+    "announce": "Free delivery on orders over €200",
+    "search_placeholder": "Search furniture and homeware",
+    "newsletter_title": "Room by room",
+    "newsletter_lede": "New pieces and styling ideas.",
+    "tiles_title": "Shop by room",
+    "grid_title": "New in",
+    "reco_title": "Completes the room",
+    "theme": {
+      "bg": "#FDFCFA",
+      "alt": "#F1EDE6",
+      "ink": "#221F1B",
+      "muted": "#6E6862",
+      "rule": "#E3DCD1",
+      "accent": "#6B5B3E",
+      "display": "'Fraunces', Georgia, serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Jost:wght@300;400;500"
     },
-    {
-     "name": "plan_price"
+    "template": "ecommerce",
+    "source": "sources/home-*.json",
+    "collections": {
+      "Seating": "Seating",
+      "Replacement Parts": "Replacement Parts",
+      "Components": "Components",
+      "Outdoor Furniture": "Outdoor Furniture",
+      "Sectionals": "Sectionals",
+      "Shelving": "Shelving",
+      "Beds": "Seating",
+      "Bed Add-Ons": "Seating",
+      "Swatch": "Seating",
+      "Chairs": "Seating",
+      "Bed Sheets": "Seating",
+      "Duvet Covers": "Seating",
+      "Shelving & Storage": "Shelving",
+      "Sofas": "Seating",
+      "Tables": "Seating",
+      "Add On/Expansion": "Seating",
+      "Rugs": "Seating",
+      "Serviceability": "Seating",
+      "Adjustable Base": "Seating",
+      "Recycling Fee": "Seating",
+      "Mattresses": "Seating",
+      "Subscription": "Seating",
+      "Shipping": "Seating",
+      "Lounge Chairs": "Seating",
+      "Benches": "Seating",
+      "Simple": "Seating",
+      "Hidden": "Seating",
+      "Ancillary/Add On": "Seating",
+      "Hardware": "Seating",
+      "Accessories": "Seating",
+      "Accent Seating": "Seating",
+      "Furniture": "Outdoor Furniture",
+      "Assembly Service": "Seating",
+      "Accent Table": "Seating",
+      "Accent Furniture": "Outdoor Furniture",
+      "Protection Plan": "Seating"
     },
-    {
-     "name": "subscription_status"
+    "order": [
+      "Seating",
+      "Replacement Parts",
+      "Components",
+      "Outdoor Furniture",
+      "Sectionals",
+      "Shelving"
+    ],
+    "subcats": {},
+    "defaults": {
+      "Seating": "All",
+      "Replacement Parts": "All",
+      "Components": "All",
+      "Outdoor Furniture": "All",
+      "Sectionals": "All",
+      "Shelving": "All"
     },
-    {
-     "name": "assigned_number"
+    "profile": {
+      "tiers": [
+        "Member",
+        "Silver",
+        "Gold"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "Room I'm working on",
+        "options": [
+          "Living room",
+          "Bedroom",
+          "Kitchen",
+          "Office"
+        ]
+      }
     },
-    {
-     "name": "data_used"
+    "flow": {
+      "title": "Book a design consult",
+      "lede": "Talk through a room with a designer, in store, at home or over video.",
+      "event": "design_consult_booked",
+      "fields": [
+        {
+          "label": "Service",
+          "name": "service",
+          "options": [
+            "In-store consult",
+            "Home visit",
+            "Video call"
+          ]
+        },
+        {
+          "label": "Room",
+          "name": "room",
+          "options": [
+            "Living room",
+            "Bedroom",
+            "Kitchen",
+            "Office"
+          ]
+        },
+        {
+          "label": "Date",
+          "name": "date",
+          "options": "date"
+        }
+      ],
+      "attribute_field": "service"
     },
-    {
-     "name": "data_allowance"
+    "hero_category": "Seating",
+    "foryou_title": "Just for you",
+    "showcase": {
+      "search": "velvet",
+      "product": "50013105553710"
+    },
+    "tier_banner": true,
+    "fulfilment": {
+      "stores": [
+        "Oxford Street",
+        "Westfield Stratford",
+        "Canary Wharf"
+      ]
     }
-   ]
   },
-  "flow": {
-   "title": "Top up or change plan",
-   "lede": "Top up, change plan, add a data boost or renew your contract.",
-   "event": "plan_changed",
-   "fields": [
-    {
-     "label": "Action",
-     "name": "action",
-     "options": [
-      "Top up credit",
-      "Upgrade plan",
-      "Add data boost",
-      "Renew contract"
-     ]
+  "luxury": {
+    "vertical": "Retail",
+    "subvertical": "Luxury",
+    "brand": "Beaumont Vale",
+    "tagline": "Designer, curated",
+    "hero_title": "Fewer things.<br>Better ones.",
+    "hero_cta": "Shop the edit",
+    "hero_lede": "A small, considered selection from designers worth keeping.",
+    "hero_eyebrow": "The edit",
+    "announce": "Complimentary delivery and returns worldwide",
+    "search_placeholder": "Search designers and pieces",
+    "newsletter_title": "Private view",
+    "newsletter_lede": "New arrivals, before anyone else.",
+    "tiles_title": "Browse the edit",
+    "grid_title": "Just arrived",
+    "reco_title": "You may also like",
+    "theme": {
+      "bg": "#FBFAF8",
+      "alt": "#EDEAE4",
+      "ink": "#191714",
+      "muted": "#6B655C",
+      "rule": "#DFD9CE",
+      "accent": "#8A7145",
+      "display": "'Fraunces', Georgia, serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Jost:wght@300;400;500"
     },
-    {
-     "label": "Plan",
-     "name": "plan",
-     "options": [
-      "Vantis 5",
-      "Vantis 20",
-      "Vantis Unlimited"
-     ]
+    "template": "ecommerce",
+    "source": "sources/luxury-*.json",
+    "collections": {
+      "Bags": "Bags",
+      "Sunglasses": "Sunglasses",
+      "Belts": "Belts",
+      "Wallets": "Wallets",
+      "Bracelets": "Bracelets",
+      "Top Handle Bags": "Top Handle Bags",
+      "Scarfs": "Bags",
+      "Card Cases": "Bags",
+      "Baseball Caps": "Bags",
+      "Beanies": "Bags",
+      "Hobo Bags": "Bags",
+      "Ties": "Bags",
+      "Wallets & Purses": "Wallets",
+      "Brooches & Pins": "Bags",
+      "Earrings": "Bags",
+      "Bucket Bags": "Bags",
+      "Neckties": "Bags",
+      "Rings": "Bags",
+      "Wallets & Cardholders": "Wallets",
+      "Necklaces": "Bags"
     },
-    {
-     "label": "Amount",
-     "name": "amount",
-     "options": [
-      "10",
-      "20",
-      "30",
-      "50"
-     ]
+    "order": [
+      "Bags",
+      "Sunglasses",
+      "Belts",
+      "Wallets",
+      "Bracelets",
+      "Top Handle Bags"
+    ],
+    "subcats": {},
+    "defaults": {
+      "Bags": "All",
+      "Sunglasses": "All",
+      "Belts": "All",
+      "Wallets": "All",
+      "Bracelets": "All",
+      "Top Handle Bags": "All"
+    },
+    "profile": {
+      "tiers": [
+        "Client",
+        "Private Client",
+        "Cercle"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "Preferred boutique",
+        "options": [
+          "Mayfair",
+          "Milan",
+          "Paris",
+          "Online only"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Request an appointment",
+      "lede": "Request a private appointment with a client advisor at your boutique.",
+      "event": "appointment_requested",
+      "fields": [
+        {
+          "label": "Service",
+          "name": "service",
+          "options": [
+            "Private viewing",
+            "Personal shopping",
+            "Repairs"
+          ]
+        },
+        {
+          "label": "Boutique",
+          "name": "store",
+          "options": [
+            "Mayfair",
+            "Milan",
+            "Paris"
+          ]
+        },
+        {
+          "label": "Date",
+          "name": "date",
+          "options": "date"
+        }
+      ],
+      "attribute_field": "store"
+    },
+    "hero_category": "Bags",
+    "foryou_title": "Selected for you",
+    "showcase": {
+      "search": "tote",
+      "product": "49508261069038"
+    },
+    "tier_banner": true
+  },
+  "supermarket": {
+    "vertical": "Retail",
+    "subvertical": "Supermarkets",
+    "brand": "Harvest Row",
+    "tagline": "Food, drink and household",
+    "hero_title": "Your weekly shop,<br>done properly.",
+    "hero_cta": "Start shopping",
+    "hero_lede": "Fresh food, cupboard staples and household essentials.",
+    "hero_eyebrow": "This week",
+    "announce": "Free delivery over €60 · Slots seven days a week",
+    "search_placeholder": "Search groceries",
+    "newsletter_title": "This week's offers",
+    "newsletter_lede": "Deals and seasonal picks, weekly.",
+    "tiles_title": "Shop by aisle",
+    "grid_title": "New this week",
+    "reco_title": "Often bought together",
+    "theme": {
+      "bg": "#FDFDFA",
+      "alt": "#EFF3E9",
+      "ink": "#1A2016",
+      "muted": "#626B5B",
+      "rule": "#DEE5D4",
+      "accent": "#3F6B2E",
+      "display": "'Jost', Helvetica, sans-serif",
+      "body": "'Jost', Helvetica, sans-serif",
+      "fonts": "family=Jost:wght@300;400;500;600"
+    },
+    "template": "ecommerce",
+    "source": "sources/supermarket-*.json",
+    "collections": {
+      "Ingredients": "Ingredients",
+      "Tableware": "Tableware",
+      "Cookware": "Cookware",
+      "Cookbooks": "Cookbooks",
+      "Gifts": "Gifts",
+      "Bundle": "Bundle"
+    },
+    "order": [
+      "Ingredients",
+      "Tableware",
+      "Cookware",
+      "Cookbooks",
+      "Gifts",
+      "Bundle"
+    ],
+    "subcats": {},
+    "defaults": {
+      "Ingredients": "All",
+      "Tableware": "All",
+      "Cookware": "All",
+      "Cookbooks": "All",
+      "Gifts": "All",
+      "Bundle": "All"
+    },
+    "labels": {
+      "add_to_cart": "Add to trolley",
+      "cart": "Trolley",
+      "cart_title": "Your trolley",
+      "cart_empty": "Your trolley is empty",
+      "confirm_title": "Your order is confirmed.",
+      "browse_cta": "Start shopping"
+    },
+    "profile": {
+      "tiers": [
+        "Member",
+        "Plus",
+        "Plus Annual"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "Dietary preference",
+        "options": [
+          "None",
+          "Vegetarian",
+          "Vegan",
+          "Gluten Free",
+          "Dairy Free"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Book a delivery slot",
+      "lede": "Choose a delivery slot and a store. Change or cancel any time.",
+      "event": "delivery_slot_booked",
+      "fields": [
+        {
+          "label": "Slot",
+          "name": "slot",
+          "options": [
+            "Morning",
+            "Afternoon",
+            "Evening"
+          ]
+        },
+        {
+          "label": "Store",
+          "name": "store",
+          "options": [
+            "Camden",
+            "Islington",
+            "Hackney"
+          ]
+        },
+        {
+          "label": "Date",
+          "name": "date",
+          "options": "date"
+        }
+      ],
+      "attribute_field": "store"
+    },
+    "hero_category": "Ingredients",
+    "foryou_title": "Your usuals",
+    "showcase": {
+      "search": "olive",
+      "product": "40954224476218"
+    },
+    "fulfilment": {
+      "slots": [
+        "Today, 6–8pm",
+        "Tomorrow, 9–11am",
+        "Tomorrow, 5–7pm",
+        "Sat, 10am–12pm"
+      ],
+      "stores": [
+        "Angel",
+        "King's Cross",
+        "Islington"
+      ]
     }
-   ],
-   "attribute_field": "plan"
   },
-  "hero_category": "Iphone 17 Pro",
-  "foryou_title": "Picked for you",
-  "showcase": {
-   "search": "case",
-   "product": "45914954334344"
-  },
-  "content": {
-   "lines_collection": "Plans",
-   "popular": "Vantis 20",
-   "line_cta": "Choose this plan",
-   "hero": {
-    "_default": {
-     "eyebrow": "Vantis",
-     "title": "Plans that flex with you.",
-     "lede": "Unlimited calls, 5G data, no lock-in. Pick a plan and keep your number.",
-     "cta": "See plans",
-     "href": "#plans",
-     "image": ""
+  "canon": {
+    "vertical": "Retail",
+    "subvertical": "Canon",
+    "brand": "Canon",
+    "tagline": "Cameras, lenses, printers and everything they need",
+    "hero_title": "Made for the<br>moment you see it.",
+    "hero_lede": "Mirrorless and DSLR cameras, RF and EF lenses, home and office printers — with the ink, paper and accessories that fit them.",
+    "hero_cta": "Shop cameras",
+    "hero_eyebrow": "Canon Canada",
+    "announce": "Free shipping on orders over €99 · Open-box and refurbished deals",
+    "search_placeholder": "Search cameras, lenses, printers, ink",
+    "newsletter_title": "Canon Canada updates",
+    "newsletter_lede": "New gear, firmware, workshops and offers.",
+    "tiles_title": "Shop by category",
+    "grid_title": "New arrivals",
+    "reco_title": "Works with this",
+    "theme": {
+      "bg": "#FFFFFF",
+      "alt": "#F4F4F4",
+      "ink": "#1A1A1A",
+      "muted": "#5F5F5F",
+      "rule": "#E2E2E2",
+      "accent": "#CC0000",
+      "display": "'Inter', Helvetica, sans-serif",
+      "body": "'Inter', Helvetica, sans-serif",
+      "fonts": "family=Inter:wght@400;500;600;700"
     },
-    "unlimited": {
-     "eyebrow": "Vantis Unlimited",
-     "title": "Data with nothing to count.",
-     "lede": "Unlimited 5G, unlimited calls, no contract. Stream, tether and game freely.",
-     "cta": "Get Unlimited",
-     "href": "#plans",
-     "image": ""
-    },
-    "plans": {
-     "eyebrow": "Vantis",
-     "title": "Find your plan.",
-     "lede": "Three simple plans, unlimited calls on all, no lock-in.",
-     "cta": "Compare plans",
-     "href": "#plans",
-     "image": ""
-    },
-    "roaming": {
-     "eyebrow": "Vantis · Roaming",
-     "title": "Use your plan across Europe.",
-     "lede": "EU roaming included on every Vantis plan — same allowance, no surprises.",
-     "cta": "See plans",
-     "href": "#plans",
-     "image": ""
-    }
-   },
-   "articles": [
-    {
-     "title": "How to keep your number",
-     "category": "Switching",
-     "body": "Bring your existing number to Vantis. Request your PAC code from your current provider, enter it at checkout, and we port your number within one working day.",
-     "href": "help/telco/keep-your-number.html"
-    },
-    {
-     "title": "Using your phone abroad (roaming)",
-     "category": "Roaming",
-     "body": "EU roaming is included on every plan at no extra cost — your data, calls and texts work across Europe exactly as they do at home. Outside the EU, add a travel pass.",
-     "href": "help/telco/roaming.html"
-    },
-    {
-     "title": "Set up your eSIM",
-     "category": "SIM",
-     "body": "An eSIM is a digital SIM built into your phone. After you subscribe, scan the QR code we email you to activate — no physical SIM needed.",
-     "href": "help/telco/esim.html"
-    },
-    {
-     "title": "Check your data usage",
-     "category": "Account",
-     "body": "See how much of your data allowance you have used this cycle in the Vantis app or by signing in to your account online. Usage resets at the start of each billing cycle.",
-     "href": "help/telco/data-usage.html"
-    },
-    {
-     "title": "Changing your plan",
-     "category": "Account",
-     "body": "Move up or down a plan at any time — there is no contract. Changes take effect from your next billing cycle and are prorated.",
-     "href": "help/telco/change-plan.html"
-    },
-    {
-     "title": "What 5G coverage do I have?",
-     "category": "Coverage",
-     "body": "Vantis 5G covers most urban areas. Check your postcode on the coverage map to confirm 5G availability at home and work.",
-     "href": "help/telco/coverage.html"
-    }
-   ],
-   "tiles": [
-    {
-     "title": "Keep your number",
-     "sub": "Port in one working day",
-     "href": "help/telco/keep-your-number.html",
-     "image": ""
-    },
-    {
-     "title": "Roaming in Europe",
-     "sub": "Included on every plan",
-     "href": "help/telco/roaming.html",
-     "image": ""
-    },
-    {
-     "title": "Set up eSIM",
-     "sub": "Activate in minutes",
-     "href": "help/telco/esim.html",
-     "image": ""
-    },
-    {
-     "title": "Coverage map",
-     "sub": "Check your 5G",
-     "href": "help/telco/coverage.html",
-     "image": ""
-    }
-   ],
-   "nav": [
-    {
-     "label": "Plans",
-     "href": "#plans"
-    },
-    {
-     "label": "Phones",
-     "href": "category.html?c=Phones"
-    },
-    {
-     "label": "Top up",
-     "href": "topup.html"
-    }
-   ],
-   "plan_cards": {
-    "Vantis 5": {
-     "blurb": "Best for light users — messaging, maps and the occasional stream.",
-     "features": [
-      "5 GB 5G data",
-      "Unlimited calls & texts",
-      "No lock-in contract",
-      "EU roaming included"
-     ]
-    },
-    "Vantis 20": {
-     "blurb": "Our most popular plan — daily streaming, video calls and hotspot.",
-     "features": [
-      "20 GB 5G data",
-      "Unlimited calls & texts",
-      "No lock-in contract",
-      "EU roaming included"
-     ]
-    },
-    "Vantis Unlimited": {
-     "blurb": "For heavy users — gaming, tethering and 4K with nothing to count.",
-     "features": [
-      "Unlimited 5G data",
-      "Unlimited calls & texts",
-      "No lock-in contract",
-      "EU roaming included"
-     ]
-    }
-   }
-  },
-  "default_category": "Plans",
-  "rate_card": {
-   "credit_to_minutes": 20,
-   "credit_tiers": [
-    {
-     "amount": 10,
-     "minutes": 200,
-     "note": "200 mins or 2 GB"
-    },
-    {
-     "amount": 20,
-     "minutes": 450,
-     "note": "450 mins or 5 GB"
-    },
-    {
-     "amount": 30,
-     "minutes": 700,
-     "note": "700 mins or 8 GB"
-    }
-   ],
-   "boosts": [
-    {
-     "name": "1 GB boost",
-     "gb": 1,
-     "price": 3
-    },
-    {
-     "name": "5 GB boost",
-     "gb": 5,
-     "price": 8
-    },
-    {
-     "name": "20 GB boost",
-     "gb": 20,
-     "price": 14
-    }
-   ],
-   "plan_inclusions": {
-    "Vantis 5": {
-     "data": "5 GB",
-     "minutes": "Unlimited UK",
-     "texts": "Unlimited"
-    },
-    "Vantis 20": {
-     "data": "20 GB",
-     "minutes": "Unlimited UK",
-     "texts": "Unlimited"
-    },
-    "Vantis Unlimited": {
-     "data": "Unlimited",
-     "minutes": "Unlimited UK",
-     "texts": "Unlimited"
-    }
-   },
-   "plan_ladder": [
-    {
-     "name": "Vantis 5",
-     "gb": 5,
-     "price": 8
-    },
-    {
-     "name": "Vantis 20",
-     "gb": 20,
-     "price": 14
-    },
-    {
-     "name": "Vantis Unlimited",
-     "gb": 10000,
-     "price": 24
-    }
-   ],
-   "bundles": [
-    {
-     "add": "Home Broadband",
-     "standalone": 30,
-     "bundled": 22,
-     "term": "18 months",
-     "note": "heavy home data users"
-    },
-    {
-     "add": "Second line",
-     "standalone": 14,
-     "bundled": 9,
-     "term": "12 months",
-     "note": "family / multi-line"
-    },
-    {
-     "add": "Device insurance",
-     "standalone": 8,
-     "bundled": 5,
-     "term": "12 months",
-     "note": "new device"
-    }
-   ],
-   "addons": [
-    {
-     "name": "Roaming pass",
-     "price": 6,
-     "trigger": "travel",
-     "note": "unlimited data in 50 destinations for 14 days"
-    },
-    {
-     "name": "Accessory bundle",
-     "price": 4,
-     "trigger": "device",
-     "note": "case + charger for your new phone"
-    }
-   ]
-  }
- },
- "home": {
-  "vertical": "Retail",
-  "subvertical": "Home",
-  "brand": "Aldgate",
-  "tagline": "Furniture and homeware",
-  "hero_title": "Rooms that<br>settle in.",
-  "hero_cta": "Shop living",
-  "hero_lede": "Furniture made to be lived with, not looked after.",
-  "hero_eyebrow": "New collection",
-  "announce": "Free delivery on orders over €200",
-  "search_placeholder": "Search furniture and homeware",
-  "newsletter_title": "Room by room",
-  "newsletter_lede": "New pieces and styling ideas.",
-  "tiles_title": "Shop by room",
-  "grid_title": "New in",
-  "reco_title": "Completes the room",
-  "theme": {
-   "bg": "#FDFCFA",
-   "alt": "#F1EDE6",
-   "ink": "#221F1B",
-   "muted": "#6E6862",
-   "rule": "#E3DCD1",
-   "accent": "#6B5B3E",
-   "display": "'Fraunces', Georgia, serif",
-   "body": "'Jost', Helvetica, sans-serif",
-   "fonts": "family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Jost:wght@300;400;500"
-  },
-  "template": "ecommerce",
-  "source": "sources/home-*.json",
-  "collections": {
-   "Seating": "Seating",
-   "Replacement Parts": "Replacement Parts",
-   "Components": "Components",
-   "Outdoor Furniture": "Outdoor Furniture",
-   "Sectionals": "Sectionals",
-   "Shelving": "Shelving",
-   "Beds": "Seating",
-   "Bed Add-Ons": "Seating",
-   "Swatch": "Seating",
-   "Chairs": "Seating",
-   "Bed Sheets": "Seating",
-   "Duvet Covers": "Seating",
-   "Shelving & Storage": "Shelving",
-   "Sofas": "Seating",
-   "Tables": "Seating",
-   "Add On/Expansion": "Seating",
-   "Rugs": "Seating",
-   "Serviceability": "Seating",
-   "Adjustable Base": "Seating",
-   "Recycling Fee": "Seating",
-   "Mattresses": "Seating",
-   "Subscription": "Seating",
-   "Shipping": "Seating",
-   "Lounge Chairs": "Seating",
-   "Benches": "Seating",
-   "Simple": "Seating",
-   "Hidden": "Seating",
-   "Ancillary/Add On": "Seating",
-   "Hardware": "Seating",
-   "Accessories": "Seating",
-   "Accent Seating": "Seating",
-   "Furniture": "Outdoor Furniture",
-   "Assembly Service": "Seating",
-   "Accent Table": "Seating",
-   "Accent Furniture": "Outdoor Furniture",
-   "Protection Plan": "Seating"
-  },
-  "order": [
-   "Seating",
-   "Replacement Parts",
-   "Components",
-   "Outdoor Furniture",
-   "Sectionals",
-   "Shelving"
-  ],
-  "subcats": {},
-  "defaults": {
-   "Seating": "All",
-   "Replacement Parts": "All",
-   "Components": "All",
-   "Outdoor Furniture": "All",
-   "Sectionals": "All",
-   "Shelving": "All"
-  },
-  "profile": {
-   "tiers": [
-    "Member",
-    "Silver",
-    "Gold"
-   ],
-   "service_attribute": {
-    "name": "service_preference",
-    "label": "Room I'm working on",
-    "options": [
-     "Living room",
-     "Bedroom",
-     "Kitchen",
-     "Office"
-    ]
-   }
-  },
-  "flow": {
-   "title": "Book a design consult",
-   "lede": "Talk through a room with a designer, in store, at home or over video.",
-   "event": "design_consult_booked",
-   "fields": [
-    {
-     "label": "Service",
-     "name": "service",
-     "options": [
-      "In-store consult",
-      "Home visit",
-      "Video call"
-     ]
-    },
-    {
-     "label": "Room",
-     "name": "room",
-     "options": [
-      "Living room",
-      "Bedroom",
-      "Kitchen",
-      "Office"
-     ]
-    },
-    {
-     "label": "Date",
-     "name": "date",
-     "options": "date"
-    }
-   ],
-   "attribute_field": "service"
-  },
-  "hero_category": "Seating",
-  "foryou_title": "Just for you",
-  "showcase": {
-   "search": "velvet",
-   "product": "50013105553710"
-  },
-  "tier_banner": true,
-  "fulfilment": {
-   "stores": [
-    "Oxford Street",
-    "Westfield Stratford",
-    "Canary Wharf"
-   ]
-  }
- },
- "luxury": {
-  "vertical": "Retail",
-  "subvertical": "Luxury",
-  "brand": "Beaumont Vale",
-  "tagline": "Designer, curated",
-  "hero_title": "Fewer things.<br>Better ones.",
-  "hero_cta": "Shop the edit",
-  "hero_lede": "A small, considered selection from designers worth keeping.",
-  "hero_eyebrow": "The edit",
-  "announce": "Complimentary delivery and returns worldwide",
-  "search_placeholder": "Search designers and pieces",
-  "newsletter_title": "Private view",
-  "newsletter_lede": "New arrivals, before anyone else.",
-  "tiles_title": "Browse the edit",
-  "grid_title": "Just arrived",
-  "reco_title": "You may also like",
-  "theme": {
-   "bg": "#FBFAF8",
-   "alt": "#EDEAE4",
-   "ink": "#191714",
-   "muted": "#6B655C",
-   "rule": "#DFD9CE",
-   "accent": "#8A7145",
-   "display": "'Fraunces', Georgia, serif",
-   "body": "'Jost', Helvetica, sans-serif",
-   "fonts": "family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Jost:wght@300;400;500"
-  },
-  "template": "ecommerce",
-  "source": "sources/luxury-*.json",
-  "collections": {
-   "Bags": "Bags",
-   "Sunglasses": "Sunglasses",
-   "Belts": "Belts",
-   "Wallets": "Wallets",
-   "Bracelets": "Bracelets",
-   "Top Handle Bags": "Top Handle Bags",
-   "Scarfs": "Bags",
-   "Card Cases": "Bags",
-   "Baseball Caps": "Bags",
-   "Beanies": "Bags",
-   "Hobo Bags": "Bags",
-   "Ties": "Bags",
-   "Wallets & Purses": "Wallets",
-   "Brooches & Pins": "Bags",
-   "Earrings": "Bags",
-   "Bucket Bags": "Bags",
-   "Neckties": "Bags",
-   "Rings": "Bags",
-   "Wallets & Cardholders": "Wallets",
-   "Necklaces": "Bags"
-  },
-  "order": [
-   "Bags",
-   "Sunglasses",
-   "Belts",
-   "Wallets",
-   "Bracelets",
-   "Top Handle Bags"
-  ],
-  "subcats": {},
-  "defaults": {
-   "Bags": "All",
-   "Sunglasses": "All",
-   "Belts": "All",
-   "Wallets": "All",
-   "Bracelets": "All",
-   "Top Handle Bags": "All"
-  },
-  "profile": {
-   "tiers": [
-    "Client",
-    "Private Client",
-    "Cercle"
-   ],
-   "service_attribute": {
-    "name": "service_preference",
-    "label": "Preferred boutique",
-    "options": [
-     "Mayfair",
-     "Milan",
-     "Paris",
-     "Online only"
-    ]
-   }
-  },
-  "flow": {
-   "title": "Request an appointment",
-   "lede": "Request a private appointment with a client advisor at your boutique.",
-   "event": "appointment_requested",
-   "fields": [
-    {
-     "label": "Service",
-     "name": "service",
-     "options": [
-      "Private viewing",
-      "Personal shopping",
-      "Repairs"
-     ]
-    },
-    {
-     "label": "Boutique",
-     "name": "store",
-     "options": [
-      "Mayfair",
-      "Milan",
-      "Paris"
-     ]
-    },
-    {
-     "label": "Date",
-     "name": "date",
-     "options": "date"
-    }
-   ],
-   "attribute_field": "store"
-  },
-  "hero_category": "Bags",
-  "foryou_title": "Selected for you",
-  "showcase": {
-   "search": "tote",
-   "product": "49508261069038"
-  },
-  "tier_banner": true
- },
- "supermarket": {
-  "vertical": "Retail",
-  "subvertical": "Supermarkets",
-  "brand": "Harvest Row",
-  "tagline": "Food, drink and household",
-  "hero_title": "Your weekly shop,<br>done properly.",
-  "hero_cta": "Start shopping",
-  "hero_lede": "Fresh food, cupboard staples and household essentials.",
-  "hero_eyebrow": "This week",
-  "announce": "Free delivery over €60 · Slots seven days a week",
-  "search_placeholder": "Search groceries",
-  "newsletter_title": "This week's offers",
-  "newsletter_lede": "Deals and seasonal picks, weekly.",
-  "tiles_title": "Shop by aisle",
-  "grid_title": "New this week",
-  "reco_title": "Often bought together",
-  "theme": {
-   "bg": "#FDFDFA",
-   "alt": "#EFF3E9",
-   "ink": "#1A2016",
-   "muted": "#626B5B",
-   "rule": "#DEE5D4",
-   "accent": "#3F6B2E",
-   "display": "'Jost', Helvetica, sans-serif",
-   "body": "'Jost', Helvetica, sans-serif",
-   "fonts": "family=Jost:wght@300;400;500;600"
-  },
-  "template": "ecommerce",
-  "source": "sources/supermarket-*.json",
-  "collections": {
-   "Ingredients": "Ingredients",
-   "Tableware": "Tableware",
-   "Cookware": "Cookware",
-   "Cookbooks": "Cookbooks",
-   "Gifts": "Gifts",
-   "Bundle": "Bundle"
-  },
-  "order": [
-   "Ingredients",
-   "Tableware",
-   "Cookware",
-   "Cookbooks",
-   "Gifts",
-   "Bundle"
-  ],
-  "subcats": {},
-  "defaults": {
-   "Ingredients": "All",
-   "Tableware": "All",
-   "Cookware": "All",
-   "Cookbooks": "All",
-   "Gifts": "All",
-   "Bundle": "All"
-  },
-  "labels": {
-   "add_to_cart": "Add to trolley",
-   "cart": "Trolley",
-   "cart_title": "Your trolley",
-   "cart_empty": "Your trolley is empty",
-   "confirm_title": "Your order is confirmed.",
-   "browse_cta": "Start shopping"
-  },
-  "profile": {
-   "tiers": [
-    "Member",
-    "Plus",
-    "Plus Annual"
-   ],
-   "service_attribute": {
-    "name": "service_preference",
-    "label": "Dietary preference",
-    "options": [
-     "None",
-     "Vegetarian",
-     "Vegan",
-     "Gluten Free",
-     "Dairy Free"
-    ]
-   }
-  },
-  "flow": {
-   "title": "Book a delivery slot",
-   "lede": "Choose a delivery slot and a store. Change or cancel any time.",
-   "event": "delivery_slot_booked",
-   "fields": [
-    {
-     "label": "Slot",
-     "name": "slot",
-     "options": [
-      "Morning",
-      "Afternoon",
-      "Evening"
-     ]
-    },
-    {
-     "label": "Store",
-     "name": "store",
-     "options": [
-      "Camden",
-      "Islington",
-      "Hackney"
-     ]
-    },
-    {
-     "label": "Date",
-     "name": "date",
-     "options": "date"
-    }
-   ],
-   "attribute_field": "store"
-  },
-  "hero_category": "Ingredients",
-  "foryou_title": "Your usuals",
-  "showcase": {
-   "search": "olive",
-   "product": "40954224476218"
-  },
-  "fulfilment": {
-   "slots": [
-    "Today, 6–8pm",
-    "Tomorrow, 9–11am",
-    "Tomorrow, 5–7pm",
-    "Sat, 10am–12pm"
-   ],
-   "stores": [
-    "Angel",
-    "King's Cross",
-    "Islington"
-   ]
-  }
- },
- "canon": {
-  "vertical": "Retail",
-  "subvertical": "Canon",
-  "brand": "Canon",
-  "tagline": "Cameras, lenses, printers and everything they need",
-  "hero_title": "Made for the<br>moment you see it.",
-  "hero_lede": "Mirrorless and DSLR cameras, RF and EF lenses, home and office printers — with the ink, paper and accessories that fit them.",
-  "hero_cta": "Shop cameras",
-  "hero_eyebrow": "Canon Canada",
-  "announce": "Free shipping on orders over €99 · Open-box and refurbished deals",
-  "search_placeholder": "Search cameras, lenses, printers, ink",
-  "newsletter_title": "Canon Canada updates",
-  "newsletter_lede": "New gear, firmware, workshops and offers.",
-  "tiles_title": "Shop by category",
-  "grid_title": "New arrivals",
-  "reco_title": "Works with this",
-  "theme": {
-   "bg": "#FFFFFF",
-   "alt": "#F4F4F4",
-   "ink": "#1A1A1A",
-   "muted": "#5F5F5F",
-   "rule": "#E2E2E2",
-   "accent": "#CC0000",
-   "display": "'Inter', Helvetica, sans-serif",
-   "body": "'Inter', Helvetica, sans-serif",
-   "fonts": "family=Inter:wght@400;500;600;700"
-  },
-  "template": "ecommerce",
-  "source": "sources/canon-*.json",
-  "order": [
-   "Cameras",
-   "Lenses",
-   "Printers",
-   "Ink, Toner & Paper",
-   "Accessories",
-   "Other"
-  ],
-  "hero_category": "Cameras",
-  "foryou_title": "Your kit",
-  "replenishment_days": {
-   "Ink, Toner & Paper": 60
-  },
-  "labels": {
-   "cart": "Cart",
-   "add_to_cart": "Add to cart",
-   "cart_title": "Your cart",
-   "cart_empty": "Your cart is empty",
-   "confirm_title": "Thanks — your order is confirmed.",
-   "browse_cta": "Keep shopping"
-  },
-  "profile": {
-   "tiers": [
-    "Member",
-    "Canon Plus",
-    "Canon Pro"
-   ],
-   "service_attribute": {
-    "name": "service_preference",
-    "label": "I mostly shoot",
-    "options": [
-     "Photography",
-     "Video",
-     "Both",
-     "I'm here for a printer"
-    ]
-   }
-  },
-  "flow": {
-   "title": "Register a product",
-   "lede": "Register your Canon gear for warranty, firmware alerts and CarePAK offers.",
-   "event": "product_registered",
-   "fields": [
-    {
-     "label": "Product",
-     "name": "product",
-     "options": [
-      "Camera",
-      "Lens",
-      "Printer",
+    "template": "ecommerce",
+    "source": "sources/canon-*.json",
+    "order": [
+      "Cameras",
+      "Lenses",
+      "Printers",
+      "Ink, Toner & Paper",
+      "Accessories",
       "Other"
-     ]
+    ],
+    "hero_category": "Cameras",
+    "foryou_title": "Your kit",
+    "replenishment_days": {
+      "Ink, Toner & Paper": 60
     },
-    {
-     "label": "Purchased from",
-     "name": "store",
-     "options": [
-      "shop.canon.ca",
-      "Retailer",
-      "Gift"
-     ]
+    "labels": {
+      "cart": "Cart",
+      "add_to_cart": "Add to cart",
+      "cart_title": "Your cart",
+      "cart_empty": "Your cart is empty",
+      "confirm_title": "Thanks — your order is confirmed.",
+      "browse_cta": "Keep shopping"
     },
-    {
-     "label": "Purchase date",
-     "name": "date",
-     "options": "date"
-    }
-   ],
-   "attribute_field": "product"
-  },
-  "showcase": {
-   "search": "EOS R",
-   "product": "108935"
-  },
-  "collections": {
-   "Accessories > Bags & Straps": "Accessories",
-   "Accessories > Batteries & Power": "Accessories",
-   "Accessories > Camera Accessories": "Accessories",
-   "Accessories > Flashes": "Accessories",
-   "Accessories > Memory & Storage": "Accessories",
-   "Cameras > Cinema EOS": "Cameras",
-   "Cameras > Compact": "Cameras",
-   "Cameras > DSLR": "Cameras",
-   "Cameras > Mirrorless": "Cameras",
-   "Cameras > Video": "Cameras",
-   "Ink, Toner & Paper > Ink": "Ink, Toner & Paper",
-   "Ink, Toner & Paper > Paper": "Ink, Toner & Paper",
-   "Ink, Toner & Paper > Toner": "Ink, Toner & Paper",
-   "Lenses > Lens Accessories": "Lenses",
-   "Lenses > Macro": "Lenses",
-   "Lenses > Portrait": "Lenses",
-   "Lenses > Standard & Zoom": "Lenses",
-   "Lenses > Telephoto": "Lenses",
-   "Lenses > Wide-Angle": "Lenses",
-   "Other > Calculators": "Other",
-   "Other > Merchandise": "Other",
-   "Printers > Home & Photo": "Printers",
-   "Printers > Large Format": "Printers",
-   "Printers > Office": "Printers",
-   "Printers > Printer Accessories": "Printers",
-   "Printers > Scanners": "Printers"
-  },
-  "type_subcats": {
-   "Accessories > Bags & Straps": "Bags & Straps",
-   "Accessories > Batteries & Power": "Batteries & Power",
-   "Accessories > Camera Accessories": "Camera Accessories",
-   "Accessories > Flashes": "Flashes",
-   "Accessories > Memory & Storage": "Memory & Storage",
-   "Cameras > Cinema EOS": "Cinema EOS",
-   "Cameras > Compact": "Compact",
-   "Cameras > DSLR": "DSLR",
-   "Cameras > Mirrorless": "Mirrorless",
-   "Cameras > Video": "Video",
-   "Ink, Toner & Paper > Ink": "Ink",
-   "Ink, Toner & Paper > Paper": "Paper",
-   "Ink, Toner & Paper > Toner": "Toner",
-   "Lenses > Lens Accessories": "Lens Accessories",
-   "Lenses > Macro": "Macro",
-   "Lenses > Portrait": "Portrait",
-   "Lenses > Standard & Zoom": "Standard & Zoom",
-   "Lenses > Telephoto": "Telephoto",
-   "Lenses > Wide-Angle": "Wide-Angle",
-   "Other > Calculators": "Calculators",
-   "Other > Merchandise": "Merchandise",
-   "Printers > Home & Photo": "Home & Photo",
-   "Printers > Large Format": "Large Format",
-   "Printers > Office": "Office",
-   "Printers > Printer Accessories": "Printer Accessories",
-   "Printers > Scanners": "Scanners"
-  },
-  "subcats": {},
-  "defaults": {
-   "Cameras": "All",
-   "Lenses": "All",
-   "Printers": "All",
-   "Ink, Toner & Paper": "All",
-   "Accessories": "All",
-   "Other": "All"
-  },
-  "_prices_eur": true
- }
+    "profile": {
+      "tiers": [
+        "Member",
+        "Canon Plus",
+        "Canon Pro"
+      ],
+      "service_attribute": {
+        "name": "service_preference",
+        "label": "I mostly shoot",
+        "options": [
+          "Photography",
+          "Video",
+          "Both",
+          "I'm here for a printer"
+        ]
+      }
+    },
+    "flow": {
+      "title": "Register a product",
+      "lede": "Register your Canon gear for warranty, firmware alerts and CarePAK offers.",
+      "event": "product_registered",
+      "fields": [
+        {
+          "label": "Product",
+          "name": "product",
+          "options": [
+            "Camera",
+            "Lens",
+            "Printer",
+            "Other"
+          ]
+        },
+        {
+          "label": "Purchased from",
+          "name": "store",
+          "options": [
+            "shop.canon.ca",
+            "Retailer",
+            "Gift"
+          ]
+        },
+        {
+          "label": "Purchase date",
+          "name": "date",
+          "options": "date"
+        }
+      ],
+      "attribute_field": "product"
+    },
+    "showcase": {
+      "search": "EOS R",
+      "product": "108935"
+    },
+    "collections": {
+      "Accessories > Bags & Straps": "Accessories",
+      "Accessories > Batteries & Power": "Accessories",
+      "Accessories > Camera Accessories": "Accessories",
+      "Accessories > Flashes": "Accessories",
+      "Accessories > Memory & Storage": "Accessories",
+      "Cameras > Cinema EOS": "Cameras",
+      "Cameras > Compact": "Cameras",
+      "Cameras > DSLR": "Cameras",
+      "Cameras > Mirrorless": "Cameras",
+      "Cameras > Video": "Cameras",
+      "Ink, Toner & Paper > Ink": "Ink, Toner & Paper",
+      "Ink, Toner & Paper > Paper": "Ink, Toner & Paper",
+      "Ink, Toner & Paper > Toner": "Ink, Toner & Paper",
+      "Lenses > Lens Accessories": "Lenses",
+      "Lenses > Macro": "Lenses",
+      "Lenses > Portrait": "Lenses",
+      "Lenses > Standard & Zoom": "Lenses",
+      "Lenses > Telephoto": "Lenses",
+      "Lenses > Wide-Angle": "Lenses",
+      "Other > Calculators": "Other",
+      "Other > Merchandise": "Other",
+      "Printers > Home & Photo": "Printers",
+      "Printers > Large Format": "Printers",
+      "Printers > Office": "Printers",
+      "Printers > Printer Accessories": "Printers",
+      "Printers > Scanners": "Printers"
+    },
+    "type_subcats": {
+      "Accessories > Bags & Straps": "Bags & Straps",
+      "Accessories > Batteries & Power": "Batteries & Power",
+      "Accessories > Camera Accessories": "Camera Accessories",
+      "Accessories > Flashes": "Flashes",
+      "Accessories > Memory & Storage": "Memory & Storage",
+      "Cameras > Cinema EOS": "Cinema EOS",
+      "Cameras > Compact": "Compact",
+      "Cameras > DSLR": "DSLR",
+      "Cameras > Mirrorless": "Mirrorless",
+      "Cameras > Video": "Video",
+      "Ink, Toner & Paper > Ink": "Ink",
+      "Ink, Toner & Paper > Paper": "Paper",
+      "Ink, Toner & Paper > Toner": "Toner",
+      "Lenses > Lens Accessories": "Lens Accessories",
+      "Lenses > Macro": "Macro",
+      "Lenses > Portrait": "Portrait",
+      "Lenses > Standard & Zoom": "Standard & Zoom",
+      "Lenses > Telephoto": "Telephoto",
+      "Lenses > Wide-Angle": "Wide-Angle",
+      "Other > Calculators": "Calculators",
+      "Other > Merchandise": "Merchandise",
+      "Printers > Home & Photo": "Home & Photo",
+      "Printers > Large Format": "Large Format",
+      "Printers > Office": "Office",
+      "Printers > Printer Accessories": "Printer Accessories",
+      "Printers > Scanners": "Scanners"
+    },
+    "subcats": {},
+    "defaults": {
+      "Cameras": "All",
+      "Lenses": "All",
+      "Printers": "All",
+      "Ink, Toner & Paper": "All",
+      "Accessories": "All",
+      "Other": "All"
+    },
+    "_prices_eur": true
+  }
 }

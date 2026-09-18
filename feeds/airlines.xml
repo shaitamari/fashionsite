@@ -19,7 +19,7 @@
     <g:product_type>Airlines &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Economy</g:size>
+    <option_group>Economy</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
@@ -42,7 +42,7 @@
     <g:product_type>Airlines &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Premium Economy</g:size>
+    <option_group>Premium Economy</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
@@ -65,7 +65,7 @@
     <g:product_type>Airlines &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Business</g:size>
+    <option_group>Business</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
@@ -88,7 +88,7 @@
     <g:product_type>Airlines &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>First</g:size>
+    <option_group>First</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
@@ -111,7 +111,7 @@
     <g:product_type>Airlines &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Economy</g:size>
+    <option_group>Economy</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -134,7 +134,7 @@
     <g:product_type>Airlines &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Premium Economy</g:size>
+    <option_group>Premium Economy</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -157,7 +157,7 @@
     <g:product_type>Airlines &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Business</g:size>
+    <option_group>Business</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -180,7 +180,7 @@
     <g:product_type>Airlines &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Economy</g:size>
+    <option_group>Economy</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
@@ -203,7 +203,7 @@
     <g:product_type>Airlines &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Premium Economy</g:size>
+    <option_group>Premium Economy</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
@@ -226,7 +226,7 @@
     <g:product_type>Airlines &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Business</g:size>
+    <option_group>Business</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
@@ -249,7 +249,7 @@
     <g:product_type>Airlines &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>First</g:size>
+    <option_group>First</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
@@ -272,7 +272,7 @@
     <g:product_type>Airlines &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Economy</g:size>
+    <option_group>Economy</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -295,7 +295,7 @@
     <g:product_type>Airlines &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Premium Economy</g:size>
+    <option_group>Premium Economy</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -318,7 +318,7 @@
     <g:product_type>Airlines &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Business</g:size>
+    <option_group>Business</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -341,7 +341,7 @@
     <g:product_type>Airlines &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>First</g:size>
+    <option_group>First</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -364,7 +364,7 @@
     <g:product_type>Airlines &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Economy</g:size>
+    <option_group>Economy</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -387,7 +387,7 @@
     <g:product_type>Airlines &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Premium Economy</g:size>
+    <option_group>Premium Economy</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -410,7 +410,7 @@
     <g:product_type>Airlines &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Business</g:size>
+    <option_group>Business</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -433,7 +433,7 @@
     <g:product_type>Airlines &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>First</g:size>
+    <option_group>First</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -456,7 +456,7 @@
     <g:product_type>Airlines &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Economy</g:size>
+    <option_group>Economy</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
@@ -479,7 +479,7 @@
     <g:product_type>Airlines &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Premium Economy</g:size>
+    <option_group>Premium Economy</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
@@ -502,7 +502,7 @@
     <g:product_type>Airlines &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Business</g:size>
+    <option_group>Business</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
@@ -525,7 +525,7 @@
     <g:product_type>Airlines &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Economy</g:size>
+    <option_group>Economy</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -548,7 +548,7 @@
     <g:product_type>Airlines &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Premium Economy</g:size>
+    <option_group>Premium Economy</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -571,7 +571,7 @@
     <g:product_type>Airlines &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Business</g:size>
+    <option_group>Business</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -594,7 +594,7 @@
     <g:product_type>Airlines &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>First</g:size>
+    <option_group>First</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -617,7 +617,7 @@
     <g:product_type>Airlines &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Economy</g:size>
+    <option_group>Economy</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -640,7 +640,7 @@
     <g:product_type>Airlines &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Premium Economy</g:size>
+    <option_group>Premium Economy</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -663,7 +663,7 @@
     <g:product_type>Airlines &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Business</g:size>
+    <option_group>Business</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -686,7 +686,7 @@
     <g:product_type>Airlines &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>First</g:size>
+    <option_group>First</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -709,7 +709,7 @@
     <g:product_type>Airlines &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Economy</g:size>
+    <option_group>Economy</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -732,7 +732,7 @@
     <g:product_type>Airlines &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Premium Economy</g:size>
+    <option_group>Premium Economy</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -755,7 +755,7 @@
     <g:product_type>Airlines &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Business</g:size>
+    <option_group>Business</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -778,7 +778,7 @@
     <g:product_type>Airlines &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Economy</g:size>
+    <option_group>Economy</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -801,7 +801,7 @@
     <g:product_type>Airlines &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Premium Economy</g:size>
+    <option_group>Premium Economy</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -824,7 +824,7 @@
     <g:product_type>Airlines &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Business</g:size>
+    <option_group>Business</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -847,7 +847,7 @@
     <g:product_type>Airlines &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Economy</g:size>
+    <option_group>Economy</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -870,7 +870,7 @@
     <g:product_type>Airlines &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Premium Economy</g:size>
+    <option_group>Premium Economy</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -893,7 +893,7 @@
     <g:product_type>Airlines &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Business</g:size>
+    <option_group>Business</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -916,7 +916,7 @@
     <g:product_type>Airlines &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Economy</g:size>
+    <option_group>Economy</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -939,7 +939,7 @@
     <g:product_type>Airlines &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Premium Economy</g:size>
+    <option_group>Premium Economy</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -962,7 +962,7 @@
     <g:product_type>Airlines &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Business</g:size>
+    <option_group>Business</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -985,7 +985,7 @@
     <g:product_type>Airlines &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>First</g:size>
+    <option_group>First</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -1008,7 +1008,7 @@
     <g:product_type>Airlines &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Economy</g:size>
+    <option_group>Economy</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
@@ -1031,7 +1031,7 @@
     <g:product_type>Airlines &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Premium Economy</g:size>
+    <option_group>Premium Economy</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
@@ -1054,7 +1054,7 @@
     <g:product_type>Airlines &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Business</g:size>
+    <option_group>Business</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
@@ -1077,7 +1077,7 @@
     <g:product_type>Airlines &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>First</g:size>
+    <option_group>First</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
@@ -1100,7 +1100,7 @@
     <g:product_type>Airlines &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Economy</g:size>
+    <option_group>Economy</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -1123,7 +1123,7 @@
     <g:product_type>Airlines &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Premium Economy</g:size>
+    <option_group>Premium Economy</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -1146,7 +1146,7 @@
     <g:product_type>Airlines &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Business</g:size>
+    <option_group>Business</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -1169,7 +1169,7 @@
     <g:product_type>Airlines &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Economy</g:size>
+    <option_group>Economy</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -1192,7 +1192,7 @@
     <g:product_type>Airlines &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Premium Economy</g:size>
+    <option_group>Premium Economy</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -1215,7 +1215,7 @@
     <g:product_type>Airlines &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Business</g:size>
+    <option_group>Business</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -1238,7 +1238,7 @@
     <g:product_type>Airlines &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>First</g:size>
+    <option_group>First</option_group>
     <g:custom_label_1>Cabin</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>

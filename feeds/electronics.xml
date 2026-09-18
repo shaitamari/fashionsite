@@ -124,7 +124,7 @@
     <g:product_type>Electronics &gt; Speaker Outlet &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>SB13-Ultra</g:size>
+    <option_group>SB13-Ultra</option_group>
     <g:custom_label_1>Type</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -147,7 +147,7 @@
     <g:product_type>Electronics &gt; Speaker Outlet &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>PB13-Ultra</g:size>
+    <option_group>PB13-Ultra</option_group>
     <g:custom_label_1>Type</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -233,7 +233,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Piano Gloss Black</g:color>
+    <g:color>Black</g:color>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -255,7 +255,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Piano Gloss White</g:color>
+    <g:color>White</g:color>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -403,7 +403,7 @@
     <g:product_type>Electronics &gt; Accessory &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>6 Foot</g:size>
+    <option_group>6 Foot</option_group>
     <g:custom_label_1>Feet</g:custom_label_1>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -426,7 +426,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Premium Black Ash</g:color>
+    <g:color>Black</g:color>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -448,7 +448,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Piano Gloss Black</g:color>
+    <g:color>Black</g:color>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -470,7 +470,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Piano Gloss White</g:color>
+    <g:color>White</g:color>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -480,7 +480,7 @@
   <item>
     <g:id>46278378782909</g:id>
     <g:item_group_id>8180669579453</g:item_group_id>
-    <g:title>Nordvik Nova Subwoofer</g:title>
+    <g:title>Nordvik Nova Subwoofer in Premium Black Ash</g:title>
     <description>Breathtaking, room-pressurizing output down to a staggering 16Hz with the control and refinement of a true reference subwoofer. PB-3000 R|Evolution provides a transformative cinematic and musical experience with massive sonic impact you can feel and incredible detail resolution.</description>
     <link>https://electronics.insiderdemo.com/product.html?id=46278378782909</link>
     <g:image_link>https://insiderdemo.com/assets/img/electronics/8180669579453-0.jpg</g:image_link>
@@ -492,7 +492,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Premium Black Ash</g:color>
+    <g:color>Black</g:color>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -7402,7 +7402,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Premium Black Ash</g:color>
+    <g:color>Black</g:color>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
     <g:custom_label_4>60</g:custom_label_4>
@@ -7424,7 +7424,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Piano Gloss Black</g:color>
+    <g:color>Black</g:color>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
     <g:custom_label_4>60</g:custom_label_4>
@@ -7446,7 +7446,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Premium Black Ash</g:color>
+    <g:color>Black</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -7468,7 +7468,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Piano Gloss Black</g:color>
+    <g:color>Black</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -7490,7 +7490,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Piano Gloss White</g:color>
+    <g:color>White</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -8319,7 +8319,7 @@
   <item>
     <g:id>9559987395</g:id>
     <g:item_group_id>3289418371</g:item_group_id>
-    <g:title>Kestrel Wren Subwoofer</g:title>
+    <g:title>Kestrel Wren Subwoofer in Piano Gloss Black</g:title>
     <description>PC-2000 is no longer in stock. Check out the 2000 Pro Series subwoofers to experience the next generation with massive performance and usability upgrades. Or browse the SVS Outlet store for the best prices you’ll find on all SVS subwoofers.</description>
     <link>https://electronics.insiderdemo.com/product.html?id=9559987395</link>
     <g:image_link>https://insiderdemo.com/assets/img/electronics/3289418371-0.jpg</g:image_link>
@@ -8331,7 +8331,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Piano Gloss Black</g:color>
+    <g:color>Black</g:color>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
     <g:custom_label_4>50</g:custom_label_4>
@@ -8626,7 +8626,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Piano Gloss Black</g:color>
+    <g:color>Black</g:color>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -8648,7 +8648,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Black Oak Veneer</g:color>
+    <g:color>Black</g:color>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -8670,7 +8670,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Piano Gloss Black</g:color>
+    <g:color>Black</g:color>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -8692,7 +8692,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Black Oak Veneer</g:color>
+    <g:color>Black</g:color>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -8903,7 +8903,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Piano Gloss Black</g:color>
+    <g:color>Black</g:color>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -8925,7 +8925,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Piano Gloss White</g:color>
+    <g:color>White</g:color>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -8947,7 +8947,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Black Oak Veneer</g:color>
+    <g:color>Black</g:color>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -8969,7 +8969,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Piano Gloss Black</g:color>
+    <g:color>Black</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -8991,7 +8991,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Black Oak Veneer</g:color>
+    <g:color>Black</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -9013,7 +9013,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Piano Gloss White</g:color>
+    <g:color>White</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -9035,7 +9035,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Piano Gloss Black</g:color>
+    <g:color>Black</g:color>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -9057,7 +9057,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Piano Gloss White</g:color>
+    <g:color>White</g:color>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -9079,7 +9079,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Black Oak Veneer</g:color>
+    <g:color>Black</g:color>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -9101,7 +9101,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Piano Gloss Black</g:color>
+    <g:color>Black</g:color>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -9123,7 +9123,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Piano Gloss White</g:color>
+    <g:color>White</g:color>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -9145,7 +9145,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Black Oak Veneer</g:color>
+    <g:color>Black</g:color>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -9167,7 +9167,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Black Oak Veneer</g:color>
+    <g:color>Black</g:color>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -9189,7 +9189,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Piano Gloss Black</g:color>
+    <g:color>Black</g:color>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -9211,7 +9211,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Piano Gloss White</g:color>
+    <g:color>White</g:color>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -9233,7 +9233,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Piano Gloss Black</g:color>
+    <g:color>Black</g:color>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
     <g:custom_label_4>35</g:custom_label_4>
@@ -9255,7 +9255,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Piano Gloss White</g:color>
+    <g:color>White</g:color>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
     <g:custom_label_4>35</g:custom_label_4>
@@ -9277,7 +9277,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Black Oak Veneer</g:color>
+    <g:color>Black</g:color>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
     <g:custom_label_4>35</g:custom_label_4>
@@ -9299,7 +9299,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Piano Gloss Black</g:color>
+    <g:color>Black</g:color>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -9321,7 +9321,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Piano Gloss White</g:color>
+    <g:color>White</g:color>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -9343,7 +9343,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Black Oak Veneer</g:color>
+    <g:color>Black</g:color>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -9386,7 +9386,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Piano Gloss White</g:color>
+    <g:color>White</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>50</g:custom_label_4>
@@ -9408,7 +9408,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Piano Gloss Black</g:color>
+    <g:color>Black</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>50</g:custom_label_4>
@@ -9599,6 +9599,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>10 Feet</g:size>
+    <option_group>Banana</option_group>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
@@ -9622,6 +9623,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>10 Feet</g:size>
+    <option_group>Spade</option_group>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
@@ -9645,6 +9647,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>10 Feet</g:size>
+    <option_group>Mixed - 2 Banana &amp; 4 Spade</option_group>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
@@ -9668,6 +9671,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>20 Feet</g:size>
+    <option_group>Banana</option_group>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
@@ -9691,6 +9695,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>20 Feet</g:size>
+    <option_group>Spade</option_group>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
@@ -9714,6 +9719,7 @@
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
     <g:size>20 Feet</g:size>
+    <option_group>Mixed - 2 Banana &amp; 4 Spade</option_group>
     <g:custom_label_1>Size</g:custom_label_1>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
@@ -10807,7 +10813,7 @@
     <g:product_type>Electronics &gt; Speaker Outlet &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>SoundBase</g:size>
+    <option_group>SoundBase</option_group>
     <g:custom_label_1>System</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -14778,7 +14784,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Premium Black Ash</g:color>
+    <g:color>Black</g:color>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
     <g:custom_label_4>60</g:custom_label_4>
@@ -14800,7 +14806,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Piano Gloss Black</g:color>
+    <g:color>Black</g:color>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
     <g:custom_label_4>60</g:custom_label_4>
@@ -14822,7 +14828,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Piano Gloss White</g:color>
+    <g:color>White</g:color>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
     <g:custom_label_4>60</g:custom_label_4>
@@ -14844,7 +14850,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Single Subwoofer System</g:size>
+    <option_group>Single Subwoofer System</option_group>
     <g:custom_label_1>Option</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -14867,7 +14873,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Dual Subwoofer System</g:size>
+    <option_group>Dual Subwoofer System</option_group>
     <g:custom_label_1>Option</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -15520,7 +15526,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Piano Gloss Black</g:color>
+    <g:color>Black</g:color>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -15542,7 +15548,7 @@
     <g:product_type>Electronics &gt; Speaker &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Piano Gloss White</g:color>
+    <g:color>White</g:color>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -15657,7 +15663,7 @@
   <item>
     <g:id>9228077443</g:id>
     <g:item_group_id>3180301315</g:item_group_id>
-    <g:title>Everdon Wren Subwoofer</g:title>
+    <g:title>Everdon Wren Subwoofer in High-Grade Black Fabric</g:title>
     <description>Iconic SVS cylinder design uses cabinet height to reduce footprint while delivering the massive output and low frequency extension of a larger subwoofer. Punishing 1,000 watts RMS, 3,600 watts peak power amplifier and 13-in down-firing driver deliver serious bass for home theater and music.</description>
     <link>https://electronics.insiderdemo.com/product.html?id=9228077443</link>
     <g:image_link>https://insiderdemo.com/assets/img/electronics/3180301315-0.jpg</g:image_link>
@@ -15669,7 +15675,7 @@
     <g:product_type>Electronics &gt; Subwoofer &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>High-Grade Black Fabric</g:color>
+    <g:color>Black</g:color>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -17801,7 +17807,7 @@
     <g:product_type>Electronics &gt; Accessory &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:color>Silver</g:color>
+    <g:color>Metallic</g:color>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>55</g:custom_label_4>

@@ -19,7 +19,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -42,7 +42,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -65,7 +65,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -88,7 +88,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -111,7 +111,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -134,7 +134,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
@@ -157,7 +157,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
@@ -180,7 +180,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
@@ -203,7 +203,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
@@ -226,7 +226,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
@@ -249,7 +249,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
@@ -272,7 +272,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
@@ -295,7 +295,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
@@ -318,7 +318,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
@@ -341,7 +341,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
@@ -364,7 +364,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
@@ -387,7 +387,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
@@ -410,7 +410,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
@@ -433,7 +433,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
@@ -456,7 +456,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
@@ -479,7 +479,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
@@ -502,7 +502,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
@@ -525,7 +525,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
@@ -548,7 +548,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
@@ -571,7 +571,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
@@ -594,7 +594,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -617,7 +617,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -640,7 +640,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -663,7 +663,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -686,7 +686,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -709,7 +709,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -732,7 +732,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -755,7 +755,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -778,7 +778,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -801,7 +801,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -824,7 +824,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
@@ -847,7 +847,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
@@ -870,7 +870,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
@@ -893,7 +893,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
@@ -916,7 +916,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
@@ -939,7 +939,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
@@ -962,7 +962,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
@@ -985,7 +985,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
@@ -1008,7 +1008,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
@@ -1031,7 +1031,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
@@ -1054,7 +1054,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -1077,7 +1077,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -1100,7 +1100,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -1123,7 +1123,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -1146,7 +1146,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -1169,7 +1169,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -1192,7 +1192,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -1215,7 +1215,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -1238,7 +1238,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -1261,7 +1261,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -1284,7 +1284,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
@@ -1307,7 +1307,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
@@ -1330,7 +1330,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
@@ -1353,7 +1353,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
@@ -1376,7 +1376,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
@@ -1399,7 +1399,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -1422,7 +1422,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -1445,7 +1445,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -1468,7 +1468,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -1491,7 +1491,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -1514,7 +1514,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -1537,7 +1537,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -1560,7 +1560,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -1583,7 +1583,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -1606,7 +1606,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -1629,7 +1629,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
@@ -1652,7 +1652,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
@@ -1675,7 +1675,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
@@ -1698,7 +1698,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
@@ -1721,7 +1721,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
@@ -1744,7 +1744,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -1767,7 +1767,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -1790,7 +1790,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -1813,7 +1813,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -1836,7 +1836,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -1859,7 +1859,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.5</g:custom_label_3>
     <rating>3.5</rating>
@@ -1882,7 +1882,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.5</g:custom_label_3>
     <rating>3.5</rating>
@@ -1905,7 +1905,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.5</g:custom_label_3>
     <rating>3.5</rating>
@@ -1928,7 +1928,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.5</g:custom_label_3>
     <rating>3.5</rating>
@@ -1951,7 +1951,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.5</g:custom_label_3>
     <rating>3.5</rating>
@@ -1974,7 +1974,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -1997,7 +1997,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -2020,7 +2020,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -2043,7 +2043,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -2066,7 +2066,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -2089,7 +2089,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
@@ -2112,7 +2112,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
@@ -2135,7 +2135,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
@@ -2158,7 +2158,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
@@ -2181,7 +2181,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
@@ -2204,7 +2204,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
@@ -2227,7 +2227,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
@@ -2250,7 +2250,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
@@ -2273,7 +2273,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
@@ -2296,7 +2296,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
@@ -2319,7 +2319,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -2342,7 +2342,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -2365,7 +2365,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -2388,7 +2388,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -2411,7 +2411,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -2434,7 +2434,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -2457,7 +2457,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -2480,7 +2480,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -2503,7 +2503,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -2526,7 +2526,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -2549,7 +2549,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
@@ -2572,7 +2572,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
@@ -2595,7 +2595,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
@@ -2618,7 +2618,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
@@ -2641,7 +2641,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
@@ -2664,7 +2664,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -2687,7 +2687,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -2710,7 +2710,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -2733,7 +2733,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -2756,7 +2756,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -2779,7 +2779,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -2802,7 +2802,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -2825,7 +2825,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -2848,7 +2848,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -2871,7 +2871,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -2894,7 +2894,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -2917,7 +2917,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -2940,7 +2940,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -2963,7 +2963,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -2986,7 +2986,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -3009,7 +3009,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -3032,7 +3032,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -3055,7 +3055,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -3078,7 +3078,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -3101,7 +3101,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -3124,7 +3124,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -3147,7 +3147,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -3170,7 +3170,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -3193,7 +3193,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -3216,7 +3216,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -3239,7 +3239,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -3262,7 +3262,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -3285,7 +3285,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -3308,7 +3308,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -3331,7 +3331,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -3354,7 +3354,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -3377,7 +3377,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -3400,7 +3400,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -3423,7 +3423,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -3446,7 +3446,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -3469,7 +3469,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -3492,7 +3492,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -3515,7 +3515,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -3538,7 +3538,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -3561,7 +3561,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -3584,7 +3584,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
@@ -3607,7 +3607,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
@@ -3630,7 +3630,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
@@ -3653,7 +3653,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
@@ -3676,7 +3676,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
@@ -3699,7 +3699,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -3722,7 +3722,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -3745,7 +3745,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -3768,7 +3768,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -3791,7 +3791,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -3814,7 +3814,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -3837,7 +3837,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -3860,7 +3860,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -3883,7 +3883,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -3906,7 +3906,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -3929,7 +3929,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
@@ -3952,7 +3952,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
@@ -3975,7 +3975,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
@@ -3998,7 +3998,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
@@ -4021,7 +4021,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
@@ -4044,7 +4044,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -4067,7 +4067,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -4090,7 +4090,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -4113,7 +4113,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -4136,7 +4136,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -4159,7 +4159,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
@@ -4182,7 +4182,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
@@ -4205,7 +4205,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
@@ -4228,7 +4228,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
@@ -4251,7 +4251,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
@@ -4274,7 +4274,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
@@ -4297,7 +4297,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
@@ -4320,7 +4320,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
@@ -4343,7 +4343,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
@@ -4366,7 +4366,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
@@ -4389,7 +4389,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -4412,7 +4412,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -4435,7 +4435,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -4458,7 +4458,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -4481,7 +4481,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -4504,7 +4504,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
@@ -4527,7 +4527,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
@@ -4550,7 +4550,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
@@ -4573,7 +4573,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
@@ -4596,7 +4596,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
@@ -4619,7 +4619,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
@@ -4642,7 +4642,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
@@ -4665,7 +4665,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
@@ -4688,7 +4688,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
@@ -4711,7 +4711,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
@@ -4734,7 +4734,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -4757,7 +4757,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -4780,7 +4780,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -4803,7 +4803,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -4826,7 +4826,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -4849,7 +4849,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -4872,7 +4872,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -4895,7 +4895,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -4918,7 +4918,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -4941,7 +4941,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -4964,7 +4964,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -4987,7 +4987,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -5010,7 +5010,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -5033,7 +5033,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -5056,7 +5056,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -5079,7 +5079,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -5102,7 +5102,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -5125,7 +5125,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -5148,7 +5148,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -5171,7 +5171,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -5194,7 +5194,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
@@ -5217,7 +5217,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
@@ -5240,7 +5240,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
@@ -5263,7 +5263,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
@@ -5286,7 +5286,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
@@ -5309,7 +5309,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -5332,7 +5332,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -5355,7 +5355,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -5378,7 +5378,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -5401,7 +5401,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -5424,7 +5424,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -5447,7 +5447,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -5470,7 +5470,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -5493,7 +5493,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -5516,7 +5516,7 @@
     <g:product_type>Hotels &gt; Africa &amp; Middle East &gt; Africa &amp; Middle East</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Africa &amp; Middle East</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -5539,7 +5539,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
@@ -5562,7 +5562,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
@@ -5585,7 +5585,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
@@ -5608,7 +5608,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
@@ -5631,7 +5631,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
@@ -5654,7 +5654,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -5677,7 +5677,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -5700,7 +5700,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -5723,7 +5723,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -5746,7 +5746,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -5769,7 +5769,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
@@ -5792,7 +5792,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
@@ -5815,7 +5815,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
@@ -5838,7 +5838,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
@@ -5861,7 +5861,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
@@ -5884,7 +5884,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.5</g:custom_label_3>
     <rating>3.5</rating>
@@ -5907,7 +5907,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.5</g:custom_label_3>
     <rating>3.5</rating>
@@ -5930,7 +5930,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.5</g:custom_label_3>
     <rating>3.5</rating>
@@ -5953,7 +5953,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.5</g:custom_label_3>
     <rating>3.5</rating>
@@ -5976,7 +5976,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.5</g:custom_label_3>
     <rating>3.5</rating>
@@ -5999,7 +5999,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -6022,7 +6022,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -6045,7 +6045,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -6068,7 +6068,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -6091,7 +6091,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -6114,7 +6114,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -6137,7 +6137,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -6160,7 +6160,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -6183,7 +6183,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -6206,7 +6206,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -6229,7 +6229,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
@@ -6252,7 +6252,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
@@ -6275,7 +6275,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
@@ -6298,7 +6298,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
@@ -6321,7 +6321,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
@@ -6344,7 +6344,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -6367,7 +6367,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -6390,7 +6390,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -6413,7 +6413,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -6436,7 +6436,7 @@
     <g:product_type>Hotels &gt; Americas &gt; Americas</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Americas</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -6459,7 +6459,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -6482,7 +6482,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -6505,7 +6505,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -6528,7 +6528,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -6551,7 +6551,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -6574,7 +6574,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
@@ -6597,7 +6597,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
@@ -6620,7 +6620,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
@@ -6643,7 +6643,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
@@ -6666,7 +6666,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
@@ -6689,7 +6689,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
@@ -6712,7 +6712,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
@@ -6735,7 +6735,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
@@ -6758,7 +6758,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
@@ -6781,7 +6781,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
@@ -6804,7 +6804,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.5</g:custom_label_3>
     <rating>3.5</rating>
@@ -6827,7 +6827,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.5</g:custom_label_3>
     <rating>3.5</rating>
@@ -6850,7 +6850,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.5</g:custom_label_3>
     <rating>3.5</rating>
@@ -6873,7 +6873,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.5</g:custom_label_3>
     <rating>3.5</rating>
@@ -6896,7 +6896,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.5</g:custom_label_3>
     <rating>3.5</rating>
@@ -6919,7 +6919,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -6942,7 +6942,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -6965,7 +6965,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -6988,7 +6988,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -7011,7 +7011,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -7034,7 +7034,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -7057,7 +7057,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -7080,7 +7080,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -7103,7 +7103,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -7126,7 +7126,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.2</g:custom_label_3>
     <rating>4.2</rating>
@@ -7149,7 +7149,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -7172,7 +7172,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -7195,7 +7195,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -7218,7 +7218,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -7241,7 +7241,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -7264,7 +7264,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -7287,7 +7287,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -7310,7 +7310,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -7333,7 +7333,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -7356,7 +7356,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -7379,7 +7379,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
@@ -7402,7 +7402,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
@@ -7425,7 +7425,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
@@ -7448,7 +7448,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
@@ -7471,7 +7471,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
@@ -7494,7 +7494,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -7517,7 +7517,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -7540,7 +7540,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -7563,7 +7563,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -7586,7 +7586,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -7609,7 +7609,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
@@ -7632,7 +7632,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
@@ -7655,7 +7655,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
@@ -7678,7 +7678,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
@@ -7701,7 +7701,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
@@ -7724,7 +7724,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -7747,7 +7747,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -7770,7 +7770,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -7793,7 +7793,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -7816,7 +7816,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -7839,7 +7839,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
@@ -7862,7 +7862,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
@@ -7885,7 +7885,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
@@ -7908,7 +7908,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
@@ -7931,7 +7931,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
@@ -7954,7 +7954,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
@@ -7977,7 +7977,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
@@ -8000,7 +8000,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
@@ -8023,7 +8023,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
@@ -8046,7 +8046,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
@@ -8069,7 +8069,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -8092,7 +8092,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -8115,7 +8115,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -8138,7 +8138,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -8161,7 +8161,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -8184,7 +8184,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -8207,7 +8207,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -8230,7 +8230,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -8253,7 +8253,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -8276,7 +8276,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -8299,7 +8299,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
@@ -8322,7 +8322,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
@@ -8345,7 +8345,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
@@ -8368,7 +8368,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
@@ -8391,7 +8391,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
@@ -8414,7 +8414,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
@@ -8437,7 +8437,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
@@ -8460,7 +8460,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
@@ -8483,7 +8483,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
@@ -8506,7 +8506,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
@@ -8529,7 +8529,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
@@ -8552,7 +8552,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
@@ -8575,7 +8575,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
@@ -8598,7 +8598,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
@@ -8621,7 +8621,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
@@ -8644,7 +8644,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -8667,7 +8667,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -8690,7 +8690,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -8713,7 +8713,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -8736,7 +8736,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -8759,7 +8759,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
@@ -8782,7 +8782,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
@@ -8805,7 +8805,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
@@ -8828,7 +8828,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
@@ -8851,7 +8851,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
@@ -8874,7 +8874,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -8897,7 +8897,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -8920,7 +8920,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -8943,7 +8943,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -8966,7 +8966,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -8989,7 +8989,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -9012,7 +9012,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -9035,7 +9035,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -9058,7 +9058,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -9081,7 +9081,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -9104,7 +9104,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.5</g:custom_label_3>
     <rating>3.5</rating>
@@ -9127,7 +9127,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.5</g:custom_label_3>
     <rating>3.5</rating>
@@ -9150,7 +9150,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.5</g:custom_label_3>
     <rating>3.5</rating>
@@ -9173,7 +9173,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.5</g:custom_label_3>
     <rating>3.5</rating>
@@ -9196,7 +9196,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.5</g:custom_label_3>
     <rating>3.5</rating>
@@ -9219,7 +9219,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -9242,7 +9242,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -9265,7 +9265,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -9288,7 +9288,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -9311,7 +9311,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -9334,7 +9334,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
@@ -9357,7 +9357,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
@@ -9380,7 +9380,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
@@ -9403,7 +9403,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
@@ -9426,7 +9426,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
@@ -9449,7 +9449,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -9472,7 +9472,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -9495,7 +9495,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -9518,7 +9518,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -9541,7 +9541,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -9564,7 +9564,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -9587,7 +9587,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -9610,7 +9610,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -9633,7 +9633,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -9656,7 +9656,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -9679,7 +9679,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -9702,7 +9702,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -9725,7 +9725,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -9748,7 +9748,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -9771,7 +9771,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -9794,7 +9794,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -9817,7 +9817,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -9840,7 +9840,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -9863,7 +9863,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -9886,7 +9886,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -9909,7 +9909,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -9932,7 +9932,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -9955,7 +9955,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -9978,7 +9978,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -10001,7 +10001,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -10024,7 +10024,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -10047,7 +10047,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -10070,7 +10070,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -10093,7 +10093,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -10116,7 +10116,7 @@
     <g:product_type>Hotels &gt; Europe &gt; Europe</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Europe</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -10139,7 +10139,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -10162,7 +10162,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -10185,7 +10185,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -10208,7 +10208,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -10231,7 +10231,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
@@ -10254,7 +10254,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -10277,7 +10277,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -10300,7 +10300,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -10323,7 +10323,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -10346,7 +10346,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.0</g:custom_label_3>
     <rating>4.0</rating>
@@ -10369,7 +10369,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.5</g:custom_label_3>
     <rating>3.5</rating>
@@ -10392,7 +10392,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.5</g:custom_label_3>
     <rating>3.5</rating>
@@ -10415,7 +10415,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.5</g:custom_label_3>
     <rating>3.5</rating>
@@ -10438,7 +10438,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.5</g:custom_label_3>
     <rating>3.5</rating>
@@ -10461,7 +10461,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.5</g:custom_label_3>
     <rating>3.5</rating>
@@ -10484,7 +10484,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -10507,7 +10507,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -10530,7 +10530,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -10553,7 +10553,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -10576,7 +10576,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
@@ -10599,7 +10599,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -10622,7 +10622,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -10645,7 +10645,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -10668,7 +10668,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -10691,7 +10691,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -10714,7 +10714,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -10737,7 +10737,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -10760,7 +10760,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -10783,7 +10783,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -10806,7 +10806,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -10829,7 +10829,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
@@ -10852,7 +10852,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
@@ -10875,7 +10875,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
@@ -10898,7 +10898,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
@@ -10921,7 +10921,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
@@ -10944,7 +10944,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Classic Double</g:size>
+    <option_group>Classic Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
@@ -10967,7 +10967,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Superior Double</g:size>
+    <option_group>Superior Double</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
@@ -10990,7 +10990,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Deluxe King</g:size>
+    <option_group>Deluxe King</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
@@ -11013,7 +11013,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Junior Suite</g:size>
+    <option_group>Junior Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
@@ -11036,7 +11036,7 @@
     <g:product_type>Hotels &gt; Asia &amp; Pacific &gt; Asia &amp; Pacific</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Asia &amp; Pacific</g:custom_label_0>
-    <g:size>Terrace Suite</g:size>
+    <option_group>Terrace Suite</option_group>
     <g:custom_label_1>Room</g:custom_label_1>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>

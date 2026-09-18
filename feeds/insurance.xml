@@ -19,7 +19,7 @@
     <g:product_type>Insurance &gt; Motor &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Third Party</g:size>
+    <option_group>Third Party</option_group>
     <g:custom_label_1>Level of cover</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -42,7 +42,7 @@
     <g:product_type>Insurance &gt; Motor &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Third Party Fire &amp; Theft</g:size>
+    <option_group>Third Party Fire &amp; Theft</option_group>
     <g:custom_label_1>Level of cover</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -65,7 +65,7 @@
     <g:product_type>Insurance &gt; Motor &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Comprehensive</g:size>
+    <option_group>Comprehensive</option_group>
     <g:custom_label_1>Level of cover</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -88,7 +88,7 @@
     <g:product_type>Insurance &gt; Home &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Buildings</g:size>
+    <option_group>Buildings</option_group>
     <g:custom_label_1>Level of cover</g:custom_label_1>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
@@ -111,7 +111,7 @@
     <g:product_type>Insurance &gt; Home &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Contents</g:size>
+    <option_group>Contents</option_group>
     <g:custom_label_1>Level of cover</g:custom_label_1>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
@@ -134,7 +134,7 @@
     <g:product_type>Insurance &gt; Home &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Buildings &amp; Contents</g:size>
+    <option_group>Buildings &amp; Contents</option_group>
     <g:custom_label_1>Level of cover</g:custom_label_1>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
@@ -157,7 +157,7 @@
     <g:product_type>Insurance &gt; Travel &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Single Trip</g:size>
+    <option_group>Single Trip</option_group>
     <g:custom_label_1>Level of cover</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -180,7 +180,7 @@
     <g:product_type>Insurance &gt; Travel &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Annual Multi-Trip</g:size>
+    <option_group>Annual Multi-Trip</option_group>
     <g:custom_label_1>Level of cover</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -203,7 +203,7 @@
     <g:product_type>Insurance &gt; Travel &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Backpacker</g:size>
+    <option_group>Backpacker</option_group>
     <g:custom_label_1>Level of cover</g:custom_label_1>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
@@ -226,7 +226,7 @@
     <g:product_type>Insurance &gt; Pet &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Accident Only</g:size>
+    <option_group>Accident Only</option_group>
     <g:custom_label_1>Level of cover</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -249,7 +249,7 @@
     <g:product_type>Insurance &gt; Pet &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Time Limited</g:size>
+    <option_group>Time Limited</option_group>
     <g:custom_label_1>Level of cover</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -272,7 +272,7 @@
     <g:product_type>Insurance &gt; Pet &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Lifetime</g:size>
+    <option_group>Lifetime</option_group>
     <g:custom_label_1>Level of cover</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -295,7 +295,7 @@
     <g:product_type>Insurance &gt; Life &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Level Term</g:size>
+    <option_group>Level Term</option_group>
     <g:custom_label_1>Level of cover</g:custom_label_1>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
@@ -318,7 +318,7 @@
     <g:product_type>Insurance &gt; Life &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Decreasing Term</g:size>
+    <option_group>Decreasing Term</option_group>
     <g:custom_label_1>Level of cover</g:custom_label_1>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
@@ -341,7 +341,7 @@
     <g:product_type>Insurance &gt; Life &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Whole of Life</g:size>
+    <option_group>Whole of Life</option_group>
     <g:custom_label_1>Level of cover</g:custom_label_1>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
@@ -364,7 +364,7 @@
     <g:product_type>Insurance &gt; Health &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Essential</g:size>
+    <option_group>Essential</option_group>
     <g:custom_label_1>Level of cover</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
@@ -387,7 +387,7 @@
     <g:product_type>Insurance &gt; Health &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Standard</g:size>
+    <option_group>Standard</option_group>
     <g:custom_label_1>Level of cover</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
@@ -410,7 +410,7 @@
     <g:product_type>Insurance &gt; Health &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Comprehensive</g:size>
+    <option_group>Comprehensive</option_group>
     <g:custom_label_1>Level of cover</g:custom_label_1>
     <g:custom_label_3>4.1</g:custom_label_3>
     <rating>4.1</rating>
@@ -433,7 +433,7 @@
     <g:product_type>Insurance &gt; Home &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Buildings</g:size>
+    <option_group>Buildings</option_group>
     <g:custom_label_1>Level of cover</g:custom_label_1>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
@@ -456,7 +456,7 @@
     <g:product_type>Insurance &gt; Home &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Contents</g:size>
+    <option_group>Contents</option_group>
     <g:custom_label_1>Level of cover</g:custom_label_1>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
@@ -479,7 +479,7 @@
     <g:product_type>Insurance &gt; Home &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Full Cover</g:size>
+    <option_group>Full Cover</option_group>
     <g:custom_label_1>Level of cover</g:custom_label_1>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
@@ -502,7 +502,7 @@
     <g:product_type>Insurance &gt; Motor &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Public Liability</g:size>
+    <option_group>Public Liability</option_group>
     <g:custom_label_1>Level of cover</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -525,7 +525,7 @@
     <g:product_type>Insurance &gt; Motor &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Professional Indemnity</g:size>
+    <option_group>Professional Indemnity</option_group>
     <g:custom_label_1>Level of cover</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -548,7 +548,7 @@
     <g:product_type>Insurance &gt; Motor &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Combined</g:size>
+    <option_group>Combined</option_group>
     <g:custom_label_1>Level of cover</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -571,7 +571,7 @@
     <g:product_type>Insurance &gt; Motor &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Third Party</g:size>
+    <option_group>Third Party</option_group>
     <g:custom_label_1>Level of cover</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -594,7 +594,7 @@
     <g:product_type>Insurance &gt; Motor &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Comprehensive</g:size>
+    <option_group>Comprehensive</option_group>
     <g:custom_label_1>Level of cover</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -617,7 +617,7 @@
     <g:product_type>Insurance &gt; Motor &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Single Item</g:size>
+    <option_group>Single Item</option_group>
     <g:custom_label_1>Level of cover</g:custom_label_1>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
@@ -640,7 +640,7 @@
     <g:product_type>Insurance &gt; Motor &gt; All</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>All</g:custom_label_0>
-    <g:size>Family Cover</g:size>
+    <option_group>Family Cover</option_group>
     <g:custom_label_1>Level of cover</g:custom_label_1>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>

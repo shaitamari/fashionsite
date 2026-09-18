@@ -343,7 +343,7 @@
     <g:product_type>Beauty &gt; Body &gt; Hand</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Hand</g:custom_label_0>
-    <g:size>Glossier You</g:size>
+    <option_group>Glossier You</option_group>
     <g:custom_label_1>scent</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -366,7 +366,7 @@
     <g:product_type>Beauty &gt; Body &gt; Hand</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Hand</g:custom_label_0>
-    <g:size>Orange Blossom Neroli</g:size>
+    <option_group>Orange Blossom Neroli</option_group>
     <g:custom_label_1>scent</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -389,7 +389,7 @@
     <g:product_type>Beauty &gt; Body &gt; Hand</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Hand</g:custom_label_0>
-    <g:size>Sandstone</g:size>
+    <option_group>Sandstone</option_group>
     <g:custom_label_1>scent</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -412,7 +412,7 @@
     <g:product_type>Beauty &gt; Body &gt; Hand</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Hand</g:custom_label_0>
-    <g:size>Lilyhaze</g:size>
+    <option_group>Lilyhaze</option_group>
     <g:custom_label_1>scent</g:custom_label_1>
     <g:custom_label_3>4.7</g:custom_label_3>
     <rating>4.7</rating>
@@ -456,7 +456,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
-    <g:color>Float</g:color>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -478,7 +477,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
-    <g:color>Storm</g:color>
+    <g:color>Grey</g:color>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -500,7 +499,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
-    <g:color>Bloom</g:color>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -522,7 +520,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
-    <g:color>Puff</g:color>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -544,7 +541,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
-    <g:color>Beam</g:color>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -566,7 +562,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
-    <g:color>Soar</g:color>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -588,7 +583,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
-    <g:color>Billow</g:color>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -610,7 +604,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
-    <g:color>Gale</g:color>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -632,7 +625,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
-    <g:color>Burst</g:color>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -654,7 +646,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
-    <g:color>Plume</g:color>
+    <g:color>Purple</g:color>
     <g:custom_label_3>3.8</g:custom_label_3>
     <rating>3.8</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -697,7 +689,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Makeup</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Makeup</g:custom_label_0>
-    <g:color>Prism</g:color>
+    <g:color>Multi</g:color>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -719,7 +711,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Makeup</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Makeup</g:custom_label_0>
-    <g:color>Starry</g:color>
+    <g:color>Multi</g:color>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -741,7 +733,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Makeup</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Makeup</g:custom_label_0>
-    <g:color>Sunlit</g:color>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -763,7 +754,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Makeup</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Makeup</g:custom_label_0>
-    <g:color>Glimmer</g:color>
+    <g:color>Multi</g:color>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -785,7 +776,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Makeup</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Makeup</g:custom_label_0>
-    <g:color>Gaze</g:color>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -807,7 +797,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Moisturiser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
-    <g:size>I Love NY</g:size>
+    <option_group>I Love NY</option_group>
     <g:custom_label_1>Flavor</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -830,7 +820,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Moisturiser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
-    <g:size>Black Cherry</g:size>
+    <option_group>Black Cherry</option_group>
     <g:custom_label_1>Flavor</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -853,7 +843,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Moisturiser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
-    <g:size>Birthday</g:size>
+    <option_group>Birthday</option_group>
     <g:custom_label_1>Flavor</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -876,7 +866,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Moisturiser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
-    <g:size>Strawberry</g:size>
+    <option_group>Strawberry</option_group>
     <g:custom_label_1>Flavor</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -899,7 +889,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Moisturiser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
-    <g:size>Original</g:size>
+    <option_group>Original</option_group>
     <g:custom_label_1>Flavor</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -922,7 +912,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Moisturiser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
-    <g:size>Mint</g:size>
+    <option_group>Mint</option_group>
     <g:custom_label_1>Flavor</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -945,7 +935,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Moisturiser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
-    <g:size>Mango</g:size>
+    <option_group>Mango</option_group>
     <g:custom_label_1>Flavor</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -968,7 +958,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Moisturiser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
-    <g:size>Rose</g:size>
+    <option_group>Rose</option_group>
     <g:custom_label_1>Flavor</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -991,7 +981,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Moisturiser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
-    <g:size>Coconut</g:size>
+    <option_group>Coconut</option_group>
     <g:custom_label_1>Flavor</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -1014,7 +1004,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Moisturiser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
-    <g:size>Wild Fig</g:size>
+    <option_group>Wild Fig</option_group>
     <g:custom_label_1>Flavor</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -1037,7 +1027,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Moisturiser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
-    <g:size>Lavender</g:size>
+    <option_group>Lavender</option_group>
     <g:custom_label_1>Flavor</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -1060,7 +1050,7 @@
     <g:product_type>Beauty &gt; Skincare &gt; Moisturiser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Moisturiser</g:custom_label_0>
-    <g:size>Espresso</g:size>
+    <option_group>Espresso</option_group>
     <g:custom_label_1>Flavor</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -1125,7 +1115,7 @@
     <g:product_type>Beauty &gt; Body &gt; Body Care</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Body Care</g:custom_label_0>
-    <g:size>Sandstone</g:size>
+    <option_group>Sandstone</option_group>
     <g:custom_label_1>scent</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -1148,7 +1138,7 @@
     <g:product_type>Beauty &gt; Body &gt; Body Care</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Body Care</g:custom_label_0>
-    <g:size>Orange Blossom Neroli</g:size>
+    <option_group>Orange Blossom Neroli</option_group>
     <g:custom_label_1>scent</g:custom_label_1>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
@@ -1171,7 +1161,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Body Mist</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Body Mist</g:custom_label_0>
-    <g:size>Orange Blossom Neroli</g:size>
+    <option_group>Orange Blossom Neroli</option_group>
     <g:custom_label_1>Scent</g:custom_label_1>
     <g:gender>Unisex</g:gender>
     <g:custom_label_3>4.2</g:custom_label_3>
@@ -1195,7 +1185,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Body Mist</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Body Mist</g:custom_label_0>
-    <g:size>Sandstone</g:size>
+    <option_group>Sandstone</option_group>
     <g:custom_label_1>Scent</g:custom_label_1>
     <g:gender>Unisex</g:gender>
     <g:custom_label_3>4.2</g:custom_label_3>
@@ -1219,7 +1209,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Body Mist</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Body Mist</g:custom_label_0>
-    <g:size>Lilyhaze</g:size>
+    <option_group>Lilyhaze</option_group>
     <g:custom_label_1>Scent</g:custom_label_1>
     <g:gender>Unisex</g:gender>
     <g:custom_label_3>4.2</g:custom_label_3>
@@ -1243,7 +1233,7 @@
     <g:product_type>Beauty &gt; Body &gt; Cleanser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cleanser</g:custom_label_0>
-    <g:size>Orange Blossom Neroli</g:size>
+    <option_group>Orange Blossom Neroli</option_group>
     <g:custom_label_1>scent</g:custom_label_1>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
@@ -1266,7 +1256,7 @@
     <g:product_type>Beauty &gt; Body &gt; Cleanser</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cleanser</g:custom_label_0>
-    <g:size>Sandstone</g:size>
+    <option_group>Sandstone</option_group>
     <g:custom_label_1>scent</g:custom_label_1>
     <g:custom_label_3>4.3</g:custom_label_3>
     <rating>4.3</rating>
@@ -1289,7 +1279,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>G1</g:color>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>60</g:custom_label_4>
@@ -1311,7 +1300,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>G2</g:color>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>60</g:custom_label_4>
@@ -1333,7 +1321,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>G3</g:color>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>60</g:custom_label_4>
@@ -1355,7 +1342,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>G4</g:color>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>60</g:custom_label_4>
@@ -1377,7 +1363,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>G5</g:color>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>60</g:custom_label_4>
@@ -1399,7 +1384,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>G6</g:color>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>60</g:custom_label_4>
@@ -1421,7 +1405,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>G7</g:color>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>60</g:custom_label_4>
@@ -1443,7 +1426,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>G8</g:color>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>60</g:custom_label_4>
@@ -1465,7 +1447,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>G9</g:color>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>60</g:custom_label_4>
@@ -1487,7 +1468,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>G10</g:color>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>60</g:custom_label_4>
@@ -1509,7 +1489,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>G11</g:color>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>60</g:custom_label_4>
@@ -1531,7 +1510,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>G12</g:color>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>60</g:custom_label_4>
@@ -1597,7 +1575,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
-    <g:color>Ochre</g:color>
+    <g:color>Orange</g:color>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -1619,7 +1597,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
-    <g:color>Kiln</g:color>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -1641,7 +1618,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
-    <g:color>Frame</g:color>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -1663,7 +1639,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
-    <g:color>Ink</g:color>
+    <g:color>Black</g:color>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -1685,7 +1661,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
-    <g:color>Muse</g:color>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -1707,7 +1682,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
-    <g:color>Lapis</g:color>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -1729,7 +1703,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
-    <g:color>Patina</g:color>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -1751,7 +1724,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
-    <g:color>Fresco</g:color>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -1773,7 +1745,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
-    <g:color>Canvas</g:color>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -1795,7 +1766,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
-    <g:color>Rococo</g:color>
     <g:custom_label_3>4.8</g:custom_label_3>
     <rating>4.8</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -1859,7 +1829,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Very Deep 4</g:color>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -1881,7 +1850,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Very Deep 3</g:color>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -1903,7 +1871,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Very Deep 2</g:color>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -1925,7 +1892,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Very Deep 1</g:color>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -1947,7 +1913,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Deep 5</g:color>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -1969,7 +1934,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Deep 4</g:color>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -1991,7 +1955,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Deep 3</g:color>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2013,7 +1976,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Deep 2</g:color>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2035,7 +1997,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Deep 1</g:color>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2057,7 +2018,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Medium Deep 4</g:color>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2079,7 +2039,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Medium Deep 3</g:color>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2101,7 +2060,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Medium Deep 2</g:color>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2123,7 +2081,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Medium Deep 1</g:color>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2145,7 +2102,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Medium Tan 5</g:color>
+    <g:color>Brown</g:color>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2167,7 +2124,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Medium Tan 4</g:color>
+    <g:color>Brown</g:color>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2189,7 +2146,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Medium Tan 3</g:color>
+    <g:color>Brown</g:color>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2211,7 +2168,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Medium Tan 2</g:color>
+    <g:color>Brown</g:color>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2233,7 +2190,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Medium Tan 1</g:color>
+    <g:color>Brown</g:color>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2255,7 +2212,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Medium 5</g:color>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2277,7 +2233,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Medium 4</g:color>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2299,7 +2254,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Medium 3</g:color>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2321,7 +2275,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Medium 2</g:color>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2343,7 +2296,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Medium 1</g:color>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2365,7 +2317,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Light 5</g:color>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2387,7 +2338,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Light 4</g:color>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2409,7 +2359,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Light 3</g:color>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2431,7 +2380,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Light 2</g:color>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2453,7 +2401,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Light 1</g:color>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2475,7 +2422,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Very Light 4</g:color>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2497,7 +2443,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Very Light 3</g:color>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2519,7 +2464,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Very Light 2</g:color>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2541,7 +2485,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Very Light 1</g:color>
     <g:custom_label_3>3.6</g:custom_label_3>
     <rating>3.6</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -2563,7 +2506,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Very Deep 4</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2585,7 +2527,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Very Deep 3</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2607,7 +2548,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Very Deep 2</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2629,7 +2569,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Very Deep 1</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2651,7 +2590,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Deep 5</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2673,7 +2611,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Deep 4</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2695,7 +2632,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Deep 3</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2717,7 +2653,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Deep 2</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2739,7 +2674,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Deep 1</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2761,7 +2695,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Medium Deep 4</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2783,7 +2716,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Medium Deep 3</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2805,7 +2737,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Medium Deep 2</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2827,7 +2758,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Medium Deep 1</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2849,7 +2779,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Medium Tan 5</g:color>
+    <g:color>Brown</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2871,7 +2801,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Medium Tan 4</g:color>
+    <g:color>Brown</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2893,7 +2823,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Medium Tan 3</g:color>
+    <g:color>Brown</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2915,7 +2845,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Medium Tan 2</g:color>
+    <g:color>Brown</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2937,7 +2867,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Medium Tan 1</g:color>
+    <g:color>Brown</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2959,7 +2889,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Medium 5</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -2981,7 +2910,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Medium 4</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -3003,7 +2931,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Medium 3</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -3025,7 +2952,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Medium 2</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -3047,7 +2973,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Medium 1</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -3069,7 +2994,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Light 5</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -3091,7 +3015,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Light 4</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -3113,7 +3036,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Light 3</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -3135,7 +3057,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Light 2</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -3157,7 +3078,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Light 1</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -3179,7 +3099,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Very Light 4</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -3201,7 +3120,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Very Light 3</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -3223,7 +3141,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Very Light 2</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -3245,7 +3162,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Complexion</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Complexion</g:custom_label_0>
-    <g:color>Very Light 1</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -3289,7 +3205,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Candles</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Candles</g:custom_label_0>
-    <g:size>Glossier You</g:size>
+    <option_group>Glossier You</option_group>
     <g:custom_label_1>Scent</g:custom_label_1>
     <g:gender>Unisex</g:gender>
     <g:custom_label_3>3.6</g:custom_label_3>
@@ -3313,7 +3229,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Candles</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Candles</g:custom_label_0>
-    <g:size>Orange Blossom Neroli</g:size>
+    <option_group>Orange Blossom Neroli</option_group>
     <g:custom_label_1>Scent</g:custom_label_1>
     <g:gender>Unisex</g:gender>
     <g:custom_label_3>3.6</g:custom_label_3>
@@ -3337,7 +3253,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Candles</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Candles</g:custom_label_0>
-    <g:size>Sandstone</g:size>
+    <option_group>Sandstone</option_group>
     <g:custom_label_1>Scent</g:custom_label_1>
     <g:gender>Unisex</g:gender>
     <g:custom_label_3>3.6</g:custom_label_3>
@@ -3361,7 +3277,7 @@
     <g:product_type>Beauty &gt; Fragrance &gt; Candles</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Candles</g:custom_label_0>
-    <g:size>Lilyhaze</g:size>
+    <option_group>Lilyhaze</option_group>
     <g:custom_label_1>Scent</g:custom_label_1>
     <g:gender>Unisex</g:gender>
     <g:custom_label_3>3.6</g:custom_label_3>
@@ -3406,7 +3322,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
-    <g:color>Puff</g:color>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -3428,7 +3343,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
-    <g:color>Storm</g:color>
+    <g:color>Grey</g:color>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -3450,7 +3365,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
-    <g:color>Soar</g:color>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -3472,7 +3386,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
-    <g:color>Beam</g:color>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -3494,7 +3407,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
-    <g:color>Wisp</g:color>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -3516,7 +3428,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
-    <g:color>Dawn</g:color>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -3538,7 +3449,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
-    <g:color>Spark</g:color>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -3560,7 +3470,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
-    <g:color>Dusk</g:color>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -3582,7 +3491,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
-    <g:color>Haze</g:color>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -3604,7 +3512,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
-    <g:color>Eve</g:color>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -3626,7 +3533,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
-    <g:color>Drift</g:color>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -3648,7 +3554,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
-    <g:color>Coast</g:color>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -3670,7 +3575,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
-    <g:color>Swept</g:color>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -3692,7 +3596,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
-    <g:color>Dune</g:color>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -3714,7 +3617,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Cheek</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Cheek</g:custom_label_0>
-    <g:color>Sail</g:color>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>20</g:custom_label_4>
@@ -3736,7 +3638,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
-    <g:color>Melty</g:color>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>50</g:custom_label_4>
@@ -3758,7 +3659,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
-    <g:color>Creamy</g:color>
+    <g:color>White</g:color>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>50</g:custom_label_4>
@@ -3780,7 +3681,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
-    <g:color>Tangy</g:color>
+    <g:color>Brown</g:color>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>50</g:custom_label_4>
@@ -3802,7 +3703,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
-    <g:color>Chilly</g:color>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>50</g:custom_label_4>
@@ -3824,7 +3724,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
-    <g:color>Frosty</g:color>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>50</g:custom_label_4>
@@ -3846,7 +3745,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
-    <g:color>Icy</g:color>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>50</g:custom_label_4>
@@ -3890,7 +3788,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
-    <g:color>Cool Dark Brown</g:color>
+    <g:color>Brown</g:color>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
     <g:custom_label_4>25</g:custom_label_4>
@@ -3912,7 +3810,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
-    <g:color>Warm Dark Brown</g:color>
+    <g:color>Brown</g:color>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
     <g:custom_label_4>25</g:custom_label_4>
@@ -3934,7 +3832,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
-    <g:color>Cool Brown</g:color>
+    <g:color>Brown</g:color>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
     <g:custom_label_4>25</g:custom_label_4>
@@ -3956,7 +3854,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
-    <g:color>Warm Brown</g:color>
+    <g:color>Brown</g:color>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
     <g:custom_label_4>25</g:custom_label_4>
@@ -3978,7 +3876,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
-    <g:color>Auburn</g:color>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
     <g:custom_label_4>25</g:custom_label_4>
@@ -4000,7 +3897,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
-    <g:color>Cool Blond</g:color>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
     <g:custom_label_4>25</g:custom_label_4>
@@ -4022,7 +3918,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
-    <g:color>Warm Blond</g:color>
     <g:custom_label_3>4.6</g:custom_label_3>
     <rating>4.6</rating>
     <g:custom_label_4>25</g:custom_label_4>
@@ -4066,7 +3961,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
-    <g:color>Dark Brown</g:color>
+    <g:color>Brown</g:color>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -4110,7 +4005,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
-    <g:color>Auburn</g:color>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -4132,7 +4026,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
-    <g:color>Blond</g:color>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -4176,7 +4069,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
-    <g:color>Clear</g:color>
+    <g:color>Grey</g:color>
     <g:custom_label_3>3.7</g:custom_label_3>
     <rating>3.7</rating>
     <g:custom_label_4>45</g:custom_label_4>
@@ -4394,7 +4287,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
-    <g:color>Lucite</g:color>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -4416,7 +4308,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
-    <g:color>Pony</g:color>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -4438,7 +4329,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
-    <g:color>Cranberry</g:color>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -4460,7 +4350,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
-    <g:color>Cachet</g:color>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -4482,7 +4371,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
-    <g:color>Portrait</g:color>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -4504,7 +4392,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
-    <g:color>Ember</g:color>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -4526,7 +4413,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
-    <g:color>Villa</g:color>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -4548,7 +4434,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
-    <g:color>Crest</g:color>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -4570,7 +4455,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
-    <g:color>Flute</g:color>
     <g:custom_label_3>4.9</g:custom_label_3>
     <rating>4.9</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -4592,7 +4476,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
-    <g:color>Black Cherry</g:color>
+    <g:color>Black</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -4614,7 +4498,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
-    <g:color>Hold</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -4636,7 +4519,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
-    <g:color>Grip</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -4658,7 +4540,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
-    <g:color>Graze</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -4680,7 +4561,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
-    <g:color>Buff</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -4702,7 +4582,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
-    <g:color>Bit</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -4724,7 +4603,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
-    <g:color>Nip</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -4746,7 +4624,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
-    <g:color>Bare</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -4768,7 +4645,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
-    <g:color>Flush</g:color>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
     <g:custom_label_4>40</g:custom_label_4>
@@ -4910,7 +4786,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
-    <g:color>Cake</g:color>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -4932,7 +4807,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
-    <g:color>Like</g:color>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -4954,7 +4828,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
-    <g:color>Zip</g:color>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -4976,7 +4849,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
-    <g:color>Leo</g:color>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -4998,7 +4870,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
-    <g:color>Jam</g:color>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -5020,7 +4891,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
-    <g:color>Crush</g:color>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -5042,7 +4912,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
-    <g:color>Punch</g:color>
     <g:custom_label_3>4.5</g:custom_label_3>
     <rating>4.5</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -5130,7 +4999,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
-    <g:color>Bronze</g:color>
+    <g:color>Metallic</g:color>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -5152,7 +5021,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
-    <g:color>Clear</g:color>
+    <g:color>Grey</g:color>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -5174,7 +5043,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Lip</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Lip</g:custom_label_0>
-    <g:color>Holographic</g:color>
     <g:custom_label_3>3.9</g:custom_label_3>
     <rating>3.9</rating>
     <g:custom_label_4>55</g:custom_label_4>
@@ -5600,7 +5468,7 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
-    <g:color>Lily</g:color>
+    <g:color>White</g:color>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -5622,7 +5490,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
-    <g:color>Branch</g:color>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -5644,7 +5511,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
-    <g:color>Herb</g:color>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -5666,7 +5532,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
-    <g:color>Bun</g:color>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -5688,7 +5553,6 @@
     <g:product_type>Beauty &gt; Makeup &gt; Eyes</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Eyes</g:custom_label_0>
-    <g:color>Slip</g:color>
     <g:custom_label_3>3.4</g:custom_label_3>
     <rating>3.4</rating>
     <g:custom_label_4>65</g:custom_label_4>
@@ -5752,7 +5616,7 @@
     <g:product_type>Beauty &gt; Body &gt; Deodorant</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Deodorant</g:custom_label_0>
-    <g:size>Orange Blossom Neroli</g:size>
+    <option_group>Orange Blossom Neroli</option_group>
     <g:custom_label_1>Scent</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -5775,7 +5639,7 @@
     <g:product_type>Beauty &gt; Body &gt; Deodorant</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Deodorant</g:custom_label_0>
-    <g:size>Glossier You</g:size>
+    <option_group>Glossier You</option_group>
     <g:custom_label_1>Scent</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>
@@ -5798,7 +5662,7 @@
     <g:product_type>Beauty &gt; Body &gt; Deodorant</g:product_type>
     <g:condition>new</g:condition>
     <g:custom_label_0>Deodorant</g:custom_label_0>
-    <g:size>Sandstone</g:size>
+    <option_group>Sandstone</option_group>
     <g:custom_label_1>Scent</g:custom_label_1>
     <g:custom_label_3>4.4</g:custom_label_3>
     <rating>4.4</rating>

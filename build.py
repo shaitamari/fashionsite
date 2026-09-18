@@ -96,6 +96,48 @@ COLOR_HINTS = ("colour", "color", "shade", "upholstery", "fabric", "finish",
 NULL_OPTIONS = ("title", "defaulttitle", "default title")
 
 
+# --- colour families -------------------------------------------------------
+# `g:color` carries the FAMILY, not the shade name. The raw values were 668
+# distinct across the catalogue — "Camel - Top Grain Leather", "Georgia Clay -
+# Performance Chenille", "Crushed Gravel" — which makes a colour facet a paint
+# chart and a merchandising rule a per-value chore. Families are the unit a
+# merchandiser works in: bury grey, boost black.
+#
+# The shade name is NOT lost: the PDP reads the variant's own title, so the
+# chips still say "Camel - Top Grain Leather". This is the facet value only.
+#
+# Matching is by the EARLIEST colour word in the string, so "Dark Navy" is
+# blue and "Sandstone" beats "sand". Anything with no colour word at all comes
+# back None and the product simply has no colour — better than a wrong family.
+COLOR_FAMILY_WORDS = {'black': ['black', 'phantom', 'midnight', 'obsidian', 'onyx', 'jet', 'ink', 'carbon', 'noir', 'raven'], 'white': ['white', 'ivory', 'cream', 'chalk', 'snow', 'talc', 'coconut', 'vanilla', 'pearl', 'crema', 'porcelain', 'gardenia', 'powder', 'lily', 'alabaster'], 'grey': ['grey', 'gray', 'charcoal', 'slate', 'granite', 'pewter', 'smoke', 'fog', 'shale', 'gravel', 'ash', 'graphite', 'cloud', 'storm', 'steel', 'stone', 'pebble', 'flint', 'mineral', 'mushroom', 'dove', 'quarry', 'concrete', 'zinc', 'clear'], 'metallic': ['silver', 'platinum', 'stainless', 'gold', 'bronze', 'copper', 'chrome', 'brass', 'gunmetal'], 'blue': ['blue', 'navy', 'cobalt', 'azure', 'sky', 'denim', 'indigo', 'marine', 'teal', 'turquoise', 'aqua', 'agate', 'coastal', 'seaglass', 'glacier', 'iris', 'aurora', 'lagoon', 'harbour', 'harbor', 'cornflower'], 'green': ['green', 'mint', 'sage', 'olive', 'moss', 'forest', 'lichen', 'lime', 'jade', 'nori', 'khaki', 'fern', 'eucalyptus', 'kiwi', 'sherwood', 'juniper', 'cypress', 'basil', 'pistachio', 'avocado', 'seafoam', 'emerald'], 'red': ['red', 'chilli', 'cherry', 'wine', 'burgundy', 'maroon', 'ruby', 'coral', 'salmon', 'brick', 'scarlet', 'crimson', 'clay', 'safflower', 'strawberry', 'madder', 'garnet', 'poppy', 'paprika'], 'pink': ['pink', 'blush', 'rose', 'raspberry', 'magenta', 'fuchsia', 'peony', 'petal', 'flamingo', 'peony', 'guava', 'sorbet'], 'purple': ['purple', 'lilac', 'lavender', 'violet', 'plum', 'mulberry', 'fig', 'aubergine', 'amethyst'], 'orange': ['orange', 'apricot', 'peach', 'terra', 'rust', 'sienna', 'mango', 'tangerine', 'papaya', 'ochre', 'marigold', 'persimmon', 'clementine'], 'yellow': ['yellow', 'butter', 'mustard', 'honey', 'champagne', 'amber', 'saffron', 'lemon'], 'brown': ['brown', 'chocolate', 'cocoa', 'espresso', 'chestnut', 'walnut', 'oak', 'birch', 'almond', 'tan', 'camel', 'caramel', 'toast', 'mud', 'umami', 'mocha', 'hazel', 'cedar', 'tortoiseshell', 'tort', 'leather', 'truffle', 'cinnamon', 'pecan', 'acorn', 'driftwood', 'bark'], 'beige': ['beige', 'sand', 'sandstone', 'taupe', 'oyster', 'oatmeal', 'natural', 'linen', 'biscuit', 'wheat', 'bone', 'nude', 'opalite', 'barley', 'parchment', 'flax', 'sisal', 'jute', 'putty'], 'multi': ['multi', 'check', 'floral', 'stripe', 'print', 'pattern', 'zebra', 'tiger', 'leopard', 'rainbow', 'assorted', 'prism', 'starry', 'glimmer', 'shimmer', 'highlighter', 'varsity', 'colourblock', 'colorblock']}
+
+# word -> family, longest first so "sandstone" wins over "sand".
+_FAMILY_BY_WORD = {w: fam for fam, ws in COLOR_FAMILY_WORDS.items() for w in ws}
+_FAMILY_KEYS = sorted(_FAMILY_BY_WORD, key=len, reverse=True)
+
+
+def _squash(value):
+    """Loose comparison form: 'Tweed & Net' and 'Tweed and Net' both collapse
+    to 'tweedandnet', so a title that already names the shade is left alone."""
+    return re.sub(r"[^a-z0-9]", "", str(value or "").lower().replace("&", "and"))
+
+
+def color_family(value):
+    """'Brown' for 'Camel - Top Grain Leather'. None when nothing matches."""
+    t = str(value or "").lower()
+    if not t:
+        return None
+    best, best_at = None, len(t) + 1
+    for w in _FAMILY_KEYS:
+        at = t.find(w)
+        if at > -1 and at < best_at:
+            best_at, best = at, w
+    if best is None:
+        return None
+    fam = _FAMILY_BY_WORD[best]
+    return "Multi" if fam == "multi" else fam.capitalize()
+
+
 def option_role(name):
     """'size', 'color', 'other', or None for Shopify's placeholder option."""
     n = str(name or "").strip().lower()
@@ -332,6 +374,18 @@ def build_catalog(key, cfg):
         if not images:
             continue
 
+        # The shade name belongs in the name, now that `color` is the
+        # family. Only where the whole product is ONE colourway — a sofa
+        # that comes in six upholsteries has no single shade to put in
+        # its title. The material suffix is dropped, so
+        # "Camel - Top Grain Leather" gives "Camel".
+        shades = set()
+        for _v in p.get("variants", []):
+            _c = split_options(p, _v)["color"]
+            if _c:
+                shades.add(str(_c).split(" - ")[0].strip())
+        shade_suffix = shades.pop() if len(shades) == 1 else None
+
         collection = colmap[ptype]
         subcat = subcategory(p["title"], collection, cfg, ptype)
         option_name = p["options"][0]["name"] if p.get("options") else "Title"
@@ -351,7 +405,10 @@ def build_catalog(key, cfg):
             records.append({
                 "id": str(v["id"]),                    # Shopify VARIANT id
                 "groupcode": str(p["id"]),             # Shopify PRODUCT id
-                "name": p["title"],
+                "name": (p["title"] if not shade_suffix
+                         or _squash(shade_suffix) in _squash(p["title"])
+                         else p["title"] + (", " if " in " in p["title"]
+                                            else " in ") + shade_suffix),
                 "variant_label": label,
                 "option_name": option_name,
                 # Vertical first, so the demo vertical is the top level of the
@@ -366,7 +423,10 @@ def build_catalog(key, cfg):
                 "unit_sale_price": price,
                 "currency": cfg.get("currency", CURRENCY),
                 "locale": cfg.get("locale", LOCALE),
-                "color": opts["color"],
+                "color": color_family(opts["color"]),
+                # The shade name as the source wrote it, for anything
+                # that wants to show rather than filter.
+                "color_name": opts["color"],
                 "size": opts["size"],
                 # The dimension names, so a chip row can be labelled with the
                 # word the vertical actually uses.
@@ -532,16 +592,15 @@ def feed_item(p):
     if p.get("color"):
         parts.append(f"    <g:color>{escape(clean(p['color'], 512))}</g:color>")
 
-    # g:size carries the real size when there is one. Where a vertical has no
-    # sizes at all — hotels, airlines, banking, insurance, fintech — its single
-    # variant dimension falls back into g:size so the existing facet keeps
-    # working. It never shares the field with a real size, so fashion's Colour
-    # and Size facets stay clean either way. When Eureka gains a custom
-    # searchable attribute (blocked item 2), tier moves out of g:size and the
-    # fallback below can go.
-    size_value = p.get("size") or p.get("tier")
-    if size_value:
-        parts.append(f"    <g:size>{escape(clean(size_value, 512))}</g:size>")
+    if p.get("size"):
+        parts.append(f"    <g:size>{escape(clean(p['size'], 512))}</g:size>")
+
+    # Room, Cabin, Tier, Level of cover, Leg Style — the single variant
+    # dimension of a vertical that has no sizes. It used to fall back into
+    # g:size, which put "Slope", "Deluxe King" and "Economy" in the size facet
+    # alongside M and L. Its own field, its own facet.
+    if p.get("tier"):
+        parts.append(f"    <option_group>{escape(clean(p['tier'], 512))}</option_group>")
 
     # Which dimension g:size actually holds, so a campaign or the Shopping
     # Agent can tell a Cabin from a dress size.
