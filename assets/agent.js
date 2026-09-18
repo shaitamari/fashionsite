@@ -78,9 +78,10 @@
      every brand. Ten per-brand agents were built first and thrown away when
      that turned out to be true — see the page-context note below.
 
-     MISUMI and Canon are separate on purpose: POCs with their own knowledge
-     base, and Canon in its own locale (en_CA), so a customer's agent only
-     ever sees the customer's catalogue. */
+     MISUMI and Canon are separate on purpose: POCs with their own agent, so
+     the customer's rules and knowledge base apply to that storefront and
+     nowhere else. Canon reads the shared en_GB catalogue like the other
+     storefronts; only its instructions are its own. */
   var SHARED = { sandbox: '6aa547a91e38ba0119dfcaf5', demo: null };   // "Shared Web" channel
 
   var CHANNELS = {
@@ -98,7 +99,7 @@
     fintech:     SHARED,   // Loop
     nutrition:   SHARED,   // Verdant
     misumi:      { sandbox: '6aa41e6b1e38ba0119dfc942', demo: null },   // MISUMI — own agent
-    canon:       SHARED   // Canon — the shared agent, like every other storefront
+    canon:       { sandbox: '6aa51e051e38ba0119dfca63', demo: null }   // Canon — own agent, own instructions
   };
 
   /* Layout flags, applied to `window` before the SDK loads because that is
@@ -236,8 +237,8 @@
      forwards INSIDER_ID, LOCALE, CURRENCY, IS_LOGGED_IN, PARTNER_NAME and, on
      a real product page, CURRENT_PRODUCT — the product id travels with every
      message as productId, and the Shopping Agent takes it as item_id. So "this
-     product" and the storefront's locale (Canon is en_CA) reach the agent
-     without any parameter from this file.
+     product" and the storefront's locale reach the agent without any
+     parameter from this file.
 
      The one condition: window.Insider must exist, which means the hostname
      has to be in the account's multiDomains. On a hostname the tag will not
