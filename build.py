@@ -23,7 +23,14 @@ SITE_ABS = f"https://{APEX}"
 
 
 def site_for(key):
-    """Each vertical gets its own hostname so campaign rules can't collide."""
+    """Each vertical gets its own hostname so campaign rules can't collide.
+
+    A vertical may override it with "hostname" in verticals.json, for the
+    cases where the storefront does not live at <key>.<apex> — Canon is on
+    canon-sandbox.insiderdemo.com, not canon.insiderdemo.com."""
+    override = (VERTICALS.get(key) or {}).get("hostname")
+    if override:
+        return f"https://{override}"
     return f"https://{key}.{APEX}"
 
 os.chdir(ROOT)

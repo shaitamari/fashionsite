@@ -134,6 +134,19 @@ def parse_specs_xml(x):
     return pairs
 
 
+def _names_self(code, own_title):
+    """True when `code` is the product's own model, as written in its title."""
+    title = (own_title or "").lower()
+    squashed = re.sub(r"[^a-z0-9]", "", title)
+    for tok in code.lower().split():
+        if len(tok) == 1:
+            if not re.search(r"\b" + re.escape(tok) + r"\b", title):
+                return False
+        elif re.sub(r"[^a-z0-9]", "", tok) not in squashed:
+            return False
+    return True
+
+
 def compat_from(text, own_title):
     found = []
     for m in MODEL_RE.finditer(text or ""):
@@ -144,7 +157,14 @@ def compat_from(text, own_title):
         FAMILY = {"IMAGEPROGRAF": "imagePROGRAF", "IMAGECLASS": "imageCLASS", "POWERSHOT": "PowerShot", "VIXIA": "VIXIA"}
         fam_u = fam.upper()
         code = (FAMILY.get(fam_u, fam_u) + " " + rest.upper()) if rest else code.upper()
-        if code.lower() in own_title.lower():
+        # The product's own model, dropped so a product never lists itself.
+        # Compared token by token, because Canon's titles interleave other
+        # words and punctuate inconsistently: "PIXMA MegaTank G3270" and
+        # "RF100-500mm" both name models that the extracted code spells
+        # differently. Multi-character tokens are matched with punctuation
+        # and spacing removed; a single-character token has to match as a
+        # whole word, or the r in "Refurbished" would swallow "EOS R".
+        if _names_self(code, own_title):
             continue
         if code.lower() not in [f.lower() for f in found]:
             found.append(code)
