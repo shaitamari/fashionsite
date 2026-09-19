@@ -1488,7 +1488,7 @@
         else if (u.assigned_number) bits.push(u.assigned_number);
         // Credit in the top bar only if the vertical opts in (keeps the bar
         // uncluttered by default; flip show_credit_in_nav to surface it).
-        if (V.show_credit_in_nav && Number(u.credit_balance)) bits.push('\u20ac' + u.credit_balance);
+        if ((window.VERTICAL || {}).show_credit_in_nav && Number(u.credit_balance)) bits.push('\u20ac' + u.credit_balance);
       } else if (u.product) {
         // finance customer. (The product name will link to an account-DETAIL
         // page — the customer's own balance/activity/usage — once that page
@@ -1504,9 +1504,9 @@
         if (u.preferred_store) bits.push(u.preferred_store);
       }
       if (!bits.length) { host.hidden = true; host.innerHTML = ''; return; }
-      host.innerHTML = bits.map(function (b, i) {
+      host.innerHTML = '<a href="dashboard.html" style="color:inherit;text-decoration:none;display:contents">' + bits.map(function (b, i) {
         return '<span' + (i === 0 ? ' class="loy__tier"' : '') + '>' + b + '</span>';
-      }).join('<span class="loy__sep">·</span>');
+      }).join('<span class="loy__sep">·</span>') + '</a>';
       host.hidden = false;
     });
 
