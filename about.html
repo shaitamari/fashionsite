@@ -128,7 +128,7 @@
     <p class="go"><a data-panel-path="onsite-experiment" target="_blank" rel="noopener">Open the campaign in your panel →</a></p>
   </section>
 
-  <section class="act">
+  <section class="act" data-family="retail travel telco">
     <h2><span class="act__num">2.</span> Search and filters — Eureka</h2>
     <div class="do">
       <p>Then open <a id="go-collection" href="category.html">a collection</a>
@@ -147,7 +147,7 @@
     <p class="go"><a data-panel-path="" target="_blank" rel="noopener">Open your panel →</a></p>
   </section>
 
-  <section class="act">
+  <section class="act" data-family="retail travel telco">
     <h2><span class="act__num">3.</span> Basket remembered across visits — Unified Customer Database</h2>
     <div class="do">
       <p>Then go back to the homepage and the product pages you visited.</p>
@@ -186,7 +186,7 @@
     <p class="go"><a data-panel-path="web-templates" target="_blank" rel="noopener">Open the campaign in your panel →</a></p>
   </section>
 
-  <section class="act">
+  <section class="act" data-family="retail travel telco">
     <h2><span class="act__num">5.</span> Email capture before they leave — Web template</h2>
 
     <div class="do">
@@ -332,11 +332,99 @@
     <p class="go"><a data-panel-path="web-smart-recommender/4416/design" target="_blank" rel="noopener">Open the campaign in your panel →</a></p>
   </section>
 
-  <section class="group" data-family="retail">
+  <section class="group" data-family="banking telco" hidden>
+    <h2 class="group__h">The relationship after the sale</h2>
+  </section>
+
+  <section class="act" data-family="telco" hidden>
+    <h2><span class="act__num"></span> Choosing a plan — Unified Customer Database</h2>
+    <div class="do">
+      <p>From the <a href="index.html#plans">plans on the homepage</a>, choose one and go through to the end. Then look at the header, and at the homepage again.</p>
+    </div>
+    <p class="hint">Every page now knows your plan and how much data you have left.</p>
+    <div class="how">
+      <p><b>Why.</b> In telco the product is the relationship that follows the sale: the plan, the allowance, the renewal. Everything the operator wants to say next depends on knowing it.</p>
+      <p><b>How.</b> The funnel writes the plan to your profile, and every page reads it from there — the strip in the header, the greeting on the homepage, the account page. It is the same profile the marketer segments on.</p>
+    </div>
+  </section>
+
+  <section class="act" data-family="telco" hidden>
+    <h2><span class="act__num"></span> The account, made visible — Unified Customer Database</h2>
+    <div class="do">
+      <p>Open the <a href="account.html">account page</a>. Below it, open <b>Mimic plan usage</b> and add a heavy month.</p>
+    </div>
+    <p class="hint">The usage bar fills, and what the page offers you changes with it.</p>
+    <div class="how">
+      <p><b>Why.</b> Data used against the allowance is the number every subscriber checks, and the signal the operator needs most.</p>
+      <p><b>How.</b> In a live account usage arrives from the billing system through the API, straight onto the profile. The controls below the page stand in for that system during a demo.</p>
+    </div>
+  </section>
+
+  <section class="act" data-family="telco" hidden>
+    <h2><span class="act__num"></span> The right offer from how they use it — personalization</h2>
+    <div class="do">
+      <p>On the account page, look at <b>For you</b>. Then press <b>Reset usage</b>, add a light day, and look again.</p>
+    </div>
+    <p class="hint">Light use offers a smaller plan that costs less. Heavy use offers home broadband that brings the combined bill down.</p>
+    <div class="how">
+      <p><b>Why.</b> Most subscribers have enough data and no complaint, and stay invisible until they leave. Telling someone they could pay less, or that adding broadband lowers their total, is how an operator keeps the satisfied majority.</p>
+      <p><b>How.</b> The decision reads usage against a rate card of plans and bundles. On this site the page makes it; in a live account the rate card is a lookup table, the platform decides per customer, and the page shows what it sends.</p>
+    </div>
+  </section>
+
+  <section class="act" data-family="telco" hidden>
+    <h2><span class="act__num"></span> Top up or change plan — funnel</h2>
+    <div class="do">
+      <p>From the account page, <a href="topup.html">add a data boost or change your plan</a>.</p>
+    </div>
+    <p class="hint">A boost is for this month. A plan change is for good. The profile records which.</p>
+    <div class="how">
+      <p><b>Why.</b> Running low this month and needing more every month are two situations, and each deserves its own answer.</p>
+      <p><b>How.</b> Both are full funnels that write the change to the profile and bring you back to the account page with it applied.</p>
+    </div>
+  </section>
+
+  <section class="act" data-family="banking" hidden>
+    <h2><span class="act__num"></span> Opening an account — Unified Customer Database</h2>
+    <div class="do">
+      <p>On the homepage, choose <b>Open account</b> on a current account and go through to the end. Then apply for a <a href="open.html?line=Personal%20Loan">personal loan</a>, which adds an eligibility step.</p>
+    </div>
+    <p class="hint">The current account opens at once. Credit gets a decision: approved, or passed to a banker.</p>
+    <div class="how">
+      <p><b>Why.</b> Deposit accounts open in minutes; credit is a decision, and a low score should reach a person rather than a dead end.</p>
+      <p><b>How.</b> The eligibility step scores the applicant into a band and routes it. Every account opened is added to your profile as a record in an accounts list, next to the latest product and status the pages read. Where the bank's core system makes the approval, the outcome is pushed back through the API and the platform takes it from there.</p>
+    </div>
+  </section>
+
+  <section class="act" data-family="banking" hidden>
+    <h2><span class="act__num"></span> The account, made visible — Unified Customer Database</h2>
+    <div class="do">
+      <p>Open the <a href="account.html">account page</a>. Below it, open <b>Mimic account activity</b> and add a purchase, a bill and money in. Then open your profile in the panel.</p>
+    </div>
+    <p class="hint">Balance and recent activity on the page; every account you hold on the profile.</p>
+    <div class="how">
+      <p><b>Why.</b> Banking is several products held over years. The relationship is what the bank is selling.</p>
+      <p><b>How.</b> The profile holds each account as a record in a list — the Array of Objects tab in the panel — and the page reads the balance and the latest status. In a live account the activity comes from the core system; the controls below the page stand in for it.</p>
+    </div>
+  </section>
+
+  <section class="act" data-family="banking" hidden>
+    <h2><span class="act__num"></span> We acted for you — personalization, Lookup Tables</h2>
+    <div class="do">
+      <p>On the account page, look at <b>For you</b>. Add money in or pay a bill, and look again as the balance moves.</p>
+    </div>
+    <p class="hint">A savings rate raised and a fee waived, already done. With a large balance, a place for the spare cash; with a small one, a timely rate on a loan.</p>
+    <div class="how">
+      <p><b>Why.</b> Doing something for a loyal customer before they ask, and saying so plainly, is the strongest trust move a bank has.</p>
+      <p><b>How.</b> A fact about the market — the savings rate moved, loan rates are low — crossed with what this customer holds. The market facts sit in a rate card that becomes a lookup table on the platform: change the rate once and every customer's message changes. On this site the page decides; in a live account the platform does, and the page shows what it sends.</p>
+    </div>
+  </section>
+
+  <section class="group" data-family="retail travel telco">
     <h2 class="group__h">Cross-channel journey orchestration</h2>
   </section>
 
-  <section class="act" data-family="retail">
+  <section class="act" data-family="retail travel telco">
     <h2><span class="act__num">9.</span> Browse abandonment email — Architect, email <span class="act__time">· the one worth the login</span></h2>
 
     <div class="do">
@@ -350,11 +438,11 @@
         in, and reload.</p>
     </div>
     <p class="hint">The product in that email is the one you were just looking
-    at. Its picture, its name, its link.</p>
+    at. Its picture and its link.</p>
     <div class="how">
 
-      <p><b>Nothing in that email was written for you.</b> The product name, the
-      image and the link are tokens, resolved per recipient at the moment of
+      <p><b>Nothing in that email was written for you.</b> The image and the
+      link are tokens, resolved per recipient at the moment of
       sending. Paste a different profile id in and the whole thing changes.
       There is one email, and it is different for everyone who receives it.</p>
 
@@ -547,9 +635,10 @@
   (function () {
     var fam = (window.VERTICAL || {}).vertical || 'Retail';
     var travel = fam === 'Travel';
+    var famKey = travel ? 'travel' : fam === 'Banking' ? 'banking' : fam === 'Telco' ? 'telco' : 'retail';
     document.querySelectorAll('section[data-family]').forEach(function (sec) {
-      var f = sec.getAttribute('data-family');
-      sec.hidden = travel ? (f !== 'travel') : (f !== 'retail');
+      var fams = sec.getAttribute('data-family').split(' ');
+      sec.hidden = fams.indexOf(famKey) < 0;
     });
     var n = 0;
     document.querySelectorAll('section.act').forEach(function (sec) {
@@ -558,6 +647,20 @@
       var num = sec.querySelector('.act__num');
       if (num) num.textContent = n + '.';
     });
+    if (travel) {
+      var tswaps = [
+        ['Open three or four products here. Do not buy anything.', 'Open three or four routes here. Do not book anything.'],
+        ['The product in that email is the one you were just looking', 'The route in that email is the one you were just looking'],
+        ['last visited product,', 'last visited route,'],
+        ['stops the email chasing someone who has already bought', 'stops the email chasing someone who has already booked'],
+        ['the one\n      that arrives after the purchase', 'the one\n      that arrives after the booking']
+      ];
+      document.querySelectorAll('section[data-family~="travel"]').forEach(function (sec) {
+        sec.querySelectorAll('h2, p').forEach(function (el) {
+          tswaps.forEach(function (sw) { if (el.innerHTML.indexOf(sw[0]) > -1) el.innerHTML = el.innerHTML.split(sw[0]).join(sw[1]); });
+        });
+      });
+    }
     if (travel && (window.VERTICAL_KEY || '') === 'hotels') {
       var swaps = [
         ['Book a fare', 'Book a stay'], ['the link across to a hotel for the same city', 'the link across to a flight for the same city'],
@@ -569,9 +672,10 @@
         ['delayed, cancelled, on time', 'not ready, changed, confirmed'], ["the traveller's own route and date", "the guest's own property and dates"],
         ['The bag, the seat, the lounge', 'Breakfast, late checkout, the spa'], ['where airline margin lives', 'where hotel margin lives'],
         ['pairs them with the fare', 'pairs them with the stay'], ["the airline's extras", "the hotel's extras"],
-        ['the traveller persona', 'the guest persona'], ['status, the next trip, what they usually add', 'status, the next stay, what they usually add']
+        ['the traveller persona', 'the guest persona'], ['status, the next trip, what they usually add', 'status, the next stay, what they usually add'],
+        ['three or four routes here', 'three or four hotels here'], ['The route in that email', 'The hotel in that email'], ['last visited route,', 'last visited hotel,']
       ];
-      document.querySelectorAll('section[data-family="travel"]').forEach(function (sec) {
+      document.querySelectorAll('section[data-family~="travel"]').forEach(function (sec) {
         sec.querySelectorAll('h2, p').forEach(function (el) {
           swaps.forEach(function (sw) { if (el.innerHTML.indexOf(sw[0]) > -1) el.innerHTML = el.innerHTML.split(sw[0]).join(sw[1]); });
         });
