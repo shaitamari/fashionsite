@@ -178,6 +178,8 @@
   }
   var plan = findPlan(lineName);
   var cardmeta = plan ? (((V.content && V.content.plan_cards) || {})[plan.name] || {}) : {};
+  // Monthly by default; a prepaid plan carries its own period in plan_cards.
+  var PER = cardmeta.per || '/mo';
 
   // --- step 1: plan panel ----------------------------------------------
   (function renderPlan() {
@@ -186,7 +188,7 @@
     host.innerHTML =
       '<div class="subplan__card">' +
       '<div class="subplan__head"><h2 class="subplan__name"></h2>' +
-      '<p class="subplan__price"><span class="subplan__amt"></span><span class="subplan__per"> /mo, no contract</span></p></div>' +
+      '<p class="subplan__price"><span class="subplan__amt"></span><span class="subplan__per"> ' + PER + (cardmeta.per ? '' : ', no contract') + '</span></p></div>' +
       '<p class="subplan__blurb"></p><ul class="subplan__feats"></ul></div>';
     host.querySelector('.subplan__name').textContent = plan.name;
     host.querySelector('.subplan__amt').textContent = money(plan.unit_price, plan.currency);
@@ -255,9 +257,9 @@
     host.innerHTML =
       '<h3>Your subscription</h3>' +
       '<div class="subsummary__row"><span>Plan</span><span>' + plan.name + '</span></div>' +
-      '<div class="subsummary__row"><span>Price</span><span>' + money(plan.unit_price, plan.currency) + '/mo</span></div>' +
+      '<div class="subsummary__row"><span>Price</span><span>' + money(plan.unit_price, plan.currency) + PER + '</span></div>' +
       '<div class="subsummary__row"><span>Number</span><span>' + numberLabel() + '</span></div>' +
-      '<div class="subsummary__row"><span>Contract</span><span>None — leave any time</span></div>';
+      '<div class="subsummary__row"><span>Contract</span><span>' + (cardmeta.terms || 'None — leave any time') + '</span></div>';
   }
   updateSummary();
 
@@ -289,6 +291,7 @@
       subscription: true,
       plan: plan ? plan.name : '',
       plan_price: plan ? plan.unit_price : 0,
+      plan_per: PER,
       number: num || '',
       ported: keepMode
     }));

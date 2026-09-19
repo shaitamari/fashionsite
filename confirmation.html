@@ -297,9 +297,9 @@
       ' Your SIM is on its way, and your eSIM QR is in your email.';
     summary.innerHTML =
       '<div><span>Plan</span><span>' + ORDER.plan + '</span></div>' +
-      '<div><span>Monthly price</span><span>' + sym + ORDER.plan_price + '/mo</span></div>' +
+      '<div><span>' + (ORDER.plan_per && ORDER.plan_per !== '/mo' ? 'Price' : 'Monthly price') + '</span><span>' + sym + ORDER.plan_price + (ORDER.plan_per || '/mo') + '</span></div>' +
       '<div><span>Number</span><span>' + ORDER.number + (ORDER.ported ? ' (porting)' : '') + '</span></div>' +
-      '<div class="grand"><span>Contract</span><span>None — leave any time</span></div>';
+      '<div class="grand"><span>Contract</span><span>' + (ORDER.plan_per && ORDER.plan_per !== '/mo' ? 'None — top up any time' : 'None — leave any time') + '</span></div>';
     if (FRESH) { ORDER.sent = true; try { localStorage.setItem('lmn.order', JSON.stringify(ORDER)); } catch (e) {} }
   } else {
     var lbl = ((window.VERTICAL || {}).labels || {});

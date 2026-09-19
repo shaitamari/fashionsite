@@ -18819,5 +18819,27 @@
     <margin>30</margin>
     <activation_date>2026-09-13</activation_date>
   </item>
+  <item>
+    <g:id>48300000000904</g:id>
+    <g:item_group_id>8300000000904</g:item_group_id>
+    <g:title>Vantis Prepaid</g:title>
+    <description>20 GB of 5G data every 30 days, unlimited UK calls and texts. Pay up front and top up when you want — no contract, no credit check, no bill. 20 GB 5G data every 30 days Unlimited calls &amp; texts No credit check EU roaming included</description>
+    <link>https://telco.insiderdemo.com/product.html?id=48300000000904</link>
+    <g:image_link>https://insiderdemo.com/assets/img/pixel.png</g:image_link>
+    <g:price>12.00</g:price>
+    <g:sale_price>12.00</g:sale_price>
+    <g:availability>in stock</g:availability>
+    <g:quantity>250</g:quantity>
+    <g:brand>Vantis</g:brand>
+    <g:product_type>Telco &gt; Plans &gt; Plans</g:product_type>
+    <g:condition>new</g:condition>
+    <g:custom_label_0>Plans</g:custom_label_0>
+    <g:multipack>55</g:multipack>
+    <g:custom_label_3>4.1</g:custom_label_3>
+    <rating>4.1</rating>
+    <g:custom_label_4>55</g:custom_label_4>
+    <margin>55</margin>
+    <activation_date>2026-09-13</activation_date>
+  </item>
 </channel>
 </rss>

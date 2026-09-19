@@ -2011,6 +2011,17 @@
         }
       ],
       "plan_cards": {
+        "Vantis Prepaid": {
+          "blurb": "Pay up front for thirty days and top up when you want — no contract, no credit check.",
+          "features": [
+            "20 GB 5G data every 30 days",
+            "Unlimited calls & texts",
+            "No credit check",
+            "EU roaming included"
+          ],
+          "per": "/30 days",
+          "terms": "None — pay up front, top up any time"
+        },
         "Vantis 5": {
           "blurb": "Best for light users — messaging, maps and the occasional stream.",
           "features": [

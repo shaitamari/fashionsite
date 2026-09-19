@@ -120,9 +120,9 @@
       title:   'An account that<br>does the admin.',
       lede:    'No monthly fee, no minimum balance, open it on your phone.',
       cta:     'Open an account',
-      href:    'category.html?c=Accounts',
-      image:   'https://insiderdemo.com/assets/img/banking/ardent-current-account.svg',
-      product: 'product.html?id=48300000000009'
+      href:    'open.html?line=Everyday',
+      image:   'https://insiderdemo.com/assets/img/banking/northbank-current-account.svg',
+      product: 'open.html?line=Everyday'
     },
     insurance: {
       eyebrow: 'Quote in two minutes',
@@ -144,6 +144,48 @@
     }
   };
 
+  /* ONE STOREFRONT, SEVERAL ADS
+
+     Where a brand runs more than one ad, the banner follows the ad, not the
+     brand. Meta writes the ad id into utm_content ({{ad.id}}), so the
+     marketer keys each banner on the ad it belongs to. An ad id missing from
+     this table falls back to the storefront's banner above.
+
+     The button starts the thing the ad was selling: the prepaid ad opens the
+     prepaid sign-up, the Unlimited ad opens Unlimited. One click from the ad
+     to the first step of the flow. */
+  var BY_AD = {
+    // Vantis — "Prepaid, 30 days"
+    '120210481633112': {
+      vertical: 'telco',
+      eyebrow: 'Vantis Prepaid',
+      title:   '20 GB for €12.<br>Top up when you want.',
+      lede:    'Thirty days of 5G with unlimited calls and texts. No contract, no credit check.',
+      cta:     'Get Vantis Prepaid',
+      href:    'subscribe.html?line=Vantis%20Prepaid',
+      image:   'https://insiderdemo.com/assets/img/telco/vantis-prepaid.svg',
+      product: 'subscribe.html?line=Vantis%20Prepaid'
+    },
+    // Vantis — "Unlimited, monthly"
+    '120210481633113': {
+      vertical: 'telco',
+      eyebrow: 'Vantis Unlimited',
+      title:   'Data with<br>nothing to count.',
+      lede:    'Unlimited 5G, calls and texts for €24 a month. Keep your number, leave any time.',
+      cta:     'Get Unlimited',
+      href:    'subscribe.html?line=Vantis%20Unlimited',
+      image:   'https://insiderdemo.com/assets/img/telco/vantis-unlimited.svg',
+      product: 'subscribe.html?line=Vantis%20Unlimited'
+    }
+  };
+
+  function adCopy(key) {
+    var id = '';
+    try { id = new URLSearchParams(location.search).get('utm_content') || ''; } catch (e) {}
+    var a = BY_AD[id];
+    return (a && a.vertical === key) ? a : null;
+  }
+
   function vertical() {
     var parts = location.hostname.split('.');
     if (parts.length < 3) return null;                 // apex or localhost
@@ -153,7 +195,7 @@
 
   var key = vertical();
   if (!key) return;                                    // unknown host, change nothing
-  var copy = COPY[key];
+  var copy = adCopy(key) || COPY[key];
 
   function apply() {
     var title = document.querySelector('[data-hero-title]');

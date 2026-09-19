@@ -117,6 +117,46 @@
      "featured_image": null
     }
    ]
+  },
+  {
+   "id": 8300000000904,
+   "title": "Vantis Prepaid",
+   "handle": "plan-vantis-prepaid",
+   "body_html": "<p>20 GB of 5G data every 30 days, unlimited UK calls and texts. Pay up front and top up when you want — no contract, no credit check, no bill.</p><ul><li>20 GB 5G data every 30 days</li><li>Unlimited calls &amp; texts</li><li>No credit check</li><li>EU roaming included</li></ul>",
+   "vendor": "Vantis",
+   "product_type": "Plans",
+   "tags": [
+    "Plans",
+    "Mobile",
+    "Prepaid",
+    "Category:Plans",
+    "Sub:Mobile"
+   ],
+   "options": [
+    {
+     "name": "Title",
+     "values": [
+      "Default Title"
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "assets/img/pixel.png"
+    }
+   ],
+   "variants": [
+    {
+     "id": 48300000000904,
+     "title": "Default Title",
+     "option1": "Default Title",
+     "sku": "plan-vantis-prepaid",
+     "price": "12.00",
+     "compare_at_price": null,
+     "available": true,
+     "featured_image": null
+    }
+   ]
   }
  ]
 }

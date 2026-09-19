@@ -223,6 +223,9 @@ button{font-family:inherit;border:0;background:none;cursor:pointer;color:inherit
   color:#8bd450;word-break:break-all;line-height:1.5;
 }
 .setup-hint{margin-top:10px;opacity:.55;font-size:11px;line-height:1.5}
+.setup-ads{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px}
+.setup-ads a{background:#3a3d42;border-radius:6px;padding:5px 9px;font-size:12px;color:#fff;text-decoration:none}
+.setup-ads a.is-on{background:#0866ff}
 .setup-hide{margin-top:10px;background:#3a3d42;border-radius:6px;padding:6px 10px;font-weight:600;font-size:12px}
 
 @media (max-width:1100px){
@@ -400,6 +403,7 @@ Every Oxford in the house is marked down — hand-finished leather, Goodyear wel
     <input id="storeUrl" type="url" spellcheck="false" placeholder="https://fashion-sandbox.insiderdemo.com">
     <div class="setup-out" id="finalUrl"></div>
     <div class="setup-hint">Every link in the ad points here. Press <b>H</b> to hide this before you present — hover the Shop now button to show the UTMs in the browser status bar.</div>
+    <div class="setup-ads" id="adPicker" hidden></div>
     <button class="setup-hide" id="hideBtn">Hide for demo (H)</button>
   </div>
   <button class="setup-pill" id="pill">⚙︎ <span id="pillText">Demo setup</span></button>
@@ -519,8 +523,8 @@ var ADS = {
     eyebrow:"CURRENT ACCOUNTS", label:"OPEN IN 10 MINUTES",
     title:"Open a current account", desc:"No monthly fee. No minimum balance.",
     campaign:"120210481633140", adid:"120210481633141", slug:"current-account", category:"Accounts",
-    image:"https://insiderdemo.com/assets/img/banking/ardent-current-account.svg",
-    side:"https://insiderdemo.com/assets/img/banking/ardent-current-account.svg",
+    image:"https://insiderdemo.com/assets/img/banking/northbank-current-account.svg",
+    side:"https://insiderdemo.com/assets/img/banking/northbank-current-account.svg",
     sidecopy:"Open an account — Northbank" },
 
   insurance: { brand:"Fairhaven", initials:"FH", host:"insurance",
@@ -542,6 +546,37 @@ var ADS = {
     sidecopy:"Expense cards — Loop" }
 };
 
+/* ─────────────────────────────────────────────
+   MORE THAN ONE AD FOR A BRAND
+
+   ?ad=<key> picks one. Each has its own ad id, which travels in
+   utm_content, and the Onsite Experiment keys its banner on that id — so
+   the prepaid ad lands on prepaid and the Unlimited ad on Unlimited.
+   The first entry is the default. The entry in ADS above stays reachable
+   under its own key (telco: ?ad=devices).
+   ───────────────────────────────────────────── */
+var VARIANTS = {
+  telco: {
+    unlimited: { label:"Unlimited", brand:"Vantis", initials:"VA", host:"telco",
+      body:"Data with nothing to count.\n\nUnlimited 5G, calls and texts for €24 a month. Keep your number, leave any time.",
+      eyebrow:"UNLIMITED", label_:"NO LOCK-IN",
+      title:"Vantis Unlimited, €24 a month", desc:"Keep your number. Leave any time.",
+      campaign:"120210481633110", adid:"120210481633113", slug:"unlimited", category:"Plans",
+      image:"https://insiderdemo.com/assets/img/telco/vantis-unlimited.svg",
+      side:"https://insiderdemo.com/assets/img/telco/vantis-unlimited.svg",
+      sidecopy:"Unlimited 5G, €24 a month — Vantis" },
+    prepaid: { label:"Prepaid", brand:"Vantis", initials:"VA", host:"telco",
+      body:"20 GB for €12. Top up when you want.\n\nThirty days of 5G with unlimited calls and texts. No contract, no credit check.",
+      eyebrow:"PREPAID", label_:"NO CREDIT CHECK",
+      title:"Vantis Prepaid, €12 for 30 days", desc:"20 GB of 5G, unlimited calls and texts.",
+      campaign:"120210481633110", adid:"120210481633112", slug:"prepaid", category:"Plans",
+      image:"https://insiderdemo.com/assets/img/telco/vantis-prepaid.svg",
+      side:"https://insiderdemo.com/assets/img/telco/vantis-prepaid.svg",
+      sidecopy:"Prepaid, 20 GB for €12 — Vantis" },
+    devices: "base"
+  }
+};
+
 /* Hostname first, ?v= second, fashion last. Mirrors vertical.js: the suffix
    ("-sandbox") is stripped, so both fashion. and fashion-sandbox. resolve. */
 function resolveVertical(){
@@ -555,7 +590,17 @@ function resolveVertical(){
   return "fashion";
 }
 
-var AD = ADS[resolveVertical()];
+var VKEY = resolveVertical();
+var AD = ADS[VKEY];
+var AD_KEY = null;
+(function pickVariant(){
+  var set = VARIANTS[VKEY]; if (!set) return;
+  var keys = Object.keys(set);
+  var want = new URLSearchParams(location.search).get("ad");
+  AD_KEY = (want && set[want]) ? want : keys[0];
+  var v = set[AD_KEY];
+  if (v !== "base") { AD = Object.assign({}, v, { label: v.label_ }); }
+})();
 
   var STORE_URL = location.protocol + "//" + location.host + "/";
 
@@ -650,6 +695,20 @@ var AD = ADS[resolveVertical()];
       setup.style.display = (setup.style.display === "none") ? "" : "none";
     }
   });
+
+  (function renderPicker(){
+    var set = VARIANTS[VKEY], host = document.getElementById("adPicker");
+    if (!set || !host) return;
+    host.hidden = false;
+    Object.keys(set).forEach(function(k){
+      var a = document.createElement("a");
+      var q = new URLSearchParams(location.search); q.set("ad", k);
+      a.href = location.pathname + "?" + q.toString();
+      a.textContent = set[k] === "base" ? "Devices" : set[k].label;
+      if (k === AD_KEY) a.className = "is-on";
+      host.appendChild(a);
+    });
+  })();
 
   input.value = (STORE_URL === "https://fashion-sandbox.insiderdemo.com") ? "" : STORE_URL;
   apply(input.value);

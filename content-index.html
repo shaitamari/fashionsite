@@ -141,8 +141,8 @@ body { opacity: 0; transition: opacity .18s ease-out }
 
 <main>
 
-  <!-- Arrival-aware hero. utm_campaign (or ?line=) picks the product line the
-       ad was about; default is the lead line. Photo fills from photos.py; a
+  <!-- Hero. ?line= picks a product line for manual previews; ad arrivals are
+       personalised by the Onsite Experiment, not by this page. Photo fills from photos.py; a
        brand block shows until it does. -->
   <section class="hero hero--content">
     <div class="hero__media"><img id="hero-img" alt=""></div>
@@ -206,11 +206,13 @@ body { opacity: 0; transition: opacity .18s ease-out }
   })();
 
   /* ---- Arrival-aware hero -------------------------------------------------
-     ?utm_campaign=<line> or ?line=<line> selects the product line; the hero
+     ?line=<line> selects the product line; the hero
      copy comes from HERO_BY_LINE, default is the first entry. */
   var HERO = (V.content && V.content.hero) || {};
   var params = new URLSearchParams(location.search);
-  var line = (params.get('line') || params.get('utm_campaign') || '').toLowerCase();
+  /* ?line= only. What an ad arrival sees is decided by the Onsite Experiment
+     ("Paid social arrival"), not by the site reading the UTMs itself. */
+  var line = (params.get('line') || '').toLowerCase();
   function setHero(key) {
     var h = HERO[key] || HERO._default;
     if (!h) return;
@@ -271,7 +273,7 @@ body { opacity: 0; transition: opacity .18s ease-out }
       var pop = (V.content && V.content.popular && p.name === V.content.popular) ? '<span class="linecard__flag">Most popular</span>' : '';
       var priceHtml = rateLine
         ? '<p class="linecard__price"><span class="linecard__rate"></span></p>'
-        : '<p class="linecard__price"><span class="linecard__amt"></span><span class="linecard__per"> ' + (perUnit || '/mo') + '</span></p>';
+        : '<p class="linecard__price"><span class="linecard__amt"></span><span class="linecard__per"> ' + (cardmeta.per || perUnit || '/mo') + '</span></p>';
       el.innerHTML =
         pop +
         '<h3 class="linecard__name"></h3>' +

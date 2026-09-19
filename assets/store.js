@@ -1616,7 +1616,7 @@
           '<div class="card__plan">' +
             '<h3 class="card__plan-name">' + p.name + '</h3>' +
             (allowance ? '<p class="card__plan-allowance">' + allowance + '</p>' : '') +
-            '<p class="card__plan-price">' + pcur + (p.unit_price != null ? p.unit_price : '') + '<span>/mo</span></p>' +
+            '<p class="card__plan-price">' + pcur + (p.unit_price != null ? p.unit_price : '') + '<span>' + ((((V.content || {}).plan_cards || {})[p.name] || {}).per || '/mo') + '</span></p>' +
             '<span class="card__plan-cta">Choose plan</span>' +
           '</div>' +
         '</a>';
