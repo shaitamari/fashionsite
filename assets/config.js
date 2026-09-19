@@ -57,6 +57,18 @@ window.SITE_CONFIG = {
       // salesdemo: { searchCampaignId: null, listingCampaignId: null },
     },
 
+    // Keyed by the storefront (the vertical key), resolved AFTER perAccount.
+    // A storefront on its own locale needs its own campaign: the en_GB ids
+    // above index a different catalogue and would return nothing here.
+    //
+    // `campaignId` is shorthand for both surfaces — one JavaScript SDK
+    // campaign can serve search and category listing together, which is how
+    // Canon is set up. Use the two explicit keys only when they differ.
+    perVertical: {
+      // canon: { campaignId: null }   // en_CA — fill in once created
+    },
+
+
     pageSize: 24,
     defaultSorting: 'Relevancy',
 
@@ -508,10 +520,32 @@ window.SITE_CONFIG = {
     var acct = currentAccount();
     if (!acct) return false;
 
+    var vert = (window.VERTICAL && window.VERTICAL.key) || null;
+
+    // One JavaScript SDK campaign can serve both search and category
+    // listing, so `campaignId` is shorthand for both. Expanded per layer,
+    // before merging, so a storefront's shorthand overrides the account's
+    // explicit ids rather than losing to them.
+    function expand(o) {
+      if (!o) return {};
+      var out = Object.assign({}, o);
+      if (out.campaignId) {
+        if (out.searchCampaignId === undefined) out.searchCampaignId = out.campaignId;
+        if (out.listingCampaignId === undefined) out.listingCampaignId = out.campaignId;
+        delete out.campaignId;
+      }
+      return out;
+    }
+
     ['eureka', 'reco'].forEach(function (section) {
       var cfg = window.SITE_CONFIG[section];
-      var over = cfg && cfg.perAccount && cfg.perAccount[acct];
-      if (!over) return;
+      if (!cfg) return;
+      // The account's ids first, then the storefront's own on top: a
+      // storefront on its own locale overrides whatever the account says.
+      var over = Object.assign({},
+        expand(cfg.perAccount && cfg.perAccount[acct]),
+        expand(vert && cfg.perVertical && cfg.perVertical[vert]));
+      if (!Object.keys(over).length) return;
       Object.keys(over).forEach(function (k) {
         // reco carries two kinds of key: per-surface campaign ids, which
         // belong in `campaigns`, and the campaign/variation pair for the
