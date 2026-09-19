@@ -65,7 +65,7 @@ window.SITE_CONFIG = {
     // campaign can serve search and category listing together, which is how
     // Canon is set up. Use the two explicit keys only when they differ.
     perVertical: {
-      canon: { campaignId: 4233 }
+      // canon: { campaignId: null }   // en_CA — fill in once created
     },
 
 

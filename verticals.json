@@ -2722,8 +2722,6 @@
       "Other": "All"
     },
     "hostname": "canon-sandbox.insiderdemo.com",
-    "locale": "en_CA",
-    "currency": "CAD",
-    "standalone_feed": true
+    "_prices_eur": true
   }
 }
