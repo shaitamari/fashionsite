@@ -116,10 +116,10 @@
       product: 'product.html?id=48200000000001'
     },
     banking: {
-      eyebrow: 'Ten minutes',
+      eyebrow: 'Northbank Everyday',
       title:   'An account that<br>does the admin.',
-      lede:    'No monthly fee, no minimum balance, open it on your phone.',
-      cta:     'Open an account',
+      lede:    'The Everyday current account: no monthly fee, fee-free spending abroad, open it on your phone in ten minutes.',
+      cta:     'Open an Everyday account',
       href:    'open.html?line=Everyday',
       image:   'https://insiderdemo.com/assets/img/banking/current-account.jpg',
       product: 'open.html?line=Everyday'
