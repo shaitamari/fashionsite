@@ -794,25 +794,29 @@
           "eyebrow": "Northbank",
           "title": "Banking that works the way you do.",
           "lede": "Everyday accounts, savings and cards — open one in minutes, manage it all in one place.",
-          "cta": "See accounts"
+          "cta": "See accounts",
+          "image": "assets/img/banking/home-hero.jpg"
         },
         "savings": {
           "eyebrow": "Northbank",
           "title": "Save with a rate that respects you.",
           "lede": "Grow your money with easy-access and fixed savings. No fuss, no lock-in you didn't ask for.",
-          "cta": "See savings"
+          "cta": "See savings",
+          "image": "assets/img/banking/savings.jpg"
         },
         "card": {
           "eyebrow": "Northbank",
           "title": "A card that gives back.",
           "lede": "Low rates, real rewards, and no hidden fees. Apply in minutes.",
-          "cta": "See cards"
+          "cta": "See cards",
+          "image": "assets/img/banking/credit-card.jpg"
         },
         "loan": {
           "eyebrow": "Northbank",
           "title": "Borrow on your terms.",
           "lede": "Personal loans with clear rates and no early-repayment penalties.",
-          "cta": "See loans"
+          "cta": "See loans",
+          "image": "assets/img/banking/loan.jpg"
         }
       },
       "product_cards": {
@@ -1029,25 +1033,25 @@
           "title": "Switch in 7 days",
           "sub": "We do the moving for you",
           "href": "help/banking/switch.html",
-          "image": ""
+          "image": "assets/img/banking/tile-switch.jpg"
         },
         {
           "title": "Protected to £85,000",
           "sub": "FSCS covered",
           "href": "help/banking/safety.html",
-          "image": ""
+          "image": "assets/img/banking/tile-protect.jpg"
         },
         {
           "title": "Check your rate",
           "sub": "Soft search, no score impact",
           "href": "quote.html",
-          "image": ""
+          "image": "assets/img/banking/tile-rate.jpg"
         },
         {
           "title": "Manage in the app",
           "sub": "Everything in one place",
           "href": "#",
-          "image": ""
+          "image": "assets/img/banking/tile-app.jpg"
         }
       ],
       "nav": [
@@ -1080,7 +1084,41 @@
         "Northbank Saver",
         "Northbank Rewards Card",
         "Personal Loan"
-      ]
+      ],
+      "stories_title": "Money that fits your life",
+      "stories": [
+        {
+          "image": "assets/img/banking/credit-card.jpg",
+          "title": "A card for the places you are going",
+          "body": "Cashback on everyday spending, no annual fee and 0% on purchases for your first twelve months.",
+          "link": "Apply for the Rewards Card",
+          "href": "open.html?line=Northbank%20Rewards%20Card"
+        },
+        {
+          "image": "assets/img/banking/savings.jpg",
+          "title": "Save for the trip you keep planning",
+          "body": "Set a goal, round up your spending and watch it grow at 3.5% AER. Take it out whenever you need it.",
+          "link": "Open a Saver",
+          "href": "open.html?line=Northbank%20Saver"
+        },
+        {
+          "image": "assets/img/banking/loan.jpg",
+          "title": "The kitchen you keep talking about",
+          "body": "Borrow up to £25,000 with fixed monthly payments. Check your rate with no impact on your credit score.",
+          "link": "Check your rate",
+          "href": "open.html?line=Home%20Improvement%20Loan"
+        }
+      ],
+      "app": {
+        "title": "Your bank, in your pocket",
+        "lede": "Pay, save and stay in control from the Northbank app.",
+        "points": [
+          "See every payment the moment it happens",
+          "Freeze your card in one tap",
+          "Round up your spending into savings pots"
+        ],
+        "image": "assets/img/banking/app.png"
+      }
     },
     "open_account": {
       "steps": [
@@ -1905,7 +1943,7 @@
           "lede": "Unlimited calls, 5G data, no lock-in. Pick a plan and keep your number.",
           "cta": "See plans",
           "href": "#plans",
-          "image": ""
+          "image": "assets/img/telco/home-hero.jpg"
         },
         "unlimited": {
           "eyebrow": "Vantis Unlimited",
@@ -1913,7 +1951,7 @@
           "lede": "Unlimited 5G, unlimited calls, no contract. Stream, tether and game freely.",
           "cta": "Get Unlimited",
           "href": "#plans",
-          "image": ""
+          "image": "assets/img/telco/unlimited.jpg"
         },
         "plans": {
           "eyebrow": "Vantis",
@@ -1921,7 +1959,7 @@
           "lede": "Three simple plans, unlimited calls on all, no lock-in.",
           "cta": "Compare plans",
           "href": "#plans",
-          "image": ""
+          "image": "assets/img/telco/home-hero.jpg"
         },
         "roaming": {
           "eyebrow": "Vantis · Roaming",
@@ -1929,7 +1967,7 @@
           "lede": "EU roaming included on every Vantis plan — same allowance, no surprises.",
           "cta": "See plans",
           "href": "#plans",
-          "image": ""
+          "image": "assets/img/telco/roaming.jpg"
         }
       },
       "articles": [
@@ -1975,25 +2013,25 @@
           "title": "Keep your number",
           "sub": "Port in one working day",
           "href": "help/telco/keep-your-number.html",
-          "image": ""
+          "image": "assets/img/telco/tile-number.jpg"
         },
         {
           "title": "Roaming in Europe",
           "sub": "Included on every plan",
           "href": "help/telco/roaming.html",
-          "image": ""
+          "image": "assets/img/telco/roaming.jpg"
         },
         {
           "title": "Set up eSIM",
           "sub": "Activate in minutes",
           "href": "help/telco/esim.html",
-          "image": ""
+          "image": "assets/img/telco/tile-esim.jpg"
         },
         {
           "title": "Coverage map",
           "sub": "Check your 5G",
           "href": "help/telco/coverage.html",
-          "image": ""
+          "image": "assets/img/telco/tile-coverage.jpg"
         }
       ],
       "nav": [
@@ -2049,6 +2087,40 @@
             "EU roaming included"
           ]
         }
+      },
+      "stories_title": "Made for how you use your phone",
+      "stories": [
+        {
+          "image": "assets/img/telco/unlimited.jpg",
+          "title": "Stream the whole commute",
+          "body": "Unlimited 5G data, calls and texts for €24 a month. Keep your number and leave any time.",
+          "link": "Get Unlimited",
+          "href": "subscribe.html?line=Vantis%20Unlimited"
+        },
+        {
+          "image": "assets/img/telco/prepaid.jpg",
+          "title": "Pay up front, stay in control",
+          "body": "20 GB of 5G for €12 every 30 days. No contract, no credit check, top up when you want.",
+          "link": "Get Vantis Prepaid",
+          "href": "subscribe.html?line=Vantis%20Prepaid"
+        },
+        {
+          "image": "assets/img/telco/roaming.jpg",
+          "title": "Your plan works in Lisbon too",
+          "body": "EU roaming is included on every Vantis plan, with the same allowance you have at home.",
+          "link": "See plans",
+          "href": "#plans"
+        }
+      ],
+      "app": {
+        "title": "Your plan, in your pocket",
+        "lede": "Check your data, add a boost or switch on roaming from the Vantis app.",
+        "points": [
+          "See what is left of your data at a glance",
+          "Add a data boost in seconds",
+          "Roaming switches on when you land"
+        ],
+        "image": "assets/img/telco/app.png"
       }
     },
     "default_category": "Plans",

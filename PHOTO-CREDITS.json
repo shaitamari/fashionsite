@@ -110,5 +110,73 @@
       "photographer": "David Rodrigo",
       "profile": "https://unsplash.com/@david__r"
     }
+  },
+  "banking": {
+    "current-account": {
+      "photographer": "SpotOn",
+      "profile": "https://unsplash.com/@spotonpos"
+    },
+    "savings": {
+      "photographer": "Falisha Havaa Atthaya",
+      "profile": "https://unsplash.com/@ngarsipcahaya"
+    },
+    "credit-card": {
+      "photographer": "Vitaly Gariev",
+      "profile": "https://unsplash.com/@silverkblack"
+    },
+    "loan": {
+      "photographer": "Vitaly Gariev",
+      "profile": "https://unsplash.com/@silverkblack"
+    },
+    "tile-switch": {
+      "photographer": "Vitaly Gariev",
+      "profile": "https://unsplash.com/@silverkblack"
+    },
+    "tile-protect": {
+      "photographer": "Vitaly Gariev",
+      "profile": "https://unsplash.com/@silverkblack"
+    },
+    "tile-rate": {
+      "photographer": "Thom Holmes",
+      "profile": "https://unsplash.com/@thomholmes"
+    },
+    "tile-app": {
+      "photographer": "Vitaly Gariev",
+      "profile": "https://unsplash.com/@silverkblack"
+    }
+  },
+  "telco": {
+    "home-hero": {
+      "photographer": "Vitaly Gariev",
+      "profile": "https://unsplash.com/@silverkblack"
+    },
+    "unlimited": {
+      "photographer": "Markus Kammermann",
+      "profile": "https://unsplash.com/@makabera"
+    },
+    "prepaid": {
+      "photographer": "Vitaly Gariev",
+      "profile": "https://unsplash.com/@silverkblack"
+    },
+    "roaming": {
+      "photographer": "Anthony Da Cruz",
+      "profile": "https://unsplash.com/@akhu"
+    },
+    "family": {
+      "photographer": "Vitaly Gariev",
+      "profile": "https://unsplash.com/@silverkblack"
+    },
+    "tile-number": {
+      "photographer": "Brooke Cagle",
+      "profile": "https://unsplash.com/@brookecagle"
+    },
+    "tile-esim": {
+      "photographer": "Thom Holmes",
+      "profile": "https://unsplash.com/@thomholmes"
+    },
+    "tile-coverage": {
+      "photographer": "Dmitrii Vaccinium",
+      "profile": "https://unsplash.com/@vaccinium"
+    }
   }
 }

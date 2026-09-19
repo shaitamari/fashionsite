@@ -32,6 +32,7 @@
 <script src="assets/insider-debug.js"></script>
 <script src="assets/vertical.js"></script>
 <script src="assets/store.js"></script>
+<script src="assets/dashcharts.js"></script>
 <script src="assets/explain.js"></script>
 <script src="assets/affinity.js"></script>
 <script src="assets/agent.js"></script>
@@ -117,6 +118,7 @@
           <h2 class="h2" id="dash-title">At a glance</h2>
         </div>
         <div class="dash__glance" id="dash-glance"></div>
+        <div class="dcharts" id="dash-charts"></div>
         <div class="dash__actions" id="dash-actions"></div>
         <div class="dash__offers" id="dash-offers"></div>
         <div class="dash__demo" id="dash-demo" hidden></div>
@@ -209,7 +211,7 @@
 <footer class="foot">
   <div class="wrap foot__in">
     <span><span data-brand>Lumen</span> — Insider One demo storefront</span>
-    <span>onesandbox · 10014057</span>
+    <span></span>
   </div>
 </footer>
 
@@ -675,6 +677,7 @@
             return '<div class="dash__metric-top"><span>Credit</span><span>\u20ac'+c+(mins!=null?' \u2248 '+mins+' mins':'')+'</span></div>'; })()+
           '</div>';
       actions.innerHTML='<a class="btn" href="topup.html">Top up or change plan</a>';
+      if(window.DashCharts) DashCharts.telco(document.getElementById('dash-charts'), u, st);
       log.innerHTML=(st.events||[]).map(function(e){return '<li><span>'+fmtDate(e.when)+'</span><span>'+e.label+'</span></li>';}).join('') || '<li><span>\u2014</span><span>No activity yet</span></li>';
       renderOffers(u);
       renderDemoStrip('telco');
@@ -690,6 +693,7 @@
           '<div class="dash__balance">'+fmtGBP(st.balance)+'</div></div>'+
         '<div class="dash__metric"><div class="dash__metric-top"><span>Status</span><span>'+(u.customer_status||'Active')+'</span></div>'+
           (u.lead_band?'<div class="dash__metric-top"><span>Eligibility</span><span>Band '+u.lead_band+'</span></div>':'')+'</div>';
+      if(window.DashCharts) DashCharts.finance(document.getElementById('dash-charts'), u, st);
       actions.innerHTML='';   // customer account view has no 'explore' button — you're already a customer
       log.innerHTML=(st.transactions||[]).map(function(t){var neg=t.amount<0;return '<li><span>'+fmtDate(t.when)+'</span><span>'+t.label+'</span><span style="color:'+(neg?'#c0392b':'#136B4B')+'">'+(neg?'':'+')+fmtGBP(t.amount)+'</span></li>';}).join('') || '<li><span>\u2014</span><span>No transactions</span></li>';
       renderOffers(u);

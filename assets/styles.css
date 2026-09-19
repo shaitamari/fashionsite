@@ -675,3 +675,144 @@ html[data-vertical="banking"] .card__fin-media { display:none !important; }
 .card__fin-feat { font-size:.875rem; padding-left:1.25rem; position:relative; }
 .card__fin-feat::before { content:"✓"; position:absolute; left:0; color:var(--accent, #1B4F8A); font-weight:700; }
 .card__fin-cta { margin-top:auto; align-self:flex-start; }
+
+/* Story cards on content homepages (banking, telco): photo, headline, line, link. */
+.stories { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.75rem; }
+.story { display: flex; flex-direction: column; background: #fff; border-radius: 14px; overflow: hidden;
+  box-shadow: 0 2px 14px rgba(0,0,0,.08); text-decoration: none; color: inherit; transition: transform .15s ease, box-shadow .15s ease; }
+.story:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.12); }
+.story__media { aspect-ratio: 16 / 9; overflow: hidden; }
+.story__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.story__body { padding: 1.5rem 1.6rem 1.75rem; display: flex; flex-direction: column; flex: 1; }
+.story__title { font-size: 1.45rem; line-height: 1.25; margin: 0 0 .75rem; }
+.story__text { color: var(--muted); line-height: 1.55; margin: 0 0 1.5rem; flex: 1; }
+.story__link { color: var(--accent); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.tiles--content .tile__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Get the app (content homepages) */
+.apppromo { display: grid; grid-template-columns: 1fr 1.2fr; align-items: center; gap: 2.5rem;
+  background: var(--alt); border-radius: 20px; padding: 2.5rem; overflow: hidden; }
+.apppromo__lede { color: var(--muted); font-size: 1.1rem; margin: .5rem 0 1.25rem; }
+.apppromo__points { list-style: none; padding: 0; margin: 0 0 1.75rem; }
+.apppromo__points li { padding: .45rem 0 .45rem 1.6rem; position: relative; }
+.apppromo__points li:before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+.apppromo__stores { display: flex; gap: .75rem; flex-wrap: wrap; }
+.storebtn { display: inline-flex; flex-direction: column; background: #111; color: #fff; border-radius: 10px;
+  padding: .45rem 1.1rem; font-weight: 600; font-size: 1.05rem; line-height: 1.1; text-decoration: none; }
+.storebtn small { font-weight: 400; font-size: .7rem; opacity: .8; }
+.apppromo__media img { width: 100%; display: block; border-radius: 14px; }
+@media (max-width: 800px) { .apppromo { grid-template-columns: 1fr; padding: 1.5rem; } }
+
+/* Dashboard charts (telco, banking) */
+.dcharts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; margin: 1.25rem 0; }
+.dchart { border: 1px solid var(--rule); border-radius: 14px; padding: 1.25rem 1.35rem; background: #fff; min-width: 0; }
+.dchart--wide { grid-column: 1 / -1; }
+.dchart__head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: .75rem; }
+.dchart__head h3 { font-size: 1.05rem; margin: 0; }
+.dchart__head span { color: var(--muted); font-size: .85rem; display: inline-flex; align-items: center; gap: .35rem; }
+.dchart__svg { width: 100%; height: 200px; display: block; color: var(--ink); }
+.dchart__big { font-size: 2.2rem; font-weight: 700; margin: -.25rem 0 .5rem; }
+.dchart__donut { display: flex; align-items: center; gap: 1.25rem; color: var(--ink); }
+.dchart__donut svg { width: 170px; flex: none; }
+.dchart__legend { list-style: none; margin: 0; padding: 0; flex: 1; font-size: .88rem; }
+.dchart__legend li { display: flex; align-items: center; gap: .5rem; padding: .3rem 0; border-bottom: 1px solid var(--rule); }
+.dchart__legend li:last-child { border-bottom: 0; }
+.dchart__legend i, .dkey { width: 10px; height: 10px; border-radius: 3px; display: inline-block; flex: none; }
+.dchart__legend span { flex: 1; color: var(--muted); }
+.dchart__ring { display: flex; justify-content: center; color: var(--ink); }
+.dchart__ring svg { width: 190px; }
+.dchart__note, .dchart__empty { color: var(--muted); font-size: .88rem; text-align: center; margin: .5rem 0 0; }
+@media (max-width: 760px) { .dcharts { grid-template-columns: 1fr; } .dchart__donut { flex-direction: column; } }
+
+/* Future-forward dashboard panel (telco, banking) */
+.dcharts--future { background: radial-gradient(1200px 500px at 10% -10%, rgba(120,160,255,.28), transparent 60%),
+    radial-gradient(900px 500px at 110% 10%, rgba(62,224,154,.18), transparent 60%), linear-gradient(160deg, #0B1220, #121A2E 60%, #0A0F1C);
+  border-radius: 22px; padding: 1.5rem; color: #E8EDF6; }
+.dcharts--future .dfuture__head, .dcharts--future .dinsights { grid-column: 1 / -1; }
+.dfuture__head { display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 1.1rem; }
+.dfuture__head span { font-weight: 400; font-size: .85rem; color: rgba(232,237,246,.55); }
+.dfuture__spark { display: inline-block; color: #9B8CFF; animation: dspark 3s ease-in-out infinite; }
+@keyframes dspark { 0%,100% { opacity: .5; transform: scale(.9) } 50% { opacity: 1; transform: scale(1.15) } }
+.dinsights { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+.dinsight { border-radius: 16px; padding: 1.1rem 1.2rem; background: linear-gradient(135deg, rgba(155,140,255,.18), rgba(111,168,255,.08));
+  border: 1px solid rgba(155,140,255,.35); backdrop-filter: blur(8px); }
+.dinsight__tag { font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: #B9AEFF; font-weight: 700; }
+.dinsight p { margin: .45rem 0 .6rem; line-height: 1.5; color: #E8EDF6; }
+.dinsight b { color: #fff; }
+.dinsight a { color: #9FD0FF; font-weight: 600; font-size: .9rem; text-decoration: none; }
+.dcharts--future .dchart { background: rgba(255,255,255,.045); border: 1px solid rgba(255,255,255,.1); backdrop-filter: blur(10px); }
+.dcharts--future .dchart__head span, .dcharts--future .dchart__legend span, .dcharts--future .dchart__note, .dcharts--future .dchart__empty { color: rgba(232,237,246,.6); }
+.dcharts--future .dchart__legend li { border-color: rgba(255,255,255,.08); }
+.dcharts--future .dchart__svg, .dcharts--future .dchart__donut, .dcharts--future .dchart__ring { color: #E8EDF6; }
+/* Motion: bars grow, lines draw, rings sweep, cards rise */
+.dcharts--future .dchart, .dcharts--future .dinsight { opacity: 0; transform: translateY(10px); transition: opacity .5s ease, transform .5s ease; }
+.dcharts--future.is-live .dchart, .dcharts--future.is-live .dinsight { opacity: 1; transform: none; }
+.dcharts--future.is-live .dinsight:nth-child(2) { transition-delay: .08s } .dcharts--future.is-live .dinsight:nth-child(3) { transition-delay: .16s }
+.dcharts--future.is-live .dchart rect { transform-box: fill-box; transform-origin: bottom; animation: dgrow .8s cubic-bezier(.2,.8,.2,1) both; }
+@keyframes dgrow { from { transform: scaleY(0) } to { transform: scaleY(1) } }
+.dcharts--future.is-live .dchart polyline { stroke-dasharray: 2000; animation: ddraw 1.4s ease-out both; }
+@keyframes ddraw { from { stroke-dashoffset: 2000 } to { stroke-dashoffset: 0 } }
+.dcharts--future.is-live .dchart__ring circle:nth-child(2) { animation: dsweep 1.2s ease-out both; }
+@keyframes dsweep { from { stroke-dasharray: 0 999 } }
+.dcharts--future.is-live .dchart__donut path { animation: dfade .9s ease both; }
+@keyframes dfade { from { opacity: 0 } to { opacity: 1 } }
+@media (prefers-reduced-motion: reduce) { .dcharts--future * { animation: none !important; transition: none !important; } }
+.dcharts--future.is-settled *, .dcharts--future.is-settled .dchart, .dcharts--future.is-settled .dinsight { animation: none !important; transition: none !important; }
+
+/* ── Banking and telco: sign-up funnels and account page, finished look ──────
+   Styling only, scoped to the two storefronts. No markup or logic changes, so
+   the funnel events and journeys behave exactly as before. */
+html[data-vertical="banking"] main, html[data-vertical="telco"] main {
+  background: linear-gradient(180deg, var(--alt) 0, var(--bg) 420px); }
+
+/* Funnel: steps as a joined progress bar */
+html[data-vertical="banking"] .substeps, html[data-vertical="telco"] .substeps {
+  counter-reset: step; gap: 0; background: #fff; border-radius: 100px; padding: .35rem;
+  box-shadow: 0 2px 12px rgba(16,24,40,.06); display: inline-flex; }
+html[data-vertical="banking"] .substeps li, html[data-vertical="telco"] .substeps li {
+  counter-increment: step; border: 0; padding: .55rem 1.1rem; font-weight: 600; }
+html[data-vertical="banking"] .substeps li[hidden], html[data-vertical="telco"] .substeps li[hidden] { display: none; }
+html[data-vertical="banking"] .substeps li:before, html[data-vertical="telco"] .substeps li:before {
+  content: counter(step); display: inline-grid; place-items: center; width: 1.4rem; height: 1.4rem; margin-right: .5rem;
+  border-radius: 50%; font-size: .75rem; background: var(--alt); color: var(--muted); }
+html[data-vertical="banking"] .substeps li.is-active:before, html[data-vertical="telco"] .substeps li.is-active:before { background: rgba(255,255,255,.25); color: #fff; }
+html[data-vertical="banking"] .substeps li.is-done:before, html[data-vertical="telco"] .substeps li.is-done:before { content: "✓"; background: var(--accent); color: #fff; }
+
+/* Funnel: product card and summary as raised cards, summary beside the steps on wide screens */
+html[data-vertical="banking"] .subplan__card, html[data-vertical="telco"] .subplan__card,
+html[data-vertical="banking"] .subsummary, html[data-vertical="telco"] .subsummary,
+html[data-vertical="banking"] .substep .panel, html[data-vertical="telco"] .substep .panel {
+  background: #fff; border: 0; border-radius: 20px; box-shadow: 0 10px 30px rgba(16,24,40,.08); }
+html[data-vertical="banking"] .subplan__card, html[data-vertical="telco"] .subplan__card {
+  border-top: 5px solid var(--accent); padding: 1.75rem 1.75rem 1.5rem; }
+html[data-vertical="banking"] .subplan__amt, html[data-vertical="telco"] .subplan__amt { font-size: 2.6rem; letter-spacing: -.02em; }
+html[data-vertical="banking"] .subplan__rate, html[data-vertical="telco"] .subplan__rate { font-size: 1.35rem; font-weight: 700; color: var(--accent); }
+@media (min-width: 900px) {
+  html[data-vertical="banking"] main > .wrap:has(> .subsummary), html[data-vertical="telco"] main > .wrap:has(> .subsummary) {
+    max-width: 72rem !important; display: grid; grid-template-columns: minmax(0, 1fr) 21rem; column-gap: 2.5rem; align-items: start; }
+  html[data-vertical="banking"] main > .wrap:has(> .subsummary) > *, html[data-vertical="telco"] main > .wrap:has(> .subsummary) > * { grid-column: 1; }
+  html[data-vertical="banking"] main > .wrap > .subsummary, html[data-vertical="telco"] main > .wrap > .subsummary {
+    grid-column: 2; grid-row: 1 / span 20; position: sticky; top: 6rem; margin-top: 0; }
+}
+html[data-vertical="banking"] .numchip, html[data-vertical="telco"] .numchip { background: #fff; box-shadow: 0 2px 8px rgba(16,24,40,.05); transition: transform .15s ease; }
+html[data-vertical="banking"] .numchip:hover, html[data-vertical="telco"] .numchip:hover { transform: translateY(-2px); }
+html[data-vertical="banking"] .substep input, html[data-vertical="telco"] .substep input,
+html[data-vertical="banking"] .substep select, html[data-vertical="telco"] .substep select { border-radius: 10px; }
+
+/* Account page: glance cards, lists and offers as raised cards */
+html[data-vertical="banking"] .dash, html[data-vertical="telco"] .dash { border: 0; padding: 0; }
+html[data-vertical="banking"] .dash__metric, html[data-vertical="telco"] .dash__metric,
+html[data-vertical="banking"] .myrel__item, html[data-vertical="telco"] .myrel__item,
+html[data-vertical="banking"] .offer, html[data-vertical="telco"] .offer {
+  background: #fff; border: 0; border-radius: 18px; box-shadow: 0 6px 20px rgba(16,24,40,.07); }
+html[data-vertical="banking"] .dash__metric--big, html[data-vertical="telco"] .dash__metric:first-child {
+  background: linear-gradient(135deg, var(--accent), #0B1220); color: #fff; }
+html[data-vertical="banking"] .dash__metric--big .dash__metric-top span,
+html[data-vertical="telco"] .dash__metric:first-child .dash__metric-top span { color: rgba(255,255,255,.8); }
+html[data-vertical="telco"] .dash__metric:first-child .dash__bar { background: rgba(255,255,255,.2); }
+html[data-vertical="telco"] .dash__metric:first-child .dash__bar span { background: #3EE09A; }
+html[data-vertical="banking"] .dash__balance { font-size: 3rem; letter-spacing: -.02em; }
+html[data-vertical="banking"] .myrel__item, html[data-vertical="telco"] .myrel__item { padding: 1rem 1.2rem; margin-bottom: .75rem; }
+html[data-vertical="banking"] .dash__activity, html[data-vertical="telco"] .dash__activity {
+  background: #fff; border-radius: 18px; padding: 1.25rem 1.4rem; margin-top: 1.25rem; box-shadow: 0 6px 20px rgba(16,24,40,.07); }
+html[data-vertical="telco"] .dash__metric:first-child .dash__nudge { color: #FFC2B8; }

@@ -55,6 +55,31 @@ QUERIES = {
         "extra-travel-insurance": "passport travel documents",
     },
 }
+# Northbank and Vantis. People living their lives, never the product itself:
+# a photo of a bank card or a SIM is exactly what makes these sites look dead.
+# search() below also prefers results whose description mentions people.
+QUERIES["banking"] = {
+    "home-hero":       "happy woman working at desk laptop sunlight",
+    "current-account": "smiling woman paying with phone at cafe",
+    "savings":         "couple watching sunset on beach holiday",
+    "credit-card":     "friends laughing shopping in city",
+    "loan":            "happy family in new kitchen at home",
+    "tile-switch":     "couple carrying boxes moving into new home",
+    "tile-protect":    "family relaxing together on sofa at home",
+    "tile-rate":       "man smiling at phone morning coffee",
+    "tile-app":        "young woman smiling looking at phone outdoors",
+}
+QUERIES["telco"] = {
+    "home-hero":       "friends laughing together looking at phone outdoors",
+    "unlimited":       "young man watching video on phone on train",
+    "prepaid":         "student smiling with phone in city street",
+    "roaming":         "woman taking selfie travelling europe",
+    "family":          "family video call on phone smiling",
+    "tile-number":     "woman smiling holding smartphone",
+    "tile-esim":       "man setting up new phone smiling",
+    "tile-coverage":   "hikers using phone on mountain",
+}
+
 QUERIES["hotels"].update({
     "extra-breakfast": "hotel breakfast table",
     "extra-late-checkout": "hotel room morning light",
@@ -111,7 +136,7 @@ def _open(req, timeout):
 
 def search(key, query):
     """Return (image_url, photographer, profile_url) for the best match."""
-    url = f"{API}?{urllib.parse.urlencode({'query': query, 'per_page': 3, 'orientation': 'landscape'})}"
+    url = f"{API}?{urllib.parse.urlencode({'query': query, 'per_page': 10, 'orientation': 'landscape'})}"
     req = urllib.request.Request(url, headers={
         "Authorization": f"Client-ID {key}",
         "Accept-Version": "v1",
@@ -121,7 +146,14 @@ def search(key, query):
     results = data.get("results") or []
     if not results:
         return None
-    p = results[0]
+    # Prefer a photo whose description has a person in it. Stock searches for
+    # banking and phones otherwise drift to close-ups of a card or a handset.
+    PEOPLE = ("woman", "man", "people", "person", "friends", "family", "couple",
+              "girl", "boy", "smil", "laugh", "student", "kid", "child")
+    def has_people(r):
+        d = ((r.get("alt_description") or "") + " " + (r.get("description") or "")).lower()
+        return any(w in d for w in PEOPLE)
+    p = next((r for r in results if has_people(r)), results[0])
     # `regular` is about 1080px wide — the size the site actually displays.
     return (p["urls"]["regular"], p["user"]["name"],
             p["user"]["links"]["html"])

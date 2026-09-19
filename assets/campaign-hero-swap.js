@@ -121,7 +121,7 @@
       lede:    'No monthly fee, no minimum balance, open it on your phone.',
       cta:     'Open an account',
       href:    'open.html?line=Everyday',
-      image:   'https://insiderdemo.com/assets/img/banking/northbank-current-account.svg',
+      image:   'https://insiderdemo.com/assets/img/banking/current-account.jpg',
       product: 'open.html?line=Everyday'
     },
     insurance: {
@@ -163,7 +163,7 @@
       lede:    'Thirty days of 5G with unlimited calls and texts. No contract, no credit check.',
       cta:     'Get Vantis Prepaid',
       href:    'subscribe.html?line=Vantis%20Prepaid',
-      image:   'https://insiderdemo.com/assets/img/telco/vantis-prepaid.svg',
+      image:   'https://insiderdemo.com/assets/img/telco/prepaid.jpg',
       product: 'subscribe.html?line=Vantis%20Prepaid'
     },
     // Vantis — "Unlimited, monthly"
@@ -174,7 +174,7 @@
       lede:    'Unlimited 5G, calls and texts for €24 a month. Keep your number, leave any time.',
       cta:     'Get Unlimited',
       href:    'subscribe.html?line=Vantis%20Unlimited',
-      image:   'https://insiderdemo.com/assets/img/telco/vantis-unlimited.svg',
+      image:   'https://insiderdemo.com/assets/img/telco/unlimited.jpg',
       product: 'subscribe.html?line=Vantis%20Unlimited'
     }
   };

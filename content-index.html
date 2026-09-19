@@ -159,9 +159,32 @@ body { opacity: 0; transition: opacity .18s ease-out }
   </section>
 
   <!-- Product-line cards: typographic, drawn from the catalog. No images. -->
+  <!-- Story cards: photo, headline, one line, and a link straight into the
+       sign-up for that product. Filled from content.stories. -->
+  <section class="section wrap" id="stories" hidden>
+    <div class="section__head"><h2 class="h2" id="stories-title"></h2></div>
+    <div class="stories" id="stories-grid"></div>
+  </section>
+
   <section class="section wrap" id="plans">
     <div class="section__head"><h2 class="h2" id="lines-title">Choose your plan</h2></div>
     <div class="linecards" id="linecards"></div>
+  </section>
+
+  <!-- Get the app: screens of the brand's own app, two store buttons. -->
+  <section class="section wrap" id="app" hidden>
+    <div class="apppromo">
+      <div class="apppromo__copy">
+        <h2 class="h2" id="app-title"></h2>
+        <p class="apppromo__lede" id="app-lede"></p>
+        <ul class="apppromo__points" id="app-points"></ul>
+        <div class="apppromo__stores">
+          <a class="storebtn" href="#"><small>Download on the</small>App Store</a>
+          <a class="storebtn" href="#"><small>Get it on</small>Google Play</a>
+        </div>
+      </div>
+      <div class="apppromo__media"><img id="app-img" alt="" loading="lazy"></div>
+    </div>
   </section>
 
   <!-- Content search: over help/plan articles, not products. Site-backed. -->
@@ -190,7 +213,7 @@ body { opacity: 0; transition: opacity .18s ease-out }
 <footer class="foot">
   <div class="wrap foot__in">
     <span><span data-brand>Lumen</span> — Insider One demo storefront</span>
-    <span>onesandbox · 10014057</span>
+    <span></span>
   </div>
 </footer>
 
@@ -223,9 +246,43 @@ body { opacity: 0; transition: opacity .18s ease-out }
     if (c && h.cta) { c.textContent = h.cta; if (h.href) c.href = h.href; }
     if (e && h.eyebrow) e.textContent = h.eyebrow;
     var img=document.getElementById('hero-img');
-    if (img) { if (h.image) { img.src = h.image; } else { img.removeAttribute('src'); img.parentNode.classList.add('hero__media--block'); } }
+    if (img) { if (h.image) { img.onerror = function () { img.removeAttribute('src'); img.parentNode.classList.add('hero__media--block'); }; img.src = h.image; } else { img.removeAttribute('src'); img.parentNode.classList.add('hero__media--block'); } }
   }
   setHero(HERO[line] ? line : '_default');
+
+  /* ---- Get the app -------------------------------------------------------- */
+  (function renderApp() {
+    var a = V.content && V.content.app, sec = document.getElementById('app');
+    if (!a || !sec) return;
+    document.getElementById('app-title').textContent = a.title;
+    document.getElementById('app-lede').textContent = a.lede;
+    var ul = document.getElementById('app-points');
+    (a.points || []).forEach(function (x) { var li = document.createElement('li'); li.textContent = x; ul.appendChild(li); });
+    document.getElementById('app-img').src = a.image;
+    sec.hidden = false;
+  })();
+
+  /* ---- Story cards ------------------------------------------------------ */
+  (function renderStories() {
+    var list = (V.content && V.content.stories) || [];
+    var sec = document.getElementById('stories'), grid = document.getElementById('stories-grid');
+    if (!list.length || !sec || !grid) return;
+    document.getElementById('stories-title').textContent = V.content.stories_title || '';
+    list.forEach(function (st) {
+      var a = document.createElement('a'); a.className = 'story'; a.href = st.href || '#';
+      a.innerHTML = '<div class="story__media"><img loading="lazy" alt=""></div>' +
+        '<div class="story__body"><h3 class="story__title"></h3><p class="story__text"></p>' +
+        '<span class="story__link"></span></div>';
+      var img = a.querySelector('img');
+      img.src = st.image;
+      img.onerror = function () { img.parentNode.classList.add('tile__media--block'); img.remove(); };
+      a.querySelector('.story__title').textContent = st.title;
+      a.querySelector('.story__text').textContent = st.body;
+      a.querySelector('.story__link').textContent = st.link;
+      grid.appendChild(a);
+    });
+    sec.hidden = false;
+  })();
 
   /* ---- Product-line cards (typographic, from the catalog) ---------------- */
   function featuresFrom(desc) {
