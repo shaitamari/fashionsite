@@ -795,7 +795,8 @@
           "title": "Banking that works the way you do.",
           "lede": "Everyday accounts, savings and cards — open one in minutes, manage it all in one place.",
           "cta": "See accounts",
-          "image": "assets/img/banking/home-hero.jpg"
+          "image": "assets/img/banking/home-hero.jpg",
+          "fallback": "assets/img/banking/savings.jpg"
         },
         "savings": {
           "eyebrow": "Northbank",
@@ -1943,7 +1944,8 @@
           "lede": "Unlimited calls, 5G data, no lock-in. Pick a plan and keep your number.",
           "cta": "See plans",
           "href": "#plans",
-          "image": "assets/img/telco/home-hero.jpg"
+          "image": "assets/img/telco/home-hero.jpg",
+          "fallback": "assets/img/telco/roaming.jpg"
         },
         "unlimited": {
           "eyebrow": "Vantis Unlimited",

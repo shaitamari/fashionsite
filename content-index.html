@@ -246,7 +246,7 @@ body { opacity: 0; transition: opacity .18s ease-out }
     if (c && h.cta) { c.textContent = h.cta; if (h.href) c.href = h.href; }
     if (e && h.eyebrow) e.textContent = h.eyebrow;
     var img=document.getElementById('hero-img');
-    if (img) { if (h.image) { img.onerror = function () { img.removeAttribute('src'); img.parentNode.classList.add('hero__media--block'); }; img.src = h.image; } else { img.removeAttribute('src'); img.parentNode.classList.add('hero__media--block'); } }
+    if (img) { if (h.image) { img.onerror = function () { if (h.fallback && img.getAttribute('src') !== h.fallback) { img.src = h.fallback; return; } img.removeAttribute('src'); img.parentNode.classList.add('hero__media--block'); }; img.src = h.image; } else { img.removeAttribute('src'); img.parentNode.classList.add('hero__media--block'); } }
   }
   setHero(HERO[line] ? line : '_default');
 
