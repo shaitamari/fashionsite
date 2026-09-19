@@ -179,11 +179,20 @@ def run(vertical, key, dry=False):
     os.makedirs(out_dir, exist_ok=True)
     credits = {}
 
+    only = ONLY.get(vertical)
     for slug, query in queries.items():
+        if only and slug not in only:
+            continue
         target = f"{out_dir}/{slug}.jpg"
         old_svg = f"{out_dir}/{slug}.svg"
         try:
-            hit = search(key, query)
+            try:
+                hit = search(key, query)
+            except urllib.error.HTTPError:
+                raise
+            except Exception:
+                time.sleep(1.5)          # one retry: the first call of a run can fail on a cold connection
+                hit = search(key, query)
         except urllib.error.HTTPError as e:
             print(f"  {slug:20s} HTTP {e.code}" +
                   ("  (rate limited — wait an hour)" if e.code == 403 else ""))
@@ -202,7 +211,17 @@ def run(vertical, key, dry=False):
             print(f"  {slug:20s} would use photo by {who}")
             continue
 
-        if download(img_url, target):
+        ok = False
+        for attempt in range(2):
+            try:
+                ok = download(img_url, target)
+            except Exception as e:
+                print(f"  {slug:20s} download error: {getattr(e, 'reason', e)}" + ("  (retrying)" if attempt == 0 else ""))
+                ok = False
+            if ok:
+                break
+            time.sleep(1.5)
+        if ok:
             credits[slug] = {"photographer": who, "profile": profile}
             if os.path.exists(old_svg):
                 os.remove(old_svg)
@@ -228,8 +247,18 @@ def repoint_sources(vertical):
     return changed
 
 
+ONLY = {}
+
+
 def main():
-    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    # "banking:home-hero" fetches just that photo; "banking" fetches them all.
+    args = []
+    for a in [a for a in sys.argv[1:] if not a.startswith("--")]:
+        v, _, slug = a.partition(":")
+        if slug:
+            ONLY.setdefault(v, set()).add(slug)
+        if v not in args:
+            args.append(v)
     dry = "--dry-run" in sys.argv
     if not args:
         print(__doc__)
