@@ -34473,5 +34473,9460 @@
 "id": "222000453402",
 "groupcode": "222000453402",
 "name": "Ground Terminal (R Type) \u3010500 Pieces Per Package\u3011"
+},
+{
+"id": "5021",
+"groupcode": "5021",
+"name": "SanDisk 32GB Memory Card"
+},
+{
+"id": "5024",
+"groupcode": "5024",
+"name": "PFI-102Y Yellow Ink Tank"
+},
+{
+"id": "5049",
+"groupcode": "5049",
+"name": "TC-80N3 Timer Remote Controller"
+},
+{
+"id": "5121",
+"groupcode": "5121",
+"name": "IFC-500U II Interface Cable"
+},
+{
+"id": "6169",
+"groupcode": "6169",
+"name": "BCI-6 Cyan Ink Tank"
+},
+{
+"id": "6171",
+"groupcode": "6171",
+"name": "BCI-6 Magenta Ink Tank"
+},
+{
+"id": "6174",
+"groupcode": "6174",
+"name": "BCI-6 Photo Cyan Ink Tank"
+},
+{
+"id": "6176",
+"groupcode": "6176",
+"name": "BCI-6 Photo Magenta Ink Tank"
+},
+{
+"id": "6505",
+"groupcode": "6505",
+"name": "Peel & Stick Repositionable Media 24\" x 100' - 3\" core"
+},
+{
+"id": "6756",
+"groupcode": "6756",
+"name": "Adhesive Matte Vinyl, 24\" x 66'"
+},
+{
+"id": "7098",
+"groupcode": "7098",
+"name": "BCI-21 Black Ink Tank"
+},
+{
+"id": "7099",
+"groupcode": "7099",
+"name": "BCI-21 Colour Ink Tank"
+},
+{
+"id": "7346",
+"groupcode": "7346",
+"name": "Durable Matte Polypropylene Banner, 24\" x 100'"
+},
+{
+"id": "7422",
+"groupcode": "7422",
+"name": "Heavyweight Matte Coated Paper - 230gsm 24\" x 100'"
+},
+{
+"id": "7533",
+"groupcode": "7533",
+"name": "BCI-6 Black Ink Tank"
+},
+{
+"id": "7534",
+"groupcode": "7534",
+"name": "BCI-6 Yellow Ink Tank"
+},
+{
+"id": "8168",
+"groupcode": "8168",
+"name": "BCI-24 Colour Ink Cartridge"
+},
+{
+"id": "8221",
+"groupcode": "8221",
+"name": "BCI-15 Colour Twin Ink Cartridge"
+},
+{
+"id": "8281",
+"groupcode": "8281",
+"name": "S35 Black Toner Cartridge"
+},
+{
+"id": "8487",
+"groupcode": "8487",
+"name": "LS-100TS Portable Display 10 Digit Desktop Calculator"
+},
+{
+"id": "8561",
+"groupcode": "8561",
+"name": "ET-86 Lens Hood"
+},
+{
+"id": "8662",
+"groupcode": "8662",
+"name": "BCI-6 Red Ink Tank"
+},
+{
+"id": "8881",
+"groupcode": "8881",
+"name": "BCI-6 Green Ink Tank"
+},
+{
+"id": "8960",
+"groupcode": "8960",
+"name": "BCI-16 Colour Ink Cartridge"
+},
+{
+"id": "9102",
+"groupcode": "9102",
+"name": "EW-83G Lens Hood"
+},
+{
+"id": "9158",
+"groupcode": "9158",
+"name": "CLI-8 Black Ink Tank"
+},
+{
+"id": "9161",
+"groupcode": "9161",
+"name": "CLI-8 Magenta Ink Tank"
+},
+{
+"id": "9162",
+"groupcode": "9162",
+"name": "CLI-8 Yellow Ink Tank"
+},
+{
+"id": "9163",
+"groupcode": "9163",
+"name": "CLI-8 Photo Cyan Ink Tank"
+},
+{
+"id": "9164",
+"groupcode": "9164",
+"name": "CLI-8 Photo Magenta Ink Tank"
+},
+{
+"id": "9165",
+"groupcode": "9165",
+"name": "CLI-8 Red Ink Tank"
+},
+{
+"id": "9166",
+"groupcode": "9166",
+"name": "CLI-8 Green Ink Tank"
+},
+{
+"id": "9167",
+"groupcode": "9167",
+"name": "PGI-5 Black Ink Tank"
+},
+{
+"id": "9169",
+"groupcode": "9169",
+"name": "PG-50 Black Ink Cartridge, High Capacity"
+},
+{
+"id": "9171",
+"groupcode": "9171",
+"name": "CL-51 Colour Ink Cartridge"
+},
+{
+"id": "9172",
+"groupcode": "9172",
+"name": "CL-52 Photo Ink Cartridge"
+},
+{
+"id": "9246",
+"groupcode": "9246",
+"name": "EW-83H Lens Hood"
+},
+{
+"id": "9273",
+"groupcode": "9273",
+"name": "Battery Pack NB-2LH"
+},
+{
+"id": "9276",
+"groupcode": "9276",
+"name": "EP-87 Black Drum Cartridge"
+},
+{
+"id": "9277",
+"groupcode": "9277",
+"name": "EP-87 Y Yellow Toner Cartridge"
+},
+{
+"id": "9278",
+"groupcode": "9278",
+"name": "EP-87 M Magenta Toner Cartridge"
+},
+{
+"id": "9279",
+"groupcode": "9279",
+"name": "EP-87 C Cyan Toner Cartridge"
+},
+{
+"id": "9280",
+"groupcode": "9280",
+"name": "EP-87 BK Black Toner Cartridge"
+},
+{
+"id": "9540",
+"groupcode": "9540",
+"name": "Fine Art Paper FA-ME1 13x19 (20 sheets)"
+},
+{
+"id": "9626",
+"groupcode": "9626",
+"name": "DTC-1000 D-Terminal Component Video Cable"
+},
+{
+"id": "9683",
+"groupcode": "9683",
+"name": "MC-08 Maintenance Cartridge"
+},
+{
+"id": "9932",
+"groupcode": "9932",
+"name": "LK-62 Lithium Ion battery"
+},
+{
+"id": "9971",
+"groupcode": "9971",
+"name": "CB-2LY Battery Charger"
+},
+{
+"id": "10164",
+"groupcode": "10164",
+"name": "DM-100 Directional Stereo Microphone"
+},
+{
+"id": "10213",
+"groupcode": "10213",
+"name": "EG+3 Dioptric Adjustment Lens"
+},
+{
+"id": "10455",
+"groupcode": "10455",
+"name": "Lens Hood EW-83K"
+},
+{
+"id": "10727",
+"groupcode": "10727",
+"name": "MC-16 Maintenance Cartridge"
+},
+{
+"id": "10735",
+"groupcode": "10735",
+"name": "RH2-25 Roll Holder Set (2 in. or 3 in. core adapters)"
+},
+{
+"id": "10737",
+"groupcode": "10737",
+"name": "Unit-U1 Paper Cassette Feeder"
+},
+{
+"id": "10862",
+"groupcode": "10862",
+"name": "PF-03 Print Head"
+},
+{
+"id": "10948",
+"groupcode": "10948",
+"name": "PGI-29MBK Matte Black Ink Tank"
+},
+{
+"id": "10953",
+"groupcode": "10953",
+"name": "PGI-29C Cyan Ink Tank"
+},
+{
+"id": "11065",
+"groupcode": "11065",
+"name": "20lb Premium Plain Paper, 4mil 24\" x 164' (2 rolls)"
+},
+{
+"id": "11079",
+"groupcode": "11079",
+"name": "DC-930 DC Power Cable"
+},
+{
+"id": "11080",
+"groupcode": "11080",
+"name": "TB-1 Tripod Adapter Base"
+},
+{
+"id": "11139",
+"groupcode": "11139",
+"name": "MC-10 Maintenance Cartridge"
+},
+{
+"id": "11232",
+"groupcode": "11232",
+"name": "52WII 52mm Drop-in Screw Filter Holder"
+},
+{
+"id": "11322",
+"groupcode": "11322",
+"name": "LZ1326 Lens Case"
+},
+{
+"id": "11338",
+"groupcode": "11338",
+"name": "Paper Cassette Feeder Unit-V1"
+},
+{
+"id": "11545",
+"groupcode": "11545",
+"name": "PGI-72MBK Matte Black Ink Tank"
+},
+{
+"id": "11546",
+"groupcode": "11546",
+"name": "PGI-72PBK Photo Black Ink Tank"
+},
+{
+"id": "11547",
+"groupcode": "11547",
+"name": "PGI-72C Cyan Ink Tank"
+},
+{
+"id": "11548",
+"groupcode": "11548",
+"name": "PGI-72M Magenta Ink Tank"
+},
+{
+"id": "11549",
+"groupcode": "11549",
+"name": "PGI-72Y Yellow Ink Tank"
+},
+{
+"id": "11550",
+"groupcode": "11550",
+"name": "PGI-72PC Photo Cyan Ink Tank"
+},
+{
+"id": "11551",
+"groupcode": "11551",
+"name": "PGI-72PM Photo Magenta Ink Tank"
+},
+{
+"id": "11552",
+"groupcode": "11552",
+"name": "PGI-72GY Gray Ink Tank"
+},
+{
+"id": "11553",
+"groupcode": "11553",
+"name": "PGI-72R Red Ink Tank"
+},
+{
+"id": "11554",
+"groupcode": "11554",
+"name": "PGI-72CO Chroma Optimizer Ink Tank"
+},
+{
+"id": "11562",
+"groupcode": "11562",
+"name": "WL-D89 Wireless Control"
+},
+{
+"id": "11615",
+"groupcode": "11615",
+"name": "DR-E12 DC Coupler"
+},
+{
+"id": "11842",
+"groupcode": "11842",
+"name": "BP-727 Battery Pack"
+},
+{
+"id": "11949",
+"groupcode": "11949",
+"name": "Exchange Roller Kit for imageFORMULA DR-C125/C225 Scanner"
+},
+{
+"id": "12289",
+"groupcode": "12289",
+"name": "PFI-107MBK - Matte Black Pigment Ink Tank"
+},
+{
+"id": "12290",
+"groupcode": "12290",
+"name": "PFI-107BK - Black Dye Ink Tank"
+},
+{
+"id": "12291",
+"groupcode": "12291",
+"name": "PFI-107C - Cyan Dye Ink Tank"
+},
+{
+"id": "12292",
+"groupcode": "12292",
+"name": "PFI-107M - Magenta Dye Ink Tank 130ml"
+},
+{
+"id": "12293",
+"groupcode": "12293",
+"name": "PFI-107Y - Yellow Dye Ink Tank"
+},
+{
+"id": "12345",
+"groupcode": "12345",
+"name": "EB Lens Dust Cap"
+},
+{
+"id": "12534",
+"groupcode": "12534",
+"name": "Glossy Photo Paper - GP-701 - 4x6 (50 Sheets)"
+},
+{
+"id": "12627",
+"groupcode": "12627",
+"name": "Photo Paper Premium Fine Art Smooth 17x22 (25 Sheets)"
+},
+{
+"id": "12628",
+"groupcode": "12628",
+"name": "AF-1 Cassette Feeding Unit"
+},
+{
+"id": "12637",
+"groupcode": "12637",
+"name": "Premium Fine Art Smooth 36\" x 50'"
+},
+{
+"id": "12639",
+"groupcode": "12639",
+"name": "Premium Fine Art Smooth 17\" x 50'"
+},
+{
+"id": "12712",
+"groupcode": "12712",
+"name": "UN-5 Cable Unit (50cm)"
+},
+{
+"id": "12713",
+"groupcode": "12713",
+"name": "UN-10 Cable Unit (100cm)"
+},
+{
+"id": "12729",
+"groupcode": "12729",
+"name": "PFI-007 MBK Matte Black Ink Tank"
+},
+{
+"id": "12730",
+"groupcode": "12730",
+"name": "PFI-007 Black Ink Tank"
+},
+{
+"id": "12731",
+"groupcode": "12731",
+"name": "PFI-007 Cyan Ink Tank"
+},
+{
+"id": "12732",
+"groupcode": "12732",
+"name": "PFI-007 Magenta Ink Tank"
+},
+{
+"id": "12733",
+"groupcode": "12733",
+"name": "PFI-007 Yellow Ink Tank"
+},
+{
+"id": "13386",
+"groupcode": "13386",
+"name": "EW-82 Lens Hood"
+},
+{
+"id": "13449",
+"groupcode": "13449",
+"name": "EVF-DC1 Viewfinder"
+},
+{
+"id": "13492",
+"groupcode": "13492",
+"name": "DC Coupler DR-E15"
+},
+{
+"id": "13500",
+"groupcode": "13500",
+"name": "WA-H58 Wide Attachment Lens"
+},
+{
+"id": "13889",
+"groupcode": "13889",
+"name": "XA11"
+},
+{
+"id": "13914",
+"groupcode": "13914",
+"name": "Face Jacket Gold"
+},
+{
+"id": "13915",
+"groupcode": "13915",
+"name": "Face Jacket Navy Blue"
+},
+{
+"id": "14114",
+"groupcode": "14114",
+"name": "TA/TM Series PFI-030C Cyan Ink Tank"
+},
+{
+"id": "14163",
+"groupcode": "14163",
+"name": "EX ROLL GSER"
+},
+{
+"id": "14168",
+"groupcode": "14168",
+"name": "Face Jacket Border Yellow"
+},
+{
+"id": "14214",
+"groupcode": "14214",
+"name": "PF-06 Print Head"
+},
+{
+"id": "14277",
+"groupcode": "14277",
+"name": "Face Jacket Red"
+},
+{
+"id": "14385",
+"groupcode": "14385",
+"name": "AH1 imageCLASS Optional Paper Cassette"
+},
+{
+"id": "14460",
+"groupcode": "14460",
+"name": "imageCLASS Toner 056 L Black"
+},
+{
+"id": "14470",
+"groupcode": "14470",
+"name": "RH2-28 Roll Holder Set"
+},
+{
+"id": "14471",
+"groupcode": "14471",
+"name": "RH2-35 Roll Holder Set"
+},
+{
+"id": "14473",
+"groupcode": "14473",
+"name": "MC-31 Maintenance Cartridge"
+},
+{
+"id": "14553",
+"groupcode": "14553",
+"name": "PL-C 52mm Circular Polarizing Filter"
+},
+{
+"id": "14594",
+"groupcode": "14594",
+"name": "RU-23 Roll Unit"
+},
+{
+"id": "14786",
+"groupcode": "14786",
+"name": "CP-20 Purple Ink Roller (Set of 5)"
+},
+{
+"id": "15061",
+"groupcode": "15061",
+"name": "E40 Black Toner Cartridge"
+},
+{
+"id": "15429",
+"groupcode": "15429",
+"name": "64GB CFAST 2.0 CARD_DS(DSLR)"
+},
+{
+"id": "15535",
+"groupcode": "15535",
+"name": "Satin Photo Paper - 200gsm, 24\" x 100'"
+},
+{
+"id": "15537",
+"groupcode": "15537",
+"name": "Satin Photo Paper - 240gsm 24\" x 100'"
+},
+{
+"id": "15702",
+"groupcode": "15702",
+"name": "Canon Monopod T5 Black"
+},
+{
+"id": "15927",
+"groupcode": "15927",
+"name": "Scrim Banner Vinyl - 460gsm 24\" x 40'"
+},
+{
+"id": "16068",
+"groupcode": "16068",
+"name": "ET-78II Lens Hood"
+},
+{
+"id": "16119",
+"groupcode": "16119",
+"name": "EW-83B II Lens Hood"
+},
+{
+"id": "16176",
+"groupcode": "16176",
+"name": "LP1016 Lens Case"
+},
+{
+"id": "16197",
+"groupcode": "16197",
+"name": "Cartridge 324 II"
+},
+{
+"id": "16623",
+"groupcode": "16623",
+"name": "P-215 Scanners Soft Carrying Case"
+},
+{
+"id": "16670",
+"groupcode": "16670",
+"name": "Glossy Photo Paper - 200gsm 24 \"x 100'"
+},
+{
+"id": "16672",
+"groupcode": "16672",
+"name": "Glossy Photo Paper - 200gsm 42\" x 100'"
+},
+{
+"id": "16678",
+"groupcode": "16678",
+"name": "Glossy Photo Paper - 240gsm 24\" x 100'"
+},
+{
+"id": "16679",
+"groupcode": "16679",
+"name": "Glossy Photo Paper, 240gsm 36\" x 100' - 3\" core"
+},
+{
+"id": "16992",
+"groupcode": "16992",
+"name": "Ink Roll CP-16 II Blue"
+},
+{
+"id": "16995",
+"groupcode": "16995",
+"name": "LS-154TG Handheld Calculator"
+},
+{
+"id": "17030",
+"groupcode": "17030",
+"name": "PIXMA MG5320"
+},
+{
+"id": "17047",
+"groupcode": "17047",
+"name": "TS-120TS 12 Digit Desktop Calculator"
+},
+{
+"id": "17088",
+"groupcode": "17088",
+"name": "EP-102 Ink Ribbon - Multi-Pack"
+},
+{
+"id": "17106",
+"groupcode": "17106",
+"name": "F-570SG Scientific Calculator"
+},
+{
+"id": "17116",
+"groupcode": "17116",
+"name": "PIXMA TS9521C WHITE"
+},
+{
+"id": "17192",
+"groupcode": "17192",
+"name": "Canon Reusable Tote Bag"
+},
+{
+"id": "17429",
+"groupcode": "17429",
+"name": "CARTRIDGE 111 CYAN"
+},
+{
+"id": "17430",
+"groupcode": "17430",
+"name": "CARTRIDGE 111 YELLOW"
+},
+{
+"id": "17563",
+"groupcode": "17563",
+"name": "PIXMA G7020 Wireless MegaTank All-In-One Printer"
+},
+{
+"id": "17627",
+"groupcode": "17627",
+"name": "MMC3-01 Manfrotto Monopod"
+},
+{
+"id": "17832",
+"groupcode": "17832",
+"name": "CARTRIDGE 111 MAGENTA"
+},
+{
+"id": "17833",
+"groupcode": "17833",
+"name": "CARTRIDGE 111 BLACK"
+},
+{
+"id": "17840",
+"groupcode": "17840",
+"name": "EOS M100 EF-M 15-45mm IS STM Kit White (Refurbished / Brown Box)"
+},
+{
+"id": "26758",
+"groupcode": "26758",
+"name": "PowerShot G5 X Mark II"
+},
+{
+"id": "31057",
+"groupcode": "31057",
+"name": "128GB SANDISK PRO SD"
+},
+{
+"id": "31066",
+"groupcode": "31066",
+"name": "Dane Elec 4GB Micro SD Class 10 With Adapter"
+},
+{
+"id": "31079",
+"groupcode": "31079",
+"name": "Evouni Ultra-Fine Lens Cleaning Cloth"
+},
+{
+"id": "31102",
+"groupcode": "31102",
+"name": "Exclusive Graphic Tee (Large)"
+},
+{
+"id": "31130",
+"groupcode": "31130",
+"name": "CFEXPRESS CARD READER"
+},
+{
+"id": "31207",
+"groupcode": "31207",
+"name": "RODE\u00ae VideoMic GO\u2122 Microphone"
+},
+{
+"id": "31215",
+"groupcode": "31215",
+"name": "Miniature Hansa 1936 Canon Camera Replica"
+},
+{
+"id": "31257",
+"groupcode": "31257",
+"name": "ARMOR 52MM UV FILTER"
+},
+{
+"id": "31263",
+"groupcode": "31263",
+"name": "16GB CL10 (80MB/S)"
+},
+{
+"id": "32052",
+"groupcode": "32052",
+"name": "BCI-6 Black Twin Value Pack"
+},
+{
+"id": "32053",
+"groupcode": "32053",
+"name": "CLI-8 Black Twin Pack"
+},
+{
+"id": "32066",
+"groupcode": "32066",
+"name": "CLI-8 C/M/Y/BK Value Pack - 4 pack"
+},
+{
+"id": "32070",
+"groupcode": "32070",
+"name": "BCI-24 Black Twin Clam Pack"
+},
+{
+"id": "32071",
+"groupcode": "32071",
+"name": "PGI-5 & CLI-8 with PP-201 4x6 (20 Sheets)"
+},
+{
+"id": "32072",
+"groupcode": "32072",
+"name": "BCI-24 Colour Twin Pack"
+},
+{
+"id": "32083",
+"groupcode": "32083",
+"name": "PGI-5 Black Twin Pack"
+},
+{
+"id": "32090",
+"groupcode": "32090",
+"name": "BCI-3e Colour Combo Value Pack"
+},
+{
+"id": "32103",
+"groupcode": "32103",
+"name": "BCI-6 Colour Tri Value Pack"
+},
+{
+"id": "32416",
+"groupcode": "32416",
+"name": "EOS REBEL T7 18-55mm f/3.5-5.6 III"
+},
+{
+"id": "36523",
+"groupcode": "36523",
+"name": "MC-20 Maintenance Cartridge"
+},
+{
+"id": "36931",
+"groupcode": "36931",
+"name": "2YR + 9 months ImageFORMULA CarePAK (Tier 7a)"
+},
+{
+"id": "36933",
+"groupcode": "36933",
+"name": "2YR + 9 months ImageFORMULA CarePAK (Tier 6a)"
+},
+{
+"id": "36934",
+"groupcode": "36934",
+"name": "1YR ImageFORMULA CarePAK (Tier 1)"
+},
+{
+"id": "36935",
+"groupcode": "36935",
+"name": "1YR OFFICE CarePAK (Tier 1)"
+},
+{
+"id": "36936",
+"groupcode": "36936",
+"name": "CAREPAK - 1 YEAR $4001-5000"
+},
+{
+"id": "36937",
+"groupcode": "36937",
+"name": "2YR OFFICE CarePAK (Tier 4)"
+},
+{
+"id": "36938",
+"groupcode": "36938",
+"name": "2YR ImageFORMULA CarePAK (Tier 7)"
+},
+{
+"id": "36939",
+"groupcode": "36939",
+"name": "CAREPAK -2 YEAR $2001-3000"
+},
+{
+"id": "36940",
+"groupcode": "36940",
+"name": "4YR OFFICE CarePAK (Tier 2)"
+},
+{
+"id": "36941",
+"groupcode": "36941",
+"name": "1YR + 9 months ImageFORMULA CarePAK (Tier 5a)"
+},
+{
+"id": "36942",
+"groupcode": "36942",
+"name": "2YR ImageFORMULA CarePAK (Tier 4)"
+},
+{
+"id": "36943",
+"groupcode": "36943",
+"name": "2YR + 9 months ImageFORMULA CarePAK (Tier 9a)"
+},
+{
+"id": "36944",
+"groupcode": "36944",
+"name": "CAREPAK - 1 YEAR $30001-35000"
+},
+{
+"id": "36945",
+"groupcode": "36945",
+"name": "CAREPAK - 2 YEAR $15001-20000"
+},
+{
+"id": "36946",
+"groupcode": "36946",
+"name": "1YR OFFICE CarePAK (Tier 2)"
+},
+{
+"id": "36947",
+"groupcode": "36947",
+"name": "3YR OFFICE CarePAK (Tier 3)"
+},
+{
+"id": "36948",
+"groupcode": "36948",
+"name": "1YR OFFICE CarePAK (Tier 5)"
+},
+{
+"id": "36949",
+"groupcode": "36949",
+"name": "1YR ImageFORMULA CarePAK (Tier 3)"
+},
+{
+"id": "36950",
+"groupcode": "36950",
+"name": "1YR ImageFORMULA CarePAK (Tier 6)"
+},
+{
+"id": "36951",
+"groupcode": "36951",
+"name": "1YR ImageFORMULA CarePAK (Tier 9)"
+},
+{
+"id": "36952",
+"groupcode": "36952",
+"name": "CAREPAK - 1 YEAR $1001-1500"
+},
+{
+"id": "36953",
+"groupcode": "36953",
+"name": "CAREPAK - 1 YEAR $15001-20000"
+},
+{
+"id": "36954",
+"groupcode": "36954",
+"name": "CAREPAK - 2 YEAR $501-1000"
+},
+{
+"id": "36955",
+"groupcode": "36955",
+"name": "CAREPAK - 2 YEAR $5001-7500"
+},
+{
+"id": "36956",
+"groupcode": "36956",
+"name": "CAREPAK - 2 YEAR $30001-35000"
+},
+{
+"id": "36958",
+"groupcode": "36958",
+"name": "3YR OFFICE CarePAK (Tier 5)"
+},
+{
+"id": "36959",
+"groupcode": "36959",
+"name": "3YR OFFICE CarePAK (Tier 1)"
+},
+{
+"id": "36960",
+"groupcode": "36960",
+"name": "3YR OFFICE CarePAK (Tier 2)"
+},
+{
+"id": "36961",
+"groupcode": "36961",
+"name": "2YR OFFICE CarePAK (Tier 3)"
+},
+{
+"id": "36962",
+"groupcode": "36962",
+"name": "1YR OFFICE CarePAK (Tier 4)"
+},
+{
+"id": "36963",
+"groupcode": "36963",
+"name": "4YR OFFICE CarePAK (Tier 4)"
+},
+{
+"id": "36964",
+"groupcode": "36964",
+"name": "4YR OFFICE CarePAK (Tier 5)"
+},
+{
+"id": "36965",
+"groupcode": "36965",
+"name": "1YR + 9 months ImageFORMULA CarePAK (Tier 6a)"
+},
+{
+"id": "36966",
+"groupcode": "36966",
+"name": "1YR ImageFORMULA CarePAK (Tier 2)"
+},
+{
+"id": "36967",
+"groupcode": "36967",
+"name": "1YR ImageFORMULA CarePAK (Tier 4)"
+},
+{
+"id": "36968",
+"groupcode": "36968",
+"name": "2YR ImageFORMULA CarePAK (Tier 5)"
+},
+{
+"id": "36969",
+"groupcode": "36969",
+"name": "1YR ImageFORMULA CarePAK (Tier 7)"
+},
+{
+"id": "36970",
+"groupcode": "36970",
+"name": "2YR ImageFORMULA CarePAK (Tier 8)"
+},
+{
+"id": "36971",
+"groupcode": "36971",
+"name": "1YR + 9 months ImageFORMULA CarePAK (Tier 9a)"
+},
+{
+"id": "36972",
+"groupcode": "36972",
+"name": "CAREPAK - 1 YEAR $501-1000"
+},
+{
+"id": "36973",
+"groupcode": "36973",
+"name": "CAREPAK - 1 YEAR $3001-4000"
+},
+{
+"id": "36974",
+"groupcode": "36974",
+"name": "CAREPAK - 1 YEAR $7501-10000"
+},
+{
+"id": "36975",
+"groupcode": "36975",
+"name": "CAREPAK - 1 YEAR $25001-30000"
+},
+{
+"id": "36976",
+"groupcode": "36976",
+"name": "CAREPAK - 2 YEAR up to $500"
+},
+{
+"id": "36977",
+"groupcode": "36977",
+"name": "CAREPAK - 2 YEAR $1501-2000"
+},
+{
+"id": "36978",
+"groupcode": "36978",
+"name": "CAREPAK - 2 YEAR $4001-5000"
+},
+{
+"id": "36979",
+"groupcode": "36979",
+"name": "CAREPAK - 2 YEAR $10001-15000"
+},
+{
+"id": "36980",
+"groupcode": "36980",
+"name": "CAREPAK - 2 YEAR $25001-30000"
+},
+{
+"id": "36981",
+"groupcode": "36981",
+"name": "CAREPAK - 1 YEAR $2001-3000"
+},
+{
+"id": "36982",
+"groupcode": "36982",
+"name": "2YR OFFICE CarePAK (Tier 1)"
+},
+{
+"id": "36983",
+"groupcode": "36983",
+"name": "4YR OFFICE CarePAK (Tier 1)"
+},
+{
+"id": "36984",
+"groupcode": "36984",
+"name": "2YR OFFICE CarePAK (Tier 2)"
+},
+{
+"id": "36985",
+"groupcode": "36985",
+"name": "1YR OFFICE CarePAK (Tier 3)"
+},
+{
+"id": "36986",
+"groupcode": "36986",
+"name": "4YR OFFICE CarePAK (Tier 3)"
+},
+{
+"id": "36987",
+"groupcode": "36987",
+"name": "3YR OFFICE CarePAK (Tier 4)"
+},
+{
+"id": "36988",
+"groupcode": "36988",
+"name": "2YR OFFICE CarePAK (Tier 5)"
+},
+{
+"id": "36989",
+"groupcode": "36989",
+"name": "2YR + 9 months ImageFORMULA CarePAK (Tier 5a)"
+},
+{
+"id": "36990",
+"groupcode": "36990",
+"name": "1YR + 9 months ImageFORMULA CarePAK (Tier 7a)"
+},
+{
+"id": "36991",
+"groupcode": "36991",
+"name": "2YR ImageFORMULA CarePAK (Tier 1)"
+},
+{
+"id": "36992",
+"groupcode": "36992",
+"name": "2YR ImageFORMULA CarePAK (Tier 2)"
+},
+{
+"id": "36993",
+"groupcode": "36993",
+"name": "2YR ImageFORMULA CarePAK (Tier 3)"
+},
+{
+"id": "36994",
+"groupcode": "36994",
+"name": "1YR ImageFORMULA CarePAK (Tier 5)"
+},
+{
+"id": "36995",
+"groupcode": "36995",
+"name": "2YR ImageFORMULA CarePAK (Tier 6)"
+},
+{
+"id": "36996",
+"groupcode": "36996",
+"name": "1YR ImageFORMULA CarePAK (Tier 8)"
+},
+{
+"id": "36997",
+"groupcode": "36997",
+"name": "2YR ImageFORMULA CarePAK (Tier 9)"
+},
+{
+"id": "36998",
+"groupcode": "36998",
+"name": "CAREPAK - 1 YEAR up to $500"
+},
+{
+"id": "36999",
+"groupcode": "36999",
+"name": "CAREPAK - 1 YEAR $1501-2000"
+},
+{
+"id": "37000",
+"groupcode": "37000",
+"name": "CAREPAK - 1 YEAR $5001-7500"
+},
+{
+"id": "37001",
+"groupcode": "37001",
+"name": "CAREPAK - 1 YEAR $10001-15000"
+},
+{
+"id": "37002",
+"groupcode": "37002",
+"name": "CAREPAK - 1 YEAR $20001-25000"
+},
+{
+"id": "37003",
+"groupcode": "37003",
+"name": "CAREPAK - 1 YEAR $35001-40000"
+},
+{
+"id": "37004",
+"groupcode": "37004",
+"name": "CAREPAK - 2 YEAR $1001-1500"
+},
+{
+"id": "37005",
+"groupcode": "37005",
+"name": "CAREPAK - 2 YEAR $3001-4000"
+},
+{
+"id": "37006",
+"groupcode": "37006",
+"name": "CAREPAK - 2 YEAR $7501-10000"
+},
+{
+"id": "37007",
+"groupcode": "37007",
+"name": "CAREPAK - 2 YEAR $20001-25000"
+},
+{
+"id": "37008",
+"groupcode": "37008",
+"name": "CAREPAK - 2 YEAR $35001-40000"
+},
+{
+"id": "42664",
+"groupcode": "42664",
+"name": "Colour Filter SCF-EL"
+},
+{
+"id": "43173",
+"groupcode": "43173",
+"name": "20lb Bond paper, 4mil 24\" x 300' - 3\" core"
+},
+{
+"id": "43174",
+"groupcode": "43174",
+"name": "20lb Bond paper. 4mil 30\" x 300' - 3\" core"
+},
+{
+"id": "43175",
+"groupcode": "43175",
+"name": "20lb Bond paper. 4mil 36\" x 300' - 3\" core"
+},
+{
+"id": "43176",
+"groupcode": "43176",
+"name": "20lb Bond paper, 4mil 42\" x 300' - 3\" core"
+},
+{
+"id": "43185",
+"groupcode": "43185",
+"name": "24LB BOND PAPER 24\\'X150\\' 3\\'C"
+},
+{
+"id": "43187",
+"groupcode": "43187",
+"name": "24lb Bond Paper - 90 gsm, 42\" x 150'"
+},
+{
+"id": "43190",
+"groupcode": "43190",
+"name": "24lb Bond Paper - 90 gsm, 36\" x 300'"
+},
+{
+"id": "43191",
+"groupcode": "43191",
+"name": "24lb Bond Paper - 90 gsm, 42\" x 300'"
+},
+{
+"id": "43192",
+"groupcode": "43192",
+"name": "24lb Premium Coated Bond Paper 24\" x 150' - 3\" core"
+},
+{
+"id": "43194",
+"groupcode": "43194",
+"name": "24lb Premium Coated Bond Paper 36\" x 150' - 3\" core"
+},
+{
+"id": "43198",
+"groupcode": "43198",
+"name": "24lb Premium Coated Bond Paper - 90 gsm, 36\" x 300'"
+},
+{
+"id": "44111",
+"groupcode": "44111",
+"name": "PIXMA G6020 with Ink Bundle"
+},
+{
+"id": "44112",
+"groupcode": "44112",
+"name": "PIXMA G7020 with Ink Bundle"
+},
+{
+"id": "46127",
+"groupcode": "46127",
+"name": "EOS Rebel SL3 EF-S 18-55mm f/4-5.6 IS STM Lens Kit Black (Refurbished)"
+},
+{
+"id": "46234",
+"groupcode": "46234",
+"name": "EF 35mm f/1.4L II USM (Refurbished)"
+},
+{
+"id": "46293",
+"groupcode": "46293",
+"name": "EOS M50 EF-M 15-45mm f/3.5-6.3 IS STM Black (Refurbished)"
+},
+{
+"id": "46295",
+"groupcode": "46295",
+"name": "EOS M50 Mark II EF-M 15-45mm f/3.5-6.3 IS STM (Refurb)"
+},
+{
+"id": "46348",
+"groupcode": "46348",
+"name": "RF100-500mm F4.5-7.1 L IS USM (Refurbished)"
+},
+{
+"id": "46392",
+"groupcode": "46392",
+"name": "PIXMA TR4522 White"
+},
+{
+"id": "47512",
+"groupcode": "47512",
+"name": "PIXMA TR7021 Black"
+},
+{
+"id": "108911",
+"groupcode": "108911",
+"name": "EF 40mm f/2.8 STM (Refurbished)"
+},
+{
+"id": "108935",
+"groupcode": "108935",
+"name": "EOS R6 Body (Refurbished, Brown Box)"
+},
+{
+"id": "109098",
+"groupcode": "109098",
+"name": "imagePROGRAF PRO-300"
+},
+{
+"id": "109110",
+"groupcode": "109110",
+"name": "2YR IPF CAREPAK (TIER 4)"
+},
+{
+"id": "109111",
+"groupcode": "109111",
+"name": "1YR IPF CAREPAK (TIER 2)"
+},
+{
+"id": "109112",
+"groupcode": "109112",
+"name": "1YR IPF CAREPAK (TIER 1)"
+},
+{
+"id": "109113",
+"groupcode": "109113",
+"name": "2YR IPF CAREPAK (TIER 3)"
+},
+{
+"id": "109114",
+"groupcode": "109114",
+"name": "1YR IPF CAREPAK (TIER 6)"
+},
+{
+"id": "109115",
+"groupcode": "109115",
+"name": "2YR IPF CAREPAK (TIER 1)"
+},
+{
+"id": "109116",
+"groupcode": "109116",
+"name": "1YR IPF CAREPAK (TIER 3)"
+},
+{
+"id": "109117",
+"groupcode": "109117",
+"name": "1YR IPF CAREPAK (TIER 4)"
+},
+{
+"id": "109118",
+"groupcode": "109118",
+"name": "2YR IPF CAREPAK (TIER 5)"
+},
+{
+"id": "109119",
+"groupcode": "109119",
+"name": "2YR IPF CAREPAK (TIER 6)"
+},
+{
+"id": "109120",
+"groupcode": "109120",
+"name": "2YR IPF CAREPAK (TIER 2)"
+},
+{
+"id": "109121",
+"groupcode": "109121",
+"name": "1YR IPF CAREPAK (TIER 5)"
+},
+{
+"id": "112204",
+"groupcode": "112204",
+"name": "TS-E 24 3.5L II (Refurbished)"
+},
+{
+"id": "112678",
+"groupcode": "112678",
+"name": "Canon AE-1 Black T-Shirt"
+},
+{
+"id": "112873",
+"groupcode": "112873",
+"name": "Pixma TR4725 Black"
+},
+{
+"id": "112891",
+"groupcode": "112891",
+"name": "PIXMA TS5320a White"
+},
+{
+"id": "113634",
+"groupcode": "113634",
+"name": "4YR iPF CarePAK (Tier 4)"
+},
+{
+"id": "113635",
+"groupcode": "113635",
+"name": "2YR iPF CarePAK (Tier 8)"
+},
+{
+"id": "113715",
+"groupcode": "113715",
+"name": "PIXMA TS3425 Black"
+},
+{
+"id": "113717",
+"groupcode": "113717",
+"name": "PIXMA TS3429 BLACK"
+},
+{
+"id": "114103",
+"groupcode": "114103",
+"name": "PIXMA G2270 MegaTank All-in-One Inkjet Printer"
+},
+{
+"id": "114535",
+"groupcode": "114535",
+"name": "Mini Messenger Bag"
+},
+{
+"id": "114584",
+"groupcode": "114584",
+"name": "MC-G04 Maintenance Cartridge"
+},
+{
+"id": "114585",
+"groupcode": "114585",
+"name": "MC-G03 Maintenance Cartridge"
+},
+{
+"id": "114638",
+"groupcode": "114638",
+"name": "PFI-050 BK - Pigment Black Ink Tank"
+},
+{
+"id": "114639",
+"groupcode": "114639",
+"name": "PFI-050 C - Pigment Cyan Ink Tank"
+},
+{
+"id": "114640",
+"groupcode": "114640",
+"name": "PFI-050 M - Pigment Magenta Ink Tank"
+},
+{
+"id": "114641",
+"groupcode": "114641",
+"name": "PFI-050 Y - Pigment Yellow Ink Tank"
+},
+{
+"id": "115106",
+"groupcode": "115106",
+"name": "18-Point Camera Maintenance Service"
+},
+{
+"id": "115107",
+"groupcode": "115107",
+"name": "11-Point Lens Maintenance Service"
+},
+{
+"id": "115108",
+"groupcode": "115108",
+"name": "7-Point Image Sensor Cleaning"
+},
+{
+"id": "115226",
+"groupcode": "115226",
+"name": "EOS M200 EF-M 15-45mm f/3.5-6.3 IS STM Kit (Refurbished)"
+},
+{
+"id": "115304",
+"groupcode": "115304",
+"name": "Matte Coated Paper - 170gsm 36\" x 100'"
+},
+{
+"id": "115305",
+"groupcode": "115305",
+"name": "24LB PREM CTDBOND 42\"X150 3\"CORE"
+},
+{
+"id": "115306",
+"groupcode": "115306",
+"name": "High Resolution Coated Bond Paper - 120 gsm, 24\" x 100'"
+},
+{
+"id": "115307",
+"groupcode": "115307",
+"name": "High Resolution Coated Bond Paper - 120 gsm, 36\" x 100'"
+},
+{
+"id": "115308",
+"groupcode": "115308",
+"name": "High Resolution Coated Bond Paper - 120 gsm, 42\" x 100'"
+},
+{
+"id": "115309",
+"groupcode": "115309",
+"name": "Water Resistant Matte Banner Vinyl 24\" x 50' - 3\" core"
+},
+{
+"id": "115310",
+"groupcode": "115310",
+"name": "Water Resistant Matte Banner Vinyl 36\" x 50' - 3\" core"
+},
+{
+"id": "115311",
+"groupcode": "115311",
+"name": "Water Resistant Matte Polypropylene - 110 gsm, 42\" x 100'"
+},
+{
+"id": "115725",
+"groupcode": "115725",
+"name": "BU-06 Desktop Basket"
+},
+{
+"id": "115749",
+"groupcode": "115749",
+"name": "MC-32 Maintenance Cartridge"
+},
+{
+"id": "115920",
+"groupcode": "115920",
+"name": "MAXIFY GX1020"
+},
+{
+"id": "115927",
+"groupcode": "115927",
+"name": "imagePROGRAF TM-240 LM24 MFP"
+},
+{
+"id": "115928",
+"groupcode": "115928",
+"name": "imagePROGRAF TM-340 LM36 MFP"
+},
+{
+"id": "116071",
+"groupcode": "116071",
+"name": "MAXIFY GX2020 Wireless MegaTank All-in-One Printer"
+},
+{
+"id": "116083",
+"groupcode": "116083",
+"name": "Canon IMAGEPROGRAF TM-355 Z36"
+},
+{
+"id": "116107",
+"groupcode": "116107",
+"name": "PGI-250 XL /CLI-251 Black and Colour Ink Value Pack"
+},
+{
+"id": "116119",
+"groupcode": "116119",
+"name": "1YR OFFICE CarePAK (Tier 2a)"
+},
+{
+"id": "116120",
+"groupcode": "116120",
+"name": "2YR OFFICE CarePAK (Tier 2a)"
+},
+{
+"id": "116121",
+"groupcode": "116121",
+"name": "2YR OFFICE CarePAK (Tier 3a)"
+},
+{
+"id": "116149",
+"groupcode": "116149",
+"name": "TM Series PFI-031M- Magenta Ink"
+},
+{
+"id": "116167",
+"groupcode": "116167",
+"name": "1YR OFFICE CarePAK (Tier 3a)"
+},
+{
+"id": "116210",
+"groupcode": "116210",
+"name": "LH-E1 Lens Holder"
+},
+{
+"id": "116231",
+"groupcode": "116231",
+"name": "MC-G05 Maintenance Cartridge"
+},
+{
+"id": "116319",
+"groupcode": "116319",
+"name": "CT-07 Cutter Blade"
+},
+{
+"id": "116331",
+"groupcode": "116331",
+"name": "Glossy Photo Paper - 200gsm 17\" x 100'"
+},
+{
+"id": "116332",
+"groupcode": "116332",
+"name": "Glossy Photo Paper - 200gsm 36\" x 100'"
+},
+{
+"id": "116333",
+"groupcode": "116333",
+"name": "Glossy Photo Paper - 200gsm 60\" x 100'"
+},
+{
+"id": "116335",
+"groupcode": "116335",
+"name": "Matte Coated Paper - 170gsm 42\" x 100'"
+},
+{
+"id": "116336",
+"groupcode": "116336",
+"name": "Matte Coated Paper - 170gsm 60\" x 100'"
+},
+{
+"id": "116517",
+"groupcode": "116517",
+"name": "Canon imagePROGRAF TM-255 LM24"
+},
+{
+"id": "116571",
+"groupcode": "116571",
+"name": "Canon imagePROGRAF TM-255 w/ stand & flat-stacking basket"
+},
+{
+"id": "116697",
+"groupcode": "116697",
+"name": "imagePROGRAF PRO-2600"
+},
+{
+"id": "116698",
+"groupcode": "116698",
+"name": "imagePROGRAF PRO-4600"
+},
+{
+"id": "116700",
+"groupcode": "116700",
+"name": "imagePROGRAF GP-4600S"
+},
+{
+"id": "116791",
+"groupcode": "116791",
+"name": "EF 50/1.4 USM (Refurbished)"
+},
+{
+"id": "116814",
+"groupcode": "116814",
+"name": "PFI-2300 Matte Black - 330ml Ink Tank"
+},
+{
+"id": "116815",
+"groupcode": "116815",
+"name": "PFI-2300 Orange - 330ml Ink Tank"
+},
+{
+"id": "116816",
+"groupcode": "116816",
+"name": "PFI-2700 Matte Black - 700ml Ink Tank"
+},
+{
+"id": "116817",
+"groupcode": "116817",
+"name": "PFI-2700 Orange - 700ml Ink Tank"
+},
+{
+"id": "117129",
+"groupcode": "117129",
+"name": "CPS Rental Fee/Deposit"
+},
+{
+"id": "117162",
+"groupcode": "117162",
+"name": "PFI-2100 Matte Black - 160ml Ink Tank"
+},
+{
+"id": "117210",
+"groupcode": "117210",
+"name": "PF-K1 Optional Cassette"
+},
+{
+"id": "117261",
+"groupcode": "117261",
+"name": "20lb Premium Plain Paper, 4mil 42\" x 164' (2 rolls)"
+},
+{
+"id": "117262",
+"groupcode": "117262",
+"name": "20lb Premium Plain Paper, 4mil 36\" x 164' (2 rolls)"
+},
+{
+"id": "117263",
+"groupcode": "117263",
+"name": "Photo Paper Pro Luster 260gsm, 36\" x 100' - 3\" core"
+},
+{
+"id": "117264",
+"groupcode": "117264",
+"name": "Photo Paper Pro Luster 260gsm, 24\" x 100' - 3\" core"
+},
+{
+"id": "117265",
+"groupcode": "117265",
+"name": "Water Resistant Matte Banner Vinyl 42\" x 40' - 3\" core"
+},
+{
+"id": "117266",
+"groupcode": "117266",
+"name": "Water Resistant Adhesive Matte Vinyl 42\" x 66' - 3\" core"
+},
+{
+"id": "117267",
+"groupcode": "117267",
+"name": "Water Resistant Adhesive Matte Vinyl 24\" x 66' - 3\" core"
+},
+{
+"id": "117268",
+"groupcode": "117268",
+"name": "Water Resistant Adhesive Matte Vinyl 36\" x 66' - 3\" core"
+},
+{
+"id": "117269",
+"groupcode": "117269",
+"name": "Artistic Satin Canvas, 19mil 24\" x 40'"
+},
+{
+"id": "117270",
+"groupcode": "117270",
+"name": "Artistic Satin Canvas, 19mil 36\" x 40'"
+},
+{
+"id": "117271",
+"groupcode": "117271",
+"name": "Artistic Satin Canvas, 19mil 42\" x 40'"
+},
+{
+"id": "117272",
+"groupcode": "117272",
+"name": "Peel & Stick Repositionable Media 36\" x 100' - 3\" core"
+},
+{
+"id": "117273",
+"groupcode": "117273",
+"name": "Peel & Stick Repositionable Media 42\" x 100' - 3\" core"
+},
+{
+"id": "117274",
+"groupcode": "117274",
+"name": "Wrapping Paper 24\" x 150' - 3\" core"
+},
+{
+"id": "117275",
+"groupcode": "117275",
+"name": "Wrapping Paper 30\" x 150' - 3\" core"
+},
+{
+"id": "117276",
+"groupcode": "117276",
+"name": "Glossy Peel & Stick Media 24\" x 60' - 3\" core"
+},
+{
+"id": "117277",
+"groupcode": "117277",
+"name": "Glossy Peel & Stick Media 36\" x 60' - 3\" core"
+},
+{
+"id": "117486",
+"groupcode": "117486",
+"name": "Scrim Banner Vinyl, 36\" x 40'"
+},
+{
+"id": "117487",
+"groupcode": "117487",
+"name": "Scrim Banner Vinyl, 42\" x 40'"
+},
+{
+"id": "117513",
+"groupcode": "117513",
+"name": "PIXMA TS9520a"
+},
+{
+"id": "117514",
+"groupcode": "117514",
+"name": "PIXMA TS9521Ca"
+},
+{
+"id": "117688",
+"groupcode": "117688",
+"name": "XC-60L Ink/Paper Bulk Set"
+},
+{
+"id": "117705",
+"groupcode": "117705",
+"name": "BH-G2 Black Print Head"
+},
+{
+"id": "117774",
+"groupcode": "117774",
+"name": "imagePROGRAF PRO-1100"
+},
+{
+"id": "117778",
+"groupcode": "117778",
+"name": "Maxify GX402x with Ink Bundle (Damaged Box)"
+},
+{
+"id": "117835",
+"groupcode": "117835",
+"name": "Poster Print - 18 x 24"
+},
+{
+"id": "117836",
+"groupcode": "117836",
+"name": "Poster Print - 24 x 36"
+},
+{
+"id": "117837",
+"groupcode": "117837",
+"name": "Poster Print - 36 x 48"
+},
+{
+"id": "117838",
+"groupcode": "117838",
+"name": "Full Bleed Letter Flyer 1-sided 50 qty"
+},
+{
+"id": "117839",
+"groupcode": "117839",
+"name": "Full Bleed Letter Flyer 2-sided 50 qty"
+},
+{
+"id": "117840",
+"groupcode": "117840",
+"name": "Full Bleed Postcard 4 x 6 1-sided 25 qty"
+},
+{
+"id": "117841",
+"groupcode": "117841",
+"name": "Full Bleed Postcard 4 x 6 2-sided 25 qty"
+},
+{
+"id": "117842",
+"groupcode": "117842",
+"name": "Full Bleed Item setup fee"
+},
+{
+"id": "117843",
+"groupcode": "117843",
+"name": "Full Bleed Business Cards 3.5 x 2 1-sided 100 qty"
+},
+{
+"id": "117844",
+"groupcode": "117844",
+"name": "Full Bleed Business Cards 3.5 x 2 2-sided 100 qty"
+},
+{
+"id": "117845",
+"groupcode": "117845",
+"name": "Full Bleed Letter Booklet - 4 Page"
+},
+{
+"id": "117846",
+"groupcode": "117846",
+"name": "Full Bleed Letter Booklet - 8 Page"
+},
+{
+"id": "117847",
+"groupcode": "117847",
+"name": "Full Bleed Letter Booklet - 12 Page"
+},
+{
+"id": "117848",
+"groupcode": "117848",
+"name": "Full Bleed Letter Booklet - 16 Page"
+},
+{
+"id": "117849",
+"groupcode": "117849",
+"name": "Full Bleed Letter Booklet - 20 Page"
+},
+{
+"id": "117850",
+"groupcode": "117850",
+"name": "Full Bleed Letter Booklet - 24 Page"
+},
+{
+"id": "117851",
+"groupcode": "117851",
+"name": "Full Bleed Letter Booklet - 28 Page"
+},
+{
+"id": "117852",
+"groupcode": "117852",
+"name": "Full Bleed Letter Booklet - 32 Page"
+},
+{
+"id": "117853",
+"groupcode": "117853",
+"name": "Full Bleed Letter Booklet - 36 Page"
+},
+{
+"id": "117854",
+"groupcode": "117854",
+"name": "Full Bleed Letter Booklet - 40 Page"
+},
+{
+"id": "117949",
+"groupcode": "117949",
+"name": "Photos Print - 4 x 6"
+},
+{
+"id": "117950",
+"groupcode": "117950",
+"name": "Photos Print - 5 x 7"
+},
+{
+"id": "117951",
+"groupcode": "117951",
+"name": "Photos Print - 13 x 19"
+},
+{
+"id": "117952",
+"groupcode": "117952",
+"name": "Photos Print - 18 x 24"
+},
+{
+"id": "117953",
+"groupcode": "117953",
+"name": "Photos Print - 24 x 36"
+},
+{
+"id": "117954",
+"groupcode": "117954",
+"name": "Canvas Print - 18 x 24"
+},
+{
+"id": "117955",
+"groupcode": "117955",
+"name": "Canvas Print - 24 x 24"
+},
+{
+"id": "117956",
+"groupcode": "117956",
+"name": "Canvas Print - 24 x 36"
+},
+{
+"id": "117957",
+"groupcode": "117957",
+"name": "Achival Fine Art Print - 13 x 19"
+},
+{
+"id": "117958",
+"groupcode": "117958",
+"name": "Achival Fine Art Print - 18 x 24"
+},
+{
+"id": "117959",
+"groupcode": "117959",
+"name": "Achival Fine Art Print - 24 x 24"
+},
+{
+"id": "117960",
+"groupcode": "117960",
+"name": "Achival Fine Art Print - 24 x 36"
+},
+{
+"id": "118081",
+"groupcode": "118081",
+"name": "ECAREPAK MK5000 3 Year"
+},
+{
+"id": "118082",
+"groupcode": "118082",
+"name": "ECAREPAK MK3000 1 Year"
+},
+{
+"id": "118083",
+"groupcode": "118083",
+"name": "ECAREPAK MK3000 2years"
+},
+{
+"id": "118084",
+"groupcode": "118084",
+"name": "ECAREPAK MK5000 1 YEAR"
+},
+{
+"id": "118085",
+"groupcode": "118085",
+"name": "ECAREPAK MK5000 2 Year"
+},
+{
+"id": "118086",
+"groupcode": "118086",
+"name": "ECAREPAK MK3000 3Years"
+},
+{
+"id": "118217",
+"groupcode": "118217",
+"name": "MegaTank MAXIFY GX6120"
+},
+{
+"id": "118232",
+"groupcode": "118232",
+"name": "imagePROGRAF PRO-310"
+},
+{
+"id": "118400",
+"groupcode": "118400",
+"name": "Colour Laser printing - Letter / Legal"
+},
+{
+"id": "118401",
+"groupcode": "118401",
+"name": "Colour Laser printing - 11 x 17"
+},
+{
+"id": "118402",
+"groupcode": "118402",
+"name": "B/W Laser printing - 11 x 17"
+},
+{
+"id": "118403",
+"groupcode": "118403",
+"name": "B/W Laser printing - Letter / Legal"
+},
+{
+"id": "118448",
+"groupcode": "118448",
+"name": "Finishing - Traditional stapling / Staple free stapling / Hole punch"
+},
+{
+"id": "118466",
+"groupcode": "118466",
+"name": "EOS Rebel T7 18-55 DC III (Damaged Box)"
+},
+{
+"id": "118472",
+"groupcode": "118472",
+"name": "GI-290 MegaTank G-Series Refill Kit"
+},
+{
+"id": "118490",
+"groupcode": "118490",
+"name": "AC-E19N AC Adapter"
+},
+{
+"id": "118502",
+"groupcode": "118502",
+"name": "PowerShot V1 Creator Bundle"
+},
+{
+"id": "118614",
+"groupcode": "118614",
+"name": "PIXMA TR160 with Battery Pack"
+},
+{
+"id": "118631",
+"groupcode": "118631",
+"name": "Canon Frame Lab - Custom Premium Framed Prints"
+},
+{
+"id": "118775",
+"groupcode": "118775",
+"name": "SELPHY CP1300 Black Wireless Compact Photo Printer (Damaged Box)"
+},
+{
+"id": "118823",
+"groupcode": "118823",
+"name": "Photos Print - 8.5 x 11"
+},
+{
+"id": "118841",
+"groupcode": "118841",
+"name": "Miscellaneous Part Order - Camera"
+},
+{
+"id": "118842",
+"groupcode": "118842",
+"name": "Miscellaneous Part Order - Printer"
+},
+{
+"id": "118927",
+"groupcode": "118927",
+"name": "MegaTank PIXMA G3272"
+},
+{
+"id": "118928",
+"groupcode": "118928",
+"name": "imageCLASS MF289dw VP"
+},
+{
+"id": "119072",
+"groupcode": "119072",
+"name": "PIXMA TS4320"
+},
+{
+"id": "119188",
+"groupcode": "119188",
+"name": "IRIScan Anywhere 6 Wifi Duplex"
+},
+{
+"id": "119322",
+"groupcode": "119322",
+"name": "CLI-42 8-Colour Value Pack"
+},
+{
+"id": "119341",
+"groupcode": "119341",
+"name": "2.5x3 card - Single Sided printed on an IX-R7000"
+},
+{
+"id": "119342",
+"groupcode": "119342",
+"name": "2.5x3 card - Double Sided printed on an IX-R7000"
+},
+{
+"id": "119343",
+"groupcode": "119343",
+"name": "Sticker label up to 4x6 printed on a LX-D5500"
+},
+{
+"id": "119346",
+"groupcode": "119346",
+"name": "PGI-72 10-Colour Value Pack"
+},
+{
+"id": "119349",
+"groupcode": "119349",
+"name": "PFI-1000 12-Colour Value Pack"
+},
+{
+"id": "119352",
+"groupcode": "119352",
+"name": "PFI-300 10-Colour Value Pack"
+},
+{
+"id": "119402",
+"groupcode": "119402",
+"name": "CLI-65 8-Colour Value Pack"
+},
+{
+"id": "119404",
+"groupcode": "119404",
+"name": "PFI-4100 12-Colour Value Pack"
+},
+{
+"id": "119441",
+"groupcode": "119441",
+"name": "CR-N400 Black"
+},
+{
+"id": "119735",
+"groupcode": "119735",
+"name": "Print Shop Shipping SKU - Small Package"
+},
+{
+"id": "119736",
+"groupcode": "119736",
+"name": "Print Shop Shipping SKU - Medium Package"
+},
+{
+"id": "119737",
+"groupcode": "119737",
+"name": "Print Shop Shipping SKU - Large Package"
+},
+{
+"id": "119762",
+"groupcode": "119762",
+"name": "SanDisk 256GB Ultra UHS-I SDXC Memory Card"
+},
+{
+"id": "119803",
+"groupcode": "119803",
+"name": "EW-76 Lens Hood"
+},
+{
+"id": "119804",
+"groupcode": "119804",
+"name": "7-14 Lens Cap"
+},
+{
+"id": "119805",
+"groupcode": "119805",
+"name": "14B Lens Cap"
+},
+{
+"id": "120007",
+"groupcode": "120007",
+"name": "Camp Canon - Event"
+},
+{
+"id": "120019",
+"groupcode": "120019",
+"name": "Flat Rate Shipping for Parts Canada-wide"
+},
+{
+"id": "120195",
+"groupcode": "120195",
+"name": "EOS R50 RF-S18-45mm / RF-S55-210mm STM KIT (Damaged Box)"
+},
+{
+"id": "120201",
+"groupcode": "120201",
+"name": "EOS R50 RF-S18-45mm STM KIT White (Damaged Box)"
+},
+{
+"id": "120237",
+"groupcode": "120237",
+"name": "EOS R6 Mark III Body (Refurbished)"
+},
+{
+"id": "120243",
+"groupcode": "120243",
+"name": "EOS RP EF24-105mm F3.5-5.6 IS STM with Adapter EF-EOS R (Damaged Box)"
+},
+{
+"id": "5022",
+"groupcode": "5022",
+"name": "PFI-102C Cyan Ink Tank"
+},
+{
+"id": "5023",
+"groupcode": "5023",
+"name": "PFI-102M Magenta Ink Tank"
+},
+{
+"id": "5040",
+"groupcode": "5040",
+"name": "PFI-102BK Black Ink Tank"
+},
+{
+"id": "5041",
+"groupcode": "5041",
+"name": "PFI-102MBK PG IPF500/600"
+},
+{
+"id": "5087",
+"groupcode": "5087",
+"name": "IFC-100U Interface Cable"
+},
+{
+"id": "5089",
+"groupcode": "5089",
+"name": "IFC-40AB III Interface Cable"
+},
+{
+"id": "5127",
+"groupcode": "5127",
+"name": "DR-E17 DC Coupler"
+},
+{
+"id": "5141",
+"groupcode": "5141",
+"name": "PIXMA TS8320 BLACK"
+},
+{
+"id": "8546",
+"groupcode": "8546",
+"name": "EF 17-40 f/4L USM"
+},
+{
+"id": "8612",
+"groupcode": "8612",
+"name": "LS-270H 8 Digit Handheld Calculator"
+},
+{
+"id": "8922",
+"groupcode": "8922",
+"name": "EF-S 10-22mm f/3.5-4.5 USM"
+},
+{
+"id": "9007",
+"groupcode": "9007",
+"name": "EF 28-300 f/3.5-5.6L IS USM"
+},
+{
+"id": "9159",
+"groupcode": "9159",
+"name": "CLI-8 Cyan Ink Tank"
+},
+{
+"id": "9451",
+"groupcode": "9451",
+"name": "PGI-9 Photo Black Ink Tank"
+},
+{
+"id": "9571",
+"groupcode": "9571",
+"name": "PGI-9 Matte Black Ink Tank"
+},
+{
+"id": "9572",
+"groupcode": "9572",
+"name": "PGI-9 Cyan Ink Tank"
+},
+{
+"id": "9573",
+"groupcode": "9573",
+"name": "PGI-9 Magenta Ink Tank"
+},
+{
+"id": "9574",
+"groupcode": "9574",
+"name": "PGI-9 Yellow Ink Tank"
+},
+{
+"id": "9575",
+"groupcode": "9575",
+"name": "PGI-9 Photo Cyan Ink Tank"
+},
+{
+"id": "9576",
+"groupcode": "9576",
+"name": "PGI-9 Photo Magenta Ink Tank"
+},
+{
+"id": "9577",
+"groupcode": "9577",
+"name": "PGI-9 Red Ink Tank"
+},
+{
+"id": "9578",
+"groupcode": "9578",
+"name": "PGI-9 Green Ink Tank"
+},
+{
+"id": "9579",
+"groupcode": "9579",
+"name": "PGI-9 Gray Ink Tank"
+},
+{
+"id": "9760",
+"groupcode": "9760",
+"name": "EF 14mm f/2.8L II USM"
+},
+{
+"id": "9822",
+"groupcode": "9822",
+"name": "SG-201 Photo Paper Plus Semi Gloss - 4 x 6 (50 sheets)"
+},
+{
+"id": "10786",
+"groupcode": "10786",
+"name": "PGI-7 BK"
+},
+{
+"id": "10949",
+"groupcode": "10949",
+"name": "PGI-29PBK Photo Black Ink Tank"
+},
+{
+"id": "10950",
+"groupcode": "10950",
+"name": "PGI-29DGY Dark Gray Ink Tank"
+},
+{
+"id": "10951",
+"groupcode": "10951",
+"name": "PGI-29GY Gray Ink Tank"
+},
+{
+"id": "10952",
+"groupcode": "10952",
+"name": "PGI-29LGY Light Gray Ink Tank"
+},
+{
+"id": "10954",
+"groupcode": "10954",
+"name": "PGI-29 Magenta Ink Tank"
+},
+{
+"id": "10955",
+"groupcode": "10955",
+"name": "PGI-29Y Yellow Ink Tank"
+},
+{
+"id": "10956",
+"groupcode": "10956",
+"name": "PGI-29PC Photo Cyan Ink Tank"
+},
+{
+"id": "10957",
+"groupcode": "10957",
+"name": "PGI-29PM Photo Magenta Ink Tank"
+},
+{
+"id": "10958",
+"groupcode": "10958",
+"name": "PGI-29R Red Ink Tank"
+},
+{
+"id": "10959",
+"groupcode": "10959",
+"name": "PGI-29CO Chroma Optimizer ink tank"
+},
+{
+"id": "11025",
+"groupcode": "11025",
+"name": "DR-E8 DC Coupler"
+},
+{
+"id": "11085",
+"groupcode": "11085",
+"name": "LC-E8E Battery Charger"
+},
+{
+"id": "11101",
+"groupcode": "11101",
+"name": "Extender EF 1.4X III"
+},
+{
+"id": "11112",
+"groupcode": "11112",
+"name": "EF 8-15mm f/4L Fisheye USM"
+},
+{
+"id": "11216",
+"groupcode": "11216",
+"name": "Battery Pack NB-9L"
+},
+{
+"id": "11486",
+"groupcode": "11486",
+"name": "PGI-9 Clear Ink Tank"
+},
+{
+"id": "11579",
+"groupcode": "11579",
+"name": "LV-LP36 Replacement Lamp"
+},
+{
+"id": "11705",
+"groupcode": "11705",
+"name": "CA-110 Compact Power Adapter"
+},
+{
+"id": "11788",
+"groupcode": "11788",
+"name": "SG-201 13X19 50SH"
+},
+{
+"id": "11901",
+"groupcode": "11901",
+"name": "EF-M 11-22mm f/4-5.6 IS STM"
+},
+{
+"id": "11909",
+"groupcode": "11909",
+"name": "Colour Ink & Paper Set KC-18IS (Card Size)"
+},
+{
+"id": "11990",
+"groupcode": "11990",
+"name": "EF 200-400mm f/4L IS USM Extender 1.4X"
+},
+{
+"id": "12073",
+"groupcode": "12073",
+"name": "EF-M 22mm f/2 STM"
+},
+{
+"id": "12340",
+"groupcode": "12340",
+"name": "EF 40mm f/2.8 STM"
+},
+{
+"id": "12348",
+"groupcode": "12348",
+"name": "Speedlite Transmitter ST-E3-RT"
+},
+{
+"id": "12518",
+"groupcode": "12518",
+"name": "EOS 6D Mark II Body"
+},
+{
+"id": "12523",
+"groupcode": "12523",
+"name": "CA-946 Compact AC Adapter"
+},
+{
+"id": "12527",
+"groupcode": "12527",
+"name": "EOS M6 EF-M 15-45mm f/3.5-6.3 IS STM Kit Black"
+},
+{
+"id": "12541",
+"groupcode": "12541",
+"name": "Cartridge 324 Black"
+},
+{
+"id": "12553",
+"groupcode": "12553",
+"name": "Electronic Viewfinder EVF-DC2 Black"
+},
+{
+"id": "12554",
+"groupcode": "12554",
+"name": "Electronic Viewfinder EVF-DC2 Silver"
+},
+{
+"id": "12648",
+"groupcode": "12648",
+"name": "EOS M5"
+},
+{
+"id": "12718",
+"groupcode": "12718",
+"name": "PFI-1700 Matte Black - 700ml Ink Tank"
+},
+{
+"id": "12719",
+"groupcode": "12719",
+"name": "PFI-1700 Photo Black - 700ml Ink Tank"
+},
+{
+"id": "12720",
+"groupcode": "12720",
+"name": "PFI-1700 Cyan - 700ml Ink Tank"
+},
+{
+"id": "12736",
+"groupcode": "12736",
+"name": "PFI-1100 Matte Black - 160ml Ink Tank"
+},
+{
+"id": "12737",
+"groupcode": "12737",
+"name": "PFI-1700 Magenta - 700ml Ink Tank"
+},
+{
+"id": "12738",
+"groupcode": "12738",
+"name": "PFI-1700 Yellow - 700ml Ink Tank"
+},
+{
+"id": "12739",
+"groupcode": "12739",
+"name": "PFI-1700 Photo Cyan - 700ml Ink Tank"
+},
+{
+"id": "12740",
+"groupcode": "12740",
+"name": "PFI-1700 Photo Magenta - 700ml Ink Tank"
+},
+{
+"id": "12741",
+"groupcode": "12741",
+"name": "PFI-1700 Grey - 700ml Ink Tank"
+},
+{
+"id": "12742",
+"groupcode": "12742",
+"name": "PFI-1700 Photo Grey - 700ml Ink Tank"
+},
+{
+"id": "12743",
+"groupcode": "12743",
+"name": "PFI-1700 Red - 700ml Ink Tank"
+},
+{
+"id": "12744",
+"groupcode": "12744",
+"name": "PFI-1700 Blue - 700ml Ink Tank"
+},
+{
+"id": "12745",
+"groupcode": "12745",
+"name": "PFI-1700 Chrome Optimizer - 700ml Ink Tank"
+},
+{
+"id": "12746",
+"groupcode": "12746",
+"name": "PFI-1300 Matte Black - 330ml Ink Tank"
+},
+{
+"id": "12747",
+"groupcode": "12747",
+"name": "PFI-1300 Photo Black - 330ml Ink Tank"
+},
+{
+"id": "12748",
+"groupcode": "12748",
+"name": "PFI-1300 Cyan - 330ml Ink Tan"
+},
+{
+"id": "12749",
+"groupcode": "12749",
+"name": "PFI-1300 Magenta - 330ml Ink Tank"
+},
+{
+"id": "12750",
+"groupcode": "12750",
+"name": "PFI-1300 Yellow - 330ml Ink Tank"
+},
+{
+"id": "12751",
+"groupcode": "12751",
+"name": "PFI-1300 Photo Cyan - 330ml Ink Tank"
+},
+{
+"id": "12752",
+"groupcode": "12752",
+"name": "PFI-1300 Photo Magenta - 330ml Ink Tank"
+},
+{
+"id": "12753",
+"groupcode": "12753",
+"name": "PFI-1300 Grey - 330ml Ink Tank"
+},
+{
+"id": "12754",
+"groupcode": "12754",
+"name": "PFI-1300 Photo Grey - 330ml Ink Tank"
+},
+{
+"id": "12772",
+"groupcode": "12772",
+"name": "PFI-1300 Red - 330ml Ink Tank"
+},
+{
+"id": "12805",
+"groupcode": "12805",
+"name": "PowerShot G9 X Mark II Black"
+},
+{
+"id": "12843",
+"groupcode": "12843",
+"name": "EOS Rebel T7i EF-S 18-55 IS STM Kit"
+},
+{
+"id": "12907",
+"groupcode": "12907",
+"name": "EF-M 55-200mm f/4.5-6.3 IS STM"
+},
+{
+"id": "12919",
+"groupcode": "12919",
+"name": "EF 11-24mm F/4L USM"
+},
+{
+"id": "12924",
+"groupcode": "12924",
+"name": "Photo Paper Plus Semi-Gloss SG-201 (17X22) 25 Sheets"
+},
+{
+"id": "12971",
+"groupcode": "12971",
+"name": "PowerShot D30"
+},
+{
+"id": "13017",
+"groupcode": "13017",
+"name": "PowerShot G7 X Mark II"
+},
+{
+"id": "13019",
+"groupcode": "13019",
+"name": "Powershot SX540 HS"
+},
+{
+"id": "13072",
+"groupcode": "13072",
+"name": "EF 70-300mm f/4-5.6 IS II USM"
+},
+{
+"id": "13074",
+"groupcode": "13074",
+"name": "EF-M 15-45mm f/3.5-6.3 IS STM"
+},
+{
+"id": "13085",
+"groupcode": "13085",
+"name": "EW-88D Lens Hood"
+},
+{
+"id": "13093",
+"groupcode": "13093",
+"name": "55mm Protector Filter"
+},
+{
+"id": "13143",
+"groupcode": "13143",
+"name": "Powershot SX420 IS"
+},
+{
+"id": "13154",
+"groupcode": "13154",
+"name": "Powershot Elph 190 IS Black"
+},
+{
+"id": "13166",
+"groupcode": "13166",
+"name": "EF 400mm f/4 DO IS II USM"
+},
+{
+"id": "13218",
+"groupcode": "13218",
+"name": "Powershot ELPH 360 HS Black"
+},
+{
+"id": "13226",
+"groupcode": "13226",
+"name": "LE-RC01 Remote Controller"
+},
+{
+"id": "13273",
+"groupcode": "13273",
+"name": "EF-M 28mm f/3.5 Macro IS STM"
+},
+{
+"id": "13295",
+"groupcode": "13295",
+"name": "EF-S 55-250mm f/4-5.6 IS STM"
+},
+{
+"id": "13341",
+"groupcode": "13341",
+"name": "EF-M 18-150mm f/3.5-6.3 IS STM"
+},
+{
+"id": "13352",
+"groupcode": "13352",
+"name": "Speedlite 600EX II-RT"
+},
+{
+"id": "13355",
+"groupcode": "13355",
+"name": "Compact Battery Pack CP-E4N"
+},
+{
+"id": "13385",
+"groupcode": "13385",
+"name": "ET-54B Lens Hood"
+},
+{
+"id": "13395",
+"groupcode": "13395",
+"name": "ES-22 Lens Hood"
+},
+{
+"id": "13412",
+"groupcode": "13412",
+"name": "EOS Rebel T6 EF-S 18-55mm f/3.5-5.6 IS II Kit"
+},
+{
+"id": "13462",
+"groupcode": "13462",
+"name": "imageCLASS MF236N"
+},
+{
+"id": "13746",
+"groupcode": "13746",
+"name": "Macro Ring Lite MR-14EX II"
+},
+{
+"id": "13875",
+"groupcode": "13875",
+"name": "EOS M100 EF-M 15-45mm IS STM Black"
+},
+{
+"id": "13877",
+"groupcode": "13877",
+"name": "EOS M100 EF-M 15-45mm IS STM Kit White"
+},
+{
+"id": "13881",
+"groupcode": "13881",
+"name": "imageCLASS MF113w -Wireless, Laser Printer"
+},
+{
+"id": "13882",
+"groupcode": "13882",
+"name": "EF 70\u2013200mm f/4L IS II USM"
+},
+{
+"id": "13884",
+"groupcode": "13884",
+"name": "AII(WII) Tripod Mount Ring"
+},
+{
+"id": "13948",
+"groupcode": "13948",
+"name": "Glossy Magnetic Photo Paper 4x6"
+},
+{
+"id": "13949",
+"groupcode": "13949",
+"name": "Matte Restickable Photo Paper 4x6"
+},
+{
+"id": "13952",
+"groupcode": "13952",
+"name": "EOS 90D BODY"
+},
+{
+"id": "13953",
+"groupcode": "13953",
+"name": "EOS 90D EF-S 18-55mm f/3.5-5.6 IS STM Kit"
+},
+{
+"id": "14077",
+"groupcode": "14077",
+"name": "EOS M200 EF-M 15-45mm f/3.5-6.3 IS STM Kit Black"
+},
+{
+"id": "14078",
+"groupcode": "14078",
+"name": "EOS M200 EF-M 15-45mm f/3.5-6.3 IS STM Kit White"
+},
+{
+"id": "14093",
+"groupcode": "14093",
+"name": "Speedlite 430EX III-RT"
+},
+{
+"id": "14110",
+"groupcode": "14110",
+"name": "EOS Rebel SL3 EF-S 18-55mm f/4-5.6 IS STM Lens Kit Black"
+},
+{
+"id": "14115",
+"groupcode": "14115",
+"name": "TA/TM Series PFI-030M Magenta Ink Tank"
+},
+{
+"id": "14116",
+"groupcode": "14116",
+"name": "TA/TM Series PFI-030Y Yellow Ink Tank"
+},
+{
+"id": "14133",
+"groupcode": "14133",
+"name": "imageCLASS MF269dw"
+},
+{
+"id": "14134",
+"groupcode": "14134",
+"name": "imageCLASS MF267dw"
+},
+{
+"id": "14135",
+"groupcode": "14135",
+"name": "imageCLASS MF264dw"
+},
+{
+"id": "14243",
+"groupcode": "14243",
+"name": "LF-101 LTR 5SH T-SHIRT TRANSFER"
+},
+{
+"id": "14244",
+"groupcode": "14244",
+"name": "EOS M50 EF-M 15-45mm f/3.5-6.3 IS STM Black"
+},
+{
+"id": "14283",
+"groupcode": "14283",
+"name": "E-95 Lens Cap"
+},
+{
+"id": "14303",
+"groupcode": "14303",
+"name": "EF-M 32mm f/1.4 STM"
+},
+{
+"id": "14326",
+"groupcode": "14326",
+"name": "EF 400mm f/2.8L IS III USM"
+},
+{
+"id": "14367",
+"groupcode": "14367",
+"name": "PFI-1300 Blue - 330ml Ink Tank"
+},
+{
+"id": "14368",
+"groupcode": "14368",
+"name": "PFI-1300 Chrome Optimizer - 330ml Ink Tank"
+},
+{
+"id": "14369",
+"groupcode": "14369",
+"name": "PFI-1100 Photo Black - 160ml Ink Tank"
+},
+{
+"id": "14370",
+"groupcode": "14370",
+"name": "PFI-1100 Cyan - 160ml Ink Tank"
+},
+{
+"id": "14371",
+"groupcode": "14371",
+"name": "PFI-1100 Magenta - 160ml Ink Tank"
+},
+{
+"id": "14372",
+"groupcode": "14372",
+"name": "PFI-1100 Yellow - 160ml Ink Tank"
+},
+{
+"id": "14373",
+"groupcode": "14373",
+"name": "PFI-1100 Photo Cyan - 160ml Ink Tank"
+},
+{
+"id": "14374",
+"groupcode": "14374",
+"name": "PFI-1100 Photo Magenta - 160ml Ink Tank"
+},
+{
+"id": "14375",
+"groupcode": "14375",
+"name": "PFI-1100 Grey - 160ml Ink Tank"
+},
+{
+"id": "14376",
+"groupcode": "14376",
+"name": "PFI-1100 Photo Grey - 160ml Ink Tank"
+},
+{
+"id": "14377",
+"groupcode": "14377",
+"name": "PFI-1100 Red - 160ml Ink Tank"
+},
+{
+"id": "14378",
+"groupcode": "14378",
+"name": "PFI-1100 Blue - 160ml Ink Tank"
+},
+{
+"id": "14379",
+"groupcode": "14379",
+"name": "PFI-1100 Chroma Optimizer - 160ml Ink Tank"
+},
+{
+"id": "14380",
+"groupcode": "14380",
+"name": "PF-D1 Paper Cassette"
+},
+{
+"id": "14433",
+"groupcode": "14433",
+"name": "PowerShot G9 X"
+},
+{
+"id": "14472",
+"groupcode": "14472",
+"name": "CT-08 Cutter Blade"
+},
+{
+"id": "14502",
+"groupcode": "14502",
+"name": "EOS Rebel SL2 EF-S 18-55mm f/4-5.6 Kit"
+},
+{
+"id": "14515",
+"groupcode": "14515",
+"name": "ImageFORMULA DR-C225W II Office Document Scanner"
+},
+{
+"id": "14527",
+"groupcode": "14527",
+"name": "TS-E 90mm F2.8L Macro"
+},
+{
+"id": "14530",
+"groupcode": "14530",
+"name": "ET-83E Lens Hood"
+},
+{
+"id": "14531",
+"groupcode": "14531",
+"name": "ES-84 Lens Hood"
+},
+{
+"id": "14532",
+"groupcode": "14532",
+"name": "ET-88 Lens Hood"
+},
+{
+"id": "14542",
+"groupcode": "14542",
+"name": "72C Macrolite Adapter"
+},
+{
+"id": "14686",
+"groupcode": "14686",
+"name": "PowerShot G5 X Mark II"
+},
+{
+"id": "14687",
+"groupcode": "14687",
+"name": "EOS R RF 24 - 105mm F4 L IS USM Kit"
+},
+{
+"id": "14699",
+"groupcode": "14699",
+"name": "EOS REBEL T8I 18-55 IS STM"
+},
+{
+"id": "14774",
+"groupcode": "14774",
+"name": "Color imageCLASS MF743Cdw - All in One, Wireless, Mobile Ready"
+},
+{
+"id": "14775",
+"groupcode": "14775",
+"name": "Color imageCLASS MF741Cdw"
+},
+{
+"id": "14776",
+"groupcode": "14776",
+"name": "imageCLASS MF644Cdw"
+},
+{
+"id": "14804",
+"groupcode": "14804",
+"name": "Speedlite Transmitter ST-E2"
+},
+{
+"id": "14809",
+"groupcode": "14809",
+"name": "imageCLASS MF642Cdw - Color Multifunctional Laser"
+},
+{
+"id": "14823",
+"groupcode": "14823",
+"name": "NL-101 PRINTABLE NAIL STK 2SH"
+},
+{
+"id": "14876",
+"groupcode": "14876",
+"name": "ZINK\u2122 Photo Paper Pack (20 Sheets)"
+},
+{
+"id": "14877",
+"groupcode": "14877",
+"name": "ZINK\u2122 Photo Paper Pack (50 Sheets)"
+},
+{
+"id": "15228",
+"groupcode": "15228",
+"name": "SELPHY Square QX10 White"
+},
+{
+"id": "15229",
+"groupcode": "15229",
+"name": "SELPHY Square QX10 Pink"
+},
+{
+"id": "15237",
+"groupcode": "15237",
+"name": "LK-72 Battery Pack"
+},
+{
+"id": "15251",
+"groupcode": "15251",
+"name": "Speedlite EL-100"
+},
+{
+"id": "15254",
+"groupcode": "15254",
+"name": "imageCLASS D1650"
+},
+{
+"id": "15326",
+"groupcode": "15326",
+"name": "Canon imagePROGRAF TA-20"
+},
+{
+"id": "15327",
+"groupcode": "15327",
+"name": "imagePROGRAF TA-30 with Stand"
+},
+{
+"id": "15391",
+"groupcode": "15391",
+"name": "EOS 1DX MKIII Body"
+},
+{
+"id": "15397",
+"groupcode": "15397",
+"name": "PRO-2100"
+},
+{
+"id": "17075",
+"groupcode": "17075",
+"name": "F-789SGA Scientific Calculator with 605 Advanced Functions"
+},
+{
+"id": "17079",
+"groupcode": "17079",
+"name": "PIXMA MG5720 White"
+},
+{
+"id": "17087",
+"groupcode": "17087",
+"name": "MAXIFY MB2120"
+},
+{
+"id": "17096",
+"groupcode": "17096",
+"name": "PIXMA MG2525"
+},
+{
+"id": "17113",
+"groupcode": "17113",
+"name": "PIXMA G4210"
+},
+{
+"id": "17118",
+"groupcode": "17118",
+"name": "TS-1200TSC 12 Digit Desktop Calculator"
+},
+{
+"id": "17119",
+"groupcode": "17119",
+"name": "PIXMA TS9520"
+},
+{
+"id": "17124",
+"groupcode": "17124",
+"name": "F-730SX Scientific Calculator"
+},
+{
+"id": "17446",
+"groupcode": "17446",
+"name": "Ink & Paper Set KL-36IP (L Size)"
+},
+{
+"id": "17450",
+"groupcode": "17450",
+"name": "SG-201 14 x 17 (10 Sheets)"
+},
+{
+"id": "17456",
+"groupcode": "17456",
+"name": "LS-63TG Handheld Calculator"
+},
+{
+"id": "17484",
+"groupcode": "17484",
+"name": "imageCLASS MF3010 - Multifunction, Wired Laser Printer"
+},
+{
+"id": "17518",
+"groupcode": "17518",
+"name": "WS-220TSG 12-Digit LCD Display Desktop Calculator"
+},
+{
+"id": "17522",
+"groupcode": "17522",
+"name": "PIXMA MG5720 Black"
+},
+{
+"id": "17524",
+"groupcode": "17524",
+"name": "imagePROGRAF PRO-1000"
+},
+{
+"id": "17525",
+"groupcode": "17525",
+"name": "AS-8 8 Digit Handhled Calculator"
+},
+{
+"id": "17529",
+"groupcode": "17529",
+"name": "MAXIFY MB2720"
+},
+{
+"id": "17544",
+"groupcode": "17544",
+"name": "F-605 DBL Scientific Calculator (White)"
+},
+{
+"id": "17545",
+"groupcode": "17545",
+"name": "PIXMA G3200"
+},
+{
+"id": "17556",
+"groupcode": "17556",
+"name": "HS-20TSC Semi-Desktop Calculator"
+},
+{
+"id": "17557",
+"groupcode": "17557",
+"name": "PIXMA G6020 Wireless MegaTank"
+},
+{
+"id": "17558",
+"groupcode": "17558",
+"name": "PIXMA TS3320 BLACK"
+},
+{
+"id": "17561",
+"groupcode": "17561",
+"name": "PIXMA TS6320 BLACK"
+},
+{
+"id": "17648",
+"groupcode": "17648",
+"name": "Canon 800SR System Bag"
+},
+{
+"id": "17747",
+"groupcode": "17747",
+"name": "Box Damage - EF-M 55-200mm f/4.5-6.3 IS STM"
+},
+{
+"id": "17786",
+"groupcode": "17786",
+"name": "imageFORMULA P-208II Scan-tini"
+},
+{
+"id": "17823",
+"groupcode": "17823",
+"name": "PowerShot SX740 Black with Case"
+},
+{
+"id": "17839",
+"groupcode": "17839",
+"name": "EOS M100 15-45mm Lens Kit Black (Refurbished / Brown Box)"
+},
+{
+"id": "28360",
+"groupcode": "28360",
+"name": "imagePROGRAF TA-20"
+},
+{
+"id": "30056",
+"groupcode": "30056",
+"name": "EOS 80D EF-S 18-135mm f/3.5-5.6 IS USM Kit"
+},
+{
+"id": "30062",
+"groupcode": "30062",
+"name": "EOS R Body"
+},
+{
+"id": "30072",
+"groupcode": "30072",
+"name": "BG-E22 Battery Grip"
+},
+{
+"id": "30357",
+"groupcode": "30357",
+"name": "EOS Rebel T6 EF-S 18-55mm f/3.5-5.6 III Kit (Refurbished)"
+},
+{
+"id": "30708",
+"groupcode": "30708",
+"name": "CPS CREATOR ESSENTIALS 1YR MEMBERSHIP"
+},
+{
+"id": "31031",
+"groupcode": "31031",
+"name": "DSC GRAB & GO (MINI HDMI)"
+},
+{
+"id": "31075",
+"groupcode": "31075",
+"name": "Pro Tama 67mm Ultra Slim C-PL Filter"
+},
+{
+"id": "31077",
+"groupcode": "31077",
+"name": "PR1100-R Wireless Presenter Remote"
+},
+{
+"id": "31122",
+"groupcode": "31122",
+"name": "PR100-R Wireless Presenter Remote"
+},
+{
+"id": "31123",
+"groupcode": "31123",
+"name": "PR10-G Wireless Presenter Remote"
+},
+{
+"id": "31199",
+"groupcode": "31199",
+"name": "EOS Premium Accessory Kit with 128GB Memory Card"
+},
+{
+"id": "31200",
+"groupcode": "31200",
+"name": "Toshiba 1TB Hard Drive Canvio Advance"
+},
+{
+"id": "31205",
+"groupcode": "31205",
+"name": "Canon Frame Lab - Custom Premium Framed Prints"
+},
+{
+"id": "31210",
+"groupcode": "31210",
+"name": "ELGATO CAM LINK 4K"
+},
+{
+"id": "32091",
+"groupcode": "32091",
+"name": "BCI-24 Black & Colour Ink Value Pack"
+},
+{
+"id": "32108",
+"groupcode": "32108",
+"name": "CLI-8 Colour Pack"
+},
+{
+"id": "32304",
+"groupcode": "32304",
+"name": "imagePROGRAF TA-20 with Stand"
+},
+{
+"id": "32374",
+"groupcode": "32374",
+"name": "EOS REBEL T7 18- 55 DC III (Refurbished)"
+},
+{
+"id": "32824",
+"groupcode": "32824",
+"name": "FAXPHONE L100"
+},
+{
+"id": "33505",
+"groupcode": "33505",
+"name": "PIXMA TR4520 Black"
+},
+{
+"id": "33529",
+"groupcode": "33529",
+"name": "PIXMA TR8520"
+},
+{
+"id": "34746",
+"groupcode": "34746",
+"name": "EOS R RF 24-105mm STM Kit"
+},
+{
+"id": "36630",
+"groupcode": "36630",
+"name": "PIXMA iX6820"
+},
+{
+"id": "36633",
+"groupcode": "36633",
+"name": "PIXMA G5020 Wireless MegaTank"
+},
+{
+"id": "36635",
+"groupcode": "36635",
+"name": "PIXMA IP8720 (Damaged Box)"
+},
+{
+"id": "36858",
+"groupcode": "36858",
+"name": "Premium Fine Art Rough Photo Paper - 13x19"
+},
+{
+"id": "37730",
+"groupcode": "37730",
+"name": "Battery Grip BG-R10"
+},
+{
+"id": "37732",
+"groupcode": "37732",
+"name": "Battery Pack LP-E6NH"
+},
+{
+"id": "37743",
+"groupcode": "37743",
+"name": "LZ1328 Lens Case"
+},
+{
+"id": "37744",
+"groupcode": "37744",
+"name": "LZ1435 Lens Case"
+},
+{
+"id": "37745",
+"groupcode": "37745",
+"name": "RF Extender Cap"
+},
+{
+"id": "37746",
+"groupcode": "37746",
+"name": "ET-77 Lens Hood"
+},
+{
+"id": "38420",
+"groupcode": "38420",
+"name": "EOS R5 Body"
+},
+{
+"id": "38421",
+"groupcode": "38421",
+"name": "EOS R6 RF24-105mm f/4-7.1 IS STM Lens Kit"
+},
+{
+"id": "41414",
+"groupcode": "41414",
+"name": "PIXMA TR8620"
+},
+{
+"id": "42219",
+"groupcode": "42219",
+"name": "PIXMA TR7620"
+},
+{
+"id": "42662",
+"groupcode": "42662",
+"name": "Speedlite EL-1"
+},
+{
+"id": "42663",
+"groupcode": "42663",
+"name": "Bounce Adapter SBA-EL"
+},
+{
+"id": "42791",
+"groupcode": "42791",
+"name": "MC-G02 Maintenance Cartridge"
+},
+{
+"id": "42827",
+"groupcode": "42827",
+"name": "EOS M50 Mark II EF-M 15-45mm f/3.5-6.3 IS STM"
+},
+{
+"id": "44068",
+"groupcode": "44068",
+"name": "PIXMA TS3420 BLACK/WHITE"
+},
+{
+"id": "44069",
+"groupcode": "44069",
+"name": "PIXMA TS3420 BLACK"
+},
+{
+"id": "44070",
+"groupcode": "44070",
+"name": "PIXMA TS3420 WHITE"
+},
+{
+"id": "44113",
+"groupcode": "44113",
+"name": "PIXMA G3260 BLACK"
+},
+{
+"id": "44114",
+"groupcode": "44114",
+"name": "PIXMA G1220"
+},
+{
+"id": "44115",
+"groupcode": "44115",
+"name": "PIXMA G3260 NAVY"
+},
+{
+"id": "44116",
+"groupcode": "44116",
+"name": "PIXMA G2260"
+},
+{
+"id": "44164",
+"groupcode": "44164",
+"name": "PRO-200"
+},
+{
+"id": "44176",
+"groupcode": "44176",
+"name": "PIXMA TR7020 WHITE"
+},
+{
+"id": "44329",
+"groupcode": "44329",
+"name": "Speedlite Transmitter ST-E3-RT (Ver.2)"
+},
+{
+"id": "45819",
+"groupcode": "45819",
+"name": "E(B) Tripod Mount Ring & Adapter"
+},
+{
+"id": "46117",
+"groupcode": "46117",
+"name": "EOS RP Body (Refurbished)"
+},
+{
+"id": "46118",
+"groupcode": "46118",
+"name": "EOS Rebel SL2 EF-S 18-55mm f/4-5.6 Kit (Refurbished / Brown Box)"
+},
+{
+"id": "46120",
+"groupcode": "46120",
+"name": "EOS Rebel T7i EF-S 18-55mm IS STM Kit (Refurbished / Brown Box)"
+},
+{
+"id": "46121",
+"groupcode": "46121",
+"name": "EOS Rebel SL3 EF-S 18-55mm f/4-5.6 IS STM Lens Kit (Refurbished)"
+},
+{
+"id": "46122",
+"groupcode": "46122",
+"name": "EOS R Body (Refurbished)"
+},
+{
+"id": "46123",
+"groupcode": "46123",
+"name": "EOS 90D EF-S 18-135mm f/3.5-5.6 IS USM Kit (Refurbished)"
+},
+{
+"id": "46126",
+"groupcode": "46126",
+"name": "EOS Rebel SL2 EF-S 18-55mm f/4-5.6 Kit (Refurbished)"
+},
+{
+"id": "46128",
+"groupcode": "46128",
+"name": "EOS Rebel SL3 EF-S 18-55mm IS STM Lens Kit White (Refurbished)"
+},
+{
+"id": "46130",
+"groupcode": "46130",
+"name": "EOS 5D Mark IV Body (Refurbished)"
+},
+{
+"id": "46131",
+"groupcode": "46131",
+"name": "EOS 80D BODY (Refurbished)"
+},
+{
+"id": "46135",
+"groupcode": "46135",
+"name": "EOS 90D Body (Refurbished)"
+},
+{
+"id": "46231",
+"groupcode": "46231",
+"name": "RF35mm F1.8 Macro IS STM (Refurbished)"
+},
+{
+"id": "46232",
+"groupcode": "46232",
+"name": "EF 50mm f/1.2L USM (Refurbished)"
+},
+{
+"id": "46269",
+"groupcode": "46269",
+"name": "XA15 Professional Camcorder (Refurbished)"
+},
+{
+"id": "46271",
+"groupcode": "46271",
+"name": "XA40 Professional Camcorder (Refurbished)"
+},
+{
+"id": "46294",
+"groupcode": "46294",
+"name": "EOS RP RF24-105mm F4-7.1 IS STM Lens Kit (Refurbished)"
+},
+{
+"id": "46296",
+"groupcode": "46296",
+"name": "EOS 80D EF-S 18-55mm f/3.5-5.6 IS STM Kit (Refurbished)"
+},
+{
+"id": "46297",
+"groupcode": "46297",
+"name": "EOS 77D Body (Refurbished)"
+},
+{
+"id": "46821",
+"groupcode": "46821",
+"name": "EOS RP RF24-105mm F4-7.1 IS STM Lens Kit (Refurbished, Brown Box)"
+},
+{
+"id": "47343",
+"groupcode": "47343",
+"name": "EOS R RF 24 - 105mm F4 L IS USM Kit (Refurbished)"
+},
+{
+"id": "111246",
+"groupcode": "111246",
+"name": "The Photography Deck - Blue"
+},
+{
+"id": "112588",
+"groupcode": "112588",
+"name": "EOS Rebel T7i EF-S 18-55mm IS STM Kit (Refurbished)"
+},
+{
+"id": "112654",
+"groupcode": "112654",
+"name": "imageCLASS MF455dw - All in One, Wireless, Mobile Ready Laser Printer"
+},
+{
+"id": "112726",
+"groupcode": "112726",
+"name": "ZINK Pre Cut Circle Sticker Pack"
+},
+{
+"id": "112746",
+"groupcode": "112746",
+"name": "ER-hE Eye Cup"
+},
+{
+"id": "112903",
+"groupcode": "112903",
+"name": "PIXMA TS702a"
+},
+{
+"id": "112909",
+"groupcode": "112909",
+"name": "PIXMA TR7020a Black"
+},
+{
+"id": "112911",
+"groupcode": "112911",
+"name": "PIXMA TR7020a White"
+},
+{
+"id": "112912",
+"groupcode": "112912",
+"name": "PIXMA TR8620a"
+},
+{
+"id": "112942",
+"groupcode": "112942",
+"name": "PowerShot PICK Black + Charger + SD Card"
+},
+{
+"id": "112943",
+"groupcode": "112943",
+"name": "PowerShot PICK White + Charger + SD Card"
+},
+{
+"id": "113574",
+"groupcode": "113574",
+"name": "MAXIFY GX6021"
+},
+{
+"id": "113575",
+"groupcode": "113575",
+"name": "MAXIFY GX5020"
+},
+{
+"id": "113576",
+"groupcode": "113576",
+"name": "MAXIFY GX7021"
+},
+{
+"id": "113663",
+"groupcode": "113663",
+"name": "DR-E6C DC Coupler"
+},
+{
+"id": "113772",
+"groupcode": "113772",
+"name": "imageCLASS MF451dw"
+},
+{
+"id": "113812",
+"groupcode": "113812",
+"name": "imageCLASS MF453dw"
+},
+{
+"id": "113813",
+"groupcode": "113813",
+"name": "imageCLASS MF452dw"
+},
+{
+"id": "113917",
+"groupcode": "113917",
+"name": "IVY 2 Mini Photo Printer Blush Pink"
+},
+{
+"id": "113946",
+"groupcode": "113946",
+"name": "MAXIFY GX4020 Wireless MegaTank All-in-One Printer"
+},
+{
+"id": "114104",
+"groupcode": "114104",
+"name": "MAXIFY GX3020 Wireless MegaTank All-in-One Printer"
+},
+{
+"id": "114105",
+"groupcode": "114105",
+"name": "PIXMA G4270 MegaTank All-in-One inkjet printer"
+},
+{
+"id": "114175",
+"groupcode": "114175",
+"name": "PIXMA MegaTank G1230 Printer"
+},
+{
+"id": "114314",
+"groupcode": "114314",
+"name": "EOS R6 Mark II RF24-105mm F4-7.1 IS STM"
+},
+{
+"id": "114479",
+"groupcode": "114479",
+"name": "imageCLASS MF262dw II"
+},
+{
+"id": "114480",
+"groupcode": "114480",
+"name": "imageCLASS MF269DW VP II All in One, Wireless, Duplex Laser Printer"
+},
+{
+"id": "114482",
+"groupcode": "114482",
+"name": "imageCLASS MF267dw II"
+},
+{
+"id": "114707",
+"groupcode": "114707",
+"name": "ZINK Photo Paper Pack (100 Sheets)"
+},
+{
+"id": "115122",
+"groupcode": "115122",
+"name": "ImageCLASS MF751Cdw"
+},
+{
+"id": "115418",
+"groupcode": "115418",
+"name": "Speedlite EL-5"
+},
+{
+"id": "115882",
+"groupcode": "115882",
+"name": "PIXMA TR7820 Wireless Home All-in-One Printer"
+},
+{
+"id": "115926",
+"groupcode": "115926",
+"name": "imagePROGRAF TM-240 with Stand"
+},
+{
+"id": "115951",
+"groupcode": "115951",
+"name": "PIXMA TS342x Series Black (Damaged Box)"
+},
+{
+"id": "115952",
+"groupcode": "115952",
+"name": "PIXMA TS342x Series White (Damaged Box)"
+},
+{
+"id": "116032",
+"groupcode": "116032",
+"name": "PIXMA TR472x Series BLACK (Damaged Box)"
+},
+{
+"id": "116033",
+"groupcode": "116033",
+"name": "PIXMA TR472x Series WHITE (Damaged Box)"
+},
+{
+"id": "116228",
+"groupcode": "116228",
+"name": "ET-124 Lens Hood"
+},
+{
+"id": "116233",
+"groupcode": "116233",
+"name": "MC-G06 Maintenance Cartridge"
+},
+{
+"id": "116299",
+"groupcode": "116299",
+"name": "LS-270L 8-Digit Handheld Calculator"
+},
+{
+"id": "116313",
+"groupcode": "116313",
+"name": "imageFORMULA R50 Scanner (Damaged Box)"
+},
+{
+"id": "116334",
+"groupcode": "116334",
+"name": "Matte Coated Paper - 170gsm 17\" x 100'"
+},
+{
+"id": "116391",
+"groupcode": "116391",
+"name": "PF-10 Print Head"
+},
+{
+"id": "116392",
+"groupcode": "116392",
+"name": "PFI-120 Matte Black Ink Cartridge (130mL)"
+},
+{
+"id": "116393",
+"groupcode": "116393",
+"name": "PFI-120 Black Ink Cartridge (130mL)"
+},
+{
+"id": "116394",
+"groupcode": "116394",
+"name": "PFI-120 Cyan Ink Cartridge (130mL)"
+},
+{
+"id": "116395",
+"groupcode": "116395",
+"name": "PFI-120 Magenta Ink Cartridge (130mL)"
+},
+{
+"id": "116396",
+"groupcode": "116396",
+"name": "PFI-120 Yellow Ink Cartridge (130mL)"
+},
+{
+"id": "116397",
+"groupcode": "116397",
+"name": "PFI-320 Matte Black Ink Cartridge (300mL)"
+},
+{
+"id": "116398",
+"groupcode": "116398",
+"name": "PFI-320 Black Ink Cartridge (300mL)"
+},
+{
+"id": "116399",
+"groupcode": "116399",
+"name": "PFI-320 Cyan Ink Cartridge (300mL)"
+},
+{
+"id": "116400",
+"groupcode": "116400",
+"name": "PFI-320 Magenta Ink Cartridge (300mL)"
+},
+{
+"id": "116401",
+"groupcode": "116401",
+"name": "PFI-320 Yellow Ink Cartridge (300mL)"
+},
+{
+"id": "116402",
+"groupcode": "116402",
+"name": "PFI-121 Magenta Ink Cartridge (130mL)"
+},
+{
+"id": "116403",
+"groupcode": "116403",
+"name": "PFI-321 Magenta Ink Cartridge (300mL)"
+},
+{
+"id": "116535",
+"groupcode": "116535",
+"name": "ImagePROGRAF PRO-4100"
+},
+{
+"id": "116536",
+"groupcode": "116536",
+"name": "ImagePROGRAF PRO-4100S"
+},
+{
+"id": "116537",
+"groupcode": "116537",
+"name": "ImagePROGRAF PRO-6100"
+},
+{
+"id": "116538",
+"groupcode": "116538",
+"name": "imagePROGRAF PRO-6100S"
+},
+{
+"id": "116607",
+"groupcode": "116607",
+"name": "EOS R100 RF-S18-45mm F4.5-6.3 IS STM & RF-S55-210mm F5-7.1 IS STM Lens Kit"
+},
+{
+"id": "116691",
+"groupcode": "116691",
+"name": "Speedlite 430EX III-RT (Refurbished)"
+},
+{
+"id": "116787",
+"groupcode": "116787",
+"name": "PFI-3300 Magenta - 330ml Ink Tank"
+},
+{
+"id": "116788",
+"groupcode": "116788",
+"name": "PFI-3300 Yellow - 330ml Ink Tank"
+},
+{
+"id": "116789",
+"groupcode": "116789",
+"name": "PFI-3300 Grey - 330ml Ink Tank"
+},
+{
+"id": "116790",
+"groupcode": "116790",
+"name": "PFI-3300 Chroma Optimizer - 330ml Ink Tank"
+},
+{
+"id": "116818",
+"groupcode": "116818",
+"name": "PFI-3100 Photo Black - 160ml Ink Tank"
+},
+{
+"id": "116819",
+"groupcode": "116819",
+"name": "PFI-3100 Cyan - 160ml Ink Tank"
+},
+{
+"id": "116820",
+"groupcode": "116820",
+"name": "PFI-3100 Magenta - 160ml Ink Tank"
+},
+{
+"id": "116821",
+"groupcode": "116821",
+"name": "PFI-3100 Yellow - 160ml Ink Tank"
+},
+{
+"id": "116822",
+"groupcode": "116822",
+"name": "PFI-3100 Grey - 160ml Ink Tank"
+},
+{
+"id": "116823",
+"groupcode": "116823",
+"name": "PFI-3100 Red - 160ml Ink Tank"
+},
+{
+"id": "116824",
+"groupcode": "116824",
+"name": "PFI-3100 Blue - 160ml Ink Tank"
+},
+{
+"id": "116825",
+"groupcode": "116825",
+"name": "PFI-3100 Photo Cyan - 160ml Ink Tank"
+},
+{
+"id": "116826",
+"groupcode": "116826",
+"name": "PFI-3100 Photo Magenta - 160ml Ink Tank"
+},
+{
+"id": "116827",
+"groupcode": "116827",
+"name": "PFI-3100 Photo Grey - 160ml Ink Tank"
+},
+{
+"id": "116828",
+"groupcode": "116828",
+"name": "PFI-3100 Chroma Optimizer - 160ml Ink Tank"
+},
+{
+"id": "116829",
+"groupcode": "116829",
+"name": "PFI-3300 Photo Black - 330ml Ink Tank"
+},
+{
+"id": "116830",
+"groupcode": "116830",
+"name": "PFI-3300 Cyan - 330ml Ink Tank"
+},
+{
+"id": "116831",
+"groupcode": "116831",
+"name": "PFI-3300 Red - 330ml Ink Tank"
+},
+{
+"id": "116832",
+"groupcode": "116832",
+"name": "PFI-3300 Blue - 330ml Ink Tank"
+},
+{
+"id": "116833",
+"groupcode": "116833",
+"name": "PFI-3300 Photo Cyan - 330ml Ink Tank"
+},
+{
+"id": "116834",
+"groupcode": "116834",
+"name": "PFI-3300 Photo Magenta - 330ml Ink Tank"
+},
+{
+"id": "116835",
+"groupcode": "116835",
+"name": "PFI-3300 Photo Grey - 330ml Ink Tank"
+},
+{
+"id": "116836",
+"groupcode": "116836",
+"name": "PFI-3700 Photo Black - 700ml Ink Tank"
+},
+{
+"id": "116837",
+"groupcode": "116837",
+"name": "PFI-3700 Cyan - 700ml Ink Tank"
+},
+{
+"id": "116838",
+"groupcode": "116838",
+"name": "PFI-3700 Magenta - 700ml Ink Tank"
+},
+{
+"id": "116839",
+"groupcode": "116839",
+"name": "PFI-3700 Yellow - 700ml Ink Tank"
+},
+{
+"id": "116840",
+"groupcode": "116840",
+"name": "PFI-3700 Grey - 700ml Ink Tank"
+},
+{
+"id": "116841",
+"groupcode": "116841",
+"name": "PFI-3700 Red - 700ml Ink Tank"
+},
+{
+"id": "116842",
+"groupcode": "116842",
+"name": "PFI-3700 Blue - 700ml Ink Tank"
+},
+{
+"id": "117063",
+"groupcode": "117063",
+"name": "PFI-3700 Photo Cyan - 700ml Ink Tank"
+},
+{
+"id": "117064",
+"groupcode": "117064",
+"name": "PFI-3700 Photo Magenta - 700ml Ink Tank"
+},
+{
+"id": "117065",
+"groupcode": "117065",
+"name": "PFI-3700 Photo Grey - 700ml Ink Tank"
+},
+{
+"id": "117066",
+"groupcode": "117066",
+"name": "PFI-3700 Chroma Optimizer - 700ml Ink Tank"
+},
+{
+"id": "117237",
+"groupcode": "117237",
+"name": "EF-S 35mm f/2.8 Macro IS STM (Refurbished, Brown Box)"
+},
+{
+"id": "117646",
+"groupcode": "117646",
+"name": "EOS R1 Body"
+},
+{
+"id": "118117",
+"groupcode": "118117",
+"name": "PowerShot G7 X Mark II (Damaged Box)"
+},
+{
+"id": "118141",
+"groupcode": "118141",
+"name": "EF 70\u2013200mm f/2.8L IS III USM (Refurbished)"
+},
+{
+"id": "118142",
+"groupcode": "118142",
+"name": "EF 75-300mm f/4-5.6 III (Refurbished)"
+},
+{
+"id": "118143",
+"groupcode": "118143",
+"name": "EOS R5 C Body (Refurbished)"
+},
+{
+"id": "118156",
+"groupcode": "118156",
+"name": "EOS SL3 EF-S 18-55mm f/4-5.6 IS STM Lens Kit White (Damaged Box)"
+},
+{
+"id": "118157",
+"groupcode": "118157",
+"name": "EOS Rebel T8i 18-55 IS STM (Damaged Box)"
+},
+{
+"id": "118180",
+"groupcode": "118180",
+"name": "EOS R5 Body (Refurbished)"
+},
+{
+"id": "118181",
+"groupcode": "118181",
+"name": "PowerShot G7 X Mark III Silver (Damaged Box)"
+},
+{
+"id": "118192",
+"groupcode": "118192",
+"name": "EOS C70 Body (Refurbished)"
+},
+{
+"id": "118198",
+"groupcode": "118198",
+"name": "EOS 5D Mark IV Body (Damaged Box)"
+},
+{
+"id": "118199",
+"groupcode": "118199",
+"name": "EOS 5D Mark IV EF 24-105mm f/4L IS II USM Kit (Damaged Box)"
+},
+{
+"id": "118330",
+"groupcode": "118330",
+"name": "EF 70-300mm f/4-5.6 IS II USM (Refurbished)"
+},
+{
+"id": "118331",
+"groupcode": "118331",
+"name": "EOS R6 Body (Refurbished)"
+},
+{
+"id": "118348",
+"groupcode": "118348",
+"name": "EF 70-300mm f/4-5.6 IS II USM (Damaged Box)"
+},
+{
+"id": "118378",
+"groupcode": "118378",
+"name": "TS-E 50mm f/2.8L Macro (Damaged Box)"
+},
+{
+"id": "118393",
+"groupcode": "118393",
+"name": "RF70-200mm F4 L IS USM (Damaged Box)"
+},
+{
+"id": "118399",
+"groupcode": "118399",
+"name": "RF24-70 F2.8L IS USM (Damaged Box)"
+},
+{
+"id": "118419",
+"groupcode": "118419",
+"name": "EF 70\u2013200mm f/2.8L IS III USM (Damaged Box)"
+},
+{
+"id": "118420",
+"groupcode": "118420",
+"name": "EF 100-400mm f/4.5-5.6L IS II USM (Damaged Box)"
+},
+{
+"id": "118421",
+"groupcode": "118421",
+"name": "RF35mm F1.8 Macro IS STM (Damaged Box)"
+},
+{
+"id": "118478",
+"groupcode": "118478",
+"name": "EF 70\u2013200mm f/2.8L IS III USM (Refurbished, Brown Box)"
+},
+{
+"id": "118520",
+"groupcode": "118520",
+"name": "EOS 90D Body (Damaged Box)"
+},
+{
+"id": "118526",
+"groupcode": "118526",
+"name": "RF16mm F2.8 STM (Damaged Box)"
+},
+{
+"id": "118528",
+"groupcode": "118528",
+"name": "RF15-35mm F2.8L IS USM (Damaged Box)"
+},
+{
+"id": "118529",
+"groupcode": "118529",
+"name": "RF28mm F2.8 STM (Damaged Box)"
+},
+{
+"id": "118530",
+"groupcode": "118530",
+"name": "EF-S 55-250mm f/4-5.6 IS STM (Damaged Box)"
+},
+{
+"id": "118531",
+"groupcode": "118531",
+"name": "EF-M 32mm f/1.4 STM (Box Damaged)"
+},
+{
+"id": "118532",
+"groupcode": "118532",
+"name": "EF-S 24mm f/2.8 STM (Damaged Box)"
+},
+{
+"id": "118589",
+"groupcode": "118589",
+"name": "RF600mm F11 IS STM (Refurbished)"
+},
+{
+"id": "118637",
+"groupcode": "118637",
+"name": "EOS Rebel T7i EF-S 18-55mm IS STM Kit (Bundle)"
+},
+{
+"id": "118655",
+"groupcode": "118655",
+"name": "EF 70\u2013200mm f/4L IS II USM (Refurbished)"
+},
+{
+"id": "118656",
+"groupcode": "118656",
+"name": "EF 24-105mm f/4L IS II USM (Refurbished)"
+},
+{
+"id": "118700",
+"groupcode": "118700",
+"name": "EOS R50 RF-S18-45mm STM KIT (Damaged Box)"
+},
+{
+"id": "118701",
+"groupcode": "118701",
+"name": "EOS RP RF24-105mm F4-7.1 IS STM Lens Kit (Damaged Box)"
+},
+{
+"id": "118718",
+"groupcode": "118718",
+"name": "10 x 42 L IS WP Waterproof Image Stabilized Binoculars (Damaged Box)"
+},
+{
+"id": "118719",
+"groupcode": "118719",
+"name": "15 x 50 IS All Weather Image Stabilized Binoculars (Damaged Box)"
+},
+{
+"id": "118721",
+"groupcode": "118721",
+"name": "10 x 30 IS II Image Stabilized Binoculars (Damaged Box)"
+},
+{
+"id": "118745",
+"groupcode": "118745",
+"name": "EOS 6D Mark II EF 24-105mm f/4L IS II USM (Damaged Box)"
+},
+{
+"id": "118787",
+"groupcode": "118787",
+"name": "SELPHY CP1300 White Wireless Compact Photo Printer (Damaged Box)"
+},
+{
+"id": "118859",
+"groupcode": "118859",
+"name": "Canon Frame Lab - Ambassador Premium Framed Prints"
+},
+{
+"id": "118863",
+"groupcode": "118863",
+"name": "EOS Rebel T8i 18-55 IS STM (Refurb)"
+},
+{
+"id": "118864",
+"groupcode": "118864",
+"name": "EOS Rebel SL3 EF-S 18-55mm f/4-5.6 IS STM Lens Kit (Damaged Box)"
+},
+{
+"id": "118900",
+"groupcode": "118900",
+"name": "Lm24 Scanner"
+},
+{
+"id": "118945",
+"groupcode": "118945",
+"name": "EOS M50 Mark II EF-M 15-45mm with Bag, 32GB SD Card and Wrist Strap"
+},
+{
+"id": "118946",
+"groupcode": "118946",
+"name": "RF100-500mm F4.5-7.1 L IS USM (Damaged Box)"
+},
+{
+"id": "118960",
+"groupcode": "118960",
+"name": "RF24-105mm F2.8 L IS USM Z (Damaged Box)"
+},
+{
+"id": "118966",
+"groupcode": "118966",
+"name": "EOS R6 Body (Damaged Box)"
+},
+{
+"id": "118978",
+"groupcode": "118978",
+"name": "EOS RP Body (Damaged Box)"
+},
+{
+"id": "118979",
+"groupcode": "118979",
+"name": "EOS R10 Body (Damaged Box)"
+},
+{
+"id": "118980",
+"groupcode": "118980",
+"name": "EOS R100 RF-S18-45mm F4.5-6.3 IS STM Lens Kit (Damaged Box)"
+},
+{
+"id": "118993",
+"groupcode": "118993",
+"name": "RS-80E3 Remote Switch"
+},
+{
+"id": "119020",
+"groupcode": "119020",
+"name": "EOS SL3 18-55mm Lens Kit with 800SR Bag and 32GB Memory Card (Damaged Box)"
+},
+{
+"id": "119021",
+"groupcode": "119021",
+"name": "EOS R7 Body (Damaged Box)"
+},
+{
+"id": "119023",
+"groupcode": "119023",
+"name": "EOS R6 Mark II RF24-105mm F4-7.1 IS STM (Damaged Box)"
+},
+{
+"id": "119024",
+"groupcode": "119024",
+"name": "EOS R8 RF24-50mm F4.5-6.3 IS STM (Damaged Box)"
+},
+{
+"id": "119185",
+"groupcode": "119185",
+"name": "IRISPen Reader 8"
+},
+{
+"id": "119186",
+"groupcode": "119186",
+"name": "IRISPen Air 8"
+},
+{
+"id": "119187",
+"groupcode": "119187",
+"name": "IRIScan Visualizer 7 Dyslexic"
+},
+{
+"id": "119189",
+"groupcode": "119189",
+"name": "IRIScan Desk 6 Pro"
+},
+{
+"id": "119190",
+"groupcode": "119190",
+"name": "IRIScan Desk 7 Business"
+},
+{
+"id": "119215",
+"groupcode": "119215",
+"name": "Speedlite EL-1 (Ver. 2)"
+},
+{
+"id": "119222",
+"groupcode": "119222",
+"name": "PIXMA TS372x Black (Damaged Box)"
+},
+{
+"id": "119234",
+"groupcode": "119234",
+"name": "PIXMA TS5320a White (Damaged Box)"
+},
+{
+"id": "119235",
+"groupcode": "119235",
+"name": "PIXMA TR7620a (Damaged Box)"
+},
+{
+"id": "119260",
+"groupcode": "119260",
+"name": "PIXMA MegaTank G327x Black (Damaged Box)"
+},
+{
+"id": "119261",
+"groupcode": "119261",
+"name": "PIXMA PRO-200S (Damaged Box)"
+},
+{
+"id": "119272",
+"groupcode": "119272",
+"name": "PIXMA TR702Xa Black (Damaged Box)"
+},
+{
+"id": "119273",
+"groupcode": "119273",
+"name": "CanoScan LiDE 300 (Damaged Box)"
+},
+{
+"id": "119308",
+"groupcode": "119308",
+"name": "PIXMA G6020 MegaTank (Damaged Box)"
+},
+{
+"id": "119309",
+"groupcode": "119309",
+"name": "PIXMA MG252x (Damaged Box)"
+},
+{
+"id": "119320",
+"groupcode": "119320",
+"name": "MAXIFY GX3020 with Extra Black Ink Bottle (Damaged Box)"
+},
+{
+"id": "119329",
+"groupcode": "119329",
+"name": "PG-295XL / CL-286XL Black and Colour Ink Value Pack"
+},
+{
+"id": "119330",
+"groupcode": "119330",
+"name": "PG-295 / CL-286 Black and Colour Ink Value Pack"
+},
+{
+"id": "119378",
+"groupcode": "119378",
+"name": "Extender EF 1.4X III (Damaged Box)"
+},
+{
+"id": "119417",
+"groupcode": "119417",
+"name": "EF 85mm f/1.8 USM (Damaged Box)"
+},
+{
+"id": "119423",
+"groupcode": "119423",
+"name": "IRIScan Book 7"
+},
+{
+"id": "119429",
+"groupcode": "119429",
+"name": "EF 16-35mm f/2.8L III USM (Damaged Box)"
+},
+{
+"id": "119430",
+"groupcode": "119430",
+"name": "EOS R3 Body (Damaged Box)"
+},
+{
+"id": "119480",
+"groupcode": "119480",
+"name": "Photo Paper Pro Platinum, 42\" x 100'"
+},
+{
+"id": "119481",
+"groupcode": "119481",
+"name": "Photo Paper Pro Platinum, 24\" x 100'"
+},
+{
+"id": "119483",
+"groupcode": "119483",
+"name": "Photo Paper Pro Luster 260gsm, 42\" x 100' - 3\" core"
+},
+{
+"id": "119484",
+"groupcode": "119484",
+"name": "Artistic Matte Canvas 24\" x 40'"
+},
+{
+"id": "119485",
+"groupcode": "119485",
+"name": "Artistic Matte Canvas 36\" x 40'"
+},
+{
+"id": "119486",
+"groupcode": "119486",
+"name": "Artistic Matte Canvas 42\" x 40'"
+},
+{
+"id": "119487",
+"groupcode": "119487",
+"name": "Adhesive Matte Vinyl, 36\" x 66'"
+},
+{
+"id": "119488",
+"groupcode": "119488",
+"name": "Adhesive Matte Vinyl, 42\" x 66'"
+},
+{
+"id": "119490",
+"groupcode": "119490",
+"name": "Durable Matte Polypropylene Banner, 42\" x 100'"
+},
+{
+"id": "119492",
+"groupcode": "119492",
+"name": "Double Matte Film, 24\" x 125'"
+},
+{
+"id": "119493",
+"groupcode": "119493",
+"name": "Double Matte Film, 36\" x 125'"
+},
+{
+"id": "119494",
+"groupcode": "119494",
+"name": "Fine Art Natural, 24\" x 50'"
+},
+{
+"id": "119495",
+"groupcode": "119495",
+"name": "Fine Art Natural, 36\" x 50'"
+},
+{
+"id": "119496",
+"groupcode": "119496",
+"name": "German Etching by Hahnemuhle, 24\" x 39'"
+},
+{
+"id": "119705",
+"groupcode": "119705",
+"name": "Heavyweight Coated Paper HG, 42\" x 100'"
+},
+{
+"id": "119706",
+"groupcode": "119706",
+"name": "Heavyweight Coated Paper HG, 36\" x 100'"
+},
+{
+"id": "119750",
+"groupcode": "119750",
+"name": "EOS R6 Mark II Body (Refurbished)"
+},
+{
+"id": "119766",
+"groupcode": "119766",
+"name": "Tech Pouch (Grey)"
+},
+{
+"id": "119785",
+"groupcode": "119785",
+"name": "EOS R10 RF-S18-45mm IS STM Kit (Refurbished)"
+},
+{
+"id": "119786",
+"groupcode": "119786",
+"name": "EOS R100 RF-S18-45mm F4.5-6.3 IS STM (Refurbished)"
+},
+{
+"id": "119797",
+"groupcode": "119797",
+"name": "EOS R7 Body (Refurbished)"
+},
+{
+"id": "119819",
+"groupcode": "119819",
+"name": "EOS R10 Body (Refurbished)"
+},
+{
+"id": "119820",
+"groupcode": "119820",
+"name": "EOS 1DX Mark III Body (Refurbished)"
+},
+{
+"id": "119821",
+"groupcode": "119821",
+"name": "PowerShot SX740HS (Damaged Box)"
+},
+{
+"id": "119863",
+"groupcode": "119863",
+"name": "EF 85mm f/1.8 USM (Refurbished)"
+},
+{
+"id": "119870",
+"groupcode": "119870",
+"name": "18 x 50 IS All Weather Image Stabilized Binoculars (Damaged Box)"
+},
+{
+"id": "119881",
+"groupcode": "119881",
+"name": "RF24-70mm F2.8L IS USM (Refurbished)"
+},
+{
+"id": "119887",
+"groupcode": "119887",
+"name": "RF24\u2013105mm F4 L IS USM (Refurbished)"
+},
+{
+"id": "119888",
+"groupcode": "119888",
+"name": "RF50mm F1.2 L USM (Refurbished)"
+},
+{
+"id": "119889",
+"groupcode": "119889",
+"name": "RF70-200mm F4 L IS USM (Refurbished)"
+},
+{
+"id": "119902",
+"groupcode": "119902",
+"name": "RF200-800mm F6.3-9 IS USM (Damaged Box)"
+},
+{
+"id": "119908",
+"groupcode": "119908",
+"name": "12 x 36 IS III Image Stabilized Binoculars (Damaged Box)"
+},
+{
+"id": "119909",
+"groupcode": "119909",
+"name": "EF-EOS R Mount Adapter (Damaged Box)"
+},
+{
+"id": "119910",
+"groupcode": "119910",
+"name": "RF28-70mm F2 L USM (Damaged Box)"
+},
+{
+"id": "119935",
+"groupcode": "119935",
+"name": "RF70-200mm F2.8 L IS USM Z White (Damaged Box)"
+},
+{
+"id": "119941",
+"groupcode": "119941",
+"name": "PrintShop Event : February xx, 2026"
+},
+{
+"id": "119947",
+"groupcode": "119947",
+"name": "Extender RF1.4x (Damaged Box)"
+},
+{
+"id": "119953",
+"groupcode": "119953",
+"name": "EOS R50 RF-S18-45mm STM Kit (Refurbished)"
+},
+{
+"id": "119954",
+"groupcode": "119954",
+"name": "EOS R8 Body (Refurbished)"
+},
+{
+"id": "119965",
+"groupcode": "119965",
+"name": "EOS R6 RF24-105mm f/4-7.1 IS STM (Refurbished)"
+},
+{
+"id": "119967",
+"groupcode": "119967",
+"name": "EOS R7 RF-S 18-150 IS STM KIT (Refurbished)"
+},
+{
+"id": "119981",
+"groupcode": "119981",
+"name": "Extender RF2X (Damaged Box)"
+},
+{
+"id": "120033",
+"groupcode": "120033",
+"name": "PowerShot V1 Bundle"
+},
+{
+"id": "120096",
+"groupcode": "120096",
+"name": "CR-X500"
+},
+{
+"id": "120097",
+"groupcode": "120097",
+"name": "CR-X300"
+},
+{
+"id": "120129",
+"groupcode": "120129",
+"name": "CN-R14mm T3.1 L F"
+},
+{
+"id": "120130",
+"groupcode": "120130",
+"name": "CN-R20mm T1.5 L F"
+},
+{
+"id": "120131",
+"groupcode": "120131",
+"name": "CN-R24mm T1.5 L F"
+},
+{
+"id": "120132",
+"groupcode": "120132",
+"name": "CN-R35mm T1.5 L F"
+},
+{
+"id": "120133",
+"groupcode": "120133",
+"name": "CN-R50mm T1.3 L F"
+},
+{
+"id": "120134",
+"groupcode": "120134",
+"name": "CN-R85mm T1.3 L F"
+},
+{
+"id": "120135",
+"groupcode": "120135",
+"name": "CN-R135mm T2.2 L F"
+},
+{
+"id": "5009",
+"groupcode": "5009",
+"name": "PG-245XL Black Ink Cartridge"
+},
+{
+"id": "5046",
+"groupcode": "5046",
+"name": "BG-E21 Battery Grip"
+},
+{
+"id": "5059",
+"groupcode": "5059",
+"name": "EF Eye Cup"
+},
+{
+"id": "5063",
+"groupcode": "5063",
+"name": "Battery Charger CB-2LV"
+},
+{
+"id": "5073",
+"groupcode": "5073",
+"name": "E2 Hand Strap"
+},
+{
+"id": "5074",
+"groupcode": "5074",
+"name": "BG-E14 Battery Grip"
+},
+{
+"id": "5076",
+"groupcode": "5076",
+"name": "Canon Cartridge 137 - Black"
+},
+{
+"id": "5084",
+"groupcode": "5084",
+"name": "RF Lens Dust Cap"
+},
+{
+"id": "5104",
+"groupcode": "5104",
+"name": "EB Rubber Frame"
+},
+{
+"id": "5105",
+"groupcode": "5105",
+"name": "EP-EX15 Eyepiece Extender"
+},
+{
+"id": "5106",
+"groupcode": "5106",
+"name": "EB Eye Cup"
+},
+{
+"id": "5113",
+"groupcode": "5113",
+"name": "IFC-500U Interface Cable"
+},
+{
+"id": "5116",
+"groupcode": "5116",
+"name": "EP-EX15 II Eyepiece Extender"
+},
+{
+"id": "5118",
+"groupcode": "5118",
+"name": "RC-6 Remote Controller"
+},
+{
+"id": "5119",
+"groupcode": "5119",
+"name": "E-77 II Lens Cap"
+},
+{
+"id": "5124",
+"groupcode": "5124",
+"name": "RA-E3 Remote Controller Adapter"
+},
+{
+"id": "5126",
+"groupcode": "5126",
+"name": "Directional Microphone DM-E1"
+},
+{
+"id": "6098",
+"groupcode": "6098",
+"name": "BCI-3e Magenta Ink Tank"
+},
+{
+"id": "6099",
+"groupcode": "6099",
+"name": "BCI-3e Cyan Ink Tank"
+},
+{
+"id": "6100",
+"groupcode": "6100",
+"name": "BCI-3e Yellow Ink Tank"
+},
+{
+"id": "6353",
+"groupcode": "6353",
+"name": "Matte Coated Paper, 170gsm - MTCTD170G24 - 24\" x 100'(Roll)"
+},
+{
+"id": "7436",
+"groupcode": "7436",
+"name": "Water Resistant Matte Canvas, 24\" x 40'"
+},
+{
+"id": "8276",
+"groupcode": "8276",
+"name": "Ink & Paper Set KP-36IP (4x6)"
+},
+{
+"id": "8292",
+"groupcode": "8292",
+"name": "Matte Photo Paper - MP-101 - 8.5\" x 11\" Letter (50 Sheets)"
+},
+{
+"id": "8734",
+"groupcode": "8734",
+"name": "Ink & Label Set KC-18IL (Card Size)"
+},
+{
+"id": "8961",
+"groupcode": "8961",
+"name": "EW-73B Lens Hood"
+},
+{
+"id": "8974",
+"groupcode": "8974",
+"name": "Matte Photo Paper - MP-101 - 13\" x 19\" (20 Sheets)"
+},
+{
+"id": "9038",
+"groupcode": "9038",
+"name": "Matte Photo Paper - MP-101 - 4\" x 6\" (120 Sheets)"
+},
+{
+"id": "9096",
+"groupcode": "9096",
+"name": "EF 12 II Extension Tube"
+},
+{
+"id": "9097",
+"groupcode": "9097",
+"name": "EF 25 II Extension Tube"
+},
+{
+"id": "9103",
+"groupcode": "9103",
+"name": "ET-65B Lens Hood"
+},
+{
+"id": "9168",
+"groupcode": "9168",
+"name": "PG-40 Black Ink Cartridge"
+},
+{
+"id": "9170",
+"groupcode": "9170",
+"name": "CL-41 Colour Ink Cartridge"
+},
+{
+"id": "9339",
+"groupcode": "9339",
+"name": "104 Black Toner Cartridge"
+},
+{
+"id": "9367",
+"groupcode": "9367",
+"name": "EF-S 17-55mm f/2.8 IS USM"
+},
+{
+"id": "9369",
+"groupcode": "9369",
+"name": "Lens Hood"
+},
+{
+"id": "9537",
+"groupcode": "9537",
+"name": "Battery Charger CB-2LX"
+},
+{
+"id": "9608",
+"groupcode": "9608",
+"name": "PGI-35 Black Ink Tank"
+},
+{
+"id": "9609",
+"groupcode": "9609",
+"name": "CLI-36 Colour"
+},
+{
+"id": "9659",
+"groupcode": "9659",
+"name": "Battery Pack NB-5L"
+},
+{
+"id": "9980",
+"groupcode": "9980",
+"name": "120 Black Toner Cartridge"
+},
+{
+"id": "10042",
+"groupcode": "10042",
+"name": "PGI-220 Black Ink Tank"
+},
+{
+"id": "10043",
+"groupcode": "10043",
+"name": "CLI-221 Black Ink Tank"
+},
+{
+"id": "10044",
+"groupcode": "10044",
+"name": "CLI-221 Cyan Ink Tank"
+},
+{
+"id": "10045",
+"groupcode": "10045",
+"name": "CLI-221 Magenta Ink Tank"
+},
+{
+"id": "10046",
+"groupcode": "10046",
+"name": "CLI-221 Yellow Ink Tank"
+},
+{
+"id": "10047",
+"groupcode": "10047",
+"name": "CLI-221 Gray Ink Tank"
+},
+{
+"id": "10064",
+"groupcode": "10064",
+"name": "EG Eye Cup"
+},
+{
+"id": "10068",
+"groupcode": "10068",
+"name": "PG-30 Black Ink Cartridge"
+},
+{
+"id": "10069",
+"groupcode": "10069",
+"name": "CL-31 Colour Ink Cartridge"
+},
+{
+"id": "10189",
+"groupcode": "10189",
+"name": "116 Yellow Toner Cartridge"
+},
+{
+"id": "10190",
+"groupcode": "10190",
+"name": "116 Magenta Toner Cartridge"
+},
+{
+"id": "10191",
+"groupcode": "10191",
+"name": "116 Cyan Toner Cartridge"
+},
+{
+"id": "10192",
+"groupcode": "10192",
+"name": "116 Black Toner Cartridge"
+},
+{
+"id": "10208",
+"groupcode": "10208",
+"name": "PG-210 XL Black Ink Tank"
+},
+{
+"id": "10210",
+"groupcode": "10210",
+"name": "CL-211 XL Colour Ink Tank"
+},
+{
+"id": "10483",
+"groupcode": "10483",
+"name": "118 Black Toner Cartridge Twin Pack"
+},
+{
+"id": "10558",
+"groupcode": "10558",
+"name": "Cartridge 119"
+},
+{
+"id": "10559",
+"groupcode": "10559",
+"name": "Cartridge 119 II"
+},
+{
+"id": "10618",
+"groupcode": "10618",
+"name": "PGI-225 Black Ink Tank"
+},
+{
+"id": "10619",
+"groupcode": "10619",
+"name": "CLI-226 Black Ink Tank"
+},
+{
+"id": "10620",
+"groupcode": "10620",
+"name": "CLI-226 Magenta Ink Tank"
+},
+{
+"id": "10621",
+"groupcode": "10621",
+"name": "CLI-226 Cyan Ink Tank"
+},
+{
+"id": "10622",
+"groupcode": "10622",
+"name": "CLI-226 Yellow Ink Tank"
+},
+{
+"id": "10623",
+"groupcode": "10623",
+"name": "CLI-226 Gray Ink Tank"
+},
+{
+"id": "10626",
+"groupcode": "10626",
+"name": "EW-77 Lens Hood"
+},
+{
+"id": "10838",
+"groupcode": "10838",
+"name": "Cartridge 125"
+},
+{
+"id": "11006",
+"groupcode": "11006",
+"name": "118 Black Toner Cartridge"
+},
+{
+"id": "11007",
+"groupcode": "11007",
+"name": "118 Cyan Toner Cartridge"
+},
+{
+"id": "11008",
+"groupcode": "11008",
+"name": "118 Magenta Toner Cartridge"
+},
+{
+"id": "11009",
+"groupcode": "11009",
+"name": "118 Yellow Toner Cartridge"
+},
+{
+"id": "11022",
+"groupcode": "11022",
+"name": "Battery Pack LP-E8"
+},
+{
+"id": "11027",
+"groupcode": "11027",
+"name": "BP-955 Battery Pack"
+},
+{
+"id": "11028",
+"groupcode": "11028",
+"name": "BP-975 Battery Pack"
+},
+{
+"id": "11102",
+"groupcode": "11102",
+"name": "Extender EF 2x III"
+},
+{
+"id": "11228",
+"groupcode": "11228",
+"name": "FA-DC67A Filter Adapter"
+},
+{
+"id": "11333",
+"groupcode": "11333",
+"name": "EF 100mm f/2.8L Macro IS USM"
+},
+{
+"id": "11360",
+"groupcode": "11360",
+"name": "Cartridge 128 Black"
+},
+{
+"id": "11393",
+"groupcode": "11393",
+"name": "ET-73 Lens Hood"
+},
+{
+"id": "11394",
+"groupcode": "11394",
+"name": "67 Macrolite Adapter"
+},
+{
+"id": "11537",
+"groupcode": "11537",
+"name": "CLI-42C Cyan Ink Tank"
+},
+{
+"id": "11538",
+"groupcode": "11538",
+"name": "CLI-42BK Black Ink Tank"
+},
+{
+"id": "11539",
+"groupcode": "11539",
+"name": "CLI-42M Magenta Ink Tank"
+},
+{
+"id": "11540",
+"groupcode": "11540",
+"name": "CLI-42Y Yellow Ink Tank"
+},
+{
+"id": "11541",
+"groupcode": "11541",
+"name": "CLI-42PC Photo Cyan Ink Tank"
+},
+{
+"id": "11542",
+"groupcode": "11542",
+"name": "CLI-42PM Photo Magenta Ink Tank"
+},
+{
+"id": "11543",
+"groupcode": "11543",
+"name": "CLI-42GY Gray Ink Tank"
+},
+{
+"id": "11544",
+"groupcode": "11544",
+"name": "CLI-42LGY Light Gray Ink Tank"
+},
+{
+"id": "11595",
+"groupcode": "11595",
+"name": "E-72 II Lens Cap"
+},
+{
+"id": "11610",
+"groupcode": "11610",
+"name": "CN-E24mm T1.5 L F"
+},
+{
+"id": "11616",
+"groupcode": "11616",
+"name": "R-F-4 Camera Cover"
+},
+{
+"id": "11638",
+"groupcode": "11638",
+"name": "CP13-II Blue Ink Roller"
+},
+{
+"id": "11666",
+"groupcode": "11666",
+"name": "PGI-250PGBK XL Black Ink Tank"
+},
+{
+"id": "11668",
+"groupcode": "11668",
+"name": "CLI-251C XL Cyan Ink Tank"
+},
+{
+"id": "11670",
+"groupcode": "11670",
+"name": "PGI-250 PGBK Black Ink Tank"
+},
+{
+"id": "11672",
+"groupcode": "11672",
+"name": "CLI-251 Cyan Ink Tank"
+},
+{
+"id": "11674",
+"groupcode": "11674",
+"name": "131 Yellow Toner Cartridge"
+},
+{
+"id": "11675",
+"groupcode": "11675",
+"name": "131 Magenta Toner Cartridge"
+},
+{
+"id": "11676",
+"groupcode": "11676",
+"name": "131 Cyan Toner Cartridge"
+},
+{
+"id": "11677",
+"groupcode": "11677",
+"name": "131 Black Toner Cartridge"
+},
+{
+"id": "11678",
+"groupcode": "11678",
+"name": "Cartridge 131 - Black H"
+},
+{
+"id": "11679",
+"groupcode": "11679",
+"name": "CLI-251BK XL Black Ink Tank"
+},
+{
+"id": "11681",
+"groupcode": "11681",
+"name": "CLI-251M XL Magenta Ink Tank"
+},
+{
+"id": "11734",
+"groupcode": "11734",
+"name": "CLI-251Y XL Yellow Ink Tank"
+},
+{
+"id": "11736",
+"groupcode": "11736",
+"name": "CLI-251GY XL Gray Ink Tank"
+},
+{
+"id": "11738",
+"groupcode": "11738",
+"name": "CLI-251M Magenta Ink Tank"
+},
+{
+"id": "11740",
+"groupcode": "11740",
+"name": "CLI-251Y Yellow Ink Tank"
+},
+{
+"id": "11742",
+"groupcode": "11742",
+"name": "CLI-251GY Gray Ink Tank"
+},
+{
+"id": "11744",
+"groupcode": "11744",
+"name": "CLI-251BK Black Ink Tank"
+},
+{
+"id": "11976",
+"groupcode": "11976",
+"name": "PG-245 Black Ink Cartridge"
+},
+{
+"id": "11977",
+"groupcode": "11977",
+"name": "CL-246XL Colour Ink Cartridge"
+},
+{
+"id": "11979",
+"groupcode": "11979",
+"name": "CL-246 INK CARTRIDGE"
+},
+{
+"id": "11987",
+"groupcode": "11987",
+"name": "EW-65B Lens Hood"
+},
+{
+"id": "12062",
+"groupcode": "12062",
+"name": "PG-240XXL Black Ink Cartridge"
+},
+{
+"id": "12063",
+"groupcode": "12063",
+"name": "PG-240XL Black Ink Cartridge"
+},
+{
+"id": "12065",
+"groupcode": "12065",
+"name": "PG-240 Black Ink Cartridge"
+},
+{
+"id": "12066",
+"groupcode": "12066",
+"name": "CL-241XL Colour Ink Cartridge"
+},
+{
+"id": "12120",
+"groupcode": "12120",
+"name": "CL-241"
+},
+{
+"id": "12178",
+"groupcode": "12178",
+"name": "Lens Hood EW-63C"
+},
+{
+"id": "12247",
+"groupcode": "12247",
+"name": "E-82 II Lens Cap"
+},
+{
+"id": "12249",
+"groupcode": "12249",
+"name": "NB-10L Battery Pack"
+},
+{
+"id": "12333",
+"groupcode": "12333",
+"name": "Photo Paper Pro Luster - LU-101 - 8.5\" x 11\" (50 Sheets)"
+},
+{
+"id": "12334",
+"groupcode": "12334",
+"name": "Photo Paper Pro Luster - LU-101 - 13\" x 19\" (50 Sheets)"
+},
+{
+"id": "12343",
+"groupcode": "12343",
+"name": "E-67 II Lens Cap"
+},
+{
+"id": "12344",
+"groupcode": "12344",
+"name": "E-43 Lens Cap"
+},
+{
+"id": "12378",
+"groupcode": "12378",
+"name": "EW-54 Lens Hood"
+},
+{
+"id": "12379",
+"groupcode": "12379",
+"name": "EW-43 Lens Hood"
+},
+{
+"id": "12381",
+"groupcode": "12381",
+"name": "43mm Filter Protector"
+},
+{
+"id": "12399",
+"groupcode": "12399",
+"name": "PGI-255 PGBK XXL Black Ink Tank"
+},
+{
+"id": "12481",
+"groupcode": "12481",
+"name": "Photo Paper Pro Premium Matte - PM-101 - 8.5\" x 11\" (50 Sheets)"
+},
+{
+"id": "12504",
+"groupcode": "12504",
+"name": "Photo Paper Pro Luster - LU-101 - 17\" x 22\" (25 Sheets)"
+},
+{
+"id": "12533",
+"groupcode": "12533",
+"name": "Glossy Photo Paper - GP-701 - 4\" x 6\" (100 Sheets)"
+},
+{
+"id": "12535",
+"groupcode": "12535",
+"name": "Glossy Photo Paper - GP-701 - 8.5\" x 11\" LTR (100 Sheets)"
+},
+{
+"id": "12543",
+"groupcode": "12543",
+"name": "Photo Paper Plus Glossy II - PP-301 - 5\" x 5\" (20 Sheets)"
+},
+{
+"id": "12567",
+"groupcode": "12567",
+"name": "045 Yellow Toner Cartridge"
+},
+{
+"id": "12568",
+"groupcode": "12568",
+"name": "045 Magenta Toner Cartridge"
+},
+{
+"id": "12569",
+"groupcode": "12569",
+"name": "045 Cyan Toner Cartridge"
+},
+{
+"id": "12570",
+"groupcode": "12570",
+"name": "045 Black Toner Cartridge"
+},
+{
+"id": "12571",
+"groupcode": "12571",
+"name": "046 Yellow Toner Cartridge"
+},
+{
+"id": "12572",
+"groupcode": "12572",
+"name": "046 Magenta Toner Cartridge"
+},
+{
+"id": "12573",
+"groupcode": "12573",
+"name": "046 Cyan Toner Cartridge"
+},
+{
+"id": "12574",
+"groupcode": "12574",
+"name": "046 Black Toner Cartridge"
+},
+{
+"id": "12602",
+"groupcode": "12602",
+"name": "EF-S 18-55MM F/4-5.6 IS STM"
+},
+{
+"id": "12612",
+"groupcode": "12612",
+"name": "BG-E20 Battery Grip"
+},
+{
+"id": "12633",
+"groupcode": "12633",
+"name": "PF-C1 imageCLASS Cassette Feeding Unit"
+},
+{
+"id": "12710",
+"groupcode": "12710",
+"name": "CG-A10 (BATTERY CHARGER)"
+},
+{
+"id": "12724",
+"groupcode": "12724",
+"name": "Drum Cartridge 051"
+},
+{
+"id": "12725",
+"groupcode": "12725",
+"name": "Cartridge 051 Black High Capacity"
+},
+{
+"id": "12726",
+"groupcode": "12726",
+"name": "imageCLASS Toner 047 Black"
+},
+{
+"id": "12727",
+"groupcode": "12727",
+"name": "imageCLASS Drum 049"
+},
+{
+"id": "12728",
+"groupcode": "12728",
+"name": "Cartridge 051 Black"
+},
+{
+"id": "12735",
+"groupcode": "12735",
+"name": "052 Black Toner Cartridge"
+},
+{
+"id": "12755",
+"groupcode": "12755",
+"name": "052 H Black Toner Cartridge, High Capacity"
+},
+{
+"id": "12787",
+"groupcode": "12787",
+"name": "CINE-SERVO 50-1000mm T5.0-8.9 EF"
+},
+{
+"id": "12790",
+"groupcode": "12790",
+"name": "Color Filter SCF-E2 for 430EX III-RT Speedlite"
+},
+{
+"id": "12791",
+"groupcode": "12791",
+"name": "Bounce Adapter SBA-E2 for 430EX III-RT Speedlite"
+},
+{
+"id": "13035",
+"groupcode": "13035",
+"name": "CN-E14mm T3.1 L F"
+},
+{
+"id": "13043",
+"groupcode": "13043",
+"name": "Heavyweight Coated Paper HG, 24\" x 100'"
+},
+{
+"id": "13076",
+"groupcode": "13076",
+"name": "EF 16-35mm f/2.8L III USM"
+},
+{
+"id": "13086",
+"groupcode": "13086",
+"name": "E-49 Lens Cap"
+},
+{
+"id": "13092",
+"groupcode": "13092",
+"name": "E-55 Lens Cap"
+},
+{
+"id": "13094",
+"groupcode": "13094",
+"name": "EW-60E Lens Hood"
+},
+{
+"id": "13130",
+"groupcode": "13130",
+"name": "PGI-270 XL Pigment Black Ink Tank"
+},
+{
+"id": "13131",
+"groupcode": "13131",
+"name": "PGI-270 Pigment Black Ink Tank"
+},
+{
+"id": "13133",
+"groupcode": "13133",
+"name": "CLI-271 Black Ink Tank"
+},
+{
+"id": "13135",
+"groupcode": "13135",
+"name": "CLI-271 Cyan Ink Tank"
+},
+{
+"id": "13137",
+"groupcode": "13137",
+"name": "CLI-271 Magenta Ink Tank"
+},
+{
+"id": "13139",
+"groupcode": "13139",
+"name": "CLI-271 Yellow Ink Tank"
+},
+{
+"id": "13141",
+"groupcode": "13141",
+"name": "CLI-271 Gray Ink Tank"
+},
+{
+"id": "13192",
+"groupcode": "13192",
+"name": "CLI-271 XL Black Ink Tank"
+},
+{
+"id": "13193",
+"groupcode": "13193",
+"name": "CLI-271 XL Cyan Ink Tank"
+},
+{
+"id": "13251",
+"groupcode": "13251",
+"name": "PGI-1200XL Black Pigment Ink Tank"
+},
+{
+"id": "13253",
+"groupcode": "13253",
+"name": "PGI-1200XL Cyan Pigment Ink Tank"
+},
+{
+"id": "13254",
+"groupcode": "13254",
+"name": "PGI-1200XL Magenta Pigment Ink Tank"
+},
+{
+"id": "13256",
+"groupcode": "13256",
+"name": "PGI-1200 Black Pigment Ink Tank"
+},
+{
+"id": "13258",
+"groupcode": "13258",
+"name": "NB-11LH Battery Pack"
+},
+{
+"id": "13287",
+"groupcode": "13287",
+"name": "MC-30 Maintenance Cartridge"
+},
+{
+"id": "13310",
+"groupcode": "13310",
+"name": "PGI-1200 Cyan Pigment Ink Tank"
+},
+{
+"id": "13312",
+"groupcode": "13312",
+"name": "PGI-1200 Magenta Pigment Ink Tank"
+},
+{
+"id": "13314",
+"groupcode": "13314",
+"name": "PGI-1200 Yellow Pigment Ink Tank"
+},
+{
+"id": "13316",
+"groupcode": "13316",
+"name": "PGI-2200 XL Black Pigment Ink Tank"
+},
+{
+"id": "13317",
+"groupcode": "13317",
+"name": "PGI-2200 XL Cyan Pigment Ink Tank"
+},
+{
+"id": "13318",
+"groupcode": "13318",
+"name": "PGI-2200 XL Magenta Pigment Ink Tank"
+},
+{
+"id": "13319",
+"groupcode": "13319",
+"name": "PGI-2200 XL Yellow Pigment Ink Tank"
+},
+{
+"id": "13320",
+"groupcode": "13320",
+"name": "PGI-2200 Black Pigment Ink Tank"
+},
+{
+"id": "13322",
+"groupcode": "13322",
+"name": "PGI-2200 Cyan Pigment Ink Tank"
+},
+{
+"id": "13324",
+"groupcode": "13324",
+"name": "PGI-2200 Yellow Pigment Ink Tank"
+},
+{
+"id": "13377",
+"groupcode": "13377",
+"name": "ET-63 Lens Hood"
+},
+{
+"id": "13387",
+"groupcode": "13387",
+"name": "EW-73C Lens Hood"
+},
+{
+"id": "13389",
+"groupcode": "13389",
+"name": "LENS HOOD EW-77B"
+},
+{
+"id": "13396",
+"groupcode": "13396",
+"name": "EF-M28 Lens Cap"
+},
+{
+"id": "13419",
+"groupcode": "13419",
+"name": "Wireless File Transmitter WFT-E8A"
+},
+{
+"id": "13425",
+"groupcode": "13425",
+"name": "EOS 80D EF-S 18-55mm f/3.5-5.6 IS STM Kit"
+},
+{
+"id": "13426",
+"groupcode": "13426",
+"name": "EF-S 18-135mm f/3.5-5.6 IS USM"
+},
+{
+"id": "13498",
+"groupcode": "13498",
+"name": "BP-820 Battery Pack"
+},
+{
+"id": "13557",
+"groupcode": "13557",
+"name": "Photo Paper Pro Premium Matte - PM-101 - 13\" x 19\" (20 Sheets)"
+},
+{
+"id": "13563",
+"groupcode": "13563",
+"name": "MP49DII Printing Calculator"
+},
+{
+"id": "13596",
+"groupcode": "13596",
+"name": "Photo Paper Plus Glossy II - PP-301 - 5\" x 7\" (20 Sheets)"
+},
+{
+"id": "13597",
+"groupcode": "13597",
+"name": "Photo Paper Plus Glossy II - PP-301 - 8.5\" x 11\" Letter (20 Sheets)"
+},
+{
+"id": "13598",
+"groupcode": "13598",
+"name": "Photo Paper Plus Glossy II - PP-301 - 4\" x 6\" (20 Sheets)"
+},
+{
+"id": "13599",
+"groupcode": "13599",
+"name": "Photo Paper Plus Glossy II - PP-301 - 4\" x 6\" (50 Sheets)"
+},
+{
+"id": "13600",
+"groupcode": "13600",
+"name": "Photo Paper Plus Glossy II - PP-301 - 4\" x 6\" (100 Sheets)"
+},
+{
+"id": "13602",
+"groupcode": "13602",
+"name": "Photo Paper Plus Glossy II - PP-301 - 13\" x 19\" (20 Sheets)"
+},
+{
+"id": "13619",
+"groupcode": "13619",
+"name": "039 Black Toner Cartridge"
+},
+{
+"id": "13620",
+"groupcode": "13620",
+"name": "039 Black Toner Cartridge, High Capacity"
+},
+{
+"id": "13633",
+"groupcode": "13633",
+"name": "NB-6LH Battery Pack"
+},
+{
+"id": "13650",
+"groupcode": "13650",
+"name": "034 Yellow Toner Cartridge"
+},
+{
+"id": "13651",
+"groupcode": "13651",
+"name": "034 Magenta Toner Cartridge"
+},
+{
+"id": "13652",
+"groupcode": "13652",
+"name": "034 Cyan Toner Cartridge"
+},
+{
+"id": "13653",
+"groupcode": "13653",
+"name": "034 Black Toner Cartridge"
+},
+{
+"id": "13708",
+"groupcode": "13708",
+"name": "CA-935 Compact Power Adapter"
+},
+{
+"id": "13721",
+"groupcode": "13721",
+"name": "034 Black Drum Cartridge"
+},
+{
+"id": "13722",
+"groupcode": "13722",
+"name": "034 Yellow Drum Cartridge"
+},
+{
+"id": "13723",
+"groupcode": "13723",
+"name": "034 Magenta Drum Cartridge"
+},
+{
+"id": "13724",
+"groupcode": "13724",
+"name": "034 Cyan Drum Cartridge"
+},
+{
+"id": "13766",
+"groupcode": "13766",
+"name": "imageFORMULA P-208II Personal Document Scanner"
+},
+{
+"id": "13806",
+"groupcode": "13806",
+"name": "imageFORMULA P-215II Mobile Document Scanner"
+},
+{
+"id": "13835",
+"groupcode": "13835",
+"name": "EOS C100 Mark II (Body)"
+},
+{
+"id": "13894",
+"groupcode": "13894",
+"name": "EF-S35 Lens Cap"
+},
+{
+"id": "13911",
+"groupcode": "13911",
+"name": "Face Jacket - Brown Leather"
+},
+{
+"id": "13912",
+"groupcode": "13912",
+"name": "Face Jacket - Dark Brown Leather"
+},
+{
+"id": "13938",
+"groupcode": "13938",
+"name": "EF 600MM F4L IS III USM"
+},
+{
+"id": "13950",
+"groupcode": "13950",
+"name": "PowerShot G7 X Mark III"
+},
+{
+"id": "13996",
+"groupcode": "13996",
+"name": "WASTE TONER BOX WT-B1"
+},
+{
+"id": "14035",
+"groupcode": "14035",
+"name": "Drop-in Clear Filter A"
+},
+{
+"id": "14036",
+"groupcode": "14036",
+"name": "Drop-in Circular Polarizing Filter A"
+},
+{
+"id": "14037",
+"groupcode": "14037",
+"name": "Drop-in Variable-ND filter A"
+},
+{
+"id": "14059",
+"groupcode": "14059",
+"name": "CN-E24mm T1.5 FP X"
+},
+{
+"id": "14061",
+"groupcode": "14061",
+"name": "CN-E35mm T3.1 FP X"
+},
+{
+"id": "14063",
+"groupcode": "14063",
+"name": "CN-E50mm T1.3 FP X"
+},
+{
+"id": "14074",
+"groupcode": "14074",
+"name": "SD-24 Printer Stand"
+},
+{
+"id": "14112",
+"groupcode": "14112",
+"name": "TA/TM Series PFI-030MBK Matte Black Ink Tank"
+},
+{
+"id": "14113",
+"groupcode": "14113",
+"name": "TA/TM Series PFI-030BK Black Ink Tank"
+},
+{
+"id": "14146",
+"groupcode": "14146",
+"name": "040 Yellow Toner Cartridge"
+},
+{
+"id": "14147",
+"groupcode": "14147",
+"name": "040 Magenta Toner Cartridge"
+},
+{
+"id": "14148",
+"groupcode": "14148",
+"name": "040 Cyan Toner Cartridge"
+},
+{
+"id": "14149",
+"groupcode": "14149",
+"name": "040 Black Toner Cartridge"
+},
+{
+"id": "14150",
+"groupcode": "14150",
+"name": "040 H Yellow Toner Cartridge, High Capacity"
+},
+{
+"id": "14151",
+"groupcode": "14151",
+"name": "Canon 040H High Yield Magenta Toner Cartridge"
+},
+{
+"id": "14152",
+"groupcode": "14152",
+"name": "040 H Cyan Toner Cartridge, High Capacity"
+},
+{
+"id": "14153",
+"groupcode": "14153",
+"name": "040 H Black Toner Cartridge, High Capacity"
+},
+{
+"id": "14159",
+"groupcode": "14159",
+"name": "imageCLASS LBP226dw - Wireless Mobile Ready Laser Printer"
+},
+{
+"id": "14233",
+"groupcode": "14233",
+"name": "CN-E14mm T3.1 FP X"
+},
+{
+"id": "14235",
+"groupcode": "14235",
+"name": "CN-E20mm T1.5 FP X"
+},
+{
+"id": "14237",
+"groupcode": "14237",
+"name": "CN-E85mm T1.3 FP X"
+},
+{
+"id": "14239",
+"groupcode": "14239",
+"name": "CN-E135mm T1.3 FP X"
+},
+{
+"id": "14280",
+"groupcode": "14280",
+"name": "EW-83N Lens Hood"
+},
+{
+"id": "14282",
+"groupcode": "14282",
+"name": "EW-103 Lens Hood"
+},
+{
+"id": "14284",
+"groupcode": "14284",
+"name": "95mm Protect Filter"
+},
+{
+"id": "14285",
+"groupcode": "14285",
+"name": "PL-C B 95mm Circular Polarizing Filter"
+},
+{
+"id": "14290",
+"groupcode": "14290",
+"name": "EW-52 Lens Hood"
+},
+{
+"id": "14304",
+"groupcode": "14304",
+"name": "ES-60 Lens Hood"
+},
+{
+"id": "14358",
+"groupcode": "14358",
+"name": "EOS Rebel T7 EF-S 18\u201355mm f/3.5\u20135.6 IS II"
+},
+{
+"id": "14449",
+"groupcode": "14449",
+"name": "ImageFORMULA DR-C230 Office Document Scanner"
+},
+{
+"id": "14458",
+"groupcode": "14458",
+"name": "Photo Paper Plus Glossy II - PP-301 - 3.5\" x 3.5\" (20 Sheets)"
+},
+{
+"id": "14459",
+"groupcode": "14459",
+"name": "ImageFORMULA CR-L1 Check Transport"
+},
+{
+"id": "14463",
+"groupcode": "14463",
+"name": "imageCLASS Toner 057 Black"
+},
+{
+"id": "14506",
+"groupcode": "14506",
+"name": "ImageFORMULA DR-C225 II Office Document Scanner"
+},
+{
+"id": "14617",
+"groupcode": "14617",
+"name": "ET-67 Lens Hood"
+},
+{
+"id": "14618",
+"groupcode": "14618",
+"name": "Lens Hood EW-78D"
+},
+{
+"id": "14654",
+"groupcode": "14654",
+"name": "ET-155B Lens Short Hood"
+},
+{
+"id": "14655",
+"groupcode": "14655",
+"name": "E-180E Lens Cap"
+},
+{
+"id": "14701",
+"groupcode": "14701",
+"name": "EW-78F Lens Hood"
+},
+{
+"id": "14706",
+"groupcode": "14706",
+"name": "EW-88F Lens Hood"
+},
+{
+"id": "14803",
+"groupcode": "14803",
+"name": "E II Extender Cap"
+},
+{
+"id": "14811",
+"groupcode": "14811",
+"name": "imageCLASS LBP622Cdw"
+},
+{
+"id": "14821",
+"groupcode": "14821",
+"name": "CN-E20mm T1.5 L F"
+},
+{
+"id": "14967",
+"groupcode": "14967",
+"name": "EF 50mm f/1.4 USM"
+},
+{
+"id": "15017",
+"groupcode": "15017",
+"name": "EF 100mm f/2.8 Macro USM"
+},
+{
+"id": "15062",
+"groupcode": "15062",
+"name": "E20 Black Toner Cartridge"
+},
+{
+"id": "15168",
+"groupcode": "15168",
+"name": "Double Sided Matte Paper - MP-101D - 8.5\" x 11\" (Letter) (50 Sheets)"
+},
+{
+"id": "15169",
+"groupcode": "15169",
+"name": "Double Sided Matte Paper - MP-101D - 7\" x 10\" (20 Sheets)"
+},
+{
+"id": "15170",
+"groupcode": "15170",
+"name": "Double Sided Matte Paper - MP-101D - 12\" x 12\" (30 Sheets)"
+},
+{
+"id": "15283",
+"groupcode": "15283",
+"name": "R-F-3 Camera Cover"
+},
+{
+"id": "15287",
+"groupcode": "15287",
+"name": "E Lens Dust Cap"
+},
+{
+"id": "15298",
+"groupcode": "15298",
+"name": "ImageFORMULA R40 Office Document Scanner"
+},
+{
+"id": "15395",
+"groupcode": "15395",
+"name": "ET-89 Lens Hood"
+},
+{
+"id": "15447",
+"groupcode": "15447",
+"name": "EF 70-200mm f/2.8L USM"
+},
+{
+"id": "15453",
+"groupcode": "15453",
+"name": "EF 28mm f/1.8 USM"
+},
+{
+"id": "15536",
+"groupcode": "15536",
+"name": "Satin Photo Paper - 240gsm 17\" x 100'"
+},
+{
+"id": "15677",
+"groupcode": "15677",
+"name": "LP1219 Lens Case"
+},
+{
+"id": "16011",
+"groupcode": "16011",
+"name": "EW-60C Lens Hood"
+},
+{
+"id": "16062",
+"groupcode": "16062",
+"name": "ET-65 III Lens Hood"
+},
+{
+"id": "16071",
+"groupcode": "16071",
+"name": "ES-79II Lens Hood"
+},
+{
+"id": "16073",
+"groupcode": "16073",
+"name": "ET-83 II Lens Hood"
+},
+{
+"id": "16127",
+"groupcode": "16127",
+"name": "ET-74 Lens Hood"
+},
+{
+"id": "16227",
+"groupcode": "16227",
+"name": "VC-100 Video Cable"
+},
+{
+"id": "16372",
+"groupcode": "16372",
+"name": "EF 85mm f/1.8 USM"
+},
+{
+"id": "17076",
+"groupcode": "17076",
+"name": "PIXMA MG3620 Black"
+},
+{
+"id": "17077",
+"groupcode": "17077",
+"name": "PIXMA MG3620 White"
+},
+{
+"id": "17108",
+"groupcode": "17108",
+"name": "P1-DHV-3 Printing Calculator"
+},
+{
+"id": "17109",
+"groupcode": "17109",
+"name": "P23-DHV-3 Printing Calculator"
+},
+{
+"id": "17117",
+"groupcode": "17117",
+"name": "CanoScan LiDE 300 Scanner"
+},
+{
+"id": "17512",
+"groupcode": "17512",
+"name": "F-792SGA Scientific Calculator With Cover"
+},
+{
+"id": "17521",
+"groupcode": "17521",
+"name": "PIXMA MG3620 Red"
+},
+{
+"id": "17527",
+"groupcode": "17527",
+"name": "CP1200DII Commercial Desktop Printing Calculator"
+},
+{
+"id": "17530",
+"groupcode": "17530",
+"name": "MAXIFY MB5120"
+},
+{
+"id": "17531",
+"groupcode": "17531",
+"name": "MAXIFY MB5420"
+},
+{
+"id": "17549",
+"groupcode": "17549",
+"name": "MP11DX-2 2 Colour Printing Calculator"
+},
+{
+"id": "17555",
+"groupcode": "17555",
+"name": "CanoScan LiDE 400"
+},
+{
+"id": "30933",
+"groupcode": "30933",
+"name": "EOS C300 MK III"
+},
+{
+"id": "32097",
+"groupcode": "32097",
+"name": "PCPL-CP400 Paper Cassette for CP900 (4x6) + L"
+},
+{
+"id": "36620",
+"groupcode": "36620",
+"name": "MAXIFY iB4120"
+},
+{
+"id": "36626",
+"groupcode": "36626",
+"name": "PIXMA iP8720"
+},
+{
+"id": "37741",
+"groupcode": "37741",
+"name": "ET-88B Lens Hood"
+},
+{
+"id": "40679",
+"groupcode": "40679",
+"name": "imageFORMULA R10 Personal Document Scanner"
+},
+{
+"id": "42518",
+"groupcode": "42518",
+"name": "EF-EOS R 0.71x Mount Adapter"
+},
+{
+"id": "42626",
+"groupcode": "42626",
+"name": "PowerShot ZOOM"
+},
+{
+"id": "43068",
+"groupcode": "43068",
+"name": "ES-65B Lens Hood"
+},
+{
+"id": "43107",
+"groupcode": "43107",
+"name": "RF50mm F1.8 STM"
+},
+{
+"id": "43169",
+"groupcode": "43169",
+"name": "20lb Bond Paper, 75gsm - 24\" x 150' (Roll)"
+},
+{
+"id": "43170",
+"groupcode": "43170",
+"name": "20lb Bond Paper, 75gsm - 30\" x 150' (Roll)"
+},
+{
+"id": "43171",
+"groupcode": "43171",
+"name": "20lb Bond Paper - 75 gsm, 36\" x 150'"
+},
+{
+"id": "43172",
+"groupcode": "43172",
+"name": "20lb Bond Paper, 75gsm - 42\" x 150' (Roll)"
+},
+{
+"id": "43188",
+"groupcode": "43188",
+"name": "24lb Bond Paper, 90gsm - 24\" x 300' (Roll)"
+},
+{
+"id": "43189",
+"groupcode": "43189",
+"name": "24lb Bond Paper, 90gsm - 30\" x 300' (Roll)"
+},
+{
+"id": "45299",
+"groupcode": "45299",
+"name": "MC-G01 Maintenance Cartridge"
+},
+{
+"id": "45915",
+"groupcode": "45915",
+"name": "ET-73C Lens Hood"
+},
+{
+"id": "46133",
+"groupcode": "46133",
+"name": "EOS R RF 24-105mm STM Kit (Refurbished)"
+},
+{
+"id": "46365",
+"groupcode": "46365",
+"name": "EOS Webcam Accessories Starter Kit (For Select EOS M Cameras)"
+},
+{
+"id": "46527",
+"groupcode": "46527",
+"name": "Photo Paper Premium Fine Art Smooth - FA-SM2 - 8.5\" x 11\" (25 Sheets)"
+},
+{
+"id": "46528",
+"groupcode": "46528",
+"name": "Photo Paper Premium Fine Art Smooth - FA-SM2 - 13\" x 19\" (25 Sheets)"
+},
+{
+"id": "46965",
+"groupcode": "46965",
+"name": "EW-83P Lens Hood"
+},
+{
+"id": "108942",
+"groupcode": "108942",
+"name": "EOS C70"
+},
+{
+"id": "108960",
+"groupcode": "108960",
+"name": "imageFORMULA R50 Office Document Scanner"
+},
+{
+"id": "109171",
+"groupcode": "109171",
+"name": "EW-65C Lens Hood"
+},
+{
+"id": "110193",
+"groupcode": "110193",
+"name": "SELPHY Square QX10 Green"
+},
+{
+"id": "111312",
+"groupcode": "111312",
+"name": "PIXMA TR150 with Battery Pack"
+},
+{
+"id": "112714",
+"groupcode": "112714",
+"name": "imageFORMULA RS40 Photo and Document Scanner"
+},
+{
+"id": "112849",
+"groupcode": "112849",
+"name": "EOS R3 BODY"
+},
+{
+"id": "112874",
+"groupcode": "112874",
+"name": "PIXMA TR4723 White"
+},
+{
+"id": "112885",
+"groupcode": "112885",
+"name": "PIXMA TR7620a"
+},
+{
+"id": "112892",
+"groupcode": "112892",
+"name": "PIXMA TS5320a Black"
+},
+{
+"id": "112944",
+"groupcode": "112944",
+"name": "PowerShot ZOOM White with Charger and SD Card"
+},
+{
+"id": "113202",
+"groupcode": "113202",
+"name": "EOS R5 C Body"
+},
+{
+"id": "113745",
+"groupcode": "113745",
+"name": "PGI-1200XL Yellow Pigment Ink Tank"
+},
+{
+"id": "113855",
+"groupcode": "113855",
+"name": "RF100-400mm F5.6-8 IS USM (Refurbished)"
+},
+{
+"id": "113868",
+"groupcode": "113868",
+"name": "EOS R10 Body"
+},
+{
+"id": "113897",
+"groupcode": "113897",
+"name": "EOS R10 18-45 STM KIT"
+},
+{
+"id": "113909",
+"groupcode": "113909",
+"name": "imageFORMULA DR-M260 Office Document Scanner"
+},
+{
+"id": "114090",
+"groupcode": "114090",
+"name": "PIXMA MegaTank G3270 Wireless All-in-One Printer Black"
+},
+{
+"id": "114102",
+"groupcode": "114102",
+"name": "PIXMA MegaTank G3270 Wireless All-in-One Printer White"
+},
+{
+"id": "114187",
+"groupcode": "114187",
+"name": "EOS R6 Mark II Body"
+},
+{
+"id": "114481",
+"groupcode": "114481",
+"name": "imageCLASS MF269dw II - All in One, Wireless, Duplex Laser Printer"
+},
+{
+"id": "114608",
+"groupcode": "114608",
+"name": "CL-211 Colour Ink Cartridge"
+},
+{
+"id": "114609",
+"groupcode": "114609",
+"name": "PG-210 Black Ink Cartridge"
+},
+{
+"id": "114749",
+"groupcode": "114749",
+"name": "ImageFORMULA R30 Office Document Scanner"
+},
+{
+"id": "114791",
+"groupcode": "114791",
+"name": "Photo Paper Premium Fine Art Smooth - FA-SM2 - 17\" x 22\" (25 Sheets)"
+},
+{
+"id": "115121",
+"groupcode": "115121",
+"name": "imageCLASS MF753Cdw"
+},
+{
+"id": "115123",
+"groupcode": "115123",
+"name": "ImageCLASS MF275dw"
+},
+{
+"id": "115124",
+"groupcode": "115124",
+"name": "imageCLASS MF273dw"
+},
+{
+"id": "115175",
+"groupcode": "115175",
+"name": "ImageCLASS LBP633Cdw"
+},
+{
+"id": "115176",
+"groupcode": "115176",
+"name": "imageCLASS LBP674Cdw"
+},
+{
+"id": "115475",
+"groupcode": "115475",
+"name": "PowerShot V10"
+},
+{
+"id": "115607",
+"groupcode": "115607",
+"name": "imagePROGRAF TC-20M"
+},
+{
+"id": "115617",
+"groupcode": "115617",
+"name": "Colour imageCLASS MF653Cdw"
+},
+{
+"id": "115618",
+"groupcode": "115618",
+"name": "Colour imageCLASS MF654Cdw"
+},
+{
+"id": "115713",
+"groupcode": "115713",
+"name": "imageCLASS LBP246dw - Wireless, Duplex Laser Printer"
+},
+{
+"id": "115812",
+"groupcode": "115812",
+"name": "imageCLASS MF465dw - All-in-One, Wireless, Duplex Laser Printer"
+},
+{
+"id": "115813",
+"groupcode": "115813",
+"name": "imageCLASS MF462dw - All-in-One, Wireless, Duplex Laser Printer"
+},
+{
+"id": "115881",
+"groupcode": "115881",
+"name": "PIXMA TS7720 Wireless Home All-in-One Printer"
+},
+{
+"id": "116059",
+"groupcode": "116059",
+"name": "imagePROGRAF TM-240"
+},
+{
+"id": "116060",
+"groupcode": "116060",
+"name": "imagePROGRAF TM-340 with Stand"
+},
+{
+"id": "116122",
+"groupcode": "116122",
+"name": "1YR OFFICE CarePAK (Tier 4a)"
+},
+{
+"id": "116123",
+"groupcode": "116123",
+"name": "2YR OFFICE CarePAK (Tier 4a)"
+},
+{
+"id": "116185",
+"groupcode": "116185",
+"name": "PZ-E2 Power Zoom Adapter"
+},
+{
+"id": "116186",
+"groupcode": "116186",
+"name": "PZ-E2B Power Zoom Adapter"
+},
+{
+"id": "116221",
+"groupcode": "116221",
+"name": "LZ1438 Lens Case"
+},
+{
+"id": "116227",
+"groupcode": "116227",
+"name": "E-112 Lens Cap"
+},
+{
+"id": "116230",
+"groupcode": "116230",
+"name": "EW-55 Lens Hood"
+},
+{
+"id": "116232",
+"groupcode": "116232",
+"name": "10-20 Lens Cap"
+},
+{
+"id": "116572",
+"groupcode": "116572",
+"name": "Canon imagePROGRAF TM-355"
+},
+{
+"id": "116622",
+"groupcode": "116622",
+"name": "Speedlite Transmitter ST-E3-RT (Ver. 3)"
+},
+{
+"id": "117117",
+"groupcode": "117117",
+"name": "RU-43 Roll Unit"
+},
+{
+"id": "117135",
+"groupcode": "117135",
+"name": "imagePROGRAF PRO-6600"
+},
+{
+"id": "117136",
+"groupcode": "117136",
+"name": "imagePROGRAF GP-6600S"
+},
+{
+"id": "117576",
+"groupcode": "117576",
+"name": "PowerShot GOLF"
+},
+{
+"id": "117582",
+"groupcode": "117582",
+"name": "EW-73F Lens Hood"
+},
+{
+"id": "117606",
+"groupcode": "117606",
+"name": "3.9 Lens Cap"
+},
+{
+"id": "117631",
+"groupcode": "117631",
+"name": "PIXMA TS3720 Black"
+},
+{
+"id": "117632",
+"groupcode": "117632",
+"name": "PIXMA TS3720 White"
+},
+{
+"id": "117645",
+"groupcode": "117645",
+"name": "EOS R5 Mark II"
+},
+{
+"id": "117652",
+"groupcode": "117652",
+"name": "MK-3000 Cable Management Printer"
+},
+{
+"id": "117653",
+"groupcode": "117653",
+"name": "MK-5000 Cable Management Printer"
+},
+{
+"id": "117673",
+"groupcode": "117673",
+"name": "SELPHY QX20 Compact Photo Printer White"
+},
+{
+"id": "117699",
+"groupcode": "117699",
+"name": "PIXMA G4280"
+},
+{
+"id": "117790",
+"groupcode": "117790",
+"name": "MC-G07 Maintenance Cartridge"
+},
+{
+"id": "117802",
+"groupcode": "117802",
+"name": "EOS C80"
+},
+{
+"id": "118024",
+"groupcode": "118024",
+"name": "ER-SC3 Shoe Cover"
+},
+{
+"id": "118025",
+"groupcode": "118025",
+"name": "CF-R20EP Cooling Fan"
+},
+{
+"id": "118026",
+"groupcode": "118026",
+"name": "ER-kE Eyecup"
+},
+{
+"id": "118027",
+"groupcode": "118027",
+"name": "DR-E6P DC Coupler"
+},
+{
+"id": "118028",
+"groupcode": "118028",
+"name": "ER-i Eyecup"
+},
+{
+"id": "118030",
+"groupcode": "118030",
+"name": "BG-R20EP Battery Grip"
+},
+{
+"id": "118031",
+"groupcode": "118031",
+"name": "ERC-R5S Rain Cover"
+},
+{
+"id": "118032",
+"groupcode": "118032",
+"name": "ERC-R5L Rain Cover"
+},
+{
+"id": "118033",
+"groupcode": "118033",
+"name": "PD-E2 USB Power Adapter"
+},
+{
+"id": "118124",
+"groupcode": "118124",
+"name": "imageCLASS MF264dw II"
+},
+{
+"id": "118129",
+"groupcode": "118129",
+"name": "EOS 6D Mark II Body (Damaged Box)"
+},
+{
+"id": "118216",
+"groupcode": "118216",
+"name": "MegaTank MAXIFY GX7120"
+},
+{
+"id": "118218",
+"groupcode": "118218",
+"name": "MegaTank MAXIFY GX5120"
+},
+{
+"id": "118231",
+"groupcode": "118231",
+"name": "PIXMA PRO-200S"
+},
+{
+"id": "118243",
+"groupcode": "118243",
+"name": "imageCLASS MF289dw"
+},
+{
+"id": "118244",
+"groupcode": "118244",
+"name": "imageCLASS MF287dw"
+},
+{
+"id": "118342",
+"groupcode": "118342",
+"name": "Beyond The Basics On Demand"
+},
+{
+"id": "118354",
+"groupcode": "118354",
+"name": "EF 100/2.8 Macro L IS USM (Damaged Box)"
+},
+{
+"id": "118355",
+"groupcode": "118355",
+"name": "RF70-200mm F2.8 L IS USM (Damaged Box)"
+},
+{
+"id": "118366",
+"groupcode": "118366",
+"name": "Short Form Video Starter Guide On Demand"
+},
+{
+"id": "118379",
+"groupcode": "118379",
+"name": "RF50mm F1.8 STM (Damaged Box)"
+},
+{
+"id": "118380",
+"groupcode": "118380",
+"name": "RF50mm F1.2 L USM (Damaged Box)"
+},
+{
+"id": "118418",
+"groupcode": "118418",
+"name": "RF10-20mm F4 L IS STM (Damaged Box)"
+},
+{
+"id": "118484",
+"groupcode": "118484",
+"name": "BP-A60N Battery Pack"
+},
+{
+"id": "118496",
+"groupcode": "118496",
+"name": "EOS C400"
+},
+{
+"id": "118508",
+"groupcode": "118508",
+"name": "RF24-240mm F4-6.3 IS USM (Refurbished)"
+},
+{
+"id": "118509",
+"groupcode": "118509",
+"name": "RF85mm F1.2 L USM (Refurbished)"
+},
+{
+"id": "118533",
+"groupcode": "118533",
+"name": "RF85mm F1.2 L USM (Damaged Box)"
+},
+{
+"id": "118534",
+"groupcode": "118534",
+"name": "RF14-35MM F4L IS USM (Damaged Box)"
+},
+{
+"id": "118535",
+"groupcode": "118535",
+"name": "RF85mm F2 Macro IS STM (Damaged Box)"
+},
+{
+"id": "118583",
+"groupcode": "118583",
+"name": "RF70-200mm F2.8 L IS USM (Refurbished)"
+},
+{
+"id": "118595",
+"groupcode": "118595",
+"name": "RF800mm F11 IS STM (Refurbished)"
+},
+{
+"id": "118601",
+"groupcode": "118601",
+"name": "RF14-35MM F4L IS USM (Refurbished)"
+},
+{
+"id": "118613",
+"groupcode": "118613",
+"name": "PIXMA TR160"
+},
+{
+"id": "118625",
+"groupcode": "118625",
+"name": "PowerShot V1"
+},
+{
+"id": "118667",
+"groupcode": "118667",
+"name": "EOS R50 V + RF-S14-30mm F4-6.3 IS STM PZ Lens Kit"
+},
+{
+"id": "118679",
+"groupcode": "118679",
+"name": "EW-73H Lens Hood"
+},
+{
+"id": "118712",
+"groupcode": "118712",
+"name": "EOS R5 Body (Damaged Box)"
+},
+{
+"id": "118746",
+"groupcode": "118746",
+"name": "Speedlite Transmitter ST-E10 (Damaged Box)"
+},
+{
+"id": "118793",
+"groupcode": "118793",
+"name": "EW-73E Lens Hood"
+},
+{
+"id": "118853",
+"groupcode": "118853",
+"name": "EOS Rebel T7 EF-S 18\u201355mm f/3.5\u20135.6 IS II (Bonus 16GB SD Card and Mini Messenger Bag)"
+},
+{
+"id": "118876",
+"groupcode": "118876",
+"name": "RF75-300mm F4-5.6"
+},
+{
+"id": "118882",
+"groupcode": "118882",
+"name": "imageCLASS LBP122dw"
+},
+{
+"id": "118883",
+"groupcode": "118883",
+"name": "imageCLASS LBP172dw"
+},
+{
+"id": "118884",
+"groupcode": "118884",
+"name": "imageCLASS MF284dw"
+},
+{
+"id": "118897",
+"groupcode": "118897",
+"name": "PL-C 52WIII 52mm Drop-in Circular Polarizing Filter"
+},
+{
+"id": "118899",
+"groupcode": "118899",
+"name": "BP-A30N Battery Pack"
+},
+{
+"id": "118947",
+"groupcode": "118947",
+"name": "RF100-300mm F2.8 L IS USM (Damaged Box)"
+},
+{
+"id": "119053",
+"groupcode": "119053",
+"name": "PIXMA TR7120"
+},
+{
+"id": "119059",
+"groupcode": "119059",
+"name": "PG-295XL Black Ink Cartridge"
+},
+{
+"id": "119060",
+"groupcode": "119060",
+"name": "PG-295 Black Ink Cartridge"
+},
+{
+"id": "119071",
+"groupcode": "119071",
+"name": "PIXMA TS6520"
+},
+{
+"id": "119083",
+"groupcode": "119083",
+"name": "imageCLASS MF751Cdw II"
+},
+{
+"id": "119090",
+"groupcode": "119090",
+"name": "imageCLASS MF663Cdw"
+},
+{
+"id": "119092",
+"groupcode": "119092",
+"name": "imageCLASS MF462dw II"
+},
+{
+"id": "119093",
+"groupcode": "119093",
+"name": "imageCLASS MF753Cdw II"
+},
+{
+"id": "119143",
+"groupcode": "119143",
+"name": "imageCLASS LBP647Cdw"
+},
+{
+"id": "119145",
+"groupcode": "119145",
+"name": "imageCLASS LBP674Cdw II"
+},
+{
+"id": "119221",
+"groupcode": "119221",
+"name": "PIXMA TS372x White (Damaged Box)"
+},
+{
+"id": "119233",
+"groupcode": "119233",
+"name": "PIXMA TS5320a Black (Damaged Box)"
+},
+{
+"id": "119236",
+"groupcode": "119236",
+"name": "PIXMA TS7720 (Damaged Box)"
+},
+{
+"id": "119365",
+"groupcode": "119365",
+"name": "CLI-281XL Black, Cyan, Magenta, Yellow Value Pack"
+},
+{
+"id": "119403",
+"groupcode": "119403",
+"name": "PFI-5100 10-Colour Value Pack"
+},
+{
+"id": "119456",
+"groupcode": "119456",
+"name": "ES-73B Lens Hood"
+},
+{
+"id": "119468",
+"groupcode": "119468",
+"name": "CR-N350 Black"
+},
+{
+"id": "119489",
+"groupcode": "119489",
+"name": "Durable Matte Polypropylene Banner, 36\" x 100'"
+},
+{
+"id": "119751",
+"groupcode": "119751",
+"name": "EOS R6 Mark II RF24-105mm F4-7.1 IS STM (Refurbished)"
+},
+{
+"id": "119779",
+"groupcode": "119779",
+"name": "Photo Foundations On Demand"
+},
+{
+"id": "119818",
+"groupcode": "119818",
+"name": "EOS C200 Body and LCD Monitor (Refurbished)"
+},
+{
+"id": "119869",
+"groupcode": "119869",
+"name": "RF24mm F1.8 Macro IS STM (Refurbished)"
+},
+{
+"id": "119980",
+"groupcode": "119980",
+"name": "RF24-105mm F4-7.1 IS STM (Damaged Box)"
+},
+{
+"id": "119992",
+"groupcode": "119992",
+"name": "RF100-400mm F5.6-8 IS USM (Damaged Box)"
+},
+{
+"id": "119993",
+"groupcode": "119993",
+"name": "RF75-300mm F4-5.6 (Damaged Box)"
+},
+{
+"id": "120040",
+"groupcode": "120040",
+"name": "CR-N500 Black"
+},
+{
+"id": "120041",
+"groupcode": "120041",
+"name": "CR-N500 White"
+},
+{
+"id": "120053",
+"groupcode": "120053",
+"name": "CR-N100 Black"
+},
+{
+"id": "120054",
+"groupcode": "120054",
+"name": "CR-N100 White"
+},
+{
+"id": "120123",
+"groupcode": "120123",
+"name": "EOS R50 V RF-S14-30mm F4-6.3 IS STM PZ (Damaged Box)"
+},
+{
+"id": "120214",
+"groupcode": "120214",
+"name": "RF35mm F1.4 L VCM (Damaged Box)"
+},
+{
+"id": "120231",
+"groupcode": "120231",
+"name": "RF800mm F11 IS STM (Damaged Box)"
+},
+{
+"id": "120265",
+"groupcode": "120265",
+"name": "EOS R6 V"
+},
+{
+"id": "120270",
+"groupcode": "120270",
+"name": "IF C5140 - LARGE W/ CASSETTE FEEDING UNIT - NO TRADE IN"
+},
+{
+"id": "120276",
+"groupcode": "120276",
+"name": "IF C5140 - LARGE W/ CASSETTE FEEDING UNIT - WITH TRADE IN"
+},
+{
+"id": "120284",
+"groupcode": "120284",
+"name": "MegaTank PIXMA G3290"
+},
+{
+"id": "120291",
+"groupcode": "120291",
+"name": "CINE-SERVO 25-250mm T2.95-3.95 EF"
+},
+{
+"id": "120292",
+"groupcode": "120292",
+"name": "CINE-SERVO 25-250mm T2.95-3.95 PL"
+},
+{
+"id": "120306",
+"groupcode": "120306",
+"name": "CINE-SERVO 50-1000mm T5.0-8.9 PL"
+},
+{
+"id": "120307",
+"groupcode": "120307",
+"name": "CN-E45-135mm T2.4 L FP"
+},
+{
+"id": "120308",
+"groupcode": "120308",
+"name": "CN-E45-135mm T2.4 L F"
+},
+{
+"id": "120309",
+"groupcode": "120309",
+"name": "CINE-SERVO 15-120mm T2.95-3.95 EF"
+},
+{
+"id": "120310",
+"groupcode": "120310",
+"name": "CINE-SERVO 15-120mm T2.95-3.95 PL"
+},
+{
+"id": "120311",
+"groupcode": "120311",
+"name": "CN-E14-35mm T1.7 L SP"
+},
+{
+"id": "120312",
+"groupcode": "120312",
+"name": "CN-E14-35mm T1.7 L S"
+},
+{
+"id": "120375",
+"groupcode": "120375",
+"name": "PS SX740HS (Silver)"
+},
+{
+"id": "120376",
+"groupcode": "120376",
+"name": "PowerShot SX740HS (Black)"
+},
+{
+"id": "120380",
+"groupcode": "120380",
+"name": "IF C3126 - SMALL W/ CASSETTE FEEDING UNIT - NO TRADE IN"
+},
+{
+"id": "120383",
+"groupcode": "120383",
+"name": "IF C3126 - SMALL W/ CASSETTE FEEDING UNIT - WITH TRADE IN"
+},
+{
+"id": "120396",
+"groupcode": "120396",
+"name": "BR-E2 Bluetooth Remote"
+},
+{
+"id": "120397",
+"groupcode": "120397",
+"name": "RF Lens Dust Cap II"
+},
+{
+"id": "120398",
+"groupcode": "120398",
+"name": "HG-200TBR Tripod Grip"
+},
+{
+"id": "120399",
+"groupcode": "120399",
+"name": "AD-M1-MA Macro Flash Head Adapter"
+},
+{
+"id": "120429",
+"groupcode": "120429",
+"name": "imageFORMULA P-215 Separation Pad"
+},
+{
+"id": "120435",
+"groupcode": "120435",
+"name": "imageFORMULA P-215 Feed Roller"
+},
+{
+"id": "120459",
+"groupcode": "120459",
+"name": "EOS R8 Body (Damaged Box)"
+},
+{
+"id": "120465",
+"groupcode": "120465",
+"name": "SELPHY QX10 White with XS-20L"
+},
+{
+"id": "120471",
+"groupcode": "120471",
+"name": "Canon Coaster Set"
+},
+{
+"id": "120477",
+"groupcode": "120477",
+"name": "Speedlite EL-10 (Damaged Box)"
+},
+{
+"id": "120483",
+"groupcode": "120483",
+"name": "RF45mm F1.2 STM (Damaged Box)"
+},
+{
+"id": "120489",
+"groupcode": "120489",
+"name": "Showcase Fundraising Kit"
+},
+{
+"id": "120495",
+"groupcode": "120495",
+"name": "RF24-50mm F4.5-6.3 IS STM (Damaged Box)"
+},
+{
+"id": "120501",
+"groupcode": "120501",
+"name": "RF85mm F1.2 L USM DS (Damaged Box)"
+},
+{
+"id": "120522",
+"groupcode": "120522",
+"name": "PL-RF Mount Adapter"
+},
+{
+"id": "5012",
+"groupcode": "5012",
+"name": "imageCLASS D570"
+},
+{
+"id": "5047",
+"groupcode": "5047",
+"name": "BR-E1 Wireless Remote Control"
+},
+{
+"id": "5048",
+"groupcode": "5048",
+"name": "RS-60E3 Remote Switch"
+},
+{
+"id": "5050",
+"groupcode": "5050",
+"name": "RS-80N3 Remote Switch"
+},
+{
+"id": "5069",
+"groupcode": "5069",
+"name": "LC-E6 Battery Charger"
+},
+{
+"id": "5077",
+"groupcode": "5077",
+"name": "LC-E17 Battery Charger"
+},
+{
+"id": "5081",
+"groupcode": "5081",
+"name": "DR-E18 DC Coupler"
+},
+{
+"id": "5085",
+"groupcode": "5085",
+"name": "R-F-5 Camera Cover"
+},
+{
+"id": "5086",
+"groupcode": "5086",
+"name": "ER-100B Neck Strap"
+},
+{
+"id": "5088",
+"groupcode": "5088",
+"name": "IFC-400U Interface Cable"
+},
+{
+"id": "5110",
+"groupcode": "5110",
+"name": "IFC-400PCU Interface Cable"
+},
+{
+"id": "5112",
+"groupcode": "5112",
+"name": "IFC-200U Interface Cable"
+},
+{
+"id": "5115",
+"groupcode": "5115",
+"name": "HTC-100 HDMI Cable"
+},
+{
+"id": "5123",
+"groupcode": "5123",
+"name": "IFC-600PCU Interface Cable"
+},
+{
+"id": "5125",
+"groupcode": "5125",
+"name": "AC-E6N AC Adapter"
+},
+{
+"id": "6045",
+"groupcode": "6045",
+"name": "BCI-3e Black Ink Tank"
+},
+{
+"id": "8237",
+"groupcode": "8237",
+"name": "EW-83E Lens Hood"
+},
+{
+"id": "8704",
+"groupcode": "8704",
+"name": "CA-PS700 Compact Power Adapter"
+},
+{
+"id": "8733",
+"groupcode": "8733",
+"name": "Ink & Paper Set KC-36IP (Card Size)"
+},
+{
+"id": "9039",
+"groupcode": "9039",
+"name": "10 x 42 L IS WP Waterproof Image Stabilized Binoculars"
+},
+{
+"id": "9375",
+"groupcode": "9375",
+"name": "EF 50mm f/1.2L USM"
+},
+{
+"id": "10003",
+"groupcode": "10003",
+"name": "EF 24mm f/1.4L II USM"
+},
+{
+"id": "10008",
+"groupcode": "10008",
+"name": "Photo Paper Pro Platinum - PT-101 - 13\" x 19\"- A3+ (10 Sheets)"
+},
+{
+"id": "10010",
+"groupcode": "10010",
+"name": "Photo Paper Pro Platinum - PT-101 - 8.5\" x 11\" (20 Sheets)"
+},
+{
+"id": "10162",
+"groupcode": "10162",
+"name": "CG-800 Battery Charger"
+},
+{
+"id": "10323",
+"groupcode": "10323",
+"name": "LP-E10 Battery Pack"
+},
+{
+"id": "10326",
+"groupcode": "10326",
+"name": "DR-E10 DC Coupler"
+},
+{
+"id": "10597",
+"groupcode": "10597",
+"name": "Ink & Paper Set KP-108IN"
+},
+{
+"id": "11166",
+"groupcode": "11166",
+"name": "8-15 Lens Cap"
+},
+{
+"id": "11321",
+"groupcode": "11321",
+"name": "ET-87 Lens Hood"
+},
+{
+"id": "11329",
+"groupcode": "11329",
+"name": "TS-E 17mm f/4L"
+},
+{
+"id": "11331",
+"groupcode": "11331",
+"name": "TS-E 24mm f/3.5L II"
+},
+{
+"id": "11614",
+"groupcode": "11614",
+"name": "LC-E12 Battery Charger"
+},
+{
+"id": "11781",
+"groupcode": "11781",
+"name": "LC-E10 Battery Charger"
+},
+{
+"id": "11932",
+"groupcode": "11932",
+"name": "EW-88C Lens Hood"
+},
+{
+"id": "11933",
+"groupcode": "11933",
+"name": "ES-52 Lens Hood"
+},
+{
+"id": "11989",
+"groupcode": "11989",
+"name": "EF 24-70 f/2.8L II USM"
+},
+{
+"id": "12179",
+"groupcode": "12179",
+"name": "CB-2LF Battery Charger"
+},
+{
+"id": "12246",
+"groupcode": "12246",
+"name": "E-58II Lens Cap"
+},
+{
+"id": "12295",
+"groupcode": "12295",
+"name": "LP-E12 Battery Pack"
+},
+{
+"id": "12342",
+"groupcode": "12342",
+"name": "E-52 II Lens Cap"
+},
+{
+"id": "12389",
+"groupcode": "12389",
+"name": "PCC-CP400 Paper Cassette"
+},
+{
+"id": "12505",
+"groupcode": "12505",
+"name": "Photo Paper Pro Premium Matte - PM-101 - 17\" x 22\" (20 Sheets)"
+},
+{
+"id": "12556",
+"groupcode": "12556",
+"name": "PGI-280XXL Black"
+},
+{
+"id": "12557",
+"groupcode": "12557",
+"name": "CLI-281XXL Cyan"
+},
+{
+"id": "12558",
+"groupcode": "12558",
+"name": "CLI-281XXL Black"
+},
+{
+"id": "12559",
+"groupcode": "12559",
+"name": "CLI-281XXL Magenta"
+},
+{
+"id": "12560",
+"groupcode": "12560",
+"name": "CLI-281XXL Photo Blue"
+},
+{
+"id": "12561",
+"groupcode": "12561",
+"name": "CLI-281XXL Yellow"
+},
+{
+"id": "12562",
+"groupcode": "12562",
+"name": "PGI-280XL Black Ink Tank"
+},
+{
+"id": "12564",
+"groupcode": "12564",
+"name": "CLI-281XL Black Ink Tank"
+},
+{
+"id": "12577",
+"groupcode": "12577",
+"name": "GI-290 Pigment Black"
+},
+{
+"id": "12578",
+"groupcode": "12578",
+"name": "GI-290 Cyan"
+},
+{
+"id": "12579",
+"groupcode": "12579",
+"name": "GI-290 Magenta"
+},
+{
+"id": "12580",
+"groupcode": "12580",
+"name": "GI-290 Yellow"
+},
+{
+"id": "12583",
+"groupcode": "12583",
+"name": "CLI-281XL Cyan Ink Tank"
+},
+{
+"id": "12584",
+"groupcode": "12584",
+"name": "CLI-281XL Magenta Ink Tank"
+},
+{
+"id": "12585",
+"groupcode": "12585",
+"name": "CLI-281XL Photo Blue Ink Tank"
+},
+{
+"id": "12586",
+"groupcode": "12586",
+"name": "CLI-281XL Yellow Ink Tank"
+},
+{
+"id": "12587",
+"groupcode": "12587",
+"name": "PGI-280 Black"
+},
+{
+"id": "12589",
+"groupcode": "12589",
+"name": "CLI-281 Black"
+},
+{
+"id": "12591",
+"groupcode": "12591",
+"name": "CLI-281 Cyan"
+},
+{
+"id": "12593",
+"groupcode": "12593",
+"name": "CLI-281 Magenta"
+},
+{
+"id": "12595",
+"groupcode": "12595",
+"name": "CLI-281 Photo Blue"
+},
+{
+"id": "12597",
+"groupcode": "12597",
+"name": "CLI-281 Yellow"
+},
+{
+"id": "12607",
+"groupcode": "12607",
+"name": "EOS 5D Mark IV Body"
+},
+{
+"id": "12630",
+"groupcode": "12630",
+"name": "ZSG-C10 (GRIP FOR CNE18-80MM)"
+},
+{
+"id": "12683",
+"groupcode": "12683",
+"name": "PFI-1000 Magenta Ink Tank"
+},
+{
+"id": "12684",
+"groupcode": "12684",
+"name": "PFI-1000 Yellow Ink Tank"
+},
+{
+"id": "12685",
+"groupcode": "12685",
+"name": "PFI-1000 Photo Cyan Ink Tank"
+},
+{
+"id": "12695",
+"groupcode": "12695",
+"name": "PFI-1000 Matte Black Ink Tank"
+},
+{
+"id": "12696",
+"groupcode": "12696",
+"name": "PFI-1000 Photo Black Ink Tank"
+},
+{
+"id": "12697",
+"groupcode": "12697",
+"name": "PFI-1000 Cyan Ink Tank"
+},
+{
+"id": "12698",
+"groupcode": "12698",
+"name": "PFI-1000 Photo Magenta Ink Tank"
+},
+{
+"id": "12699",
+"groupcode": "12699",
+"name": "PFI-1000 Gray Ink Tank"
+},
+{
+"id": "12700",
+"groupcode": "12700",
+"name": "PFI-1000 Photo Gray Ink Tank"
+},
+{
+"id": "12701",
+"groupcode": "12701",
+"name": "PFI-1000 Red Ink Tank"
+},
+{
+"id": "12702",
+"groupcode": "12702",
+"name": "PFI-1000 Blue Ink Tank"
+},
+{
+"id": "12703",
+"groupcode": "12703",
+"name": "PFI-1000 Chroma Optimizer Ink Tank"
+},
+{
+"id": "12707",
+"groupcode": "12707",
+"name": "BP-A30 Battery Pack"
+},
+{
+"id": "12708",
+"groupcode": "12708",
+"name": "BP-A60 Battery Pack"
+},
+{
+"id": "12904",
+"groupcode": "12904",
+"name": "Battery Pack NB-12L"
+},
+{
+"id": "12909",
+"groupcode": "12909",
+"name": "10 x 30 IS II Image Stabilized Binoculars"
+},
+{
+"id": "12911",
+"groupcode": "12911",
+"name": "12 x 36 IS III Image Stabilized Binoculars"
+},
+{
+"id": "12913",
+"groupcode": "12913",
+"name": "EF 16-35mm f/4L IS USM"
+},
+{
+"id": "12917",
+"groupcode": "12917",
+"name": "EF-S 10-18mm f/4.5-5.6 IS STM"
+},
+{
+"id": "12973",
+"groupcode": "12973",
+"name": "EF-S 24mm f/2.8 STM"
+},
+{
+"id": "13078",
+"groupcode": "13078",
+"name": "ES-68 Lens Hood"
+},
+{
+"id": "13079",
+"groupcode": "13079",
+"name": "ET-74B Lens Hood"
+},
+{
+"id": "13087",
+"groupcode": "13087",
+"name": "49mm Protector Filter"
+},
+{
+"id": "13181",
+"groupcode": "13181",
+"name": "IFC-150U II USB Cable"
+},
+{
+"id": "13194",
+"groupcode": "13194",
+"name": "CLI-271 XL Magenta Ink Tank"
+},
+{
+"id": "13195",
+"groupcode": "13195",
+"name": "CLI-271 XL Yellow Ink Tank"
+},
+{
+"id": "13196",
+"groupcode": "13196",
+"name": "CLI-271 XL Gray Ink Tank"
+},
+{
+"id": "13263",
+"groupcode": "13263",
+"name": "PG-243 Black Ink Cartridge"
+},
+{
+"id": "13264",
+"groupcode": "13264",
+"name": "CL-244 Colour Ink Cartridge"
+},
+{
+"id": "13368",
+"groupcode": "13368",
+"name": "Colour Ink and Paper Set RP-54"
+},
+{
+"id": "13369",
+"groupcode": "13369",
+"name": "Colour Ink and Paper Set RP-108"
+},
+{
+"id": "13379",
+"groupcode": "13379",
+"name": "EF 35mm f/1.4L II USM"
+},
+{
+"id": "13383",
+"groupcode": "13383",
+"name": "EF 100-400mm f/4.5-5.6L IS II USM"
+},
+{
+"id": "13398",
+"groupcode": "13398",
+"name": "EF 24-105mm f/4L IS II USM"
+},
+{
+"id": "13417",
+"groupcode": "13417",
+"name": "LP-E19 Battery Pack"
+},
+{
+"id": "13473",
+"groupcode": "13473",
+"name": "EW-73D Lens Hood"
+},
+{
+"id": "13499",
+"groupcode": "13499",
+"name": "BP-828 Battery Pack"
+},
+{
+"id": "13672",
+"groupcode": "13672",
+"name": "EF 50mm f/1.8 STM"
+},
+{
+"id": "13702",
+"groupcode": "13702",
+"name": "LH-DC90 Lens Hood"
+},
+{
+"id": "13772",
+"groupcode": "13772",
+"name": "NB-13L Battery Pack"
+},
+{
+"id": "13807",
+"groupcode": "13807",
+"name": "CB-2LH Battery Charger"
+},
+{
+"id": "13954",
+"groupcode": "13954",
+"name": "EOS 90D EF-S 18-135mm f/3.5-5.6 IS USM Kit"
+},
+{
+"id": "14033",
+"groupcode": "14033",
+"name": "EF-EOS R Mount Adapter with Drop-in Circular Polarizing Filter A"
+},
+{
+"id": "14034",
+"groupcode": "14034",
+"name": "EF-EOS R Drop-in Filter Mount Adapter with Drop-in Variable ND Filter A"
+},
+{
+"id": "14058",
+"groupcode": "14058",
+"name": "PowerShot SX70 HS"
+},
+{
+"id": "14066",
+"groupcode": "14066",
+"name": "EOS RP Body"
+},
+{
+"id": "14068",
+"groupcode": "14068",
+"name": "GI-20 Black Ink Bottle"
+},
+{
+"id": "14069",
+"groupcode": "14069",
+"name": "GI-20 Cyan Ink Bottle"
+},
+{
+"id": "14070",
+"groupcode": "14070",
+"name": "GI-20 Magenta Ink Bottle"
+},
+{
+"id": "14071",
+"groupcode": "14071",
+"name": "GI-20 Yellow Ink Bottle"
+},
+{
+"id": "14279",
+"groupcode": "14279",
+"name": "RF24-105mm F4 L IS USM"
+},
+{
+"id": "14281",
+"groupcode": "14281",
+"name": "RF28-70mm F2 L USM"
+},
+{
+"id": "14286",
+"groupcode": "14286",
+"name": "EF-EOS R Mount Adapter"
+},
+{
+"id": "14288",
+"groupcode": "14288",
+"name": "RF35mm F1.8 Macro IS STM"
+},
+{
+"id": "14300",
+"groupcode": "14300",
+"name": "imageCLASS LBP162dw"
+},
+{
+"id": "14307",
+"groupcode": "14307",
+"name": "Macro Twin Lite MT-26EX-RT"
+},
+{
+"id": "14324",
+"groupcode": "14324",
+"name": "EF 70\u2013200mm f/2.8L IS III USM"
+},
+{
+"id": "14464",
+"groupcode": "14464",
+"name": "imageCLASS Toner 057 Black, High Capacity"
+},
+{
+"id": "14520",
+"groupcode": "14520",
+"name": "041 H Black Toner Cartridge, High Capacity"
+},
+{
+"id": "14522",
+"groupcode": "14522",
+"name": "EF 85mm f/1.4L IS USM"
+},
+{
+"id": "14526",
+"groupcode": "14526",
+"name": "TS-E 50mm f/2.8L Macro"
+},
+{
+"id": "14529",
+"groupcode": "14529",
+"name": "TS-E 135mm f/4L Macro"
+},
+{
+"id": "14607",
+"groupcode": "14607",
+"name": "WFT-E9A WIRELESS TRANSMITTER"
+},
+{
+"id": "14663",
+"groupcode": "14663",
+"name": "RF24-70mm F2.8L IS USM"
+},
+{
+"id": "14700",
+"groupcode": "14700",
+"name": "RF24-240mm F4-6.3 IS USM"
+},
+{
+"id": "14703",
+"groupcode": "14703",
+"name": "RF15-35mm F2.8L IS USM"
+},
+{
+"id": "14881",
+"groupcode": "14881",
+"name": "054 Yellow Toner Cartridge"
+},
+{
+"id": "14882",
+"groupcode": "14882",
+"name": "054 Magenta Toner Cartridge"
+},
+{
+"id": "14883",
+"groupcode": "14883",
+"name": "054 Cyan Toner Cartridge"
+},
+{
+"id": "14884",
+"groupcode": "14884",
+"name": "054 Black Toner Cartridge"
+},
+{
+"id": "14885",
+"groupcode": "14885",
+"name": "054 H Yellow Toner Cartridge, High Capacity"
+},
+{
+"id": "14939",
+"groupcode": "14939",
+"name": "054 H Magenta Toner Cartridge, High Capacity"
+},
+{
+"id": "14940",
+"groupcode": "14940",
+"name": "054 H Cyan Toner Cartridge, High Capacity"
+},
+{
+"id": "14941",
+"groupcode": "14941",
+"name": "054 H Black Toner Cartridge, High Capacity"
+},
+{
+"id": "14942",
+"groupcode": "14942",
+"name": "055 Yellow Toner Cartridge"
+},
+{
+"id": "14943",
+"groupcode": "14943",
+"name": "055 Magenta Toner Cartridge"
+},
+{
+"id": "14944",
+"groupcode": "14944",
+"name": "055 Cyan Toner Cartridge"
+},
+{
+"id": "14945",
+"groupcode": "14945",
+"name": "055 Black Toner Cartridge"
+},
+{
+"id": "15015",
+"groupcode": "15015",
+"name": "EF 75-300mm f/4.0-5.6 III"
+},
+{
+"id": "15028",
+"groupcode": "15028",
+"name": "RF70-200mm F2.8 L IS USM"
+},
+{
+"id": "15030",
+"groupcode": "15030",
+"name": "RF85mm F1.2 L USM DS"
+},
+{
+"id": "15073",
+"groupcode": "15073",
+"name": "RF24-105mm F4-7.1 IS STM"
+},
+{
+"id": "15231",
+"groupcode": "15231",
+"name": "SELPHY Color Ink/Label XS-20L Set"
+},
+{
+"id": "15242",
+"groupcode": "15242",
+"name": "055 H Yellow Toner Cartridge, High Capacity"
+},
+{
+"id": "15243",
+"groupcode": "15243",
+"name": "055 H Magenta Toner Cartridge, High Capacity"
+},
+{
+"id": "15244",
+"groupcode": "15244",
+"name": "055 H Cyan Toner Cartridge, High Capacity"
+},
+{
+"id": "15245",
+"groupcode": "15245",
+"name": "055 H Black Toner Cartridge, High Capacity"
+},
+{
+"id": "15252",
+"groupcode": "15252",
+"name": "imageCLASS Toner 121 Black"
+},
+{
+"id": "15337",
+"groupcode": "15337",
+"name": "15 x 50 IS All Weather Image Stabilized Binoculars"
+},
+{
+"id": "15339",
+"groupcode": "15339",
+"name": "18 x 50 IS All Weather Image Stabilized Binoculars"
+},
+{
+"id": "15383",
+"groupcode": "15383",
+"name": "PG-260XL Black Ink Cartridge"
+},
+{
+"id": "15385",
+"groupcode": "15385",
+"name": "PG-260 Black Ink Cartridge"
+},
+{
+"id": "15387",
+"groupcode": "15387",
+"name": "CL-261XL Colour Ink Cartridge"
+},
+{
+"id": "15389",
+"groupcode": "15389",
+"name": "CL-261 COLOUR INK CARTRIDGE"
+},
+{
+"id": "15393",
+"groupcode": "15393",
+"name": "RF85mm F1.2 L USM"
+},
+{
+"id": "16010",
+"groupcode": "16010",
+"name": "ET-60 Lens Hood"
+},
+{
+"id": "16064",
+"groupcode": "16064",
+"name": "ES-71 II Lens Hood"
+},
+{
+"id": "16998",
+"groupcode": "16998",
+"name": "Photo Paper Pro Platinum - PT-101 - 4\" x 6\" (20 Sheets per each)"
+},
+{
+"id": "17086",
+"groupcode": "17086",
+"name": "F-605G Scientific Calculator"
+},
+{
+"id": "17097",
+"groupcode": "17097",
+"name": "045 H Yellow Toner Cartridge, High Capacity"
+},
+{
+"id": "17098",
+"groupcode": "17098",
+"name": "045 H Magenta Toner Cartridge, High Capacity"
+},
+{
+"id": "17099",
+"groupcode": "17099",
+"name": "045 H Black Toner Cartridge, High Capacity"
+},
+{
+"id": "17100",
+"groupcode": "17100",
+"name": "046 H Magenta Toner Cartridge, High Capacity"
+},
+{
+"id": "17101",
+"groupcode": "17101",
+"name": "046 H Black Toner Cartridge, High Capacity"
+},
+{
+"id": "17303",
+"groupcode": "17303",
+"name": "PG-245 Black Twin Ink Value Pack."
+},
+{
+"id": "17342",
+"groupcode": "17342",
+"name": "PGI-1200XL 4 Colours (BK,C,M,Y) Value Pack"
+},
+{
+"id": "17541",
+"groupcode": "17541",
+"name": "045 H Cyan Toner Cartridge, High Capacity"
+},
+{
+"id": "17542",
+"groupcode": "17542",
+"name": "046 H Yellow Toner Cartridge, High Capacity"
+},
+{
+"id": "17543",
+"groupcode": "17543",
+"name": "046 H Cyan Toner Cartridge, High Capacity"
+},
+{
+"id": "17613",
+"groupcode": "17613",
+"name": "PG-240XL Black Twin Ink Value Pack"
+},
+{
+"id": "17698",
+"groupcode": "17698",
+"name": "PG-245XL Black Twin Ink Value Pack"
+},
+{
+"id": "17751",
+"groupcode": "17751",
+"name": "PGI-1200XL Black Pigment Ink Tank Twin Pack"
+},
+{
+"id": "17754",
+"groupcode": "17754",
+"name": "PGI-2200XL Black Twin Ink Value Pack"
+},
+{
+"id": "17756",
+"groupcode": "17756",
+"name": "PGI-2200XL Black, Cyan, Magenta & Yellow Ink Value pack"
+},
+{
+"id": "17758",
+"groupcode": "17758",
+"name": "Pro Paper Sampler Pack - LU-101/SG-201/PT-101/PM-101 - 8.5\" x 11\" (5 Sheets per each)"
+},
+{
+"id": "17838",
+"groupcode": "17838",
+"name": "PG-260XL / CL-261 black and colour Ink Value Pack"
+},
+{
+"id": "30070",
+"groupcode": "30070",
+"name": "LP-E17 Battery Pack"
+},
+{
+"id": "30071",
+"groupcode": "30071",
+"name": "EF-EOS R Control Ring Mount Adapter"
+},
+{
+"id": "30082",
+"groupcode": "30082",
+"name": "RF50mm F1.2 L USM"
+},
+{
+"id": "30358",
+"groupcode": "30358",
+"name": "EOS Rebel T7i Body"
+},
+{
+"id": "30365",
+"groupcode": "30365",
+"name": "PG-240XL/CL-241XL black and colour Ink Value Pack"
+},
+{
+"id": "32054",
+"groupcode": "32054",
+"name": "PGI-270 XL Pigment Black Ink Twin Pack"
+},
+{
+"id": "32058",
+"groupcode": "32058",
+"name": "PG-210 & CL-211 Ink Twin Club Pack"
+},
+{
+"id": "32060",
+"groupcode": "32060",
+"name": "PG-210 XL Twin Pack"
+},
+{
+"id": "32064",
+"groupcode": "32064",
+"name": "CLI-251 Black, Cyan, Magenta, and Yellow Ink Value Pack"
+},
+{
+"id": "32065",
+"groupcode": "32065",
+"name": "PG-40 Black Twin Pack"
+},
+{
+"id": "32068",
+"groupcode": "32068",
+"name": "PGI-280XL Black Ink Twin Value Pack"
+},
+{
+"id": "32075",
+"groupcode": "32075",
+"name": "PGI-220 Black / CLI-221 (4 colours) Combo Ink Pack with Photo Paper Plus Glossy II (50 Sheets, 4 in. x 6 in.)"
+},
+{
+"id": "32076",
+"groupcode": "32076",
+"name": "PGI-35 & CLI-36 Ink Value Pack"
+},
+{
+"id": "32079",
+"groupcode": "32079",
+"name": "PG-240 Twin & CL-241 Ink Club Pack"
+},
+{
+"id": "32080",
+"groupcode": "32080",
+"name": "PGI-250 XL Black Ink Twin Pack"
+},
+{
+"id": "32081",
+"groupcode": "32081",
+"name": "PGI-225 Black Ink Twin Pack"
+},
+{
+"id": "32082",
+"groupcode": "32082",
+"name": "CLI-226 Black, Cyan, Magenta and Yellow Value Pack"
+},
+{
+"id": "32084",
+"groupcode": "32084",
+"name": "PGI-220 Black Ink Cartridges (Twin Pack)"
+},
+{
+"id": "32085",
+"groupcode": "32085",
+"name": "PG-245XL/CL-246XL Black & Colour Cartridges Value Pack"
+},
+{
+"id": "32086",
+"groupcode": "32086",
+"name": "PG-245 Twin/CL-246 Ink Cartridge Value Pack"
+},
+{
+"id": "32088",
+"groupcode": "32088",
+"name": "CLI-281 Black, Cyan, Magenta, Yellow Value Pack"
+},
+{
+"id": "32101",
+"groupcode": "32101",
+"name": "PG-210XL/CL-211XL Black and Colour Combo Value Pack"
+},
+{
+"id": "32102",
+"groupcode": "32102",
+"name": "CLI221 Black, Cyan, Magenta & Yellow 4 Color Ink Pack"
+},
+{
+"id": "32104",
+"groupcode": "32104",
+"name": "PGI-250/CLI-251 Black and colour Ink Club Pack"
+},
+{
+"id": "32105",
+"groupcode": "32105",
+"name": "CLI-271 Black, Cyan, Magenta, and Yellow Ink Value Pack"
+},
+{
+"id": "32107",
+"groupcode": "32107",
+"name": "PG-40/CL-41 Combo Ink Pack with Photo Paper Glossy (50 Sheets, 4 in. x 6 in.)"
+},
+{
+"id": "36321",
+"groupcode": "36321",
+"name": "PFI-300 Matte Black Ink Tank"
+},
+{
+"id": "36322",
+"groupcode": "36322",
+"name": "PFI-300 Photo Black Ink Tank"
+},
+{
+"id": "36323",
+"groupcode": "36323",
+"name": "PFI-300 Cyan Ink Tank"
+},
+{
+"id": "36324",
+"groupcode": "36324",
+"name": "PFI-300 Magenta Ink Tank"
+},
+{
+"id": "36325",
+"groupcode": "36325",
+"name": "PFI-300 Yellow Ink Tank"
+},
+{
+"id": "36326",
+"groupcode": "36326",
+"name": "PFI-300 Photo Cyan Ink Tank"
+},
+{
+"id": "36327",
+"groupcode": "36327",
+"name": "PFI-300 Photo Magenta Ink Tank"
+},
+{
+"id": "36328",
+"groupcode": "36328",
+"name": "PFI-300 Red Ink Tank"
+},
+{
+"id": "36329",
+"groupcode": "36329",
+"name": "PFI-300 Gray Ink Tank"
+},
+{
+"id": "36330",
+"groupcode": "36330",
+"name": "PFI-300 Chroma Optimizer Ink Tank"
+},
+{
+"id": "36859",
+"groupcode": "36859",
+"name": "Premium Fine Art Rough Photo Paper - FA-RG1 - 17\" x 22\" (25 Sheets)"
+},
+{
+"id": "37731",
+"groupcode": "37731",
+"name": "Wireless File Transmitter WFT-R10A"
+},
+{
+"id": "37742",
+"groupcode": "37742",
+"name": "ET-101 Lens Hood"
+},
+{
+"id": "38418",
+"groupcode": "38418",
+"name": "EOS R6 Body - test sync simple level 1.18.24"
+},
+{
+"id": "38427",
+"groupcode": "38427",
+"name": "EOS RP RF24-105mm F4-7.1 IS STM Lens Kit"
+},
+{
+"id": "40865",
+"groupcode": "40865",
+"name": "RF600mm F11 IS STM"
+},
+{
+"id": "40866",
+"groupcode": "40866",
+"name": "RF800mm F11 IS STM"
+},
+{
+"id": "40867",
+"groupcode": "40867",
+"name": "RF100-500mm F4.5-7.1 L IS USM"
+},
+{
+"id": "40868",
+"groupcode": "40868",
+"name": "Extender RF1.4x"
+},
+{
+"id": "40869",
+"groupcode": "40869",
+"name": "Extender RF2X"
+},
+{
+"id": "40870",
+"groupcode": "40870",
+"name": "RF85mm F2 Macro IS STM"
+},
+{
+"id": "40928",
+"groupcode": "40928",
+"name": "Premium Fine Art Rough Photo Paper - FA-RG1 - 8.5\" x 11\" (25 Sheets)"
+},
+{
+"id": "42614",
+"groupcode": "42614",
+"name": "LP-EL Battery Pack"
+},
+{
+"id": "43067",
+"groupcode": "43067",
+"name": "ET-83G (WIII) Pare-soleil"
+},
+{
+"id": "43106",
+"groupcode": "43106",
+"name": "RF70-200mm F4 L IS USM"
+},
+{
+"id": "44593",
+"groupcode": "44593",
+"name": "GI-23 Cyan Ink Bottle"
+},
+{
+"id": "44594",
+"groupcode": "44594",
+"name": "GI-23 Yellow Ink Bottle"
+},
+{
+"id": "44595",
+"groupcode": "44595",
+"name": "GI-23 Black Ink Bottle"
+},
+{
+"id": "44596",
+"groupcode": "44596",
+"name": "GI-23 Magenta Ink Bottle"
+},
+{
+"id": "44655",
+"groupcode": "44655",
+"name": "GI-23 Grey Ink Bottle"
+},
+{
+"id": "44656",
+"groupcode": "44656",
+"name": "GI-23 Red Ink Bottle"
+},
+{
+"id": "44657",
+"groupcode": "44657",
+"name": "PG-275XL Black Ink Cartridge"
+},
+{
+"id": "44658",
+"groupcode": "44658",
+"name": "PG-275 INK CARTRIDGE"
+},
+{
+"id": "44659",
+"groupcode": "44659",
+"name": "CL-276XL Colour Ink Cartridge"
+},
+{
+"id": "44660",
+"groupcode": "44660",
+"name": "CL-276 INK CARTRIDGE"
+},
+{
+"id": "44764",
+"groupcode": "44764",
+"name": "GI-26 Pigment Magenta Ink Bottle"
+},
+{
+"id": "44765",
+"groupcode": "44765",
+"name": "GI-26 Pigment Yellow Ink Bottle"
+},
+{
+"id": "44766",
+"groupcode": "44766",
+"name": "GI-26 Pigment Black Ink Bottle"
+},
+{
+"id": "44767",
+"groupcode": "44767",
+"name": "GI-26 Pigment Cyan Ink Bottle"
+},
+{
+"id": "45831",
+"groupcode": "45831",
+"name": "RF100mm F2.8 L Macro IS USM"
+},
+{
+"id": "45832",
+"groupcode": "45832",
+"name": "RF400mm F2.8 L IS USM"
+},
+{
+"id": "45833",
+"groupcode": "45833",
+"name": "RF600mm F4 L IS USM"
+},
+{
+"id": "45928",
+"groupcode": "45928",
+"name": "PIXMA G620"
+},
+{
+"id": "46129",
+"groupcode": "46129",
+"name": "EOS 6D Mark II Body (Refurbished)"
+},
+{
+"id": "47091",
+"groupcode": "47091",
+"name": "RF14-35mm F4L IS USM"
+},
+{
+"id": "47446",
+"groupcode": "47446",
+"name": "PIXMA TR4720 BLACK"
+},
+{
+"id": "47452",
+"groupcode": "47452",
+"name": "PIXMA TR4720 WHITE"
+},
+{
+"id": "108899",
+"groupcode": "108899",
+"name": "PG-275XL Black Twin Ink Value Pack"
+},
+{
+"id": "108900",
+"groupcode": "108900",
+"name": "PG-275XL/CL-276XL Black and Colour Ink Value Pack"
+},
+{
+"id": "108972",
+"groupcode": "108972",
+"name": "CLI-65 Black Ink Tank"
+},
+{
+"id": "108973",
+"groupcode": "108973",
+"name": "CLI-65 Cyan Ink Tank"
+},
+{
+"id": "108974",
+"groupcode": "108974",
+"name": "CLI-65 Magenta Ink Tank"
+},
+{
+"id": "108975",
+"groupcode": "108975",
+"name": "CLI-65 Yellow Ink Tank"
+},
+{
+"id": "108976",
+"groupcode": "108976",
+"name": "CLI-65 Gray Ink Tank"
+},
+{
+"id": "108977",
+"groupcode": "108977",
+"name": "CLI-65 Photo Cyan Ink Tank"
+},
+{
+"id": "108978",
+"groupcode": "108978",
+"name": "CLI-65 Photo Magenta Ink Tank"
+},
+{
+"id": "108979",
+"groupcode": "108979",
+"name": "CLI-65 Light Gray Ink Tank"
+},
+{
+"id": "108980",
+"groupcode": "108980",
+"name": "GI-21 Pigment Black Ink Bottle"
+},
+{
+"id": "108981",
+"groupcode": "108981",
+"name": "GI-21 Cyan Ink Bottle"
+},
+{
+"id": "108982",
+"groupcode": "108982",
+"name": "GI-21 Magenta Ink Bottle"
+},
+{
+"id": "108983",
+"groupcode": "108983",
+"name": "GI-21 Yellow Ink Bottle"
+},
+{
+"id": "112612",
+"groupcode": "112612",
+"name": "RF100-400mm F5.6-8 IS USM"
+},
+{
+"id": "112613",
+"groupcode": "112613",
+"name": "RF16mm F2.8 STM"
+},
+{
+"id": "112642",
+"groupcode": "112642",
+"name": "ImageCLASS LBP236dw"
+},
+{
+"id": "112702",
+"groupcode": "112702",
+"name": "Speedlite Transmitter ST-E10"
+},
+{
+"id": "112738",
+"groupcode": "112738",
+"name": "XF605"
+},
+{
+"id": "112745",
+"groupcode": "112745",
+"name": "ER-h EyeCup"
+},
+{
+"id": "112747",
+"groupcode": "112747",
+"name": "ER-L1 Strap"
+},
+{
+"id": "112748",
+"groupcode": "112748",
+"name": "DM-E1D Stereo Microphone"
+},
+{
+"id": "112749",
+"groupcode": "112749",
+"name": "AD-P1 Smart Phone Adapter"
+},
+{
+"id": "112801",
+"groupcode": "112801",
+"name": "AD-E1 Multi-function shoe adapter"
+},
+{
+"id": "112861",
+"groupcode": "112861",
+"name": "RF 5.2mm F2.8 L Dual Fisheye"
+},
+{
+"id": "113811",
+"groupcode": "113811",
+"name": "imageCLASS MF3010 VP"
+},
+{
+"id": "113867",
+"groupcode": "113867",
+"name": "EOS R7 RF-S18-150mm F3.5-6.3 IS STM Lens Kit"
+},
+{
+"id": "113869",
+"groupcode": "113869",
+"name": "EOS R7 Body"
+},
+{
+"id": "113916",
+"groupcode": "113916",
+"name": "IVY 2 Mini Photo Printer Pure White"
+},
+{
+"id": "113958",
+"groupcode": "113958",
+"name": "RF-S18-150mm F3.5-6.3 IS STM"
+},
+{
+"id": "113970",
+"groupcode": "113970",
+"name": "XA60 Professional UHD 4K Camcorder"
+},
+{
+"id": "113988",
+"groupcode": "113988",
+"name": "RF-S18-45mm F4.5-6.3 IS STM"
+},
+{
+"id": "114003",
+"groupcode": "114003",
+"name": "XA65 Professional UHD 4K Camcorder"
+},
+{
+"id": "114004",
+"groupcode": "114004",
+"name": "VIXIA HF G70"
+},
+{
+"id": "114005",
+"groupcode": "114005",
+"name": "XA75 Professional UHD 4K Camcorder"
+},
+{
+"id": "114006",
+"groupcode": "114006",
+"name": "XA70 Professional UHD 4K Camcorder"
+},
+{
+"id": "114139",
+"groupcode": "114139",
+"name": "Colour imageCLASS MF656Cdw"
+},
+{
+"id": "114151",
+"groupcode": "114151",
+"name": "RF24MM F1.8 MACRO IS STM"
+},
+{
+"id": "114211",
+"groupcode": "114211",
+"name": "RF24-50mm F4.5-6.3 IS STM"
+},
+{
+"id": "114326",
+"groupcode": "114326",
+"name": "RF800mm F5.6 L IS USM Lens"
+},
+{
+"id": "114327",
+"groupcode": "114327",
+"name": "RF 1200MM 8L IS U"
+},
+{
+"id": "114328",
+"groupcode": "114328",
+"name": "RF135MM F1.8 L IS USM"
+},
+{
+"id": "114356",
+"groupcode": "114356",
+"name": "RF 15-30mm F4.5-6.3 IS STM"
+},
+{
+"id": "114407",
+"groupcode": "114407",
+"name": "EOS R8 RF24-50 mm F4.5-6.3 IS STM"
+},
+{
+"id": "114408",
+"groupcode": "114408",
+"name": "EOS R8 Body"
+},
+{
+"id": "114473",
+"groupcode": "114473",
+"name": "RF-S 55-210mm F5-7.1 IS STM"
+},
+{
+"id": "114569",
+"groupcode": "114569",
+"name": "SELPHY CP1500 Wireless Compact Photo Printer"
+},
+{
+"id": "114570",
+"groupcode": "114570",
+"name": "SELPHY CP1500 Wireless Compact Photo Printer"
+},
+{
+"id": "114620",
+"groupcode": "114620",
+"name": "ImagePROGRAF TC-20"
+},
+{
+"id": "114773",
+"groupcode": "114773",
+"name": "EOS R50 18-45 STM KIT"
+},
+{
+"id": "115312",
+"groupcode": "115312",
+"name": "Water Resistant Matte Polypropylene - 110 gsm, 36\" x 100'"
+},
+{
+"id": "115490",
+"groupcode": "115490",
+"name": "069 Yellow Toner Cartridge"
+},
+{
+"id": "115491",
+"groupcode": "115491",
+"name": "069 Magenta Toner Cartridge"
+},
+{
+"id": "115492",
+"groupcode": "115492",
+"name": "069 Cyan Toner Cartridge"
+},
+{
+"id": "115493",
+"groupcode": "115493",
+"name": "069 Black Toner Cartridge"
+},
+{
+"id": "115517",
+"groupcode": "115517",
+"name": "ER-SC2 Shoe Cover"
+},
+{
+"id": "115541",
+"groupcode": "115541",
+"name": "067 H Black Toner Cartridge, High Capacity"
+},
+{
+"id": "115542",
+"groupcode": "115542",
+"name": "067 H Yellow Toner Cartridge, High Capacity"
+},
+{
+"id": "115543",
+"groupcode": "115543",
+"name": "067 H Magenta Toner Cartridge, High Capacity"
+},
+{
+"id": "115544",
+"groupcode": "115544",
+"name": "067 H Cyan Toner Cartridge, High Capacity"
+},
+{
+"id": "115568",
+"groupcode": "115568",
+"name": "069 H Yellow Toner Cartridge, High Capacity"
+},
+{
+"id": "115569",
+"groupcode": "115569",
+"name": "069 H Magenta Toner Cartridge, High Capacity"
+},
+{
+"id": "115570",
+"groupcode": "115570",
+"name": "069 H Cyan Toner Cartridge, High Capacity"
+},
+{
+"id": "115571",
+"groupcode": "115571",
+"name": "069 H Black Toner Cartridge, High Capacity"
+},
+{
+"id": "115595",
+"groupcode": "115595",
+"name": "EOS R100 RF-S18-45mm F4.5-6.3 IS STM Lens Kit"
+},
+{
+"id": "115644",
+"groupcode": "115644",
+"name": "067 Yellow Toner Cartridge"
+},
+{
+"id": "115645",
+"groupcode": "115645",
+"name": "067 Magenta Toner Cartridge"
+},
+{
+"id": "115646",
+"groupcode": "115646",
+"name": "067 Cyan Toner Cartridge"
+},
+{
+"id": "115647",
+"groupcode": "115647",
+"name": "067 Black Toner Cartridge"
+},
+{
+"id": "115648",
+"groupcode": "115648",
+"name": "071 Black Toner Cartridge"
+},
+{
+"id": "115649",
+"groupcode": "115649",
+"name": "071 H Black Toner Cartridge, High Capacity"
+},
+{
+"id": "115773",
+"groupcode": "115773",
+"name": "RF28mm F2.8 STM"
+},
+{
+"id": "115785",
+"groupcode": "115785",
+"name": "Cartridge 070 Black"
+},
+{
+"id": "115786",
+"groupcode": "115786",
+"name": "070 H Black Toner Cartridge, High Capacity"
+},
+{
+"id": "115839",
+"groupcode": "115839",
+"name": "GI-25 Cyan Ink Bottle"
+},
+{
+"id": "115840",
+"groupcode": "115840",
+"name": "GI-25 Magenta Ink Bottle"
+},
+{
+"id": "115841",
+"groupcode": "115841",
+"name": "GI-25 Yellow Ink Bottle"
+},
+{
+"id": "115842",
+"groupcode": "115842",
+"name": "GI-25 Black Ink Bottle"
+},
+{
+"id": "115908",
+"groupcode": "115908",
+"name": "RF10-20mm F4 L IS STM"
+},
+{
+"id": "115978",
+"groupcode": "115978",
+"name": "PG-285 Black Ink Cartridge"
+},
+{
+"id": "115979",
+"groupcode": "115979",
+"name": "PG-285 XL Black Ink Cartridge"
+},
+{
+"id": "115980",
+"groupcode": "115980",
+"name": "CL-286 XL Colour Ink Cartridge"
+},
+{
+"id": "115981",
+"groupcode": "115981",
+"name": "CL-286 Colour Ink Cartridge"
+},
+{
+"id": "116161",
+"groupcode": "116161",
+"name": "RF24-105mm F2.8 L IS USM Z"
+},
+{
+"id": "116179",
+"groupcode": "116179",
+"name": "RF-S10-18mm F4.5-6.3 IS STM"
+},
+{
+"id": "116203",
+"groupcode": "116203",
+"name": "RF200-800mm F6.3-9 IS USM"
+},
+{
+"id": "116209",
+"groupcode": "116209",
+"name": "EW-53B Lens Hood"
+},
+{
+"id": "116284",
+"groupcode": "116284",
+"name": "RF100-300mm F2.8 L IS USM"
+},
+{
+"id": "117515",
+"groupcode": "117515",
+"name": "PG-275/CL-276 Black and Colour Ink Value Pack"
+},
+{
+"id": "117588",
+"groupcode": "117588",
+"name": "RF-S3.9mm F3.5 STM DUAL FISHEYE"
+},
+{
+"id": "117589",
+"groupcode": "117589",
+"name": "RF35mm F1.4 L VCM"
+},
+{
+"id": "117600",
+"groupcode": "117600",
+"name": "Speedlite EL-10"
+},
+{
+"id": "117666",
+"groupcode": "117666",
+"name": "RF28-70mm F2.8 IS STM"
+},
+{
+"id": "117672",
+"groupcode": "117672",
+"name": "SELPHY QX20 Compact Photo Printer Dark Gray"
+},
+{
+"id": "117687",
+"groupcode": "117687",
+"name": "XC-20L Ink/Paper Set"
+},
+{
+"id": "117711",
+"groupcode": "117711",
+"name": "CH-G2 Colour Print Head"
+},
+{
+"id": "117715",
+"groupcode": "117715",
+"name": "PFI-4100 Matte Black Ink Tank"
+},
+{
+"id": "117716",
+"groupcode": "117716",
+"name": "PFI-4100 Photo Black Ink Tank"
+},
+{
+"id": "117717",
+"groupcode": "117717",
+"name": "PFI-4100 Cyan Ink Tank"
+},
+{
+"id": "117718",
+"groupcode": "117718",
+"name": "PFI-4100 Magenta Ink Tank"
+},
+{
+"id": "117719",
+"groupcode": "117719",
+"name": "PFI-4100 Yellow Ink Tank"
+},
+{
+"id": "117720",
+"groupcode": "117720",
+"name": "PFI-4100 Photo Cyan Ink Tank"
+},
+{
+"id": "117721",
+"groupcode": "117721",
+"name": "PFI-4100 Photo Magenta Ink Tank"
+},
+{
+"id": "117722",
+"groupcode": "117722",
+"name": "PFI-4100 Grey Ink Tank"
+},
+{
+"id": "117723",
+"groupcode": "117723",
+"name": "PFI-4100 Photo Grey Ink Tank"
+},
+{
+"id": "117724",
+"groupcode": "117724",
+"name": "PFI-4100 Red Ink Tank"
+},
+{
+"id": "117725",
+"groupcode": "117725",
+"name": "PFI-4100 Blue Ink Tank"
+},
+{
+"id": "117726",
+"groupcode": "117726",
+"name": "PFI-4100 Chroma Optimizer Ink Tank"
+},
+{
+"id": "117784",
+"groupcode": "117784",
+"name": "PG-260XL Black Ink Twin Value Pack"
+},
+{
+"id": "117796",
+"groupcode": "117796",
+"name": "RF-S7.8mm F4 STM DUAL"
+},
+{
+"id": "117808",
+"groupcode": "117808",
+"name": "RF70-200mm F2.8 L IS USM Z"
+},
+{
+"id": "117809",
+"groupcode": "117809",
+"name": "RF70-200mm F2.8 L IS USM Z"
+},
+{
+"id": "117823",
+"groupcode": "117823",
+"name": "LP-E6P Battery Pack"
+},
+{
+"id": "117824",
+"groupcode": "117824",
+"name": "Battery Grip BG-R20"
+},
+{
+"id": "118009",
+"groupcode": "118009",
+"name": "RF24mm F1.4 L VCM"
+},
+{
+"id": "118010",
+"groupcode": "118010",
+"name": "RF50mm F1.4 L VCM"
+},
+{
+"id": "118029",
+"groupcode": "118029",
+"name": "Eyecup ER-iE"
+},
+{
+"id": "118135",
+"groupcode": "118135",
+"name": "RF16-28mm F2.8 IS STM"
+},
+{
+"id": "118168",
+"groupcode": "118168",
+"name": "PG-285XL / CL-286XL Black and Colour Ink Value Pack"
+},
+{
+"id": "118255",
+"groupcode": "118255",
+"name": "072 Black Toner Cartridge"
+},
+{
+"id": "118256",
+"groupcode": "118256",
+"name": "072 H Black Toner Cartridge, High Capacity"
+},
+{
+"id": "118267",
+"groupcode": "118267",
+"name": "PFI-5100 Matte Black Ink Tank"
+},
+{
+"id": "118268",
+"groupcode": "118268",
+"name": "PFI-5100 Photo Black Ink Tank"
+},
+{
+"id": "118269",
+"groupcode": "118269",
+"name": "PFI-5100 Cyan Ink Tank"
+},
+{
+"id": "118270",
+"groupcode": "118270",
+"name": "PFI-5100 Magenta Ink Tank"
+},
+{
+"id": "118271",
+"groupcode": "118271",
+"name": "PFI-5100 Yellow Ink Tank"
+},
+{
+"id": "118272",
+"groupcode": "118272",
+"name": "PFI-5100 Photo Cyan Ink Tank"
+},
+{
+"id": "118273",
+"groupcode": "118273",
+"name": "PFI-5100 Photo Magenta Ink Tank"
+},
+{
+"id": "118274",
+"groupcode": "118274",
+"name": "PFI-5100 Red Ink Tank"
+},
+{
+"id": "118275",
+"groupcode": "118275",
+"name": "PFI-5100 Grey Ink Tank"
+},
+{
+"id": "118324",
+"groupcode": "118324",
+"name": "PFI-5100 Chroma Optimizer Ink Tank"
+},
+{
+"id": "118372",
+"groupcode": "118372",
+"name": "RF100mm F2.8 L Macro IS USM (Damaged Box)"
+},
+{
+"id": "118454",
+"groupcode": "118454",
+"name": "HG-100TBR Tripod Grip"
+},
+{
+"id": "118527",
+"groupcode": "118527",
+"name": "EF 75-300mm f/4.0-5.6 III (Damaged Box)"
+},
+{
+"id": "118643",
+"groupcode": "118643",
+"name": "imagePROGRAF TC-21"
+},
+{
+"id": "118644",
+"groupcode": "118644",
+"name": "imagePROGRAF TC-21M"
+},
+{
+"id": "118673",
+"groupcode": "118673",
+"name": "RF20mm F1.4 L VCM"
+},
+{
+"id": "118685",
+"groupcode": "118685",
+"name": "GI-21 with Paper G-Series Refill Kit"
+},
+{
+"id": "118686",
+"groupcode": "118686",
+"name": "GI-25 GX-Series Refill Kit"
+},
+{
+"id": "118687",
+"groupcode": "118687",
+"name": "PG-275XL/CL-276 with Paper Photo Value Pack"
+},
+{
+"id": "118835",
+"groupcode": "118835",
+"name": "IGNITE"
+},
+{
+"id": "118898",
+"groupcode": "118898",
+"name": "DM-E100 Stereo Microphone"
+},
+{
+"id": "118999",
+"groupcode": "118999",
+"name": "EOS C50"
+},
+{
+"id": "119005",
+"groupcode": "119005",
+"name": "PowerShot ELPH 360 HS A"
+},
+{
+"id": "119006",
+"groupcode": "119006",
+"name": "PowerShot ELPH 360 HS A Silver"
+},
+{
+"id": "119022",
+"groupcode": "119022",
+"name": "EOS R6 Mark II Body (Damaged Box)"
+},
+{
+"id": "119047",
+"groupcode": "119047",
+"name": "RF85mm F1.4 L VCM"
+},
+{
+"id": "119089",
+"groupcode": "119089",
+"name": "imageCLASS MF665Cdw"
+},
+{
+"id": "119091",
+"groupcode": "119091",
+"name": "imageCLASS MF465dw II"
+},
+{
+"id": "119116",
+"groupcode": "119116",
+"name": "075 Yellow Toner Cartridge"
+},
+{
+"id": "119117",
+"groupcode": "119117",
+"name": "075 Magenta Toner Cartridge"
+},
+{
+"id": "119118",
+"groupcode": "119118",
+"name": "075 Cyan Toner Cartridge"
+},
+{
+"id": "119119",
+"groupcode": "119119",
+"name": "075 Black Toner Cartridge"
+},
+{
+"id": "119144",
+"groupcode": "119144",
+"name": "imageCLASS LBP246dw II"
+},
+{
+"id": "119158",
+"groupcode": "119158",
+"name": "075H Yellow Toner Cartridge High Yield Capacity"
+},
+{
+"id": "119159",
+"groupcode": "119159",
+"name": "075H Magenta Toner Cartridge High Yield Capacity"
+},
+{
+"id": "119160",
+"groupcode": "119160",
+"name": "075H Cyan Toner Cartridge High Yield Capacity"
+},
+{
+"id": "119161",
+"groupcode": "119161",
+"name": "075H Black Toner Cartridge High Yield Capacity"
+},
+{
+"id": "119371",
+"groupcode": "119371",
+"name": "EOS R6 Mark III Body"
+},
+{
+"id": "119372",
+"groupcode": "119372",
+"name": "EOS R6 Mark III RF24-105mm F4-7.1 IS STM"
+},
+{
+"id": "119384",
+"groupcode": "119384",
+"name": "EF-S 10-22mm f/3.5-4.5 USM (Damaged Box)"
+},
+{
+"id": "119390",
+"groupcode": "119390",
+"name": "RF-S14-30mm F4-6.3 IS STM PZ"
+},
+{
+"id": "119391",
+"groupcode": "119391",
+"name": "RF45mm F1.2 STM"
+},
+{
+"id": "119491",
+"groupcode": "119491",
+"name": "Durable Matte Polypropylene Banner, 60\" x 100'"
+},
+{
+"id": "119845",
+"groupcode": "119845",
+"name": "RF7-14mm F2.8-3.5 L FISHEYE STM"
+},
+{
+"id": "119851",
+"groupcode": "119851",
+"name": "RF14mm F1.4 L VCM"
+},
+{
+"id": "119857",
+"groupcode": "119857",
+"name": "NB-15L Battery Pack"
+},
+{
+"id": "119911",
+"groupcode": "119911",
+"name": "RF24\u2013105mm F4 L IS USM (Damaged Box)"
+},
+{
+"id": "119966",
+"groupcode": "119966",
+"name": "EOS R3 Body (Refurbished)"
+},
+{
+"id": "119994",
+"groupcode": "119994",
+"name": "RF28-70mm F2.8 IS STM (Damaged Box)"
+},
+{
+"id": "120013",
+"groupcode": "120013",
+"name": "imageFORMULA R40 II"
+},
+{
+"id": "120052",
+"groupcode": "120052",
+"name": "CR-N300 White"
+},
+{
+"id": "120055",
+"groupcode": "120055",
+"name": "CR-N300 Black"
+},
+{
+"id": "120056",
+"groupcode": "120056",
+"name": "CR-N300 White"
+},
+{
+"id": "120082",
+"groupcode": "120082",
+"name": "CR-N700 Black"
+},
+{
+"id": "120083",
+"groupcode": "120083",
+"name": "CR-N700 White"
+},
+{
+"id": "120095",
+"groupcode": "120095",
+"name": "RC-IP100"
+},
+{
+"id": "120098",
+"groupcode": "120098",
+"name": "RC-IP1000"
+},
+{
+"id": "120207",
+"groupcode": "120207",
+"name": "EOS RP 24-240mm F4-6.3 IS USM (Damaged Box)"
+},
+{
+"id": "120213",
+"groupcode": "120213",
+"name": "RF135mm F1.8 L IS USM (Damaged Box)"
+},
+{
+"id": "120225",
+"groupcode": "120225",
+"name": "RF50mm F1.4 L VCM (Damaged Box)"
+},
+{
+"id": "120423",
+"groupcode": "120423",
+"name": "RF20-50mm F4 L IS USM PZ"
+},
+{
+"id": "120507",
+"groupcode": "120507",
+"name": "RF-S 55-210mm F5-7.1 IS STM (Damaged Box)"
+},
+{
+"id": "120508",
+"groupcode": "120508",
+"name": "RF-S7.8mm F4 STM DUAL (Damaged Box)"
+},
+{
+"id": "120509",
+"groupcode": "120509",
+"name": "RF16mm F2.8 STM (Damaged Box)"
+},
+{
+"id": "120526",
+"groupcode": "120526",
+"name": "Water Resistant Matte Polypropylene - 110 gsm, 42\" x 100'"
+},
+{
+"id": "120527",
+"groupcode": "120527",
+"name": "Water Resistant Matte Polypropylene - 110 gsm, 36\" x 100'"
+},
+{
+"id": "120528",
+"groupcode": "120528",
+"name": "Water Resistant Matte Polypropylene - 110 gsm, 24\" x 100'"
 }
 ]
