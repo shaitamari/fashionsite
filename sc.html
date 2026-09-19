@@ -205,7 +205,7 @@
      'purchase event, then 4416 with products.', ['https://insiderone.com/case-studies/chow-sang-sang/', 'Chow Sang Sang: +23.5% conversion with Smart Recommender']],
     ['What happens after they leave'],
     ['Browse abandonment email', 'Architect, email', panel + '/architect/2892/canvas',
-     'Look at three products, add none. Open the console (bottom right) and click Copy profile ID. Open the journey and click its email; top right it says Previewing as Anonymous \u2014 change the user, choose Profile ID, paste yours in and reload. The email now shows the product you were just looking at.',
+     'Look at three products, add none. Open the console (bottom right) and click Copy profile ID. Open the journey and click its email; top right it says Previewing as Anonymous \u2014 change the user, choose Profile ID, paste yours in and reload. The email now shows the product you were just looking at. Asked about baskets? The same email, started by an add-to-cart, is the Funnel Abandonment journey (2905).',
      'A shopper who looked hard at one product and left gets a message about that product, on the channel they answer. Abandonment recovery is the largest recoverable revenue most sites have, and the platform decides which product mattered.',
      'product_detail_page_view events only, no add-to-cart.', ['https://insiderone.com/case-studies/marks-and-spencer/', 'Marks & Spencer: 15.1% cart recovery rate']],
   ];
@@ -250,10 +250,10 @@
      'Open three routes, book none. Open the console (bottom right) and click Copy profile ID. Open the journey and click its email; top right it says Previewing as Anonymous \u2014 change the user, choose Profile ID, paste yours in and reload. The email now shows the route you were just looking at.',
      'A traveller who looked hard at one route and left gets a message about that route, while the fare is still worth another look. The platform decides which viewed item mattered; the same journey serves every storefront.',
      'product_detail_page_view events only, no add-to-cart.'],
-    ['Funnel abandonment', 'Architect, email', null,
-     'Add a fare, leave without paying.',
-     'A traveller who priced a fare and left gets a reminder naming the route, the dates and the price they saw. In travel that research session is the sale, and most of it is recoverable. Journey to build.',
-     'cart push, no purchase.', ['https://insiderone.com/case-studies/marks-and-spencer/', 'Marks & Spencer: 15.1% cart recovery rate']]
+    ['Funnel abandonment', 'Architect, email', panel + '/architect/2905/canvas-v2',
+     'Add a fare, leave without paying. Copy profile ID, open the journey, click its email and preview as that profile.',
+     'A traveller who chose a flight and left gets a reminder showing the flight they chose. In travel that research session is the sale, and most of it is recoverable. Anyone who books in the meantime leaves the journey.',
+     'add_to_cart, no purchase.', ['https://insiderone.com/case-studies/marks-and-spencer/', 'Marks & Spencer: 15.1% cart recovery rate']]
   ];
 
   var banking = [
@@ -264,7 +264,7 @@
     ['Recognised on every device', 'Unified Customer Database, personas', L.panel, 'Account → Sign in as…', 'The customer is recognised on any device, and every page reads their relationship from here on.', 'user push.'],
     ['Account support assistant', 'Agent One', L.panel, 'Ask an account question, then ask to start an application.', 'A customer asks an account question and gets a safe answer; starting an application becomes a real request the bank acts on. In a regulated industry the assistant is only ever allowed to do what it is allowed to do.', 'assistant loads; agent_request on the profile.'],
     ['What happens after they leave'],
-    ['Abandoned application', 'Architect', null, 'Start the flow and leave.', 'Someone who started an application and stopped is reminded where they left it. Most applications are lost in the middle, and most of those are recoverable. Journey to build.', 'flow events.']
+    ['Abandoned application', 'Architect, email', panel + '/architect/2907/canvas-v2', 'Start an application (Open account on any product) and leave before the end. Copy profile ID, open the journey, click its email and preview as that profile.', 'Someone who started an application and stopped is reminded an hour later that it is saved, with a link straight back in. Most applications are lost in the middle, and most of those are recoverable. Anyone who finishes in the meantime leaves the journey.', 'other page view: checkout on open.html, no purchase.']
   ];
 
   var telco = retail.slice(0, 6).concat([
@@ -294,7 +294,7 @@
       ['speaks for both travel brands', 'speaks for both travel brands'], ['The bag, the seat, the lounge', 'Breakfast, late checkout, the spa'],
       ['where airline margin lives', 'where hotel margin lives'], ['pairs them with the fare', 'pairs them with the stay'], ['pairs a fare with a bag or a lounge pass', 'pairs a stay with breakfast or a spa pass'],
       ['Ask about baggage, then ask to change the trip', 'Ask about check-in times, then ask to change the dates'], ['asks about baggage or a change of plans', 'asks about check-in or a change of dates'],
-      ["the airline\u2019s own rules", "the hotel\u2019s own policies"], ['Add a fare, leave without paying', 'Pick a room, leave without paying'], ['who priced a fare and left', 'who priced a stay and left'],
+      ["the airline\u2019s own rules", "the hotel\u2019s own policies"], ['Add a fare, leave without paying', 'Pick a room, leave without paying'], ['who chose a flight and left gets a reminder showing the flight they chose', 'who chose a room and left gets a reminder showing the room they chose'], ['who priced a fare and left', 'who priced a stay and left'],
       ['naming the route, the dates and the price', 'naming the property, the dates and the rate'],
       ['Open three routes, book none', 'Open three hotels, book none'], ['the route you were just looking at', 'the hotel you were just looking at'],
       ['looked hard at one route', 'looked hard at one hotel'], ['a message about that route, while the fare is still worth another look', 'a message about that hotel, while the rate is still worth another look']
