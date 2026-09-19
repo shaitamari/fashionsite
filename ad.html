@@ -602,7 +602,10 @@ var AD_KEY = null;
   if (v !== "base") { AD = Object.assign({}, v, { label: v.label_ }); }
 })();
 
-  var STORE_URL = location.protocol + "//" + location.host + "/";
+  /* Northbank and Vantis use the content homepage. Linking to it directly
+     saves the redirect from index.html — a whole page load on the click. */
+  var CONTENT_HOME = { banking: 1, telco: 1 };
+  var STORE_URL = location.protocol + "//" + location.host + "/" + (CONTENT_HOME[VKEY] ? "content-index.html" : "");
 
   /* The parameter the Posh personalisation rule listens for.
      Add utm_source / utm_medium here if you want a fuller-looking

@@ -301,8 +301,26 @@
     if (img) observer.observe(img, { attributes: true, attributeFilter: ['src'] });
   }
 
+  /* The page stays hidden on ad arrivals so the default banner never flashes.
+     Reveal it the moment ours is in: when the photo has loaded, or after
+     400ms at most so a slow image never holds the page. */
+  var revealed = false;
+  function reveal() {
+    if (revealed) return;
+    revealed = true;
+    document.documentElement.classList.add('hero-ready');
+  }
+  function revealWhenReady() {
+    var img = document.getElementById('hero-img');
+    if (!img || (img.complete && img.naturalWidth)) return reveal();
+    img.addEventListener('load', reveal);
+    img.addEventListener('error', reveal);
+    setTimeout(reveal, 400);
+  }
+
   function start() {
     if (!apply()) return false;
+    revealWhenReady();
     watch();
     setTimeout(function () { stop('timeout'); }, 5000);
     return true;
