@@ -53,8 +53,11 @@ window.SITE_CONFIG = {
       partnersandbox: {
         searchCampaignId:  4233,   // JavaScript SDK campaign, en_GB
         listingCampaignId: 4235    // category pages, en_GB
+      },
+      salesdemo: {
+        searchCampaignId:  1166761,  // JavaScript SDK campaign, en_GB — serves search
+        listingCampaignId: 1166761   // and category listing
       }
-      // salesdemo: { searchCampaignId: null, listingCampaignId: null },
     },
 
     // Keyed by the storefront (the vertical key), resolved AFTER perAccount.
