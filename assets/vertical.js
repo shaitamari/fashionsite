@@ -90,7 +90,7 @@
        The bare hostnames must be in partnersandbox's multiDomains for the
        tag to load on them while the switch is off. */
     'default': (function () {
-      var SALESDEMO_READY = false;
+      var SALESDEMO_READY = true;
       return SALESDEMO_READY
         ? { suffix: null, account: 'salesdemo',      partnerId: '10002548', locale: 'en_GB', currency: 'EUR' }
         : { suffix: null, account: 'partnersandbox', partnerId: '10006846', locale: 'en_GB', currency: 'EUR' };
